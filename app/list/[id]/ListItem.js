@@ -1,3 +1,4 @@
+//app/list/[id]/ListItem.js 에 따른 개인의 list page
 'use client'
 import React, { useState } from 'react';
 import Link from "next/link"

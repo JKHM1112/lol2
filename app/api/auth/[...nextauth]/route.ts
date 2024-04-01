@@ -1,11 +1,10 @@
-//app/pages/api/auth/[...nextauth]/route.ts
 import { connectDB } from "@/util/database";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
-import NextAuth, { NextAuthOptions } from "next-auth";
+import NextAuth, { AuthOptions, NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from 'bcrypt';
 
-export const authOptions: NextAuthOptions = {
+export const authOptions: AuthOptions = {
     providers: [
         CredentialsProvider({
             //1. 로그인페이지 폼 자동생성해주는 코드 
@@ -71,4 +70,6 @@ export const authOptions: NextAuthOptions = {
     adapter: MongoDBAdapter(connectDB),
     secret: 'qwer1234'
 };
-export default NextAuth(authOptions);
+
+const handler = NextAuth(authOptions)
+export { handler as GET, handler as POST };

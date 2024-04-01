@@ -1,3 +1,4 @@
+//app/edit/[id]/page.js 수정 버튼 누르면 나오는 page
 import { connectDB } from "@/util/database"
 import { ObjectId } from "mongodb"
 

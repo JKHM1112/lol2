@@ -1,15 +1,23 @@
 //layout.tsx
-import type { Metadata } from "next";
-import { Noto_Sans_KR } from "next/font/google";
-import "./globals.css";
-import { connectDB } from "@/util/database";
-import { getServerSession } from "next-auth";
 import Link from "next/link";
-import { authOptions } from "./api/auth/[...nextauth]";
+import LogoutBtn from "./LogoutBtn";
 import LoginBtn from "./LoginBtn";
+import { authOptions } from "./api/auth/[...nextauth]/route";
+import { getServerSession } from "next-auth";
+import { connectDB } from "@/util/database";
+import { Noto_Sans_KR } from "next/font/google";
+import type { Metadata } from "next";
+import "./globals.css";
+import { Session } from "inspector";
 
 console.log('메인페이지')
 
+interface UserSession {
+  user: {
+    name: string;
+    email: string;
+  }
+}
 const notoSansKr = Noto_Sans_KR({
   subsets: ["latin"],
   weight: ["100", "400", "700", "900"],
@@ -22,7 +30,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children, }: Readonly<{
   children: React.ReactNode;
 }>) {
-  let session = await getServerSession(authOptions)
+  let session: UserSession | null = await getServerSession(authOptions)
   const db = (await connectDB).db('dream')
   let result = null
   if (session?.user) {
@@ -33,16 +41,18 @@ export default async function RootLayout({ children, }: Readonly<{
     <html lang="en">
       <body className={notoSansKr.className}>
         <div className="navbar">
-          <Link href="/" className="logo"> 대충 사이트 이름 </Link>
-          <Link href="/lists"> 전체list</Link>
-          {/* {
-            result ? <Link href={"/list/" + result._id}>내list</Link> : null
-          } */}
+          <Link href="/" className="logo">대충사이트이름 </Link>
           <Link href="/write" > 직접입력하기 </Link>
-          {/* {
+          <Link href="/lists"> 전체list </Link>
+          {
+            result ? <Link href={"/list/" + result._id}>내list</Link> : null
+          }
+          {
             session ? <></> : <Link href="/register"> 회원가입 </Link>
-          } */}
-          <LoginBtn></LoginBtn>
+          }
+          {
+            session ? <span> {session.user.name} <LogoutBtn /> </span> : <LoginBtn />
+          }
         </div>{children}</body>
     </html>
   );

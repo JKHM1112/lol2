@@ -6,7 +6,7 @@ export default async function Home() {
 
   return (
     <div>
-      <h4>로그인</h4>
+      <h4>메인페이지</h4>
     </div>
   )
 }
