@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { useState } from "react";
@@ -15,7 +16,6 @@ import { getChampions } from "./champions";
 import { getFirstItems } from "./firstItems";
 import { getLegendaryItems } from "./legendaryItems";
 import { getShoesItems } from "./shoesItems";
-
 export default function Write() {
 
     const runes = getRunes();
@@ -67,7 +67,8 @@ export default function Write() {
     const [legendaryItemOpen5, setLegendaryItemOpen5] = useState(false);
     const [legendaryItemOpen6, setLegendaryItemOpen6] = useState(false);
     const [shoesItemOpen4, setShoesItemOpen] = useState(false);
-
+    const [lineResult, setLineResult] = React.useState('compact')
+    const [gameResult, setGameResult] = React.useState('compact')
     const [selectedChampion1, setSelectedChampion1] = useState('');
     const [selectedChampion2, setSelectedChampion2] = useState('');
     const [selectedChampion3, setSelectedChampion3] = useState('');
@@ -87,8 +88,6 @@ export default function Write() {
     const [selectedLegendaryItem6, setSelectedLegendaryItem6] = useState('');
     const [SelectedShoesItem, setSelectedShoesItem] = useState('');
 
-    const [lineResult, setLineResult] = useState<Result>('');
-    const [gameResult, setGameResult] = useState<Result>('');
 
     const handleLineChange = (value: string) => {
         setSelectedLine(value)
@@ -112,7 +111,7 @@ export default function Write() {
 
     return (
         <div className="flex items-center gap-4">
-            <form action="/api/post/newWriteList" method="POST">
+            <form action="/api/post/newListWrite" method="POST">
                 <div className="flex items-center gap-4">
                     <Label className="char3">라인</Label>
                     <Select name="line" value={selectedLine} onValueChange={(value) => handleLineChange(value)}>
@@ -1243,42 +1242,36 @@ export default function Write() {
                         </PopoverContent>
                     </Popover>
                 </div>
-
-                <div className="flex items-center space-x-2">
-                    <p>라인전</p>
-                    <input type="radio" id="lineVictory" name="lineResult" value="승리" checked={lineResult === "승리"} onChange={handleLineResult} />
-                    <label htmlFor="lineVictory" className="text-sm font-medium cursor-pointer">
-                        승리
-                    </label>
-
-                    <input type="radio" id="linedefeat" name="lineResult" value="패배" checked={lineResult === "패배"} onChange={handleLineResult} />
-                    <label htmlFor="linedefeat" className="text-sm font-medium cursor-pointer">
-                        패배
-                    </label>
-
-                    <input type="radio" id="lineHAH" name="lineResult" value="패배" checked={lineResult === "반반"} onChange={handleLineResult} />
-                    <label htmlFor="lineHAH" className="text-sm font-medium cursor-pointer">
-                        반반
-                    </label>
-                </div>
-
-                <div className="flex items-center space-x-2">
-                    <p>전체</p>
-                    <input type="radio" id="gameVictory" name="GameResult" value="승리" checked={gameResult === "승리"} onChange={handleGameRsult} />
-                    <label htmlFor="gameVictory" className="text-sm font-medium cursor-pointer">
-                        승리
-                    </label>
-
-                    <input type="radio" id="gamedefeat" name="GameResult" value="패배" checked={gameResult === "패배"} onChange={handleGameRsult} />
-                    <label htmlFor="gamedefeat" className="text-sm font-medium cursor-pointer">
-                        패배
-                    </label>
-
-                    <input type="radio" id="gameHAH" name="GameResult" value="반반" checked={gameResult === "반반"} onChange={handleGameRsult} />
-                    <label htmlFor="gameHAH" className="text-sm font-medium cursor-pointer">
-                        반반
-                    </label>
-                </div>
+                <RadioGroup value={lineResult} onValueChange={(value) => setLineResult(value)} className="flex items-center">
+                    라인전:
+                    <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="win" id="win" />
+                        <Label htmlFor="win">승리</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="lose" id="lose" />
+                        <Label htmlFor="lose">패배</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="half" id="half" />
+                        <Label htmlFor="half">반반</Label>
+                    </div>
+                </RadioGroup>
+                <RadioGroup value={gameResult} onValueChange={(value) => setGameResult(value)} className="flex items-center">
+                    결과:   
+                    <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="win" id="win" />
+                        <Label htmlFor="win">승리</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="lose" id="lose" />
+                        <Label htmlFor="lose">패배</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <RadioGroupItem value="half" id="half" />
+                        <Label htmlFor="half">반반</Label>
+                    </div>
+                </RadioGroup>
 
                 <Label className="char3">한줄평<Input name="review" placeholder="한줄평"></Input></Label>
                 <Label className="char3"><Input style={{ display: 'none' }} name="date" defaultValue={currentDate}></Input></Label>
