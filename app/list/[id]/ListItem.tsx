@@ -1,9 +1,9 @@
-//app/lists/ListLitem.js
+//app/lists/ListsLitem.js
 'use client';
 import React, { useState } from 'react';
 import Link from "next/link";
 
-interface ListItemProps {
+interface ListsItemProps {
     result: Array<{
         line: string; cham1: string; cham2: string; before6: string;
         after6: string; half: string; rune1: string; rune2: string;
@@ -15,7 +15,7 @@ interface ListItemProps {
 }
 
 const lineTypes = ['탑', '정글', '미드', '원딜', '서폿'];
-export default function ListItem({ result, email }: ListItemProps) {
+export default function ListsItem({ result, email }: ListsItemProps) {
     const [checkedLines, setCheckedLines] = useState<string[]>([]);
     const [champFilter, setChampFilter] = useState('');
     const [opponentFilter, setOpponentFilter] = useState('');
@@ -79,34 +79,31 @@ export default function ListItem({ result, email }: ListItemProps) {
                         <th className="char3">작성자</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     {filteredResults.map((item, index) => (
-
-
-
-                        <tr key={index}>
-                            <td>{item.line}</td>
-                            <td>{item.cham1}</td>
-                            <td>{item.cham2}</td>
-                            <td>{item.before6}</td>
-                            <td>{item.after6}</td>
-                            <td>{item.half}</td>
-                            <td>{item.rune1}</td>
-                            <td>{item.rune2}</td>
-                            <td>{item.spell1}</td>
-                            <td>{item.spell2}</td>
-                            <td>{item.spell3}</td>
-                            <td>{item.spell4}</td>
-                            <td>{item.lineResult}</td>
-                            <td>{item.gameResult}</td>
-                            <td>{item.author}</td>
-                            <td>
-                                <Link href={'/detail/' + item._id} className="list-detail-li">상세보기</Link>
-                            </td>
-                            {item.email === email && (
+                        item.email === email && (
+                            <tr key={index}>
+                                <td>{item.line}</td>
+                                <td>{item.cham1}</td>
+                                <td>{item.cham2}</td>
+                                <td>{item.before6}</td>
+                                <td>{item.after6}</td>
+                                <td>{item.half}</td>
+                                <td>{item.rune1}</td>
+                                <td>{item.rune2}</td>
+                                <td>{item.spell1}</td>
+                                <td>{item.spell2}</td>
+                                <td>{item.spell3}</td>
+                                <td>{item.spell4}</td>
+                                <td>{item.lineResult}</td>
+                                <td>{item.gameResult}</td>
+                                <td>{item.author}</td>
                                 <td>
-                                    <Link href={'/edit/'+item._id} className="list-detail-li">수정</Link>
+                                    <Link href={'/detail/' + item._id} className="list-detail-li">상세보기</Link>
+                                </td>
+                                <td>
+                                    <Link href={'/edit/' + item._id} className="list-detail-li">수정</Link>
+
                                     <button onClick={async () => {
                                         await fetch('/api/post/delete', {
                                             method: 'POST', body: JSON.stringify({ author: item.author, _id: item._id, email: item.email })
@@ -130,8 +127,8 @@ export default function ListItem({ result, email }: ListItemProps) {
                                         //     router.refresh()
                                     }}>삭제</button>
                                 </td>
-                            )}
-                        </tr>
+                            </tr>
+                        )
                     ))}
                 </tbody>
             </table>

@@ -49,6 +49,7 @@ export default function Write() {
     const [after6, setAfter6] = useState(3)
     const [half, setHalf] = useState(3)
 
+
     const [championOpen1, setChampionOpen1] = useState(false);
     const [championOpen2, setChampionOpen2] = useState(false);
     const [championOpen3, setChampionOpen3] = useState(false);
@@ -67,8 +68,8 @@ export default function Write() {
     const [legendaryItemOpen5, setLegendaryItemOpen5] = useState(false);
     const [legendaryItemOpen6, setLegendaryItemOpen6] = useState(false);
     const [shoesItemOpen4, setShoesItemOpen] = useState(false);
-    const [lineResult, setLineResult] = React.useState('compact')
-    const [gameResult, setGameResult] = React.useState('compact')
+    const [lineResult, setLineResult] = React.useState('win')
+    const [gameResult, setGameResult] = React.useState('win')
     const [selectedChampion1, setSelectedChampion1] = useState('');
     const [selectedChampion2, setSelectedChampion2] = useState('');
     const [selectedChampion3, setSelectedChampion3] = useState('');
@@ -166,7 +167,6 @@ export default function Write() {
                                 </PopoverContent>
                             </Popover>
                         </div>
-
                         <div className="flex items-center space-x-4">
                             <p className="text-sm text-muted-foreground">상대탑챔피언</p>
                             <Popover open={championOpen2} onOpenChange={setChampionOpen2}>
@@ -932,12 +932,7 @@ export default function Write() {
                         </PopoverContent>
                     </Popover>
                 </div>
-                {selectedLine == "정글" ? (
-                    <div className="flex items-center gap-4">
-                        <Label className="char3">오브젝트<Input name="objectJ" placeholder="오브젝트"></Input></Label>
-                    </div>
-                ) : null
-                }
+                
 
                 <div className="flex items-center space-x-4">
                     <p className="text-sm text-muted-foreground">첫템</p>
@@ -1206,7 +1201,7 @@ export default function Write() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                    <p className="text-sm text-muted-foreground">신발템6</p>
+                    <p className="text-sm text-muted-foreground">신발템</p>
                     <Popover open={shoesItemOpen4} onOpenChange={setShoesItemOpen}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -1258,7 +1253,7 @@ export default function Write() {
                     </div>
                 </RadioGroup>
                 <RadioGroup value={gameResult} onValueChange={(value) => setGameResult(value)} className="flex items-center">
-                    결과:   
+                    결과:
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem value="win" id="win" />
                         <Label htmlFor="win">승리</Label>
@@ -1272,9 +1267,28 @@ export default function Write() {
                         <Label htmlFor="half">반반</Label>
                     </div>
                 </RadioGroup>
-
+                <input style={{ display: 'none' }} name="cham1" defaultValue={champion.find((champion) => champion.value === selectedChampion1)?.label} />
+                <input style={{ display: 'none' }} name="cham2" defaultValue={champion.find((champion) => champion.value === selectedChampion2)?.label} />
+                <input style={{ display: 'none' }} name="cham3" defaultValue={champion.find((champion) => champion.value === selectedChampion3)?.label} />
+                <input style={{ display: 'none' }} name="cham4" defaultValue={champion.find((champion) => champion.value === selectedChampion4)?.label} />
+                <input style={{ display: 'none' }} name="rune1" defaultValue={rune.find((rune) => rune.value === selectedRune1)?.label} />
+                <input style={{ display: 'none' }} name="rune2" defaultValue={rune.find((rune) => rune.value === selectedRune1)?.label} />
+                <input style={{ display: 'none' }} name="spell1" defaultValue={spell.find((spell) => spell.value === selectedSpell1)?.label} />
+                <input style={{ display: 'none' }} name="spell2" defaultValue={spell.find((spell) => spell.value === selectedSpell2)?.label} />
+                <input style={{ display: 'none' }} name="spell3" defaultValue={spell.find((spell) => spell.value === selectedSpell3)?.label} />
+                <input style={{ display: 'none' }} name="spell4" defaultValue={spell.find((spell) => spell.value === selectedSpell4)?.label} />
+                <input style={{ display: 'none' }} name="firstItem" defaultValue={selectedFirstItem} />
+                <input style={{ display: 'none' }} name="legendaryItem1" defaultValue={selectedLegendaryItem1} />
+                <input style={{ display: 'none' }} name="legendaryItem2" defaultValue={selectedLegendaryItem2} />
+                <input style={{ display: 'none' }} name="legendaryItem3" defaultValue={selectedLegendaryItem3} />
+                <input style={{ display: 'none' }} name="legendaryItem4" defaultValue={selectedLegendaryItem4} />
+                <input style={{ display: 'none' }} name="legendaryItem5" defaultValue={selectedLegendaryItem5} />
+                <input style={{ display: 'none' }} name="legendaryItem6" defaultValue={selectedLegendaryItem6} />
+                <input style={{ display: 'none' }} name="shoesItem" defaultValue={SelectedShoesItem} />
+                <input style={{ display: 'none' }} name="lineResult" value={lineResult} />
+                <input style={{ display: 'none' }} name="gameResult" value={gameResult} />
+                <input style={{ display: 'none' }} name="date" defaultValue={currentDate}></input>
                 <Label className="char3">한줄평<Input name="review" placeholder="한줄평"></Input></Label>
-                <Label className="char3"><Input style={{ display: 'none' }} name="date" defaultValue={currentDate}></Input></Label>
                 <Button type="submit">전송하기</Button>
             </form>
         </div >

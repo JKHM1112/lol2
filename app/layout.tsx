@@ -45,7 +45,7 @@ export default async function RootLayout({ children, }: Readonly<{
           <Link href="/write" > 직접입력하기 </Link>
           <Link href="/lists"> 전체list </Link>
           {
-            result ? <Link href={"/list/" + result._id}>내list</Link> : null
+            result ? <Link href={"/list/" + result._id} >내list</Link> : null
           }
           {
             session ? <></> : <Link href="/register"> 회원가입 </Link>

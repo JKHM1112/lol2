@@ -1,9 +1,12 @@
 import { connectDB } from "@/util/database"
-import { getServerSession } from "next-auth";
-import { z } from "zod";
-import { zfd } from "zod-form-data";
-import { authOptions } from "../../auth/[...nextauth]/route";
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server"
+import { zfd } from "zod-form-data"
+import { z } from "zod"
+import { _id } from "@next-auth/mongodb-adapter"
+import { ObjectId } from "mongodb"
+const schema_id = zfd.formData({
+    _id: zfd.text(),
+})
 
 const schema = zfd.formData({
     line: zfd.text(),
@@ -30,18 +33,27 @@ const schema = zfd.formData({
     shoesItem: zfd.text(),
     lineResult: zfd.text(),
     gameResult: zfd.text(),
-    date: zfd.text(),
     review: zfd.text(z.string().optional()),
-    // age: zfd.numeric(z.number().min(25).max(50)),
-    // likesPizza: zfd.checkbox(),
-});
+})
+
 export async function POST(request: NextRequest) {
-    const formData = await request.formData()
-    // console.log(formData)
-    let session = await getServerSession(authOptions)
-    const data = { ...schema.parse(formData), author: session?.user?.name, email: session?.user?.email }
-    console.log(request.url)
+    const formdata = await request.formData()
+    let change = {
+        ...schema.parse(formdata)
+    }
+    let change_id = {
+        ...schema_id.parse(formdata)
+    }
     const db = (await connectDB).db('dream')
-    await db.collection('data').insertOne(data)
+
+    console.log(change)
+    console.log(change_id._id)
+
+    let update = await db.collection('data').updateOne(
+        { _id: new ObjectId(change_id._id) },
+        { $set: change }
+    )
+    console.log(update)
+
     return Response.redirect(new URL('/lists', request.nextUrl.origin))
 }
