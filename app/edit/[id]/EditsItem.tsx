@@ -1,4 +1,6 @@
 'use client'
+
+import * as React from "react"
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -8,7 +10,6 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState } from "react";
 import Image from "next/image";
-import * as React from "react"
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
 import { getRunes } from "@/components/runes";
 import { getSpells } from "@/components/spells";
@@ -16,8 +17,22 @@ import { getChampions } from "@/components/champions";
 import { getFirstItems } from "@/components/firstItems";
 import { getLegendaryItems } from "@/components/legendaryItems";
 import { getShoesItems } from "@/components/shoesItems";
-export default function Write() {
 
+export interface EditItemProps {
+    result: {
+        line: string; cham1: string; cham2: string; cham3: string; cham4: string;
+        before6: number; after6: number; half: number;
+        rune1: string; rune2: string;
+        spell1: string; spell2: string; spell3: string; spell4: string;
+        lineResult: string; gameResult: string; name: string; _id: string;
+        author: string; email: string; firstItem: string;
+        legendaryItem1: string; legendaryItem2: string; legendaryItem3: string;
+        legendaryItem4: string; legendaryItem5: string; legendaryItem6: string;
+        shoesItem: string;
+    }
+}
+
+export default function EditItem({ result }: EditItemProps) {
     const runes = getRunes();
     const spells = getSpells();
     const champions = getChampions();
@@ -32,6 +47,17 @@ export default function Write() {
     const legendaryItem: LIStatus[] = legendaryItems.map((legendaryItem) => ({ label: legendaryItem.label, img: '/LegendaryItemK/' + legendaryItem.label + '.png' }));
     const shoesItem: LIStatus[] = shoesItems.map((shoesItem) => ({ label: shoesItem.label, img: '/ShoesItemK/' + shoesItem.label + '.png' }));
 
+    const cham1 = champion.find((champion) => champion.label === result.cham1)?.value || ''
+    const cham2 = champion.find((champion) => champion.label === result.cham2)?.value || ''
+    const cham3 = champion.find((champion) => champion.label === result.cham3)?.value || ''
+    const cham4 = champion.find((champion) => champion.label === result.cham4)?.value || ''
+    const rune1 = rune.find((rune) => rune.label === result.rune1)?.value || ''
+    const rune2 = rune.find((rune) => rune.label === result.rune2)?.value || ''
+    const spell1 = spell.find((spell) => spell.label === result.spell1)?.value || ''
+    const spell2 = spell.find((spell) => spell.label === result.spell2)?.value || ''
+    const spell3 = spell.find((spell) => spell.label === result.spell3)?.value || ''
+    const spell4 = spell.find((spell) => spell.label === result.spell4)?.value || ''
+
     type VLIStatus = {
         value: string;
         label: string;
@@ -41,13 +67,34 @@ export default function Write() {
         label: string;
         img: string;
     };
+
     type Result = '승리' | '패배' | '반반' | '';
 
     const currentDate = new Date().toISOString().split('T')[0]
-    const [selectedLine, setSelectedLine] = useState('')
-    const [before6, setBefore6] = useState(3)
-    const [after6, setAfter6] = useState(3)
-    const [half, setHalf] = useState(3)
+    const [selectedLine, setSelectedLine] = useState(result.line)
+    const [before6, setBefore6] = useState(result.before6)
+    const [after6, setAfter6] = useState(result.after6)
+    const [half, setHalf] = useState(result.half)
+    const [lineResult, setLineResult] = useState(result.lineResult)
+    const [gameResult, setGameResult] = useState(result.gameResult)
+    const [selectedChampion1, setSelectedChampion1] = useState(cham1);
+    const [selectedChampion2, setSelectedChampion2] = useState(cham2);
+    const [selectedChampion3, setSelectedChampion3] = useState(cham3);
+    const [selectedChampion4, setSelectedChampion4] = useState(cham4);
+    const [selectedRune1, setSelectedRune1] = useState(rune1);
+    const [selectedRune2, setSelectedRune2] = useState(rune2);
+    const [selectedSpell1, setSelectedSpell1] = useState(spell1);
+    const [selectedSpell2, setSelectedSpell2] = useState(spell2);
+    const [selectedSpell3, setSelectedSpell3] = useState(spell3);
+    const [selectedSpell4, setSelectedSpell4] = useState(spell4);
+    const [selectedFirstItem, setSelectedFirstItem] = useState(result.firstItem);
+    const [selectedLegendaryItem1, setSelectedLegendaryItem1] = useState(result.legendaryItem1);
+    const [selectedLegendaryItem2, setSelectedLegendaryItem2] = useState(result.legendaryItem2);
+    const [selectedLegendaryItem3, setSelectedLegendaryItem3] = useState(result.legendaryItem3);
+    const [selectedLegendaryItem4, setSelectedLegendaryItem4] = useState(result.legendaryItem4);
+    const [selectedLegendaryItem5, setSelectedLegendaryItem5] = useState(result.legendaryItem5);
+    const [selectedLegendaryItem6, setSelectedLegendaryItem6] = useState(result.legendaryItem6);
+    const [SelectedShoesItem, setSelectedShoesItem] = useState(result.shoesItem);
 
 
     const [championOpen1, setChampionOpen1] = useState(false);
@@ -68,39 +115,19 @@ export default function Write() {
     const [legendaryItemOpen5, setLegendaryItemOpen5] = useState(false);
     const [legendaryItemOpen6, setLegendaryItemOpen6] = useState(false);
     const [shoesItemOpen4, setShoesItemOpen] = useState(false);
-    const [lineResult, setLineResult] = React.useState('win')
-    const [gameResult, setGameResult] = React.useState('win')
-    const [selectedChampion1, setSelectedChampion1] = useState('');
-    const [selectedChampion2, setSelectedChampion2] = useState('');
-    const [selectedChampion3, setSelectedChampion3] = useState('');
-    const [selectedChampion4, setSelectedChampion4] = useState('');
-    const [selectedRune1, setSelectedRune1] = useState('');
-    const [selectedRune2, setSelectedRune2] = useState('');
-    const [selectedSpell1, setSelectedSpell1] = useState('');
-    const [selectedSpell2, setSelectedSpell2] = useState('');
-    const [selectedSpell3, setSelectedSpell3] = useState('');
-    const [selectedSpell4, setSelectedSpell4] = useState('');
-    const [selectedFirstItem, setSelectedFirstItem] = useState('');
-    const [selectedLegendaryItem1, setSelectedLegendaryItem1] = useState('');
-    const [selectedLegendaryItem2, setSelectedLegendaryItem2] = useState('');
-    const [selectedLegendaryItem3, setSelectedLegendaryItem3] = useState('');
-    const [selectedLegendaryItem4, setSelectedLegendaryItem4] = useState('');
-    const [selectedLegendaryItem5, setSelectedLegendaryItem5] = useState('');
-    const [selectedLegendaryItem6, setSelectedLegendaryItem6] = useState('');
-    const [SelectedShoesItem, setSelectedShoesItem] = useState('');
 
 
     const handleLineChange = (value: string) => {
         setSelectedLine(value)
     }
-    const handleBefore6Change = (event: number[]) => {
-        setBefore6(event[0])
+    const handleBefore6Change = (value: number[]) => {
+        setBefore6(value[0])
     }
-    const handleAfter6Change = (event: number[]) => {
-        setAfter6(event[0])
+    const handleAfter6Change = (value: number[]) => {
+        setAfter6(value[0])
     }
-    const handleHalfChange = (event: number[]) => {
-        setHalf(event[0])
+    const handleHalfChange = (value: number[]) => {
+        setHalf(value[0])
     }
     const handleLineResult = (e: React.ChangeEvent<HTMLInputElement>) => {
         setLineResult(e.target.value as Result);
@@ -112,7 +139,7 @@ export default function Write() {
 
     return (
         <div className="flex items-center gap-4">
-            <form action="/api/post/newListWrite" method="POST">
+            <form action="/api/post/edit" method="POST">
                 <div className="flex items-center gap-4">
                     <Label className="char3">라인</Label>
                     <Select name="line" value={selectedLine} onValueChange={(value) => handleLineChange(value)}>
@@ -1267,29 +1294,30 @@ export default function Write() {
                         <Label htmlFor="half">반반</Label>
                     </div>
                 </RadioGroup>
-                <input style={{ display: 'none' }} name="cham1" defaultValue={champion.find((champion) => champion.value === selectedChampion1)?.label} />
-                <input style={{ display: 'none' }} name="cham2" defaultValue={champion.find((champion) => champion.value === selectedChampion2)?.label} />
-                <input style={{ display: 'none' }} name="cham3" defaultValue={champion.find((champion) => champion.value === selectedChampion3)?.label} />
-                <input style={{ display: 'none' }} name="cham4" defaultValue={champion.find((champion) => champion.value === selectedChampion4)?.label} />
-                <input style={{ display: 'none' }} name="rune1" defaultValue={rune.find((rune) => rune.value === selectedRune1)?.label} />
-                <input style={{ display: 'none' }} name="rune2" defaultValue={rune.find((rune) => rune.value === selectedRune1)?.label} />
-                <input style={{ display: 'none' }} name="spell1" defaultValue={spell.find((spell) => spell.value === selectedSpell1)?.label} />
-                <input style={{ display: 'none' }} name="spell2" defaultValue={spell.find((spell) => spell.value === selectedSpell2)?.label} />
-                <input style={{ display: 'none' }} name="spell3" defaultValue={spell.find((spell) => spell.value === selectedSpell3)?.label} />
-                <input style={{ display: 'none' }} name="spell4" defaultValue={spell.find((spell) => spell.value === selectedSpell4)?.label} />
-                <input style={{ display: 'none' }} name="firstItem" defaultValue={selectedFirstItem} />
-                <input style={{ display: 'none' }} name="legendaryItem1" defaultValue={selectedLegendaryItem1} />
-                <input style={{ display: 'none' }} name="legendaryItem2" defaultValue={selectedLegendaryItem2} />
-                <input style={{ display: 'none' }} name="legendaryItem3" defaultValue={selectedLegendaryItem3} />
-                <input style={{ display: 'none' }} name="legendaryItem4" defaultValue={selectedLegendaryItem4} />
-                <input style={{ display: 'none' }} name="legendaryItem5" defaultValue={selectedLegendaryItem5} />
-                <input style={{ display: 'none' }} name="legendaryItem6" defaultValue={selectedLegendaryItem6} />
-                <input style={{ display: 'none' }} name="shoesItem" defaultValue={SelectedShoesItem} />
+                <input style={{ display: 'none' }} name="cham1" value={champion.find((champion) => champion.value === selectedChampion1)?.label} />
+                <input style={{ display: 'none' }} name="cham2" value={champion.find((champion) => champion.value === selectedChampion2)?.label} />
+                <input style={{ display: 'none' }} name="cham3" value={champion.find((champion) => champion.value === selectedChampion3)?.label} />
+                <input style={{ display: 'none' }} name="cham4" value={champion.find((champion) => champion.value === selectedChampion4)?.label} />
+                <input style={{ display: 'none' }} name="rune1" value={rune.find((rune) => rune.value === selectedRune1)?.label} />
+                <input style={{ display: 'none' }} name="rune2" value={rune.find((rune) => rune.value === selectedRune1)?.label} />
+                <input style={{ display: 'none' }} name="spell1" value={spell.find((spell) => spell.value === selectedSpell1)?.label} />
+                <input style={{ display: 'none' }} name="spell2" value={spell.find((spell) => spell.value === selectedSpell2)?.label} />
+                <input style={{ display: 'none' }} name="spell3" value={spell.find((spell) => spell.value === selectedSpell3)?.label} />
+                <input style={{ display: 'none' }} name="spell4" value={spell.find((spell) => spell.value === selectedSpell4)?.label} />
+                <input style={{ display: 'none' }} name="firstItem" value={selectedFirstItem} />
+                <input style={{ display: 'none' }} name="legendaryItem1" value={selectedLegendaryItem1} />
+                <input style={{ display: 'none' }} name="legendaryItem2" value={selectedLegendaryItem2} />
+                <input style={{ display: 'none' }} name="legendaryItem3" value={selectedLegendaryItem3} />
+                <input style={{ display: 'none' }} name="legendaryItem4" value={selectedLegendaryItem4} />
+                <input style={{ display: 'none' }} name="legendaryItem5" value={selectedLegendaryItem5} />
+                <input style={{ display: 'none' }} name="legendaryItem6" value={selectedLegendaryItem6} />
+                <input style={{ display: 'none' }} name="shoesItem" value={SelectedShoesItem} />
                 <input style={{ display: 'none' }} name="lineResult" value={lineResult} />
                 <input style={{ display: 'none' }} name="gameResult" value={gameResult} />
-                <input style={{ display: 'none' }} name="date" defaultValue={currentDate}></input>
+                <input style={{ display: 'none' }} name="date" value={currentDate}></input>
+                <input style={{ display: 'none' }} name="_id" value={result._id}></input>
                 <Label className="char3">한줄평<Input name="review" placeholder="한줄평"></Input></Label>
-                <Button type="submit">전송하기</Button>
+                <Button type="submit">수정하기</Button>
             </form>
         </div >
     )

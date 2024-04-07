@@ -46,14 +46,11 @@ export async function POST(request: NextRequest) {
     }
     const db = (await connectDB).db('dream')
 
-    console.log(change)
-    console.log(change_id._id)
 
     let update = await db.collection('data').updateOne(
         { _id: new ObjectId(change_id._id) },
         { $set: change }
     )
-    console.log(update)
 
     return Response.redirect(new URL('/lists', request.nextUrl.origin))
 }
