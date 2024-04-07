@@ -1,5 +1,5 @@
 //app/detail/[id]/page.js세부사항 클릭하면 나오는 page
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 import { connectDB } from "@/util/database"
 import { ObjectId } from "mongodb"
 export default async function Detail(props: any) {

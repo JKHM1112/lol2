@@ -1,6 +1,6 @@
 //api/post/delete.ts
 import { getServerSession } from "next-auth";
-import { authOptions } from "../../auth/[...nextauth]/route";
+import { authOptions } from "../../auth/[...nextauth]/authOptions";
 import { connectDB } from "@/util/database";
 import { ObjectId } from "mongodb";
 

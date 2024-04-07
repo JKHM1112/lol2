@@ -2,7 +2,7 @@
 import { connectDB } from "@/util/database"
 import { getServerSession } from "next-auth"
 import ListItem from "./ListItem"
-import { authOptions } from "@/app/api/auth/[...nextauth]/route"
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions"
 import { _id } from "@next-auth/mongodb-adapter"
 
 export default async function List() {

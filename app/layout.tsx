@@ -2,7 +2,7 @@
 import Link from "next/link";
 import LogoutBtn from "./LogoutBtn";
 import LoginBtn from "./LoginBtn";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import { authOptions } from "./api/auth/[...nextauth]/authOptions";
 import { getServerSession } from "next-auth";
 import { connectDB } from "@/util/database";
 import { Noto_Sans_KR } from "next/font/google";

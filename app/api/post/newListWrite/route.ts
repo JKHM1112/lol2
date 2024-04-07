@@ -2,7 +2,7 @@ import { connectDB } from "@/util/database"
 import { getServerSession } from "next-auth";
 import { z } from "zod";
 import { zfd } from "zod-form-data";
-import { authOptions } from "../../auth/[...nextauth]/route";
+import { authOptions } from "../../auth/[...nextauth]/authOptions";
 import { NextRequest, NextResponse } from "next/server";
 
 const schema = zfd.formData({

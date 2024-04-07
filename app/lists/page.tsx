@@ -2,7 +2,7 @@
 import { connectDB } from "@/util/database"
 import { getServerSession } from "next-auth"
 import ListsItem from "./ListsItem"
-import { authOptions } from "../api/auth/[...nextauth]/route"
+import { authOptions } from "../api/auth/[...nextauth]/authOptions"
 
 export default async function List() {
     interface Session {
