@@ -42,7 +42,11 @@ export default async function RootLayout({ children, }: Readonly<{
       <body className={notoSansKr.className}>
         <div className="navbar">
           <Link href="/" className="logo">대충사이트이름 </Link>
-          <Link href="/write" > 직접입력하기 </Link>
+
+          {
+            session ? <span><Link href="/write" > 직접입력하기 </Link></span> : <Link href={"/register"}>직접입력하기</Link>
+
+          }
           <Link href="/lists"> 전체list </Link>
           {
             result ? <Link href={"/list/" + result._id} >내list</Link> : null

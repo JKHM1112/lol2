@@ -1,11 +1,11 @@
-//app/detail/[id]/page.js세부사항 클릭하면 나오는 page
+//app/detail/[id]/page.tsx세부사항 클릭하면 나오는 page
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 import { connectDB } from "@/util/database"
 import { ObjectId } from "mongodb"
 export default async function Detail(props: any) {
     const db = (await connectDB).db("dream")
     let result = await db.collection('data').findOne({ _id: new ObjectId(props.params.id) })
-
+    console.log(result)
     return (
         <div>
             <h4>자세히보기</h4>
@@ -33,7 +33,7 @@ export default async function Detail(props: any) {
             <p>신발템: {result.shoesItem}</p>
             <p>라인결과: {result.lineResult}</p>
             <p>게임결과: {result.gameResult}</p>
-            <p>작성자: {result.aythor}</p>
+            <p>작성자: {result.author}</p>
             <p>후기: {result.review}</p>
         </div>
     )

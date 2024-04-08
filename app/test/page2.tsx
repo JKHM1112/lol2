@@ -1,10 +1,9 @@
-//app/lists/ListsLitem.tsx
-'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from "next/link";
 import {
     Pagination,
     PaginationContent,
+    PaginationEllipsis,
     PaginationItem,
     PaginationLink,
     PaginationNext,
@@ -22,13 +21,12 @@ interface ListItemProps {
     email: string;
 }
 
-const ITEMS_PER_PAGE = 5;
+const ITEMS_PER_PAGE = 10;
 const lineTypes = ['탑', '정글', '미드', '원딜', '서폿'];
 export default function ListItem({ result, email }: ListItemProps) {
     const [checkedLines, setCheckedLines] = useState<string[]>([]);
     const [champFilter, setChampFilter] = useState('');
     const [opponentFilter, setOpponentFilter] = useState('');
-    const [currentPage, setCurrentPage] = useState(1);
     const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { value, checked } = event.target;
         setCheckedLines(currentLines =>
@@ -47,13 +45,17 @@ export default function ListItem({ result, email }: ListItemProps) {
         const matchesCheckedLines = checkedLines.length === 0 || checkedLines.includes(item.line);
         const matchesChamp = champFilter === '' || item.cham1.toLowerCase().includes(champFilter.toLowerCase());
         const matchesOpponent = opponentFilter === '' || item.cham2.toLowerCase().includes(opponentFilter.toLowerCase());
-        return matchesCheckedLines && matchesChamp && matchesOpponent;
+
+        return matchesCheckedLines && (matchesChamp && matchesOpponent);
     });
-    const totalPages = Math.ceil(filteredResults.length / ITEMS_PER_PAGE);
+    const [currentPage, setCurrentPage] = useState(1);
+    const totalPages = Math.ceil(result.length / ITEMS_PER_PAGE);
 
-    const handlePageChange = (page: number) => setCurrentPage(page);
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+    };
 
-    const paginatedResult = filteredResults.slice(
+    const paginatedResult = result.slice(
         (currentPage - 1) * ITEMS_PER_PAGE,
         currentPage * ITEMS_PER_PAGE
     );
@@ -96,37 +98,38 @@ export default function ListItem({ result, email }: ListItemProps) {
                     </tr>
                 </thead>
                 <tbody>
-                    {paginatedResult.map((item, index) => (
-                        <tr key={index}>
-                            <td>{item.line}</td>
-                            <td>{item.cham1}</td>
-                            <td>{item.cham2}</td>
-                            <td>{item.before6}</td>
-                            <td>{item.after6}</td>
-                            <td>{item.half}</td>
-                            <td>{item.rune1}</td>
-                            <td>{item.rune2}</td>
-                            <td>{item.spell1}</td>
-                            <td>{item.spell2}</td>
-                            <td>{item.spell3}</td>
-                            <td>{item.spell4}</td>
-                            <td>{item.lineResult}</td>
-                            <td>{item.gameResult}</td>
-                            <td>{item.author}</td>
-                            <td>
-                                <Link href={'/detail/' + item._id} className="list-detail-li">상세보기</Link>
-                            </td>
-                            {item.email === email && (
+                    {filteredResults.map((item, index) => (
+                        item.email === email && (
+                            <tr key={index}>
+                                <td>{item.line}</td>
+                                <td>{item.cham1}</td>
+                                <td>{item.cham2}</td>
+                                <td>{item.before6}</td>
+                                <td>{item.after6}</td>
+                                <td>{item.half}</td>
+                                <td>{item.rune1}</td>
+                                <td>{item.rune2}</td>
+                                <td>{item.spell1}</td>
+                                <td>{item.spell2}</td>
+                                <td>{item.spell3}</td>
+                                <td>{item.spell4}</td>
+                                <td>{item.lineResult}</td>
+                                <td>{item.gameResult}</td>
+                                <td>{item.author}</td>
+                                <td>
+                                    <Link href={'/detail/' + item._id} className="list-detail-li">상세보기</Link>
+                                </td>
                                 <td>
                                     <Link href={'/edit/' + item._id} className="list-detail-li">수정</Link>
+
                                     <button onClick={async () => {
                                         await fetch('/api/post/delete', {
                                             method: 'POST', body: JSON.stringify({ author: item.author, _id: item._id, email: item.email })
                                         })
                                     }}>삭제</button>
                                 </td>
-                            )}
-                        </tr>
+                            </tr>
+                        )
                     ))}
                 </tbody>
             </table>
@@ -134,19 +137,19 @@ export default function ListItem({ result, email }: ListItemProps) {
                 <PaginationContent>
                     {currentPage > 1 && (
                         <PaginationItem>
-                            <PaginationPrevious onClick={() => handlePageChange(currentPage - 1)} />
+                            <PaginationPrevious href="#" onClick={() => handlePageChange(currentPage - 1)} />
                         </PaginationItem>
                     )}
                     {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
                         <PaginationItem key={page}>
-                            <PaginationLink isActive={currentPage === page} onClick={() => handlePageChange(page)}>
+                            <PaginationLink href="#" isActive={currentPage === page} onClick={() => handlePageChange(page)}>
                                 {page}
                             </PaginationLink>
                         </PaginationItem>
                     ))}
                     {currentPage < totalPages && (
                         <PaginationItem>
-                            <PaginationNext onClick={() => handlePageChange(currentPage + 1)} />
+                            <PaginationNext href="#" onClick={() => handlePageChange(currentPage + 1)} />
                         </PaginationItem>
                     )}
                 </PaginationContent>

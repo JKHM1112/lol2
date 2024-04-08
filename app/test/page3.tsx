@@ -2,14 +2,6 @@
 'use client';
 import React, { useState } from 'react';
 import Link from "next/link";
-import {
-    Pagination,
-    PaginationContent,
-    PaginationItem,
-    PaginationLink,
-    PaginationNext,
-    PaginationPrevious,
-} from "@/components/ui/pagination";
 
 interface ListItemProps {
     result: Array<{
@@ -22,13 +14,11 @@ interface ListItemProps {
     email: string;
 }
 
-const ITEMS_PER_PAGE = 5;
 const lineTypes = ['탑', '정글', '미드', '원딜', '서폿'];
 export default function ListItem({ result, email }: ListItemProps) {
     const [checkedLines, setCheckedLines] = useState<string[]>([]);
     const [champFilter, setChampFilter] = useState('');
     const [opponentFilter, setOpponentFilter] = useState('');
-    const [currentPage, setCurrentPage] = useState(1);
     const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { value, checked } = event.target;
         setCheckedLines(currentLines =>
@@ -47,16 +37,9 @@ export default function ListItem({ result, email }: ListItemProps) {
         const matchesCheckedLines = checkedLines.length === 0 || checkedLines.includes(item.line);
         const matchesChamp = champFilter === '' || item.cham1.toLowerCase().includes(champFilter.toLowerCase());
         const matchesOpponent = opponentFilter === '' || item.cham2.toLowerCase().includes(opponentFilter.toLowerCase());
-        return matchesCheckedLines && matchesChamp && matchesOpponent;
+
+        return matchesCheckedLines && (matchesChamp && matchesOpponent);
     });
-    const totalPages = Math.ceil(filteredResults.length / ITEMS_PER_PAGE);
-
-    const handlePageChange = (page: number) => setCurrentPage(page);
-
-    const paginatedResult = filteredResults.slice(
-        (currentPage - 1) * ITEMS_PER_PAGE,
-        currentPage * ITEMS_PER_PAGE
-    );
 
     return (
         <div>
@@ -75,6 +58,7 @@ export default function ListItem({ result, email }: ListItemProps) {
                 </label>
                 <button onClick={swapFilters} className="swap-button">⇄</button>
             </div>
+
             <table>
                 <thead>
                     <tr>
@@ -95,8 +79,9 @@ export default function ListItem({ result, email }: ListItemProps) {
                         <th className="char3">작성자</th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    {paginatedResult.map((item, index) => (
+                    {filteredResults.map((item, index) => (
                         <tr key={index}>
                             <td>{item.line}</td>
                             <td>{item.cham1}</td>
@@ -130,27 +115,6 @@ export default function ListItem({ result, email }: ListItemProps) {
                     ))}
                 </tbody>
             </table>
-            <Pagination>
-                <PaginationContent>
-                    {currentPage > 1 && (
-                        <PaginationItem>
-                            <PaginationPrevious onClick={() => handlePageChange(currentPage - 1)} />
-                        </PaginationItem>
-                    )}
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                        <PaginationItem key={page}>
-                            <PaginationLink isActive={currentPage === page} onClick={() => handlePageChange(page)}>
-                                {page}
-                            </PaginationLink>
-                        </PaginationItem>
-                    ))}
-                    {currentPage < totalPages && (
-                        <PaginationItem>
-                            <PaginationNext onClick={() => handlePageChange(currentPage + 1)} />
-                        </PaginationItem>
-                    )}
-                </PaginationContent>
-            </Pagination>
         </div>
     );
 }

@@ -1,4 +1,4 @@
-//app/lists/ListsLitem.js
+//app/list/[id]/ListLitem.tsx
 'use client';
 import React, { useState } from 'react';
 import Link from "next/link";
@@ -108,23 +108,6 @@ export default function ListsItem({ result, email }: ListsItemProps) {
                                         await fetch('/api/post/delete', {
                                             method: 'POST', body: JSON.stringify({ author: item.author, _id: item._id, email: item.email })
                                         })
-                                        // .then((r) => r.json())
-                                        // .then((data) => {
-                                        //         console.log(data)
-                                        // .then((r) => r.json())
-                                        // .then(() => {
-                                        //     if (e.target instanceof HTMLElement) {
-                                        //         let parent = e.target.parentElement;
-                                        //         if (parent) {
-                                        //             parent.style.opacity = '0';
-                                        //         }
-                                        //         setTimeout(() => {
-                                        //             if (parent) {
-                                        //                 parent.style.display = 'none';
-                                        //             }
-                                        //         }, 1000);
-                                        //     }
-                                        //     router.refresh()
                                     }}>삭제</button>
                                 </td>
                             </tr>

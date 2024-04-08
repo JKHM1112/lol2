@@ -1,7 +1,8 @@
-//app/register/page.js 회원가입
+//app/register/page.tsx 회원가입
 export default function Register() {
   return (
     <div>
+      <h4>회원가입page</h4>
       <form method="POST" action="/api/signup">
         <input name="name" type="text" placeholder="이름" />
         <input name="email" type="text" placeholder="이메일" />

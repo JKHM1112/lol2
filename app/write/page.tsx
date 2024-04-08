@@ -114,7 +114,7 @@ export default function Write() {
         <div className="flex items-center gap-4">
             <form action="/api/post/newListWrite" method="POST">
                 <div className="flex items-center gap-4">
-                    <Label className="char3">라인</Label>
+                    <Label className="char3">라인*</Label>
                     <Select name="line" value={selectedLine} onValueChange={(value) => handleLineChange(value)}>
                         <SelectTrigger className="w-[180px]">
                             <SelectValue placeholder="라인을 고르세요"></SelectValue>
@@ -131,7 +131,7 @@ export default function Write() {
                 {selectedLine == "탑" ? (
                     <div className="flex items-center gap-4">
                         <div className="flex items-center space-x-4">
-                            <p className="text-sm text-muted-foreground">내탑챔피언</p>
+                            <p className="text-sm text-muted-foreground">내탑챔피언*</p>
                             <Popover open={championOpen1} onOpenChange={setChampionOpen1}>
                                 <PopoverTrigger asChild>
                                     <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -168,7 +168,7 @@ export default function Write() {
                             </Popover>
                         </div>
                         <div className="flex items-center space-x-4">
-                            <p className="text-sm text-muted-foreground">상대탑챔피언</p>
+                            <p className="text-sm text-muted-foreground">상대탑챔피언*</p>
                             <Popover open={championOpen2} onOpenChange={setChampionOpen2}>
                                 <PopoverTrigger asChild>
                                     <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -210,7 +210,7 @@ export default function Write() {
                 {selectedLine == "정글" ? (
                     <div className="flex items-center gap-4">
                         <div className="flex items-center space-x-4">
-                            <p className="text-sm text-muted-foreground">내정글챔피언</p>
+                            <p className="text-sm text-muted-foreground">내정글챔피언*</p>
                             <Popover open={championOpen1} onOpenChange={setChampionOpen1}>
                                 <PopoverTrigger asChild>
                                     <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -248,7 +248,7 @@ export default function Write() {
                         </div>
 
                         <div className="flex items-center space-x-4">
-                            <p className="text-sm text-muted-foreground">상대정글챔피언</p>
+                            <p className="text-sm text-muted-foreground">상대정글챔피언*</p>
                             <Popover open={championOpen2} onOpenChange={setChampionOpen2}>
                                 <PopoverTrigger asChild>
                                     <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -290,7 +290,7 @@ export default function Write() {
                 {selectedLine == "미드" ? (
                     <div className="flex items-center gap-4">
                         <div className="flex items-center space-x-4">
-                            <p className="text-sm text-muted-foreground">내미드챔피언</p>
+                            <p className="text-sm text-muted-foreground">내미드챔피언*</p>
                             <Popover open={championOpen1} onOpenChange={setChampionOpen1}>
                                 <PopoverTrigger asChild>
                                     <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -328,7 +328,7 @@ export default function Write() {
                         </div>
 
                         <div className="flex items-center space-x-4">
-                            <p className="text-sm text-muted-foreground">상대미드챔피언</p>
+                            <p className="text-sm text-muted-foreground">상대미드챔피언*</p>
                             <Popover open={championOpen2} onOpenChange={setChampionOpen2}>
                                 <PopoverTrigger asChild>
                                     <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -371,7 +371,7 @@ export default function Write() {
                     <div>
                         <div className="flex items-center gap-4">
                             <div className="flex items-center space-x-4">
-                                <p className="text-sm text-muted-foreground">내원딜챔피언</p>
+                                <p className="text-sm text-muted-foreground">내원딜챔피언*</p>
                                 <Popover open={championOpen1} onOpenChange={setChampionOpen1}>
                                     <PopoverTrigger asChild>
                                         <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -408,7 +408,7 @@ export default function Write() {
                                 </Popover>
                             </div>
                             <div className="flex items-center space-x-4">
-                                <p className="text-sm text-muted-foreground">상대원딜챔피언</p>
+                                <p className="text-sm text-muted-foreground">상대원딜챔피언*</p>
                                 <Popover open={championOpen2} onOpenChange={setChampionOpen2}>
                                     <PopoverTrigger asChild>
                                         <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -448,7 +448,7 @@ export default function Write() {
 
                         <div className="flex items-center gap-4">
                             <div className="flex items-center space-x-4">
-                                <p className="text-sm text-muted-foreground">내서폿챔피언</p>
+                                <p className="text-sm text-muted-foreground">내서폿챔피언*</p>
                                 <Popover open={championOpen3} onOpenChange={setChampionOpen3}>
                                     <PopoverTrigger asChild>
                                         <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -486,7 +486,7 @@ export default function Write() {
                             </div>
 
                             <div className="flex items-center space-x-4">
-                                <p className="text-sm text-muted-foreground">상대서폿챔피언</p>
+                                <p className="text-sm text-muted-foreground">상대서폿챔피언*</p>
                                 <Popover open={championOpen4} onOpenChange={setChampionOpen4}>
                                     <PopoverTrigger asChild>
                                         <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -532,7 +532,7 @@ export default function Write() {
                     <div>
                         <div className="flex items-center gap-4">
                             <div className="flex items-center space-x-4">
-                                <p className="text-sm text-muted-foreground">내서폿챔피언</p>
+                                <p className="text-sm text-muted-foreground">내서폿챔피언*</p>
                                 <Popover open={championOpen1} onOpenChange={setChampionOpen1}>
                                     <PopoverTrigger asChild>
                                         <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -569,7 +569,7 @@ export default function Write() {
                                 </Popover>
                             </div>
                             <div className="flex items-center space-x-4">
-                                <p className="text-sm text-muted-foreground">상대서폿챔피언</p>
+                                <p className="text-sm text-muted-foreground">상대서폿챔피언*</p>
                                 <Popover open={championOpen2} onOpenChange={setChampionOpen2}>
                                     <PopoverTrigger asChild>
                                         <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -609,7 +609,7 @@ export default function Write() {
 
                         <div className="flex items-center gap-4">
                             <div className="flex items-center space-x-4">
-                                <p className="text-sm text-muted-foreground">내원딜챔피언</p>
+                                <p className="text-sm text-muted-foreground">내원딜챔피언*</p>
                                 <Popover open={championOpen3} onOpenChange={setChampionOpen3}>
                                     <PopoverTrigger asChild>
                                         <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -647,7 +647,7 @@ export default function Write() {
                             </div>
 
                             <div className="flex items-center space-x-4">
-                                <p className="text-sm text-muted-foreground">상대원딜챔피언</p>
+                                <p className="text-sm text-muted-foreground">상대원딜챔피언*</p>
                                 <Popover open={championOpen4} onOpenChange={setChampionOpen4}>
                                     <PopoverTrigger asChild>
                                         <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -703,7 +703,7 @@ export default function Write() {
                 </Label>
 
                 <div className="flex items-center space-x-4">
-                    <p className="text-sm text-muted-foreground">내Rune</p>
+                    <p className="text-sm text-muted-foreground">내Rune*</p>
                     <Popover open={runeOpen1} onOpenChange={setRuneOpen1}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -741,7 +741,7 @@ export default function Write() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                    <p className="text-sm text-muted-foreground">상대Rune</p>
+                    <p className="text-sm text-muted-foreground">상대Rune*</p>
                     <Popover open={runeOpen2} onOpenChange={setRuneOpen2}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -779,7 +779,7 @@ export default function Write() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                    <p className="text-sm text-muted-foreground">내Spell-1</p>
+                    <p className="text-sm text-muted-foreground">내Spell-1*</p>
                     <Popover open={spellOpen1} onOpenChange={setSpellOpen1}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -817,7 +817,7 @@ export default function Write() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                    <p className="text-sm text-muted-foreground">내Spell-2</p>
+                    <p className="text-sm text-muted-foreground">내Spell-2*</p>
                     <Popover open={spellOpen2} onOpenChange={setSpellOpen2}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -858,7 +858,7 @@ export default function Write() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                    <p className="text-sm text-muted-foreground">상대Spell-1</p>
+                    <p className="text-sm text-muted-foreground">상대Spell-1*</p>
                     <Popover open={spellOpen3} onOpenChange={setSpellOpen3}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -896,7 +896,7 @@ export default function Write() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                    <p className="text-sm text-muted-foreground">상대Spell-2</p>
+                    <p className="text-sm text-muted-foreground">상대Spell-2*</p>
                     <Popover open={spellOpen4} onOpenChange={setSpellOpen4}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -935,7 +935,7 @@ export default function Write() {
 
 
                 <div className="flex items-center space-x-4">
-                    <p className="text-sm text-muted-foreground">첫템</p>
+                    <p className="text-sm text-muted-foreground">첫템*</p>
                     <Popover open={firstItemOpen} onOpenChange={setFirstItemOpen}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -973,7 +973,7 @@ export default function Write() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                    <p className="text-sm text-muted-foreground">전설템1</p>
+                    <p className="text-sm text-muted-foreground">전설템1*</p>
                     <Popover open={legendaryItemOpen1} onOpenChange={setLegendaryItemOpen1}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -1201,7 +1201,7 @@ export default function Write() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                    <p className="text-sm text-muted-foreground">신발템</p>
+                    <p className="text-sm text-muted-foreground">신발템*</p>
                     <Popover open={shoesItemOpen4} onOpenChange={setShoesItemOpen}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
