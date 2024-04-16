@@ -43,5 +43,6 @@ export async function POST(request: NextRequest) {
     console.log(request.url)
     const db = (await connectDB).db('dream')
     await db.collection('data').insertOne(data)
+
     return Response.redirect(new URL('/lists', request.nextUrl.origin))
 }

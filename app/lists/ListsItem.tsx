@@ -2,22 +2,16 @@
 'use client';
 import React, { useState } from 'react';
 import Link from "next/link";
-import {
-    Pagination,
-    PaginationContent,
-    PaginationItem,
-    PaginationLink,
-    PaginationNext,
-    PaginationPrevious,
-} from "@/components/ui/pagination";
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious, } from "@/components/ui/pagination";
 
 interface ListItemProps {
     result: Array<{
-        line: string; cham1: string; cham2: string; before6: string;
-        after6: string; half: string; rune1: string; rune2: string;
+        line: string; cham1: string; cham2: string;
+        before6: string; after6: string; half: string;
+        rune1: string; rune2: string;
         spell1: string; spell2: string; spell3: string; spell4: string;
-        lineResult: string; gameResult: string; name: string; _id: string;
-        author: string; email: string;
+        lineResult: string; gameResult:
+        string; name: string; _id: string; author: string; email: string;
     }>;
     email: string;
 }

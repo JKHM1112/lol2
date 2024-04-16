@@ -1,4 +1,5 @@
 import { connectDB } from "@/util/database"
+import Games from "./games/page"
 
 export default async function Home() {
   const db = (await connectDB).db("dream")
@@ -6,7 +7,7 @@ export default async function Home() {
 
   return (
     <div>
-      <h4>메인페이지</h4>
+      <Games/>
     </div>
   )
 }
