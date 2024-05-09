@@ -1,5 +1,5 @@
 import { connectDB } from "@/util/database"
-import EditsItem, { EditItemProps } from "./EditsItem"
+// import EditsItem, { EditItemProps } from "./EditsItem"
 import { _id } from "@next-auth/mongodb-adapter";
 import { ObjectId } from "mongodb";
 
@@ -10,7 +10,7 @@ export default async function Write(props: any) {
     // let result2 = await db.collection('data').find().toArray()
     return (
         <div>
-            <EditsItem result={result} />
+            {/* <EditsItem result={result} /> */}
         </div>
     )
 }
