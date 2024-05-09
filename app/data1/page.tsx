@@ -1,3 +1,4 @@
+/*
 // const ids = runes.flatMap(runeGroup =>
 //     runeGroup.runes.map(rune => rune.name)
 // );
@@ -21,3 +22,4 @@ export default function data1() {
         </div>
     )
 }
+*/

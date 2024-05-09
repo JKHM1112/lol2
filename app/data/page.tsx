@@ -1,4 +1,4 @@
-
+/*
 export const champions = {
     "type": "champion",
     "format": "standAloneComplex",
@@ -8320,3 +8320,4 @@ export default function champion() {
         </div>
     )
 }
+*/
