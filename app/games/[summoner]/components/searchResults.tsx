@@ -37,7 +37,7 @@ export default function SearchResults({ participants, puuid }: any) {
         <div>
             <Accordion type="single" collapsible>
                 {participants.map((data: any, i: number) => (
-                    <AccordionItem value={'item' + i}>
+                    <AccordionItem key={'item' + i} value={'item' + i}>
                         <AccordionTrigger>
                             <Table>
                                 <TableBody>
@@ -99,8 +99,8 @@ export default function SearchResults({ participants, puuid }: any) {
                             </Table>
                         </AccordionTrigger>
                         <AccordionContent>
-                            {participants[i].map((participant: Participant) => (
-                                <Table>
+                            {participants[i].map((participant: Participant, index: number) => (
+                                <Table key={'participant' + index}>
                                     <TableBody>
                                         <TableRow className="flex items-center gap-1" >
                                             <TableCell>
