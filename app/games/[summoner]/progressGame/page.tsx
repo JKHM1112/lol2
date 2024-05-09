@@ -2,7 +2,7 @@ import Games from "../../page"
 
 const api_key = process.env.RIOT_API_KEY as string
 
-async function getAccountData(summonerName: string, nextTag: string) {
+export async function getAccountData(summonerName: string, nextTag: string) {
     try {
         const res = await fetch(`https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${summonerName}/${nextTag}`, {
             method: "GET",
@@ -27,7 +27,7 @@ async function getAccountData(summonerName: string, nextTag: string) {
     }
 }
 
-async function getProgressGame(puuid: string) {
+export async function getProgressGame(puuid: string) {
     try {
         const res = await fetch(`https://kr.api.riotgames.com/lol/spectator/v5/active-games/by-summoner/${puuid}`, {
             method: "GET",

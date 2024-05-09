@@ -6,7 +6,7 @@ import Link from "next/link"
 
 const api_key = process.env.RIOT_API_KEY as string
 
-async function getAccountData(summonerName: string, nextTag: string) {
+export async function getAccountData(summonerName: string, nextTag: string) {
     try {
         const res = await fetch(`https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${summonerName}/${nextTag}`, {
             method: "GET",
@@ -30,7 +30,7 @@ async function getAccountData(summonerName: string, nextTag: string) {
     }
 }
 
-async function getRecentMatchesIds(puuid: string, games: number) {
+export async function getRecentMatchesIds(puuid: string, games: number) {
     const res = await fetch(`https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?queue=420&type=ranked&start=0&count=${games}`, {
         method: "GET",
         headers: {
@@ -44,7 +44,7 @@ async function getRecentMatchesIds(puuid: string, games: number) {
     return res.json()
 }
 
-async function getMatchData(matchId: string) {
+export async function getMatchData(matchId: string) {
     const res = await fetch(`https://asia.api.riotgames.com/lol/match/v5/matches/${matchId}`, {
         method: "GET",
         headers: {
