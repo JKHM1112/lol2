@@ -78,7 +78,7 @@ export default async function Tables({ params }: { params: { summoner: string } 
         return (
             <div>
                 <Games />
-                <h4>"소환사가 존재하지 않습니다. 다시 입력해주세요."</h4>
+                <h4>&apos;소환사가 존재하지 않습니다. 다시 입력해주세요.&apos;</h4>
             </div>
         )
 
