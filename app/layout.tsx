@@ -9,7 +9,6 @@ import { Noto_Sans_KR } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Session } from "inspector";
-
 console.log('메인페이지')
 
 interface UserSession {

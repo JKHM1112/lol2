@@ -15,7 +15,7 @@ import { getRunes } from "@/components/runes";
 import { getSpells } from "@/components/spells";
 import { getChampions } from "@/components/champions";
 import { getFirstItems } from "@/components/firstItems";
-import { getLegendaryItems } from "@/components/legendaryItems";
+import { getItems } from "@/components/Items";
 import { getShoesItems } from "@/components/shoesItems";
 
 export interface EditItemProps {
@@ -37,26 +37,47 @@ export default function EditItem({ result }: EditItemProps) {
     const spells = getSpells();
     const champions = getChampions();
     const firstItems = getFirstItems();
-    const legendaryItems = getLegendaryItems();
     const shoesItems = getShoesItems();
+    const itemData = getItems();
 
-    const rune: VLIStatus[] = runes.map((rune) => ({ value: rune.value, label: rune.label, img: '/runeE/' + rune.value + '/' + rune.value + '.png' }));
-    const spell: VLIStatus[] = spells.map((spell) => ({ value: spell.value, label: spell.label, img: '/spellE/' + spell.value + '.png' }));
-    const champion: VLIStatus[] = champions.map((champion) => ({ value: champion.value, label: champion.label, img: '/ChampionE/' + champion.value + '.png' }));
-    const firstItem: LIStatus[] = firstItems.map((firstItem) => ({ label: firstItem.label, img: '/FirstItemK/' + firstItem.label + '.png' }));
-    const legendaryItem: LIStatus[] = legendaryItems.map((legendaryItem) => ({ label: legendaryItem.label, img: '/LegendaryItemK/' + legendaryItem.label + '.png' }));
-    const shoesItem: LIStatus[] = shoesItems.map((shoesItem) => ({ label: shoesItem.label, img: '/ShoesItemK/' + shoesItem.label + '.png' }));
+    const rune = runes.map((rune) => ({
+        nameN: rune.nameN,
+        nameK: rune.nameK,
+        img: '/runeE/' + rune.nameN + '/' + rune.nameN + '.png'
+    }));
+    const spell = spells.map((spell) => ({
+        nameN: spell.nameN,
+        img: '/spellE/' + spell.nameN + '.png'
+    }));
+    const champion = champions.map((champion) => ({
+        nameE: champion.nameE,
+        nameK: champion.nameK,
+        img: '/ChampionE/' + champion.nameE + '.png'
+    }));
+    const firstItem = firstItems.map((firstItems) => ({
+        label: firstItems.label,
+        img: '/FirstItemK/' + firstItems.label + '.png'
+    }));
+    const shoesItem = shoesItems.map((shoesItem) => ({
+        label: shoesItem.label,
+        img: '/ShoesItemK/' + shoesItem.label + '.png'
+    }));
+    const legendaryItem = itemData.map((itemData) => ({
+        nameN: itemData.nameN,
+        nameK: itemData.nameK,
+        img: '/LegendaryItemK/' + itemData.nameN + '.png'
+    }));
 
-    const cham1 = champion.find((champion) => champion.label === result.cham1)?.value || ''
-    const cham2 = champion.find((champion) => champion.label === result.cham2)?.value || ''
-    const cham3 = champion.find((champion) => champion.label === result.cham3)?.value || ''
-    const cham4 = champion.find((champion) => champion.label === result.cham4)?.value || ''
-    const rune1 = rune.find((rune) => rune.label === result.rune1)?.value || ''
-    const rune2 = rune.find((rune) => rune.label === result.rune2)?.value || ''
-    const spell1 = spell.find((spell) => spell.label === result.spell1)?.value || ''
-    const spell2 = spell.find((spell) => spell.label === result.spell2)?.value || ''
-    const spell3 = spell.find((spell) => spell.label === result.spell3)?.value || ''
-    const spell4 = spell.find((spell) => spell.label === result.spell4)?.value || ''
+    const cham1 = champion.find((champion) => champion.nameE === result.cham1)?.nameK || ''
+    const cham2 = champion.find((champion) => champion.nameE === result.cham2)?.nameK || ''
+    const cham3 = champion.find((champion) => champion.nameE === result.cham3)?.nameK || ''
+    const cham4 = champion.find((champion) => champion.nameE === result.cham4)?.nameK || ''
+    const rune1 = rune.find((rune) => rune.nameN === result.rune1)?.value || ''
+    const rune2 = rune.find((rune) => rune.nameN === result.rune2)?.value || ''
+    const spell1 = spell.find((spell) => spell.nameN === result.spell1)?.value || ''
+    const spell2 = spell.find((spell) => spell.nameN === result.spell2)?.value || ''
+    const spell3 = spell.find((spell) => spell.nameN === result.spell3)?.value || ''
+    const spell4 = spell.find((spell) => spell.nameN === result.spell4)?.value || ''
 
     type VLIStatus = {
         value: string;

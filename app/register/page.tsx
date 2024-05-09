@@ -3,7 +3,7 @@ export default function Register() {
   return (
     <div>
       <h4>회원가입page</h4>
-      <form method="POST" action="/api/signup">
+      <form method="POST" action="/api/post/signup">
         <input name="name" type="text" placeholder="이름" />
         <input name="email" type="text" placeholder="이메일" />
         <input name="password" type="password" placeholder="비번" />
