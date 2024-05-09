@@ -6,7 +6,7 @@ import Link from "next/link"
 
 const api_key = process.env.RIOT_API_KEY as string
 
-export async function getAccountData(summonerName: string, nextTag: string) {
+async function getAccountData(summonerName: string, nextTag: string) {
     try {
         const res = await fetch(`https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${summonerName}/${nextTag}`, {
             method: "GET",
@@ -18,7 +18,6 @@ export async function getAccountData(summonerName: string, nextTag: string) {
                 "X-Riot-Token": api_key
             }
         });
-
         if (!res.ok) {
             const errorData = await res.json();
             throw new Error(`Error ${res.status}: ${errorData.status.message}`);
@@ -27,11 +26,11 @@ export async function getAccountData(summonerName: string, nextTag: string) {
         return await res.json();
     } catch (error) {
         console.error("API call failed:", error);
-        throw error;  // Re-throw the error to be handled by the caller
+        throw error;
     }
 }
 
-export async function getRecentMatchesIds(puuid: string, games: number) {
+async function getRecentMatchesIds(puuid: string, games: number) {
     const res = await fetch(`https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?queue=420&type=ranked&start=0&count=${games}`, {
         method: "GET",
         headers: {
