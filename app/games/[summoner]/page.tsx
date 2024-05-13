@@ -1,10 +1,8 @@
 //games/[summoner]/page.tsx
-import Games from "../page"
 import * as React from "react"
-import SearchResults from "./components/searchResults"
 import Link from "next/link"
-
-
+import Games from "@/app/games/page"
+import SearchResults from "@/app/games/components/searchResults";
 
 export default async function Tables({ params }: { params: { summoner: string } }) {
     const api_key = process.env.RIOT_API_KEY as string

@@ -9,16 +9,14 @@ import useUserStore from "@/app/hooks/useUserStore";
 export default function Spells() {
 
     const spellData = getSpells();
-    const { spells, setSpells } = useUserStore();
     const [spellOpen, setSpellOpen] = useState(Array(4).fill(false))
-
+    const { spells, setSpells } = useUserStore();
 
     const handleSpellOpen = (index: number, isOpen: boolean) => {
         const updatedSpellOpen = [...spellOpen]
         updatedSpellOpen[index] = isOpen
         setSpellOpen(updatedSpellOpen)
     }
-
 
     const findSpellNameK = (nameN: number): string => {
         const spell = spellData.find(spell => spell.nameN === nameN);

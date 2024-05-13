@@ -1,4 +1,3 @@
-
 export const champions = {
     "type": "champion",
     "format": "standAloneComplex",

@@ -1,9 +1,8 @@
-//app/lists/page.js
+//app/list/page.js
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions"
 import { connectDB } from "@/util/database"
 import { getServerSession } from "next-auth"
-import ListItem from "./ListItem"
-import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions"
-import { _id } from "@next-auth/mongodb-adapter"
+import ListItem from "./ListItem";
 
 export default async function List() {
     interface Session {
@@ -12,7 +11,7 @@ export default async function List() {
         }
     }
     const db = (await connectDB).db('dream')
-    let result = await db.collection('data').find().toArray()
+    let result = await db.collection('data').find().sort({ _id: -1 }).toArray()
     let session: Session | null = await getServerSession(authOptions)
     let email: string | null | undefined = ''
     if (session) {
@@ -25,7 +24,7 @@ export default async function List() {
     //result가 dream안 data를 전체다 출력한다.
     return (
         <div>
-                <ListItem result={serializedResult} email={email} />
+            <ListItem result={serializedResult} />
         </div>
     )
 }

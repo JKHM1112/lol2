@@ -1,12 +1,16 @@
+import useUserStore from "@/app/hooks/useUserStore";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { useState } from "react";
 
+
 export default function Difficulty() {
-    const [before6, setBefore6] = useState(3)
-    const [after6, setAfter6] = useState(3)
-    const [half, setHalf] = useState(3)
+    const { before, after, half } = useUserStore();
+
+    const [before6, setBefore6] = useState(before || 3)
+    const [after6, setAfter6] = useState(after || 3)
+    const [half11, setHalf] = useState(half || 3)
 
     const handleBefore6Change = (event: number[]) => {
         setBefore6(event[0])
@@ -29,8 +33,8 @@ export default function Difficulty() {
                 <Slider onValueChange={handleAfter6Change} value={[after6]} max={5} min={1} step={1} />
             </Label>
             <Label className="char3">사이드 및 한타 (쉬움)1-5(어려움)
-                <Input value={half} name="half" readOnly />
-                <Slider onValueChange={handleHalfChange} value={[half]} max={5} min={1} step={1} />
+                <Input value={half11} name="half" readOnly />
+                <Slider onValueChange={handleHalfChange} value={[half11]} max={5} min={1} step={1} />
             </Label>
         </div>
     )

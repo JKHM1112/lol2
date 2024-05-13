@@ -1,4 +1,4 @@
-import Games from "../../page"
+import Games from "@/app/games/page";
 
 export default async function ProgressGame({ params }: { params: { summoner: string } }) {
     const api_key = process.env.RIOT_API_KEY as string
@@ -24,7 +24,7 @@ export default async function ProgressGame({ params }: { params: { summoner: str
             return await res.json();
         } catch (error) {
             console.error("API call failed:", error);
-            throw error;  // Re-throw the error to be handled by the caller
+            throw error; 
         }
     }
 
@@ -69,8 +69,7 @@ export default async function ProgressGame({ params }: { params: { summoner: str
             현재 사용자는 게임중이 아닙니다.
         </div>;
     }
-    console.log(progressGame)
-    // 이하의 로직은 progressGame이 유효한 데이터를 가지고 있는 경우에 대한 처리
+
     let puuidGame, championIdGame, riotIdGame, spell1IdGame, spell2IdGame;
 
     if (progressGame.mapId && progressGame.mapId !== 0) {

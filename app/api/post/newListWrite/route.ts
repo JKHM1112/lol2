@@ -1,3 +1,5 @@
+//my-app/app/api/post/newListWrite/route.ts
+
 import { connectDB } from "@/util/database"
 import { getServerSession } from "next-auth";
 import { z } from "zod";
@@ -49,7 +51,6 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData()
     let session = await getServerSession(authOptions)
     const data = { ...schema.parse(formData), author: session?.user?.name, email: session?.user?.email }
-    console.log(request.url)
     const db = (await connectDB).db('dream')
     await db.collection('data').insertOne(data)
 

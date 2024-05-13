@@ -15,7 +15,7 @@ export default function BottomChampion() {
         nameK: champion.nameK,
         img: '/ChampionE/' + champion.nameE + '.png'
     }));
-    const { participants, selectedGame, puuid } = useUserStore();
+    const { participants, selectedGame, puuid, champions, setChampions } = useUserStore();
     const defaultParticipant = { championName: '' };
 
     const participant1 = participants[selectedGame].find((participant: any) => participant.puuid === puuid)
@@ -24,19 +24,11 @@ export default function BottomChampion() {
     const participant2 = participants[selectedGame].find((participant: any) => participant.individualPosition === participant1Line && participant.puuid !== puuid)
     const participant3 = participants[selectedGame].find((participant: any) => participant.individualPosition === 'UTILITY' && participant.participantId === participant1ParticipantId + 1) || defaultParticipant;
     const participant4 = participants[selectedGame].find((participant: any) => participant.individualPosition === 'UTILITY' && participant.participantId !== participant1ParticipantId + 1) || defaultParticipant;
-    const participant1Champion = participant1.championName
-    const participant2Champion = participant2.championName
-    const participant3Champion = participant3.championName;
-    const participant4Champion = participant4.championName;
 
     const [championOpen1, setChampionOpen1] = useState(false)
     const [championOpen2, setChampionOpen2] = useState(false)
     const [championOpen3, setChampionOpen3] = useState(false)
     const [championOpen4, setChampionOpen4] = useState(false)
-    const [selectedChampion1, setSelectedChampion1] = useState(participant1Champion)
-    const [selectedChampion2, setSelectedChampion2] = useState(participant2Champion)
-    const [selectedChampion3, setSelectedChampion3] = useState(participant3Champion)
-    const [selectedChampion4, setSelectedChampion4] = useState(participant4Champion)
 
     return (
         <div>
@@ -46,10 +38,10 @@ export default function BottomChampion() {
                     <Popover open={championOpen1} onOpenChange={setChampionOpen1}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
-                                {selectedChampion1 ? (
+                                {champions[0] ? (
                                     <>
-                                        <Image alt={selectedChampion1} src={'/championE/' + selectedChampion1 + '.png'} height={20} width={20}></Image>
-                                        {champion.find((champion) => champion.nameE === selectedChampion1)?.nameK}
+                                        <Image alt={champions[0]} src={'/championE/' + champions[0] + '.png'} height={20} width={20}></Image>
+                                        {champion.find((champion) => champion.nameE === champions[0])?.nameK}
                                     </>
                                 ) : (
                                     <>+ Set Champion</>
@@ -64,7 +56,7 @@ export default function BottomChampion() {
                                     <CommandGroup>
                                         {champion.map((champion) => (
                                             <CommandItem key={champion.nameK} value={champion.nameK} onSelect={() => {
-                                                setSelectedChampion1(champion.nameE);
+                                                setChampions(0, champion.nameE);
                                                 setChampionOpen1(false);
                                             }}
                                             >
@@ -83,10 +75,10 @@ export default function BottomChampion() {
                     <Popover open={championOpen2} onOpenChange={setChampionOpen2}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
-                                {selectedChampion2 ? (
+                                {champions[1] ? (
                                     <>
-                                        <Image alt={selectedChampion2} src={'/championE/' + selectedChampion2 + '.png'} height={20} width={20}></Image>
-                                        {champion.find((champion) => champion.nameE === selectedChampion2)?.nameK}
+                                        <Image alt={champions[1]} src={'/championE/' + champions[1] + '.png'} height={20} width={20}></Image>
+                                        {champion.find((champion) => champion.nameE === champions[1])?.nameK}
                                     </>
                                 ) : (
                                     <>+ Set Champion</>
@@ -101,7 +93,7 @@ export default function BottomChampion() {
                                     <CommandGroup>
                                         {champion.map((champion) => (
                                             <CommandItem key={champion.nameK} value={champion.nameK} onSelect={() => {
-                                                setSelectedChampion2(champion.nameE);
+                                                setChampions(1, champion.nameE);
                                                 setChampionOpen2(false);
                                             }}
                                             >
@@ -123,10 +115,10 @@ export default function BottomChampion() {
                     <Popover open={championOpen3} onOpenChange={setChampionOpen3}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
-                                {selectedChampion3 ? (
+                                {champions[2] ? (
                                     <>
-                                        <Image alt={selectedChampion3} src={'/championE/' + selectedChampion3 + '.png'} height={20} width={20}></Image>
-                                        {champion.find((champion) => champion.nameE === selectedChampion3)?.nameK}
+                                        <Image alt={champions[2]} src={'/championE/' + champions[2] + '.png'} height={20} width={20}></Image>
+                                        {champion.find((champion) => champion.nameE === champions[2])?.nameK}
                                     </>
                                 ) : (
                                     <>+ Set Champion</>
@@ -141,7 +133,7 @@ export default function BottomChampion() {
                                     <CommandGroup>
                                         {champion.map((champion) => (
                                             <CommandItem key={champion.nameK} value={champion.nameK} onSelect={() => {
-                                                setSelectedChampion3(champion.nameE);
+                                                setChampions(2, champion.nameE);
                                                 setChampionOpen3(false);
                                             }}
                                             >
@@ -161,10 +153,10 @@ export default function BottomChampion() {
                     <Popover open={championOpen4} onOpenChange={setChampionOpen4}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
-                                {selectedChampion4 ? (
+                                {champions[3] ? (
                                     <>
-                                        <Image alt={selectedChampion4} src={'/championE/' + selectedChampion4 + '.png'} height={20} width={20}></Image>
-                                        {champion.find((champion) => champion.nameE === selectedChampion4)?.nameK}
+                                        <Image alt={champions[3]} src={'/championE/' + champions[3] + '.png'} height={20} width={20}></Image>
+                                        {champion.find((champion) => champion.nameE === champions[3])?.nameK}
                                     </>
                                 ) : (
                                     <>+ Set Champion</>
@@ -179,7 +171,7 @@ export default function BottomChampion() {
                                     <CommandGroup>
                                         {champion.map((champion) => (
                                             <CommandItem key={champion.nameK} value={champion.nameK} onSelect={() => {
-                                                setSelectedChampion4(champion.nameE);
+                                                setChampions(3, champion.nameE);
                                                 setChampionOpen4(false);
                                             }}
                                             >
@@ -194,10 +186,10 @@ export default function BottomChampion() {
                     </Popover>
                 </div>
             </div>
-            <input style={{ display: 'none' }} name="cham1" defaultValue={participant1.championName} />
-            <input style={{ display: 'none' }} name="cham2" defaultValue={participant2.championName} />
-            <input style={{ display: 'none' }} name="cham3" defaultValue={participant3.championName} />
-            <input style={{ display: 'none' }} name="cham4" defaultValue={participant4.championName} />
+            <input style={{ display: 'none' }} name="cham1" defaultValue={champions[0]} readOnly />
+            <input style={{ display: 'none' }} name="cham2" defaultValue={champions[1]} readOnly />
+            <input style={{ display: 'none' }} name="cham3" defaultValue={champions[2]} readOnly />
+            <input style={{ display: 'none' }} name="cham4" defaultValue={champions[3]} readOnly />
         </div>
     )
 }

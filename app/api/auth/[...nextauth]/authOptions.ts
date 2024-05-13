@@ -1,6 +1,8 @@
+//my-app/app/api/auth/[...nextauth]/authOption.ts
+
 import { connectDB } from "@/util/database";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
-import NextAuth, { AuthOptions, NextAuthOptions } from "next-auth";
+import { AuthOptions} from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from 'bcrypt';
 
@@ -42,7 +44,7 @@ export const authOptions: AuthOptions = {
             }
         })
     ],
-    //3. jwt 써놔야 잘됩니다 + jwt 만료일설정
+    //3.jwt 만료일설정
     session: {
         strategy: 'jwt',
         maxAge: 30 * 24 * 60 * 60 //30일
@@ -50,7 +52,7 @@ export const authOptions: AuthOptions = {
 
     callbacks: {
         //4. jwt 만들 때 실행되는 코드 
-        //user변수는 DB의 유저정보담겨있고 token.user에 뭐 저장하면 jwt에 들어갑니다.
+        //user변수는 DB의 유저정보담겨있고 token.user에 뭐 저장하면 jwt에 들어간다.
         jwt: async ({ token, user }: any) => {
             if (user) {
                 token.user = {};

@@ -12,36 +12,29 @@ export default function Write() {
     const currentDate = new Date().toISOString().split('T')[0]
 
     return (
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 justify-center">
             <form action="/api/post/newListWrite" method="POST">
-
-                <ResizablePanelGroup direction="horizontal" className="items-center justify-center p-6">
-                    <ResizablePanelGroup direction="horizontal" className="min-h-[700px] min-w-[1000px] rounded-lg border">
-                        <ResizablePanel defaultSize={10}>
+                <ResizablePanelGroup direction="horizontal" className="items-center justify-center p-6 ">
+                    <ResizablePanelGroup direction="horizontal" className="min-h-[650px] min-w-[1000px] rounded-lg border">
+                        <ResizablePanel defaultSize={15}>
                             <ResizablePanelGroup direction="vertical" className="rounded-lg border">
-                                <ResizablePanel defaultSize={10} className="flex h-full items-center justify-center p-6">
+                                <ResizablePanel defaultSize={30} className="flex h-full items-center justify-center p-6">
                                     <div className="p-6">
                                         <LineChampions />
                                         <Difficulty />
                                         <Lines />
                                     </div>
                                 </ResizablePanel>
-
                                 <ResizableHandle />
-
-                                <ResizablePanel defaultSize={10} className="flex h-full items-center justify-center p-6">
+                                <ResizablePanel defaultSize={8} className="flex h-full items-center justify-center p-6">
                                     <div className="p-6">
                                         <Spells />
                                     </div>
                                     <Button type="submit">전송하기</Button>
-
-
                                 </ResizablePanel>
                             </ResizablePanelGroup>
                         </ResizablePanel>
-
                         <ResizableHandle />
-
                         <ResizablePanel defaultSize={10}>
                             <ResizablePanelGroup direction="horizontal" className="min-h-[400px] min-w-[400px] rounded-lg border">
                                 <ResizablePanel defaultSize={10} className="flex min-h-[200px] min-w-[200px] items-center justify-center p-6">
@@ -49,9 +42,7 @@ export default function Write() {
                                         <Runes />
                                     </div>
                                 </ResizablePanel>
-
                                 <ResizableHandle />
-
                                 <ResizablePanel defaultSize={10} className="flex min-h-[200px] min-w-[200px] items-center justify-center p-6">
                                     <div className="p-6">
                                         <Items />

@@ -1,31 +1,29 @@
+import { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useState } from "react";
 import useUserStore from "../../hooks/useUserStore";
 import TopChampion from "./line/topChampion";
 import JungleChampion from "./line/jungleChampion";
 import MiddleChampion from "./line/middleChampion";
-import { initialParticipant } from "./participants";
 import BottomChampion from "./line/bottomChampion";
 import UtilityChampion from "./line/utilityChampion";
+import { initialParticipant } from "./participants";
 
 
 export default function LineChampions() {
 
-
-    const { participants, selectedGame, puuid } = useUserStore();
-
+    const { lines, participants, selectedGame, puuid } = useUserStore();
     const participant1 = participants[selectedGame].find((participant: any) => participant.puuid === puuid) || initialParticipant
-    const participant1Line = participant1.individualPosition
+    const participant1Line = lines || participant1.individualPosition
 
     const [selectedLine, setSelectedLine] = useState(participant1Line)
-
     const handleLineChange = (value: string) => {
         setSelectedLine(value)
     }
 
     return (
         <div>
+            {lines}
             <div className="flex items-center gap-4">
                 <Label className="char3">라인*</Label>
                 <Select name="line" value={selectedLine} onValueChange={(value) => handleLineChange(value)}>

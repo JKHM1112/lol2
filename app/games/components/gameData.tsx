@@ -1,23 +1,40 @@
 //games/gameData.tsx
 'use client'
 
+import useUserStore from "@/app/hooks/useUserStore";
 import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation";
-import useUserStore from "../../../hooks/useUserStore";
 
 interface GameDataProps {
     participants: any[]
     i: number
     puuid: string
 }
-export default function GameData({ participants, i, puuid }: GameDataProps) {
-    const { setParticipants, setSelectedGame, setItems, setPuuid, setSpells, setRunes } = useUserStore()
-    const router = useRouter();
 
+export default function GameData({ participants, i, puuid }: GameDataProps) {
+    const { setLines, setParticipants, setSelectedGame, setItems, setPuuid, setSpells, setRunes, setChampions, } = useUserStore()
+    const router = useRouter();
+    const defaultParticipant = { championName: '' };
     const participant1 = participants[i].find((participant: any) => participant.puuid === puuid)
     const participant1Line = participant1.individualPosition
+    const participant1ParticipantId = participant1.participantId
     const participant2 = participants[i].find((p: any) => p.individualPosition === participant1Line && p.puuid !== puuid)
 
+    let individualPosition = participant1Line
+    if (individualPosition == 'UTILITY') {
+        individualPosition = 'BOTTOM'
+    } else if (individualPosition == 'BOTTOM') {
+        individualPosition = 'UTILITY'
+    } else {
+        individualPosition = ''
+    }
+
+    const participant3 = participants[i].find((participant: any) => participant.individualPosition === individualPosition && participant.participantId === participant1ParticipantId - 1) || defaultParticipant;
+    const participant4 = participants[i].find((participant: any) => participant.individualPosition === individualPosition && participant.participantId !== participant1ParticipantId - 1) || defaultParticipant;
+    const champion1 = participant1.championName
+    const champion2 = participant2.championName
+    const champion3 = participant3.championName
+    const champion4 = participant4.championName
     const spell1 = (participants[i].find((p: any) => p.puuid === puuid)?.summoner1Id)
     const spell2 = (participants[i].find((p: any) => p.puuid === puuid)?.summoner2Id)
     const spell3 = participant2.summoner1Id
@@ -46,6 +63,11 @@ export default function GameData({ participants, i, puuid }: GameDataProps) {
 
     const handleGameData = () => {
         setParticipants(participants)
+        setChampions(0, champion1)
+        setChampions(1, champion2)
+        setChampions(2, champion3)
+        setChampions(3, champion4)
+        setLines(participant1Line)
         setSelectedGame(i)
         setPuuid(puuid)
         setItems(0, item0)

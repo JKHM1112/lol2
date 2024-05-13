@@ -16,7 +16,7 @@ export default function JungleChampion() {
         nameK: champion.nameK,
         img: '/ChampionE/' + champion.nameE + '.png'
     }));
-    const { participants, selectedGame, puuid } = useUserStore();
+    const { participants, selectedGame, puuid, champions, setChampions } = useUserStore();
 
     const participant1 = participants[selectedGame].find((participant: any) => participant.puuid === puuid)
     const participant1Line = participant1.individualPosition
@@ -26,8 +26,6 @@ export default function JungleChampion() {
 
     const [championOpen1, setChampionOpen1] = useState(false)
     const [championOpen2, setChampionOpen2] = useState(false)
-    const [selectedChampion1, setSelectedChampion1] = useState(participant1Champion)
-    const [selectedChampion2, setSelectedChampion2] = useState(participant2Champion)
 
     return (
         <div>
@@ -37,10 +35,10 @@ export default function JungleChampion() {
                     <Popover open={championOpen1} onOpenChange={setChampionOpen1}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
-                                {selectedChampion1 ? (
+                                {champions[0] ? (
                                     <>
-                                        <Image alt={selectedChampion1} src={'/championE/' + selectedChampion1 + '.png'} height={20} width={20}></Image>
-                                        {champion.find((champion) => champion.nameE === selectedChampion1)?.nameK}
+                                        <Image alt={champions[0]} src={'/championE/' + champions[0] + '.png'} height={20} width={20}></Image>
+                                        {champion.find((champion) => champion.nameE === champions[0])?.nameK}
                                     </>
                                 ) : (
                                     <>+ Set Champion</>
@@ -55,7 +53,7 @@ export default function JungleChampion() {
                                     <CommandGroup>
                                         {champion.map((champion) => (
                                             <CommandItem key={champion.nameK} value={champion.nameK} onSelect={() => {
-                                                setSelectedChampion1(champion.nameE);
+                                                setChampions(0, champion.nameE);
                                                 setChampionOpen1(false);
                                             }}
                                             >
@@ -74,10 +72,10 @@ export default function JungleChampion() {
                     <Popover open={championOpen2} onOpenChange={setChampionOpen2}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
-                                {selectedChampion2 ? (
+                                {champions[1] ? (
                                     <>
-                                        <Image alt={selectedChampion2} src={'/championE/' + selectedChampion2 + '.png'} height={20} width={20}></Image>
-                                        {champion.find((champion) => champion.nameE === selectedChampion2)?.nameK}
+                                        <Image alt={champions[1]} src={'/championE/' + champions[1] + '.png'} height={20} width={20}></Image>
+                                        {champion.find((champion) => champion.nameE === champions[1])?.nameK}
                                     </>
                                 ) : (
                                     <>+ Set Champion</>
@@ -92,7 +90,7 @@ export default function JungleChampion() {
                                     <CommandGroup>
                                         {champion.map((champion) => (
                                             <CommandItem key={champion.nameK} value={champion.nameK} onSelect={() => {
-                                                setSelectedChampion2(champion.nameE);
+                                                setChampions(1, champion.nameE);
                                                 setChampionOpen2(false);
                                             }}
                                             >
@@ -107,8 +105,8 @@ export default function JungleChampion() {
                     </Popover>
                 </div>
             </div>
-            <input style={{ display: 'none' }} name="cham1" defaultValue={participant1.championName} />
-            <input style={{ display: 'none' }} name="cham2" defaultValue={participant2.championName} />
+            <input style={{ display: 'none' }} name="cham1" defaultValue={champions[0]} readOnly />
+            <input style={{ display: 'none' }} name="cham2" defaultValue={champions[1]} readOnly />
         </div>
     )
 }

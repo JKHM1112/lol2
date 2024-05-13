@@ -1,4 +1,4 @@
-const summoner = {
+export const summoner = {
     "type": "summoner",
     "version": "14.7.1",
     "data": {

@@ -1,4 +1,4 @@
-export const runesReforged: any = [
+export const runesReforged = [
     {
         "id": 8100,
         "key": "Domination",

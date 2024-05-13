@@ -9,11 +9,12 @@ import Image from "next/image";
 import useUserStore from "@/app/hooks/useUserStore";
 
 export default function Items() {
+    const { items, setItems } = useUserStore();
 
     const firstItems = getFirstItems();
     const shoesItems = getShoesItems();
     const itemData = getItems();
-    
+
     const firstItem = firstItems.map((firstItems) => ({
         label: firstItems.label,
         img: '/FirstItemK/' + firstItems.label + '.png'
@@ -36,12 +37,11 @@ export default function Items() {
     const [selectedFirstItem, setSelectedFirstItem] = useState('');
     const [SelectedShoesItem, setSelectedShoesItem] = useState('');
 
-    const { items, setItems } = useUserStore();
     const findItemNameK = (nameN: number): string => {
         const item = itemData.find(item => item.nameN === nameN);
         return item ? item.nameK : '';
     }
-    
+
     return (
         <div>
             <div className="flex items-center space-x-4">
@@ -81,7 +81,7 @@ export default function Items() {
                     </PopoverContent>
                 </Popover>
             </div>
-            
+
             <div className="flex items-center space-x-4">
                 <p className="text-sm text-muted-foreground">신발템</p>
                 <Popover open={shoesItemOpen} onOpenChange={setShoesItemOpen}>

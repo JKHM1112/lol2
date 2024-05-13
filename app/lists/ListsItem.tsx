@@ -1,28 +1,38 @@
 //app/lists/ListsLitem.tsx
 'use client';
+import useUserStore from '@/app/hooks/useUserStore';
+import { runesReforged } from '@/app/data/runesReforged';
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious, } from "@/components/ui/pagination";
+import { Button } from '@/components/ui/button';
 import React, { useState } from 'react';
 import Link from "next/link";
-import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious, } from "@/components/ui/pagination";
-import { runesReforged } from '../data/runesReforged';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
-interface ListItemProps {
+interface ListsItemProps {
     result: Array<{
-        line: string; cham1: string; cham2: string; chma3: string; cham4: string;
-        before6: number; after6: number; half: number; lineResult: string; gameResult: string; review: string;
+        _id: string; line: string;
+        cham1: string; cham2: string; cham3: string; cham4: string;
+        before6: number; after6: number; half: number;
+        lineResult: string; gameResult: string;
+        rune1: number; rune2: number; rune3: number; rune4: number;
+        rune5: number; rune6: number; rune7: number; rune8: number;
+        rune9: number; rune10: number; rune11: number; rune12: number;
         spell1: number; spell2: number; spell3: number; spell4: number;
-        firstItem: number; shoesItem: number; legendaryItem0: number; legendaryItem1: number; legendaryItem2: number;
-        legendaryItem3: number; legendaryItem4: number; legendaryItem5: number; legendaryItem6: number;
-        rune1: number; rune2: number; rune3: number; rune4: number; rune5: number; rune6: number;
-        rune7: number; rune8: number; rune9: number; rune10: number; rune11: number; rune12: number;
-        _id: string; date: string; author: string; email: string;
+        legendaryItem0: number; legendaryItem1: number; legendaryItem2: number; legendaryItem3: number;
+        legendaryItem4: number; legendaryItem5: number; legendaryItem6: number;
+        shoesItem: string; firstItem: string;
+        review: string; date: string; author: string; email: string;
     }>;
     email: string;
 }
 
 const ITEMS_PER_PAGE = 20;
 const lineTypes = ['TOP', 'JUNGLE', 'MIDDLE', 'BOTTOM', 'UTILITY'];
-export default function ListItem({ result, email }: ListItemProps) {
+export default function ListsItem({ result, email }: ListsItemProps) {
+    const router = useRouter()
+    const { setLines, setChampions, setLineResults, setGameResults, setBefore, setAfter, setHalf, setReview,
+        setSpells, setRunes, setItems } = useUserStore()
     const [checkedLines, setCheckedLines] = useState<string[]>([]);
     const [champFilter, setChampFilter] = useState('');
     const [opponentFilter, setOpponentFilter] = useState('');
@@ -35,7 +45,6 @@ export default function ListItem({ result, email }: ListItemProps) {
                 : currentLines.filter(line => line !== value)
         );
     };
-
     const swapFilters = () => {
         setChampFilter(opponentFilter);
         setOpponentFilter(champFilter);
@@ -55,7 +64,6 @@ export default function ListItem({ result, email }: ListItemProps) {
         (currentPage - 1) * ITEMS_PER_PAGE,
         currentPage * ITEMS_PER_PAGE
     );
-
     const getChampionImg = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={35} height={35} />
     const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={35} height={35} />
     const array: any = []
@@ -109,7 +117,6 @@ export default function ListItem({ result, email }: ListItemProps) {
                 </thead>
                 <tbody>
                     {paginatedResult.map((data, i) => (
-                        // item.email === email && (
                         <tr key={i}>
                             <td>{data.line}</td>
                             <td>{getChampionImg(data.cham1)}</td>
@@ -129,7 +136,43 @@ export default function ListItem({ result, email }: ListItemProps) {
                             <td><Link href={'/detail/' + data._id} className="list-detail-li">상세보기</Link></td>
                             {data.email === email && (
                                 <td>
-                                    <Link href={'/edit/' + data._id} className="list-detail-li">수정</Link>
+                                    <Button onClick={() => {
+                                        setLines(data.line)
+                                        setChampions(0, data.cham1)
+                                        setChampions(1, data.cham2)
+                                        setChampions(2, data.cham3)
+                                        setChampions(3, data.cham4)
+                                        setLineResults(data.lineResult)
+                                        setGameResults(data.gameResult)
+                                        setBefore(data.before6)
+                                        setAfter(data.after6)
+                                        setHalf(data.half)
+                                        setReview(data.review)
+                                        setSpells(0, data.spell1)
+                                        setSpells(1, data.spell2)
+                                        setSpells(2, data.spell3)
+                                        setSpells(3, data.spell4)
+                                        setRunes(0, data.rune1)
+                                        setRunes(1, data.rune2)
+                                        setRunes(2, data.rune3)
+                                        setRunes(3, data.rune4)
+                                        setRunes(4, data.rune5)
+                                        setRunes(5, data.rune6)
+                                        setRunes(6, data.rune7)
+                                        setRunes(7, data.rune8)
+                                        setRunes(8, data.rune9)
+                                        setRunes(9, data.rune10)
+                                        setRunes(10, data.rune11)
+                                        setRunes(11, data.rune12)
+                                        setItems(0, data.legendaryItem0)
+                                        setItems(1, data.legendaryItem1)
+                                        setItems(2, data.legendaryItem2)
+                                        setItems(3, data.legendaryItem3)
+                                        setItems(4, data.legendaryItem4)
+                                        setItems(5, data.legendaryItem5)
+                                        setItems(6, data.legendaryItem6)
+                                        router.push('/edit/' + data._id)
+                                    }} className="list-detail-li">수정</Button>
                                     <button onClick={async () => {
                                         await fetch('/api/post/delete', {
                                             method: 'POST', body: JSON.stringify({ author: data.author, _id: data._id, email: data.email })

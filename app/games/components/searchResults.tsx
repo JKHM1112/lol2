@@ -1,9 +1,10 @@
 import { runesReforged } from "@/app/data/runesReforged"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import GameData from "@/app/games/components/gameData"
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion"
 import Image from "next/image"
-import GameData from "./gameData"
 import * as React from "react"
+import { cn } from "@/lib/utils"
 
 interface Participant {
     puuid: string; lane?: string; championName: string; summonerName: string;
@@ -11,6 +12,7 @@ interface Participant {
     summoner1Id: number; summoner2Id: number; perks: any;
     item0: number; item1: number; item2: number; item3: number; item4: number; item5: number;
     riotIdTagline: string; totalDamageDealtToChampions: number; totalDamageTaken: number;
+    win: string;
 }
 
 export default function SearchResults({ participants, puuid }: any) {
@@ -33,12 +35,13 @@ export default function SearchResults({ participants, puuid }: any) {
     //     return array.concat(...runesReforged.map((runeType: any) => runeType)).find((rune: any) => rune.id == runeCode).icon
     // }
 
+
     return (
         <div>
-            <Accordion type="single" collapsible>
+            <Accordion type="single" collapsible >
                 {participants.map((data: any, i: number) => (
-                    <AccordionItem key={'item' + i} value={'item' + i}>
-                        <AccordionTrigger>
+                    <AccordionItem key={'item' + i} value={'item' + i} >
+                        <AccordionTrigger className={data.find((p: Participant) => p.puuid === puuid)?.win ? 'bg-sky-200' : 'bg-rose-200'}>
                             <Table>
                                 <TableBody>
                                     <TableRow className="flex items-center gap-1" >
@@ -86,11 +89,6 @@ export default function SearchResults({ participants, puuid }: any) {
                                         </TableCell>
                                         <TableCell>
                                             <div>
-                                                {data.find((p: Participant) => p.puuid === puuid)?.win ? 'win' : 'lose'}
-                                            </div>
-                                        </TableCell>
-                                        <TableCell>
-                                            <div>
                                                 <GameData participants={participants} i={i} puuid={puuid} />
                                             </div>
                                         </TableCell>
@@ -100,9 +98,9 @@ export default function SearchResults({ participants, puuid }: any) {
                         </AccordionTrigger>
                         <AccordionContent>
                             {participants[i].map((participant: Participant, index: number) => (
-                                <Table key={'participant' + index}>
+                                <Table key={'participant' + index} >
                                     <TableBody>
-                                        <TableRow className="flex items-center gap-1" >
+                                        <TableRow className={cn("flex items-center gap-1", participant.win ? 'bg-sky-200' : 'bg-rose-200')} >
                                             <TableCell>
                                                 <div>
                                                     {getChampionImg(participant.championName)}

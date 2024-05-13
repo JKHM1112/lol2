@@ -4,6 +4,22 @@ import { initialParticipant } from "../write/components/participants";
 interface UserStoreState {
     participants: any[]
     setParticipants: (participants: any[]) => void
+    champions: string[]
+    setChampions: (index: number, champion: string) => void
+    lines: string
+    setLines: (line: string) => void
+    lineResults: string
+    setLineResults: (lineResults: string) => void
+    gameResults: string
+    setGameResults: (gameResults: string) => void
+    before: number
+    setBefore: (index: number) => void
+    after: number
+    setAfter: (index: number) => void
+    half: number
+    setHalf: (index: number) => void
+    review: string
+    setReview: (review: string) => void
     selectedGame: number
     setSelectedGame: (index: number) => void
     spells: number[]
@@ -19,6 +35,40 @@ const useUserStore = create<UserStoreState>((set, get) => ({
     participants: [initialParticipant],
     setParticipants: (participants) => {
         set({ participants })
+    },
+    champions: Array(4).fill(''),
+    setChampions: (index, champion) => {
+        const updatedChampions = [...get().champions]
+        updatedChampions[index] = champion
+        set({ champions: updatedChampions })
+    },
+    lines: "",
+    setLines: (lines) => {
+        set({ lines })
+    },
+    lineResults: "",
+    setLineResults: (index) => {
+        set({ lineResults: index })
+    },
+    gameResults: "",
+    setGameResults: (index) => {
+        set({ gameResults: index })
+    },
+    before: 0,
+    setBefore: (index) => {
+        set({ before: index })
+    },
+    after: 0,
+    setAfter: (index) => {
+        set({ after: index })
+    },
+    half: 0,
+    setHalf: (index) => {
+        set({ half: index })
+    },
+    review: "",
+    setReview: (index) => {
+        set({ review: index })
     },
     selectedGame: 0,
     setSelectedGame: (index) => {
@@ -45,7 +95,7 @@ const useUserStore = create<UserStoreState>((set, get) => ({
     puuid: "",
     setPuuid: (puuid) => {
         set({ puuid })
-    }
+    },
 }))
 
 export default useUserStore
