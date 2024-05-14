@@ -31,9 +31,9 @@ export default function SearchResults({ participants, puuid }: any) {
         return array.concat(...runeGroups2.map((runeType: any) => runeType)).find((rune: any) => rune.id == runCode).icon
     }
     const getRuneImg4 = (RuneCode: string) => <Image className='rounded-md' alt={'rune1'} src={`/` + RuneCode} width={35} height={35} />
-    // const getRuneImg3 = (runeCode: number) => {
-    //     return array.concat(...runesReforged.map((runeType: any) => runeType)).find((rune: any) => rune.id == runeCode).icon
-    // }
+    const getRuneImg3 = (runeCode: number) => {
+        return array.concat(...runesReforged.map((runeType: any) => runeType)).find((rune: any) => rune.id == runeCode).icon
+    }
 
 
     return (
