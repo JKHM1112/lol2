@@ -3,6 +3,7 @@ import * as React from "react"
 import Link from "next/link"
 import Games from "@/app/games/page"
 import SearchResults from "@/app/games/components/searchResults";
+import ReloadButton from "./progressGame/components/reloadButton";
 
 export default async function Tables({ params }: { params: { summoner: string } }) {
     const api_key = process.env.RIOT_API_KEY as string
@@ -31,8 +32,8 @@ export default async function Tables({ params }: { params: { summoner: string } 
         }
     }
 
-    async function getRecentMatchesIds(puuid: string, games: number) {
-        const res = await fetch(`https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?queue=420&type=ranked&start=0&count=${games}`, {
+    async function getRecentMatchesIds(puuid: string, queue: number, games: number) {
+        const res = await fetch(`https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?queue=${queue}&start=0&count=${games}`, {
             method: "GET",
             headers: {
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
@@ -45,33 +46,18 @@ export default async function Tables({ params }: { params: { summoner: string } 
         return res.json()
     }
 
-    async function getMatchData(matchId: string) {
-        const res = await fetch(`https://asia.api.riotgames.com/lol/match/v5/matches/${matchId}`, {
-            method: "GET",
-            headers: {
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-                "Accept-Language": "ko-KR,ko;q=0.9",
-                "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-                "Origin": "https://developer.riotgames.com",
-                "X-Riot-Token": api_key
-            }
-        })
-        return res.json()
-    }
     
+
     const fullsummonerName = params.summoner
     const [summonerName, tag] = fullsummonerName.split('-')
     const nextTag = tag || 'KR1'
-    let puuid, recentMatchesIds, recentMatchesData, participants
+    const summonernameTag = summonerName + '#' + nextTag
+
+    let puuid, rankedMatchIds, aramMatchIds
     try {
         puuid = await getAccountData(summonerName, nextTag).then(data => data.puuid);
-        recentMatchesIds = await getRecentMatchesIds(puuid, 5);
-        recentMatchesData = await Promise.all(
-            recentMatchesIds.map(async (matchId: any) => {
-                return await getMatchData(matchId);
-            })
-        );
-        participants = (recentMatchesData.map(data => data.info.participants));
+        rankedMatchIds = await getRecentMatchesIds(puuid, 420 ,5);
+        aramMatchIds = await getRecentMatchesIds(puuid, 450 ,5);
     } catch (error) {
         return (
             <div>
@@ -83,9 +69,10 @@ export default async function Tables({ params }: { params: { summoner: string } 
     }
     return (
         <div>
-            <Link href={`/games/${params.summoner}/progressGame`}> 진행중인 게임 확인</Link>
             <Games />
-            <SearchResults participants={participants} puuid={puuid} />
+            <ReloadButton />
+            <Link href={`/games/${params.summoner}/progressGame`}> 진행중인 게임 확인</Link>
+            <SearchResults rankedMatchIds={rankedMatchIds} aramMatchIds={aramMatchIds} puuid={puuid} />
         </div >
     )
 }

@@ -14,8 +14,22 @@ export default function LineChampions() {
 
     const { lines, participants, selectedGame, puuid } = useUserStore();
     const participant1 = participants[selectedGame].find((participant: any) => participant.puuid === puuid) || initialParticipant
-    const participant1Line = lines || participant1.individualPosition
-
+    
+    let lineK = ''
+    if (lines === 'TOP') {
+        lineK = '탑';
+    } else if (lines === 'JUNGLE') {
+        lineK = '정글';
+    } else if (lines === 'MIDDLE') {
+        lineK = '미드';
+    }
+    else if (lines === 'BOTTOM') {
+        lineK = '원딜';
+    }
+    else if (lines === 'UTILITY') {
+        lineK = '서폿';
+    }
+    const participant1Line = lineK || participant1.individualPosition
     const [selectedLine, setSelectedLine] = useState(participant1Line)
     const handleLineChange = (value: string) => {
         setSelectedLine(value)
@@ -23,7 +37,6 @@ export default function LineChampions() {
 
     return (
         <div>
-            {lines}
             <div className="flex items-center gap-4">
                 <Label className="char3">라인*</Label>
                 <Select name="line" value={selectedLine} onValueChange={(value) => handleLineChange(value)}>
@@ -31,35 +44,35 @@ export default function LineChampions() {
                         <SelectValue placeholder="라인을 고르세요"></SelectValue>
                     </SelectTrigger>
                     <SelectContent>
-                        <SelectItem value="TOP">탑</SelectItem>
-                        <SelectItem value="JUNGLE">정글</SelectItem>
-                        <SelectItem value="MIDDLE">미드</SelectItem>
-                        <SelectItem value="BOTTOM">원딜</SelectItem>
-                        <SelectItem value="UTILITY">서폿</SelectItem>
+                        <SelectItem value="탑">탑</SelectItem>
+                        <SelectItem value="정글">정글</SelectItem>
+                        <SelectItem value="미드">미드</SelectItem>
+                        <SelectItem value="원딜">원딜</SelectItem>
+                        <SelectItem value="서폿">서폿</SelectItem>
                     </SelectContent>
                 </Select>
             </div>
             {
-                selectedLine == "TOP" ? (
+                selectedLine == "탑" ? (
                     <TopChampion />
                 ) : null
             }
             {
-                selectedLine == "JUNGLE" ? (
+                selectedLine == "정글" ? (
                     <JungleChampion />
                 ) : null
             }
             {
-                selectedLine == "MIDDLE" ? (
+                selectedLine == "미드" ? (
                     <MiddleChampion />
                 ) : null
             }
             {
-                selectedLine == "BOTTOM" ? (
+                selectedLine == "원딜" ? (
                     <BottomChampion />
                 ) : null
             }{
-                selectedLine == "UTILITY" ? (
+                selectedLine == "서폿" ? (
                     <UtilityChampion />
                 ) : null
             }

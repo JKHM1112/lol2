@@ -5,7 +5,6 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import Image from "next/image"
 
 export default function RuneBox({ i, teamDatas }: any) {
-
     const teamData = teamDatas[i]
     const perkStyle = teamData.perks.perkStyle
     const perkSubStyle = teamData.perks.perkSubStyle

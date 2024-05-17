@@ -1,7 +1,7 @@
 //app/lists/ListsLitem.tsx
 'use client';
 import useUserStore from '@/app/hooks/useUserStore';
-import { runesReforged } from '@/app/data/runesReforged';
+import { runesReforgedOld } from '../data/runesReforgedOld';
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious, } from "@/components/ui/pagination";
 import { Button } from '@/components/ui/button';
 import React, { useState } from 'react';
@@ -28,7 +28,7 @@ interface ListsItemProps {
 }
 
 const ITEMS_PER_PAGE = 20;
-const lineTypes = ['TOP', 'JUNGLE', 'MIDDLE', 'BOTTOM', 'UTILITY'];
+const lineTypes = ['탑', '정글', '미드', '원딜', '서폿'];
 export default function ListsItem({ result, email }: ListsItemProps) {
     const router = useRouter()
     const { setLines, setChampions, setLineResults, setGameResults, setBefore, setAfter, setHalf, setReview,
@@ -67,14 +67,15 @@ export default function ListsItem({ result, email }: ListsItemProps) {
     const getChampionImg = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={35} height={35} />
     const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={35} height={35} />
     const array: any = []
-    const runeGroups = runesReforged.map((runeGroup: any) => runeGroup.slots)
+    const runeGroups = runesReforgedOld.map((runeGroup: any) => runeGroup.slots)
     const getRuneImg = (runeCode: number, line: number) => {
         if (runeCode == 0) {
-            return `perk-images/0.png`
+            return `0.png`
         }
         return array.concat(...runeGroups.map((runeType: any) => runeType[line].runes)).find((rune: any) => rune.id == runeCode).icon
     }
     const getRuneImg4 = (RuneCode: string) => <Image className='rounded-md' alt={'rune1'} src={`/` + RuneCode} width={35} height={35} />
+   
     return (
         <div>
             <div>

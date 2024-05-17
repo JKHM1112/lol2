@@ -16,14 +16,6 @@ export const runesReforged = [
                         "longDesc": "3초 동안 같은 챔피언에게 <b>개별</b> 공격 또는 스킬을 3회 적중시키면 추가 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'><font color='#48C4B7'>적응형 피해</font></lol-uikit-tooltipped-keyword>를 입힙니다.<br><br>피해량: 30~220 (+추가 공격력의 0.1, +주문력의 0.05)<br><br>재사용 대기시간: 25~20초<br><br><hr><i>'우리는 그들을 천둥군주라고 부른다. 그들의 번개를 입에 올리는 것은 재앙을 부르는 길이기 때문이다.'</i>"
                     },
                     {
-                        "id": 8124,
-                        "key": "Predator",
-                        "icon": "perk-images/Styles/Domination/Predator/Predator.png",
-                        "name": "포식자",
-                        "shortDesc": "장화에 사용 효과 추가. 사용 시 일시적으로 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_MS'>이동 속도</lol-uikit-tooltipped-keyword>가 대폭 증가하며 다음 공격 또는 스킬 사용 시 추가 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'>적응형 피해</lol-uikit-tooltipped-keyword>",
-                        "longDesc": "장화에 '<font color='#c60300'>포식자</font>' 사용 효과를 부여합니다.<br><br>적 챔피언을 쫓을 때 이동 속도가 1초 동안 25~50%까지 서서히 증가합니다. 이후 챔피언에게 공격 또는 스킬 사용 시 이 효과가 종료되며 20~180(+추가 공격력의 <scaleAD>0.25</scaleAD>)(+주문력의 <scaleAP>0.15</scaleAP>)의 추가 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'><font color='#48C4B7'>적응형 피해</font></lol-uikit-tooltipped-keyword>를 입힙니다.<br><br>재사용 대기시간: 120~60초"
-                    },
-                    {
                         "id": 8128,
                         "key": "DarkHarvest",
                         "icon": "perk-images/Styles/Domination/DarkHarvest/DarkHarvest.png",
@@ -37,7 +29,7 @@ export const runesReforged = [
                         "icon": "perk-images/Styles/Domination/HailOfBlades/HailOfBlades.png",
                         "name": "칼날비",
                         "shortDesc": "적 챔피언에 대한 첫 공격 3회 동안 공격 속도 대폭 증가",
-                        "longDesc": "적 챔피언에 대한 3번째 공격까지 공격 속도가 110% 증가합니다.<br><br>3초 안에 다음 공격을 가하지 못하면 효과가 사라집니다.<br><br>재사용 대기시간: 12초<br><br><rules>기본 공격 모션이 취소될 경우 공격 속도 증가 효과가 적용되는 공격 횟수가 1회 늘어납니다.<br>일시적으로 최고 공격 속도 제한을 초과할 수 있습니다.</rules>"
+                        "longDesc": "적 챔피언에 대한 3번째 공격까지 공격 속도가 110% (원거리 챔피언은 80%) 증가합니다.<br><br>3초 안에 다음 공격을 가하지 못하면 효과가 사라집니다.<br><br>재사용 대기시간: 12초<br><br><rules>기본 공격 모션이 취소될 경우 공격 속도 증가 효과가 적용되는 공격 횟수가 1회 늘어납니다.<br>일시적으로 최고 공격 속도 제한을 초과할 수 있습니다.</rules>"
                     }
                 ]
             },
@@ -64,8 +56,8 @@ export const runesReforged = [
                         "key": "SuddenImpact",
                         "icon": "perk-images/Styles/Domination/SuddenImpact/SuddenImpact.png",
                         "name": "돌발 일격",
-                        "shortDesc": "돌진, 도약, 점멸, 순간이동을 사용하거나 은신에서 빠져나오면 물리 관통력 및 마법 관통력 급증",
-                        "longDesc": "돌진, 도약, 점멸, 순간이동을 사용하거나 은신에서 빠져나온 뒤 적 챔피언에게 피해를 주면 5초 동안 9의 물리 관통력과 7의 마법 관통력을 얻습니다.<br><br>재사용 대기시간: 4초"
+                        "shortDesc": "돌진, 도약, 점멸, 순간이동을 사용하거나 은신에서 빠져나온 후 적 챔피언에게 기본 공격과 스킬로 피해를 입히면 추가 고정 피해",
+                        "longDesc": "돌진, 도약, 점멸, 순간이동을 사용하거나 은신에서 빠져나온 후 4초 동안 적 챔피언에게 기본 공격과 스킬로 피해를 입히면 레벨에 비례해 <trueDamage>20~80의 추가 고정 피해</trueDamage>를 입힙니다.<br><br>재사용 대기시간: 10초"
                     }
                 ]
             },
@@ -108,20 +100,12 @@ export const runesReforged = [
                         "longDesc": "다음번 <i>현상금 사냥꾼</i> 중첩을 획득하면 <gold>50골드</gold>를 추가로 얻습니다. <i>현상금 사냥꾼</i> 중첩 하나당 골드 획득량이 <gold>20골드</gold>씩 증가합니다. (최대 <gold>130골드</gold>)<br><br>각 적 챔피언을 처치하는 데 처음으로 관여할 때마다 <i>현상금 사냥꾼</i> 중첩을 얻을 수 있습니다."
                     },
                     {
-                        "id": 8134,
-                        "key": "IngeniousHunter",
-                        "icon": "perk-images/Styles/Domination/IngeniousHunter/IngeniousHunter.png",
-                        "name": "영리한 사냥꾼",
-                        "shortDesc": "적 챔피언당 <b>1회</b> 한정 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_Takedown'>처치 관여</lol-uikit-tooltipped-keyword> 시 영구적으로 아이템 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_CDR'>가속</lol-uikit-tooltipped-keyword> 증가 (장신구 포함)",
-                        "longDesc": "<b>아이템 가속</b>이 <attention>20</attention>+<i>현상금 사냥꾼</i> 중첩 1회당 <attention>6</attention> 증가합니다. (장신구 포함)<br><br>각 적 챔피언을 처치하는 데 처음으로 관여할 때마다 <i>현상금 사냥꾼</i> 중첩을 얻을 수 있습니다.<br><br><rules>아이템 가속은 재사용 대기시간이 있는 모든 아이템에 적용됩니다. </rules>"
-                    },
-                    {
                         "id": 8105,
                         "key": "RelentlessHunter",
                         "icon": "perk-images/Styles/Domination/RelentlessHunter/RelentlessHunter.png",
                         "name": "끈질긴 사냥꾼",
                         "shortDesc": "적 챔피언당 <b>1회</b> 한정 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_Takedown'>처치 관여</lol-uikit-tooltipped-keyword> 시 <b>전투에서 벗어나 있을 때 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_MS'>이동 속도</lol-uikit-tooltipped-keyword></b> 영구 증가 ",
-                        "longDesc": "전투에서 벗어나 있을 때 <speed>이동 속도가 5</speed> 상승합니다. <i>현상금 사냥꾼</i> 중첩 하나당 <speed>8</speed>씩 추가됩니다.<br><br>각 적 챔피언을 처치하는 데 처음으로 관여할 때마다 <i>현상금 사냥꾼</i> 중첩을 얻을 수 있습니다."
+                        "longDesc": "전투에서 벗어나 있을 때 <speed>이동 속도가 8</speed> 상승합니다. <i>현상금 사냥꾼</i> 중첩 하나당 증가합니다.<br><br>각 적 챔피언을 처치하는 데 처음으로 관여할 때마다 <i>현상금 사냥꾼</i> 중첩을 얻을 수 있습니다."
                     },
                     {
                         "id": 8106,
@@ -164,8 +148,8 @@ export const runesReforged = [
                         "key": "FirstStrike",
                         "icon": "perk-images/Styles/Inspiration/FirstStrike/FirstStrike.png",
                         "name": "선제공격",
-                        "shortDesc": "적 챔피언과 전투 개시 시 3초 동안 7%의 추가 피해 및 입힌 피해에 따라 골드 획득",
-                        "longDesc": "적 챔피언과 전투 시작 후 0.25초 내에 스킬이나 기본 공격으로 해당 적 챔피언에게 피해를 입히면 5골드를 획득하고 3초 동안 <b>선제공격</b> 효과가 발동됩니다. 효과 발동 시 적 챔피언에게 <truedamage>7%</truedamage>의 추가 <truedamage>피해</truedamage>를 입힙니다. 또한 입힌 추가 피해의 <gold>100%(원거리 챔피언은 70%)</gold>에 해당하는 <gold>골드</gold>를 획득합니다.<br><br>재사용 대기시간: <scaleLevel>25~15</scaleLevel>초"
+                        "shortDesc": "적 챔피언과 전투 개시 시 3초 동안 8%의 추가 피해 및 입힌 피해에 따라 골드 획득",
+                        "longDesc": "적 챔피언과 전투 시작 후 0.25초 내에 스킬이나 기본 공격으로 해당 적 챔피언에게 피해를 입히면 15골드를 획득하고 3초 동안 <b>선제공격</b> 효과가 발동됩니다. 효과 발동 시 적 챔피언에게 <truedamage>8%</truedamage>의 추가 <truedamage>피해</truedamage>를 입힙니다. 또한 입힌 추가 피해의 <gold>50%(원거리 챔피언은 35%)</gold>에 해당하는 <gold>골드</gold>를 획득합니다.<br><br>재사용 대기시간: <scaleLevel>25~15</scaleLevel>초"
                     }
                 ]
             },
@@ -188,32 +172,32 @@ export const runesReforged = [
                         "longDesc": "게임 시작 12분 후 약간 신비한 신발 아이템을 얻습니다. 그 전까지는 신발류 아이템을 구매할 수 없습니다. 챔피언 처치에 관여할 때마다 장화 획득 시점이 45초씩 앞당겨집니다.<br><br>약간 신비한 신발 아이템으로 <speed>이동 속도가 10</speed> 증가합니다."
                     },
                     {
-                        "id": 8313,
-                        "key": "PerfectTiming",
-                        "icon": "perk-images/Styles/Inspiration/PerfectTiming/AlchemistCabinet.png",
-                        "name": "삼중 물약",
-                        "shortDesc": "3레벨에 도달하면 탐욕의 영약을 획득합니다.<br>6레벨에 도달하면 힘의 영약을 획득합니다.<br>9레벨에 도달하면 숙련의 영약을 획득합니다. ",
-                        "longDesc": "3레벨에 도달하면 탐욕의 영약을 획득합니다.<br>6레벨에 도달하면 힘의 영약을 획득합니다.<br>9레벨에 도달하면 숙련의 영약을 획득합니다. "
+                        "id": 8321,
+                        "key": "CashBack",
+                        "icon": "perk-images/Styles/Inspiration/CashBack/CashBack2.png",
+                        "name": "환급",
+                        "shortDesc": "전설급 아이템 구매 시 골드 일부를 돌려받음",
+                        "longDesc": "전설급 아이템 구매 시 골드를 6% 돌려받습니다."
                     }
                 ]
             },
             {
                 "runes": [
                     {
-                        "id": 8321,
-                        "key": "FuturesMarket",
-                        "icon": "perk-images/Styles/Inspiration/FuturesMarket/FuturesMarket.png",
-                        "name": "외상",
-                        "shortDesc": "아이템 외상 구매 가능",
-                        "longDesc": "외상으로 아이템을 구입할 수 있습니다. 외상 한도는 점차 증가합니다. 외상 시 수수료는 <attention>50</attention>골드입니다."
+                        "id": 8313,
+                        "key": "PerfectTiming",
+                        "icon": "perk-images/Styles/Inspiration/PerfectTiming/AlchemistCabinet.png",
+                        "name": "삼중 물약",
+                        "shortDesc": "3레벨에 도달하면 탐욕의 영약을 획득합니다.<br>6레벨에 도달하면 힘의 영약을 획득합니다.<br>9레벨에 도달하면 숙련의 영약을 획득합니다. ",
+                        "longDesc": "3레벨에 도달하면 탐욕의 영약을 획득합니다.<br>6레벨에 도달하면 힘의 영약을 획득합니다.<br>9레벨에 도달하면 숙련의 영약을 획득합니다. "
                     },
                     {
-                        "id": 8316,
-                        "key": "MinionDematerializer",
-                        "icon": "perk-images/Styles/Inspiration/MinionDematerializer/MinionDematerializer.png",
-                        "name": "미니언 해체분석기",
-                        "shortDesc": "미니언 해체분석기 3개를 보유하고 게임 시작. 해당 아이템으로 미니언 처치 시 동일한 종류의 미니언에게 추가 피해 적용",
-                        "longDesc": "게임 시작 시, 공격로 미니언을 즉시 처치하고 흡수하는 미니언 해체분석기 3개를 받습니다. 미니언 해체분석기 아이템은 게임 시작 후 180초 동안 재사용 대기 상태입니다.<br><br>이 아이템으로 미니언을 흡수하면 이후 동일한 종류의 미니언을 대상으로 6%의 추가 피해를 입히며, 동일한 종류의 미니언을 추가 흡수 시마다 3%의 추가 피해를 입힙니다.<br>"
+                        "id": 8352,
+                        "key": "TimeWarpTonic",
+                        "icon": "perk-images/Styles/Inspiration/TimeWarpTonic/TimeWarpTonic.png",
+                        "name": "시간 왜곡 물약",
+                        "shortDesc": "물약 사용 시 즉시 일정량의 체력 회복",
+                        "longDesc": "물약을 사용하면 체력 회복량의 40%를 즉시 회복합니다.<br><br>"
                     },
                     {
                         "id": 8345,
@@ -244,12 +228,12 @@ export const runesReforged = [
                         "longDesc": "이동 방해 스킬에 맞은 근처의 적 챔피언에게 이동할 때 <speed>이동 속도가 7.5%</speed> 증가합니다. 적 챔피언에게 이동 방해 스킬을 맞히고 해당 적에게 이동할 때는 <speed>이동 속도가 15%</speed>까지 증가합니다. <br><br>아군 군중 제어 사용 범위: 1000"
                     },
                     {
-                        "id": 8352,
-                        "key": "TimeWarpTonic",
-                        "icon": "perk-images/Styles/Inspiration/TimeWarpTonic/TimeWarpTonic.png",
-                        "name": "시간 왜곡 물약",
-                        "shortDesc": "물약이나 비스킷으로 회복량 일부를 즉시 회복. 물약이나 비스킷의 효과가 지속되는 동안 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_MS'>이동 속도</lol-uikit-tooltipped-keyword> 증가",
-                        "longDesc": "물약이나 비스킷을 사용하면 체력이나 마나 회복량의 30%를 즉시 회복합니다. 또한 물약이나 비스킷의 효과가 지속되는 동안 <speed>이동 속도가 2%</speed> 증가합니다.<br><br>"
+                        "id": 8316,
+                        "key": "JackOfAllTrades",
+                        "icon": "perk-images/Styles/Inspiration/JackOfAllTrades/JackofAllTrades2.png",
+                        "name": "다재다능",
+                        "shortDesc": "아이템으로 얻은 서로 다른 능력치 하나당 잭 중첩 획득. 중첩 하나당 <speed>스킬 가속 1</speed> 증가<br><br>5회 및 10회 중첩 시 추가 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_Adaptive'>적응형 능력치</lol-uikit-tooltipped-keyword> 획득",
+                        "longDesc": "아이템으로 얻은 서로 다른 능력치 하나당 잭 중첩을 얻습니다. 중첩 하나당 <speed>스킬 가속이 1</speed> 증가합니다.<br><br>5회 및 10회 중첩 시 각각 10 또는 25의 추가 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_Adaptive'>적응형 능력치</lol-uikit-tooltipped-keyword>를 획득합니다."
                     }
                 ]
             }
@@ -268,16 +252,8 @@ export const runesReforged = [
                         "key": "PressTheAttack",
                         "icon": "perk-images/Styles/Precision/PressTheAttack/PressTheAttack.png",
                         "name": "집중 공격",
-                        "shortDesc": "적 챔피언을 연속 3회 기본 공격하면 적의 약점이 노출되며 추가 피해를 줌. 약점이 노출된 적은 6초 동안 모든 상대에게서 추가 피해를 받음",
-                        "longDesc": "적 챔피언에게 연속으로 3회 기본 공격을 가하면 레벨에 따라 40 ~ 180의 추가 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'><font color='#48C4B7'>적응형 피해</font></lol-uikit-tooltipped-keyword>를 입히고 적의 약점을 노출시킵니다. 약점이 노출된 적은 6초 동안 모든 상대에게서 8%의 추가 피해를 받습니다."
-                    },
-                    {
-                        "id": 8008,
-                        "key": "LethalTempo",
-                        "icon": "perk-images/Styles/Precision/LethalTempo/LethalTempoTemp.png",
-                        "name": "치명적 속도",
-                        "shortDesc": "적 챔피언 기본 공격 시 공격 속도 상승(최대 6회 중첩). 최대 중첩 시 공격 사거리 상승 및 최고 공격 속도 제한 해제",
-                        "longDesc": "적 챔피언을 기본 공격하면 6초 동안 공격 속도가 [30%~96%] (근접) 또는 [21%~48%] (원거리) 상승합니다. 이 효과는 6회까지 중첩됩니다.<br><br>최대로 중첩되면 공격 속도가 2.5를 초과할 수 있으며 공격 사거리가 50 상승합니다."
+                        "shortDesc": "적 챔피언에게 공격 3회 연속 적중 시 추가 피해를 입히고 챔피언과의 전투에서 벗어날 때까지 피해량 증폭",
+                        "longDesc": "적 챔피언에게 연속으로 3회 기본 공격을 가하면 레벨에 따라 40~160의 추가 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_AdaptiveDmg'><font color='#48C4B7'>적응형 피해</font></lol-uikit-tooltipped-keyword>를 입히고 챔피언과의 전투에서 벗어날 때까지 피해량이 8% 증폭됩니다."
                     },
                     {
                         "id": 8021,
@@ -285,7 +261,7 @@ export const runesReforged = [
                         "icon": "perk-images/Styles/Precision/FleetFootwork/FleetFootwork.png",
                         "name": "기민한 발놀림",
                         "shortDesc": "공격 및 이동 시 충전. 충전 중첩 100회 상태로 공격 시 체력 회복 및 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_MS'>이동 속도</lol-uikit-tooltipped-keyword> 증가",
-                        "longDesc": "공격 또는 이동 시 충전 중첩이 쌓입니다. 중첩이 100회에 도달하면 충전 상태로 다음 공격을 할 수 있습니다.<br><br>충전 상태로 공격 시 10~130(+추가 공격력의 0.1, +주문력의 0.05)에 해당하는 체력이 회복되며 1초 동안 <speed>이동 속도가 20%</speed> 증가합니다.<br><br>미니언으로부터 받는 회복 효과는 원거리 챔피언의 경우 10%, 근접 챔피언의 경우 20% 적용됩니다."
+                        "longDesc": "공격 또는 이동 시 충전 중첩이 쌓입니다. 중첩이 100회에 도달하면 충전 상태로 다음 공격을 할 수 있습니다.<br><br>충전 상태로 공격 시 8~110(+추가 공격력의 0.1, +주문력의 0.05)에 해당하는 체력이 회복되며 1초 동안 <speed>이동 속도가 20%</speed> 증가합니다.<br><br>미니언으로부터 받는 회복 효과는 원거리 챔피언의 경우 10%, 근접 챔피언의 경우 20% 적용됩니다."
                     },
                     {
                         "id": 8010,
@@ -301,11 +277,11 @@ export const runesReforged = [
                 "runes": [
                     {
                         "id": 9101,
-                        "key": "Overheal",
-                        "icon": "perk-images/Styles/Precision/Overheal.png",
-                        "name": "과다치유",
-                        "shortDesc": "자신의 체력을 초과한 체력 회복 효과가 보호막으로 전환",
-                        "longDesc": "자신에 대한 체력 회복 초과분은 최대 체력의 11%에 해당하는 피해를 흡수하는 보호막으로 전환됩니다.<br><br>보호막 전환율은 자신 또는 아군으로부터 받는 체력 회복 초과분의 20~100%입니다."
+                        "key": "AbsorbLife",
+                        "icon": "perk-images/Styles/Precision/AbsorbLife/AbsorbLife.png",
+                        "name": "생명 흡수",
+                        "shortDesc": "대상 처치 시 체력 회복",
+                        "longDesc": "대상 처치 시 @HealAmount@만큼 체력을 회복합니다."
                     },
                     {
                         "id": 9111,
@@ -337,11 +313,11 @@ export const runesReforged = [
                     },
                     {
                         "id": 9105,
-                        "key": "LegendTenacity",
-                        "icon": "perk-images/Styles/Precision/LegendTenacity/LegendTenacity.png",
-                        "name": "전설: 강인함",
-                        "shortDesc": "적 챔피언 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_Takedown'>처치 관여</lol-uikit-tooltipped-keyword> 시 영구적으로 <b>강인함</b> 효과 획득 ",
-                        "longDesc": "강인함이 5% 증가하며 <i>전설</i> 중첩당 1.5%의 강인함이 추가로 증가합니다. (<statGood>최대 전설 중첩 횟수: 10</statGood>)<br><br>챔피언 처치 관여, 에픽 몬스터 처치 관여, 대형 몬스터 처치, 미니언 처치 시마다 <i>전설</i> 중첩을 얻습니다."
+                        "key": "LegendHaste",
+                        "icon": "perk-images/Styles/Precision/LegendHaste/LegendHaste.png",
+                        "name": "전설: 가속",
+                        "shortDesc": "적 챔피언 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_Takedown'>처치 관여</lol-uikit-tooltipped-keyword> 시 영구적으로 기본 스킬 <b>가속</b> 효과 획득 ",
+                        "longDesc": "<i>전설</i> 중첩당 기본 스킬 가속이 1.5 증가합니다. (<statGood>최대 전설 중첩 횟수: 10</statGood>)<br><br>챔피언 처치 관여, 에픽 몬스터 처치 관여, 대형 몬스터 처치, 미니언 처치 시마다 <i>전설</i> 중첩을 얻습니다."
                     },
                     {
                         "id": 9103,
@@ -368,8 +344,8 @@ export const runesReforged = [
                         "key": "CutDown",
                         "icon": "perk-images/Styles/Precision/CutDown/CutDown.png",
                         "name": "체력차 극복",
-                        "shortDesc": "적 최대 체력이 더 많을 경우 해당 챔피언에게 추가 피해",
-                        "longDesc": "적 챔피언의 최대 체력이 자신보다 많은 정도에 비례해 해당 챔피언에게 5%~15%의 추가 피해를 입힙니다.<br><br><rules>추가 피해량은 적의 최대 체력이 10%~100% 더 많을 경우 그에 따라 증가합니다.</rules>"
+                        "shortDesc": "체력이 높은 적 챔피언에게 입히는 피해량 증가",
+                        "longDesc": "체력이 60% 이상인 적 챔피언에게 주는 피해량이 8% 증가합니다."
                     },
                     {
                         "id": 8299,
@@ -432,8 +408,8 @@ export const runesReforged = [
                         "key": "FontOfLife",
                         "icon": "perk-images/Styles/Resolve/FontOfLife/FontOfLife.png",
                         "name": "생명의 샘",
-                        "shortDesc": "적 챔피언 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_ImpairMov'>이동 방해</lol-uikit-tooltipped-keyword> 시 표식을 남겨, 아군이 해당 적 공격 시 체력 회복 ",
-                        "longDesc": "적 챔피언의 이동을 방해하면 4초 동안 표식을 남깁니다.<br><br>표식이 남겨진 적을 공격하는 아군 챔피언은 2초에 걸쳐 5 + 나의 최대 체력의 0.9%에 해당하는 체력을 회복합니다. "
+                        "shortDesc": "적 챔피언 <lol-uikit-tooltipped-keyword key='LinkTooltip_Description_ImpairMov'>이동 방해</lol-uikit-tooltipped-keyword> 시 주위 아군 챔피언의 체력 회복 ",
+                        "longDesc": "적 챔피언의 이동을 방해하면 자신과 주위의 체력이 가장 낮은 아군 챔피언이 <healing>@BaseHeal@만큼 체력</healing>을 회복합니다.<br><br>원거리 챔피언의 경우 70%의 효과가 적용됩니다.<br><br>재사용 대기시간: 20초"
                     },
                     {
                         "id": 8401,

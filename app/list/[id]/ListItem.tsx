@@ -1,7 +1,7 @@
 //app/lists/ListLitem.tsx
 'use client';
 import useUserStore from '@/app/hooks/useUserStore';
-import { runesReforged } from '@/app/data/runesReforged';
+import { runesReforgedOld } from '@/app/data/runesReforgedOld';
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious, } from "@/components/ui/pagination";
 import { Button } from '@/components/ui/button';
 import React, { useState } from 'react';
@@ -66,7 +66,7 @@ export default function ListItem({ result }: ListItemProps) {
     const getChampionImg = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={35} height={35} />
     const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={35} height={35} />
     const array: any = []
-    const runeGroups = runesReforged.map((runeGroup: any) => runeGroup.slots)
+    const runeGroups = runesReforgedOld.map((runeGroup: any) => runeGroup.slots)
     const getRuneImg = (runeCode: number, line: number) => {
         if (runeCode == 0) {
             return `perk-images/0.png`

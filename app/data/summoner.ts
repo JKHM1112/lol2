@@ -1,12 +1,12 @@
-export const summoner = {
+export const summoner ={
     "type": "summoner",
-    "version": "14.7.1",
+    "version": "14.10.1",
     "data": {
         "SummonerBarrier": {
             "id": "SummonerBarrier",
             "name": "방어막",
-            "description": "2초 동안 방어막으로 감싸 피해를 105~411(챔피언 레벨에 따라 변동)만큼 흡수합니다.",
-            "tooltip": "2초간 <shield>방어막이 챔피언을 감싸 {{ tooltipabsorbeddamage }}</shield>의 피해를 흡수합니다.",
+            "description": "2.5초 동안 방어막으로 감싸 피해를 120~480(챔피언 레벨에 따라 변동)만큼 흡수합니다.",
+            "tooltip": "{{ shieldduration }}초간 <shield>방어막이 챔피언을 감싸 {{ shieldstrength }}</shield>의 피해를 흡수합니다.",
             "maxrank": 1,
             "cooldown": [
                 180
@@ -20,10 +20,10 @@ export const summoner = {
             "effect": [
                 null,
                 [
-                    87
+                    0
                 ],
                 [
-                    18
+                    0
                 ],
                 [
                     0
@@ -52,8 +52,8 @@ export const summoner = {
             ],
             "effectBurn": [
                 null,
-                "87",
-                "18",
+                "0",
+                "0",
                 "0",
                 "0",
                 "0",
@@ -103,13 +103,13 @@ export const summoner = {
         "SummonerBoost": {
             "id": "SummonerBoost",
             "name": "정화",
-            "description": "챔피언에 걸린 모든 이동 불가와 (제압 및 공중으로 띄우는 효과 제외) 소환사 주문에 의한 해로운 효과를 제거하고 새로 적용되는 이동 불가 효과들의 지속시간을 3초간 65% 감소시킵니다.",
-            "tooltip": "챔피언에 적용되는 모든 방해 효과와 (제압 및 공중으로 띄우는 효과 제외) 해로운 소환사 주문 효과를 제거하고 다음 {{ e2 }}초 동안 방해 효과의 지속시간을 65% 감소시킵니다.",
+            "description": "챔피언에게 걸린 모든 이동 불가와 (제압 및 공중으로 띄우는 효과 제외) 소환사 주문에 의한 해로운 효과를 제거하고 3초간 강인함을 75% 증가시킵니다.",
+            "tooltip": "챔피언에게 걸린 모든 이동 불가와 (제압 및 공중으로 띄우는 효과 제외) 소환사 주문에 의한 해로운 효과를 제거하고 다음 {{ tenacityduration }}초 동안 강인함을 {{ tenacityvalue*100 }}% 증가시킵니다.",
             "maxrank": 1,
             "cooldown": [
-                210
+                240
             ],
-            "cooldownBurn": "210",
+            "cooldownBurn": "240",
             "cost": [
                 0
             ],
@@ -118,10 +118,10 @@ export const summoner = {
             "effect": [
                 null,
                 [
-                    0.65
+                    0
                 ],
                 [
-                    3
+                    0
                 ],
                 [
                     0
@@ -150,8 +150,8 @@ export const summoner = {
             ],
             "effectBurn": [
                 null,
-                "0.65",
-                "3",
+                "0",
+                "0",
                 "0",
                 "0",
                 "0",
@@ -368,7 +368,7 @@ export const summoner = {
             "id": "SummonerDot",
             "name": "점화",
             "description": "적 챔피언을 불태워 5초 동안 70~410의 고정 피해(챔피언 레벨에 따라 변동)를 입히고 모습을 드러내며 치료 효과를 감소시킵니다.",
-            "tooltip": "대상 적 챔피언을 불태워, 5초에 걸쳐 <span class=\"colorFEFCFF\">{{ tooltiptruedamagecalculation }}</span>의 고정 피해를 입히고 그동안 적의 위치를 드러내며 {{ grievousamount*100 }}%의 고통스러운 상처를 적용합니다.<br /><br /><rules>(고통스러운 상처는 치유 및 회복 효과를 가장 높은 수치만큼 감소시킵니다. 또한, 은신 중인 적은 위치가 드러나지 않습니다.)</rules>",
+            "tooltip": "대상 적 챔피언을 불태워, 5초에 걸쳐 <trueDamage>{{ tooltiptruedamagecalculation }}의 고정 피해</trueDamage>를 입히고 그동안 적의 위치를 드러내며 {{ grievousamount*100 }}%의 고통스러운 상처를 적용합니다.<br /><br /><rules>(고통스러운 상처는 치유 및 회복 효과를 가장 높은 수치만큼 감소시킵니다. 또한, 은신 중인 적은 위치가 드러나지 않습니다.)</rules>",
             "maxrank": 1,
             "cooldown": [
                 180
@@ -382,16 +382,16 @@ export const summoner = {
             "effect": [
                 null,
                 [
-                    5
+                    0
                 ],
                 [
-                    10
+                    0
                 ],
                 [
-                    4
+                    0
                 ],
                 [
-                    100
+                    0
                 ],
                 [
                     0
@@ -414,10 +414,10 @@ export const summoner = {
             ],
             "effectBurn": [
                 null,
-                "5",
-                "10",
-                "4",
-                "100",
+                "0",
+                "0",
+                "0",
+                "0",
                 "0",
                 "0",
                 "0",
@@ -463,13 +463,13 @@ export const summoner = {
         "SummonerExhaust": {
             "id": "SummonerExhaust",
             "name": "탈진",
-            "description": "적 챔피언을 지치게 만들어 3초 동안 이동 속도를 30% 느리게 하고 적 챔피언이 가하는 피해량을 35% 낮춥니다.",
-            "tooltip": "적 챔피언을 지치게 만들어 3초 동안 이동 속도를 {{ e5 }}% 느리게 하고 적 챔피언이 가하는 피해량을 {{ damagereductiontooltip }}% 낮춥니다.",
+            "description": "적 챔피언을 지치게 만들어 3초 동안 이동 속도를 40% 느리게 하고 이 동안 가하는 피해량을 35% 낮춥니다.",
+            "tooltip": "적 챔피언을 지치게 만들어 3초 동안 이동 속도를 {{ slow }}% 느리게 하고 이 동안 가하는 피해량을 {{ damagereduction }}% 낮춥니다.",
             "maxrank": 1,
             "cooldown": [
-                210
+                240
             ],
-            "cooldownBurn": "210",
+            "cooldownBurn": "240",
             "cost": [
                 0
             ],
@@ -478,10 +478,10 @@ export const summoner = {
             "effect": [
                 null,
                 [
-                    3
+                    0
                 ],
                 [
-                    35
+                    0
                 ],
                 [
                     0
@@ -490,7 +490,7 @@ export const summoner = {
                     0
                 ],
                 [
-                    30
+                    0
                 ],
                 [
                     0
@@ -510,11 +510,11 @@ export const summoner = {
             ],
             "effectBurn": [
                 null,
-                "3",
-                "35",
                 "0",
                 "0",
-                "30",
+                "0",
+                "0",
+                "0",
                 "0",
                 "0",
                 "0",
@@ -656,13 +656,13 @@ export const summoner = {
         "SummonerHaste": {
             "id": "SummonerHaste",
             "name": "유체화",
-            "description": "챔피언이 15초 동안 유닛과 충돌하지 않게 되며 챔피언 레벨에 따라 이동 속도가 24~48% 증가합니다.",
+            "description": "챔피언이 10초 동안 유닛과 충돌하지 않게 되며 챔피언 레벨에 따라 이동 속도가 24~48% 증가합니다.",
             "tooltip": "다음 {{ duration }}초 동안 <speed>이동 속도가 {{ movespeedmod }}</speed> 증가합니다. 지속시간 동안 챔피언이 유닛을 통과할 수 있습니다.",
             "maxrank": 1,
             "cooldown": [
-                210
+                240
             ],
-            "cooldownBurn": "210",
+            "cooldownBurn": "240",
             "cost": [
                 0
             ],
@@ -757,7 +757,7 @@ export const summoner = {
             "id": "SummonerHeal",
             "name": "회복",
             "description": "자신과 대상 아군 챔피언의 체력을 80~318만큼 회복시키고 1초 동안 이동 속도가 30% 증가합니다. 최근 소환사 주문 회복의 영향을 받은 유닛의 경우 치유량이 절반만 적용됩니다.",
-            "tooltip": "자신과 대상 아군 챔피언의 <healing>체력을 {{ tooltiphealamount }}</healing> 회복하고 1초 동안 <speed>이동 속도를 {{ movespeed*100 }}%</speed> 올려줍니다.<br /><br /><rules>이 주문은 대상을 정하지 않은 경우, 범위 내에서 가장 큰 부상을 입은 아군 챔피언에게 시전됩니다.<br />최근 회복 소환사 주문의 영향을 받은 유닛의 경우 치유량이 절반만 적용됩니다.</rules>",
+            "tooltip": "자신과 대상 아군 챔피언의 <healing>체력을 {{ totalheal }}</healing> 회복하고 {{ movespeedduration }}초 동안 <speed>이동 속도를 {{ movespeed*100 }}%</speed> 올려줍니다.<br /><br /><rules>이 주문은 대상을 정하지 않은 경우, 범위 내에서 가장 큰 부상을 입은 아군 챔피언에게 시전됩니다.<br />최근 회복 소환사 주문의 영향을 받은 유닛의 경우 치유량이 절반만 적용됩니다.</rules>",
             "maxrank": 1,
             "cooldown": [
                 240
@@ -771,7 +771,10 @@ export const summoner = {
             "effect": [
                 null,
                 [
-                    0.3
+                    0
+                ],
+                [
+                    0
                 ],
                 [
                     0
@@ -780,13 +783,10 @@ export const summoner = {
                     0
                 ],
                 [
-                    0.5
+                    0
                 ],
                 [
-                    826
-                ],
-                [
-                    0.5
+                    0
                 ],
                 [
                     0
@@ -803,12 +803,12 @@ export const summoner = {
             ],
             "effectBurn": [
                 null,
-                "0.3",
                 "0",
                 "0",
-                "0.5",
-                "826",
-                "0.5",
+                "0",
+                "0",
+                "0",
+                "0",
                 "0",
                 "0",
                 "0",
@@ -838,9 +838,9 @@ export const summoner = {
             "costType": "소모값 없음",
             "maxammo": "-1",
             "range": [
-                850
+                875
             ],
-            "rangeBurn": "850",
+            "rangeBurn": "875",
             "image": {
                 "full": "SummonerHeal.png",
                 "sprite": "spell0.png",

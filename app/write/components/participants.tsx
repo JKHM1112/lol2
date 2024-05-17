@@ -1,10 +1,10 @@
 export const initialParticipant = [
     {
-        individualPosition: "MIDDLE",
+        individualPosition: "미드",
         puuid: "",
     },
     {
-        individualPosition: "MIDDLE",
+        individualPosition: "미드",
         puuid: "qwerasdfzxcv",
     }
 ]

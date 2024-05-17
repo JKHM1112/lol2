@@ -2,9 +2,9 @@ import Games from "@/app/games/page";
 import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow, } from "@/components/ui/table"
 
 import Image from "next/image";
-import { runesReforged } from "@/app/data/runesReforged"
-import { champions } from "@/app/data/champions";
 import RuneBox from "./components/runeBox";
+import { champions } from "@/app/data/champions";
+import { runesReforged } from "@/app/data/runesReforged";
 
 export default async function ProgressGame({ params }: { params: { summoner: string } }) {
     const api_key = process.env.RIOT_API_KEY as string
@@ -93,8 +93,6 @@ export default async function ProgressGame({ params }: { params: { summoner: str
     const redTeam = participants.slice(5, 10);
     const arraysummonerId = participants.map((participant: any) => participant.summonerId)
     const summonerId = arraysummonerId[0]
-    const data1 = await getSummonerInformation(summonerId)
-
 
     const array: any = []
     const getChampionImg = (championNumber: number) => {

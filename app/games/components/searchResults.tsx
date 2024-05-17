@@ -1,10 +1,10 @@
-import { runesReforged } from "@/app/data/runesReforged"
 import GameData from "@/app/games/components/gameData"
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion"
 import Image from "next/image"
 import * as React from "react"
 import { cn } from "@/lib/utils"
+import { runesReforgedOld } from "@/app/data/runesReforgedOld"
 
 interface Participant {
     puuid: string; lane?: string; championName: string; summonerName: string;
@@ -15,13 +15,46 @@ interface Participant {
     win: string;
 }
 
-export default function SearchResults({ participants, puuid }: any) {
+export default async function SearchResults({ rankedMatchIds, aramMatchIds, puuid }: any) {
+    const api_key = process.env.RIOT_API_KEY as string
+    async function getMatchData(matchId: string) {
+        const res = await fetch(`https://asia.api.riotgames.com/lol/match/v5/matches/${matchId}`, {
+            method: "GET",
+            headers: {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+                "Accept-Language": "ko-KR,ko;q=0.9",
+                "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+                "Origin": "https://developer.riotgames.com",
+                "X-Riot-Token": api_key
+            }
+        })
+        return res.json()
+    }
+    let recentMatchesData, participants
+
+    try {
+        const allMatchIds = [...rankedMatchIds, ...aramMatchIds];
+        recentMatchesData = await Promise.all(
+            allMatchIds.map(async (matchId: any) => {
+                return await getMatchData(matchId);
+            })
+        );
+        recentMatchesData.sort((a, b) => b.info.gameEndTimestamp - a.info.gameEndTimestamp);
+        recentMatchesData = recentMatchesData.slice(0, 5);
+        participants = (recentMatchesData.map(data => data.info.participants));
+    } catch (error) {
+        return (
+            <div>
+                <h4>&apos;전적 갱신을 천천히 눌러주세요&apos;</h4>
+            </div>
+        )
+    }
 
     const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={35} height={35} />
     const getChampionImg = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={35} height={35} />
     const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={35} height={35} />
-    const runeGroups = runesReforged.map((runeGroup: any) => runeGroup.slots)
-    const runeGroups2 = runesReforged.map((runeGroup: any) => runeGroup.slots).flat().map((slot: any) => slot.runes)
+    const runeGroups = runesReforgedOld.map((runeGroup: any) => runeGroup.slots)
+    const runeGroups2 = runesReforgedOld.map((runeGroup: any) => runeGroup.slots).flat().map((slot: any) => slot.runes)
     const array: any = []
 
     const getRuneImg = (runeCode: number, line: number) => {
@@ -32,9 +65,8 @@ export default function SearchResults({ participants, puuid }: any) {
     }
     const getRuneImg4 = (RuneCode: string) => <Image className='rounded-md' alt={'rune1'} src={`/` + RuneCode} width={35} height={35} />
     const getRuneImg3 = (runeCode: number) => {
-        return array.concat(...runesReforged.map((runeType: any) => runeType)).find((rune: any) => rune.id == runeCode).icon
+        return array.concat(...runesReforgedOld.map((runeType: any) => runeType)).find((rune: any) => rune.id == runeCode).icon
     }
-
 
     return (
         <div>

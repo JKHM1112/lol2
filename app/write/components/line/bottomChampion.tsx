@@ -34,7 +34,7 @@ export default function BottomChampion() {
         <div>
             <div className="flex items-center gap-4">
                 <div className="flex items-center space-x-4">
-                    <p className="text-sm text-muted-foreground">내원딜챔피언*</p>
+                    <p className="text-sm text-muted-foreground">내원딜챔피언</p>
                     <Popover open={championOpen1} onOpenChange={setChampionOpen1}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -71,7 +71,7 @@ export default function BottomChampion() {
                     </Popover>
                 </div>
                 <div className="flex items-center space-x-4">
-                    <p className="text-sm text-muted-foreground">상대원딜챔피언*</p>
+                    <p className="text-sm text-muted-foreground">상대원딜챔피언</p>
                     <Popover open={championOpen2} onOpenChange={setChampionOpen2}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -111,7 +111,7 @@ export default function BottomChampion() {
 
             <div className="flex items-center gap-4">
                 <div className="flex items-center space-x-4">
-                    <p className="text-sm text-muted-foreground">내서폿챔피언*</p>
+                    <p className="text-sm text-muted-foreground">내서폿챔피언</p>
                     <Popover open={championOpen3} onOpenChange={setChampionOpen3}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -149,7 +149,7 @@ export default function BottomChampion() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                    <p className="text-sm text-muted-foreground">상대서폿챔피언*</p>
+                    <p className="text-sm text-muted-foreground">상대서폿챔피언</p>
                     <Popover open={championOpen4} onOpenChange={setChampionOpen4}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">

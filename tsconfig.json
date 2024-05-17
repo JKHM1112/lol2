@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/write/page.tsx", "app/write/page.ts", "app/register/page.tsx", "app/api/post/signup/signup.ts", "app/api/auth/[...nextauth].ts", "app/api/post/route.ts", "app/list/[id]/ListItem.tsx", "app/list/[id]/page.tsx", "app/nameSearch/components/data-table-faceted-filter.tsx", "app/nameSearch/data/tasks.josn", "app/data1/page3.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/write/page.tsx", "app/write/page.ts", "app/register/page.tsx", "app/api/post/signup/signup.ts", "app/api/auth/[...nextauth].ts", "app/api/post/route.ts", "app/list/[id]/ListItem.tsx", "app/list/[id]/page.tsx", "app/nameSearch/components/data-table-faceted-filter.tsx", "app/nameSearch/data/tasks.josn", "app/data1/pageitem.tsx"],
   "exclude": ["node_modules"]
 }
