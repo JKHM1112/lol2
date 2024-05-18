@@ -1,10 +1,10 @@
-import GameData from "@/app/games/components/gameData"
+import { runesReforgedOld } from "@/app/data/runesReforgedOld"
+import { cn } from "@/lib/utils"
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion"
 import Image from "next/image"
 import * as React from "react"
-import { cn } from "@/lib/utils"
-import { runesReforgedOld } from "@/app/data/runesReforgedOld"
+import DataTransfer from "./dataTransfer"
 
 interface Participant {
     puuid: string; lane?: string; championName: string; summonerName: string;
@@ -14,34 +14,19 @@ interface Participant {
     riotIdTagline: string; totalDamageDealtToChampions: number; totalDamageTaken: number;
     win: string;
 }
+const positionMapping: { [key: string]: string } = {
+    "Invalid": "칼바람 나락",
+};
 
-export default async function SearchResults({ rankedMatchIds, aramMatchIds, puuid }: any) {
-    const api_key = process.env.RIOT_API_KEY as string
-    async function getMatchData(matchId: string) {
-        const res = await fetch(`https://asia.api.riotgames.com/lol/match/v5/matches/${matchId}`, {
-            method: "GET",
-            headers: {
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-                "Accept-Language": "ko-KR,ko;q=0.9",
-                "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-                "Origin": "https://developer.riotgames.com",
-                "X-Riot-Token": api_key
-            }
-        })
-        return res.json()
-    }
-    let recentMatchesData, participants
+const translatePosition = (position: string | undefined) => {
+    return position ? positionMapping[position] || position : "";
+}
+
+export default function AramResult({ aramResult, puuid }: any) {
+    let participants
 
     try {
-        const allMatchIds = [...rankedMatchIds, ...aramMatchIds];
-        recentMatchesData = await Promise.all(
-            allMatchIds.map(async (matchId: any) => {
-                return await getMatchData(matchId);
-            })
-        );
-        recentMatchesData.sort((a, b) => b.info.gameEndTimestamp - a.info.gameEndTimestamp);
-        recentMatchesData = recentMatchesData.slice(0, 5);
-        participants = (recentMatchesData.map(data => data.info.participants));
+        participants = aramResult;
     } catch (error) {
         return (
             <div>
@@ -73,7 +58,7 @@ export default async function SearchResults({ rankedMatchIds, aramMatchIds, puui
             <Accordion type="single" collapsible >
                 {participants.map((data: any, i: number) => (
                     <AccordionItem key={'item' + i} value={'item' + i} >
-                        <AccordionTrigger className={data.find((p: Participant) => p.puuid === puuid)?.win ? 'bg-sky-200' : 'bg-rose-200'}>
+                        <AccordionTrigger className={data.info.participants.find((p: Participant) => p.puuid === puuid)?.win ? 'bg-sky-200' : 'bg-rose-200'}>
                             <Table>
                                 <TableBody>
                                     <TableRow className="flex items-center gap-1" >
@@ -84,44 +69,44 @@ export default async function SearchResults({ rankedMatchIds, aramMatchIds, puui
                                         </TableCell>
                                         <TableCell>
                                             <div>
-                                                {data.find((p: Participant) => p.puuid === puuid)?.individualPosition}
+                                                {translatePosition(data.info.participants.find((p: Participant) => p.puuid === puuid)?.individualPosition)}
                                             </div>
                                         </TableCell>
                                         <TableCell>
                                             <div>
-                                                {getChampionImg(data.find((p: Participant) => p.puuid === puuid)?.championName)}
+                                                {getChampionImg(data.info.participants.find((p: Participant) => p.puuid === puuid)?.championName)}
                                             </div>
                                         </TableCell>
                                         <TableCell>
                                             <div className="flex items-center gap-1">
-                                                {getSpellImg(data.find((p: Participant) => p.puuid === puuid)?.summoner1Id)}
-                                                {getSpellImg(data.find((p: Participant) => p.puuid === puuid)?.summoner2Id)}
+                                                {getSpellImg(data.info.participants.find((p: Participant) => p.puuid === puuid)?.summoner1Id)}
+                                                {getSpellImg(data.info.participants.find((p: Participant) => p.puuid === puuid)?.summoner2Id)}
                                             </div>
                                         </TableCell>
                                         <TableCell>
                                             <div className="flex items-center gap-1">
-                                                {getRuneImg4(getRuneImg(data.find((p: Participant) => p.puuid === puuid)?.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk, 0))}
-                                                {getRuneImg4(getRuneImg(data.find((p: Participant) => p.puuid === puuid)?.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[1].perk, 1))}
-                                                {getRuneImg4(getRuneImg(data.find((p: Participant) => p.puuid === puuid)?.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[2].perk, 2))}
-                                                {getRuneImg4(getRuneImg(data.find((p: Participant) => p.puuid === puuid)?.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[3].perk, 3))}
-                                                {getRuneImg4(getRuneImg2(data.find((p: Participant) => p.puuid === puuid)?.perks.styles.find((style: any) => style.description === "subStyle")?.selections[0].perk))}
-                                                {getRuneImg4(getRuneImg2(data.find((p: Participant) => p.puuid === puuid)?.perks.styles.find((style: any) => style.description === "subStyle")?.selections[1].perk))}
+                                                {getRuneImg4(getRuneImg(data.info.participants.find((p: Participant) => p.puuid === puuid)?.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk, 0))}
+                                                {getRuneImg4(getRuneImg(data.info.participants.find((p: Participant) => p.puuid === puuid)?.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[1].perk, 1))}
+                                                {getRuneImg4(getRuneImg(data.info.participants.find((p: Participant) => p.puuid === puuid)?.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[2].perk, 2))}
+                                                {getRuneImg4(getRuneImg(data.info.participants.find((p: Participant) => p.puuid === puuid)?.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[3].perk, 3))}
+                                                {getRuneImg4(getRuneImg2(data.info.participants.find((p: Participant) => p.puuid === puuid)?.perks.styles.find((style: any) => style.description === "subStyle")?.selections[0].perk))}
+                                                {getRuneImg4(getRuneImg2(data.info.participants.find((p: Participant) => p.puuid === puuid)?.perks.styles.find((style: any) => style.description === "subStyle")?.selections[1].perk))}
                                             </div>
                                         </TableCell>
                                         <TableCell>
                                             <div className="flex items-center gap-1">
-                                                {getItemImg(data.find((p: Participant) => p.puuid === puuid)?.item0)}
-                                                {getItemImg(data.find((p: Participant) => p.puuid === puuid)?.item1)}
-                                                {getItemImg(data.find((p: Participant) => p.puuid === puuid)?.item2)}
-                                                {getItemImg(data.find((p: Participant) => p.puuid === puuid)?.item3)}
-                                                {getItemImg(data.find((p: Participant) => p.puuid === puuid)?.item4)}
-                                                {getItemImg(data.find((p: Participant) => p.puuid === puuid)?.item5)}
-                                                {getItemImg(data.find((p: Participant) => p.puuid === puuid)?.item6)}
+                                                {getItemImg(data.info.participants.find((p: Participant) => p.puuid === puuid)?.item0)}
+                                                {getItemImg(data.info.participants.find((p: Participant) => p.puuid === puuid)?.item1)}
+                                                {getItemImg(data.info.participants.find((p: Participant) => p.puuid === puuid)?.item2)}
+                                                {getItemImg(data.info.participants.find((p: Participant) => p.puuid === puuid)?.item3)}
+                                                {getItemImg(data.info.participants.find((p: Participant) => p.puuid === puuid)?.item4)}
+                                                {getItemImg(data.info.participants.find((p: Participant) => p.puuid === puuid)?.item5)}
+                                                {getItemImg(data.info.participants.find((p: Participant) => p.puuid === puuid)?.item6)}
                                             </div>
                                         </TableCell>
                                         <TableCell>
                                             <div>
-                                                <GameData participants={participants} i={i} puuid={puuid} />
+                                                <DataTransfer participants={participants} i={i} puuid={puuid} />
                                             </div>
                                         </TableCell>
                                     </TableRow>
@@ -129,7 +114,7 @@ export default async function SearchResults({ rankedMatchIds, aramMatchIds, puui
                             </Table>
                         </AccordionTrigger>
                         <AccordionContent>
-                            {participants[i].map((participant: Participant, index: number) => (
+                            {data.info.participants.map((participant: Participant, index: number) => (
                                 <Table key={'participant' + index} >
                                     <TableBody>
                                         <TableRow className={cn("flex items-center gap-1", participant.win ? 'bg-sky-200' : 'bg-rose-200')} >

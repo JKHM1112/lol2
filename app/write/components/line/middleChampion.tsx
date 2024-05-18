@@ -14,11 +14,7 @@ export default function MiddleChampion() {
         nameK: champion.nameK,
         img: '/ChampionE/' + champion.nameE + '.png'
     }));
-    const { participants, selectedGame, puuid, champions, setChampions } = useUserStore();
-
-    const participant1 = participants[selectedGame].find((participant: any) => participant.puuid === puuid)//선택한 게임 내가 전송한 내 게임 전체 오브젝트
-    const participant1Line = participant1.individualPosition
-    const participant2 = participants[selectedGame].find((participant: any) => participant.individualPosition === participant1Line && participant.puuid !== puuid)
+    const {champions, setChampions } = useUserStore();
 
     const [championOpen1, setChampionOpen1] = useState(false)
     const [championOpen2, setChampionOpen2] = useState(false)

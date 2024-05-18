@@ -15,16 +15,7 @@ export default function BottomChampion() {
         nameK: champion.nameK,
         img: '/ChampionE/' + champion.nameE + '.png'
     }));
-    const { participants, selectedGame, puuid, champions, setChampions } = useUserStore();
-    const defaultParticipant = { championName: '' };
-
-    const participant1 = participants[selectedGame].find((participant: any) => participant.puuid === puuid)
-    const participant1Line = participant1.individualPosition
-    const participant1ParticipantId = participant1.participantId
-    const participant2 = participants[selectedGame].find((participant: any) => participant.individualPosition === participant1Line && participant.puuid !== puuid)
-    const participant3 = participants[selectedGame].find((participant: any) => participant.individualPosition === 'UTILITY' && participant.participantId === participant1ParticipantId + 1) || defaultParticipant;
-    const participant4 = participants[selectedGame].find((participant: any) => participant.individualPosition === 'UTILITY' && participant.participantId !== participant1ParticipantId + 1) || defaultParticipant;
-
+    const { champions, setChampions } = useUserStore();
     const [championOpen1, setChampionOpen1] = useState(false)
     const [championOpen2, setChampionOpen2] = useState(false)
     const [championOpen3, setChampionOpen3] = useState(false)

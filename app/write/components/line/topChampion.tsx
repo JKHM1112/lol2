@@ -15,13 +15,8 @@ export default function TopChampion() {
         nameK: champion.nameK,
         img: '/ChampionE/' + champion.nameE + '.png'
     }));
-    const { participants, selectedGame, puuid, champions, setChampions } = useUserStore();
+    const { champions, setChampions } = useUserStore();
 
-    const participant1 = participants[selectedGame].find((participant: any) => participant.puuid === puuid)
-    const participant1Line = participant1.individualPosition
-    const participant1Champion = participant1.championName
-    const participant2 = participants[selectedGame].find((participant: any) => participant.individualPosition === participant1Line && participant.puuid !== puuid)
-    const participant2Champion = participant2.championName
 
 
     const [championOpen1, setChampionOpen1] = useState(false)
