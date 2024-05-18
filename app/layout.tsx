@@ -52,6 +52,9 @@ export default async function RootLayout({ children, }: Readonly<{
             result ? <Link href={"/list/" + result._id} >내list</Link> : null
           }
           {
+          }
+          <Link href="/aramTierList"> 칼바람티어정리 </Link>
+          {
             session ? <></> : <Link href="/register"> 회원가입 </Link>
           }
           {
