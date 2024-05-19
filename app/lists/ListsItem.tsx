@@ -8,6 +8,7 @@ import React, { useState } from 'react';
 import Link from "next/link";
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { getChampions } from '@/components/champions';
 
 interface ListsItemProps {
     result: Array<{
@@ -29,14 +30,18 @@ interface ListsItemProps {
 
 const ITEMS_PER_PAGE = 20;
 const lineTypes = ['탑', '정글', '미드', '원딜', '서폿'];
+
 export default function ListsItem({ result, email }: ListsItemProps) {
-    const router = useRouter()
+    const router = useRouter();
     const { setLines, setChampions, setLineResults, setGameResults, setBefore, setAfter, setHalf, setReview,
-        setSpells, setRunes, setItems } = useUserStore()
+        setSpells, setRunes, setItems } = useUserStore();
     const [checkedLines, setCheckedLines] = useState<string[]>([]);
-    const [champFilter, setChampFilter] = useState('');
-    const [opponentFilter, setOpponentFilter] = useState('');
+    const [champFilter, setChampFilter] = useState(''); // 내 챔피언
+    const [opponentFilter, setOpponentFilter] = useState(''); // 상대 챔피언
     const [currentPage, setCurrentPage] = useState(1);
+
+    const champions = getChampions();
+
     const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { value, checked } = event.target;
         setCheckedLines(currentLines =>
@@ -45,6 +50,7 @@ export default function ListsItem({ result, email }: ListsItemProps) {
                 : currentLines.filter(line => line !== value)
         );
     };
+
     const swapFilters = () => {
         setChampFilter(opponentFilter);
         setOpponentFilter(champFilter);
@@ -52,10 +58,11 @@ export default function ListsItem({ result, email }: ListsItemProps) {
 
     const filteredResults = result.filter(item => {
         const matchesCheckedLines = checkedLines.length === 0 || checkedLines.includes(item.line);
-        const matchesChamp = champFilter === '' || item.cham1.toLowerCase().includes(champFilter.toLowerCase());
-        const matchesOpponent = opponentFilter === '' || item.cham2.toLowerCase().includes(opponentFilter.toLowerCase());
+        const matchesChamp = champFilter === '' || champions.some(champ => champ.nameE === item.cham1 && champ.nameK.includes(champFilter));
+        const matchesOpponent = opponentFilter === '' || champions.some(champ => champ.nameE === item.cham2 && champ.nameK.includes(opponentFilter));
         return matchesCheckedLines && matchesChamp && matchesOpponent;
     });
+
     const totalPages = Math.ceil(filteredResults.length / ITEMS_PER_PAGE);
 
     const handlePageChange = (page: number) => setCurrentPage(page);
@@ -64,18 +71,19 @@ export default function ListsItem({ result, email }: ListsItemProps) {
         (currentPage - 1) * ITEMS_PER_PAGE,
         currentPage * ITEMS_PER_PAGE
     );
-    const getChampionImg = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={35} height={35} />
-    const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={35} height={35} />
-    const array: any = []
-    const runeGroups = runesReforgedOld.map((runeGroup: any) => runeGroup.slots)
+
+    const getChampionImg = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={35} height={35} />;
+    const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={35} height={35} />;
+    const array: any = [];
+    const runeGroups = runesReforgedOld.map((runeGroup: any) => runeGroup.slots);
     const getRuneImg = (runeCode: number, line: number) => {
         if (runeCode == 0) {
-            return `0.png`
+            return `0.png`;
         }
-        return array.concat(...runeGroups.map((runeType: any) => runeType[line].runes)).find((rune: any) => rune.id == runeCode).icon
-    }
-    const getRuneImg4 = (RuneCode: string) => <Image className='rounded-md' alt={'rune1'} src={`/` + RuneCode} width={35} height={35} />
-   
+        return array.concat(...runeGroups.map((runeType: any) => runeType[line].runes)).find((rune: any) => rune.id == runeCode).icon;
+    };
+    const getRuneImg4 = (RuneCode: string) => <Image className='rounded-md' alt={'rune1'} src={`/` + RuneCode} width={35} height={35} />;
+
     return (
         <div>
             <div>
