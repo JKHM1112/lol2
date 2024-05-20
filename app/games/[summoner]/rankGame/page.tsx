@@ -8,7 +8,8 @@ export default async function RankGame({ params }: { params: { summoner: string 
     const [summonerName, tag] = fullsummonerName.split('-');
     const nextTag = tag || 'KR1';
     const decodedSummonerName = decodeURIComponent(summonerName)
-    const summonernameTag = decodedSummonerName + '#' + nextTag;
+    const decodedSummonerTag = decodeURIComponent(nextTag)
+    const summonernameTag = decodedSummonerName + '#' + decodedSummonerTag;
 
     const api_key = process.env.RIOT_API_KEY as string;
 
@@ -69,6 +70,7 @@ export default async function RankGame({ params }: { params: { summoner: string 
             return null;
         }
     }
+    
 
     let rankedMatchIds, rankResult, puuid;
     try {

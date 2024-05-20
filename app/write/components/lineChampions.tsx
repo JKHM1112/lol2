@@ -13,8 +13,7 @@ import { initialParticipant } from "./participants";
 export default function LineChampions() {
 
     const { lines, participants, selectedGame, puuid } = useUserStore();
-    console.log(participants)
-    const participant1 = participants[selectedGame].info.participants.find((participant: any) => participant.puuid === puuid) || initialParticipant;
+    const participant1 = participants[selectedGame].participants.find((participant: any) => participant.puuid === puuid) || initialParticipant;
     
     let lineK = ''
     if (lines === 'TOP') {

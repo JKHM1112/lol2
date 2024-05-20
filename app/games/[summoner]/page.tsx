@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Games from "../page";
-import ReloadButton from "./components/reloadButton";
 
 export default async function GameSelect({ params }: { params: { summoner: string } }) {
     const fullsummonerName = params.summoner;
     const [summonerName, tag] = fullsummonerName.split('-');
     const nextTag = tag || 'KR1';
     const decodedSummonerName = decodeURIComponent(summonerName)
-    const summonernameTag = decodedSummonerName + '#' + nextTag;
+    const decodedSummonerTag = decodeURIComponent(nextTag)
+    const summonernameTag = decodedSummonerName + '#' + decodedSummonerTag;
 
     
     return (

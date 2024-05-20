@@ -14,10 +14,10 @@ export default function DataTransfer({ participant, i, puuid }: GameDataProps) {
     const { setLines, setParticipants, setSelectedGame, setItems, setPuuid, setSpells, setRunes, setChampions, } = useUserStore()
     const router = useRouter();
 
-    const participant1 = participant[i].info.participants.find((participant: any) => participant.puuid === puuid);
+    const participant1 = participant[i].participants.find((participant: any) => participant.puuid === puuid);
     const participant1Line = participant1.individualPosition;
     const participant1ParticipantId = participant1.participantId;
-    const participant2 = participant[i].info.participants.find((p: any) => p.individualPosition === participant1Line && p.puuid !== puuid);
+    const participant2 = participant[i].participants.find((p: any) => p.individualPosition === participant1Line && p.puuid !== puuid);
 
     let individualPosition = participant1Line;
     if (individualPosition === 'UTILITY') {
@@ -32,11 +32,11 @@ export default function DataTransfer({ participant, i, puuid }: GameDataProps) {
     let participant3 = { championName: '' }
     let participant4 = { championName: '' }
     if (individualPosition === 'BOTTOM') {
-        participant3 = participant[i].info.participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId === participant1ParticipantId - 1) || defaultParticipant;
-        participant4 = participant[i].info.participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId !== participant1ParticipantId + 1) || defaultParticipant;
+        participant3 = participant[i].participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId === participant1ParticipantId - 1) || defaultParticipant;
+        participant4 = participant[i].participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId !== participant1ParticipantId + 1) || defaultParticipant;
     } else if (individualPosition === 'UTILITY') {
-        participant3 = participant[i].info.participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId === participant1ParticipantId + 1) || defaultParticipant;
-        participant4 = participant[i].info.participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId !== participant1ParticipantId - 1) || defaultParticipant;
+        participant3 = participant[i].participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId === participant1ParticipantId + 1) || defaultParticipant;
+        participant4 = participant[i].participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId !== participant1ParticipantId - 1) || defaultParticipant;
     }
 
     const champion1 = participant1.championName;

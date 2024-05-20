@@ -76,7 +76,8 @@ export default async function ProgressGame({ params }: { params: { summoner: str
     const [summonerName, tag] = fullsummonerName.split('-');
     const nextTag = tag || 'KR1';
     const decodedSummonerName = decodeURIComponent(summonerName)
-    const summonernameTag = decodedSummonerName + '#' + nextTag;
+    const decodedSummonerTag = decodeURIComponent(nextTag)
+    const summonernameTag = decodedSummonerName + '#' + decodedSummonerTag;
 
     const accountData = await getAccountData(summonerName, nextTag);
 
