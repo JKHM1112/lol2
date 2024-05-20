@@ -2,7 +2,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Games from "@/app/games/page";
-import ReloadButton from "../progressGame/components/reloadButton";
+import ReloadButton from "./progressGame/components/reloadButton";
 import SelectButton from "./components/selectButton";
 
 export default async function Tables({ params }: { params: { summoner: string } }) {

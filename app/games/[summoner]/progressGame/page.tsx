@@ -81,6 +81,7 @@ export default async function ProgressGame({ params }: { params: { summoner: str
 
     const puuid = accountData.puuid;
     const progressGame = await getProgressGame(puuid);
+    console.log(progressGame)
     if (!progressGame) {
         return <div>
             <Games />

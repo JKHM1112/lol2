@@ -64,7 +64,7 @@ export default function SearchResults({ searchResults, puuid }: any) {
                 {participants.map((data: any, i: number) => (
                     <AccordionItem key={'item' + i} value={'item' + i} >
                         <AccordionTrigger className={data.info.participants.find((p: Participant) => p.puuid === puuid)?.win ? 'bg-sky-200' : 'bg-rose-200'}>
-                            <Table>
+                            <Table >
                                 <TableBody>
                                     <TableRow className="flex items-center gap-1" >
                                         <TableCell>
