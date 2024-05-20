@@ -5,6 +5,8 @@ import Image from "next/image";
 import RuneBox from "./components/runeBox";
 import { champions } from "@/app/data/champions";
 import { runesReforged } from "@/app/data/runesReforged";
+import Link from "next/link";
+import ReloadButton from "../components/reloadButton";
 
 export default async function ProgressGame({ params }: { params: { summoner: string } }) {
     const api_key = process.env.RIOT_API_KEY as string
@@ -73,20 +75,31 @@ export default async function ProgressGame({ params }: { params: { summoner: str
     const fullsummonerName = params.summoner;
     const [summonerName, tag] = fullsummonerName.split('-');
     const nextTag = tag || 'KR1';
+    const decodedSummonerName = decodeURIComponent(summonerName)
+    const summonernameTag = decodedSummonerName + '#' + nextTag;
+
     const accountData = await getAccountData(summonerName, nextTag);
-    const summonernameTag = summonerName + '#' + nextTag
+
     if (!accountData) {
         return <div>소환사 정보를 찾을 수 없습니다.</div>;
+
     }
 
     const puuid = accountData.puuid;
     const progressGame = await getProgressGame(puuid);
-    console.log(progressGame)
     if (!progressGame) {
         return <div>
             <Games />
-            현재 사용자는 게임중이 아닙니다.
-        </div>;
+            <div className="flex items-center gap-4">
+                {"소환사 닉네임: " + summonernameTag}
+                <Link href={`/games/${params.summoner}/progressGame`}>진행중인 게임 확인</Link>
+                <Link href={`/games/${params.summoner}/rankGame`}>랭크 정보 확인하기</Link>
+                <Link href={`/games/${params.summoner}/aramGame`}>칼바람 정보 확인하기</Link>
+            </div>
+            <div>
+                소환사가 게임중이 아닙니다.
+            </div>
+        </div>
     }
 
     const participants = progressGame.participants
@@ -121,6 +134,13 @@ export default async function ProgressGame({ params }: { params: { summoner: str
     return (
         <div>
             <Games />
+            <div className="flex items-center gap-4">
+                {"소환사 닉네임: " + summonernameTag}
+                <Link href={`/games/${params.summoner}/progressGame`}>진행중인 게임 확인</Link>
+                <Link href={`/games/${params.summoner}/rankGame`}>랭크 정보 확인하기</Link>
+                <Link href={`/games/${params.summoner}/aramGame`}>칼바람 정보 확인하기</Link>
+                <ReloadButton />
+            </div>
             <Table>
                 <TableCaption>{summonernameTag} 의 진행중인 게임입니다.</TableCaption>
                 <TableHeader>

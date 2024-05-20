@@ -26,10 +26,9 @@ const translatePosition = (position: string | undefined) => {
 }
 
 export default function RankResult({ rankResult, puuid }: any) {
-    let participants
-
+    let participant
     try {
-        participants = rankResult;
+        participant = rankResult;
     } catch (error) {
         return (
             <div>
@@ -59,7 +58,7 @@ export default function RankResult({ rankResult, puuid }: any) {
     return (
         <div>
             <Accordion type="single" collapsible >
-                {participants.map((data: any, i: number) => (
+                {participant.map((data: any, i: number) => (
                     <AccordionItem key={'item' + i} value={'item' + i} >
                         <AccordionTrigger className={data.info.participants.find((p: Participant) => p.puuid === puuid)?.win ? 'bg-sky-200' : 'bg-rose-200'}>
                             <Table>
@@ -109,7 +108,7 @@ export default function RankResult({ rankResult, puuid }: any) {
                                         </TableCell>
                                         <TableCell>
                                             <div>
-                                                <DataTransfer participants={participants} i={i} puuid={puuid} />
+                                                <DataTransfer participant={participant} i={i} puuid={puuid} />
                                             </div>
                                         </TableCell>
                                     </TableRow>

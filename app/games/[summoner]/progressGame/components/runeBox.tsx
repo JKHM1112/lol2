@@ -54,7 +54,7 @@ export default function RuneBox({ i, teamDatas }: any) {
                             ))}
                         </div>
                         <div className="flex justify-center h-6">
-                            <div>정밀</div>
+                            <div>메인</div>
                         </div>
                     </div>
                     <div>
@@ -78,7 +78,7 @@ export default function RuneBox({ i, teamDatas }: any) {
                             ))}
                         </div>
                         <div className="flex justify-center h-6">
-                            <div>마법</div>
+                            <div>서브</div>
                         </div>
                     </div>
                     <div>

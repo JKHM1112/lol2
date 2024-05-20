@@ -5,19 +5,19 @@ import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation";
 
 interface GameDataProps {
-    participants: any[]
+    participant: any[]
     i: number
     puuid: string
 }
 
-export default function DataTransfer({ participants, i, puuid }: GameDataProps) {
+export default function DataTransfer({ participant, i, puuid }: GameDataProps) {
     const { setLines, setParticipants, setSelectedGame, setItems, setPuuid, setSpells, setRunes, setChampions, } = useUserStore()
     const router = useRouter();
 
-    const participant1 = participants[i].info.participants.find((participant: any) => participant.puuid === puuid);
+    const participant1 = participant[i].info.participants.find((participant: any) => participant.puuid === puuid);
     const participant1Line = participant1.individualPosition;
     const participant1ParticipantId = participant1.participantId;
-    const participant2 = participants[i].info.participants.find((p: any) => p.individualPosition === participant1Line && p.puuid !== puuid);
+    const participant2 = participant[i].info.participants.find((p: any) => p.individualPosition === participant1Line && p.puuid !== puuid);
 
     let individualPosition = participant1Line;
     if (individualPosition === 'UTILITY') {
@@ -32,11 +32,11 @@ export default function DataTransfer({ participants, i, puuid }: GameDataProps) 
     let participant3 = { championName: '' }
     let participant4 = { championName: '' }
     if (individualPosition === 'BOTTOM') {
-        participant3 = participants[i].info.participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId === participant1ParticipantId - 1) || defaultParticipant;
-        participant4 = participants[i].info.participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId !== participant1ParticipantId + 1) || defaultParticipant;
+        participant3 = participant[i].info.participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId === participant1ParticipantId - 1) || defaultParticipant;
+        participant4 = participant[i].info.participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId !== participant1ParticipantId + 1) || defaultParticipant;
     } else if (individualPosition === 'UTILITY') {
-        participant3 = participants[i].info.participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId === participant1ParticipantId + 1) || defaultParticipant;
-        participant4 = participants[i].info.participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId !== participant1ParticipantId - 1) || defaultParticipant;
+        participant3 = participant[i].info.participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId === participant1ParticipantId + 1) || defaultParticipant;
+        participant4 = participant[i].info.participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId !== participant1ParticipantId - 1) || defaultParticipant;
     }
 
     const champion1 = participant1.championName;
@@ -69,7 +69,7 @@ export default function DataTransfer({ participants, i, puuid }: GameDataProps) 
     const rune11 = participant2.perks.styles[1].selections[0].perk;
     const rune12 = participant2.perks.styles[1].selections[1].perk;
     const handleGameData = () => {
-        setParticipants(participants);
+        setParticipants(participant);
         setChampions(0, champion1);
         setChampions(1, champion2);
         setChampions(2, champion3);
