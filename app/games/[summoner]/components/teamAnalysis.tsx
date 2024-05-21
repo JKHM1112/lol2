@@ -1,75 +1,221 @@
-import React from 'react';
 import { Table, TableBody, TableHeader, TableHead, TableRow, TableCell } from "@/components/ui/table";
-import { Progress } from "@/components/ui/progress";
-import RuneBox from "./runeBox";
 import Image from "next/image";
-import { Accordion, AccordionContent, AccordionItem } from '@/components/ui/accordion';
-
-const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={30} height={30} />
-const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={40} height={40} />
-const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={20} height={20} />
-
-const createRuneImage1 = (runeCode: string) => (
-    <Image className='rounded-md' alt='rune' src={`/${runeCode}`} width={20} height={20} />
-);
-
-const createRuneImage2 = (runeCode: string) => (
-    <Image className='rounded-md' alt='rune' src={`/${runeCode}`} width={20} height={20} />
-);
-
-const findRuneIcon = (runeCode: number, allRunes: any) => {
-    const rune = allRunes.find((rune: any) => rune.id === runeCode);
-    return rune?.icon || '0.png';
-};
-
-const getRuneImgMark = (runeCode: number, runesReforged: any) => {
-    const rune = runesReforged.find((rune: any) => rune.id === runeCode);
-    return rune?.icon || '0.png';
-};
+import { Accordion, AccordionContent } from '@/components/ui/accordion';
+import React from 'react';
+import { ComposedChart, Bar, XAxis, YAxis, ResponsiveContainer, LabelList } from 'recharts';
 
 interface TotalResultProps {
     winTeam: any[];
     loseTeam: any[];
-    maxDamageDealt: number;
-    maxDamageTaken: number;
-    allRunes: any[];
-    runesReforged: any[];
 }
-const getGrade = (kills: number, deaths: number, assists: number) => {
-    return deaths === 0 ? "Perfect" : ((kills + assists) / deaths).toFixed(2);
-};
+export default function TeamAnalysis({ winTeam, loseTeam }: TotalResultProps) {
+    const killsWin = [...winTeam.map(player => ({ name: player.championName, kills: player.kills, img: `/championE/${player.championName}.png` }))];
+    const killsLose = [...loseTeam.map(player => ({ name: player.championName, kills: player.kills, img: `/championE/${player.championName}.png` }))];
+    const damageDealtToChampionsWin = [...winTeam.map(player => ({ name: player.championName, damageDealtToChampions: player.totalDamageDealtToChampions, img: `/championE/${player.championName}.png` }))];
+    const damageDealtToChampionsLose = [...loseTeam.map(player => ({ name: player.championName, damageDealtToChampions: player.totalDamageDealtToChampions, img: `/championE/${player.championName}.png` }))];
+    const damageTakenWin = [...winTeam.map(player => ({ name: player.championName, damageTaken: player.totalDamageTaken, img: `/championE/${player.championName}.png` }))];
+    const damageTakenLose = [...loseTeam.map(player => ({ name: player.championName, damageTaken: player.totalDamageTaken, img: `/championE/${player.championName}.png` }))];
+    const goldEarnedWin = [...winTeam.map(player => ({ name: player.championName, goldEarned: player.goldEarned, img: `/championE/${player.championName}.png` }))];
+    const goldEarnedLose = [...loseTeam.map(player => ({ name: player.championName, goldEarned: player.goldEarned, img: `/championE/${player.championName}.png` }))];
+    const csWin = [...winTeam.map(player => ({ name: player.championName, cs: player.totalMinionsKilled + player.neutralMinionsKilled, img: `/championE/${player.championName}.png` }))];
+    const csLose = [...loseTeam.map(player => ({ name: player.championName, cs: player.totalMinionsKilled + player.neutralMinionsKilled, img: `/championE/${player.championName}.png` }))];
+    const damageDealtToBuildingsWin = [...winTeam.map(player => ({ name: player.championName, damageDealtToBuildings: player.damageDealtToBuildings, img: `/championE/${player.championName}.png` }))];
+    const damageDealtToBuildingsLose = [...loseTeam.map(player => ({ name: player.championName, damageDealtToBuildings: player.damageDealtToBuildings, img: `/championE/${player.championName}.png` }))];
 
-export default function TeamAnalysis({ winTeam, loseTeam, maxDamageDealt, maxDamageTaken, allRunes, runesReforged }: TotalResultProps) {
+    interface renderType {
+        x: any;
+        y: any;
+        payload: any;
+    }
+    const renderCustomAxisTick = ({ x, y, payload }: renderType) => {
+        return (
+            <foreignObject x={x - 30} y={y} width={25} height={25}>
+                <div >
+                    <Image src={payload.value} alt={payload.value} width={25} height={25} />
+                </div>
+            </foreignObject>
+        );
+    };
+
+
     return (
         <Accordion type="single" collapsible>
-                <AccordionContent>
-                    <Table>
-                        <TableHeader>
-                            <TableRow className="bg-gray-200">
-                                <TableHead className='text-sky-500 text-right'>승리팀</TableHead>
-                                <TableHead className='text-rose-500 text-left'>패배팀</TableHead>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                            <TableRow>
-                                <TableCell>
-                                    <div className="grid grid-cols-1 gap-2">
-                                        <div className="bg-sky-100 p-2">승리팀 데이터1</div>
-                                        <div className="bg-sky-100 p-2">승리팀 데이터2</div>
-                                        <div className="bg-sky-100 p-2">승리팀 데이터3</div>
+            <AccordionContent>
+                <Table>
+                    <TableHeader>
+                        <TableRow className="bg-gray-200">
+                            <TableHead className='text-sky-500 text-right'>승리팀</TableHead>
+                            <TableHead className='text-rose-500 text-left'>패배팀</TableHead>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                        <TableRow>
+                            <TableCell className="p-4">
+                                <div className="bg-sky-100 text-center mb-4 p-2">챔피언 처치</div>
+                                <div className="flex justify-between">
+                                    <div className="bg-rose-100 p-2 w-1/2">
+                                        <ResponsiveContainer width={190} height={190}>
+                                            <ComposedChart layout="vertical" data={killsWin} margin={{ top: 15, right: 15, bottom: 15, left: 15 }}>
+                                                <XAxis type="number" hide />
+                                                <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
+                                                <Bar dataKey="kills" barSize={20} fill="#3498db">
+                                                    <LabelList dataKey="kills" position="center" fill="#000000" />
+                                                </Bar>
+                                            </ComposedChart>
+                                        </ResponsiveContainer>
                                     </div>
-                                </TableCell>
-                                <TableCell>
-                                    <div className="grid grid-cols-1 gap-2">
-                                        <div className="bg-rose-100 p-2">패배팀 데이터1</div>
-                                        <div className="bg-rose-100 p-2">패배팀 데이터2</div>
-                                        <div className="bg-rose-100 p-2">패배팀 데이터3</div>
+
+                                    <div className="bg-rose-100 p-2 w-1/2">
+                                        <ResponsiveContainer width={190} height={190}>
+                                            <ComposedChart layout="vertical" data={killsLose} margin={{ top: 15, right: 15, bottom: 15, left: 15 }}>
+                                                <XAxis type="number" hide />
+                                                <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
+
+                                                <Bar dataKey="kills" barSize={20} fill="#e74c3c" >
+                                                    <LabelList dataKey="kills" position="center" fill="#000000" />
+                                                </Bar>
+                                            </ComposedChart>
+                                        </ResponsiveContainer>
                                     </div>
-                                </TableCell>
-                            </TableRow>
-                        </TableBody>
-                    </Table>
-                </AccordionContent>
-        </Accordion>
+                                </div>
+
+                                <div className="bg-sky-100 text-center mb-4 p-2 mt-4">챔피언에게 가한 피해량</div>
+                                <div className="flex justify-between">
+                                    <div className="bg-sky-100 p-2 w-1/2">
+                                        <ResponsiveContainer width={190} height={190}>
+                                            <ComposedChart layout="vertical" data={damageDealtToChampionsWin} margin={{ top: 15, right: 15, bottom: 15, left: 15 }}>
+                                                <XAxis type="number" hide />
+                                                <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
+                                                <Bar dataKey="damageDealtToChampions" barSize={20} fill="#3498db" >
+                                                    <LabelList dataKey="damageDealtToChampions" position="center" fill="#000000" />
+                                                </Bar>
+                                            </ComposedChart>
+                                        </ResponsiveContainer>
+                                    </div>
+                                    <div className="bg-rose-100 p-2 w-1/2">
+                                        <ResponsiveContainer width={190} height={190}>
+                                            <ComposedChart layout="vertical" data={damageDealtToChampionsLose} margin={{ top: 15, right: 15, bottom: 15, left: 15 }}>
+                                                <XAxis type="number" hide />
+                                                <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
+                                                <Bar dataKey="damageDealtToChampions" barSize={20} fill="#e74c3c" >
+                                                    <LabelList dataKey="damageDealtToChampions" position="center" fill="#000000" />
+                                                </Bar>
+                                            </ComposedChart>
+                                        </ResponsiveContainer>
+                                    </div>
+                                </div>
+
+                                <div className="bg-sky-100 text-center mb-4 p-2 mt-4">받은 피해량</div>
+                                <div className="flex justify-between">
+                                    <div className="bg-sky-100 p-2 w-1/2">
+                                        <ResponsiveContainer width={190} height={190}>
+                                            <ComposedChart layout="vertical" data={damageTakenWin} margin={{ top: 15, right: 15, bottom: 15, left: 15 }}>
+                                                <XAxis type="number" hide />
+                                                <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
+                                                <Bar dataKey="damageTaken" barSize={20} fill="#3498db" >
+                                                    <LabelList dataKey="damageTaken" position="center" fill="#000000" />
+                                                </Bar>
+                                            </ComposedChart>
+                                        </ResponsiveContainer>
+                                    </div>
+                                    <div className="bg-rose-100 p-2 w-1/2">
+                                        <ResponsiveContainer width={190} height={190}>
+                                            <ComposedChart layout="vertical" data={damageTakenLose} margin={{ top: 15, right: 15, bottom: 15, left: 15 }}>
+                                                <XAxis type="number" hide />
+                                                <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
+                                                <Bar dataKey="damageTaken" barSize={20} fill="#e74c3c" >
+                                                    <LabelList dataKey="damageTaken" position="center" fill="#000000" />
+                                                </Bar>
+                                            </ComposedChart>
+                                        </ResponsiveContainer>
+                                    </div>
+                                </div>
+                            </TableCell>
+                            <TableCell>
+                                <div>
+                                    <div className="bg-sky-100 text-center mb-4 p-2 mt-4">골드 획득량</div>
+                                    <div className="flex justify-between">
+                                        <div className="bg-sky-100 p-2 w-1/2">
+                                            <ResponsiveContainer width={190} height={190}>
+                                                <ComposedChart layout="vertical" data={goldEarnedWin} margin={{ top: 15, right: 15, bottom: 15, left: 15 }}>
+                                                    <XAxis type="number" hide />
+                                                    <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
+                                                    <Bar dataKey="goldEarned" barSize={20} fill="#3498db" >
+                                                        <LabelList dataKey="goldEarned" position="center" fill="#000000" />
+                                                    </Bar>
+                                                </ComposedChart>
+                                            </ResponsiveContainer>
+                                        </div>
+                                        <div className="bg-rose-100 p-2 w-1/2">
+                                            <ResponsiveContainer width={190} height={190}>
+                                                <ComposedChart layout="vertical" data={goldEarnedLose} margin={{ top: 15, right: 15, bottom: 15, left: 15 }}>
+                                                    <XAxis type="number" hide />
+                                                    <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
+                                                    <Bar dataKey="goldEarned" barSize={20} fill="#e74c3c" >
+                                                        <LabelList dataKey="goldEarned" position="center" fill="#000000" />
+                                                    </Bar>
+                                                </ComposedChart>
+                                            </ResponsiveContainer>
+                                        </div>
+                                    </div>
+
+                                    <div className="bg-sky-100 text-center mb-4 p-2 mt-4">CS</div>
+                                    <div className="flex justify-between">
+                                        <div className="bg-sky-100 p-2 w-1/2">
+                                            <ResponsiveContainer width={190} height={190}>
+                                                <ComposedChart layout="vertical" data={csWin} margin={{ top: 15, right: 15, bottom: 15, left: 15 }}>
+                                                    <XAxis type="number" hide />
+                                                    <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
+                                                    <Bar dataKey="cs" barSize={20} fill="#3498db" >
+                                                        <LabelList dataKey="cs" position="center" fill="#000000" />
+                                                    </Bar>
+                                                </ComposedChart>
+                                            </ResponsiveContainer>
+                                        </div>
+                                        <div className="bg-rose-100 p-2 w-1/2">
+                                            <ResponsiveContainer width={190} height={190}>
+                                                <ComposedChart layout="vertical" data={csLose} margin={{ top: 15, right: 15, bottom: 15, left: 15 }}>
+                                                    <XAxis type="number" hide />
+                                                    <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
+                                                    <Bar dataKey="cs" barSize={20} fill="#e74c3c" >
+                                                        <LabelList dataKey="cs" position="center" fill="#000000" />
+                                                    </Bar>
+                                                </ComposedChart>
+                                            </ResponsiveContainer>
+                                        </div>
+                                    </div>
+
+                                    <div className="bg-sky-100 text-center mb-4 p-2 mt-4">포탑 피해량</div>
+                                    <div className="flex justify-between">
+                                        <div className="bg-sky-100 p-2 w-1/2">
+                                            <ResponsiveContainer width={190} height={190}>
+                                                <ComposedChart layout="vertical" data={damageDealtToBuildingsWin} margin={{ top: 15, right: 15, bottom: 15, left: 15 }}>
+                                                    <XAxis type="number" hide />
+                                                    <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
+                                                    <Bar dataKey="damageDealtToBuildings" barSize={20} fill="#3498db" >
+                                                        <LabelList dataKey="damageDealtToBuildings" position="center" fill="#000000" />
+                                                    </Bar>
+                                                </ComposedChart>
+                                            </ResponsiveContainer>
+                                        </div>
+                                        <div className="bg-rose-100 p-2 w-1/2">
+                                            <ResponsiveContainer width={190} height={190}>
+                                                <ComposedChart layout="vertical" data={damageDealtToBuildingsLose} margin={{ top: 15, right: 15, bottom: 15, left: 15 }}>
+                                                    <XAxis type="number" hide />
+                                                    <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
+                                                    <Bar dataKey="damageDealtToBuildings" barSize={20} fill="#e74c3c" >
+                                                        <LabelList dataKey="damageDealtToBuildings" position="center" fill="#000000" />
+                                                    </Bar>
+                                                </ComposedChart>
+                                            </ResponsiveContainer>
+                                        </div>
+                                    </div>
+                                </div>
+                            </TableCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
+            </AccordionContent>
+        </Accordion >
     );
 }

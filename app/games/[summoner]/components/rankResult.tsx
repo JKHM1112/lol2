@@ -171,7 +171,7 @@ export default function RankResult({ rankResult, puuid }: any) {
                                         <TotalResult winTeam={winTeam} loseTeam={loseTeam} maxDamageDealt={maxDamageDealt} maxDamageTaken={maxDamageTaken} allRunes={allRunes} runesReforged={runesReforged} />
                                     )}
                                     {activeTab === "TeamAnalysis" && (
-                                        <TeamAnalysis winTeam={winTeam} loseTeam={loseTeam} maxDamageDealt={maxDamageDealt} maxDamageTaken={maxDamageTaken} allRunes={allRunes} runesReforged={runesReforged} />
+                                        <TeamAnalysis winTeam={winTeam} loseTeam={loseTeam} />
                                     )}
                                 </AccordionContent>
                             </Accordion>
