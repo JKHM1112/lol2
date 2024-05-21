@@ -2,11 +2,11 @@ import Games from "@/app/games/page";
 import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow, } from "@/components/ui/table"
 
 import Image from "next/image";
-import RuneBox from "./components/runeBox";
 import { champions } from "@/app/data/champions";
 import { runesReforged } from "@/app/data/runesReforged";
 import Link from "next/link";
 import ReloadButton from "../components/reloadButton";
+import ProgressRuneBox from "./components/progressRuneBox";
 
 export default async function ProgressGame({ params }: { params: { summoner: string } }) {
     const api_key = process.env.RIOT_API_KEY as string
@@ -121,7 +121,8 @@ export default async function ProgressGame({ params }: { params: { summoner: str
     const runeGroups = runesReforged.map((runeGroup: any) => runeGroup.slots)
     const runeGroups2 = runesReforged.map((runeGroup: any) => runeGroup.slots).flat().map((slot: any) => slot.runes)
     const getRuneImg = (runeCode: number, line: number) => {
-        return array.concat(...runeGroups.map((runeType: any) => runeType[line].runes)).find((rune: any) => rune.id == runeCode).icon
+        const rune= array.concat(...runeGroups.map((runeType: any) => runeType[line].runes)).find((rune: any) => rune.id == runeCode)
+        return rune?.icon || '0.png';
     }
     const getRuneImg2 = (runCode: number) => {
         return array.concat(...runeGroups2.map((runeType: any) => runeType)).find((rune: any) => rune.id == runCode).icon
@@ -166,7 +167,7 @@ export default async function ProgressGame({ params }: { params: { summoner: str
                             <TableCell>{data.riotId}</TableCell>
                             <TableCell>티어</TableCell>
                             <TableCell>승률</TableCell>
-                            <TableCell><RuneBox i={i} teamDatas={blueTeam} /></TableCell>
+                            <TableCell><ProgressRuneBox i={i} teamDatas={blueTeam} /></TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
@@ -192,7 +193,7 @@ export default async function ProgressGame({ params }: { params: { summoner: str
                             <TableCell>{data.riotId}</TableCell>
                             <TableCell>티어</TableCell>
                             <TableCell>승률</TableCell>
-                            <TableCell><RuneBox i={i} teamDatas={redTeam} /></TableCell>
+                            <TableCell><ProgressRuneBox i={i} teamDatas={redTeam} /></TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

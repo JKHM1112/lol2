@@ -1,10 +1,10 @@
 'use client'
 import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow, } from "@/components/ui/table"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion"
-import { runesReforgedOld } from "@/app/data/runesReforgedOld"
 import Image from "next/image"
 import * as React from "react"
 import { Progress } from "@/components/ui/progress"
+import { runesReforged } from "@/app/data/runesReforged"
 
 interface Participant {
     puuid: string;
@@ -25,19 +25,18 @@ export default function AramResult({ aramResult, puuid }: any) {
     const getChampionImg2 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={50} height={50} />
     const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={25} height={25} />
 
-    const array: any = []
-    const allRunes = runesReforgedOld.flatMap((runeGroup: any) => runeGroup.slots.flatMap((slot: any) => slot.runes));
+    const allRunes = runesReforged.flatMap((runeGroup: any) => runeGroup.slots.flatMap((slot: any) => slot.runes));
     //runesReforgedOld의 모든 룬을 하나의 배열로 만듦
 
     const findRuneIcon = (runeCode: number) => {
         const rune = allRunes.find((rune: any) => rune.id === runeCode);
-        return rune ? rune.icon : null;
+        return rune?.icon || '0.png';
     };//특정 룬 코드에 해당하는 룬의 아이콘을 반환하는 함수
 
-    const getRuneImgMark = (runCode: number) => {
-        return array.concat(runesReforgedOld.map((rune: any) => rune)).find((rune: any) => rune.id == runCode).icon
+    const getRuneImgMark = (runeCode: number) => {
+        const rune = runesReforged.find((rune: any) => rune.id === runeCode);
+        return rune?.icon || '0.png';
     };//마크 코드에 해당하는 룬의 아이콘으로 반환하는 함수
-
     const createRuneImage1 = (runeCode: string) => (
         <Image className='rounded-md' alt='rune' src={`/${runeCode}`} width={25} height={25} />
     );//주어진 아이콘 경로를 사용하여 <Image> 컴포넌트를 반환하는 함수

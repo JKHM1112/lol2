@@ -81,6 +81,7 @@ export default async function RankGame({ params }: { params: { summoner: string 
                 return await getMatchData(matchId);
             })
         );
+       
     } catch (error) {
         return (
             <div>

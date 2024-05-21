@@ -1,11 +1,14 @@
 'use client'
 import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow, } from "@/components/ui/table"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion"
-import { runesReforgedOld } from "@/app/data/runesReforgedOld"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import DataTransfer from "./dataTransfer"
 import Image from "next/image"
 import * as React from "react"
-import { Progress } from "@/components/ui/progress"
+import { runesReforged } from "@/app/data/runesReforged"
+import { cn } from "@/lib/utils"
+import TotalResult from "./totalResult" // import the new component
+import TeamAnalysis from "./teamAnalysis" // import the new component
+import { Button } from "@/components/ui/button"
 
 interface Participant {
     puuid: string;
@@ -20,37 +23,33 @@ interface infoType {
 }
 
 export default function RankResult({ rankResult, puuid }: any) {
+    const [activeTab, setActiveTab] = React.useState("TotalResult");
 
-    const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={35} height={35} />
-    const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={50} height={50} />
-    const getChampionImg2 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={50} height={50} />
-    const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={25} height={25} />
+    const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={30} height={30} />
+    const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={40} height={40} />
+    const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={20} height={20} />
 
-    const array: any = []
-    const allRunes = runesReforgedOld.flatMap((runeGroup: any) => runeGroup.slots.flatMap((slot: any) => slot.runes));
-    //runesReforgedOld의 모든 룬을 하나의 배열로 만듦
+    const allRunes = runesReforged.flatMap((runeGroup: any) => runeGroup.slots.flatMap((slot: any) => slot.runes));
 
     const findRuneIcon = (runeCode: number) => {
         const rune = allRunes.find((rune: any) => rune.id === runeCode);
-        return rune ? rune.icon : null;
-    };//특정 룬 코드에 해당하는 룬의 아이콘을 반환하는 함수
+        return rune?.icon || '0.png';
+    };
 
-    const getRuneImgMark = (runCode: number) => {
-        return array.concat(runesReforgedOld.map((rune: any) => rune)).find((rune: any) => rune.id == runCode).icon
-    };//마크 코드에 해당하는 룬의 아이콘으로 반환하는 함수
+    const getRuneImgMark = (runeCode: number) => {
+        const rune = runesReforged.find((rune: any) => rune.id === runeCode);
+        return rune?.icon || '0.png';
+    };
 
     const createRuneImage1 = (runeCode: string) => (
-        <Image className='rounded-md' alt='rune' src={`/${runeCode}`} width={25} height={25} />
-    );//주어진 아이콘 경로를 사용하여 <Image> 컴포넌트를 반환하는 함수
-    const createRuneImage2 = (runeCode: string) => (
-        <Image className='rounded-md' alt='rune' src={`/${runeCode}`} width={25} height={25} />
-    );//주어진 아이콘 경로를 사용하여 <Image> 컴포넌트를 반환하는 함수
+        <Image className='rounded-md' alt='rune' src={`/${runeCode}`} width={20} height={20} />
+    );
 
     const gameDuration = (duration: number) => {
         const minutes = Math.floor(duration / 60)
         const seconds = duration % 60
         return minutes + '분 ' + seconds + '초'
-    }//duration 분/초로 변환
+    }
 
     const positionMapping: { [key: string]: string } = {
         "JUNGLE": "정글",
@@ -61,7 +60,7 @@ export default function RankResult({ rankResult, puuid }: any) {
     };
     const translatePosition = (position: string | undefined) => {
         return position ? positionMapping[position] || position : "";
-    }//position영문을 한글명으로 변환시킨다.
+    }
 
     const timeSinceGameEnd = (gameEndTime: number): string => {
         const now: Date = new Date();
@@ -96,10 +95,10 @@ export default function RankResult({ rankResult, puuid }: any) {
                     const maxDamageTaken = Math.max(...participant.map((p: Participant) => p.totalDamageTaken));
                     return (
                         <AccordionItem key={'item' + i} value={'item' + i} >
-                            <AccordionTrigger className={data.participants.find((p: Participant) => p.puuid === puuid)?.win ? 'bg-sky-200' : 'bg-rose-200'}>
-                                <Table>
-                                    <TableBody>
-                                        <TableRow className="flex" >
+                            <AccordionTrigger className={cn("", data.participants.find((p: Participant) => p.puuid === puuid)?.win ? 'bg-sky-200' : 'bg-rose-200')}>
+                                <Table >
+                                    <TableBody >
+                                        <TableRow className="flex p-2" >
                                             <TableCell className="items-center">
                                                 <div>
                                                     {(data.participants.find((p: Participant) => p.puuid === puuid)?.win ? "승리" : "패배")}
@@ -164,144 +163,18 @@ export default function RankResult({ rankResult, puuid }: any) {
                                     </TableBody>
                                 </Table>
                             </AccordionTrigger>
-                            <AccordionContent>
-                                <Table>
-                                    <TableHeader>
-                                        <TableRow className="bg-sky-200">
-                                            <TableHead>승리(블루팀)</TableHead>
-                                            <TableHead>K/D/A</TableHead>
-                                            <TableHead>피해량</TableHead>
-                                            <TableHead>아이템</TableHead>
-                                            <TableHead>기타등등</TableHead>
-                                        </TableRow>
-                                    </TableHeader>
-                                    <TableBody>
-                                        {winTeam.map((data: any, i: number) => (
-                                            <TableRow key={data.puuid} className="bg-sky-100">
-                                                <TableCell className="flex text-center gap-1">
-                                                    <div className="flex items-center gap-1">
-                                                        {getChampionImg1(data.championName)}
-                                                    </div>
-                                                    <div className=" items-center gap-1">
-                                                        {getSpellImg(data.summoner1Id)}
-                                                        {getSpellImg(data.summoner2Id)}
-                                                    </div>
-                                                    <div className=" items-center gap-1">
-                                                        {createRuneImage1(findRuneIcon(data.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk))}
-                                                        {createRuneImage1(getRuneImgMark(data.perks.styles.find((style: any) => style.description === "subStyle")?.style))}
-                                                    </div>
-                                                    <div>
-                                                        {data.riotIdGameName}
-                                                    </div>
-                                                </TableCell>
-                                                <TableCell>
-                                                    <div className=" items-center gap-1">
-                                                        {(data.kills)}/{(data.deaths)}/{(data.assists)}
-                                                    </div>
-                                                    <div className=" items-center gap-1">
-                                                        {getGrade((data.kills), (data.deaths), (data.assists))} : 1
-                                                    </div>
-                                                </TableCell>
-                                                <TableCell>
-                                                    <div>
-                                                        <div>
-                                                            {data.totalDamageDealtToChampions}
-                                                        </div>
-                                                        <div>
-                                                            <Progress indicatorColor="bg-red-500" className="w-full" value={(data.totalDamageDealtToChampions / maxDamageDealt * 100)} max={maxDamageDealt} />
-                                                        </div>
-                                                        <div>
-                                                            {data.totalDamageTaken}
-                                                        </div>
-                                                        <Progress indicatorColor="bg-blue-500" className="w-full" value={(data.totalDamageTaken / maxDamageTaken * 100)} max={maxDamageTaken} />
-                                                    </div>
-                                                </TableCell>
-                                                <TableCell>
-                                                    <div className="flex items-center gap-1">
-                                                        {getItemImg(data.item0)}
-                                                        {getItemImg(data.item1)}
-                                                        {getItemImg(data.item2)}
-                                                        {getItemImg(data.item3)}
-                                                        {getItemImg(data.item4)}
-                                                        {getItemImg(data.item5)}
-                                                        {getItemImg(data.item6)}
-                                                    </div>
-                                                </TableCell>
-                                                <TableCell>
-
-                                                </TableCell>
-                                            </TableRow>
-                                        ))}
-                                    </TableBody>
-                                    <TableHeader>
-                                        <TableRow className="bg-rose-200">
-                                            <TableHead>패배(레드팀)</TableHead>
-                                            <TableHead>K/D/A</TableHead>
-                                            <TableHead>피해량</TableHead>
-                                            <TableHead>아이템</TableHead>
-                                            <TableHead>기타등등</TableHead>
-                                        </TableRow>
-                                    </TableHeader>
-                                    <TableBody>
-                                        {loseTeam.map((data: any, i: number) => (
-                                            <TableRow key={data.puuid} className="bg-rose-100">
-                                                <TableCell className="flex text-center gap-1">
-                                                    <div className="flex items-center gap-1">
-                                                        {getChampionImg1(data.championName)}
-                                                    </div>
-                                                    <div className=" items-center gap-1">
-                                                        {getSpellImg(data.summoner1Id)}
-                                                        {getSpellImg(data.summoner2Id)}
-                                                    </div>
-                                                    <div className=" items-center gap-1">
-                                                        {createRuneImage1(findRuneIcon(data.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk))}
-                                                        {createRuneImage1(getRuneImgMark(data.perks.styles.find((style: any) => style.description === "subStyle")?.style))}
-                                                    </div>
-                                                    <div>
-                                                        {data.riotIdGameName}
-                                                    </div>
-                                                </TableCell>
-                                                <TableCell>
-                                                    <div className=" items-center gap-1">
-                                                        {(data.kills)}/{(data.deaths)}/{(data.assists)}
-                                                    </div>
-                                                    <div className=" items-center gap-1">
-                                                        {getGrade((data.kills), (data.deaths), (data.assists))} : 1
-                                                    </div>
-                                                </TableCell>
-                                                <TableCell>
-                                                    <div>
-                                                        <div>
-                                                            {data.totalDamageDealtToChampions}
-                                                        </div>
-                                                        <div>
-                                                            <Progress indicatorColor="bg-red-500" className="w-full" value={(data.totalDamageDealtToChampions / maxDamageDealt * 100)} max={maxDamageDealt} />
-                                                        </div>
-                                                        <div>
-                                                            {data.totalDamageTaken}
-                                                        </div>
-                                                        <Progress indicatorColor="bg-blue-500" className="w-full" value={(data.totalDamageTaken / maxDamageTaken * 100)} max={maxDamageTaken} />
-                                                    </div>
-                                                </TableCell>
-                                                <TableCell>
-                                                    <div className="flex items-center gap-1">
-                                                        {getItemImg(data.item0)}
-                                                        {getItemImg(data.item1)}
-                                                        {getItemImg(data.item2)}
-                                                        {getItemImg(data.item3)}
-                                                        {getItemImg(data.item4)}
-                                                        {getItemImg(data.item5)}
-                                                        {getItemImg(data.item6)}
-                                                    </div>
-                                                </TableCell>
-                                                <TableCell>
-                                                    룬 버튼
-                                                </TableCell>
-                                            </TableRow>
-                                        ))}
-                                    </TableBody>
-                                </Table>
-                            </AccordionContent>
+                            <Accordion type="single" collapsible >
+                                <AccordionContent className="bg-green-100">
+                                    <Button className="" onClick={() => setActiveTab("TotalResult")}>TotalResult</Button>
+                                    <Button className="" onClick={() => setActiveTab("TeamAnalysis")}>TeamAnalysis</Button>
+                                    {activeTab === "TotalResult" && (
+                                        <TotalResult winTeam={winTeam} loseTeam={loseTeam} maxDamageDealt={maxDamageDealt} maxDamageTaken={maxDamageTaken} allRunes={allRunes} runesReforged={runesReforged} />
+                                    )}
+                                    {activeTab === "TeamAnalysis" && (
+                                        <TeamAnalysis winTeam={winTeam} loseTeam={loseTeam} maxDamageDealt={maxDamageDealt} maxDamageTaken={maxDamageTaken} allRunes={allRunes} runesReforged={runesReforged} />
+                                    )}
+                                </AccordionContent>
+                            </Accordion>
                         </AccordionItem>
                     )
                 })}
