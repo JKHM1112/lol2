@@ -8,7 +8,7 @@ import { connectDB } from "@/util/database";
 import { Noto_Sans_KR } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
-import { Session } from "inspector";
+
 console.log('메인페이지')
 
 interface UserSession {
@@ -39,7 +39,7 @@ export default async function RootLayout({ children, }: Readonly<{
   return (
     <html lang="en">
       <body className={notoSansKr.className}>
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }} className="navbar">
+        <div style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '20px', padding: '10px 0' }} className="navbar">
           <Link href="/">대충사이트이름 </Link>
           <Link href="/games">게임닉네임작성 </Link>
 
