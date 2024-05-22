@@ -89,18 +89,22 @@ export default async function ProgressGame({ params }: { params: { summoner: str
     const puuid = accountData.puuid;
     const progressGame = await getProgressGame(puuid);
     if (!progressGame) {
-        return <div>
-            <Games />
-            <div className="flex items-center gap-4">
-                {"소환사 닉네임: " + summonernameTag}
-                <Link href={`/games/${params.summoner}/progressGame`}>진행중인 게임 확인</Link>
-                <Link href={`/games/${params.summoner}/rankGame`}>랭크 정보 확인하기</Link>
-                <Link href={`/games/${params.summoner}/aramGame`}>칼바람 정보 확인하기</Link>
-            </div>
+        return (
             <div>
-                소환사가 게임중이 아닙니다.
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                    <Games />
+                </div>
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }} className="flex items-center gap-4">
+                    {"소환사 닉네임: " + summonernameTag}
+                    <Link href={`/games/${params.summoner}/progressGame`}>진행중인 게임 확인</Link>
+                    <Link href={`/games/${params.summoner}/rankGame`}>랭크 정보 확인하기</Link>
+                    <Link href={`/games/${params.summoner}/aramGame`}>칼바람 정보 확인하기</Link>
+                </div>
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                    소환사가 게임중이 아닙니다.
+                </div>
             </div>
-        </div>
+        )
     }
 
     const participants = progressGame.participants
@@ -121,7 +125,7 @@ export default async function ProgressGame({ params }: { params: { summoner: str
     const runeGroups = runesReforged.map((runeGroup: any) => runeGroup.slots)
     const runeGroups2 = runesReforged.map((runeGroup: any) => runeGroup.slots).flat().map((slot: any) => slot.runes)
     const getRuneImg = (runeCode: number, line: number) => {
-        const rune= array.concat(...runeGroups.map((runeType: any) => runeType[line].runes)).find((rune: any) => rune.id == runeCode)
+        const rune = array.concat(...runeGroups.map((runeType: any) => runeType[line].runes)).find((rune: any) => rune.id == runeCode)
         return rune?.icon || '0.png';
     }
     const getRuneImg2 = (runCode: number) => {
@@ -135,8 +139,10 @@ export default async function ProgressGame({ params }: { params: { summoner: str
 
     return (
         <div>
-            <Games />
-            <div className="flex items-center gap-4">
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                <Games />
+            </div>
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }} className="flex items-center gap-4">
                 {"소환사 닉네임: " + summonernameTag}
                 <Link href={`/games/${params.summoner}/progressGame`}>진행중인 게임 확인</Link>
                 <Link href={`/games/${params.summoner}/rankGame`}>랭크 정보 확인하기</Link>

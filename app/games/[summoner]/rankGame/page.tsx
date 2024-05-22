@@ -70,7 +70,7 @@ export default async function RankGame({ params }: { params: { summoner: string 
             return null;
         }
     }
-    
+
 
     let rankedMatchIds, rankResult, puuid;
     try {
@@ -81,19 +81,25 @@ export default async function RankGame({ params }: { params: { summoner: string 
                 return await getMatchData(matchId);
             })
         );
-       
+
     } catch (error) {
         return (
             <div>
-                <Games />
-                <h4>&apos;소환사가 존재하지 않습니다. 다시 입력해주세요.&apos;</h4>
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                    <Games />
+                </div>
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                    <h4>소환사가 존재하지 않습니다. 다시 입력해주세요.</h4>
+                </div>
             </div>
         );
     }
     return (
         <div>
-            <Games />
-            <div className="flex items-center gap-4">
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                <Games />
+            </div>
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }} className="flex items-center gap-4">
                 {"소환사 닉네임: " + summonernameTag}
                 <Link href={`/games/${params.summoner}/progressGame`}>진행중인 게임 확인</Link>
                 <Link href={`/games/${params.summoner}/rankGame`}>랭크 정보 확인하기</Link>

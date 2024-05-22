@@ -7,7 +7,9 @@ export default async function AramGame({ params }: { params: { summoner: string 
     const [summonerName, tag] = fullsummonerName.split('-');
     const nextTag = tag || 'KR1';
     const decodedSummonerName = decodeURIComponent(summonerName)
-    const summonernameTag = decodedSummonerName + '#' + nextTag;
+    const decodedSummonerTag = decodeURIComponent(nextTag)
+    const summonernameTag = decodedSummonerName + '#' + decodedSummonerTag;
+    
     const api_key = process.env.RIOT_API_KEY as string;
 
     async function getAccountData(summonerName: string, nextTag: string) {
@@ -88,8 +90,10 @@ export default async function AramGame({ params }: { params: { summoner: string 
     }
     return (
         <div>
-            <Games />
-            <div className="flex items-center gap-4">
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                <Games />
+            </div>
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}  className="flex items-center gap-4">
                 {"소환사 닉네임: " + summonernameTag}
                 <Link href={`/games/${params.summoner}/progressGame`}>진행중인 게임 확인</Link>
                 <Link href={`/games/${params.summoner}/rankGame`}>랭크 정보 확인하기</Link>

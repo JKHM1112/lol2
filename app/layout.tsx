@@ -39,7 +39,7 @@ export default async function RootLayout({ children, }: Readonly<{
   return (
     <html lang="en">
       <body className={notoSansKr.className}>
-        <div className="navbar">
+        <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }} className="navbar">
           <Link href="/">대충사이트이름 </Link>
           <Link href="/games">게임닉네임작성 </Link>
 

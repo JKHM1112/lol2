@@ -94,9 +94,9 @@ export default function RankResult({ rankResult, puuid }: any) {
                     const maxDamageDealt = Math.max(...participant.map((p: Participant) => p.totalDamageDealtToChampions));
                     const maxDamageTaken = Math.max(...participant.map((p: Participant) => p.totalDamageTaken));
                     return (
-                        <AccordionItem key={'item' + i} value={'item' + i} >
+                        <AccordionItem style={{ width: '800px', margin: '0 auto' }} className="" key={'item' + i} value={'item' + i} >
                             <AccordionTrigger className={cn("", data.participants.find((p: Participant) => p.puuid === puuid)?.win ? 'bg-sky-200' : 'bg-rose-200')}>
-                                <Table >
+                                <Table>
                                     <TableBody >
                                         <TableRow className="flex p-2" >
                                             <TableCell className="items-center">
@@ -152,9 +152,6 @@ export default function RankResult({ rankResult, puuid }: any) {
                                                     {getItemImg(data.participants.find((p: Participant) => p.puuid === puuid)?.item5)}
                                                     {getItemImg(data.participants.find((p: Participant) => p.puuid === puuid)?.item6)}
                                                 </div>
-                                            </TableCell>
-                                            <TableCell className="flex items-center gap-1">
-                                                기타정보
                                             </TableCell>
                                             <TableCell className="flex items-center gap-1">
                                                 <DataTransfer participant={rankResultInfo} i={i} puuid={puuid} />
