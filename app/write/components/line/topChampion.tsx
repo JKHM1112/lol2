@@ -18,7 +18,6 @@ export default function TopChampion() {
     const { champions, setChampions } = useUserStore();
 
 
-
     const [championOpen1, setChampionOpen1] = useState(false)
     const [championOpen2, setChampionOpen2] = useState(false)
 
@@ -101,8 +100,8 @@ export default function TopChampion() {
                     </Popover>
                 </div>
             </div>
-            <input style={{ display: 'none' }} name="cham1" defaultValue={champions[0]} readOnly />
-            <input style={{ display: 'none' }} name="cham2" defaultValue={champions[1]} readOnly />
+            <input style={{ display: 'none' }} name="cham1" value={champions[0]} readOnly />
+            <input style={{ display: 'none' }} name="cham2" value={champions[1]} readOnly />
         </div>
     )
 }

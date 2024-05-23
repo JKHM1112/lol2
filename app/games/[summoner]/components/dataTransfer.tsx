@@ -13,7 +13,6 @@ interface GameDataProps {
 export default function DataTransfer({ participant, i, puuid }: GameDataProps) {
     const { setLines, setParticipants, setSelectedGame, setItems, setPuuid, setSpells, setRunes, setChampions, } = useUserStore()
     const router = useRouter();
-
     const participant1 = participant[i].participants.find((participant: any) => participant.puuid === puuid);
     const participant1Line = participant1.individualPosition;
     const participant1ParticipantId = participant1.participantId;
@@ -29,8 +28,8 @@ export default function DataTransfer({ participant, i, puuid }: GameDataProps) {
     }
 
     const defaultParticipant = { championName: '' };
-    let participant3 = { championName: '' }
-    let participant4 = { championName: '' }
+    let participant3 = defaultParticipant
+    let participant4 = defaultParticipant
     if (individualPosition === 'BOTTOM') {
         participant3 = participant[i].participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId === participant1ParticipantId - 1) || defaultParticipant;
         participant4 = participant[i].participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId !== participant1ParticipantId + 1) || defaultParticipant;

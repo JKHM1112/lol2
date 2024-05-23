@@ -71,17 +71,48 @@ export default async function RankGame({ params }: { params: { summoner: string 
         }
     }
 
-
-    let rankedMatchIds, rankResult, puuid;
+    // async function getMatchDataTimeline(matchId: string) {
+    //     try {
+    //         const res = await fetch(`https://asia.api.riotgames.com/lol/match/v5/matches/${matchId}/timeline`, {
+    //             method: "GET",
+    //             headers: {
+    //                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+    //                 "Accept-Language": "ko-KR,ko;q=0.9",
+    //                 "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+    //                 "Origin": "https://developer.riotgames.com",
+    //                 "X-Riot-Token": api_key
+    //             }
+    //         })
+    //         if (!res.ok) {
+    //             return null;
+    //         }
+    //         return await res.json();
+    //     } catch (error) {
+    //         console.error("API call failed:", error);
+    //         return null;
+    //     }
+    // }
+    let rankedMatchIds, rankResult,rankResultTimeline, puuid;
     try {
         puuid = await getAccountData(summonerName, nextTag).then(data => data.puuid);
         rankedMatchIds = await getRecentMatchesIds(puuid, 420, 10);
         rankResult = await Promise.all(
             rankedMatchIds.map(async (matchId: any) => {
-                return await getMatchData(matchId);
+                return await getMatchData(matchId);   
             })
         );
-
+        // rankResultTimeline = await Promise.all(
+        //     rankedMatchIds.map(async (matchId: any) => {
+        //         return await getMatchDataTimeline(matchId);   
+        //     })
+        // );
+        
+        console.log('puuid')
+        console.log(puuid)
+        console.log('rankedMatchIds')
+        console.log(rankedMatchIds)
+        // console.log('rankResultTimeline')
+        // console.log(rankResultTimeline)
     } catch (error) {
         return (
             <div>

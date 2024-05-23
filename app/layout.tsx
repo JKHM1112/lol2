@@ -9,14 +9,13 @@ import { Noto_Sans_KR } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 
-console.log('메인페이지')
-
 interface UserSession {
   user: {
     name: string;
     email: string;
   }
 }
+
 const notoSansKr = Noto_Sans_KR({
   subsets: ["latin"],
   weight: ["100", "400", "700", "900"],
@@ -45,7 +44,6 @@ export default async function RootLayout({ children, }: Readonly<{
 
           {
             session ? <span><Link href="/write" > 직접입력하기 </Link></span> : <Link href={"/register"}>직접입력하기</Link>
-
           }
           <Link href="/lists"> 전체list </Link>
           {

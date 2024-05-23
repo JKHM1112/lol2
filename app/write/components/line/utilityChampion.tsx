@@ -178,11 +178,10 @@ export default function UtilityChampion() {
                     </Popover>
                 </div>
             </div>
-            <input style={{ display: 'none' }} name="cham1" defaultValue={champions[0]} readOnly />
-            <input style={{ display: 'none' }} name="cham2" defaultValue={champions[1]} readOnly />
-            <input style={{ display: 'none' }} name="cham3" defaultValue={champions[2]} readOnly />
-            <input style={{ display: 'none' }} name="cham4" defaultValue={champions[3]} readOnly />
-
+            <input style={{ display: 'none' }} name="cham1" value={champions[0]} readOnly />
+            <input style={{ display: 'none' }} name="cham2" value={champions[1]} readOnly />
+            <input style={{ display: 'none' }} name="cham3" value={champions[2]} readOnly />
+            <input style={{ display: 'none' }} name="cham4" value={champions[3]} readOnly />
         </div>
     )
 }

@@ -65,10 +65,10 @@ export default function Spells() {
                 </div>
             ))}
 
-            <input style={{ display: 'none' }} name="spell1" defaultValue={spells[0]} />
-            <input style={{ display: 'none' }} name="spell2" defaultValue={spells[1]} />
-            <input style={{ display: 'none' }} name="spell3" defaultValue={spells[2]} />
-            <input style={{ display: 'none' }} name="spell4" defaultValue={spells[3]} />
+            <input style={{ display: 'none' }} name="spell1" value={spells[0]} />
+            <input style={{ display: 'none' }} name="spell2" value={spells[1]} />
+            <input style={{ display: 'none' }} name="spell3" value={spells[2]} />
+            <input style={{ display: 'none' }} name="spell4" value={spells[3]} />
         </div>
     )
 }

@@ -99,8 +99,8 @@ export default function JungleChampion() {
                     </Popover>
                 </div>
             </div>
-            <input style={{ display: 'none' }} name="cham1" defaultValue={champions[0]} readOnly />
-            <input style={{ display: 'none' }} name="cham2" defaultValue={champions[1]} readOnly />
+            <input style={{ display: 'none' }} name="cham1" value={champions[0]} readOnly />
+            <input style={{ display: 'none' }} name="cham2" value={champions[1]} readOnly />
         </div>
     )
 }

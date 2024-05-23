@@ -8,6 +8,7 @@ import React, { useState } from 'react';
 import Link from "next/link";
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { getChampions } from '@/components/champions';
 
 interface ListItemProps {
     result: Array<{
@@ -27,7 +28,7 @@ interface ListItemProps {
 }
 
 const ITEMS_PER_PAGE = 20;
-const lineTypes = ['TOP', 'JUNGLE', 'MIDDLE', 'BOTTOM', 'UTILITY'];
+const lineTypes = ['탑', '정글', '미드', '원딜', '서폿'];
 export default function ListItem({ result }: ListItemProps) {
     const router = useRouter()
     const { setLines, setChampions, setLineResults, setGameResults, setBefore, setAfter, setHalf, setReview,
@@ -36,6 +37,7 @@ export default function ListItem({ result }: ListItemProps) {
     const [champFilter, setChampFilter] = useState('');
     const [opponentFilter, setOpponentFilter] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
+    const champions = getChampions();
     const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { value, checked } = event.target;
         setCheckedLines(currentLines =>
@@ -51,8 +53,8 @@ export default function ListItem({ result }: ListItemProps) {
 
     const filteredResults = result.filter(item => {
         const matchesCheckedLines = checkedLines.length === 0 || checkedLines.includes(item.line);
-        const matchesChamp = champFilter === '' || item.cham1.toLowerCase().includes(champFilter.toLowerCase());
-        const matchesOpponent = opponentFilter === '' || item.cham2.toLowerCase().includes(opponentFilter.toLowerCase());
+        const matchesChamp = champFilter === '' || champions.some(champ => champ.nameE === item.cham1 && champ.nameK.includes(champFilter));
+        const matchesOpponent = opponentFilter === '' || champions.some(champ => champ.nameE === item.cham2 && champ.nameK.includes(opponentFilter));
         return matchesCheckedLines && matchesChamp && matchesOpponent;
     });
     const totalPages = Math.ceil(filteredResults.length / ITEMS_PER_PAGE);

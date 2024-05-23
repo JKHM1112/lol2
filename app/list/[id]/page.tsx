@@ -23,7 +23,7 @@ export default async function List() {
     }));
     //result가 dream안 data를 전체다 출력한다.
     return (
-        <div>
+        <div style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '20px', padding: '10px 0' }}>
             <ListItem result={serializedResult} />
         </div>
     )

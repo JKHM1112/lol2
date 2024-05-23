@@ -14,19 +14,19 @@ export default function LineChampions() {
 
     const { lines, participants, selectedGame, puuid } = useUserStore();
     const participant1 = participants[selectedGame].participants.find((participant: any) => participant.puuid === puuid) || initialParticipant;
-    
+
     let lineK = ''
-    if (lines === 'TOP') {
+    if (lines === '탑') {
         lineK = '탑';
-    } else if (lines === 'JUNGLE') {
+    } else if (lines === '정글') {
         lineK = '정글';
-    } else if (lines === 'MIDDLE') {
+    } else if (lines === '미드') {
         lineK = '미드';
     }
-    else if (lines === 'BOTTOM') {
+    else if (lines === '원딜') {
         lineK = '원딜';
     }
-    else if (lines === 'UTILITY') {
+    else if (lines === '서폿') {
         lineK = '서폿';
     }
     const participant1Line = lineK || participant1.individualPosition

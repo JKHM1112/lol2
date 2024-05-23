@@ -23,8 +23,6 @@ const schema = zfd.formData({
     spell2: zfd.numeric(z.number().optional()),
     spell3: zfd.numeric(z.number().optional()),
     spell4: zfd.numeric(z.number().optional()),
-    firstItem: zfd.text(z.string().optional()),
-    shoesItem: zfd.text(z.string().optional()),
     legendaryItem0: zfd.numeric(z.number().optional()),
     legendaryItem1: zfd.numeric(z.number().optional()),
     legendaryItem2: zfd.numeric(z.number().optional()),
@@ -48,8 +46,11 @@ const schema = zfd.formData({
 });
 
 export async function POST(request: NextRequest) {
-    const formData = await request.formData()
     let session = await getServerSession(authOptions)
+    if (!session) {
+        return Response.redirect(new URL('/register', request.nextUrl.origin))
+    }
+    const formData = await request.formData()
     const data = { ...schema.parse(formData), author: session?.user?.name, email: session?.user?.email }
     const db = (await connectDB).db('dream')
     await db.collection('data').insertOne(data)

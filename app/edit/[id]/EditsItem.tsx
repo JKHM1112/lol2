@@ -10,7 +10,6 @@ import Runes from "@/app/write/components/runes";
 import Items from "@/app/write/components/items";
 
 export default function EditsItem(props: any) {
-    console.log(props)
     return (
         <div className="flex items-center gap-4 justify-center">
             <form action="/api/post/edit" method="POST">
