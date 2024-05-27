@@ -79,7 +79,6 @@ export default async function AramGame({ params }: { params: { summoner: string 
                 return await getMatchData(matchId);
             })
         );
-        console.log(aramMatchIds)
     } catch (error) {
         return (
             <div>

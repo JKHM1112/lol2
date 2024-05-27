@@ -5,8 +5,8 @@ import RuneBox from "./runeBox";
 import Image from "next/image";
 import { Accordion, AccordionContent, AccordionItem } from '@/components/ui/accordion';
 
-const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={30} height={30} />
-const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={40} height={40} />
+const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={25} height={25} />
+const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={35} height={35} />
 const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={20} height={20} />
 
 const createRuneImage1 = (runeCode: string) => (
@@ -48,7 +48,8 @@ export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDama
                         <TableRow className="bg-sky-200">
                             <TableHead>승리팀</TableHead>
                             <TableHead>K/D/A</TableHead>
-                            <TableHead>피해량</TableHead>
+                            <TableHead>가한 피해량</TableHead>
+                            <TableHead>받은 피해량</TableHead>
                             <TableHead>아이템</TableHead>
                             <TableHead>기타등등</TableHead>
                         </TableRow>
@@ -80,17 +81,21 @@ export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDama
                                         {getGrade((data.kills), (data.deaths), (data.assists))} : 1
                                     </div>
                                 </TableCell>
-                                <TableCell>
-                                        <div>
-                                            {data.totalDamageDealtToChampions}
-                                        </div>
-                                        <div>
-                                            <Progress indicatorColor="bg-red-500" className="h-2 w-20" value={(data.totalDamageDealtToChampions / maxDamageDealt * 100)} max={maxDamageDealt} />
-                                        </div>
-                                        <div>
-                                            {data.totalDamageTaken}
-                                        </div>
-                                        <Progress indicatorColor="bg-blue-500" className="h-2 w-20" value={(data.totalDamageTaken / maxDamageTaken * 100)} max={maxDamageTaken} />
+                                <TableCell className="text-center">
+                                    <div>
+                                        {data.totalDamageDealtToChampions}
+                                    </div>
+                                    <div>
+                                        <Progress indicatorColor="bg-rose-500" className="h-1 w-15" value={(data.totalDamageDealtToChampions / maxDamageDealt * 100)} max={maxDamageDealt} />
+                                    </div>
+                                </TableCell>
+                                <TableCell className="text-center">
+                                    <div>
+                                        {data.totalDamageTaken}
+                                    </div>
+                                    <div>
+                                        <Progress indicatorColor="bg-sky-500" className="h-1 w-15" value={(data.totalDamageTaken / maxDamageTaken * 100)} max={maxDamageTaken} />
+                                    </div>
                                 </TableCell>
                                 <TableCell>
                                     <div className="flex items-center gap-1">
@@ -113,7 +118,8 @@ export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDama
                         <TableRow className="bg-rose-200">
                             <TableHead>패배팀</TableHead>
                             <TableHead>K/D/A</TableHead>
-                            <TableHead>피해량</TableHead>
+                            <TableHead>가한 피해량</TableHead>
+                            <TableHead>받은 피해량</TableHead>
                             <TableHead>아이템</TableHead>
                             <TableHead>기타등등</TableHead>
                         </TableRow>
@@ -145,18 +151,20 @@ export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDama
                                         {getGrade((data.kills), (data.deaths), (data.assists))} : 1
                                     </div>
                                 </TableCell>
-                                <TableCell>
+                                <TableCell className="text-center">
                                     <div>
-                                        <div>
-                                            {data.totalDamageDealtToChampions}
-                                        </div>
-                                        <div>
-                                            <Progress indicatorColor="bg-red-500" className="h-2 w-20" value={(data.totalDamageDealtToChampions / maxDamageDealt * 100)} max={maxDamageDealt} />
-                                        </div>
-                                        <div>
-                                            {data.totalDamageTaken}
-                                        </div>
-                                        <Progress indicatorColor="bg-blue-500" className="h-2 w-20" value={(data.totalDamageTaken / maxDamageTaken * 100)} max={maxDamageTaken} />
+                                        {data.totalDamageDealtToChampions}
+                                    </div>
+                                    <div>
+                                        <Progress indicatorColor="bg-rose-500" className="h-1 w-15" value={(data.totalDamageDealtToChampions / maxDamageDealt * 100)} max={maxDamageDealt} />
+                                    </div>
+                                </TableCell>
+                                <TableCell className="text-center">
+                                    <div>
+                                        {data.totalDamageTaken}
+                                    </div>
+                                    <div>
+                                        <Progress indicatorColor="bg-sky-500" className="h-1 w-15" value={(data.totalDamageTaken / maxDamageTaken * 100)} max={maxDamageTaken} />
                                     </div>
                                 </TableCell>
                                 <TableCell>

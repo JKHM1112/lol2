@@ -6,8 +6,9 @@ import Image from "next/image"
 import * as React from "react"
 import { runesReforged } from "@/app/data/runesReforged"
 import { cn } from "@/lib/utils"
-import TotalResult from "./totalResult" // import the new component
-import TeamAnalysis from "./teamAnalysis" // import the new component
+import TotalResult from "./totalResult"
+import TeamAnalysis from "./teamAnalysis"
+import PersonalAnalysis from "./personalAnalysis"
 import { Button } from "@/components/ui/button"
 
 interface Participant {
@@ -22,7 +23,7 @@ interface infoType {
     info: Object
 }
 
-export default function RankResult({ rankResult, puuid }: any) {
+export default function RankResult({ rankResult, puuid, rankResultTimeline }: any) {
     const [activeTab, setActiveTab] = React.useState("TotalResult");
 
     const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={30} height={30} />
@@ -164,11 +165,14 @@ export default function RankResult({ rankResult, puuid }: any) {
                                 <AccordionContent className="bg-green-100">
                                     <Button className="" onClick={() => setActiveTab("TotalResult")}>TotalResult</Button>
                                     <Button className="" onClick={() => setActiveTab("TeamAnalysis")}>TeamAnalysis</Button>
+                                    <Button className="" onClick={() => setActiveTab("personalAnalysis")}>personalAnalysis</Button>
                                     {activeTab === "TotalResult" && (
                                         <TotalResult winTeam={winTeam} loseTeam={loseTeam} maxDamageDealt={maxDamageDealt} maxDamageTaken={maxDamageTaken} allRunes={allRunes} runesReforged={runesReforged} />
                                     )}
                                     {activeTab === "TeamAnalysis" && (
                                         <TeamAnalysis winTeam={winTeam} loseTeam={loseTeam} />
+                                    )}{activeTab === "personalAnalysis" && (
+                                        <PersonalAnalysis rankResultTimeline={rankResultTimeline[i]} puuid={puuid} championName={data.participants.find((p: Participant) => p.puuid === puuid)?.championName} />
                                     )}
                                 </AccordionContent>
                             </Accordion>

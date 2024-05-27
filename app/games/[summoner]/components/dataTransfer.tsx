@@ -17,7 +17,6 @@ export default function DataTransfer({ participant, i, puuid }: GameDataProps) {
     const participant1Line = participant1.individualPosition;
     const participant1ParticipantId = participant1.participantId;
     const participant2 = participant[i].participants.find((p: any) => p.individualPosition === participant1Line && p.puuid !== puuid);
-
     let individualPosition = participant1Line;
     if (individualPosition === 'UTILITY') {
         individualPosition = 'BOTTOM';
@@ -26,7 +25,7 @@ export default function DataTransfer({ participant, i, puuid }: GameDataProps) {
     } else {
         individualPosition = '';
     }
-
+    
     const defaultParticipant = { championName: '' };
     let participant3 = defaultParticipant
     let participant4 = defaultParticipant

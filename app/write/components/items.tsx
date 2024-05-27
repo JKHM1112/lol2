@@ -67,13 +67,13 @@ export default function Items() {
             ))
             }
 
-            <input style={{ display: 'none' }} name="legendaryItem0" value={items[0]} />
-            <input style={{ display: 'none' }} name="legendaryItem1" value={items[1]} />
-            <input style={{ display: 'none' }} name="legendaryItem2" value={items[2]} />
-            <input style={{ display: 'none' }} name="legendaryItem3" value={items[3]} />
-            <input style={{ display: 'none' }} name="legendaryItem4" value={items[4]} />
-            <input style={{ display: 'none' }} name="legendaryItem5" value={items[5]} />
-            <input style={{ display: 'none' }} name="legendaryItem6" value={items[6]} />
+            <input style={{ display: 'none' }} name="legendaryItem0" value={items[0]} readOnly/>
+            <input style={{ display: 'none' }} name="legendaryItem1" value={items[1]} readOnly/>
+            <input style={{ display: 'none' }} name="legendaryItem2" value={items[2]} readOnly/>
+            <input style={{ display: 'none' }} name="legendaryItem3" value={items[3]} readOnly/>
+            <input style={{ display: 'none' }} name="legendaryItem4" value={items[4]} readOnly/>
+            <input style={{ display: 'none' }} name="legendaryItem5" value={items[5]} readOnly/>
+            <input style={{ display: 'none' }} name="legendaryItem6" value={items[6]} readOnly/>
         </div>
     )
 }

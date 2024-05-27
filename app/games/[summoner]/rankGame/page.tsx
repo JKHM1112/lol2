@@ -71,27 +71,27 @@ export default async function RankGame({ params }: { params: { summoner: string 
         }
     }
 
-    // async function getMatchDataTimeline(matchId: string) {
-    //     try {
-    //         const res = await fetch(`https://asia.api.riotgames.com/lol/match/v5/matches/${matchId}/timeline`, {
-    //             method: "GET",
-    //             headers: {
-    //                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-    //                 "Accept-Language": "ko-KR,ko;q=0.9",
-    //                 "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-    //                 "Origin": "https://developer.riotgames.com",
-    //                 "X-Riot-Token": api_key
-    //             }
-    //         })
-    //         if (!res.ok) {
-    //             return null;
-    //         }
-    //         return await res.json();
-    //     } catch (error) {
-    //         console.error("API call failed:", error);
-    //         return null;
-    //     }
-    // }
+    async function getMatchDataTimeline(matchId: string) {
+        try {
+            const res = await fetch(`https://asia.api.riotgames.com/lol/match/v5/matches/${matchId}/timeline`, {
+                method: "GET",
+                headers: {
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+                    "Accept-Language": "ko-KR,ko;q=0.9",
+                    "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+                    "Origin": "https://developer.riotgames.com",
+                    "X-Riot-Token": api_key
+                }
+            })
+            if (!res.ok) {
+                return null;
+            }
+            return await res.json();
+        } catch (error) {
+            console.error("API call failed:", error);
+            return null;
+        }
+    }
     let rankedMatchIds, rankResult,rankResultTimeline, puuid;
     try {
         puuid = await getAccountData(summonerName, nextTag).then(data => data.puuid);
@@ -101,18 +101,12 @@ export default async function RankGame({ params }: { params: { summoner: string 
                 return await getMatchData(matchId);   
             })
         );
-        // rankResultTimeline = await Promise.all(
-        //     rankedMatchIds.map(async (matchId: any) => {
-        //         return await getMatchDataTimeline(matchId);   
-        //     })
-        // );
+        rankResultTimeline = await Promise.all(
+            rankedMatchIds.map(async (matchId: any) => {
+                return await getMatchDataTimeline(matchId);   
+            })
+        );
         
-        console.log('puuid')
-        console.log(puuid)
-        console.log('rankedMatchIds')
-        console.log(rankedMatchIds)
-        // console.log('rankResultTimeline')
-        // console.log(rankResultTimeline)
     } catch (error) {
         return (
             <div>
@@ -137,7 +131,7 @@ export default async function RankGame({ params }: { params: { summoner: string 
                 <Link href={`/games/${params.summoner}/aramGame`}>칼바람 정보 확인하기</Link>
                 <ReloadButton />
             </div>
-            <RankResult rankResult={rankResult} puuid={puuid} />
+            <RankResult rankResult={rankResult} puuid={puuid} rankResultTimeline={rankResultTimeline}/>
         </div>
     )
 }
