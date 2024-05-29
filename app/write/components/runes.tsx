@@ -30,10 +30,9 @@ export default function Runes() {
         <div>
             {runes.map((selectedRune, i) => (
                 <div className="flex items-center space-x-4" key={i}>
-                    <p className="text-sm text-muted-foreground">룬{i + 1}</p>
                     <Popover open={runeOpen[i]} onOpenChange={(value) => handleRuneOpen(i, value)}>
                         <PopoverTrigger asChild>
-                            <Button variant="outline" size="sm" className="w-[150px] justify-start">
+                            <Button variant="outline" size="sm" className="w-[135px] justify-start">
                                 {runes[i] && findRuneNameK(runes[i]) ? (
                                     <>
                                         <Image alt={findRuneNameK(runes[i])} src={'/' + findRuneNameImg(runes[i])} height={20} width={20}></Image>

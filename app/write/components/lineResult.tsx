@@ -37,13 +37,13 @@ export default function Lines() {
                     <RadioGroupItem value="lose" id="game-lose" />
                     <Label htmlFor="game-lose">패배</Label>
                 </div>
-                <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="half" id="game-half" />
-                    <Label htmlFor="game-half">반반</Label>
-                </div>
             </RadioGroup>
 
-            <Label className="char3">한줄평<Input name="review" value={review} onChange={e => setReview(e.target.value)} placeholder="한줄평" /></Label>
-        </div>
+            <Label className="flex items-center">
+                <div>
+                    <Input name="review" value={review} onChange={e => setReview(e.target.value)} placeholder="한줄평" />
+                </div>
+            </Label>
+        </div >
     );
 }

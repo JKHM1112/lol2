@@ -24,11 +24,11 @@ export default function Difficulty() {
 
     return (
         <div>
-            <Label className="char3">1~6 (쉬움)1-5(어려움)
+            <Label className="char3">6렙 전 (쉬움)1-5(어려움)
                 <Input value={before6} name="before6" readOnly />
                 <Slider onValueChange={handleBefore6Change} value={[before6]} max={5} min={1} step={1} />
             </Label>
-            <Label className="char3">6~11 (쉬움)1-5(어려움)
+            <Label className="char3">6렙 후 (쉬움)1-5(어려움)
                 <Input value={after6} name="after6" readOnly />
                 <Slider onValueChange={handleAfter6Change} value={[after6]} max={5} min={1} step={1} />
             </Label>

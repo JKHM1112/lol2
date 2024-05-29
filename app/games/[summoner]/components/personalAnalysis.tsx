@@ -79,7 +79,6 @@ export default function PersonalAnalysis({ rankResultTimeline, puuid, championNa
 
     return (
         <div className="flex flex-col items-center w-[700px] min-h-[400px] max-h-[600px] p-4 box-border border-2 m-0">
-            {/* 첫 번째 큰 박스 */}
             <div className="flex flex-col h-1/2 w-full border-b-2">
                 <div className="flex border-b-2 p-2 h-[40px]">
                     <div>아이템 빌드</div>
@@ -92,12 +91,11 @@ export default function PersonalAnalysis({ rankResultTimeline, puuid, championNa
                     ))}
                 </div>
             </div>
-            {/* 두 번째 큰 박스 */}
             <div className="flex flex-col h-1/2 w-full border-b-2">
                 <div className="flex border-b-2 p-2 h-[40px]">
                     <div>스킬 빌드</div>
                 </div>
-                <div className="flex flex-wrap p-2 h-[150px]">
+                <div className=" flex-wrap p-2 h-[150px]">
                     <div className="flex p-2">
                         {getSkillImg1(sortedSkills[0] === 'Q' ? skillQIMG : sortedSkills[0] === 'W' ? skillWIMG : skillEIMG)}
                         {sortedSkills[0]}

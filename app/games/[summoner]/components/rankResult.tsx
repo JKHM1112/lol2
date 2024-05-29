@@ -98,8 +98,8 @@ export default function RankResult({ rankResult, puuid, rankResultTimeline }: an
                         <AccordionItem style={{ width: '800px', margin: '0 auto' }} className="" key={'item' + i} value={'item' + i} >
                             <AccordionTrigger className={cn("", data.participants.find((p: Participant) => p.puuid === puuid)?.win ? 'bg-sky-200' : 'bg-rose-200')}>
                                 <Table>
-                                    <TableBody >
-                                        <TableRow className="flex p-2" >
+                                    <TableBody>
+                                        <TableRow className="flex p-2 " >
                                             <TableCell className="items-center">
                                                 <div>
                                                     {(data.participants.find((p: Participant) => p.puuid === puuid)?.win ? "승리" : "패배")}

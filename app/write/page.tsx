@@ -15,7 +15,7 @@ export default function Write() {
         <div className="flex items-center gap-4 justify-center">
             <form action="/api/post/newListWrite" method="POST">
                 <ResizablePanelGroup direction="horizontal" className="items-center justify-center p-2 ">
-                    <ResizablePanelGroup direction="horizontal" className="min-h-[650px] min-w-[1200px] rounded-lg border">
+                    <ResizablePanelGroup direction="horizontal" className="min-h-[600px] min-w-[600px] rounded-lg border">
                         <ResizablePanel defaultSize={18}>
                             <ResizablePanelGroup direction="vertical" className="rounded-lg border">
                                 <ResizablePanel defaultSize={30} className="flex items-center justify-center p-2">
@@ -26,7 +26,7 @@ export default function Write() {
                                     </div>
                                 </ResizablePanel>
                                 <ResizableHandle />
-                                <ResizablePanel defaultSize={8} className="flex  items-center justify-center p-2">
+                                <ResizablePanel defaultSize={9} className="flex  items-center justify-center p-2">
                                     <div className="p-2">
                                         <Spells />
                                     </div>

@@ -22,12 +22,11 @@ export default function Spells() {
         const spell = spellData.find(spell => spell.nameN === nameN);
         return spell ? spell.nameK : '';
     }
-
+    const selectedSpells = ['내 스펠D', '내 스펠F', '상대 스펠D', '상대 스펠F']
     return (
         <div>
             {spells.map((selectedSpell, i) => (
                 <div className="flex items-center space-x-4" key={i}>
-                    <p className="text-sm text-muted-foreground">스펠{i + 1}</p>
                     <Popover open={spellOpen[i]} onOpenChange={(value) => handleSpellOpen(i, value)}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -37,7 +36,7 @@ export default function Spells() {
                                         {findSpellNameK(spells[i])}
                                     </>
                                 ) : (
-                                    <>+ Set Spell</>
+                                    selectedSpells[i]
                                 )}
                             </Button>
                         </PopoverTrigger>

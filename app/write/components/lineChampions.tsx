@@ -38,7 +38,7 @@ export default function LineChampions() {
     return (
         <div>
             <div className="flex items-center gap-4">
-                <Label className="char3">라인*</Label>
+                <Label className="char3">라인</Label>
                 <Select name="line" value={selectedLine} onValueChange={(value) => handleLineChange(value)}>
                     <SelectTrigger className="w-[180px]">
                         <SelectValue placeholder="라인을 고르세요"></SelectValue>
@@ -47,8 +47,8 @@ export default function LineChampions() {
                         <SelectItem value="탑">탑</SelectItem>
                         <SelectItem value="정글">정글</SelectItem>
                         <SelectItem value="미드">미드</SelectItem>
-                        <SelectItem value="원딜">원딜</SelectItem>
-                        <SelectItem value="서폿">서폿</SelectItem>
+                        <SelectItem value="원딜">원딜/서폿</SelectItem>
+                        <SelectItem value="서폿">서폿/원딜</SelectItem>
                     </SelectContent>
                 </Select>
             </div>
