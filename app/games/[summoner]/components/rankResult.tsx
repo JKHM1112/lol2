@@ -1,5 +1,5 @@
 'use client'
-import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow, } from "@/components/ui/table"
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import DataTransfer from "./dataTransfer"
 import Image from "next/image"
@@ -23,13 +23,13 @@ interface infoType {
     info: Object
 }
 
-export default function RankResult({ rankResult, puuid, rankResultTimeline }: any) {
+export default function RankResult({ rankResult, puuid, rankResultTimelines }: any) {
     const [activeTab, setActiveTab] = React.useState("TotalResult");
+    const [participantsTimeLines, setParticipantsTimeline] = React.useState([]);
 
     const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={30} height={30} />
     const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={40} height={40} />
     const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={20} height={20} />
-
     const allRunes = runesReforged.flatMap((runeGroup: any) => runeGroup.slots.flatMap((slot: any) => slot.runes));
 
     const findRuneIcon = (runeCode: number) => {
@@ -81,12 +81,33 @@ export default function RankResult({ rankResult, puuid, rankResultTimeline }: an
         return deaths === 0 ? "Perfect" : ((kills + assists) / deaths).toFixed(2);
     }
 
-    const rankResultInfo = rankResult.map((data: infoType) => data.info)
+    const rankResultInfo = rankResult.map((data: infoType) => data.info);
+
+    const getEventsByParticipantId = (timeline: any, participantId: any) => {
+        let allEvents: any = [];
+        for (const frame of timeline.info.frames) {
+            const events = frame.events || [];
+            allEvents = allEvents.concat(events.filter((event: any) => event.participantId === participantId));
+        }
+        return allEvents;
+    }
+
+    const getParticipantFramesByParticipantId = (timeline: any, participantId: any) => {
+        let allParticipantFrames: any = [];
+        for (const frame of timeline.info.frames) {
+            const participantFrames = frame.participantFrames;
+            if (participantFrames[participantId]) {
+                allParticipantFrames.push(participantFrames[participantId]);
+            }
+        }
+        return allParticipantFrames;
+    }
+
     return (
         <div>
-            <Accordion type="single" collapsible >
+            <Accordion type="single" collapsible>
                 {rankResultInfo.map((data: any, i: number) => {
-                    const participant = data.participants
+                    const participant = data.participants;
                     const blueTeam = participant.slice(0, 5);
                     const redTeam = participant.slice(5, 10);
                     const isBlueTeamWin = blueTeam.some((p: Participant) => p.win);
@@ -94,12 +115,29 @@ export default function RankResult({ rankResult, puuid, rankResultTimeline }: an
                     const loseTeam = isBlueTeamWin ? redTeam : blueTeam;
                     const maxDamageDealt = Math.max(...participant.map((p: Participant) => p.totalDamageDealtToChampions));
                     const maxDamageTaken = Math.max(...participant.map((p: Participant) => p.totalDamageTaken));
+
+                    const rankResultTimeline = rankResultTimelines[i];
+                    const characterNumber = rankResultTimeline.info.participants.find((p: any) => p.puuid === puuid)?.participantId;
+                    let characterNumber2 = 0;
+                    if (characterNumber > 5) {
+                        characterNumber2 = characterNumber - 5;
+                    } else {
+                        characterNumber2 = characterNumber + 5;
+                    }
+
+                    const participantsTimeLine = getEventsByParticipantId(rankResultTimeline, characterNumber);// 검색된 소환사의 게임 타임라인
+                    const participantsTimeLine2 = getEventsByParticipantId(rankResultTimeline, characterNumber2);// 검색된 소환사의 게임 상대방 타임라인
+                    const participantsGameTimeline = getParticipantFramesByParticipantId(rankResultTimeline, characterNumber);
+                    const participantsGameTimeline2 = getParticipantFramesByParticipantId(rankResultTimeline, characterNumber2);
+                    const participantTimeLines = [participantsTimeLine, participantsTimeLine2];
+
+
                     return (
-                        <AccordionItem style={{ width: '800px', margin: '0 auto' }} className="" key={'item' + i} value={'item' + i} >
+                        <AccordionItem style={{ width: '800px', margin: '0 auto' }} className="" key={'item' + i} value={'item' + i}>
                             <AccordionTrigger className={cn("", data.participants.find((p: Participant) => p.puuid === puuid)?.win ? 'bg-sky-200' : 'bg-rose-200')}>
                                 <Table>
                                     <TableBody>
-                                        <TableRow className="flex p-2 " >
+                                        <TableRow className="flex p-2">
                                             <TableCell className="items-center">
                                                 <div>
                                                     {(data.participants.find((p: Participant) => p.puuid === puuid)?.win ? "승리" : "패배")}
@@ -140,8 +178,7 @@ export default function RankResult({ rankResult, puuid, rankResultTimeline }: an
                                                         평점:
                                                         {getGrade((data.participants.find((p: Participant) => p.puuid === puuid)?.kills),
                                                             (data.participants.find((p: Participant) => p.puuid === puuid)?.deaths),
-                                                            (data.participants.find((p: Participant) => p.puuid === puuid)?.assists))
-                                                        } : 1
+                                                            (data.participants.find((p: Participant) => p.puuid === puuid)?.assists))}
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center gap-1">
@@ -161,7 +198,7 @@ export default function RankResult({ rankResult, puuid, rankResultTimeline }: an
                                     </TableBody>
                                 </Table>
                             </AccordionTrigger>
-                            <Accordion type="single" collapsible >
+                            <Accordion type="single" collapsible>
                                 <AccordionContent className="bg-green-100">
                                     <Button className="" onClick={() => setActiveTab("TotalResult")}>TotalResult</Button>
                                     <Button className="" onClick={() => setActiveTab("TeamAnalysis")}>TeamAnalysis</Button>
@@ -172,7 +209,7 @@ export default function RankResult({ rankResult, puuid, rankResultTimeline }: an
                                     {activeTab === "TeamAnalysis" && (
                                         <TeamAnalysis winTeam={winTeam} loseTeam={loseTeam} />
                                     )}{activeTab === "personalAnalysis" && (
-                                        <PersonalAnalysis rankResultTimeline={rankResultTimeline[i]} puuid={puuid} championName={data.participants.find((p: Participant) => p.puuid === puuid)?.championName} />
+                                        <PersonalAnalysis rankResultTimeline={rankResultTimeline} puuid={puuid} championName={data.participants.find((p: Participant) => p.puuid === puuid)?.championName} />
                                     )}
                                 </AccordionContent>
                             </Accordion>

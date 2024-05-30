@@ -1,34 +1,30 @@
-//app/lists/ListsLitem.tsx
 'use client';
+
 import useUserStore from '@/app/hooks/useUserStore';
-import { runesReforgedOld } from '../data/runesReforgedOld';
-import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious, } from "@/components/ui/pagination";
+import { runesReforgedOld } from '@/app/data/runesReforgedOld';
 import { Button } from '@/components/ui/button';
+import { getChampions } from '@/components/champions';
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious, } from "@/components/ui/pagination";
 import React, { useState } from 'react';
 import Link from "next/link";
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { getChampions } from '@/components/champions';
 
 interface ListsItemProps {
     result: Array<{
         _id: string; line: string;
-        cham1: string; cham2: string; cham3: string; cham4: string;
+        chams: string[]; // 챔피언 배열
         before6: number; after6: number; half: number;
         lineResult: string; gameResult: string;
-        rune1: number; rune2: number; rune3: number; rune4: number;
-        rune5: number; rune6: number; rune7: number; rune8: number;
-        rune9: number; rune10: number; rune11: number; rune12: number;
-        spell1: number; spell2: number; spell3: number; spell4: number;
-        legendaryItem0: number; legendaryItem1: number; legendaryItem2: number; legendaryItem3: number;
-        legendaryItem4: number; legendaryItem5: number; legendaryItem6: number;
-        shoesItem: string; firstItem: string;
+        runes: number[]; // 룬 배열
+        spells: number[]; // 스펠 배열
+        items: number[]; // 아이템 배열
         review: string; date: string; author: string; email: string;
     }>;
     email: string;
 }
 
-const ITEMS_PER_PAGE = 20;
+const ITEMS_PER_PAGE = 10;
 const lineTypes = ['탑', '정글', '미드', '원딜', '서폿'];
 
 export default function ListsItem({ result, email }: ListsItemProps) {
@@ -58,8 +54,8 @@ export default function ListsItem({ result, email }: ListsItemProps) {
 
     const filteredResults = result.filter(item => {
         const matchesCheckedLines = checkedLines.length === 0 || checkedLines.includes(item.line);
-        const matchesChamp = champFilter === '' || champions.some(champ => champ.nameE === item.cham1 && champ.nameK.includes(champFilter));
-        const matchesOpponent = opponentFilter === '' || champions.some(champ => champ.nameE === item.cham2 && champ.nameK.includes(opponentFilter));
+        const matchesChamp = champFilter === '' || champions.some(champ => champ.nameE === item.chams[0] && champ.nameK.includes(champFilter));
+        const matchesOpponent = opponentFilter === '' || champions.some(champ => champ.nameE === item.chams[1] && champ.nameK.includes(opponentFilter));
         return matchesCheckedLines && matchesChamp && matchesOpponent;
     });
 
@@ -72,121 +68,102 @@ export default function ListsItem({ result, email }: ListsItemProps) {
         currentPage * ITEMS_PER_PAGE
     );
 
-    const getChampionImg = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={35} height={35} />;
-    const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={35} height={35} />;
+    const getChampionImg = (championCode: string) => <Image className='rounded-md' alt={'champion'} src={`/championE/${championCode}.png`} width={35} height={35} />;
+    const getSpellImg = (spellCode: number) => <Image className='rounded-md' alt={'spell'} src={`/spellN/${spellCode}.png`} width={35} height={35} />;
     const array: any = [];
     const runeGroups = runesReforgedOld.map((runeGroup: any) => runeGroup.slots);
     const getRuneImg = (runeCode: number, line: number) => {
-        if (runeCode == 0) {
+        if (runeCode === 0) {
             return `0.png`;
         }
-        return array.concat(...runeGroups.map((runeType: any) => runeType[line].runes)).find((rune: any) => rune.id == runeCode).icon;
+        return array.concat(...runeGroups.map((runeType: any) => runeType[line].runes)).find((rune: any) => rune.id === runeCode).icon;
     };
-    const getRuneImg4 = (RuneCode: string) => <Image className='rounded-md' alt={'rune1'} src={`/` + RuneCode} width={35} height={35} />;
+    const getRuneImg4 = (runeCode: string) => <Image className='rounded-md' alt={'rune'} src={`/` + runeCode} width={35} height={35} />;
 
     return (
-        <div>
-            <div>
-                <div className="flex items-center gap-1">
+        <div className="container mx-auto p-4">
+            <div className="mb-4">
+                <div className="flex items-center gap-1 mb-4">
                     {lineTypes.map(line => (
-                        <label className="items-center gap-1" key={line}>
-                            <input type="checkbox" value={line} onChange={handleCheckboxChange} checked={checkedLines.includes(line)} />{line}
+                        <label className="flex items-center gap-1" key={line}>
+                            <input type="checkbox" value={line} onChange={handleCheckboxChange} checked={checkedLines.includes(line)} className="mr-2" />
+                            {line}
                         </label>
                     ))}
                 </div>
-                <div className="flex items-center gap-1">
-                    <label className="items-center gap-1">
-                        <input type="text" placeholder="내 챔피언" value={champFilter} onChange={(e) => setChampFilter(e.target.value)} />
-                    </label>
-                    <label className="items-center gap-1">
-                        <input type="text" placeholder="상대 챔피언" value={opponentFilter} onChange={(e) => setOpponentFilter(e.target.value)} />
-                    </label>
-                    <button onClick={swapFilters} className="swap-button">⇄</button>
+                <div className="flex items-center gap-4 mb-4">
+                    <input type="text" placeholder="내 챔피언" value={champFilter} onChange={(e) => setChampFilter(e.target.value)} className="p-1 border border-sky-300 rounded" />
+                    <input type="text" placeholder="상대 챔피언" value={opponentFilter} onChange={(e) => setOpponentFilter(e.target.value)} className="p-1 border border-sky-300 rounded" />
+                    <button onClick={swapFilters} className="p-1 bg-sky-200 rounded">⇄</button>
                 </div>
             </div>
-            <table>
+            <table className="w-full border-collapse border border-sky-300">
                 <thead>
-                    <tr>
-                        <th>라인</th>
-                        <th>챔피언</th>
-                        <th>챔피언</th>
-                        <th>6전</th>
-                        <th>6후</th>
-                        <th>후반</th>
-                        <th>룬</th>
-                        <th>룬</th>
-                        <th>스펠1</th>
-                        <th>스펠2</th>
-                        <th>스펠1</th>
-                        <th>스펠2</th>
-                        <th>라인결과</th>
-                        <th>게임결과</th>
-                        <th>작성자</th>
+                    <tr className="bg-sky-200">
+                        <th className="border border-sky-300 p-1">라인</th>
+                        <th className="border border-sky-300 p-1">챔피언</th>
+                        <th className="border border-sky-300 p-1">챔피언</th>
+                        <th className="border border-sky-300 p-1">6전</th>
+                        <th className="border border-sky-300 p-1">6후</th>
+                        <th className="border border-sky-300 p-1">후반</th>
+                        <th className="border border-sky-300 p-1">룬</th>
+                        <th className="border border-sky-300 p-1">룬</th>
+                        <th className="border border-sky-300 p-1">스펠1</th>
+                        <th className="border border-sky-300 p-1">스펠2</th>
+                        <th className="border border-sky-300 p-1">스펠1</th>
+                        <th className="border border-sky-300 p-1">스펠2</th>
+                        <th className="border border-sky-300 p-1">라인결과</th>
+                        <th className="border border-sky-300 p-1">게임결과</th>
+                        <th className="border border-sky-300 p-1">상세보기</th>
+                        <th className="border border-sky-300 p-1">수정</th>
+                        <th className="border border-sky-300 p-1">삭제</th>
                     </tr>
                 </thead>
                 <tbody>
                     {paginatedResult.map((data, i) => (
-                        <tr key={i}>
-                            <td>{data.line}</td>
-                            <td>{getChampionImg(data.cham1)}</td>
-                            <td>{getChampionImg(data.cham2)}</td>
-                            <td>{data.before6}</td>
-                            <td>{data.after6}</td>
-                            <td>{data.half}</td>
-                            <td>{getRuneImg4(getRuneImg(data.rune1, 0))}</td>
-                            <td>{getRuneImg4(getRuneImg(data.rune7, 0))}</td>
-                            <td>{getSpellImg(data.spell1)}</td>
-                            <td>{getSpellImg(data.spell2)}</td>
-                            <td>{getSpellImg(data.spell3)}</td>
-                            <td>{getSpellImg(data.spell4)}</td>
-                            <td>{data.lineResult}</td>
-                            <td>{data.gameResult}</td>
-                            <td>{data.author}</td>
-                            <td><Link href={'/detail/' + data._id} className="list-detail-li">상세보기</Link></td>
+                        <tr key={i} className="hover:bg-sky-100">
+                            <td className="border border-sky-300 p-1 text-center">{data.line}</td>
+                            <td className="border border-sky-300 p-1 text-center">{getChampionImg(data.chams[0])}</td>
+                            <td className="border border-sky-300 p-1 text-center">{getChampionImg(data.chams[1])}</td>
+                            <td className="border border-sky-300 p-1 text-center">{data.before6}</td>
+                            <td className="border border-sky-300 p-1 text-center">{data.after6}</td>
+                            <td className="border border-sky-300 p-1 text-center">{data.half}</td>
+                            <td className="border border-sky-300 p-1 text-center">{getRuneImg4(getRuneImg(data.runes[0], 0))}</td>
+                            <td className="border border-sky-300 p-1 text-center">{getRuneImg4(getRuneImg(data.runes[6], 0))}</td>
+                            <td className="border border-sky-300 p-1 text-center">{getSpellImg(data.spells[0])}</td>
+                            <td className="border border-sky-300 p-1 text-center">{getSpellImg(data.spells[1])}</td>
+                            <td className="border border-sky-300 p-1 text-center">{getSpellImg(data.spells[2])}</td>
+                            <td className="border border-sky-300 p-1 text-center">{getSpellImg(data.spells[3])}</td>
+                            <td className="border border-sky-300 p-1 text-center">{data.lineResult}</td>
+                            <td className="border border-sky-300 p-1 text-center">{data.gameResult}</td>
+                            <td className="border border-sky-300 p-1 text-center">
+                                <Link href={'/detail/' + data._id} className="text-blue-500 hover:underline">상세보기</Link>
+                            </td>
                             {data.email === email && (
-                                <td>
+                                <td className="border border-sky-300 p-1 text-center">
                                     <Button onClick={() => {
-                                        setLines(data.line)
-                                        setChampions(0, data.cham1)
-                                        setChampions(1, data.cham2)
-                                        setChampions(2, data.cham3)
-                                        setChampions(3, data.cham4)
-                                        setLineResults(data.lineResult)
-                                        setGameResults(data.gameResult)
-                                        setBefore(data.before6)
-                                        setAfter(data.after6)
-                                        setHalf(data.half)
-                                        setReview(data.review)
-                                        setSpells(0, data.spell1)
-                                        setSpells(1, data.spell2)
-                                        setSpells(2, data.spell3)
-                                        setSpells(3, data.spell4)
-                                        setRunes(0, data.rune1)
-                                        setRunes(1, data.rune2)
-                                        setRunes(2, data.rune3)
-                                        setRunes(3, data.rune4)
-                                        setRunes(4, data.rune5)
-                                        setRunes(5, data.rune6)
-                                        setRunes(6, data.rune7)
-                                        setRunes(7, data.rune8)
-                                        setRunes(8, data.rune9)
-                                        setRunes(9, data.rune10)
-                                        setRunes(10, data.rune11)
-                                        setRunes(11, data.rune12)
-                                        setItems(0, data.legendaryItem0)
-                                        setItems(1, data.legendaryItem1)
-                                        setItems(2, data.legendaryItem2)
-                                        setItems(3, data.legendaryItem3)
-                                        setItems(4, data.legendaryItem4)
-                                        setItems(5, data.legendaryItem5)
-                                        setItems(6, data.legendaryItem6)
-                                        router.push('/edit/' + data._id)
-                                    }} className="list-detail-li">수정</Button>
+                                        setLines(data.line);
+                                        data.chams.forEach((cham, index) => setChampions(index, cham));
+                                        setLineResults(data.lineResult);
+                                        setGameResults(data.gameResult);
+                                        setBefore(data.before6);
+                                        setAfter(data.after6);
+                                        setHalf(data.half);
+                                        setReview(data.review);
+                                        data.spells.forEach((spell, index) => setSpells(index, spell));
+                                        data.runes.forEach((rune, index) => setRunes(index, rune));
+                                        data.items.forEach((item, index) => setItems(index, item));
+                                        router.push('/edit/' + data._id);
+                                    }} className="text-blue-500 hover:underline">수정</Button>
+                                </td>
+                            )}
+                            {data.email === email && (
+                                <td className="border border-sky-300 p-1 text-center">
                                     <button onClick={async () => {
                                         await fetch('/api/post/delete', {
-                                            method: 'POST', body: JSON.stringify({ author: data.author, _id: data._id, email: data.email })
-                                        })
-                                    }}>삭제</button>
+                                            method: 'POST', body: JSON.stringify({ _id: data._id, email: data.email })
+                                        });
+                                    }} className="text-red-500 hover:underline">삭제</button>
                                 </td>
                             )}
                         </tr>

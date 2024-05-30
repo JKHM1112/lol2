@@ -64,10 +64,8 @@ export default function Spells() {
                 </div>
             ))}
 
-            <input style={{ display: 'none' }} name="spell1" value={spells[0]} readOnly />
-            <input style={{ display: 'none' }} name="spell2" value={spells[1]} readOnly />
-            <input style={{ display: 'none' }} name="spell3" value={spells[2]} readOnly />
-            <input style={{ display: 'none' }} name="spell4" value={spells[3]} readOnly />
+            <input style={{ display: 'none' }} name="spells" value={JSON.stringify(spells)} readOnly />
+
         </div>
     )
 }

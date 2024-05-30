@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { championFull } from "@/app/data/championFull";
+import React from "react";
 
 type SkillCounts = {
     [key: string]: number;
@@ -9,8 +10,7 @@ type SkillCounts = {
 };
 
 export default function PersonalAnalysis({ rankResultTimeline, puuid, championName }: any) {
-
-    const characterNumber = rankResultTimeline.info.participants.find((p: any) => p.puuid === puuid)?.participantId
+    const characterNumber = rankResultTimeline.info.participants.find((p: any) => p.puuid === puuid)?.participantId;
 
     function getEventsByParticipantId(timeline: any, participantId: any) {
         let allEvents: any = [];
@@ -20,7 +20,11 @@ export default function PersonalAnalysis({ rankResultTimeline, puuid, championNa
         }
         return allEvents;
     }
-    const particiapntsTimeline = getEventsByParticipantId(rankResultTimeline, characterNumber);
+
+    const participantsTimeLine = getEventsByParticipantId(rankResultTimeline, characterNumber);// 검색된 소환사의 게임 타임라인
+    const characterNumber2 = characterNumber > 5 ? characterNumber - 5 : characterNumber + 5;
+    const participantsTimeLine2 = getEventsByParticipantId(rankResultTimeline, characterNumber2);// 검색된 소환사의 게임 상대방 타임라인
+    const participantTimeLines = [participantsTimeLine, participantsTimeLine2];
 
     const getSkillImage = (skillSlot: number) => {
         const champion = Object.values(championFull.data).find((cham: any) => cham.id === championName || cham.key === championName);
@@ -43,8 +47,8 @@ export default function PersonalAnalysis({ rankResultTimeline, puuid, championNa
     const getSkillImg1 = (skillCode: string) => <Image className='rounded-md' alt={'spell'} src={`/spell/${skillCode}`} width={25} height={25} />
     const getSkillImg2 = (skillCode: string) => <Image className='rounded-md' alt={'spell'} src={`/${skillCode}.png`} width={30} height={30} />
 
-    const itemEvents = particiapntsTimeline.filter((event: any) => event.type === 'ITEM_PURCHASED').map((event: any) => ({ itemId: event.itemId, timestamp: event.timestamp }));
-    const skillEvents = particiapntsTimeline.filter((event: any) => event.type === 'SKILL_LEVEL_UP').map((event: any) => ({ skillSlot: event.skillSlot, timestamp: event.timestamp }));
+    const itemEvents = participantsTimeLine.filter((event: any) => event.type === 'ITEM_PURCHASED').map((event: any) => ({ itemId: event.itemId, timestamp: event.timestamp }));
+    const skillEvents = participantsTimeLine.filter((event: any) => event.type === 'SKILL_LEVEL_UP').map((event: any) => ({ skillSlot: event.skillSlot, timestamp: event.timestamp }));
 
     const itemOrderId = itemEvents.map((event: any) => ({ itemId: event.itemId }))
     const skillOrder = skillEvents.map((event: any) => {

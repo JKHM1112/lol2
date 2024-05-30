@@ -67,18 +67,7 @@ export default function Runes() {
                 </div>
             ))}
 
-            <input style={{ display: 'none' }} name="rune1" value={runes[0]} readOnly />
-            <input style={{ display: 'none' }} name="rune2" value={runes[1]} readOnly />
-            <input style={{ display: 'none' }} name="rune3" value={runes[2]} readOnly />
-            <input style={{ display: 'none' }} name="rune4" value={runes[3]} readOnly />
-            <input style={{ display: 'none' }} name="rune5" value={runes[4]} readOnly />
-            <input style={{ display: 'none' }} name="rune6" value={runes[5]} readOnly />
-            <input style={{ display: 'none' }} name="rune7" value={runes[6]} readOnly />
-            <input style={{ display: 'none' }} name="rune8" value={runes[7]} readOnly />
-            <input style={{ display: 'none' }} name="rune9" value={runes[8]} readOnly />
-            <input style={{ display: 'none' }} name="rune10" value={runes[9]} readOnly />
-            <input style={{ display: 'none' }} name="rune11" value={runes[10]} readOnly />
-            <input style={{ display: 'none' }} name="rune12" value={runes[11]} readOnly />
+            <input style={{ display: 'none' }} name="runes" value={JSON.stringify(runes)} readOnly />
         </div>
     )
 }

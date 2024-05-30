@@ -25,7 +25,7 @@ export default function DataTransfer({ participant, i, puuid }: GameDataProps) {
     } else {
         individualPosition = '';
     }
-    
+
     const defaultParticipant = { championName: '' };
     let participant3 = defaultParticipant
     let participant4 = defaultParticipant

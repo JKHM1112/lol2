@@ -12,8 +12,8 @@ export async function POST(request: Request) {
     let session = await getServerSession(authOptions)
     const db = (await connectDB).db('dream')
     if (data.email == session?.user?.email) {
-      await db.collection('data').deleteOne({ "_id": new ObjectId(data._id) })
+      await db.collection('dataEnteredDirectly').deleteOne({ "_id": new ObjectId(data._id) })
     }
     return NextResponse.json(request.body)
   }
-}
+} 

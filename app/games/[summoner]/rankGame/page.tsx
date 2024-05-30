@@ -92,7 +92,7 @@ export default async function RankGame({ params }: { params: { summoner: string 
             return null;
         }
     }
-    let rankedMatchIds, rankResult,rankResultTimeline, puuid;
+    let rankedMatchIds, rankResult,rankResultTimelines, puuid;
     try {
         puuid = await getAccountData(summonerName, nextTag).then(data => data.puuid);
         rankedMatchIds = await getRecentMatchesIds(puuid, 420, 10);
@@ -101,7 +101,7 @@ export default async function RankGame({ params }: { params: { summoner: string 
                 return await getMatchData(matchId);   
             })
         );
-        rankResultTimeline = await Promise.all(
+        rankResultTimelines = await Promise.all(
             rankedMatchIds.map(async (matchId: any) => {
                 return await getMatchDataTimeline(matchId);   
             })
@@ -119,6 +119,7 @@ export default async function RankGame({ params }: { params: { summoner: string 
             </div>
         );
     }
+
     return (
         <div>
             <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
@@ -131,7 +132,7 @@ export default async function RankGame({ params }: { params: { summoner: string 
                 <Link href={`/games/${params.summoner}/aramGame`}>칼바람 정보 확인하기</Link>
                 <ReloadButton />
             </div>
-            <RankResult rankResult={rankResult} puuid={puuid} rankResultTimeline={rankResultTimeline}/>
+            <RankResult rankResult={rankResult} puuid={puuid} rankResultTimelines={rankResultTimelines}/>
         </div>
     )
 }
