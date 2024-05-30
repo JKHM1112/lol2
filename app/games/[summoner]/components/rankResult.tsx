@@ -25,7 +25,6 @@ interface infoType {
 
 export default function RankResult({ rankResult, puuid, rankResultTimelines }: any) {
     const [activeTab, setActiveTab] = React.useState("TotalResult");
-    const [participantsTimeLines, setParticipantsTimeline] = React.useState([]);
 
     const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={30} height={30} />
     const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={40} height={40} />
@@ -117,7 +116,11 @@ export default function RankResult({ rankResult, puuid, rankResultTimelines }: a
                     const maxDamageTaken = Math.max(...participant.map((p: Participant) => p.totalDamageTaken));
 
                     const rankResultTimeline = rankResultTimelines[i];
+                    if (!rankResultTimeline || !rankResultTimeline.info) {
+                        return null;
+                    }
                     const characterNumber = rankResultTimeline.info.participants.find((p: any) => p.puuid === puuid)?.participantId;
+
                     let characterNumber2 = 0;
                     if (characterNumber > 5) {
                         characterNumber2 = characterNumber - 5;
@@ -125,13 +128,10 @@ export default function RankResult({ rankResult, puuid, rankResultTimelines }: a
                         characterNumber2 = characterNumber + 5;
                     }
 
-                    const participantsTimeLine = getEventsByParticipantId(rankResultTimeline, characterNumber);// 검색된 소환사의 게임 타임라인
+                    const participantsTimeLine1 = getEventsByParticipantId(rankResultTimeline, characterNumber);// 검색된 소환사의 게임 타임라인
                     const participantsTimeLine2 = getEventsByParticipantId(rankResultTimeline, characterNumber2);// 검색된 소환사의 게임 상대방 타임라인
-                    const participantsGameTimeline = getParticipantFramesByParticipantId(rankResultTimeline, characterNumber);
-                    const participantsGameTimeline2 = getParticipantFramesByParticipantId(rankResultTimeline, characterNumber2);
-                    const participantTimeLines = [participantsTimeLine, participantsTimeLine2];
-
-
+                    const participantsGameTimeline1 = getParticipantFramesByParticipantId(rankResultTimeline, characterNumber);//0분 부터 해서 1분 단위로 기록
+                    const participantsGameTimeline2 = getParticipantFramesByParticipantId(rankResultTimeline, characterNumber2);//0분 부터 해서 1분 단위로 기록
                     return (
                         <AccordionItem style={{ width: '800px', margin: '0 auto' }} className="" key={'item' + i} value={'item' + i}>
                             <AccordionTrigger className={cn("", data.participants.find((p: Participant) => p.puuid === puuid)?.win ? 'bg-sky-200' : 'bg-rose-200')}>
@@ -209,7 +209,7 @@ export default function RankResult({ rankResult, puuid, rankResultTimelines }: a
                                     {activeTab === "TeamAnalysis" && (
                                         <TeamAnalysis winTeam={winTeam} loseTeam={loseTeam} />
                                     )}{activeTab === "personalAnalysis" && (
-                                        <PersonalAnalysis rankResultTimeline={rankResultTimeline} puuid={puuid} championName={data.participants.find((p: Participant) => p.puuid === puuid)?.championName} />
+                                        <PersonalAnalysis participantsTimeLine1={participantsTimeLine1} puuid={puuid} championName={data.participants.find((p: Participant) => p.puuid === puuid)?.championName} />
                                     )}
                                 </AccordionContent>
                             </Accordion>

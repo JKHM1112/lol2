@@ -22,7 +22,8 @@ export default async function RankGame({ params }: { params: { summoner: string 
                     "Accept-Language": "ko-KR,ko;q=0.9",
                     "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
                     "Origin": "https://developer.riotgames.com",
-                    "X-Riot-Token": api_key
+                    "X-Riot-Token": api_key,
+                    "Cache-Control": "no-cache"
                 }
             });
             if (!res.ok) {
@@ -44,7 +45,8 @@ export default async function RankGame({ params }: { params: { summoner: string 
                 "Accept-Language": "ko-KR,ko;q=0.9",
                 "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
                 "Origin": "https://developer.riotgames.com",
-                "X-Riot-Token": api_key
+                "X-Riot-Token": api_key,
+                "Cache-Control": "no-cache"
             }
         });
         return res.json();
@@ -58,7 +60,7 @@ export default async function RankGame({ params }: { params: { summoner: string 
                     "Accept-Language": "ko-KR,ko;q=0.9",
                     "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
                     "Origin": "https://developer.riotgames.com",
-                    "X-Riot-Token": api_key
+                    "X-Riot-Token": api_key   
                 }
             })
             if (!res.ok) {
@@ -80,7 +82,7 @@ export default async function RankGame({ params }: { params: { summoner: string 
                     "Accept-Language": "ko-KR,ko;q=0.9",
                     "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
                     "Origin": "https://developer.riotgames.com",
-                    "X-Riot-Token": api_key
+                    "X-Riot-Token": api_key  
                 }
             })
             if (!res.ok) {
