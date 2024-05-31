@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/write/page.tsx", "app/write/page.ts", "app/register/page.tsx", "app/api/post/signup/signup.ts", "app/api/auth/[...nextauth].ts", "app/api/post/route.ts", "app/list/[id]/ListItem.tsx", "app/list/[id]/page.tsx", "app/nameSearch/components/data-table-faceted-filter.tsx", "app/nameSearch/data/tasks.josn", "app/data1/pageitem.tsx", "app/aramTierList/components"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/write/page.tsx", "app/write/page.ts", "app/register/page.tsx", "app/api/post/signup/signup.ts", "app/api/auth/[...nextauth].ts", "app/api/post/route.ts", "app/list/[id]/ListItem.tsx", "app/list/[id]/page.tsx", "app/nameSearch/components/data-table-faceted-filter.tsx", "app/nameSearch/data/tasks.josn", "app/data1/pageitem.tsx", "app/aramTierList/components", "app/riot.txt/riot.ts", "app/riot.txt/api/riot.js"],
   "exclude": ["node_modules"]
 }

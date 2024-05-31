@@ -1,1 +1,0 @@
-spell -> public/spellE

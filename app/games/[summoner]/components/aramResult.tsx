@@ -3,7 +3,6 @@ import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, Tabl
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion"
 import Image from "next/image"
 import * as React from "react"
-import { Progress } from "@/components/ui/progress"
 import { runesReforged } from "@/app/data/runesReforged"
 import { Button } from "@/components/ui/button"
 import TotalResult from "./totalResult"
