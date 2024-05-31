@@ -1,34 +1,48 @@
 import Games from "../page";
 import SelectedGames from "./components/selectedGame";
 
-const api_key = process.env.RIOT_API_KEY as string
+const api_key = process.env.RIOT_API_KEY as string;
+
+function delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function fetchWithRetry(url: string, options: RequestInit, retries = 3) {
+    for (let i = 0; i < retries; i++) {
+        try {
+            const res = await fetch(url, options);
+            if (res.ok) {
+                return await res.json();
+            } else {
+                const errorData = await res.json();
+                console.error(`Attempt ${i + 1} failed: ${res.status} ${errorData.status.message}`);
+            }
+        } catch (error) {
+            console.error(`Attempt ${i + 1} failed: ${error}`);
+        }
+        await delay(1000); // 1초 지연 후 재시도
+    }
+    throw new Error(`Failed to fetch ${url} after ${retries} retries`);
+}
 
 async function getAccountData(summonerName: string, nextTag: string) {
-    try {
-        const res = await fetch(`https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${summonerName}/${nextTag}`, {
-            method: "GET",
-            headers: {
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-                "Accept-Language": "ko-KR,ko;q=0.9",
-                "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-                "Origin": "https://developer.riotgames.com",
-                "X-Riot-Token": api_key
-            }
-        });
-
-        if (!res.ok) {
-            const errorData = await res.json();
-            throw new Error(`Error ${res.status}: ${errorData.status.message}`);
+    const url = `https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${summonerName}/${nextTag}`;
+    const options = {
+        method: "GET",
+        headers: {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+            "Accept-Language": "ko-KR,ko;q=0.9",
+            "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+            "Origin": "https://developer.riotgames.com",
+            "X-Riot-Token": api_key
         }
-
-        return await res.json();
-    } catch (error) {
-        console.error("API call failed:", error);
-        return null; // Return null on error
-    }
+    };
+    return await fetchWithRetry(url, options);
 }
+
 async function getRecentMatchesIds(puuid: string, queue: number, start: number, games: number) {
-    const res = await fetch(`https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?queue=${queue}&start=${start}&count=${games}`, {
+    const url = `https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?queue=${queue}&start=${start}&count=${games}`;
+    const options = {
         method: "GET",
         headers: {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
@@ -38,54 +52,41 @@ async function getRecentMatchesIds(puuid: string, queue: number, start: number, 
             "X-Riot-Token": api_key,
             "Cache-Control": "no-cache"
         }
-    });
-    return res.json();
+    };
+    return await fetchWithRetry(url, options);
 }
+
 async function getMatchData(matchId: string) {
-    try {
-        const res = await fetch(`https://asia.api.riotgames.com/lol/match/v5/matches/${matchId}`, {
-            method: "GET",
-            headers: {
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-                "Accept-Language": "ko-KR,ko;q=0.9",
-                "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-                "Origin": "https://developer.riotgames.com",
-                "X-Riot-Token": api_key
-            }
-        })
-        if (!res.ok) {
-            return null;
+    const url = `https://asia.api.riotgames.com/lol/match/v5/matches/${matchId}`;
+    const options = {
+        method: "GET",
+        headers: {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+            "Accept-Language": "ko-KR,ko;q=0.9",
+            "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+            "Origin": "https://developer.riotgames.com",
+            "X-Riot-Token": api_key
         }
-        return await res.json();
-    } catch (error) {
-        console.error("API call failed:", error);
-        return null;
-    }
+    };
+    return await fetchWithRetry(url, options);
 }
 
 async function getMatchDataTimeline(matchId: string) {
-    try {
-        const res = await fetch(`https://asia.api.riotgames.com/lol/match/v5/matches/${matchId}/timeline`, {
-            method: "GET",
-            headers: {
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-                "Accept-Language": "ko-KR,ko;q=0.9",
-                "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-                "Origin": "https://developer.riotgames.com",
-                "X-Riot-Token": api_key
-            }
-        })
-        if (!res.ok) {
-            return null;
+    const url = `https://asia.api.riotgames.com/lol/match/v5/matches/${matchId}/timeline`;
+    const options = {
+        method: "GET",
+        headers: {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+            "Accept-Language": "ko-KR,ko;q=0.9",
+            "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+            "Origin": "https://developer.riotgames.com",
+            "X-Riot-Token": api_key
         }
-        return await res.json();
-    } catch (error) {
-        console.error("API call failed:", error);
-        return null;
-    }
+    };
+    return await fetchWithRetry(url, options);
 }
-export default async function GameSelect({ params }: { params: { summoner: string } }) {
 
+export default async function GameSelect({ params }: { params: { summoner: string } }) {
 
     const fullsummonerName = params.summoner;
     const [summonerName, tag] = fullsummonerName.split('-');
@@ -94,45 +95,37 @@ export default async function GameSelect({ params }: { params: { summoner: strin
     const decodedSummonerTag = decodeURIComponent(nextTag);
     const summonernameTag = `${decodedSummonerName}#${decodedSummonerTag}`;
 
-    const accountData = await getAccountData(summonerName, nextTag);
-
-    if (!accountData) {
-        return (
-            <div>
-                <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                    <Games />
-                </div>
-                <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }} className="flex items-center gap-4">
-                    {"소환사 닉네임: " + summonernameTag}
-                </div>
-                <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                    소환사 정보를 찾을 수 없습니다.
-                </div>
-            </div>
-
-        )
-    }
-
-    let aramMatchIds, rankedMatchIds, aramResult, rankResult, rankResultTimelines, puuid;
+    let aramMatchIds, rankedMatchIds, aramResult = [], rankResult = [], rankResultTimelines = [], puuid;
     try {
-        puuid = await getAccountData(summonerName, nextTag).then(data => data.puuid);
+        const accountData = await getAccountData(summonerName, nextTag);
+        if (!accountData) throw new Error("Account data not found");
+
+        puuid = accountData.puuid;
         rankedMatchIds = await getRecentMatchesIds(puuid, 420, 0, 10);
         aramMatchIds = await getRecentMatchesIds(puuid, 450, 0, 10);
-        rankResult = await Promise.all(
-            rankedMatchIds.map(async (matchId: any) => {
-                return await getMatchData(matchId);
-            })
-        );
-        aramResult = await Promise.all(
-            aramMatchIds.map(async (matchId: any) => {
-                return await getMatchData(matchId);
-            })
-        );
-        rankResultTimelines = await Promise.all(
-            rankedMatchIds.map(async (matchId: any) => {
-                return await getMatchDataTimeline(matchId);
-            })
-        );
+
+        if (!rankedMatchIds || !aramMatchIds) {
+            throw new Error("Failed to fetch match IDs");
+        }
+
+        for (const matchId of rankedMatchIds) {
+            const matchData = await getMatchData(matchId);
+            if (matchData) {
+                rankResult.push(matchData);
+            }
+
+            const matchTimeline = await getMatchDataTimeline(matchId);
+            if (matchTimeline) {
+                rankResultTimelines.push(matchTimeline);
+            }
+        }
+
+        for (const matchId of aramMatchIds) {
+            const matchData = await getMatchData(matchId);
+            if (matchData) {
+                aramResult.push(matchData);
+            }
+        }
 
     } catch (error) {
         return (
@@ -146,8 +139,6 @@ export default async function GameSelect({ params }: { params: { summoner: strin
             </div>
         );
     }
-
-
 
     return (
         <div>
