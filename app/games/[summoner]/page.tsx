@@ -20,7 +20,7 @@ async function fetchWithRetry(url: string, options: RequestInit, retries = 3) {
         } catch (error) {
             console.error(`Attempt ${i + 1} failed: ${error}`);
         }
-        await delay(1000); // 1초 지연 후 재시도
+        await delay(500); // 1초 지연 후 재시도
     }
     throw new Error(`Failed to fetch ${url} after ${retries} retries`);
 }
@@ -101,8 +101,8 @@ export default async function GameSelect({ params }: { params: { summoner: strin
         if (!accountData) throw new Error("Account data not found");
 
         puuid = accountData.puuid;
-        rankedMatchIds = await getRecentMatchesIds(puuid, 420, 0, 20);
-        aramMatchIds = await getRecentMatchesIds(puuid, 450, 0, 20);
+        rankedMatchIds = await getRecentMatchesIds(puuid, 420, 0, 10);
+        aramMatchIds = await getRecentMatchesIds(puuid, 450, 0, 10);
 
         if (!rankedMatchIds || !aramMatchIds) {
             throw new Error("Failed to fetch match IDs");
