@@ -101,8 +101,8 @@ export default async function GameSelect({ params }: { params: { summoner: strin
         if (!accountData) throw new Error("Account data not found");
 
         puuid = accountData.puuid;
-        rankedMatchIds = await getRecentMatchesIds(puuid, 420, 0, 10);
-        aramMatchIds = await getRecentMatchesIds(puuid, 450, 0, 10);
+        rankedMatchIds = await getRecentMatchesIds(puuid, 420, 0, 20);
+        aramMatchIds = await getRecentMatchesIds(puuid, 450, 0, 20);
 
         if (!rankedMatchIds || !aramMatchIds) {
             throw new Error("Failed to fetch match IDs");
