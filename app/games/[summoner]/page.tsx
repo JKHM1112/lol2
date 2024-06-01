@@ -3,6 +3,7 @@ import SelectedGames from "./components/selectedGame";
 
 const api_key = process.env.RIOT_API_KEY as string;
 
+
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
