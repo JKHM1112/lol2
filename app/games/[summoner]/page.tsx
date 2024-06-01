@@ -20,7 +20,7 @@ async function fetchWithRetry(url: string, options: RequestInit, retries = 3) {
         } catch (error) {
             console.error(`Attempt ${i + 1} failed: ${error}`);
         }
-        await delay(1000); // 0.1초 지연 후 재시도
+        await delay(100); // 0.1초 지연 후 재시도
     }
     throw new Error(`Failed to fetch ${url} after ${retries} retries`);
 }

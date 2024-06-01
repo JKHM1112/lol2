@@ -10,7 +10,9 @@ import Image from "next/image";
 
 export default function SelectedGames({ gameNameTagLine, fullSummonerName, searchedpuuid, summonerData, summonerLeaueDataResult, rankResults, rankResultTimelines, aramResults }: any) {
     const [activeTab, setActiveTab] = React.useState("RankGame");
-
+    console.log(1)
+    console.log(rankResultTimelines)
+    const totalDamageDealtToChampions=''
     const leagueData = summonerLeaueDataResult && summonerLeaueDataResult.length > 0 ? summonerLeaueDataResult[0] : {
         tier: "UNRANK",
         rank: "",
