@@ -7,7 +7,7 @@ import RankResult from "./rankResult";
 import AramResult from "./aramResult";
 import ReloadButton from "./reloadButton";
 
-export default function SelectedGames({ gameNameTagLine, fullSummonerName, searchedpuuid, summonerData, summonerLeaueDataResult, rankResults, rankResultTimelines, summonerInformations, aramResults }: any) {
+export default function SelectedGames({ gameNameTagLine, fullSummonerName, searchedpuuid, summonerData, summonerLeaueDataResult, rankResults, rankResultTimelines, aramResults }: any) {
     const [activeTab, setActiveTab] = React.useState("RankGame");
     return (
         <div>
@@ -26,7 +26,7 @@ export default function SelectedGames({ gameNameTagLine, fullSummonerName, searc
                 </div>
                 <div>
                     {activeTab === "RankGame" && (
-                        <RankResult rankResults={rankResults} searchedpuuid={searchedpuuid} rankResultTimelines={rankResultTimelines} />
+                        <RankResult rankResults={rankResults} searchedpuuid={searchedpuuid} rankResultTimelines={rankResultTimelines} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} />
                     )}
                     {activeTab === "AramGame" && (
                         <AramResult aramResults={aramResults} searchedpuuid={searchedpuuid} />

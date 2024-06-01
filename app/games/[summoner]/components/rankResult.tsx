@@ -23,7 +23,7 @@ interface infoType {
     info: Object
 }
 
-export default function RankResult({ rankResults, searchedpuuid, rankResultTimelines }: any) {
+export default function RankResult({ rankResults, searchedpuuid, rankResultTimelines, summonerData, summonerLeaueDataResult }: any) {
     const [activeTab, setActiveTab] = React.useState("TotalResult");
 
     const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={30} height={30} />
@@ -107,6 +107,10 @@ export default function RankResult({ rankResults, searchedpuuid, rankResultTimel
             <div className="flex justify-center items-center">
                 <div className="flex flex-col items-center w-[700px] h-[200px] p-4 box-border border-2">
                     <div className="flex flex-col h-1/2 w-full border-b-2">
+                        1
+                    </div>
+                    <div className="flex flex-col h-1/2 w-full border-b-2">
+                        2
                     </div>
                 </div>
             </div>

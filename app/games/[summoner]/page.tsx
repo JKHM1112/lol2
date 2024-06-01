@@ -20,7 +20,7 @@ async function fetchWithRetry(url: string, options: RequestInit, retries = 3) {
         } catch (error) {
             console.error(`Attempt ${i + 1} failed: ${error}`);
         }
-        await delay(100); // 0.1초 지연 후 재시도
+        await delay(1000); // 0.1초 지연 후 재시도
     }
     throw new Error(`Failed to fetch ${url} after ${retries} retries`);
 }
@@ -173,11 +173,11 @@ export default async function GameSelect({ params }: { params: { summoner: strin
             const matchTimeline = await getMatchDataTimeline(matchId);
             if (matchTimeline) rankResultTimelines.push(matchTimeline);
 
-            const leagueDataPromises = matchData.info.participants.map(async (participant: any) => {
-                const leagueData = await getLeagueData(participant.summonerId);
-                leagueDataResults.push({ summonerId: participant.summonerId, leagueData });
-            });
-            await Promise.all(leagueDataPromises);
+            // const leagueDataPromises = matchData.info.participants.map(async (participant: any) => {
+            //     const leagueData = await getLeagueData(participant.summonerId);
+            //     leagueDataResults.push({ summonerId: participant.summonerId, leagueData });
+            // });
+            // await Promise.all(leagueDataPromises);
         });
 
         const aramMatchPromises = aramMatchIds.map(async (matchId: string) => {
@@ -200,11 +200,11 @@ export default async function GameSelect({ params }: { params: { summoner: strin
             </div>
         );
     }
-    const summonerInformations = chunkArray(leagueDataResults, 10);
+    // const summonersInformations = chunkArray(leagueDataResults, 10);
     return (
         <div>
             <SelectedGames gameNameTagLine={gameNameTagLine} fullSummonerName={fullSummonerName} searchedpuuid={searchedpuuid} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult}
-                rankResults={rankResults} rankResultTimelines={rankResultTimelines} summonerInformations={summonerInformations} aramResults={aramResults} />
+                rankResults={rankResults} rankResultTimelines={rankResultTimelines}  aramResults={aramResults} />
         </div>
     );
 }
