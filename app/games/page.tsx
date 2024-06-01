@@ -9,7 +9,7 @@ export default function Games() {
     const [summonerName, setSummonerName] = React.useState('')
     const router = useRouter()
     return (
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}  className='flex items-center gap-2 p-4'>
+        <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }} className='flex items-center gap-2 p-4'>
             <h4>닉네임을 검색하십시오.</h4>
             <Input
                 className='w-72'

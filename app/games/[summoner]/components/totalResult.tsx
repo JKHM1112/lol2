@@ -4,6 +4,7 @@ import { Progress } from "@/components/ui/progress";
 import RuneBox from "./runeBox";
 import Image from "next/image";
 import { Accordion, AccordionContent, AccordionItem } from '@/components/ui/accordion';
+import Link from 'next/link';
 
 const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={25} height={25} />
 const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={35} height={35} />
@@ -70,7 +71,7 @@ export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDama
                                         {createRuneImage1(getRuneImgMark(data.perks.styles.find((style: any) => style.description === "subStyle")?.style, runesReforged))}
                                     </div>
                                     <div>
-                                        {data.riotIdGameName}
+                                        <Link href={`/games/${data.riotIdGameName}#${data.riotIdTagline}`}>{data.riotIdGameName}</Link>
                                     </div>
                                 </TableCell>
                                 <TableCell>
@@ -140,7 +141,7 @@ export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDama
                                         {createRuneImage1(getRuneImgMark(data.perks.styles.find((style: any) => style.description === "subStyle")?.style, runesReforged))}
                                     </div>
                                     <div>
-                                        {data.riotIdGameName}
+                                        <Link href={`/games/${data.riotIdGameName}#${data.riotIdTagline}`}>{data.riotIdGameName}</Link>
                                     </div>
                                 </TableCell>
                                 <TableCell>
