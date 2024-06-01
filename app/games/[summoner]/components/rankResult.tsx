@@ -23,7 +23,7 @@ interface infoType {
     info: Object
 }
 
-export default function RankResult({ rankResult, puuid, rankResultTimelines}: any) {
+export default function RankResult({ rankResults, searchedpuuid, rankResultTimelines }: any) {
     const [activeTab, setActiveTab] = React.useState("TotalResult");
 
     const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={30} height={30} />
@@ -80,7 +80,7 @@ export default function RankResult({ rankResult, puuid, rankResultTimelines}: an
         return deaths === 0 ? "Perfect" : ((kills + assists) / deaths).toFixed(2);
     }
 
-    const rankResultInfo = rankResult.map((data: infoType) => data.info);
+    const rankResultInfo = rankResults.map((data: infoType) => data.info);
 
     const getEventsByParticipantId = (timeline: any, participantId: any) => {
         let allEvents: any = [];
@@ -125,7 +125,7 @@ export default function RankResult({ rankResult, puuid, rankResultTimelines}: an
                     if (!rankResultTimeline || !rankResultTimeline.info) {
                         return null;
                     }
-                    const characterNumber = rankResultTimeline.info.participants.find((p: any) => p.puuid === puuid)?.participantId;
+                    const characterNumber = rankResultTimeline.info.participants.find((p: any) => p.puuid === searchedpuuid)?.participantId;
 
                     let characterNumber2 = 0;
                     if (characterNumber > 5) {
@@ -133,23 +133,23 @@ export default function RankResult({ rankResult, puuid, rankResultTimelines}: an
                     } else {
                         characterNumber2 = characterNumber + 5;
                     }
-
-                    const participantsTimeLine1 = getEventsByParticipantId(rankResultTimeline, characterNumber);// 검색된 소환사의 게임 타임라인
-                    const participantsTimeLine2 = getEventsByParticipantId(rankResultTimeline, characterNumber2);// 검색된 소환사의 게임 상대방 타임라인
-                    const participantsGameTimeline1 = getParticipantFramesByParticipantId(rankResultTimeline, characterNumber);//0분 부터 해서 1분 단위로 기록
-                    const participantsGameTimeline2 = getParticipantFramesByParticipantId(rankResultTimeline, characterNumber2);//0분 부터 해서 1분 단위로 기록
+                    //rankResultTimeline모든 정보가 들어있는 타임라인1
+                    const participantsTimeLine1 = getEventsByParticipantId(rankResultTimeline, characterNumber);// 검색된 소환사의 게임 타임라인2
+                    const participantsTimeLine2 = getEventsByParticipantId(rankResultTimeline, characterNumber2);// 검색된 소환사의 게임 상대방 타임라인2
+                    const participantsGameTimeline1 = getParticipantFramesByParticipantId(rankResultTimeline, characterNumber);//0분 부터 해서 1분 단위로 기록3
+                    const participantsGameTimeline2 = getParticipantFramesByParticipantId(rankResultTimeline, characterNumber2);//0분 부터 해서 1분 단위로 기록3
                     return (
                         <AccordionItem style={{ width: '800px', margin: '0 auto' }} className="" key={'item' + i} value={'item' + i}>
-                            <AccordionTrigger className={cn("", data.participants.find((p: Participant) => p.puuid === puuid)?.win ? 'bg-sky-200' : 'bg-rose-200')}>
+                            <AccordionTrigger className={cn("", data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? 'bg-sky-200' : 'bg-rose-200')}>
                                 <Table>
                                     <TableBody>
                                         <TableRow className="flex p-2">
                                             <TableCell className="items-center">
                                                 <div>
-                                                    {(data.participants.find((p: Participant) => p.puuid === puuid)?.win ? "승리" : "패배")}
+                                                    {(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? "승리" : "패배")}
                                                 </div>
                                                 <div>
-                                                    {translatePosition(data.participants.find((p: Participant) => p.puuid === puuid)?.individualPosition)}
+                                                    {translatePosition(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.individualPosition)}
                                                 </div>
                                             </TableCell>
                                             <TableCell className="items-center">
@@ -161,44 +161,44 @@ export default function RankResult({ rankResult, puuid, rankResultTimelines}: an
                                                 </div>
                                             </TableCell>
                                             <TableCell>
-                                                {getChampionImg1(data.participants.find((p: Participant) => p.puuid === puuid)?.championName)}
+                                                {getChampionImg1(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.championName)}
                                             </TableCell>
                                             <TableCell className="items-center gap-1">
                                                 <div className="flex items-center gap-1">
-                                                    {getSpellImg(data.participants.find((p: Participant) => p.puuid === puuid)?.summoner1Id)}
-                                                    {createRuneImage1(findRuneIcon(data.participants.find((p: Participant) => p.puuid === puuid)?.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk))}
+                                                    {getSpellImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.summoner1Id)}
+                                                    {createRuneImage1(findRuneIcon(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk))}
                                                 </div>
                                                 <div className="flex items-center gap-1">
-                                                    {getSpellImg(data.participants.find((p: Participant) => p.puuid === puuid)?.summoner2Id)}
-                                                    {createRuneImage1(getRuneImgMark(data.participants.find((p: Participant) => p.puuid === puuid)?.perks.styles.find((style: any) => style.description === "subStyle")?.style))}
+                                                    {getSpellImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.summoner2Id)}
+                                                    {createRuneImage1(getRuneImgMark(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.perks.styles.find((style: any) => style.description === "subStyle")?.style))}
                                                 </div>
                                             </TableCell>
                                             <TableCell className="items-center gap-1">
                                                 <div className="flex items-center gap-1">
                                                     <div className="items-center">
-                                                        {data.participants.find((p: Participant) => p.puuid === puuid)?.kills}/
-                                                        {data.participants.find((p: Participant) => p.puuid === puuid)?.deaths}/
-                                                        {data.participants.find((p: Participant) => p.puuid === puuid)?.assists}
+                                                        {data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.kills}/
+                                                        {data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.deaths}/
+                                                        {data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.assists}
                                                     </div>
                                                     <div className="items-center">
                                                         평점:
-                                                        {getGrade((data.participants.find((p: Participant) => p.puuid === puuid)?.kills),
-                                                            (data.participants.find((p: Participant) => p.puuid === puuid)?.deaths),
-                                                            (data.participants.find((p: Participant) => p.puuid === puuid)?.assists))}
+                                                        {getGrade((data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.kills),
+                                                            (data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.deaths),
+                                                            (data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.assists))}
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center gap-1">
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === puuid)?.item0)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === puuid)?.item1)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === puuid)?.item2)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === puuid)?.item3)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === puuid)?.item4)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === puuid)?.item5)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === puuid)?.item6)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item0)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item1)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item2)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item3)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item4)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item5)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item6)}
                                                 </div>
                                             </TableCell>
                                             <TableCell className="flex items-center gap-1">
-                                                <DataTransfer participant={rankResultInfo} i={i} puuid={puuid} />
+                                                <DataTransfer participant={rankResultInfo} i={i} puuid={searchedpuuid} />
                                             </TableCell>
                                         </TableRow>
                                     </TableBody>
@@ -215,7 +215,7 @@ export default function RankResult({ rankResult, puuid, rankResultTimelines}: an
                                     {activeTab === "TeamAnalysis" && (
                                         <TeamAnalysis winTeam={winTeam} loseTeam={loseTeam} />
                                     )}{activeTab === "personalAnalysis" && (
-                                        <PersonalAnalysis participantsTimeLine1={participantsTimeLine1} puuid={puuid} championName={data.participants.find((p: Participant) => p.puuid === puuid)?.championName} />
+                                        <PersonalAnalysis participantsTimeLine1={participantsTimeLine1} championName={data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.championName} />
                                     )}
                                 </AccordionContent>
                             </Accordion>

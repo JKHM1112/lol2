@@ -20,7 +20,7 @@ interface infoType {
     info: Object
 }
 
-export default function AramResult({ aramResult, puuid }: any) {
+export default function AramResult({ aramResults, searchedpuuid }: any) {
     const [activeTab, setActiveTab] = React.useState("TotalResult");
     const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={30} height={30} />
     const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={40} height={40} />
@@ -73,7 +73,7 @@ export default function AramResult({ aramResult, puuid }: any) {
         return deaths === 0 ? "Perfect" : ((kills + assists) / deaths).toFixed(2);
     }
 
-    const aramResultInfo = aramResult.map((data: infoType) => data.info)
+    const aramResultInfo = aramResults.map((data: infoType) => data.info)
     return (
         <div>
             <Accordion type="single" collapsible >
@@ -88,16 +88,16 @@ export default function AramResult({ aramResult, puuid }: any) {
                     const maxDamageTaken = Math.max(...participant.map((p: Participant) => p.totalDamageTaken));
                     return (
                         <AccordionItem style={{ width: '800px', margin: '0 auto' }} className="" key={'item' + i} value={'item' + i} >
-                            <AccordionTrigger className={data.participants.find((p: Participant) => p.puuid === puuid)?.win ? 'bg-sky-200' : 'bg-rose-200'}>
+                            <AccordionTrigger className={data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? 'bg-sky-200' : 'bg-rose-200'}>
                                 <Table>
                                     <TableBody>
                                         <TableRow className="flex" >
                                             <TableCell className="items-center">
                                                 <div>
-                                                    {(data.participants.find((p: Participant) => p.puuid === puuid)?.win ? "승리" : "패배")}
+                                                    {(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? "승리" : "패배")}
                                                 </div>
                                                 <div>
-                                                    {translatePosition(data.participants.find((p: Participant) => p.puuid === puuid)?.individualPosition)}
+                                                    {translatePosition(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.individualPosition)}
                                                 </div>
                                             </TableCell>
                                             <TableCell className="items-center">
@@ -109,41 +109,41 @@ export default function AramResult({ aramResult, puuid }: any) {
                                                 </div>
                                             </TableCell>
                                             <TableCell>
-                                                {getChampionImg1(data.participants.find((p: Participant) => p.puuid === puuid)?.championName)}
+                                                {getChampionImg1(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.championName)}
                                             </TableCell>
                                             <TableCell className="items-center gap-1">
                                                 <div className="flex items-center gap-1">
-                                                    {getSpellImg(data.participants.find((p: Participant) => p.puuid === puuid)?.summoner1Id)}
-                                                    {createRuneImage1(findRuneIcon(data.participants.find((p: Participant) => p.puuid === puuid)?.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk))}
+                                                    {getSpellImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.summoner1Id)}
+                                                    {createRuneImage1(findRuneIcon(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk))}
                                                 </div>
                                                 <div className="flex items-center gap-1">
-                                                    {getSpellImg(data.participants.find((p: Participant) => p.puuid === puuid)?.summoner2Id)}
-                                                    {createRuneImage1(getRuneImgMark(data.participants.find((p: Participant) => p.puuid === puuid)?.perks.styles.find((style: any) => style.description === "subStyle")?.style))}
+                                                    {getSpellImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.summoner2Id)}
+                                                    {createRuneImage1(getRuneImgMark(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.perks.styles.find((style: any) => style.description === "subStyle")?.style))}
                                                 </div>
                                             </TableCell>
                                             <TableCell className="items-center gap-1">
                                                 <div className="flex items-center gap-1">
                                                     <div className="items-center">
-                                                        {data.participants.find((p: Participant) => p.puuid === puuid)?.kills}/
-                                                        {data.participants.find((p: Participant) => p.puuid === puuid)?.deaths}/
-                                                        {data.participants.find((p: Participant) => p.puuid === puuid)?.assists}
+                                                        {data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.kills}/
+                                                        {data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.deaths}/
+                                                        {data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.assists}
                                                     </div>
                                                     <div className="items-center">
                                                         평점:
-                                                        {getGrade((data.participants.find((p: Participant) => p.puuid === puuid)?.kills),
-                                                            (data.participants.find((p: Participant) => p.puuid === puuid)?.deaths),
-                                                            (data.participants.find((p: Participant) => p.puuid === puuid)?.assists))
+                                                        {getGrade((data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.kills),
+                                                            (data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.deaths),
+                                                            (data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.assists))
                                                         } : 1
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center gap-1">
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === puuid)?.item0)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === puuid)?.item1)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === puuid)?.item2)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === puuid)?.item3)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === puuid)?.item4)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === puuid)?.item5)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === puuid)?.item6)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item0)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item1)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item2)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item3)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item4)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item5)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item6)}
                                                 </div>
                                             </TableCell>
                                         </TableRow>

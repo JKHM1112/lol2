@@ -20,12 +20,12 @@ async function fetchWithRetry(url: string, options: RequestInit, retries = 3) {
         } catch (error) {
             console.error(`Attempt ${i + 1} failed: ${error}`);
         }
-        await delay(500); // 1초 지연 후 재시도
+        await delay(100); // 0.1초 지연 후 재시도
     }
     throw new Error(`Failed to fetch ${url} after ${retries} retries`);
 }
 
-async function getAccountData(summonerName: string, nextTag: string) {
+async function getAccount(summonerName: string, nextTag: string) {
     const url = `https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${summonerName}/${nextTag}`;
     const options = {
         method: "GET",
@@ -40,8 +40,8 @@ async function getAccountData(summonerName: string, nextTag: string) {
     return await fetchWithRetry(url, options);
 }
 
-async function getRecentMatchesIds(puuid: string, queue: number, start: number, games: number) {
-    const url = `https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?queue=${queue}&start=${start}&count=${games}`;
+async function getRecentMatchIds(searchedpuuid: string, queue: number, start: number, games: number) {
+    const url = `https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${searchedpuuid}/ids?queue=${queue}&start=${start}&count=${games}`;
     const options = {
         method: "GET",
         headers: {
@@ -85,49 +85,110 @@ async function getMatchDataTimeline(matchId: string) {
     };
     return await fetchWithRetry(url, options);
 }
+async function getSummonerData(encryptedPUUID: string) {
+    const url = `https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${encryptedPUUID}`;
+    const options = {
+        method: "GET",
+        headers: {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+            "Accept-Language": "ko,ko-KR;q=0.9,en-US;q=0.8,en;q=0.7",
+            "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+            "Origin": "https://developer.riotgames.com",
+            "X-Riot-Token": api_key
+        }
+    };
+    return await fetchWithRetry(url, options);
+}
+async function getLeagueData(encryptedSummonerId: string) {
+    const url = `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${encryptedSummonerId}`;
+    const options = {
+        method: "GET",
+        headers: {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+            "Accept-Language": "ko-KR,ko;q=0.9",
+            "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+            "Origin": "https://developer.riotgames.com",
+            "X-Riot-Token": api_key
+        }
+    };
+    return await fetchWithRetry(url, options);
+}
 
+function chunkArray(array: any, size: number) {
+    const result = [];
+    for (let i = 0; i < array.length; i += size) {
+        const chunk = array.slice(i, i + size);
+        result.push({ data: chunk });
+    }
+    return result;
+}
+interface MatchData {
+    info: {
+        participants: Participant[];
+    };
+}
+
+interface Participant {
+    summonerId: string;
+}
+
+interface LeagueData {
+    summonerId: string;
+    leagueData: any[];
+}
 export default async function GameSelect({ params }: { params: { summoner: string } }) {
+    const fullSummonerName = params.summoner;   //인코딩된 summoner
+    const [gameName, tagLines] = fullSummonerName.split('-');
+    const tagLine = tagLines || 'KR1';
+    const decodedGameName = decodeURIComponent(gameName);
+    const decodedTagLine = decodeURIComponent(tagLine);
+    const gameNameTagLine = `${decodedGameName}#${decodedTagLine}`; //디코딩된 gameName#Tagline
 
-    const fullsummonerName = params.summoner;
-    const [summonerName, tag] = fullsummonerName.split('-');
-    const nextTag = tag || 'KR1';
-    const decodedSummonerName = decodeURIComponent(summonerName);
-    const decodedSummonerTag = decodeURIComponent(nextTag);
-    const summonernameTag = `${decodedSummonerName}#${decodedSummonerTag}`;
-
-    let aramMatchIds, rankedMatchIds, aramResult = [], rankResult = [], rankResultTimelines = [], puuid;
+    let searchedpuuid, aramMatchIds, rankedMatchIds, summonerData, summonerLeaueDataResult;
+    let rankResults: MatchData[] = [], rankResultTimelines: any[] = [], aramResults: MatchData[] = [], leagueDataResults: LeagueData[] = [];
     try {
-        const accountData = await getAccountData(summonerName, nextTag);
-        if (!accountData) throw new Error("Account data not found");
+        const account = await getAccount(gameName, tagLine);    //puuid,gameName,tagLine
+        if (!account) throw new Error("소환사 정보가 없다.");
 
-        puuid = accountData.puuid;
-        rankedMatchIds = await getRecentMatchesIds(puuid, 420, 0, 10);
-        aramMatchIds = await getRecentMatchesIds(puuid, 450, 0, 10);
+        searchedpuuid = account.puuid;
+        
+        // 비동기 작업을 병렬로 수행
+        [rankedMatchIds, aramMatchIds, summonerData] = await Promise.all([
+            getRecentMatchIds(searchedpuuid, 420, 0, 10),
+            getRecentMatchIds(searchedpuuid, 450, 0, 10),
+            getSummonerData(searchedpuuid)
+        ]);
 
+        const summonerDataId = summonerData.id;
+        summonerLeaueDataResult = await getLeagueData(summonerDataId);
         if (!rankedMatchIds || !aramMatchIds) {
-            throw new Error("Failed to fetch match IDs");
+            throw new Error("getMatchIds api오류");
         }
 
-        for (const matchId of rankedMatchIds) {
+        // 각 매치 데이터 비동기 병렬 처리
+        const rankedMatchPromises = rankedMatchIds.map(async (matchId: string) => {
             const matchData = await getMatchData(matchId);
-            if (matchData) {
-                rankResult.push(matchData);
-            }
+            if (matchData) rankResults.push(matchData);
 
             const matchTimeline = await getMatchDataTimeline(matchId);
-            if (matchTimeline) {
-                rankResultTimelines.push(matchTimeline);
-            }
-        }
+            if (matchTimeline) rankResultTimelines.push(matchTimeline);
 
-        for (const matchId of aramMatchIds) {
+            const leagueDataPromises = matchData.info.participants.map(async (participant: any) => {
+                const leagueData = await getLeagueData(participant.summonerId);
+                leagueDataResults.push({ summonerId: participant.summonerId, leagueData });
+            });
+            await Promise.all(leagueDataPromises);
+        });
+
+        const aramMatchPromises = aramMatchIds.map(async (matchId: string) => {
             const matchData = await getMatchData(matchId);
-            if (matchData) {
-                aramResult.push(matchData);
-            }
-        }
+            if (matchData) aramResults.push(matchData);
+        });
 
+        // 모든 매치 데이터 요청 완료 대기
+        await Promise.all([...rankedMatchPromises, ...aramMatchPromises]);
     } catch (error) {
+        console.error("Error: ", error); // 추가적인 디버깅 정보를 위해
         return (
             <div>
                 <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
@@ -139,10 +200,11 @@ export default async function GameSelect({ params }: { params: { summoner: strin
             </div>
         );
     }
-
+    const summonerInformations = chunkArray(leagueDataResults, 10);
     return (
         <div>
-            <SelectedGames summonernameTag={summonernameTag} fullsummonerName={fullsummonerName} aramResult={aramResult} rankResult={rankResult} puuid={puuid} rankResultTimelines={rankResultTimelines} />
+            <SelectedGames gameNameTagLine={gameNameTagLine} fullSummonerName={fullSummonerName} searchedpuuid={searchedpuuid} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult}
+                rankResults={rankResults} rankResultTimelines={rankResultTimelines} summonerInformations={summonerInformations} aramResults={aramResults} />
         </div>
     );
 }
