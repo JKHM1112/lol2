@@ -156,7 +156,7 @@ export default async function GameSelect({ params }: { params: { summoner: strin
 
         // 비동기 작업을 병렬로 수행
         [rankedMatchIds, aramMatchIds, summonerData] = await Promise.all([
-            getRecentMatchIds(searchedpuuid, 420, 0, 20),
+            getRecentMatchIds(searchedpuuid, 420, 0, 10),
             getRecentMatchIds(searchedpuuid, 450, 0, 10),
             getSummonerData(searchedpuuid)
         ]);
