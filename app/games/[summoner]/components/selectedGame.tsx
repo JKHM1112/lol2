@@ -19,7 +19,8 @@ export default function SelectedGames({ gameNameTagLine, fullSummonerName, searc
         losses: 0
     };
 
-    const tierIcon = leagueData.tier !== "UNRANK" ? leagueData.tier.toLowerCase() : "unrank";
+    const tierIcon = leagueData.tier !== "UNRANK" ? leagueData.tier.toUpperCase() : "unrank";
+    console.log(tierIcon)
     const oddsWinning = (leagueData.wins + leagueData.losses) > 0 ? (leagueData.wins / (leagueData.wins + leagueData.losses) * 100).toFixed(1) : 0;
     return (
         <div>
