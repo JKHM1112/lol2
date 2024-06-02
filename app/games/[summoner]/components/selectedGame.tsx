@@ -10,15 +10,17 @@ import Image from "next/image";
 
 export default function SelectedGames({ gameNameTagLine, fullSummonerName, searchedpuuid, summonerData, summonerLeaueDataResult, rankResults, rankResultTimelines, aramResults }: any) {
     const [activeTab, setActiveTab] = React.useState("RankGame");
-    const leagueData = summonerLeaueDataResult && summonerLeaueDataResult.length > 0 ? summonerLeaueDataResult[0] : {
+    const soloQueueData = summonerLeaueDataResult.find((data: any) => data.queueType === "RANKED_SOLO_5x5");
+    const leagueData = soloQueueData ? soloQueueData : {
         tier: "UNRANK",
         rank: "",
         leaguePoints: 0,
         wins: 0,
         losses: 0
     };
-    const tierIcon = leagueData.tier !== "Unrank" ? leagueData.tier : "unrank";
-    const oddsWinning = 0 || (leagueData.wins / (leagueData.wins + leagueData.losses) * 100).toFixed(1)
+
+    const tierIcon = leagueData.tier !== "UNRANK" ? leagueData.tier.toLowerCase() : "unrank";
+    const oddsWinning = (leagueData.wins + leagueData.losses) > 0 ? (leagueData.wins / (leagueData.wins + leagueData.losses) * 100).toFixed(1) : 0;
     return (
         <div>
             <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
@@ -28,8 +30,8 @@ export default function SelectedGames({ gameNameTagLine, fullSummonerName, searc
                 <div className="flex justify-center items-center">
                     <div className="flex flex-col items-center w-[700px] h-[130px] p-4 box-border border-2 rounded-md shadow-lg bg-white">
                         <div className="flex items-center h-[100px] w-full space-x-4">
-                            <Image className='rounded-md ' alt='profileIconId' src={`/profileicon/${summonerData.profileIconId}.png`} width={40} height={40} />
-                            <Image className='rounded-md ' alt='tierIcon' src={`/emblems/${tierIcon}.png`} width={40} height={40} />
+                            <Image className='rounded-md' alt='profileIconId' src={`/profileicon/${summonerData.profileIconId}.png`} width={40} height={40} />
+                            <Image className='rounded-md' alt='tierIcon' src={`/emblems/${tierIcon}.png`} width={40} height={40} />
                             <div className="text-lg font-semibold">
                                 {gameNameTagLine}
                             </div>
@@ -54,7 +56,7 @@ export default function SelectedGames({ gameNameTagLine, fullSummonerName, searc
 
                 <div>
                     {activeTab === "RankGame" && (
-                        <RankResult rankResults={rankResults} searchedpuuid={searchedpuuid} rankResultTimelines={rankResultTimelines} />
+                        <RankResult rankResults={rankResults} searchedpuuid={searchedpuuid} rankResultTimelines={rankResultTimelines} tier={leagueData.tier} />
                     )}
                     {activeTab === "AramGame" && (
                         <AramResult aramResults={aramResults} searchedpuuid={searchedpuuid} />

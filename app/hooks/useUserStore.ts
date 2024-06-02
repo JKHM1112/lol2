@@ -30,6 +30,8 @@ interface UserStoreState {
     setRunes: (index: number, runeCode: number) => void
     puuid: string
     setPuuid: (puuid: string) => void
+    tier: string
+    setTier: (tier: string) => void
 }
 const useUserStore = create<UserStoreState>((set, get) => ({
     participants: [initialParticipant],
@@ -95,6 +97,10 @@ const useUserStore = create<UserStoreState>((set, get) => ({
     puuid: "",
     setPuuid: (puuid) => {
         set({ puuid })
+    },
+    tier: "",
+    setTier: (tier) => {
+        set({ tier })
     },
 }))
 

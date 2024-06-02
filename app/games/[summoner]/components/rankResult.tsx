@@ -23,7 +23,7 @@ interface infoType {
     info: Object
 }
 
-export default function RankResult({ rankResults, searchedpuuid, rankResultTimelines }: any) {
+export default function RankResult({ rankResults, searchedpuuid, rankResultTimelines, tier }: any) {
     const [activeTab, setActiveTab] = React.useState("TotalResult");
 
     const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={30} height={30} />
@@ -192,7 +192,7 @@ export default function RankResult({ rankResults, searchedpuuid, rankResultTimel
                                                 </div>
                                             </TableCell>
                                             <TableCell className="flex items-center gap-1">
-                                                <DataTransfer participant={rankResultInfo} i={i} puuid={searchedpuuid} />
+                                                <DataTransfer participant={rankResultInfo} i={i} puuid={searchedpuuid} tier={tier} rankResultTimelines={rankResultTimelines}/>
                                             </TableCell>
                                         </TableRow>
                                     </TableBody>

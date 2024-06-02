@@ -8,10 +8,12 @@ interface GameDataProps {
     participant: any[]
     i: number
     puuid: string
+    tier: string
+    rankResultTimelines: any
 }
 
-export default function DataTransfer({ participant, i, puuid }: GameDataProps) {
-    const { setLines, setParticipants, setSelectedGame, setItems, setPuuid, setSpells, setRunes, setChampions, } = useUserStore()
+export default function DataTransfer({ participant, i, puuid, tier, rankResultTimelines }: GameDataProps) {
+    const { setLines, setParticipants, setSelectedGame, setItems, setPuuid, setSpells, setRunes, setChampions, setTier} = useUserStore()
     const router = useRouter();
     const participant1 = participant[i].participants.find((participant: any) => participant.puuid === puuid);
     const participant1Line = participant1.individualPosition;
@@ -98,6 +100,7 @@ export default function DataTransfer({ participant, i, puuid }: GameDataProps) {
         setRunes(9, rune10);
         setRunes(10, rune11);
         setRunes(11, rune12);
+        setTier(tier);
         router.push('/write');
     }
 
