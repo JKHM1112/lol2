@@ -3,9 +3,24 @@ import SelectedGames from "./components/selectedGame";
 
 const api_key = process.env.RIOT_API_KEY as string;
 
+// 간단한 메모리 캐싱
+const cache = new Map<string, any>();
+const CACHE_TTL = 10 * 60 * 1000; // 캐시 TTL을 10분으로 설정
 
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function getCachedData(key: string) {
+    const cached = cache.get(key);
+    if (cached && (Date.now() - cached.timestamp < CACHE_TTL)) {
+        return cached.data;
+    }
+    return null;
+}
+
+function setCachedData(key: string, data: any) {
+    cache.set(key, { data, timestamp: Date.now() });
 }
 
 async function fetchWithRetry(url: string, options: RequestInit, retries = 3) {
@@ -27,6 +42,10 @@ async function fetchWithRetry(url: string, options: RequestInit, retries = 3) {
 }
 
 async function getAccount(summonerName: string, nextTag: string) {
+    const cacheKey = `account-${summonerName}-${nextTag}`;
+    const cachedData = getCachedData(cacheKey);
+    if (cachedData) return cachedData;
+
     const url = `https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${summonerName}/${nextTag}`;
     const options = {
         method: "GET",
@@ -38,10 +57,16 @@ async function getAccount(summonerName: string, nextTag: string) {
             "X-Riot-Token": api_key
         }
     };
-    return await fetchWithRetry(url, options);
+    const data = await fetchWithRetry(url, options);
+    setCachedData(cacheKey, data);
+    return data;
 }
 
 async function getRecentMatchIds(searchedpuuid: string, queue: number, start: number, games: number) {
+    const cacheKey = `matchIds-${searchedpuuid}-${queue}-${start}-${games}`;
+    const cachedData = getCachedData(cacheKey);
+    if (cachedData) return cachedData;
+
     const url = `https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${searchedpuuid}/ids?queue=${queue}&start=${start}&count=${games}`;
     const options = {
         method: "GET",
@@ -54,10 +79,16 @@ async function getRecentMatchIds(searchedpuuid: string, queue: number, start: nu
             "Cache-Control": "no-cache"
         }
     };
-    return await fetchWithRetry(url, options);
+    const data = await fetchWithRetry(url, options);
+    setCachedData(cacheKey, data);
+    return data;
 }
 
 async function getMatchData(matchId: string) {
+    const cacheKey = `matchData-${matchId}`;
+    const cachedData = getCachedData(cacheKey);
+    if (cachedData) return cachedData;
+
     const url = `https://asia.api.riotgames.com/lol/match/v5/matches/${matchId}`;
     const options = {
         method: "GET",
@@ -69,10 +100,16 @@ async function getMatchData(matchId: string) {
             "X-Riot-Token": api_key
         }
     };
-    return await fetchWithRetry(url, options);
+    const data = await fetchWithRetry(url, options);
+    setCachedData(cacheKey, data);
+    return data;
 }
 
 async function getMatchDataTimeline(matchId: string) {
+    const cacheKey = `matchTimeline-${matchId}`;
+    const cachedData = getCachedData(cacheKey);
+    if (cachedData) return cachedData;
+
     const url = `https://asia.api.riotgames.com/lol/match/v5/matches/${matchId}/timeline`;
     const options = {
         method: "GET",
@@ -84,10 +121,16 @@ async function getMatchDataTimeline(matchId: string) {
             "X-Riot-Token": api_key
         }
     };
-    return await fetchWithRetry(url, options);
+    const data = await fetchWithRetry(url, options);
+    setCachedData(cacheKey, data);
+    return data;
 }
 
 async function getSummonerData(encryptedPUUID: string) {
+    const cacheKey = `summonerData-${encryptedPUUID}`;
+    const cachedData = getCachedData(cacheKey);
+    if (cachedData) return cachedData;
+
     const url = `https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${encryptedPUUID}`;
     const options = {
         method: "GET",
@@ -99,9 +142,16 @@ async function getSummonerData(encryptedPUUID: string) {
             "X-Riot-Token": api_key
         }
     };
-    return await fetchWithRetry(url, options);
+    const data = await fetchWithRetry(url, options);
+    setCachedData(cacheKey, data);
+    return data;
 }
+
 async function getLeagueData(encryptedSummonerId: string) {
+    const cacheKey = `leagueData-${encryptedSummonerId}`;
+    const cachedData = getCachedData(cacheKey);
+    if (cachedData) return cachedData;
+
     const url = `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${encryptedSummonerId}`;
     const options = {
         method: "GET",
@@ -113,7 +163,9 @@ async function getLeagueData(encryptedSummonerId: string) {
             "X-Riot-Token": api_key
         }
     };
-    return await fetchWithRetry(url, options);
+    const data = await fetchWithRetry(url, options);
+    setCachedData(cacheKey, data);
+    return data;
 }
 
 interface MatchData {
@@ -130,6 +182,7 @@ interface LeagueData {
     summonerId: string;
     leagueData: any[];
 }
+
 export default async function GameSelect({ params }: { params: { summoner: string } }) {
     const [gameName, tagLines] = params.summoner.split('-');
     const tagLine = tagLines || 'KR1';
@@ -156,18 +209,18 @@ export default async function GameSelect({ params }: { params: { summoner: strin
         }
 
         // 각 매치 데이터 비동기 병렬 처리
-        for (const matchId of rankedMatchIds) {
+        const rankDataPromises = rankedMatchIds.map(async (matchId: string) => {
             const matchData = await getMatchData(matchId);
-            if (matchData) rankResults.push(matchData);
-
             const matchTimeline = await getMatchDataTimeline(matchId);
-            if (matchTimeline) rankResultTimelines.push(matchTimeline);
-        }
+            return { matchData, matchTimeline };
+        });
+        const aramDataPromises = aramMatchIds.map(getMatchData);
 
-        for (const matchId of aramMatchIds) {
-            const matchData = await getMatchData(matchId);
-            if (matchData) aramResults.push(matchData);
-        }
+        const rankDataResults = await Promise.all(rankDataPromises);
+        rankResults = rankDataResults.map(result => result.matchData);
+        rankResultTimelines = rankDataResults.map(result => result.matchTimeline);
+
+        aramResults = await Promise.all(aramDataPromises);
 
     } catch (error) {
         console.error("Error: ", error); // 추가적인 디버깅 정보를 위해
