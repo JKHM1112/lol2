@@ -19,20 +19,24 @@ export default function SelectedGames({ gameNameTagLine, fullSummonerName, searc
         losses: 0
     };
 
-    const tierIcon = leagueData.tier !== "UNRANK" ? leagueData.tier.toUpperCase() : "unrank";
-    console.log(tierIcon)
+    const tierIcon = leagueData.tier !== "UNRANK" ? leagueData.tier.toUpperCase() : "UNRANK";
     const oddsWinning = (leagueData.wins + leagueData.losses) > 0 ? (leagueData.wins / (leagueData.wins + leagueData.losses) * 100).toFixed(1) : 0;
     return (
         <div>
-            <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+            <div className="w-full flex justify-center">
                 <Games />
             </div>
-            <div style={{ width: '100%', justifyContent: 'center' }}>
+            <div className="w-full flex flex-col items-center">
                 <div className="flex justify-center items-center">
                     <div className="flex flex-col items-center w-[700px] h-[130px] p-4 box-border border-2 rounded-md shadow-lg bg-white">
                         <div className="flex items-center h-[100px] w-full space-x-4">
-                            <Image className='rounded-md' alt='profileIconId' src={`/profileicon/${summonerData.profileIconId}.png`} width={40} height={40} />
-                            <Image className='rounded-md' alt='tierIcon' src={`/emblems/${tierIcon}.png`} width={40} height={40} />
+                            <div>
+                                <Image className='rounded-md' alt='profileIconId' src={`/profileicon/${summonerData.profileIconId}.png`} width={40} height={40} />
+                                <div className=" flex justify-center font-semibold">
+                                    {summonerData.summonerLevel}
+                                </div>
+                            </div>
+                            <Image className='rounded-md' alt='tierIcon' src={`/emblems/${tierIcon}.png`} width={50} height={50} />
                             <div className="text-lg font-semibold">
                                 {gameNameTagLine}
                             </div>
@@ -65,5 +69,5 @@ export default function SelectedGames({ gameNameTagLine, fullSummonerName, searc
                 </div>
             </div>
         </div>
-    )
+    );
 }

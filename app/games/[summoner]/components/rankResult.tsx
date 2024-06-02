@@ -10,20 +10,90 @@ import TotalResult from "./totalResult"
 import TeamAnalysis from "./teamAnalysis"
 import PersonalAnalysis from "./personalAnalysis"
 import { Button } from "@/components/ui/button"
+import { PieChart, Pie, Cell, Label } from 'recharts';
 
 interface Participant {
     puuid: string;
     participants: Object;
     win: string;
+    deaths: number;
+    assists: number;
     totalDamageDealtToChampions: number;
     totalDamageTaken: number;
+    individualPosition: string;
+    championName: string;
 }
 
 interface infoType {
-    info: Object
+    info: any
 }
 
 export default function RankResult({ rankResults, searchedpuuid, rankResultTimelines, tier }: any) {
+    function calculateOverallStats(rankResults: infoType[], puuid: string) {
+        let wins = 0;
+        let losses = 0;
+        let totalKills = 0;
+        let totalDeaths = 0;
+        let totalAssists = 0;
+
+        rankResults.forEach(result => {
+            const participant = result.info.participants.find((p: any) => p.puuid === searchedpuuid);
+            if (participant) {
+                if (participant.win) wins++;
+                else losses++;
+
+                totalKills += participant.kills;
+                totalDeaths += participant.deaths;
+                totalAssists += participant.assists;
+            }
+        });
+
+        const kda = totalDeaths === 0 ? (totalKills + totalAssists) : ((totalKills + totalAssists) / totalDeaths).toFixed(2);
+        const avgKills = (totalKills / rankResults.length).toFixed(1);
+        const avgDeaths = (totalDeaths / rankResults.length).toFixed(1);
+        const avgAssists = (totalAssists / rankResults.length).toFixed(1);
+        return {
+            wins,
+            losses,
+            winRate: ((wins / rankResults.length) * 100).toFixed(1),
+            kda,
+            avgKills,
+            avgDeaths,
+            avgAssists
+        };
+    }
+
+    function calculateChampionStats(rankResults: infoType[], puuid: string) {
+        const championStats: any = {};
+
+        rankResults.forEach(result => {
+            const participant = result.info.participants.find((p: any) => p.puuid === puuid);
+            if (participant) {
+                const { championName, win, kills, deaths, assists } = participant;
+                if (!championStats[championName]) {
+                    championStats[championName] = { wins: 0, losses: 0, totalKills: 0, totalDeaths: 0, totalAssists: 0, games: 0 };
+                }
+                championStats[championName].games++;
+                if (win) championStats[championName].wins++;
+                else championStats[championName].losses++;
+                championStats[championName].totalKills += kills;
+                championStats[championName].totalDeaths += deaths;
+                championStats[championName].totalAssists += assists;
+            }
+        });
+
+        const sortedChampions = Object.entries(championStats)
+            .sort(([, a]: any, [, b]: any) => b.games - a.games)
+            .slice(0, 4);
+
+        return sortedChampions.map(([champion, stats]: any) => ({
+            champion,
+            winRate: ((stats.wins / stats.games) * 100).toFixed(1),
+            kda: stats.totalDeaths === 0 ? (stats.totalKills + stats.totalAssists) : ((stats.totalKills + stats.totalAssists) / stats.totalDeaths).toFixed(2),
+            ...stats
+        }));
+    }
+
     const [activeTab, setActiveTab] = React.useState("TotalResult");
 
     const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={30} height={30} />
@@ -102,8 +172,48 @@ export default function RankResult({ rankResults, searchedpuuid, rankResultTimel
         return allParticipantFrames;
     }
 
+    const overallStats = calculateOverallStats(rankResults, searchedpuuid);
+    const championStats = calculateChampionStats(rankResults, searchedpuuid);
+    const winLoseData = [
+        { name: 'Wins', value: overallStats.wins, fill: '#8884d8' },
+        { name: 'Losses', value: overallStats.losses, fill: '#ff7300' }
+    ];
     return (
         <div>
+            <div className="p-4 bg-orange-300 text-white rounded-lg">
+                <div className="flex justify-between items-center">
+                    <div className="text-center justify-between items-center">
+                        <p className={parseFloat(overallStats.winRate) >= 50 ? "text-blue-500" : "text-red-500"}>승률: {overallStats.winRate}%</p>
+                        <p> 승리: {overallStats.wins} 패배: {overallStats.losses}</p>
+                    </div>
+                    <div className="justify-between items-center">
+                        <PieChart width={90} height={90} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+                            <Pie data={winLoseData} cx={45} cy={45} innerRadius={25} fill="#8884d8" paddingAngle={5} dataKey="value">
+                                {winLoseData.map((entry, index) => (
+                                    <Cell key={`cell-${index}`} fill={entry.fill} />
+                                ))}
+                                <Label className="p-1" value={overallStats.winRate} position="center" fill="#e74c3c" style={{ fontSize: '18px' }} />
+                            </Pie>
+                        </PieChart>
+                    </div>
+                    <div className="text-center justify-between items-center">
+                        <p>평균 KDA: {overallStats.kda}</p>
+                        <p>평균 킬: {overallStats.avgKills}</p>
+                        <p>평균 데스: {overallStats.avgDeaths}</p>
+                        <p>평균 어시스트: {overallStats.avgAssists}</p>
+                    </div>
+                </div>
+                <div className="mt-4 flex justify-around justify-between items-center">
+                    {championStats.map((champ, index) => (
+                        <div key={index} className="text-center">
+                            <Image className='rounded-md' alt='champion' src={`/championE/${champ.champion}.png`} width={40} height={40} />
+                            <p className={parseFloat(champ.winRate) >= 50 ? "text-blue-500" : "text-red-500"}>승률: {champ.winRate}%</p>
+                            <p>KDA: {champ.kda}</p>
+                            <p>승리: {champ.wins} 패배: {champ.losses}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
             <Accordion type="single" collapsible>
                 {rankResultInfo.map((data: any, i: number) => {
                     const participant = data.participants;
@@ -192,7 +302,7 @@ export default function RankResult({ rankResults, searchedpuuid, rankResultTimel
                                                 </div>
                                             </TableCell>
                                             <TableCell className="flex items-center gap-1">
-                                                <DataTransfer participant={rankResultInfo} i={i} puuid={searchedpuuid} tier={tier} rankResultTimelines={rankResultTimelines}/>
+                                                <DataTransfer participant={rankResultInfo} i={i} puuid={searchedpuuid} tier={tier} rankResultTimelines={rankResultTimelines} />
                                             </TableCell>
                                         </TableRow>
                                     </TableBody>
