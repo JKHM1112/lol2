@@ -21,7 +21,7 @@ async function fetchWithRetry(url: string, options: RequestInit, retries = 3) {
         } catch (error) {
             console.error(`Attempt ${i + 1} failed: ${error}`);
         }
-        await delay(100); // 0.1초 지연 후 재시도
+        await delay(1000);
     }
     throw new Error(`Failed to fetch ${url} after ${retries} retries`);
 }
@@ -116,14 +116,6 @@ async function getLeagueData(encryptedSummonerId: string) {
     return await fetchWithRetry(url, options);
 }
 
-function chunkArray(array: any, size: number) {
-    const result = [];
-    for (let i = 0; i < array.length; i += size) {
-        const chunk = array.slice(i, i + size);
-        result.push({ data: chunk });
-    }
-    return result;
-}
 interface MatchData {
     info: {
         participants: Participant[];
@@ -139,15 +131,11 @@ interface LeagueData {
     leagueData: any[];
 }
 export default async function GameSelect({ params }: { params: { summoner: string } }) {
-    const fullSummonerName = params.summoner;   //인코딩된 summoner
-    const [gameName, tagLines] = fullSummonerName.split('-');
+    const [gameName, tagLines] = params.summoner.split('-');
     const tagLine = tagLines || 'KR1';
-    const decodedGameName = decodeURIComponent(gameName);
-    const decodedTagLine = decodeURIComponent(tagLine);
-    const gameNameTagLine = `${decodedGameName}#${decodedTagLine}`; //디코딩된 gameName#Tagline
 
     let searchedpuuid, aramMatchIds, rankedMatchIds, summonerData, summonerLeaueDataResult;
-    let rankResults: MatchData[] = [], rankResultTimelines: any[] = [], aramResults: MatchData[] = [], leagueDataResults: LeagueData[] = [];
+    let rankResults: MatchData[] = [], rankResultTimelines: MatchData[] = [], aramResults: MatchData[] = []
     try {
         const account = await getAccount(gameName, tagLine);    //puuid,gameName,tagLine
         if (!account) throw new Error("소환사 정보가 없다.");
@@ -156,7 +144,7 @@ export default async function GameSelect({ params }: { params: { summoner: strin
 
         // 비동기 작업을 병렬로 수행
         [rankedMatchIds, aramMatchIds, summonerData] = await Promise.all([
-            getRecentMatchIds(searchedpuuid, 420, 0, 10),
+            getRecentMatchIds(searchedpuuid, 420, 0, 20),
             getRecentMatchIds(searchedpuuid, 450, 0, 10),
             getSummonerData(searchedpuuid)
         ]);
@@ -180,11 +168,6 @@ export default async function GameSelect({ params }: { params: { summoner: strin
             const matchData = await getMatchData(matchId);
             if (matchData) aramResults.push(matchData);
         }
-        // const leagueDataPromises = matchData.info.participants.map(async (participant: any) => {
-        //     const leagueData = await getLeagueData(participant.summonerId);
-        //     leagueDataResults.push({ summonerId: participant.summonerId, leagueData });
-        // });
-        // await Promise.all(leagueDataPromises);
 
     } catch (error) {
         console.error("Error: ", error); // 추가적인 디버깅 정보를 위해
@@ -199,10 +182,9 @@ export default async function GameSelect({ params }: { params: { summoner: strin
             </div>
         );
     }
-    // const summonersInformations = chunkArray(leagueDataResults, 10);
     return (
         <div>
-            <SelectedGames gameNameTagLine={gameNameTagLine} fullSummonerName={fullSummonerName} searchedpuuid={searchedpuuid} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult}
+            <SelectedGames fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult}
                 rankResults={rankResults} rankResultTimelines={rankResultTimelines} aramResults={aramResults} />
         </div>
     );

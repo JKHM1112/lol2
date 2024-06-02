@@ -8,7 +8,13 @@ import AramResult from "./aramResult";
 import ReloadButton from "./reloadButton";
 import Image from "next/image";
 
-export default function SelectedGames({ gameNameTagLine, fullSummonerName, searchedpuuid, summonerData, summonerLeaueDataResult, rankResults, rankResultTimelines, aramResults }: any) {
+export default function SelectedGames({ fullSummonerName, summonerData, summonerLeaueDataResult, rankResults, rankResultTimelines, aramResults }: any) {
+    const [gameName, tagLines] = fullSummonerName.split('-');
+    const tagLine = tagLines || 'KR1';
+    const decodedGameName = decodeURIComponent(gameName);
+    const decodedTagLine = decodeURIComponent(tagLine);
+    const gameNameTagLine = `${decodedGameName}#${decodedTagLine}`; //디코딩된 gameName#Tagline
+
     const [activeTab, setActiveTab] = React.useState("RankGame");
     const soloQueueData = summonerLeaueDataResult.find((data: any) => data.queueType === "RANKED_SOLO_5x5");
     const leagueData = soloQueueData ? soloQueueData : {
@@ -18,7 +24,6 @@ export default function SelectedGames({ gameNameTagLine, fullSummonerName, searc
         wins: 0,
         losses: 0
     };
-
     const tierIcon = leagueData.tier !== "UNRANK" ? leagueData.tier.toUpperCase() : "UNRANK";
     const oddsWinning = (leagueData.wins + leagueData.losses) > 0 ? (leagueData.wins / (leagueData.wins + leagueData.losses) * 100).toFixed(1) : 0;
     return (
@@ -61,10 +66,10 @@ export default function SelectedGames({ gameNameTagLine, fullSummonerName, searc
 
                 <div>
                     {activeTab === "RankGame" && (
-                        <RankResult rankResults={rankResults} searchedpuuid={searchedpuuid} rankResultTimelines={rankResultTimelines} tier={leagueData.tier} />
+                        <RankResult rankResults={rankResults} searchedpuuid={summonerData.puuid} rankResultTimelines={rankResultTimelines} tier={leagueData.tier} />
                     )}
                     {activeTab === "AramGame" && (
-                        <AramResult aramResults={aramResults} searchedpuuid={searchedpuuid} />
+                        <AramResult aramResults={aramResults} searchedpuuid={summonerData.puuid} />
                     )}
                 </div>
             </div>
