@@ -8,10 +8,7 @@ async function getAccount(summonerName: string, nextTag: string) {
     const options = {
         method: "GET",
         headers: {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-            "Accept-Language": "ko-KR,ko;q=0.9",
-            "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-            "Origin": "https://developer.riotgames.com",
+            "User-Agent": "Mozilla/5.0",
             "X-Riot-Token": api_key
         }
     };
@@ -27,12 +24,8 @@ async function getRecentMatchIds(searchedpuuid: string, queue: number, start: nu
     const options = {
         method: "GET",
         headers: {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-            "Accept-Language": "ko-KR,ko;q=0.9",
-            "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-            "Origin": "https://developer.riotgames.com",
-            "X-Riot-Token": api_key,
-            "Cache-Control": "no-cache"
+            "User-Agent": "Mozilla/5.0",
+            "X-Riot-Token": api_key
         }
     };
     const res = await fetch(url, options);
@@ -47,10 +40,7 @@ async function getMatchData(matchId: string) {
     const options = {
         method: "GET",
         headers: {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-            "Accept-Language": "ko-KR,ko;q=0.9",
-            "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-            "Origin": "https://developer.riotgames.com",
+            "User-Agent": "Mozilla/5.0",
             "X-Riot-Token": api_key
         }
     };
@@ -66,10 +56,7 @@ async function getMatchDataTimeline(matchId: string) {
     const options = {
         method: "GET",
         headers: {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-            "Accept-Language": "ko-KR,ko;q=0.9",
-            "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-            "Origin": "https://developer.riotgames.com",
+            "User-Agent": "Mozilla/5.0",
             "X-Riot-Token": api_key
         }
     };
@@ -85,10 +72,7 @@ async function getSummonerData(encryptedPUUID: string) {
     const options = {
         method: "GET",
         headers: {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
-            "Accept-Language": "ko,ko-KR;q=0.9,en-US;q=0.8,en;q=0.7",
-            "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-            "Origin": "https://developer.riotgames.com",
+            "User-Agent": "Mozilla/5.0",
             "X-Riot-Token": api_key
         }
     };
@@ -104,10 +88,7 @@ async function getLeagueData(encryptedSummonerId: string) {
     const options = {
         method: "GET",
         headers: {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-            "Accept-Language": "ko-KR,ko;q=0.9",
-            "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-            "Origin": "https://developer.riotgames.com",
+            "User-Agent": "Mozilla/5.0",
             "X-Riot-Token": api_key
         }
     };
@@ -141,12 +122,10 @@ export default async function GameSelect({ params }: { params: { summoner: strin
 
     let searchedpuuid, aramMatchIds, rankedMatchIds, summonerData, summonerLeaueDataResult;
     let rankResults: MatchData[] = [], rankResultTimelines: any[] = [], aramResults: MatchData[] = [], leagueDataResults: LeagueData[] = [];
-
     try {
 
         const account = await getAccount(gameName, tagLine); // puuid, gameName, tagLine
         searchedpuuid = account.puuid;
-
 
         [rankedMatchIds, aramMatchIds, summonerData] = await Promise.all([
             getRecentMatchIds(searchedpuuid, 420, 0, 10),
@@ -157,18 +136,19 @@ export default async function GameSelect({ params }: { params: { summoner: strin
         const summonerDataId = summonerData.id;
         summonerLeaueDataResult = await getLeagueData(summonerDataId);
 
-        for (const matchId of rankedMatchIds) {
+        const rankedMatchPromises = rankedMatchIds.map(async (matchId: string) => {
             const matchData = await getMatchData(matchId);
-            if (matchData) rankResults.push(matchData);
-
             const matchTimeline = await getMatchDataTimeline(matchId);
-            if (matchTimeline) rankResultTimelines.push(matchTimeline);
-        }
+            rankResults.push(matchData);
+            rankResultTimelines.push(matchTimeline);
+        });
 
-        for (const matchId of aramMatchIds) {
+        const aramMatchPromises = aramMatchIds.map(async (matchId: string) => {
             const matchData = await getMatchData(matchId);
-            if (matchData) aramResults.push(matchData);
-        }
+            aramResults.push(matchData);
+        });
+
+        await Promise.all([...rankedMatchPromises, ...aramMatchPromises]);
 
     } catch (error) {
         console.error("Error: ", error); // 추가적인 디버깅 정보를 위해
