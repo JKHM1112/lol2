@@ -3,29 +3,6 @@ import SelectedGames from "./components/selectedGame";
 
 const api_key = process.env.RIOT_API_KEY as string;
 
-
-function delay(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function fetchWithRetry(url: string, options: RequestInit, retries = 3) {
-    for (let i = 0; i < retries; i++) {
-        try {
-            const res = await fetch(url, options);
-            if (res.ok) {
-                return await res.json();
-            } else {
-                const errorData = await res.json();
-                console.error(`Attempt ${i + 1} failed: ${res.status} ${errorData.status.message}`);
-            }
-        } catch (error) {
-            console.error(`Attempt ${i + 1} failed: ${error}`);
-        }
-        await delay(100); // 0.1초 지연 후 재시도
-    }
-    throw new Error(`Failed to fetch ${url} after ${retries} retries`);
-}
-
 async function getAccount(summonerName: string, nextTag: string) {
     const url = `https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${summonerName}/${nextTag}`;
     const options = {
@@ -38,7 +15,11 @@ async function getAccount(summonerName: string, nextTag: string) {
             "X-Riot-Token": api_key
         }
     };
-    return await fetchWithRetry(url, options);
+    const res = await fetch(url, options);
+    if (res.ok) {
+        return await res.json();
+    }
+    throw new Error(`Failed to fetch account: ${res.status}`);
 }
 
 async function getRecentMatchIds(searchedpuuid: string, queue: number, start: number, games: number) {
@@ -54,7 +35,11 @@ async function getRecentMatchIds(searchedpuuid: string, queue: number, start: nu
             "Cache-Control": "no-cache"
         }
     };
-    return await fetchWithRetry(url, options);
+    const res = await fetch(url, options);
+    if (res.ok) {
+        return await res.json();
+    }
+    throw new Error(`Failed to fetch match IDs: ${res.status}`);
 }
 
 async function getMatchData(matchId: string) {
@@ -69,7 +54,11 @@ async function getMatchData(matchId: string) {
             "X-Riot-Token": api_key
         }
     };
-    return await fetchWithRetry(url, options);
+    const res = await fetch(url, options);
+    if (res.ok) {
+        return await res.json();
+    }
+    throw new Error(`Failed to fetch match data: ${res.status}`);
 }
 
 async function getMatchDataTimeline(matchId: string) {
@@ -84,7 +73,11 @@ async function getMatchDataTimeline(matchId: string) {
             "X-Riot-Token": api_key
         }
     };
-    return await fetchWithRetry(url, options);
+    const res = await fetch(url, options);
+    if (res.ok) {
+        return await res.json();
+    }
+    throw new Error(`Failed to fetch match timeline: ${res.status}`);
 }
 
 async function getSummonerData(encryptedPUUID: string) {
@@ -99,8 +92,13 @@ async function getSummonerData(encryptedPUUID: string) {
             "X-Riot-Token": api_key
         }
     };
-    return await fetchWithRetry(url, options);
+    const res = await fetch(url, options);
+    if (res.ok) {
+        return await res.json();
+    }
+    throw new Error(`Failed to fetch summoner data: ${res.status}`);
 }
+
 async function getLeagueData(encryptedSummonerId: string) {
     const url = `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${encryptedSummonerId}`;
     const options = {
@@ -113,48 +111,43 @@ async function getLeagueData(encryptedSummonerId: string) {
             "X-Riot-Token": api_key
         }
     };
-    return await fetchWithRetry(url, options);
-}
-
-function chunkArray(array: any, size: number) {
-    const result = [];
-    for (let i = 0; i < array.length; i += size) {
-        const chunk = array.slice(i, i + size);
-        result.push({ data: chunk });
+    const res = await fetch(url, options);
+    if (res.ok) {
+        return await res.json();
     }
-    return result;
-}
-interface MatchData {
-    info: {
-        participants: Participant[];
-    };
+    throw new Error(`Failed to fetch league data: ${res.status}`);
 }
 
-interface Participant {
-    summonerId: string;
-}
-
-interface LeagueData {
-    summonerId: string;
-    leagueData: any[];
-}
 export default async function GameSelect({ params }: { params: { summoner: string } }) {
-    const fullSummonerName = params.summoner;   //인코딩된 summoner
+    const fullSummonerName = params.summoner; // 인코딩된 summoner
     const [gameName, tagLines] = fullSummonerName.split('-');
     const tagLine = tagLines || 'KR1';
     const decodedGameName = decodeURIComponent(gameName);
     const decodedTagLine = decodeURIComponent(tagLine);
-    const gameNameTagLine = `${decodedGameName}#${decodedTagLine}`; //디코딩된 gameName#Tagline
+    const gameNameTagLine = `${decodedGameName}#${decodedTagLine}`; // 디코딩된 gameName#Tagline
+
+    interface MatchData {
+        info: {
+            participants: Participant[];
+        };
+    }
+    interface Participant {
+        summonerId: string;
+    }
+    interface LeagueData {
+        summonerId: string;
+        leagueData: any[];
+    }
 
     let searchedpuuid, aramMatchIds, rankedMatchIds, summonerData, summonerLeaueDataResult;
     let rankResults: MatchData[] = [], rankResultTimelines: any[] = [], aramResults: MatchData[] = [], leagueDataResults: LeagueData[] = [];
-    try {
-        const account = await getAccount(gameName, tagLine);    //puuid,gameName,tagLine
-        if (!account) throw new Error("소환사 정보가 없다.");
 
+    try {
+
+        const account = await getAccount(gameName, tagLine); // puuid, gameName, tagLine
         searchedpuuid = account.puuid;
 
-        // 비동기 작업을 병렬로 수행
+
         [rankedMatchIds, aramMatchIds, summonerData] = await Promise.all([
             getRecentMatchIds(searchedpuuid, 420, 0, 10),
             getRecentMatchIds(searchedpuuid, 450, 0, 10),
@@ -163,11 +156,7 @@ export default async function GameSelect({ params }: { params: { summoner: strin
 
         const summonerDataId = summonerData.id;
         summonerLeaueDataResult = await getLeagueData(summonerDataId);
-        if (!rankedMatchIds || !aramMatchIds) {
-            throw new Error("getMatchIds api오류");
-        }
 
-        // 각 매치 데이터 비동기 병렬 처리
         for (const matchId of rankedMatchIds) {
             const matchData = await getMatchData(matchId);
             if (matchData) rankResults.push(matchData);
@@ -180,11 +169,6 @@ export default async function GameSelect({ params }: { params: { summoner: strin
             const matchData = await getMatchData(matchId);
             if (matchData) aramResults.push(matchData);
         }
-        // const leagueDataPromises = matchData.info.participants.map(async (participant: any) => {
-        //     const leagueData = await getLeagueData(participant.summonerId);
-        //     leagueDataResults.push({ summonerId: participant.summonerId, leagueData });
-        // });
-        // await Promise.all(leagueDataPromises);
 
     } catch (error) {
         console.error("Error: ", error); // 추가적인 디버깅 정보를 위해
@@ -199,11 +183,18 @@ export default async function GameSelect({ params }: { params: { summoner: strin
             </div>
         );
     }
-    // const summonersInformations = chunkArray(leagueDataResults, 10);
     return (
         <div>
-            <SelectedGames gameNameTagLine={gameNameTagLine} fullSummonerName={fullSummonerName} searchedpuuid={searchedpuuid} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult}
-                rankResults={rankResults} rankResultTimelines={rankResultTimelines} aramResults={aramResults} />
+            <SelectedGames
+                gameNameTagLine={gameNameTagLine}
+                fullSummonerName={fullSummonerName}
+                searchedpuuid={searchedpuuid}
+                summonerData={summonerData}
+                summonerLeaueDataResult={summonerLeaueDataResult}
+                rankResults={rankResults}
+                rankResultTimelines={rankResultTimelines}
+                aramResults={aramResults}
+            />
         </div>
     );
 }
