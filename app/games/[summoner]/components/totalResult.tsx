@@ -71,7 +71,7 @@ export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDama
                                         {createRuneImage1(getRuneImgMark(data.perks.styles.find((style: any) => style.description === "subStyle")?.style, runesReforged))}
                                     </div>
                                     <div>
-                                        <Link href={`/games/${data.riotIdGameName}#${data.riotIdTagline}`}>{data.riotIdGameName}</Link>
+                                        <Link href={`/games/${data.riotIdGameName}-${data.riotIdTagline}`}>{data.riotIdGameName}</Link>
                                     </div>
                                 </TableCell>
                                 <TableCell>
@@ -141,7 +141,7 @@ export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDama
                                         {createRuneImage1(getRuneImgMark(data.perks.styles.find((style: any) => style.description === "subStyle")?.style, runesReforged))}
                                     </div>
                                     <div>
-                                        <Link href={`/games/${data.riotIdGameName}#${data.riotIdTagline}`}>{data.riotIdGameName}</Link>
+                                        <Link href={`/games/${data.riotIdGameName}-${data.riotIdTagline}`}>{data.riotIdGameName}</Link>
                                     </div>
                                 </TableCell>
                                 <TableCell>
