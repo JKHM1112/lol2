@@ -10,8 +10,7 @@ import TotalResult from "./totalResult"
 import TeamAnalysis from "./teamAnalysis"
 import PersonalAnalysis from "./personalAnalysis"
 import { Button } from "@/components/ui/button"
-import { PieChart, Pie, Cell, Label } from 'recharts';
-
+import { PieChart, Pie, Cell, Label, LineChart, Line, XAxis, YAxis } from 'recharts';
 interface Participant {
     puuid: string;
     participants: Object;
@@ -29,24 +28,42 @@ interface infoType {
 }
 
 export default function RankResult({ rankResults, searchedpuuid, rankResultTimelines, tier }: any) {
+    let winLoses: any[] = []
+
     function calculateOverallStats(rankResults: infoType[], puuid: string) {
         let wins = 0;
         let losses = 0;
         let totalKills = 0;
         let totalDeaths = 0;
         let totalAssists = 0;
-
+        let count = 0;
         rankResults.forEach(result => {
             const participant = result.info.participants.find((p: any) => p.puuid === searchedpuuid);
             if (participant) {
-                if (participant.win) wins++;
-                else losses++;
+                if (participant.win) {
+                    wins++;
+                    winLoses.push({ winOrLose: 'win' });
+                }
+                else {
+                    losses++;
+                    winLoses.push({ winOrLose: 'lose' });
+                }
 
                 totalKills += participant.kills;
                 totalDeaths += participant.deaths;
                 totalAssists += participant.assists;
             }
         });
+        winLoses.reverse();
+
+        winLoses = winLoses.map(entry => {
+            if (entry.winOrLose === 'win') {
+                count++;
+            } else {
+                count--;
+            }
+            return { ...entry, count: count }
+        })
 
         const kda = totalDeaths === 0 ? (totalKills + totalAssists) : ((totalKills + totalAssists) / totalDeaths).toFixed(2);
         const avgKills = (totalKills / rankResults.length).toFixed(1);
@@ -95,7 +112,11 @@ export default function RankResult({ rankResults, searchedpuuid, rankResultTimel
     }
 
     const [activeTab, setActiveTab] = React.useState("TotalResult");
+    const [renderCharts, setRenderCharts] = React.useState(false);
 
+    React.useEffect(() => {
+        setRenderCharts(true);
+    }, []);
     const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={30} height={30} />
     const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={40} height={40} />
     const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={20} height={20} />
@@ -186,21 +207,32 @@ export default function RankResult({ rankResults, searchedpuuid, rankResultTimel
                         <p className={parseFloat(overallStats.winRate) >= 50 ? "text-blue-500" : "text-red-500"}>승률: {overallStats.winRate}%</p>
                         <p> 승리: {overallStats.wins} 패배: {overallStats.losses}</p>
                     </div>
-                    <div className="justify-between items-center">
-                        <PieChart width={90} height={90} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
-                            <Pie data={winLoseData} cx={45} cy={45} innerRadius={25} fill="#8884d8" paddingAngle={5} dataKey="value">
-                                {winLoseData.map((entry, index) => (
-                                    <Cell key={`cell-${index}`} fill={entry.fill} />
-                                ))}
-                                <Label className="p-1" value={overallStats.winRate} position="center" fill="#e74c3c" style={{ fontSize: '18px' }} />
-                            </Pie>
-                        </PieChart>
-                    </div>
                     <div className="text-center justify-between items-center">
                         <p>평균 KDA: {overallStats.kda}</p>
                         <p>평균 킬: {overallStats.avgKills}</p>
                         <p>평균 데스: {overallStats.avgDeaths}</p>
                         <p>평균 어시스트: {overallStats.avgAssists}</p>
+                    </div>
+                    <div className="flex justify-between items-center">
+                        {renderCharts && (
+                            <>
+                                <PieChart width={90} height={90} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+                                    <Pie data={winLoseData} cx={45} cy={45} innerRadius={25} fill="#8884d8" paddingAngle={5} dataKey="value">
+                                        {winLoseData.map((entry, index) => (
+                                            <Cell key={`cell-${index}`} fill={entry.fill} />
+                                        ))}
+                                        <Label className="p-1" value={overallStats.winRate} position="center" fill="#e74c3c" style={{ fontSize: '18px' }} />
+                                    </Pie>
+                                </PieChart>
+                                <LineChart width={300} height={100} data={winLoses} margin={{ top: 30, right: 0, bottom: 0, left: 0 }}>
+                                    <Line type="basis" dataKey="count" stroke="#8884d8" dot={false} />
+                                    <YAxis domain={[(dataMin: number) => Math.min(dataMin), (dataMax: number) => Math.max(dataMax)]} />
+                                    <XAxis tick={false} axisLine={false}>
+                                        <Label value="승패 그래프" position="insideBottom"  />
+                                    </XAxis>
+                                </LineChart>
+                            </>
+                        )}
                     </div>
                 </div>
                 <div className="mt-4 flex justify-around justify-between items-center">
@@ -327,6 +359,6 @@ export default function RankResult({ rankResults, searchedpuuid, rankResultTimel
                     )
                 })}
             </Accordion>
-        </div>
+        </div >
     )
 }
