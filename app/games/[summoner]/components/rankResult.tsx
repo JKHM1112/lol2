@@ -182,17 +182,6 @@ export default function RankResult({ rankResults, searchedpuuid, rankResultTimel
         return allEvents;
     }
 
-    const getParticipantFramesByParticipantId = (timeline: any, participantId: any) => {
-        let allParticipantFrames: any = [];
-        for (const frame of timeline.info.frames) {
-            const participantFrames = frame.participantFrames;
-            if (participantFrames[participantId]) {
-                allParticipantFrames.push(participantFrames[participantId]);
-            }
-        }
-        return allParticipantFrames;
-    }
-
     const overallStats = calculateOverallStats(rankResults, searchedpuuid);
     const championStats = calculateChampionStats(rankResults, searchedpuuid);
     const winLoseData = [
@@ -228,7 +217,7 @@ export default function RankResult({ rankResults, searchedpuuid, rankResultTimel
                                     <Line type="basis" dataKey="count" stroke="#8884d8" dot={false} />
                                     <YAxis domain={[(dataMin: number) => Math.min(dataMin), (dataMax: number) => Math.max(dataMax)]} />
                                     <XAxis tick={false} axisLine={false}>
-                                        <Label value="승패 그래프" position="insideBottom"  />
+                                        <Label value="승패 그래프" position="insideBottom" />
                                     </XAxis>
                                 </LineChart>
                             </>
@@ -263,17 +252,9 @@ export default function RankResult({ rankResults, searchedpuuid, rankResultTimel
                     }
                     const characterNumber = rankResultTimeline.info.participants.find((p: any) => p.puuid === searchedpuuid)?.participantId;
 
-                    let characterNumber2 = 0;
-                    if (characterNumber > 5) {
-                        characterNumber2 = characterNumber - 5;
-                    } else {
-                        characterNumber2 = characterNumber + 5;
-                    }
                     //rankResultTimeline모든 정보가 들어있는 타임라인1
                     const participantsTimeLine1 = getEventsByParticipantId(rankResultTimeline, characterNumber);// 검색된 소환사의 게임 타임라인2
-                    const participantsTimeLine2 = getEventsByParticipantId(rankResultTimeline, characterNumber2);// 검색된 소환사의 게임 상대방 타임라인2
-                    const participantsGameTimeline1 = getParticipantFramesByParticipantId(rankResultTimeline, characterNumber);//0분 부터 해서 1분 단위로 기록3
-                    const participantsGameTimeline2 = getParticipantFramesByParticipantId(rankResultTimeline, characterNumber2);//0분 부터 해서 1분 단위로 기록3
+
                     return (
                         <AccordionItem style={{ width: '800px', margin: '0 auto' }} className="" key={'item' + i} value={'item' + i}>
                             <AccordionTrigger className={cn("", data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? 'bg-sky-200' : 'bg-rose-200')}>
@@ -334,7 +315,7 @@ export default function RankResult({ rankResults, searchedpuuid, rankResultTimel
                                                 </div>
                                             </TableCell>
                                             <TableCell className="flex items-center gap-1">
-                                                <DataTransfer participant={rankResultInfo} i={i} puuid={searchedpuuid} tier={tier} rankResultTimelines={rankResultTimelines} />
+                                                <DataTransfer participant={rankResultInfo} i={i} puuid={searchedpuuid} tier={tier} rankResultTimeline={rankResultTimeline} characterNumber={characterNumber} />
                                             </TableCell>
                                         </TableRow>
                                     </TableBody>

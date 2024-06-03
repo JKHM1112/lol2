@@ -9,11 +9,14 @@ interface GameDataProps {
     i: number
     puuid: string
     tier: string
-    rankResultTimelines: any
+    rankResultTimeline: any
+    characterNumber: number
 }
 
-export default function DataTransfer({ participant, i, puuid, tier, rankResultTimelines }: GameDataProps) {
-    const { setLines, setParticipants, setSelectedGame, setItems, setPuuid, setSpells, setRunes, setChampions, setTier} = useUserStore()
+export default function DataTransfer({ participant, i, puuid, tier, rankResultTimeline, characterNumber }: GameDataProps) {
+
+    const { setLines, setParticipants, setSelectedGame, setItems, setPuuid, setSpells, setRunes, setChampions, setTier,
+        setTimeLine1Filtered, setTimeLine2Filtered, setGameTimeline1Extracted, setGameTimeline2Extracted } = useUserStore()
     const router = useRouter();
     const participant1 = participant[i].participants.find((participant: any) => participant.puuid === puuid);
     const participant1Line = participant1.individualPosition;
@@ -28,6 +31,84 @@ export default function DataTransfer({ participant, i, puuid, tier, rankResultTi
         individualPosition = '';
     }
 
+
+    const getEventsByParticipantId = (timeline: any, participantId: any) => {
+        let allEvents: any = [];
+        for (const frame of timeline.info.frames) {
+            const events = frame.events || [];
+            allEvents = allEvents.concat(events.filter((event: any) => event.participantId === participantId));
+        }
+        return allEvents;
+    }
+
+    const getParticipantFramesByParticipantId = (timeline: any, participantId: any) => {
+        let allParticipantFrames: any = [];
+        for (const frame of timeline.info.frames) {
+            const participantFrames = frame.participantFrames;
+            if (participantFrames[participantId]) {
+                allParticipantFrames.push(participantFrames[participantId]);
+            }
+        }
+        return allParticipantFrames;
+    }
+
+    let characterNumber2 = 0;
+    if (characterNumber > 5) {
+        characterNumber2 = characterNumber - 5;
+    } else {
+        characterNumber2 = characterNumber + 5;
+    }
+
+    const participantsTimeLine1 = getEventsByParticipantId(rankResultTimeline, characterNumber);// 검색된 소환사의 게임 타임라인2
+    const participantsTimeLine2 = getEventsByParticipantId(rankResultTimeline, characterNumber2);// 검색된 소환사의 게임 상대방 타임라인2
+    const participantsGameTimeline1 = getParticipantFramesByParticipantId(rankResultTimeline, characterNumber);//0분 부터 해서 1분 단위로 기록3
+    const participantsGameTimeline2 = getParticipantFramesByParticipantId(rankResultTimeline, characterNumber2);//0분 부터 해서 1분 단위로 기록3
+
+    const filterAndExtractEvents = (events: any[], type: string) => {
+        return events
+            .filter(event => event.type === type).map(event => ({
+                type: event.type,
+                participantId: event.participantId,
+                level: event.level,
+                timestamp: event.timestamp,
+            }));
+    }
+
+    const extractGameTimelines = (timelines: any[]) => {
+        return timelines.map(timeline => ({
+            championStats: {
+                health: timeline.championStats.health,
+                healthMax: timeline.championStats.healthMax,
+                power: timeline.championStats.power,
+                powerMax: timeline.championStats.powerMax
+            },
+            damageStats: {
+                magicDamageDoneToChampions: timeline.damageStats.magicDamageDoneToChampions,
+                physicalDamageDoneToChampions: timeline.damageStats.physicalDamageDoneToChampions,
+                trueDamageDoneToChampions: timeline.damageStats.trueDamageDoneToChampions,
+                totalDamageDoneToChampions: timeline.damageStats.totalDamageDoneToChampions,
+                magicDamageTaken: timeline.damageStats.magicDamageTaken,
+                physicalDamageTaken: timeline.damageStats.physicalDamageTaken,
+                trueDamageTaken: timeline.damageStats.trueDamageTaken,
+                totalDamageTaken: timeline.damageStats.totalDamageTaken,
+            },
+            participantId: timeline.participantId,
+            level: timeline.level,
+            currentGold: timeline.currentGold,
+            xp: timeline.xp,
+            jungleMinionsKilled: timeline.jungleMinionsKilled,
+            minionsKilled: timeline.minionsKilled,
+        }));
+    }
+
+    const participantsTimeLine1Filtered = filterAndExtractEvents(participantsTimeLine1, "LEVEL_UP");
+    const participantsTimeLine2Filtered = filterAndExtractEvents(participantsTimeLine2, "LEVEL_UP");
+    const participantsGameTimeline1Extracted = extractGameTimelines(participantsGameTimeline1);
+    const participantsGameTimeline2Extracted = extractGameTimelines(participantsGameTimeline2);
+    console.log('participantsTimeLine1')
+    console.log(participantsTimeLine1)
+    console.log('participantsGameTimeline1')
+    console.log(participantsGameTimeline1)
     const defaultParticipant = { championName: '' };
     let participant3 = defaultParticipant
     let participant4 = defaultParticipant
@@ -101,12 +182,16 @@ export default function DataTransfer({ participant, i, puuid, tier, rankResultTi
         setRunes(10, rune11);
         setRunes(11, rune12);
         setTier(tier);
+        setTimeLine1Filtered(participantsTimeLine1Filtered)
+        setTimeLine2Filtered(participantsTimeLine2Filtered)
+        setGameTimeline1Extracted(participantsGameTimeline1Extracted)
+        setGameTimeline2Extracted(participantsGameTimeline2Extracted)
         router.push('/write');
     }
 
     return (
         <div>
-            <Button onClick={handleGameData}>데이터 전송</Button>
+            <Button key={i} onClick={handleGameData}>데이터 전송</Button>
         </div>
     )
 }

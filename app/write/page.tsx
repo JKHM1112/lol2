@@ -7,8 +7,10 @@ import Spells from "./components/spells";
 import Difficulty from "./components/difficulty";
 import Lines from "./components/lineResult";
 import LineChampions from "./components/lineChampions";
+import useUserStore from "../hooks/useUserStore";
 export default function Write() {
-
+    const { participantsTimeLine1Filtered, participantsTimeLine2Filtered,
+        participantsGameTimeline1Extracted, participantsGameTimeline2Extracted } = useUserStore();
     const currentDate = new Date().toISOString().split('T')[0]
 
     return (
@@ -53,7 +55,11 @@ export default function Write() {
                     </ResizablePanelGroup>
                 </ResizablePanelGroup>
 
-                <input style={{ display: 'none' }} name="date" defaultValue={currentDate}></input>
+                <input style={{ display: 'none' }} name="date" value={currentDate}></input>
+                <input style={{ display: 'none' }} name="timeLine1" value={JSON.stringify(participantsTimeLine1Filtered)}></input>
+                <input style={{ display: 'none' }} name="timeLine2" value={JSON.stringify(participantsTimeLine2Filtered)}></input>
+                <input style={{ display: 'none' }} name="gameTimeLine1" value={JSON.stringify(participantsGameTimeline1Extracted)}></input>
+                <input style={{ display: 'none' }} name="gameTimeLine2" value={JSON.stringify(participantsGameTimeline2Extracted)}></input>
 
             </form>
         </div >

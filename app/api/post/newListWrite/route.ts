@@ -20,6 +20,10 @@ const schema = zfd.formData({
     gameResult: zfd.text(z.string().optional()),
     review: zfd.text(z.string().optional()),
     date: zfd.text(z.string().optional()),
+    timeLine1: zfd.text(z.string().optional()),
+    timeLine2: zfd.text(z.string().optional()),
+    gameTimeLine1: zfd.text(z.string().optional()),
+    gameTimeLine2: zfd.text(z.string().optional()),
 });
 
 export async function POST(request: NextRequest) {

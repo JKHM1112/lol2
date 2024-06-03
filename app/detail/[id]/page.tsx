@@ -43,6 +43,10 @@ export default async function Detail(props: any) {
                     <p>스펠: {result.spells.join(', ')}</p>
                     <p>템: {result.items.join(', ')}</p>
                     <p>후기: {result.review}</p>
+                    <p>{result.timeLine1}</p>
+                    <p>{result.timeLine2}</p>
+                    <p>{result.gameTimeLine1}</p>
+                    <p>{result.gameTimeLine2}</p>
                 </div>
             </ResizablePanel>
             <ResizableHandle />

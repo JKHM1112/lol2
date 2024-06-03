@@ -32,6 +32,17 @@ interface UserStoreState {
     setPuuid: (puuid: string) => void
     tier: string
     setTier: (tier: string) => void
+    participantsTimeLine1Filtered: Object
+    setTimeLine1Filtered: (participantsTimeLine1Filtered: Object) => void
+    participantsTimeLine2Filtered: Object
+    setTimeLine2Filtered: (participantsTimeLine2Filtered: Object) => void
+    participantsGameTimeline1Extracted: Object
+    setGameTimeline1Extracted: (participantsGameTimeline1Extracted: Object) => void
+    participantsGameTimeline2Extracted: Object
+    setGameTimeline2Extracted: (participantsGameTimeline1Extracted: Object) => void
+
+
+
 }
 const useUserStore = create<UserStoreState>((set, get) => ({
     participants: [initialParticipant],
@@ -101,6 +112,22 @@ const useUserStore = create<UserStoreState>((set, get) => ({
     tier: "",
     setTier: (tier) => {
         set({ tier })
+    },
+    participantsTimeLine1Filtered: "",
+    setTimeLine1Filtered: (participantsTimeLine1Filtered) => {
+        set({ participantsTimeLine1Filtered })
+    },
+    participantsTimeLine2Filtered: "",
+    setTimeLine2Filtered: (participantsTimeLine2Filtered) => {
+        set({ participantsTimeLine2Filtered })
+    },
+    participantsGameTimeline1Extracted: "",
+    setGameTimeline1Extracted: (participantsGameTimeline1Extracted) => {
+        set({ participantsGameTimeline1Extracted })
+    },
+    participantsGameTimeline2Extracted: "",
+    setGameTimeline2Extracted: (participantsGameTimeline2Extracted) => {
+        set({ participantsGameTimeline2Extracted })
     },
 }))
 

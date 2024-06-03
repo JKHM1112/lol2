@@ -163,6 +163,7 @@ export default function ListsItem({ result, email }: ListsItemProps) {
                                         await fetch('/api/post/delete', {
                                             method: 'POST', body: JSON.stringify({ _id: data._id, email: data.email })
                                         });
+                                        window.location.reload()
                                     }} className="text-red-500 hover:underline">삭제</button>
                                 </td>
                             )}

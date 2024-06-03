@@ -5,8 +5,8 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import RankResult from "./rankResult";
 import AramResult from "./aramResult";
-import ReloadButton from "./reloadButton";
 import Image from "next/image";
+import ReloadButton from "./reloadButton";
 
 export default function SelectedGames({ fullSummonerName, summonerData, summonerLeaueDataResult, rankResults, rankResultTimelines, aramResults }: any) {
     const [gameName, tagLines] = fullSummonerName.split('-');
@@ -59,7 +59,10 @@ export default function SelectedGames({ fullSummonerName, summonerData, summoner
                             <Link href={`/games/${fullSummonerName}/progressGame`}>진행중인 게임 확인</Link>
                             <Button className="" onClick={() => setActiveTab("RankGame")}>랭크게임</Button>
                             <Button className="" onClick={() => setActiveTab("AramGame")}>칼바람나락</Button>
-                            <ReloadButton />
+                            <ReloadButton/>
+                            <div>
+                                <Button onClick={() => window.location.reload()}>전적 갱신2</Button>
+                            </div>
                         </div>
                     </div>
                 </div>
