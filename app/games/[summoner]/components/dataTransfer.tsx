@@ -14,11 +14,12 @@ interface GameDataProps {
 }
 
 export default function DataTransfer({ participant, i, puuid, tier, rankResultTimeline, characterNumber }: GameDataProps) {
-
     const { setLines, setParticipants, setSelectedGame, setItems, setPuuid, setSpells, setRunes, setChampions, setTier,
-        setTimeLine1Filtered, setTimeLine2Filtered, setGameTimeline1Extracted, setGameTimeline2Extracted } = useUserStore()
+        setTimeLine1Filtered, setTimeLine2Filtered, setGameTimeline1Extracted, setGameTimeline2Extracted,
+        setTurretPlatesTaken, setVisionScore } = useUserStore()
     const router = useRouter();
     const participant1 = participant[i].participants.find((participant: any) => participant.puuid === puuid);
+    console.log(participant1)
     const participant1Line = participant1.individualPosition;
     const participant1ParticipantId = participant1.participantId;
     const participant2 = participant[i].participants.find((p: any) => p.individualPosition === participant1Line && p.puuid !== puuid);
@@ -105,10 +106,6 @@ export default function DataTransfer({ participant, i, puuid, tier, rankResultTi
     const participantsTimeLine2Filtered = filterAndExtractEvents(participantsTimeLine2, "LEVEL_UP");
     const participantsGameTimeline1Extracted = extractGameTimelines(participantsGameTimeline1);
     const participantsGameTimeline2Extracted = extractGameTimelines(participantsGameTimeline2);
-    console.log('participantsTimeLine1')
-    console.log(participantsTimeLine1)
-    console.log('participantsGameTimeline1')
-    console.log(participantsGameTimeline1)
     const defaultParticipant = { championName: '' };
     let participant3 = defaultParticipant
     let participant4 = defaultParticipant
@@ -137,6 +134,11 @@ export default function DataTransfer({ participant, i, puuid, tier, rankResultTi
     const item5 = participant1.item5;
     const item6 = participant1.item6;
 
+    const turretPlatesTaken1 = participant1.challenges.turretTakedowns;
+    const visionScore1 = participant1.visionScore;
+    const turretPlatesTaken2 = participant2.challenges.turretTakedowns;
+    const visionScore2 = participant2.visionScore;
+
     const rune1 = participant1.perks.styles[0].selections[0].perk;
     const rune2 = participant1.perks.styles[0].selections[1].perk;
     const rune3 = participant1.perks.styles[0].selections[2].perk;
@@ -150,6 +152,10 @@ export default function DataTransfer({ participant, i, puuid, tier, rankResultTi
     const rune11 = participant2.perks.styles[1].selections[0].perk;
     const rune12 = participant2.perks.styles[1].selections[1].perk;
     const handleGameData = () => {
+        setTurretPlatesTaken(0, turretPlatesTaken1)
+        setTurretPlatesTaken(1, turretPlatesTaken2)
+        setVisionScore(0, visionScore1)
+        setVisionScore(1, visionScore2)
         setParticipants(participant);
         setChampions(0, champion1);
         setChampions(1, champion2);

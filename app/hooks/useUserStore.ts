@@ -40,9 +40,10 @@ interface UserStoreState {
     setGameTimeline1Extracted: (participantsGameTimeline1Extracted: Object) => void
     participantsGameTimeline2Extracted: Object
     setGameTimeline2Extracted: (participantsGameTimeline1Extracted: Object) => void
-
-
-
+    turretPlatesTaken: number[]
+    setTurretPlatesTaken: (index: number, turret: number) => void
+    visionScore: number[]
+    setVisionScore: (index: number, vision: number) => void
 }
 const useUserStore = create<UserStoreState>((set, get) => ({
     participants: [initialParticipant],
@@ -128,6 +129,18 @@ const useUserStore = create<UserStoreState>((set, get) => ({
     participantsGameTimeline2Extracted: "",
     setGameTimeline2Extracted: (participantsGameTimeline2Extracted) => {
         set({ participantsGameTimeline2Extracted })
+    },
+    turretPlatesTaken: Array(2).fill(0),
+    setTurretPlatesTaken: (index, turret) => {
+        const updatedturretPlatesTaken = [...get().turretPlatesTaken]
+        updatedturretPlatesTaken[index] = turret
+        set({ turretPlatesTaken: updatedturretPlatesTaken })
+    },
+    visionScore: Array(2).fill(0),
+    setVisionScore: (index, vision) => {
+        const updatedturretPlatesTaken = [...get().visionScore]
+        updatedturretPlatesTaken[index] = vision
+        set({ visionScore: updatedturretPlatesTaken })
     },
 }))
 

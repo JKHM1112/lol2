@@ -24,6 +24,8 @@ const schema = zfd.formData({
     timeLine2: zfd.text(z.string().optional()),
     gameTimeLine1: zfd.text(z.string().optional()),
     gameTimeLine2: zfd.text(z.string().optional()),
+    turretPlatesTaken: zfd.text(z.string().optional()),
+    visionScore: zfd.text(z.string().optional()),
 });
 
 export async function POST(request: NextRequest) {
