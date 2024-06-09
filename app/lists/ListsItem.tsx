@@ -129,7 +129,7 @@ export default function ListsItem({ result, email }: ListsItemProps) {
                             <td className="border border-sky-300 p-1 text-center">{data.after6}</td>
                             <td className="border border-sky-300 p-1 text-center">{data.half}</td>
                             <td className="border border-sky-300 p-1 text-center">{getRuneImg4(getRuneImg(data.runes[0], 0))}</td>
-                            <td className="border border-sky-300 p-1 text-center">{getRuneImg4(getRuneImg(data.runes[6], 0))}</td>
+                            <td className="border border-sky-300 p-1 text-center">{getRuneImg4(getRuneImg(data.runes[9], 0))}</td>
                             <td className="border border-sky-300 p-1 text-center">{getSpellImg(data.spells[0])}</td>
                             <td className="border border-sky-300 p-1 text-center">{getSpellImg(data.spells[1])}</td>
                             <td className="border border-sky-300 p-1 text-center">{getSpellImg(data.spells[2])}</td>

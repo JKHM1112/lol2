@@ -32,19 +32,30 @@ interface UserStoreState {
     setPuuid: (puuid: string) => void
     tier: string
     setTier: (tier: string) => void
-    participantsTimeLine1Filtered: Object
-    setTimeLine1Filtered: (participantsTimeLine1Filtered: Object) => void
-    participantsTimeLine2Filtered: Object
-    setTimeLine2Filtered: (participantsTimeLine2Filtered: Object) => void
-    participantsGameTimeline1Extracted: Object
-    setGameTimeline1Extracted: (participantsGameTimeline1Extracted: Object) => void
-    participantsGameTimeline2Extracted: Object
-    setGameTimeline2Extracted: (participantsGameTimeline1Extracted: Object) => void
+    timeLineLevelUp1: any[]
+    setTimeLineLevelUp1: (timeLineLevelUp1: any[]) => void
+    timeLineLevelUp2: any[]
+    setTimeLineLevelUp2: (timeLineLevelUp2: any[]) => void
+    timeLineObject1: any[]
+    setTimeLineObject1: (timeLineObject1: any[]) => void
+    timeLineObject2: any[]
+    setTimeLineObject2: (timeLineObject2: any[]) => void
+    gameExtracted1: any[]
+    setGameExtracted1: (gameExtracted1: any[]) => void
+    gameExtracted2: any[]
+    setGameExtracted2: (gameExtracted1: any[]) => void
+    timeLineKda1: any[]
+    setTimeLineKda1: (timeLineKda1: any[]) => void
+    timeLineKda2: any[]
+    setTimeLineKda2: (timeLineKda2: any[]) => void
     turretPlatesTaken: number[]
     setTurretPlatesTaken: (index: number, turret: number) => void
     visionScore: number[]
     setVisionScore: (index: number, vision: number) => void
+    skillOrder: string[]
+    setSkillOrder: (skillOrder: string[]) => void
 }
+
 const useUserStore = create<UserStoreState>((set, get) => ({
     participants: [initialParticipant],
     setParticipants: (participants) => {
@@ -94,13 +105,13 @@ const useUserStore = create<UserStoreState>((set, get) => ({
         updatedSpells[index] = spellCode
         set({ spells: updatedSpells })
     },
-    items: Array(7).fill(0),
+    items: Array(14).fill(0),
     setItems: (index, itemCode) => {
         const updatedItems = [...get().items]
         updatedItems[index] = itemCode
         set({ items: updatedItems })
     },
-    runes: Array(12).fill(0),
+    runes: Array(18).fill(0),
     setRunes: (index, runeCode) => {
         const updatedRunes = [...get().runes]
         updatedRunes[index] = runeCode
@@ -114,21 +125,37 @@ const useUserStore = create<UserStoreState>((set, get) => ({
     setTier: (tier) => {
         set({ tier })
     },
-    participantsTimeLine1Filtered: "",
-    setTimeLine1Filtered: (participantsTimeLine1Filtered) => {
-        set({ participantsTimeLine1Filtered })
+    timeLineLevelUp1: [],
+    setTimeLineLevelUp1: (timeLineLevelUp1) => {
+        set({ timeLineLevelUp1 });
     },
-    participantsTimeLine2Filtered: "",
-    setTimeLine2Filtered: (participantsTimeLine2Filtered) => {
-        set({ participantsTimeLine2Filtered })
+    timeLineLevelUp2: [],
+    setTimeLineLevelUp2: (timeLineLevelUp2) => {
+        set({ timeLineLevelUp2 });
     },
-    participantsGameTimeline1Extracted: "",
-    setGameTimeline1Extracted: (participantsGameTimeline1Extracted) => {
-        set({ participantsGameTimeline1Extracted })
+    timeLineObject1: [],
+    setTimeLineObject1: (timeLineObject1) => {
+        set({ timeLineObject1 });
     },
-    participantsGameTimeline2Extracted: "",
-    setGameTimeline2Extracted: (participantsGameTimeline2Extracted) => {
-        set({ participantsGameTimeline2Extracted })
+    timeLineObject2: [],
+    setTimeLineObject2: (timeLineObject2) => {
+        set({ timeLineObject2 });
+    },
+    gameExtracted1: [],
+    setGameExtracted1: (gameExtracted1) => {
+        set({ gameExtracted1 });
+    },
+    gameExtracted2: [],
+    setGameExtracted2: (gameExtracted2) => {
+        set({ gameExtracted2 });
+    },
+    timeLineKda1: [],
+    setTimeLineKda1: (timeLineKda1) => {
+        set({ timeLineKda1 });
+    },
+    timeLineKda2: [],
+    setTimeLineKda2: (timeLineKda2) => {
+        set({ timeLineKda2 });
     },
     turretPlatesTaken: Array(2).fill(0),
     setTurretPlatesTaken: (index, turret) => {
@@ -142,6 +169,10 @@ const useUserStore = create<UserStoreState>((set, get) => ({
         updatedturretPlatesTaken[index] = vision
         set({ visionScore: updatedturretPlatesTaken })
     },
-}))
+    skillOrder: [],
+    setSkillOrder: (skillOrder) => {
+        set({ skillOrder });
+    },
 
+}))
 export default useUserStore

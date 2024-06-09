@@ -25,9 +25,9 @@ interface Participant {
 
 interface infoType {
     info: any
-}
+}   
 
-export default function RankResult({ rankResults, searchedpuuid, rankResultTimelines, tier }: any) {
+export default function RankResult({ searchedpuuid, tier, rankResults, rankResultTimelines }: any) {
     let winLoses: any[] = []
 
     function calculateOverallStats(rankResults: infoType[], puuid: string) {
@@ -255,6 +255,16 @@ export default function RankResult({ rankResults, searchedpuuid, rankResultTimel
                     //rankResultTimeline모든 정보가 들어있는 타임라인1
                     const participantsTimeLine1 = getEventsByParticipantId(rankResultTimeline, characterNumber);// 검색된 소환사의 게임 타임라인2
 
+                    const skillEvents = participantsTimeLine1.filter((event: any) => event.type === 'SKILL_LEVEL_UP').map((event: any) => ({ skillSlot: event.skillSlot, timestamp: event.timestamp }));
+                    const skillOrder = skillEvents.map((event: any) => {
+                        switch (event.skillSlot) {
+                            case 1: return 'Q';
+                            case 2: return 'W';
+                            case 3: return 'E';
+                            case 4: return 'R';
+                            default: return '';
+                        }
+                    }).filter((skill: string) => skill !== '');
                     return (
                         <AccordionItem style={{ width: '800px', margin: '0 auto' }} className="" key={'item' + i} value={'item' + i}>
                             <AccordionTrigger className={cn("", data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? 'bg-sky-200' : 'bg-rose-200')}>
@@ -315,7 +325,7 @@ export default function RankResult({ rankResults, searchedpuuid, rankResultTimel
                                                 </div>
                                             </TableCell>
                                             <TableCell className="flex items-center gap-1">
-                                                <DataTransfer participant={rankResultInfo} i={i} puuid={searchedpuuid} tier={tier} rankResultTimeline={rankResultTimeline} characterNumber={characterNumber} />
+                                                <DataTransfer participant={rankResultInfo} i={i} puuid={searchedpuuid} tier={tier} rankResultTimeline={rankResultTimeline} characterNumber={characterNumber} skillOrder={skillOrder}/>
                                             </TableCell>
                                         </TableRow>
                                     </TableBody>

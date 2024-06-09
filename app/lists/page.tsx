@@ -24,7 +24,7 @@ export default async function Lists() {
     //result가 dream안 data를 전체다 출력한다.
     return (
         <div className="flex justify-center items-center">
-            <div className="flex flex-col items-center w-[1000px] h-[600px] p-4 box-border border-2 m-0">
+            <div className="flex flex-col items-center w-[1000px] m-h-[100px] p-4 box-border border-2 m-0">
                 <ListsItem result={serializedResult} email={email} />
             </div>
         </div>

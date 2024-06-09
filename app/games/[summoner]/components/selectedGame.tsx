@@ -59,7 +59,7 @@ export default function SelectedGames({ fullSummonerName, summonerData, summoner
                             <Link href={`/games/${fullSummonerName}/progressGame`}>진행중인 게임 확인</Link>
                             <Button className="" onClick={() => setActiveTab("RankGame")}>랭크게임</Button>
                             <Button className="" onClick={() => setActiveTab("AramGame")}>칼바람나락</Button>
-                            <ReloadButton/>
+                            <ReloadButton />
                             <div>
                                 <Button onClick={() => window.location.reload()}>전적 갱신2</Button>
                             </div>
@@ -69,7 +69,7 @@ export default function SelectedGames({ fullSummonerName, summonerData, summoner
 
                 <div>
                     {activeTab === "RankGame" && (
-                        <RankResult rankResults={rankResults} searchedpuuid={summonerData.puuid} rankResultTimelines={rankResultTimelines} tier={leagueData.tier} />
+                        <RankResult searchedpuuid={summonerData.puuid} tier={leagueData.tier} rankResults={rankResults} rankResultTimelines={rankResultTimelines} />
                     )}
                     {activeTab === "AramGame" && (
                         <AramResult aramResults={aramResults} searchedpuuid={summonerData.puuid} />

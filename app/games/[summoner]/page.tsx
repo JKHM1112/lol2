@@ -3,24 +3,8 @@ import SelectedGames from "./components/selectedGame";
 
 const api_key = process.env.RIOT_API_KEY as string;
 
-// 간단한 메모리 캐싱
-const cache = new Map<string, any>();
-const CACHE_TTL = 10 * 60 * 1000; // 캐시 TTL을 10분으로 설정
-
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-function getCachedData(key: string) {
-    const cached = cache.get(key);
-    if (cached && (Date.now() - cached.timestamp < CACHE_TTL)) {
-        return cached.data;
-    }
-    return null;
-}
-
-function setCachedData(key: string, data: any) {
-    cache.set(key, { data, timestamp: Date.now() });
 }
 
 async function fetchWithRetry(url: string, options: RequestInit, retries = 3) {
@@ -41,10 +25,8 @@ async function fetchWithRetry(url: string, options: RequestInit, retries = 3) {
     throw new Error(`Failed to fetch ${url} after ${retries} retries`);
 }
 
+
 async function getAccount(summonerName: string, nextTag: string) {
-    const cacheKey = `account-${summonerName}-${nextTag}`;
-    const cachedData = getCachedData(cacheKey);
-    if (cachedData) return cachedData;
 
     const url = `https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${summonerName}/${nextTag}`;
     const options = {
@@ -54,18 +36,14 @@ async function getAccount(summonerName: string, nextTag: string) {
             "Accept-Language": "ko-KR,ko;q=0.9",
             "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
             "Origin": "https://developer.riotgames.com",
-            "X-Riot-Token": api_key
+            "X-Riot-Token": api_key,
+            "Cache-Control": "no-cache"
         }
     };
-    const data = await fetchWithRetry(url, options);
-    setCachedData(cacheKey, data);
-    return data;
+    return await fetchWithRetry(url, options);
 }
 
 async function getRecentMatchIds(searchedpuuid: string, queue: number, start: number, games: number) {
-    const cacheKey = `matchIds-${searchedpuuid}-${queue}-${start}-${games}`;
-    const cachedData = getCachedData(cacheKey);
-    if (cachedData) return cachedData;
 
     const url = `https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${searchedpuuid}/ids?queue=${queue}&start=${start}&count=${games}`;
     const options = {
@@ -79,15 +57,10 @@ async function getRecentMatchIds(searchedpuuid: string, queue: number, start: nu
             "Cache-Control": "no-cache"
         }
     };
-    const data = await fetchWithRetry(url, options);
-    setCachedData(cacheKey, data);
-    return data;
+    return await fetchWithRetry(url, options);
 }
 
 async function getMatchData(matchId: string) {
-    const cacheKey = `matchData-${matchId}`;
-    const cachedData = getCachedData(cacheKey);
-    if (cachedData) return cachedData;
 
     const url = `https://asia.api.riotgames.com/lol/match/v5/matches/${matchId}`;
     const options = {
@@ -97,18 +70,14 @@ async function getMatchData(matchId: string) {
             "Accept-Language": "ko-KR,ko;q=0.9",
             "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
             "Origin": "https://developer.riotgames.com",
-            "X-Riot-Token": api_key
+            "X-Riot-Token": api_key,
+            "Cache-Control": "no-cache"
         }
     };
-    const data = await fetchWithRetry(url, options);
-    setCachedData(cacheKey, data);
-    return data;
+    return await fetchWithRetry(url, options);
 }
 
 async function getMatchDataTimeline(matchId: string) {
-    const cacheKey = `matchTimeline-${matchId}`;
-    const cachedData = getCachedData(cacheKey);
-    if (cachedData) return cachedData;
 
     const url = `https://asia.api.riotgames.com/lol/match/v5/matches/${matchId}/timeline`;
     const options = {
@@ -118,18 +87,14 @@ async function getMatchDataTimeline(matchId: string) {
             "Accept-Language": "ko-KR,ko;q=0.9",
             "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
             "Origin": "https://developer.riotgames.com",
-            "X-Riot-Token": api_key
+            "X-Riot-Token": api_key,
+            "Cache-Control": "no-cache"
         }
     };
-    const data = await fetchWithRetry(url, options);
-    setCachedData(cacheKey, data);
-    return data;
+    return await fetchWithRetry(url, options);
 }
 
 async function getSummonerData(encryptedPUUID: string) {
-    const cacheKey = `summonerData-${encryptedPUUID}`;
-    const cachedData = getCachedData(cacheKey);
-    if (cachedData) return cachedData;
 
     const url = `https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${encryptedPUUID}`;
     const options = {
@@ -139,18 +104,14 @@ async function getSummonerData(encryptedPUUID: string) {
             "Accept-Language": "ko,ko-KR;q=0.9,en-US;q=0.8,en;q=0.7",
             "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
             "Origin": "https://developer.riotgames.com",
-            "X-Riot-Token": api_key
+            "X-Riot-Token": api_key,
+            "Cache-Control": "no-cache"
         }
     };
-    const data = await fetchWithRetry(url, options);
-    setCachedData(cacheKey, data);
-    return data;
+    return await fetchWithRetry(url, options);
 }
 
 async function getLeagueData(encryptedSummonerId: string) {
-    const cacheKey = `leagueData-${encryptedSummonerId}`;
-    const cachedData = getCachedData(cacheKey);
-    if (cachedData) return cachedData;
 
     const url = `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${encryptedSummonerId}`;
     const options = {
@@ -160,12 +121,11 @@ async function getLeagueData(encryptedSummonerId: string) {
             "Accept-Language": "ko-KR,ko;q=0.9",
             "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
             "Origin": "https://developer.riotgames.com",
-            "X-Riot-Token": api_key
+            "X-Riot-Token": api_key,
+            "Cache-Control": "no-cache"
         }
     };
-    const data = await fetchWithRetry(url, options);
-    setCachedData(cacheKey, data);
-    return data;
+    return await fetchWithRetry(url, options);
 }
 
 interface MatchData {
@@ -197,7 +157,7 @@ export default async function GameSelect({ params }: { params: { summoner: strin
 
         // 비동기 작업을 병렬로 수행
         [rankedMatchIds, aramMatchIds, summonerData] = await Promise.all([
-            getRecentMatchIds(searchedpuuid, 420, 0, 20),
+            getRecentMatchIds(searchedpuuid, 420, 0, 30),
             getRecentMatchIds(searchedpuuid, 450, 0, 10),
             getSummonerData(searchedpuuid)
         ]);

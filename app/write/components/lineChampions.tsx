@@ -29,7 +29,7 @@ export default function LineChampions() {
     else if (lines === 'UTILITY') {
         lineK = '서폿';
     }
-    const participant1Line = lineK || participant1.individualPosition
+    const participant1Line = lines || lineK || participant1.individualPosition
     const [selectedLine, setSelectedLine] = useState(participant1Line)
     const handleLineChange = (value: string) => {
         setSelectedLine(value)

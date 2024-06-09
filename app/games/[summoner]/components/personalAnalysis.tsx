@@ -34,7 +34,6 @@ export default function PersonalAnalysis({ participantsTimeLine1, championName }
 
     const itemEvents = participantsTimeLine1.filter((event: any) => event.type === 'ITEM_PURCHASED').map((event: any) => ({ itemId: event.itemId, timestamp: event.timestamp }));
     const skillEvents = participantsTimeLine1.filter((event: any) => event.type === 'SKILL_LEVEL_UP').map((event: any) => ({ skillSlot: event.skillSlot, timestamp: event.timestamp }));
-
     const itemOrderId = itemEvents.map((event: any) => ({ itemId: event.itemId }))
     const skillOrder = skillEvents.map((event: any) => {
         switch (event.skillSlot) {
