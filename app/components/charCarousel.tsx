@@ -59,9 +59,9 @@ export default function CharCarousel({ recentData, data2, data3 }: CharCarouselP
                                                 {count}
                                             </div>
                                             <div>
-                                                {/* <Link href={'/characterInformation/' + name}>
+                                                <Link href={'/characterInformation/' + name}>
                                                     <Button>챔피언 상세보기</Button>
-                                                </Link> */}
+                                                </Link>
                                             </div>
                                         </CardContent>
                                     </Card>
