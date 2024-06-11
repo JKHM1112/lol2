@@ -40,8 +40,6 @@ export default async function RootLayout({ children, }: Readonly<{
       <body className={notoSansKr.className}>
         <div style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '20px', padding: '10px 0' }} className="navbar">
           <Link href="/">대충사이트이름 </Link>
-          <Link href="/games">게임닉네임작성 </Link>
-
           {
             session ? <span><Link href="/write" > 직접입력하기 </Link></span> : <Link href={"/register"}>직접입력하기</Link>
           }
@@ -51,6 +49,7 @@ export default async function RootLayout({ children, }: Readonly<{
           }
           {
           }
+          <Link href="/patchNotes"> 패치노트 </Link>
           <Link href="/aramTierList"> 칼바람티어정리 </Link>
           {
             session ? <></> : <Link href="/register"> 회원가입 </Link>
