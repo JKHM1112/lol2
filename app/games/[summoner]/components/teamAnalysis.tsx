@@ -5,69 +5,58 @@ import React from 'react';
 import { ComposedChart, Bar, XAxis, YAxis, ResponsiveContainer, LabelList, Label } from 'recharts';
 import { PieChart, Pie, Cell } from 'recharts';
 
-interface TotalResultProps {
-    winTeam: any[];
-    loseTeam: any[];
-}
-export default function TeamAnalysis({ winTeam, loseTeam }: TotalResultProps) {
-    const killsWin = [...winTeam.map(player => ({ name: player.championName, kills: player.kills, img: `/championE/${player.championName}.png` }))];
-    const killsLose = [...loseTeam.map(player => ({ name: player.championName, kills: player.kills, img: `/championE/${player.championName}.png` }))];
-    const damageDealtToChampionsWin = [...winTeam.map(player => ({ name: player.championName, damageDealtToChampions: player.totalDamageDealtToChampions, img: `/championE/${player.championName}.png` }))];
-    const damageDealtToChampionsLose = [...loseTeam.map(player => ({ name: player.championName, damageDealtToChampions: player.totalDamageDealtToChampions, img: `/championE/${player.championName}.png` }))];
-    const damageTakenWin = [...winTeam.map(player => ({ name: player.championName, damageTaken: player.totalDamageTaken, img: `/championE/${player.championName}.png` }))];
-    const damageTakenLose = [...loseTeam.map(player => ({ name: player.championName, damageTaken: player.totalDamageTaken, img: `/championE/${player.championName}.png` }))];
-    const goldEarnedWin = [...winTeam.map(player => ({ name: player.championName, goldEarned: player.goldEarned, img: `/championE/${player.championName}.png` }))];
-    const goldEarnedLose = [...loseTeam.map(player => ({ name: player.championName, goldEarned: player.goldEarned, img: `/championE/${player.championName}.png` }))];
-    const csWin = [...winTeam.map(player => ({ name: player.championName, cs: player.totalMinionsKilled + player.neutralMinionsKilled, img: `/championE/${player.championName}.png` }))];
-    const csLose = [...loseTeam.map(player => ({ name: player.championName, cs: player.totalMinionsKilled + player.neutralMinionsKilled, img: `/championE/${player.championName}.png` }))];
-    const damageDealtToBuildingsWin = [...winTeam.map(player => ({ name: player.championName, damageDealtToBuildings: player.damageDealtToBuildings, img: `/championE/${player.championName}.png` }))];
-    const damageDealtToBuildingsLose = [...loseTeam.map(player => ({ name: player.championName, damageDealtToBuildings: player.damageDealtToBuildings, img: `/championE/${player.championName}.png` }))];
 
-    const totalKillsWin = killsWin.reduce((sum, player) => sum + player.kills, 0);
-    const totalKillsLose = killsLose.reduce((sum, player) => sum + player.kills, 0);
-
+export default function TeamAnalysis({ allPlayers }: any) {
+    
+    const getTotalSum = (array: any, key: any) => {
+        return array.reduce((sum: any, player: any) => sum + (player[key] ?? 0), 0);
+    };
+    const totalKillsWin = getTotalSum(allPlayers.slice(0, 5), 'kills');
+    const totalKillsLose = getTotalSum(allPlayers.slice(5, 10), 'kills');
     const killSum = [
         { name: 'Win', value: totalKillsWin },
         { name: 'Lose', value: totalKillsLose }
     ];
-    const totalDamageDealtToChampionsWin = damageDealtToChampionsWin.reduce((sum, player) => sum + player.damageDealtToChampions, 0);
-    const totalDamageDealtToChampionsLose = damageDealtToChampionsLose.reduce((sum, player) => sum + player.damageDealtToChampions, 0);
+    const totalDamageDealtToChampionsWin = getTotalSum(allPlayers.slice(0, 5), 'totalDamageDealtToChampions');
+    const totalDamageDealtToChampionsLose = getTotalSum(allPlayers.slice(5, 10), 'totalDamageDealtToChampions');
 
     const damageDealtToChampionsSum = [
         { name: 'Win', value: totalDamageDealtToChampionsWin },
         { name: 'Lose', value: totalDamageDealtToChampionsLose }
     ];
-    const totalDamageTakenWin = damageTakenWin.reduce((sum, player) => sum + player.damageTaken, 0);
-    const totalDamageTakenLose = damageTakenLose.reduce((sum, player) => sum + player.damageTaken, 0);
+
+    const totalDamageTakenWin = getTotalSum(allPlayers.slice(0, 5), 'totalDamageTaken');
+    const totalDamageTakenLose = getTotalSum(allPlayers.slice(5, 10), 'totalDamageTaken');
 
     const damageTakenSum = [
         { name: 'Win', value: totalDamageTakenWin },
         { name: 'Lose', value: totalDamageTakenLose }
     ];
 
-    const totalGoldEarnedWin = goldEarnedWin.reduce((sum, player) => sum + player.goldEarned, 0);
-    const totalGoldEarnedLose = goldEarnedLose.reduce((sum, player) => sum + player.goldEarned, 0);
+    const totalGoldEarnedWin = getTotalSum(allPlayers.slice(0, 5), 'goldEarned');
+    const totalGoldEarnedLose = getTotalSum(allPlayers.slice(5, 10), 'goldEarned');
 
     const goldEarnedSum = [
         { name: 'Win', value: totalGoldEarnedWin },
         { name: 'Lose', value: totalGoldEarnedLose }
     ];
 
-    const totalCsWin = csWin.reduce((sum, player) => sum + player.cs, 0);
-    const totalCsLose = csLose.reduce((sum, player) => sum + player.cs, 0);
+    const totalCsWin = getTotalSum(allPlayers.slice(0, 5), 'totalMinionsKilled');
+    const totalCsLose = getTotalSum(allPlayers.slice(5, 10), 'totalMinionsKilled');
 
     const csSum = [
         { name: 'Win', value: totalCsWin },
         { name: 'Lose', value: totalCsLose }
     ];
 
-    const totalDamageDealtToBuildingsWin = damageDealtToBuildingsWin.reduce((sum, player) => sum + player.damageDealtToBuildings, 0);
-    const totalDamageDealtToBuildingsLose = damageDealtToBuildingsLose.reduce((sum, player) => sum + player.damageDealtToBuildings, 0);
+    const totalDamageDealtToBuildingsWin = getTotalSum(allPlayers.slice(0, 5), 'damageDealtToBuildings');
+    const totalDamageDealtToBuildingsLose = getTotalSum(allPlayers.slice(5, 10), 'damageDealtToBuildings');
 
     const damageDealtToBuildingsSum = [
         { name: 'Win', value: totalDamageDealtToBuildingsWin },
         { name: 'Lose', value: totalDamageDealtToBuildingsLose }
     ];
+
     interface renderType {
         x: any;
         y: any;
@@ -101,7 +90,7 @@ export default function TeamAnalysis({ winTeam, loseTeam }: TotalResultProps) {
                                 <div className="flex justify-between">
                                     <div className="bg-sky-100 p-1 w-1/3">
                                         <ResponsiveContainer width={120} height={165} >
-                                            <ComposedChart layout="vertical" data={killsWin} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="kills" barSize={20} fill="#3498db">
@@ -123,7 +112,7 @@ export default function TeamAnalysis({ winTeam, loseTeam }: TotalResultProps) {
                                     </div>
                                     <div className="bg-rose-100 p-1 w-1/3">
                                         <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={killsLose} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="kills" barSize={20} fill="#e74c3c">
@@ -133,15 +122,15 @@ export default function TeamAnalysis({ winTeam, loseTeam }: TotalResultProps) {
                                         </ResponsiveContainer>
                                     </div>
                                 </div>
-                                <div className="bg-sky-100 text-center  p-1 ">챔피언에게 가한 피해량</div>
+                                <div className="bg-sky-100 text-center  p-1 ">가한 피해량</div>
                                 <div className="flex justify-between">
                                     <div className="bg-rose-100 p-1 w-1/2">
                                         <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={damageDealtToChampionsWin} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
-                                                <Bar dataKey="damageDealtToChampions" barSize={20} fill="#3498db" >
-                                                    <LabelList dataKey="damageDealtToChampions" position="insideLeft" fill="#000000" />
+                                                <Bar dataKey="totalDamageDealtToChampions" barSize={20} fill="#3498db" >
+                                                    <LabelList dataKey="totalDamageDealtToChampions" position="insideLeft" fill="#000000" />
                                                 </Bar>
                                             </ComposedChart>
                                         </ResponsiveContainer>
@@ -152,18 +141,18 @@ export default function TeamAnalysis({ winTeam, loseTeam }: TotalResultProps) {
                                                 {damageDealtToChampionsSum.map((entry, index) => (
                                                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                                 ))}
-                                                <Label className="p-1" value={totalKillsWin} position="centerBottom" fill="#3498db" style={{ fontSize: '12px' }} />
-                                                <Label className="p-1" value={totalKillsLose} position="centerTop" fill="#e74c3c" style={{ fontSize: '12px' }} />
+                                                <Label className="p-1" value={totalDamageDealtToChampionsWin} position="centerBottom" fill="#3498db" style={{ fontSize: '12px' }} />
+                                                <Label className="p-1" value={totalDamageDealtToChampionsLose} position="centerTop" fill="#e74c3c" style={{ fontSize: '12px' }} />
                                             </Pie>
                                         </PieChart>
                                     </div>
                                     <div className="bg-rose-100 p-1 w-1/2">
                                         <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={damageDealtToChampionsLose} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
-                                                <Bar dataKey="damageDealtToChampions" barSize={20} fill="#e74c3c" >
-                                                    <LabelList dataKey="damageDealtToChampions" position="insideLeft" fill="#000000" />
+                                                <Bar dataKey="totalDamageDealtToChampions" barSize={20} fill="#e74c3c" >
+                                                    <LabelList dataKey="totalDamageDealtToChampions" position="insideLeft" fill="#000000" />
                                                 </Bar>
                                             </ComposedChart>
                                         </ResponsiveContainer>
@@ -174,11 +163,11 @@ export default function TeamAnalysis({ winTeam, loseTeam }: TotalResultProps) {
                                 <div className="flex justify-between">
                                     <div className="bg-rose-100 p-1 w-1/2">
                                         <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={damageTakenWin} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
-                                                <Bar dataKey="damageTaken" barSize={20} fill="#3498db" >
-                                                    <LabelList dataKey="damageTaken" position="insideLeft" fill="#000000" />
+                                                <Bar dataKey="totalDamageTaken" barSize={20} fill="#3498db" >
+                                                    <LabelList dataKey="totalDamageTaken" position="insideLeft" fill="#000000" />
                                                 </Bar>
                                             </ComposedChart>
                                         </ResponsiveContainer>
@@ -196,11 +185,11 @@ export default function TeamAnalysis({ winTeam, loseTeam }: TotalResultProps) {
                                     </div>
                                     <div className="bg-rose-100 p-1 w-1/2">
                                         <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={damageTakenLose} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
-                                                <Bar dataKey="damageTaken" barSize={20} fill="#e74c3c" >
-                                                    <LabelList dataKey="damageTaken" position="insideLeft" fill="#000000" />
+                                                <Bar dataKey="totalDamageTaken" barSize={20} fill="#e74c3c" >
+                                                    <LabelList dataKey="totalDamageTaken" position="insideLeft" fill="#000000" />
                                                 </Bar>
                                             </ComposedChart>
                                         </ResponsiveContainer>
@@ -212,7 +201,7 @@ export default function TeamAnalysis({ winTeam, loseTeam }: TotalResultProps) {
                                 <div className="flex justify-between">
                                     <div className="bg-rose-100 x w-1/2">
                                         <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={goldEarnedWin} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="goldEarned" barSize={20} fill="#3498db" >
@@ -234,7 +223,7 @@ export default function TeamAnalysis({ winTeam, loseTeam }: TotalResultProps) {
                                     </div>
                                     <div className="bg-rose-100 p-1 w-1/2">
                                         <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={goldEarnedLose} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="goldEarned" barSize={20} fill="#e74c3c" >
@@ -249,11 +238,11 @@ export default function TeamAnalysis({ winTeam, loseTeam }: TotalResultProps) {
                                 <div className="flex justify-between">
                                     <div className="bg-rose-100 p-1 w-1/2">
                                         <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={csWin} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
-                                                <Bar dataKey="cs" barSize={20} fill="#3498db" >
-                                                    <LabelList dataKey="cs" position="insideLeft" fill="#000000" />
+                                                <Bar dataKey="totalMinionsKilled" barSize={20} fill="#3498db" >
+                                                    <LabelList dataKey="totalMinionsKilled" position="insideLeft" fill="#000000" />
                                                 </Bar>
                                             </ComposedChart>
                                         </ResponsiveContainer>
@@ -271,11 +260,11 @@ export default function TeamAnalysis({ winTeam, loseTeam }: TotalResultProps) {
                                     </div>
                                     <div className="bg-rose-100 p-1 w-1/2">
                                         <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={csLose} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
-                                                <Bar dataKey="cs" barSize={20} fill="#e74c3c" >
-                                                    <LabelList dataKey="cs" position="insideLeft" fill="#000000" />
+                                                <Bar dataKey="totalMinionsKilled" barSize={20} fill="#e74c3c" >
+                                                    <LabelList dataKey="totalMinionsKilled" position="insideLeft" fill="#000000" />
                                                 </Bar>
                                             </ComposedChart>
                                         </ResponsiveContainer>
@@ -286,7 +275,7 @@ export default function TeamAnalysis({ winTeam, loseTeam }: TotalResultProps) {
                                 <div className="flex justify-between">
                                     <div className="bg-rose-100 p-1 w-1/2">
                                         <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={damageDealtToBuildingsWin} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="damageDealtToBuildings" barSize={20} fill="#3498db" >
@@ -308,7 +297,7 @@ export default function TeamAnalysis({ winTeam, loseTeam }: TotalResultProps) {
                                     </div>
                                     <div className="bg-rose-100 p-1 w-1/2">
                                         <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={damageDealtToBuildingsLose} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="damageDealtToBuildings" barSize={20} fill="#e74c3c" >

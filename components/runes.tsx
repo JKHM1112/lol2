@@ -359,7 +359,49 @@ export const getRunes = () => {
             "nameE": "GatheringStorm",
             "nameK": "폭풍의 결집",
             "nameImg": "perk-images/Styles/Sorcery/GatheringStorm/GatheringStorm.png"
-        }
+        },
+        {
+            "nameN": 5008,
+            "nameE": "statModsAdaptiveForce",
+            "nameK": "적응형 능력치",
+            "nameImg": "perk-images/StatMods/StatModsAdaptiveForceIcon.png"
+        },
+        {
+            "nameN": 5005,
+            "nameE": "statModsAttackSpeed",
+            "nameK": "공격속도",
+            "nameImg": "perk-images/StatMods/StatModsAttackSpeedIcon.png"
+        },
+        {
+            "nameN": 5007,
+            "nameE": "statModsCDRScaling",
+            "nameK": "스킬가속",
+            "nameImg": "perk-images/StatMods/StatModsCDRScalingIcon.png"
+        },
+        {
+            "nameN": 5001,
+            "nameE": "statModsHealthPlus",
+            "nameK": "성장체력",
+            "nameImg": "perk-images/StatMods/StatModsHealthPlusIcon.png"
+        },
+        {
+            "nameN": 5011,
+            "nameE": "statModsHealthScaling",
+            "nameK": "고정체력",
+            "nameImg": "perk-images/StatMods/StatModsHealthScalingIcon.png"
+        },
+        {
+            "nameN": 5010,
+            "nameE": "statModsMovementSpeed",
+            "nameK": "둔화저항",
+            "nameImg": "perk-images/StatMods/StatModsMovementSpeedIcon.png"
+        },
+        {
+            "nameN": 5013,
+            "nameE": "statModsTenacity",
+            "nameK": "이동속도",
+            "nameImg": "perk-images/StatMods/StatModsTenacityIcon.png"
+        },
     ]
     return runes
 }

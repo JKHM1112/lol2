@@ -92,12 +92,12 @@ export default function New() {
         <div className="container mx-auto p-4">
             <h1 className="text-2xl font-bold mb-4">새 패치노트 작성</h1>
             <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="shadow-md rounded-md p-4 border mb-4">
-                    <div className="mb-4">
+                <div className="shadow-md rounded-md p-4 border mb-4 w-[600px]">
+                    <div className="mb-4 w-[200px]">
                         <label className="block font-bold mb-2">날짜</label>
                         <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="shadow border rounded w-full py-2 px-3" />
                     </div>
-                    <div className="mb-4">
+                    <div className="mb-4 w-[200px]">
                         <label className="block font-bold mb-2">패치 버전</label>
                         <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} className="shadow border rounded w-full py-2 px-3" />
                     </div>
@@ -108,8 +108,7 @@ export default function New() {
                                 <label className="block font-bold mb-2">변경위치</label>
                                 <input type="text" value={change.key} onChange={(e) => handleGeneralChangeDetail(index, "key", e.target.value)} className="shadow border rounded w-full py-2 px-3" />
                                 <label className="block font-bold mb-2">변경사항</label>
-                                <input type="text" value={change.value} onChange={(e) => handleGeneralChangeDetail(index, "value", e.target.value)} className="shadow border rounded w-full py-2 px-3"
-                                />
+                                <input type="text" value={change.value} onChange={(e) => handleGeneralChangeDetail(index, "value", e.target.value)} className="shadow border rounded w-full py-2 px-3" />
                                 <button type="button" onClick={() => handleRemoveGeneralChange(index)} className="bg-red-500 text-white font-bold py-2 px-4 rounded mt-2" >
                                     -
                                 </button>

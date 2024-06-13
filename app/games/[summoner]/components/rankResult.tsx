@@ -25,8 +25,16 @@ interface Participant {
 
 interface infoType {
     info: any
-}   
-
+}
+interface PlayerData {
+    name: string;
+    kills?: number;
+    totalDamageDealtToChampions?: number;
+    totalDamageTaken?: number;
+    goldEarned?: number;
+    cs?: number;
+    damageDealtToBuildings?: number;
+}
 export default function RankResult({ searchedpuuid, tier, rankResults, rankResultTimelines }: any) {
     let winLoses: any[] = []
 
@@ -117,9 +125,9 @@ export default function RankResult({ searchedpuuid, tier, rankResults, rankResul
     React.useEffect(() => {
         setRenderCharts(true);
     }, []);
-    const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={30} height={30} />
+    const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={35} height={35} />
     const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={40} height={40} />
-    const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={20} height={20} />
+    const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={25} height={25} />
     const allRunes = runesReforged.flatMap((runeGroup: any) => runeGroup.slots.flatMap((slot: any) => slot.runes));
 
     const findRuneIcon = (runeCode: number) => {
@@ -133,7 +141,7 @@ export default function RankResult({ searchedpuuid, tier, rankResults, rankResul
     };
 
     const createRuneImage1 = (runeCode: string) => (
-        <Image className='rounded-md' alt='rune' src={`/${runeCode}`} width={20} height={20} />
+        <Image className='rounded-md' alt='rune' src={`/${runeCode}`} width={25} height={25} />
     );
 
     const gameDuration = (duration: number) => {
@@ -252,7 +260,30 @@ export default function RankResult({ searchedpuuid, tier, rankResults, rankResul
                     }
                     const characterNumber = rankResultTimeline.info.participants.find((p: any) => p.puuid === searchedpuuid)?.participantId;
 
-                    //rankResultTimeline모든 정보가 들어있는 타임라인1
+                    const championName = data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.championName
+                    const allPlayers: any = [...winTeam, ...loseTeam].map(player => ({
+                        name: player.championName,
+                        kills: player.kills,
+                        totalDamageDealtToChampions: player.totalDamageDealtToChampions,
+                        totalDamageTaken: player.totalDamageTaken,
+                        goldEarned: player.goldEarned,
+                        totalMinionsKilled: player.totalMinionsKilled + player.neutralMinionsKilled,
+                        damageDealtToBuildings: player.damageDealtToBuildings,
+                        img: `/championE/${player.championName}.png`
+                    }));
+                    const rankMetric = (array: PlayerData[], key: keyof PlayerData) => {
+                        array.sort((a, b) => ((b[key] as number) || 0) - ((a[key] as number) || 0));
+                        return array.findIndex(player => player.name === championName) + 1;
+                    };
+                    const rankings = [
+                        rankMetric(allPlayers, 'kills'),
+                        rankMetric(allPlayers, 'totalDamageDealtToChampions'),
+                        rankMetric(allPlayers, 'totalDamageTaken'),
+                        rankMetric(allPlayers, 'goldEarned'),
+                        rankMetric(allPlayers, 'cs'),
+                        rankMetric(allPlayers, 'damageDealtToBuildings')
+                    ];
+
                     const participantsTimeLine1 = getEventsByParticipantId(rankResultTimeline, characterNumber);// 검색된 소환사의 게임 타임라인2
 
                     const skillEvents = participantsTimeLine1.filter((event: any) => event.type === 'SKILL_LEVEL_UP').map((event: any) => ({ skillSlot: event.skillSlot, timestamp: event.timestamp }));
@@ -271,15 +302,10 @@ export default function RankResult({ searchedpuuid, tier, rankResults, rankResul
                                 <Table>
                                     <TableBody>
                                         <TableRow className="flex p-2">
-                                            <TableCell className="items-center">
+                                            <TableCell className="items-center p-1">
                                                 <div>
-                                                    {(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? "승리" : "패배")}
+                                                    솔랭 {(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? "승리" : "패배")}
                                                 </div>
-                                                <div>
-                                                    {translatePosition(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.individualPosition)}
-                                                </div>
-                                            </TableCell>
-                                            <TableCell className="items-center">
                                                 <div>
                                                     {gameDuration(data.gameDuration)}
                                                 </div>
@@ -289,6 +315,9 @@ export default function RankResult({ searchedpuuid, tier, rankResults, rankResul
                                             </TableCell>
                                             <TableCell>
                                                 {getChampionImg1(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.championName)}
+                                                <div>
+                                                    {translatePosition(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.individualPosition)}
+                                                </div>
                                             </TableCell>
                                             <TableCell className="items-center gap-1">
                                                 <div className="flex items-center gap-1">
@@ -302,6 +331,15 @@ export default function RankResult({ searchedpuuid, tier, rankResults, rankResul
                                             </TableCell>
                                             <TableCell className="items-center gap-1">
                                                 <div className="flex items-center gap-1">
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item0)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item1)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item2)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item3)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item4)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item5)}
+                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item6)}
+                                                </div>
+                                                <div className="flex items-center gap-1">
                                                     <div className="items-center">
                                                         {data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.kills}/
                                                         {data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.deaths}/
@@ -314,18 +352,18 @@ export default function RankResult({ searchedpuuid, tier, rankResults, rankResul
                                                             (data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.assists))}
                                                     </div>
                                                 </div>
-                                                <div className="flex items-center gap-1">
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item0)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item1)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item2)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item3)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item4)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item5)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item6)}
+                                            </TableCell>
+                                            <TableCell className="p-1">
+                                                <div className="grid grid-cols-6 grid-rows-1 gap-1">
+                                                    {rankings.map((rank, index) => (
+                                                        <div key={index} className={`p-1 ${rank <= 2 ? 'bg-green-500' : rank <= 4 ? 'bg-yellow-500' : 'bg-red-500'} text-white text-center`}>
+                                                            {rank}
+                                                        </div>
+                                                    ))}
                                                 </div>
                                             </TableCell>
-                                            <TableCell className="flex items-center gap-1">
-                                                <DataTransfer participant={rankResultInfo} i={i} puuid={searchedpuuid} tier={tier} rankResultTimeline={rankResultTimeline} characterNumber={characterNumber} skillOrder={skillOrder}/>
+                                            <TableCell className="flex items-center gap-2">
+                                                <DataTransfer participant={rankResultInfo} i={i} puuid={searchedpuuid} tier={tier} rankResultTimeline={rankResultTimeline} characterNumber={characterNumber} skillOrder={skillOrder} />
                                             </TableCell>
                                         </TableRow>
                                     </TableBody>
@@ -340,9 +378,9 @@ export default function RankResult({ searchedpuuid, tier, rankResults, rankResul
                                         <TotalResult winTeam={winTeam} loseTeam={loseTeam} maxDamageDealt={maxDamageDealt} maxDamageTaken={maxDamageTaken} allRunes={allRunes} runesReforged={runesReforged} />
                                     )}
                                     {activeTab === "TeamAnalysis" && (
-                                        <TeamAnalysis winTeam={winTeam} loseTeam={loseTeam} />
+                                        <TeamAnalysis allPlayers={allPlayers} />
                                     )}{activeTab === "personalAnalysis" && (
-                                        <PersonalAnalysis participantsTimeLine1={participantsTimeLine1} championName={data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.championName} />
+                                        <PersonalAnalysis participantsTimeLine1={participantsTimeLine1} championName={championName} />
                                     )}
                                 </AccordionContent>
                             </Accordion>

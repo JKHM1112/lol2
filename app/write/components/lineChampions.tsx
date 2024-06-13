@@ -14,22 +14,20 @@ export default function LineChampions() {
 
     const { lines, participants, selectedGame, puuid } = useUserStore();
     const participant1 = participants[selectedGame].participants.find((participant: any) => participant.puuid === puuid) || initialParticipant;
-
-    let lineK = ''
-    if (lines === 'TOP') {
+    let lineK = '';
+    if (lines === 'TOP' || lines === '탑') {
         lineK = '탑';
-    } else if (lines === 'JUNGLE') {
+    } else if (lines === 'JUNGLE' || lines === '정글') {
         lineK = '정글';
-    } else if (lines === 'MIDDLE') {
+    } else if (lines === 'MIDDLE' || lines === '미드') {
         lineK = '미드';
-    }
-    else if (lines === 'BOTTOM') {
+    } else if (lines === 'BOTTOM' || lines === '원딜') {
         lineK = '원딜';
-    }
-    else if (lines === 'UTILITY') {
+    } else if (lines === 'UTILITY' || lines === '서폿') {
         lineK = '서폿';
     }
-    const participant1Line = lines || lineK || participant1.individualPosition
+
+    const participant1Line = lineK || lines || participant1.individualPosition
     const [selectedLine, setSelectedLine] = useState(participant1Line)
     const handleLineChange = (value: string) => {
         setSelectedLine(value)

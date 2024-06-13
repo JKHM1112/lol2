@@ -60,9 +60,6 @@ export default function SelectedGames({ fullSummonerName, summonerData, summoner
                             <Button className="" onClick={() => setActiveTab("RankGame")}>랭크게임</Button>
                             <Button className="" onClick={() => setActiveTab("AramGame")}>칼바람나락</Button>
                             <ReloadButton />
-                            <div>
-                                <Button onClick={() => window.location.reload()}>전적 갱신2</Button>
-                            </div>
                         </div>
                     </div>
                 </div>
