@@ -21,8 +21,8 @@ export default function LineChampions() {
         lineK = '정글';
     } else if (lines === 'MIDDLE' || lines === '미드') {
         lineK = '미드';
-    } else if (lines === 'BOTTOM' || lines === '원딜') {
-        lineK = '원딜';
+    } else if (lines === 'BOTTOM' || lines === '바텀') {
+        lineK = '바텀';
     } else if (lines === 'UTILITY' || lines === '서폿') {
         lineK = '서폿';
     }
@@ -45,8 +45,8 @@ export default function LineChampions() {
                         <SelectItem value="탑">탑</SelectItem>
                         <SelectItem value="정글">정글</SelectItem>
                         <SelectItem value="미드">미드</SelectItem>
-                        <SelectItem value="원딜">원딜/서폿</SelectItem>
-                        <SelectItem value="서폿">서폿/원딜</SelectItem>
+                        <SelectItem value="바텀">바텀/서폿</SelectItem>
+                        <SelectItem value="서폿">서폿/바텀</SelectItem>
                     </SelectContent>
                 </Select>
             </div>
@@ -66,7 +66,7 @@ export default function LineChampions() {
                 ) : null
             }
             {
-                selectedLine == "원딜" ? (
+                selectedLine == "바텀" ? (
                     <BottomChampion />
                 ) : null
             }{

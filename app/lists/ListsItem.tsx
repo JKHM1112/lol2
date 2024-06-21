@@ -25,7 +25,7 @@ interface ListsItemProps {
 }
 
 const ITEMS_PER_PAGE = 10;
-const lineTypes = ['탑', '정글', '미드', '원딜', '서폿'];
+const lineTypes = ['탑', '정글', '미드', '바텀', '서폿'];
 
 export default function ListsItem({ result, email }: ListsItemProps) {
     const router = useRouter();

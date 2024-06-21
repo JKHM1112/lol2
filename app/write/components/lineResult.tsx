@@ -6,23 +6,23 @@ import { useState } from "react";
 
 export default function Lines() {
     const { lineResults, gameResults, review, setReview } = useUserStore();
-    const [lineResult, setLineResult] = useState(lineResults || 'win');
-    const [gameResult, setGameResult] = useState(gameResults || 'win');
+    const [lineResult, setLineResult] = useState(lineResults || '승리');
+    const [gameResult, setGameResult] = useState(gameResults || '승리');
 
     return (
         <div>
             <RadioGroup value={lineResult} name="lineResult" onValueChange={setLineResult} className="flex items-center">
                 라인전:
                 <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="win" id="line-win" />
+                    <RadioGroupItem value="승리" id="line-win" />
                     <Label htmlFor="line-win">승리</Label>
                 </div>
                 <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="lose" id="line-lose" />
+                    <RadioGroupItem value="패배" id="line-lose" />
                     <Label htmlFor="line-lose">패배</Label>
                 </div>
                 <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="half" id="line-half" />
+                    <RadioGroupItem value="반반" id="line-half" />
                     <Label htmlFor="line-half">반반</Label>
                 </div>
             </RadioGroup>
@@ -30,11 +30,11 @@ export default function Lines() {
             <RadioGroup value={gameResult} name="gameResult" onValueChange={setGameResult} className="flex items-center">
                 결과:
                 <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="win" id="game-win" />
+                    <RadioGroupItem value="승리" id="game-win" />
                     <Label htmlFor="game-win">승리</Label>
                 </div>
                 <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="lose" id="game-lose" />
+                    <RadioGroupItem value="패배" id="game-lose" />
                     <Label htmlFor="game-lose">패배</Label>
                 </div>
             </RadioGroup>

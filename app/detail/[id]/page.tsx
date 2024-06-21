@@ -4,6 +4,7 @@ import { ObjectId } from "mongodb";
 import { getServerSession } from "next-auth";
 import React from "react";
 import ViewMyDetail from "./components/viewMyDetail";
+import ViewSimilarDetail from "./components/viewSimilarDetail";
 
 async function getAccount(puuid: string, api_key: string) {
     const url = `https://asia.api.riotgames.com/riot/account/v1/accounts/by-puuid/${puuid}`;
@@ -29,12 +30,13 @@ export default async function Detail(props: any) {
     const api_key = process.env.RIOT_API_KEY as string;
     const db = (await connectDB).db("dream");
     const mydetail = await db.collection('dataEnteredDirectly').findOne({ _id: new ObjectId(props.params.id) });//상세보기한 게임 정보.
-    const chams = await db.collection('dataEnteredDirectly').find().toArray();//모든 게임 정보를 불러온다.
+    const chams = await db.collection('dataEnteredDirectly').find().sort({ _id: -1 }).toArray();//모든 게임 정보를 불러온다.
+
     const session = await getServerSession(authOptions);
     // const email = session?.user?.email || '';
     const { chams: [cham1] } = mydetail;
     const filteredChamps = chams.filter((item: any) =>
-        item.chams.includes(cham1)
+        item.chams[0] === cham1
     );//내 챔피언과 동일한 것
     const summonerAccount = await getAccount(mydetail.puuid, api_key);
     const name = summonerAccount.gameName;
@@ -48,12 +50,7 @@ export default async function Detail(props: any) {
                 </div>
             </div>
             <div className="w-[500px] h-[700px] flex flex-col m-4">
-                <div className="w-[450px] h-[300px] mb-4 border border-gray-300 rounded-md  p-2">
-                    {/* 우측 상단 박스 내용 */}
-                </div>
-                <div className="w-[450px] h-[330px] border border-gray-300 rounded-md p-2">
-                    {/* 우측 하단 박스 내용 */}
-                </div>
+                <ViewSimilarDetail filteredChamps={filteredChamps} mydetail={mydetail}/>
             </div>
         </div>
     );
