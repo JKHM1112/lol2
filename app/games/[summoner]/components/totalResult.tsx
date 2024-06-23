@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Accordion, AccordionContent, AccordionItem } from '@/components/ui/accordion';
 import Link from 'next/link';
 
-const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={25} height={25} />
+const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/item/${itemCode}.png`} width={25} height={25} />
 const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/champion/${championCode}.png`} width={35} height={35} />
 const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={20} height={20} />
 

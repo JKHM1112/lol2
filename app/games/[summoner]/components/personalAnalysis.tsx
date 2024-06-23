@@ -28,7 +28,7 @@ export default function PersonalAnalysis({ participantsTimeLine1, championName }
     const skillEIMG = getSkillImage(2);
     const skillRIMG = getSkillImage(3);
 
-    const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item'} src={`/itemN/${itemCode}.png`} width={30} height={30} />
+    const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item'} src={`/item/${itemCode}.png`} width={30} height={30} />
     const getSkillImg1 = (skillCode: string) => <Image className='rounded-md' alt={'spell'} src={`/spell/${skillCode}`} width={25} height={25} />
     const getSkillImg2 = (skillCode: string) => <Image className='rounded-md' alt={'spell'} src={`/${skillCode}.png`} width={30} height={30} />
 

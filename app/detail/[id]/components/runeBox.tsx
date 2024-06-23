@@ -50,7 +50,7 @@ export default function RuneBox({ runes }: any) {
                 <div className="flex justify-center h-6"></div>
                 <div className="flex justify-between h-6">
                     {runesStatus[0].runes.map(rune => (
-                        <Image key={rune.id} className={shardRunes[2] === rune.id ? '' : 'grayscale brightness-0.1'} src={rune.icon} alt="shardrune" height={30} width={30} />
+                        <Image key={rune.id} className={shardRunes[0] === rune.id ? '' : 'grayscale brightness-0.1'} src={rune.icon} alt="shardrune" height={30} width={30} />
                     ))}
                 </div>
                 <div className="flex justify-between h-6">
@@ -60,7 +60,7 @@ export default function RuneBox({ runes }: any) {
                 </div>
                 <div className="flex justify-between h-6">
                     {runesStatus[2].runes.map(rune => (
-                        <Image key={rune.id} className={shardRunes[0] === rune.id ? '' : 'grayscale brightness-0.1'} src={rune.icon} alt="shardrune" height={30} width={30} />
+                        <Image key={rune.id} className={shardRunes[2] === rune.id ? '' : 'grayscale brightness-0.1'} src={rune.icon} alt="shardrune" height={30} width={30} />
                     ))}
                 </div>
                 <div className="flex justify-center h-6">

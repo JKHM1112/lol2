@@ -14,7 +14,7 @@ interface ListsItemProps {
     result: Array<{
         _id: string; line: string;
         chams: string[]; // 챔피언 배열
-        before6: number; after6: number; half: number;
+        before6: number; after6: number; side1: number; teamFight1: number
         lineResult: string; gameResult: string;
         runes: number[]; // 룬 배열
         summoners: number[]; // 스펠 배열
@@ -29,7 +29,7 @@ const lineTypes = ['탑', '정글', '미드', '바텀', '서폿'];
 
 export default function ListItem({ result, email }: ListsItemProps) {
     const router = useRouter();
-    const { setLines, setChampions, setLineResults, setGameResults, setBefore, setAfter, setHalf, setReview,
+    const { setLines, setChampions, setLineResults, setGameResults, setBefore, setAfter, setSide, setTeamFight, setReview,
         setSummoners, setRunes, setItems } = useUserStore();
     const [checkedLines, setCheckedLines] = useState<string[]>([]);
     const [champFilter, setChampFilter] = useState(''); // 내 챔피언
@@ -106,7 +106,8 @@ export default function ListItem({ result, email }: ListsItemProps) {
                         <th className="border border-sky-300 p-1">챔피언</th>
                         <th className="border border-sky-300 p-1">6전</th>
                         <th className="border border-sky-300 p-1">6후</th>
-                        <th className="border border-sky-300 p-1">후반</th>
+                        <th className="border border-sky-300 p-1">사이드</th>
+                        <th className="border border-sky-300 p-1">한타</th>
                         <th className="border border-sky-300 p-1">룬</th>
                         <th className="border border-sky-300 p-1">룬</th>
                         <th className="border border-sky-300 p-1">스펠1</th>
@@ -128,7 +129,8 @@ export default function ListItem({ result, email }: ListsItemProps) {
                             <td className="border border-sky-300 p-1 text-center">{getChampionImg(data.chams[1])}</td>
                             <td className="border border-sky-300 p-1 text-center">{data.before6}</td>
                             <td className="border border-sky-300 p-1 text-center">{data.after6}</td>
-                            <td className="border border-sky-300 p-1 text-center">{data.half}</td>
+                            <td className="border border-sky-300 p-1 text-center">{data.side1}</td>
+                            <td className="border border-sky-300 p-1 text-center">{data.teamFight1}</td>
                             <td className="border border-sky-300 p-1 text-center">{getRuneImg4(getRuneImg(data.runes[0], 0))}</td>
                             <td className="border border-sky-300 p-1 text-center">{getRuneImg4(getRuneImg(data.runes[9], 0))}</td>
                             <td className="border border-sky-300 p-1 text-center">{getSummonerImg(data.summoners[0])}</td>
@@ -140,29 +142,35 @@ export default function ListItem({ result, email }: ListsItemProps) {
                             <td className="border border-sky-300 p-1 text-center">
                                 <Link href={'/detail/' + data._id} className="text-blue-500 hover:underline">상세보기</Link>
                             </td>
-                            <td className="border border-sky-300 p-1 text-center">
-                                <Button onClick={() => {
-                                    setLines(data.line);
-                                    data.chams.forEach((cham, index) => setChampions(index, cham));
-                                    setLineResults(data.lineResult);
-                                    setGameResults(data.gameResult);
-                                    setBefore(data.before6);
-                                    setAfter(data.after6);
-                                    setHalf(data.half);
-                                    setReview(data.review);
-                                    data.summoners.forEach((summoner, index) => setSummoners(index, summoner));
-                                    data.runes.forEach((rune, index) => setRunes(index, rune));
-                                    data.items.forEach((item, index) => setItems(index, item));
-                                    router.push('/edit/' + data._id);
-                                }} className="text-blue-500 hover:underline">수정</Button>
-                            </td>
-                            <td className="border border-sky-300 p-1 text-center">
-                                <button onClick={async () => {
-                                    await fetch('/api/post/delete', {
-                                        method: 'POST', body: JSON.stringify({ _id: data._id, email: data.email })
-                                    });
-                                }} className="text-red-500 hover:underline">삭제</button>
-                            </td>
+                            {data.email === email && (
+                                <td className="border border-sky-300 p-1 text-center">
+                                    <Button onClick={() => {
+                                        setLines(data.line);
+                                        data.chams.forEach((cham, index) => setChampions(index, cham));
+                                        setLineResults(data.lineResult);
+                                        setGameResults(data.gameResult);
+                                        setBefore(data.before6);
+                                        setAfter(data.after6);
+                                        setSide(data.side1);
+                                        setTeamFight(data.teamFight1);
+                                        setReview(data.review);
+                                        data.summoners.forEach((summoner, index) => setSummoners(index, summoner));
+                                        data.runes.forEach((rune, index) => setRunes(index, rune));
+                                        data.items.forEach((item, index) => setItems(index, item));
+                                        router.push('/edit/' + data._id);
+                                    }} className="text-blue-500 hover:underline">수정</Button>
+                                </td>
+                            )}
+                            {data.email === email && (
+                                <td className="border border-sky-300 p-1 text-center">
+                                    <button onClick={async () => {
+                                        await fetch('/api/post/delete', {
+                                            method: 'POST', body: JSON.stringify({ _id: data._id, email: data.email })
+                                        });
+                                        window.location.reload()
+                                    }} className="text-red-500 hover:underline">삭제</button>
+                                </td>
+                            )}
                         </tr>
                     ))}
                 </tbody>

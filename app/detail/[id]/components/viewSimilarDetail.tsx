@@ -117,14 +117,15 @@ export default function ViewSimilarDetail({ filteredChamps, mydetail }: { filter
     }
     const filteredItems = filterByLine(filteredChamps, checkedLines);
     const averageBefore6 = calculateAverageValues(filteredItems.map(item => item.before6));
-    const averageHalf = calculateAverageValues(filteredItems.map(item => item.half));
     const averageAfter6 = calculateAverageValues(filteredItems.map(item => item.after6));
+    const averageSide = calculateAverageValues(filteredItems.map(item => item.side1));
+    const averageTeamFight = calculateAverageValues(filteredItems.map(item => item.teamFight1));
     const gameResultCounts = getGameResultCounts(filteredItems);
     const lineResultCounts = getLineResultCounts(filteredItems);
 
     const barChartData = [
-        { name: '평균', Before6: parseFloat(averageBefore6), After6: parseFloat(averageAfter6), Half: parseFloat(averageHalf) },
-        { name: mydetail.chams[1], Before6: mydetail.before6, After6: mydetail.after6, Half: mydetail.half }
+        { name: '평균', Before6: parseFloat(averageBefore6), After6: parseFloat(averageAfter6), Side1: parseFloat(averageSide), TeamFight1: parseFloat(averageTeamFight) },
+        { name: mydetail.chams[1], Before6: mydetail.before6, After6: mydetail.after6, Side1: mydetail.side1, TeamFight1: mydetail.teamFight1 }
     ]
     const pieChartData1 = [
         { name: '승리', value: lineResultCounts.win },
@@ -204,9 +205,9 @@ export default function ViewSimilarDetail({ filteredChamps, mydetail }: { filter
                     <ResponsiveContainer width="100%" height="100%">
                         <BarChart width={200} height={100} data={barChartData} layout="vertical" margin={{ top: 10, right: 10, left: 5, bottom: 10 }}>
                             <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis type="number" domain={[0, 15]} ticks={[0, 15]} tickFormatter={(tick) => {
+                            <XAxis type="number" domain={[0, 20]} ticks={[0, 20]} tickFormatter={(tick) => {
                                 if (tick === 0) return '쉬움';
-                                if (tick === 15) return '어려움';
+                                if (tick === 20) return '어려움';
                                 return tick;
                             }}
                                 tickLine={false} />
@@ -219,7 +220,8 @@ export default function ViewSimilarDetail({ filteredChamps, mydetail }: { filter
                             />
                             <Bar dataKey="Before6" name="6전" stackId="a" fill="#8884d8" barSize={20} />
                             <Bar dataKey="After6" name="6후" stackId="a" fill="#82ca9d" barSize={20} />
-                            <Bar dataKey="Half" name="후반" stackId="a" fill="#ffc658" barSize={20} />
+                            <Bar dataKey="Side1" name="사이드" stackId="a" fill="#ffc658" barSize={20} />
+                            <Bar dataKey="TeamFight1" name="한타" stackId="a" fill="#d88884" barSize={20} />
                         </BarChart>
                     </ResponsiveContainer>
                 </div>

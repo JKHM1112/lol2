@@ -166,18 +166,18 @@ export default function DataTransfer({ participant, i, puuid, tier, rankResultTi
     const rune4 = participant1.perks.styles[0].selections[3].perk;
     const rune5 = participant1.perks.styles[1].selections[0].perk;
     const rune6 = participant1.perks.styles[1].selections[1].perk;
-    const rune7 = participant1.perks.statPerks.defense
+    const rune7 = participant1.perks.statPerks.offense
     const rune8 = participant1.perks.statPerks.flex
-    const rune9 = participant1.perks.statPerks.offense
+    const rune9 = participant1.perks.statPerks.defense
     const rune10 = participant2.perks.styles[0].selections[0].perk;
     const rune11 = participant2.perks.styles[0].selections[1].perk;
     const rune12 = participant2.perks.styles[0].selections[2].perk;
     const rune13 = participant2.perks.styles[0].selections[3].perk;
     const rune14 = participant2.perks.styles[1].selections[0].perk;
     const rune15 = participant2.perks.styles[1].selections[1].perk;
-    const rune16 = participant2.perks.statPerks.defense
+    const rune16 = participant2.perks.statPerks.offense
     const rune17 = participant2.perks.statPerks.flex
-    const rune18 = participant2.perks.statPerks.offense
+    const rune18 = participant2.perks.statPerks.defense
     const handleGameData = () => {
         setParticipants(participant);//참가자의 모든 게임 정보
         setChampions(0, champion1);//챔1

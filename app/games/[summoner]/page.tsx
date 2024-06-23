@@ -138,11 +138,6 @@ interface Participant {
     summonerId: string;
 }
 
-interface LeagueData {
-    summonerId: string;
-    leagueData: any[];
-}
-
 export default async function GameSelect({ params }: { params: { summoner: string } }) {
     const [gameName, tagLines] = params.summoner.split('-');
     const tagLine = tagLines || 'KR1';

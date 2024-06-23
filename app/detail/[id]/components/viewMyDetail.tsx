@@ -50,7 +50,7 @@ export default function ViewMyDetail({ mydetail, nameTagLine }: Mydetail) {
     const items1 = mydetail.items.slice(0, 7);
     const items2 = mydetail.items.slice(7, 15);
     const runes1 = mydetail.runes.slice(0, 9);
-    const runes2 = mydetail.runes.slice(8, 18);
+    const runes2 = mydetail.runes.slice(9, 18);
 
     return (
         <div className="p-2">

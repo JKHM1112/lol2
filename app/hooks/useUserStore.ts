@@ -16,8 +16,10 @@ interface UserStoreState {
     setBefore: (index: number) => void
     after: number
     setAfter: (index: number) => void
-    half: number
-    setHalf: (index: number) => void
+    side: number
+    setSide: (index: number) => void
+    teamFight: number
+    setTeamFight: (index: number) => void
     review: string
     setReview: (review: string) => void
     selectedGame: number
@@ -87,9 +89,13 @@ const useUserStore = create<UserStoreState>((set, get) => ({
     setAfter: (index) => {
         set({ after: index })
     },
-    half: 0,
-    setHalf: (index) => {
-        set({ half: index })
+    side: 0,
+    setSide: (index) => {
+        set({ side: index })
+    },
+    teamFight: 0,
+    setTeamFight: (index) => {
+        set({ teamFight: index })
     },
     review: "",
     setReview: (index) => {

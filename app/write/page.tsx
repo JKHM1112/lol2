@@ -18,9 +18,9 @@ export default function Write() {
             <form action="/api/post/newListWrite" method="POST">
                 <ResizablePanelGroup direction="horizontal" className="items-center justify-center p-2 ">
                     <ResizablePanelGroup direction="horizontal" className="min-h-[600px] min-w-[600px] rounded-lg border">
-                        <ResizablePanel defaultSize={18}>
+                        <ResizablePanel defaultSize={10}>
                             <ResizablePanelGroup direction="vertical" className="rounded-lg border">
-                                <ResizablePanel defaultSize={30} className="flex items-center justify-center p-2">
+                                <ResizablePanel defaultSize={20} className="flex items-center justify-center p-2">
                                     <div className="p-2">
                                         <LineChampions />
                                         <Difficulty />
@@ -39,13 +39,13 @@ export default function Write() {
                         <ResizableHandle />
                         <ResizablePanel defaultSize={18}>
                             <ResizablePanelGroup direction="horizontal" className=" rounded-lg border">
-                                <ResizablePanel defaultSize={10} className="flex items-center justify-center p-2">
+                                <ResizablePanel defaultSize={15} className="flex items-center justify-center p-2">
                                     <div >
                                         <Runes />
                                     </div>
                                 </ResizablePanel>
                                 <ResizableHandle />
-                                <ResizablePanel defaultSize={10} className="flex items-center justify-center p-2">
+                                <ResizablePanel defaultSize={15} className="flex items-center justify-center p-2">
                                     <div className="p-2">
                                         <Items />
                                     </div>

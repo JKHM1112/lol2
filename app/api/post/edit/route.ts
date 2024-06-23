@@ -15,7 +15,8 @@ const schema = zfd.formData({
     chams: zfd.text(z.string().optional()), // 챔피언 배열을 JSON 문자열로 받음
     before6: zfd.numeric(z.number().min(1).max(5).optional()),
     after6: zfd.numeric(z.number().min(1).max(5).optional()),
-    half: zfd.numeric(z.number().min(1).max(5).optional()),
+    side1: zfd.numeric(z.number().min(1).max(5).optional()),
+    teamFight1: zfd.numeric(z.number().min(1).max(5).optional()),
     runes: zfd.text(z.string().optional()), // 룬 배열을 JSON 문자열로 받음
     summoners: zfd.text(z.string().optional()), // 스펠 배열을 JSON 문자열로 받음
     items: zfd.text(z.string().optional()), // 아이템 배열을 JSON 문자열로 받음
