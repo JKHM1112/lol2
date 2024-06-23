@@ -17,7 +17,7 @@ const schema = zfd.formData({
     after6: zfd.numeric(z.number().min(1).max(5).optional()),
     half: zfd.numeric(z.number().min(1).max(5).optional()),
     runes: zfd.text(z.string().optional()), // 룬 배열을 JSON 문자열로 받음
-    spells: zfd.text(z.string().optional()), // 스펠 배열을 JSON 문자열로 받음
+    summoners: zfd.text(z.string().optional()), // 스펠 배열을 JSON 문자열로 받음
     items: zfd.text(z.string().optional()), // 아이템 배열을 JSON 문자열로 받음
     lineResult: zfd.text(z.string().optional()),
     gameResult: zfd.text(z.string().optional()),
@@ -31,10 +31,10 @@ export async function POST(request: NextRequest) {
     const parsedData = schema.parse(formData);
     const chamsArray = JSON.parse(parsedData.chams || '[]');
     const runesArray = JSON.parse(parsedData.runes || '[]');
-    const spellsArray = JSON.parse(parsedData.spells || '[]');
+    const summonersArray = JSON.parse(parsedData.summoners || '[]');
     const itemsArray = JSON.parse(parsedData.items || '[]');
 
-    const change = { ...parsedData, chams: chamsArray, runes: runesArray, spells: spellsArray, items: itemsArray };
+    const change = { ...parsedData, chams: chamsArray, runes: runesArray, summoners: summonersArray, items: itemsArray };
     const change_id = schema_id.parse(formData);
     const db = (await connectDB).db('dream');
 

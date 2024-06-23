@@ -13,7 +13,7 @@ const schema = zfd.formData({
     line: zfd.text(z.string().optional()),
     chams: zfd.text(z.string().optional()),
     runes: zfd.text(z.string().optional()),
-    spells: zfd.text(z.string().optional()),
+    summoners: zfd.text(z.string().optional()),
     items: zfd.text(z.string().optional()),
     timeLineLevel1: zfd.text(z.string().optional()),
     timeLineLevel2: zfd.text(z.string().optional()),
@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
     const parsedData = schema.parse(formData);
     const chamsArray = JSON.parse(parsedData.chams || '[]');
     const runesArray = JSON.parse(parsedData.runes || '[]');
-    const spellsArray = JSON.parse(parsedData.spells || '[]');
+    const summonersArray = JSON.parse(parsedData.summoners || '[]');
     const itemsArray = JSON.parse(parsedData.items || '[]');
     const timeLineLevel1Array = JSON.parse(parsedData.timeLineLevel1 || '[]');
     const timeLineLevel2Array = JSON.parse(parsedData.timeLineLevel2 || '[]');
@@ -62,7 +62,7 @@ export async function POST(request: NextRequest) {
         ...parsedData,
         chams: chamsArray,
         runes: runesArray,
-        spells: spellsArray,
+        summoners: summonersArray,
         items: itemsArray,
         timeLineLevel1: timeLineLevel1Array,
         timeLineLevel2: timeLineLevel2Array,

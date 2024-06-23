@@ -11,7 +11,7 @@ interface timeLineInterface {
 }
 
 const getChampionImg = (championCode: string) => (
-    <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={40} height={40} />
+    <Image className='rounded-md' alt={'champion1'} src={`/champion/${championCode}.png`} width={40} height={40} />
 )
 
 const selectedKDA = (participantId: number, timeLineKda: timeLineInterface[]): string => {

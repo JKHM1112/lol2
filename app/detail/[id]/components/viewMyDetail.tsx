@@ -11,7 +11,7 @@ interface Mydetail {
         line: string;
         chams: string[];
         runes: number[];
-        spells: number[];
+        summoners: number[];
         items: number[];
         timeLineLevel1: any[];
         timeLineLevel2: any[];
@@ -37,13 +37,13 @@ interface Mydetail {
 }
 
 const getItemImg = (itemCode: number) => (
-    <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={35} height={35} />
+    <Image className='rounded-md' alt={'item'} src={`/item/${itemCode}.png`} width={35} height={35} />
 )
 const getChampionImg = (championCode: string) => (
-    <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={40} height={40} />
+    <Image className='rounded-md' alt={'champion'} src={`/champion/${championCode}.png`} width={40} height={40} />
 )
 const getSpellImg = (SpellCode: number) => (
-    <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={25} height={25} />
+    <Image className='rounded-md' alt={'spell'} src={`/spellN/${SpellCode}.png`} width={25} height={25} />
 )
 export default function ViewMyDetail({ mydetail, nameTagLine }: Mydetail) {
     const gameDuration = mydetail.gameExtracted1.length - 1;
@@ -66,8 +66,8 @@ export default function ViewMyDetail({ mydetail, nameTagLine }: Mydetail) {
                     </div>
                     <div className="flex p-2 items-center">
                         {getChampionImg(mydetail.chams[0])}
-                        {getSpellImg(mydetail.spells[0])}
-                        {getSpellImg(mydetail.spells[1])}
+                        {getSpellImg(mydetail.summoners[0])}
+                        {getSpellImg(mydetail.summoners[1])}
                     </div>
                     <div>
                         <ul className="flex">
@@ -81,8 +81,8 @@ export default function ViewMyDetail({ mydetail, nameTagLine }: Mydetail) {
                     </div>
                     <div className="flex p-2 items-center">
                         {getChampionImg(mydetail.chams[1])}
-                        {getSpellImg(mydetail.spells[2])}
-                        {getSpellImg(mydetail.spells[3])}
+                        {getSpellImg(mydetail.summoners[2])}
+                        {getSpellImg(mydetail.summoners[3])}
                     </div>
                     <div>
                         <ul className="flex">

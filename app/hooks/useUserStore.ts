@@ -22,8 +22,8 @@ interface UserStoreState {
     setReview: (review: string) => void
     selectedGame: number
     setSelectedGame: (index: number) => void
-    spells: number[]
-    setSpells: (index: number, spellCode: number) => void
+    summoners: number[]
+    setSummoners: (index: number, summonerCode: number) => void
     items: number[]
     setItems: (index: number, itemCode: number) => void
     runes: number[]
@@ -99,11 +99,11 @@ const useUserStore = create<UserStoreState>((set, get) => ({
     setSelectedGame: (index) => {
         set({ selectedGame: index })
     },
-    spells: Array(4).fill(0),
-    setSpells: (index, spellCode) => {
-        const updatedSpells = [...get().spells]
-        updatedSpells[index] = spellCode
-        set({ spells: updatedSpells })
+    summoners: Array(4).fill(0),
+    setSummoners: (index, summonerCode) => {
+        const updatedSpells = [...get().summoners]
+        updatedSpells[index] = summonerCode
+        set({ summoners: updatedSpells })
     },
     items: Array(14).fill(0),
     setItems: (index, itemCode) => {

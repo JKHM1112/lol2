@@ -5,7 +5,7 @@ import { ResizableHandle, ResizablePanel, ResizablePanelGroup, } from "@/compone
 import Lines from "@/app/write/components/lineResult";
 import LineChampions from "@/app/write/components/lineChampions";
 import Difficulty from "@/app/write/components/difficulty";
-import Spells from "@/app/write/components/spells";
+import Spells from "@/app/write/components/summoner";
 import Runes from "@/app/write/components/runes";
 import Items from "@/app/write/components/items";
 

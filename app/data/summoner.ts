@@ -1,3 +1,4 @@
+//그대로 가져오면됨.
 export const summoner ={
     "type": "summoner",
     "version": "14.10.1",

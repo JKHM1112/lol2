@@ -23,7 +23,7 @@ interface infoType {
 export default function AramResult({ aramResults, searchedpuuid }: any) {
     const [activeTab, setActiveTab] = React.useState("TotalResult");
     const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={30} height={30} />
-    const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={40} height={40} />
+    const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/champion/${championCode}.png`} width={40} height={40} />
     const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={20} height={20} />
 
     const allRunes = runesReforged.flatMap((runeGroup: any) => runeGroup.slots.flatMap((slot: any) => slot.runes));

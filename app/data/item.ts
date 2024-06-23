@@ -1,4 +1,5 @@
-export const items = {
+//그대로 가져오면됨.
+export const item = {
     "type": "item",
     "version": "14.10.1",
     "basic": {

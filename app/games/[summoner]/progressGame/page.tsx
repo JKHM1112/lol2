@@ -2,64 +2,41 @@ import Games from "@/app/games/page";
 import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow, } from "@/components/ui/table"
 
 import Image from "next/image";
-import { champions } from "@/app/data/champions";
+import { champion } from "@/app/data/champion";
 import { runesReforged } from "@/app/data/runesReforged";
 import Link from "next/link";
 import ReloadButton from "../components/reloadButton";
 import ProgressRuneBox from "./components/progressRuneBox";
+const api_key = process.env.RIOT_API_KEY as string
 
-export default async function ProgressGame({ params }: { params: { summoner: string } }) {
-    const api_key = process.env.RIOT_API_KEY as string
-
-    async function getAccountData(summonerName: string, nextTag: string) {
-        try {
-            const res = await fetch(`https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${summonerName}/${nextTag}`, {
-                method: "GET",
-                headers: {
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-                    "Accept-Language": "ko-KR,ko;q=0.9",
-                    "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-                    "Origin": "https://developer.riotgames.com",
-                    "X-Riot-Token": api_key
-                }
-            });
-
-            if (!res.ok) {
-                const errorData = await res.json();
-                throw new Error(`Error ${res.status}: ${errorData.status.message}`);
+async function getAccountData(summonerName: string, nextTag: string) {
+    try {
+        const res = await fetch(`https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${summonerName}/${nextTag}`, {
+            method: "GET",
+            headers: {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+                "Accept-Language": "ko-KR,ko;q=0.9",
+                "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+                "Origin": "https://developer.riotgames.com",
+                "X-Riot-Token": api_key
             }
+        });
 
-            return await res.json();
-        } catch (error) {
-            console.error("API call failed:", error);
-            throw error;
+        if (!res.ok) {
+            const errorData = await res.json();
+            throw new Error(`Error ${res.status}: ${errorData.status.message}`);
         }
-    }
 
-    async function getProgressGame(puuid: string) {
-        try {
-            const res = await fetch(`https://kr.api.riotgames.com/lol/spectator/v5/active-games/by-summoner/${puuid}`, {
-                method: "GET",
-                headers: {
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-                    "Accept-Language": "ko-KR,ko;q=0.9",
-                    "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-                    "Origin": "https://developer.riotgames.com",
-                    "X-Riot-Token": api_key
-                }
-            })
-            if (!res.ok) {
-                const errorData = await res.json()
-                throw new Error(errorData.status.message)
-            }
-            return res.json()
-        } catch (error) {
-            console.error("api에러", error)
-            return null
-        }
+        return await res.json();
+    } catch (error) {
+        console.error("API call failed:", error);
+        throw error;
     }
-    async function getSummonerInformation(summonerId: string) {
-        const res = await fetch(`https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${summonerId}`, {
+}
+
+async function getProgressGame(puuid: string) {
+    try {
+        const res = await fetch(`https://kr.api.riotgames.com/lol/spectator/v5/active-games/by-summoner/${puuid}`, {
             method: "GET",
             headers: {
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
@@ -69,9 +46,31 @@ export default async function ProgressGame({ params }: { params: { summoner: str
                 "X-Riot-Token": api_key
             }
         })
+        if (!res.ok) {
+            const errorData = await res.json()
+            throw new Error(errorData.status.message)
+        }
         return res.json()
+    } catch (error) {
+        console.error("api에러", error)
+        return null
     }
-
+}
+async function getSummonerInformation(summonerId: string) {
+    const res = await fetch(`https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${summonerId}`, {
+        method: "GET",
+        headers: {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+            "Accept-Language": "ko-KR,ko;q=0.9",
+            "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+            "Origin": "https://developer.riotgames.com",
+            "X-Riot-Token": api_key
+        }
+    })
+    return res.json()
+}
+export default async function ProgressGame({ params }: { params: { summoner: string } }) {
+    const championData = champion
     const fullsummonerName = params.summoner;
     const [summonerName, tag] = fullsummonerName.split('-');
     const nextTag = tag || 'KR1';
@@ -116,9 +115,9 @@ export default async function ProgressGame({ params }: { params: { summoner: str
     const array: any = []
     const getChampionImg = (championNumber: number) => {
         const championCode = championNumber.toString();
-        return array.concat(...Object.values(champions.data)).find((cham: any) => cham.key === championCode)?.id || null;
+        return array.concat(...Object.values(championData.data)).find((cham: any) => cham.key === championCode)?.id || null;
     };
-    const getChampionImg2 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={35} height={35} />
+    const getChampionImg2 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/champion/${championCode}.png`} width={35} height={35} />
 
     const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={35} height={35} />
 

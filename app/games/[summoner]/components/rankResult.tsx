@@ -126,7 +126,7 @@ export default function RankResult({ searchedpuuid, tier, rankResults, rankResul
         setRenderCharts(true);
     }, []);
     const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/itemN/${itemCode}.png`} width={35} height={35} />
-    const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/championE/${championCode}.png`} width={40} height={40} />
+    const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/champion/${championCode}.png`} width={40} height={40} />
     const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={25} height={25} />
     const allRunes = runesReforged.flatMap((runeGroup: any) => runeGroup.slots.flatMap((slot: any) => slot.runes));
 
@@ -235,7 +235,7 @@ export default function RankResult({ searchedpuuid, tier, rankResults, rankResul
                 <div className="mt-4 flex justify-around justify-between items-center">
                     {championStats.map((champ, index) => (
                         <div key={index} className="text-center">
-                            <Image className='rounded-md' alt='champion' src={`/championE/${champ.champion}.png`} width={40} height={40} />
+                            <Image className='rounded-md' alt='champion' src={`/champion/${champ.champion}.png`} width={40} height={40} />
                             <p className={parseFloat(champ.winRate) >= 50 ? "text-blue-500" : "text-red-500"}>승률: {champ.winRate}%</p>
                             <p>KDA: {champ.kda}</p>
                             <p>승리: {champ.wins} 패배: {champ.losses}</p>
@@ -269,7 +269,7 @@ export default function RankResult({ searchedpuuid, tier, rankResults, rankResul
                         goldEarned: player.goldEarned,
                         totalMinionsKilled: player.totalMinionsKilled + player.neutralMinionsKilled,
                         damageDealtToBuildings: player.damageDealtToBuildings,
-                        img: `/championE/${player.championName}.png`
+                        img: `/champion/${player.championName}.png`
                     }));
                     const rankMetric = (array: PlayerData[], key: keyof PlayerData) => {
                         array.sort((a, b) => ((b[key] as number) || 0) - ((a[key] as number) || 0));

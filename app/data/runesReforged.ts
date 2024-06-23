@@ -1,3 +1,4 @@
+//그대로 가져오면됨.
 export const runesReforged = [
     {
         "id": 8100,

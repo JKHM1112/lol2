@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup, } from "@/components/ui/resizable"
 import Items from "./components/items";
 import Runes from "./components/runes";
-import Spells from "./components/spells";
+import Summoners from "./components/summoner";
 import Difficulty from "./components/difficulty";
 import Lines from "./components/lineResult";
 import LineChampions from "./components/lineChampions";
@@ -30,7 +30,7 @@ export default function Write() {
                                 <ResizableHandle />
                                 <ResizablePanel defaultSize={9} className="flex  items-center justify-center p-2">
                                     <div className="p-2">
-                                        <Spells />
+                                        <Summoners />
                                     </div>
                                     <Button type="submit">전송하기</Button>
                                 </ResizablePanel>
@@ -55,20 +55,20 @@ export default function Write() {
                     </ResizablePanelGroup>
                 </ResizablePanelGroup>
 
-                <input style={{ display: 'none' }} name="date" value={currentDate}></input>
-                <input style={{ display: 'none' }} name="timeLineLevel1" value={JSON.stringify(timeLineLevelUp1)}></input>
-                <input style={{ display: 'none' }} name="timeLineLevel2" value={JSON.stringify(timeLineLevelUp2)}></input>
-                <input style={{ display: 'none' }} name="gameExtracted1" value={JSON.stringify(gameExtracted1)}></input>
-                <input style={{ display: 'none' }} name="gameExtracted2" value={JSON.stringify(gameExtracted2)}></input>
-                <input style={{ display: 'none' }} name="timeLineObject1" value={JSON.stringify(timeLineObject1)}></input>
-                <input style={{ display: 'none' }} name="timeLineObject2" value={JSON.stringify(timeLineObject2)}></input>
-                <input style={{ display: 'none' }} name="timeLineKda1" value={JSON.stringify(timeLineKda1)}></input>
-                <input style={{ display: 'none' }} name="timeLineKda2" value={JSON.stringify(timeLineKda2)}></input>
-                <input style={{ display: 'none' }} name="turretPlatesTaken" value={JSON.stringify(turretPlatesTaken)}></input>
-                <input style={{ display: 'none' }} name="visionScore" value={JSON.stringify(visionScore)}></input>
-                <input style={{ display: 'none' }} name="skillOrder" value={JSON.stringify(skillOrder)}></input>
-                <input style={{ display: 'none' }} name="tier" value={tier}></input>
-                <input style={{ display: 'none' }} name="puuid" value={puuid}></input>
+                <input style={{ display: 'none' }} name="date" defaultValue={currentDate}></input>
+                <input style={{ display: 'none' }} name="timeLineLevel1" defaultValue={JSON.stringify(timeLineLevelUp1)}></input>
+                <input style={{ display: 'none' }} name="timeLineLevel2" defaultValue={JSON.stringify(timeLineLevelUp2)}></input>
+                <input style={{ display: 'none' }} name="gameExtracted1" defaultValue={JSON.stringify(gameExtracted1)}></input>
+                <input style={{ display: 'none' }} name="gameExtracted2" defaultValue={JSON.stringify(gameExtracted2)}></input>
+                <input style={{ display: 'none' }} name="timeLineObject1" defaultValue={JSON.stringify(timeLineObject1)}></input>
+                <input style={{ display: 'none' }} name="timeLineObject2" defaultValue={JSON.stringify(timeLineObject2)}></input>
+                <input style={{ display: 'none' }} name="timeLineKda1" defaultValue={JSON.stringify(timeLineKda1)}></input>
+                <input style={{ display: 'none' }} name="timeLineKda2" defaultValue={JSON.stringify(timeLineKda2)}></input>
+                <input style={{ display: 'none' }} name="turretPlatesTaken" defaultValue={JSON.stringify(turretPlatesTaken)}></input>
+                <input style={{ display: 'none' }} name="visionScore" defaultValue={JSON.stringify(visionScore)}></input>
+                <input style={{ display: 'none' }} name="skillOrder" defaultValue={JSON.stringify(skillOrder)}></input>
+                <input style={{ display: 'none' }} name="tier" defaultValue={tier}></input>
+                <input style={{ display: 'none' }} name="puuid" defaultValue={puuid}></input>
             </form>
         </div >
     )

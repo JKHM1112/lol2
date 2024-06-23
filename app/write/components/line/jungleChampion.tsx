@@ -4,26 +4,25 @@ import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, Command
 import Image from "next/image";
 import { useState } from "react";
 import useUserStore from "@/app/hooks/useUserStore";
-import { getChampions } from "@/components/champions";
-
+import { champion } from "@/app/data/champion";
 
 export default function JungleChampion() {
 
-    const championData = getChampions();
+    const championData = champion
 
-    const championsList = championData.map((champion) => ({
-        nameE: champion.nameE,
-        nameK: champion.nameK,
-        img: '/ChampionE/' + champion.nameE + '.png'
+    const championsList = Object.values(championData.data).map((champion) => ({
+        nameE: champion.id,
+        nameK: champion.name,
+        img: '/Champion/' + champion.image.full
     }));
     const { champions, setChampions } = useUserStore();
 
     const [championOpen1, setChampionOpen1] = useState(false)
     const [championOpen2, setChampionOpen2] = useState(false)
 
-    const nameChangeEK = (englishName: string) => {
-        const champion = championsList.find(champ => champ.nameE === englishName);
-        return champion ? champion.nameK : englishName;
+    const nameChangeEK = (nameE: string) => {
+        const champion = championsList.find(champ => champ.nameE === nameE);
+        return champion ? champion.nameK : nameE;
     };
 
     return (
@@ -35,7 +34,7 @@ export default function JungleChampion() {
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
                                 {champions[0] ? (
                                     <>
-                                        <Image alt={champions[0]} src={'/championE/' + champions[0] + '.png'} height={20} width={20}></Image>
+                                        <Image alt={champions[0]} src={'/champion/' + champions[0] + '.png'} height={20} width={20}></Image>
                                         {nameChangeEK(champions[0])}
                                     </>
                                 ) : (
@@ -71,7 +70,7 @@ export default function JungleChampion() {
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
                                 {champions[1] ? (
                                     <>
-                                        <Image alt={champions[1]} src={'/championE/' + champions[1] + '.png'} height={20} width={20}></Image>
+                                        <Image alt={champions[1]} src={'/champion/' + champions[1] + '.png'} height={20} width={20}></Image>
                                         {nameChangeEK(champions[1])}
                                     </>
                                 ) : (

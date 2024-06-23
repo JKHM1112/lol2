@@ -1,16 +1,21 @@
 import { Button } from "@/components/ui/button";
-import { getItems } from "@/components/Items";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
 import { useState } from "react";
 import Image from "next/image";
 import useUserStore from "@/app/hooks/useUserStore";
+import { item } from "@/app/data/item";
 
 export default function Items() {
+
+    const itemData = item
+    const itemsList = Object.entries(itemData.data).map(([id, item]) => ({
+        id,
+        nameK: item.name,
+        img: '/item/' + item.image.full
+    }));
+
     const { items, setItems } = useUserStore();
-
-    const itemData = getItems();
-
     const [itemOpen, setItemOpen] = useState(Array(7).fill(false));
 
     const handleItemOpen = (index: number, isOpen: boolean) => {
@@ -19,11 +24,14 @@ export default function Items() {
         setItemOpen(updatedItemOpen)
     }
 
-    const findItemNameK = (nameN: number): string => {
-        const item = itemData.find(item => item.nameN === nameN);
+    const findItemNameNK = (id: number) => {
+        const item = itemsList.find((item: any) => item.id === id.toString());
         return item ? item.nameK : '';
     }
-
+    const findItemImage = (id: number) => {
+        const item = itemsList.find(item => item.id === id.toString());
+        return item ? item.img : '';
+    };
     return (
         <div>
             {items.map((selectedItem, i) => (
@@ -31,10 +39,10 @@ export default function Items() {
                     <Popover open={itemOpen[i]} onOpenChange={(value) => handleItemOpen(i, value)}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[140px] justify-start">
-                                {items[i] && findItemNameK(items[i]) ? (
+                                {items[i] && findItemNameNK(items[i]) ? (
                                     <>
-                                        <Image alt={findItemNameK(items[i])} src={'/itemN/' + items[i] + '.png'} height={20} width={20}></Image>
-                                        {findItemNameK(items[i])}
+                                        <Image alt={findItemNameNK(items[i])} src={findItemImage(items[i])} height={20} width={20}></Image>
+                                        {findItemNameNK(items[i])}
                                     </>
                                 ) : (
                                     <>+ Set item</>
@@ -47,13 +55,13 @@ export default function Items() {
                                 <CommandList>
                                     <CommandEmpty>No item found.</CommandEmpty>
                                     <CommandGroup>
-                                        {itemData.map((item, j) => (
+                                        {itemsList.map((item: any, j: number) => (
                                             <CommandItem key={j} value={item.nameK} onSelect={() => {
-                                                setItems(i, item.nameN);
+                                                setItems(i, item.id);
                                                 handleItemOpen(i, false);
                                             }}
                                             >
-                                                <Image alt={item.nameK} src={'/itemN/' + item.nameN + '.png'} height={20} width={20}></Image>
+                                                <Image alt={item.nameK} src={item.img} height={20} width={20}></Image>
                                                 <span className="mr-2">{item.nameK}</span>
                                             </CommandItem>
                                         ))}

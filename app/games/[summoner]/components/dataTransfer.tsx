@@ -15,7 +15,7 @@ interface DataTransferProps {
 }
 
 export default function DataTransfer({ participant, i, puuid, tier, rankResultTimeline, characterNumber, skillOrder }: DataTransferProps) {
-    const { setLines, setParticipants, setSelectedGame, setItems, setPuuid, setSpells, setRunes, setChampions, setTier,
+    const { setLines, setParticipants, setSelectedGame, setItems, setPuuid, setSummoners, setRunes, setChampions, setTier,
         setTimeLineLevelUp1, setTimeLineLevelUp2, setTimeLineObject1, setTimeLineObject2, setGameExtracted1, setGameExtracted2, setTimeLineKda1, setTimeLineKda2,
         setTurretPlatesTaken, setVisionScore, setSkillOrder } = useUserStore()
     const router = useRouter();
@@ -201,10 +201,10 @@ export default function DataTransfer({ participant, i, puuid, tier, rankResultTi
         setItems(11, item11);//item번호
         setItems(12, item12);//item번호
         setItems(13, item13);//item번호
-        setSpells(0, spell1);//spell번호
-        setSpells(1, spell2);//spell번호
-        setSpells(2, spell3);//spell번호
-        setSpells(3, spell4);//spell번호
+        setSummoners(0, spell1);//spell번호
+        setSummoners(1, spell2);//spell번호
+        setSummoners(2, spell3);//spell번호
+        setSummoners(3, spell4);//spell번호
         setRunes(0, rune1);//rune번호
         setRunes(1, rune2);//rune번호
         setRunes(2, rune3);//rune번호

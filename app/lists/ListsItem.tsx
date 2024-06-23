@@ -3,12 +3,12 @@
 import useUserStore from '@/app/hooks/useUserStore';
 import { runesReforgedOld } from '@/app/data/runesReforgedOld';
 import { Button } from '@/components/ui/button';
-import { getChampions } from '@/components/champions';
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious, } from "@/components/ui/pagination";
 import React, { useState } from 'react';
 import Link from "next/link";
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { champion } from '../data/champion';
 
 interface ListsItemProps {
     result: Array<{
@@ -17,7 +17,7 @@ interface ListsItemProps {
         before6: number; after6: number; half: number;
         lineResult: string; gameResult: string;
         runes: number[]; // 룬 배열
-        spells: number[]; // 스펠 배열
+        summoners: number[]; // 스펠 배열
         items: number[]; // 아이템 배열
         review: string; date: string; author: string; email: string;
     }>;
@@ -30,13 +30,13 @@ const lineTypes = ['탑', '정글', '미드', '바텀', '서폿'];
 export default function ListsItem({ result, email }: ListsItemProps) {
     const router = useRouter();
     const { setLines, setChampions, setLineResults, setGameResults, setBefore, setAfter, setHalf, setReview,
-        setSpells, setRunes, setItems } = useUserStore();
+        setSummoners, setRunes, setItems } = useUserStore();
     const [checkedLines, setCheckedLines] = useState<string[]>([]);
     const [champFilter, setChampFilter] = useState(''); // 내 챔피언
     const [opponentFilter, setOpponentFilter] = useState(''); // 상대 챔피언
     const [currentPage, setCurrentPage] = useState(1);
 
-    const champions = getChampions();
+    const champions = champion
 
     const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { value, checked } = event.target;
@@ -54,8 +54,9 @@ export default function ListsItem({ result, email }: ListsItemProps) {
 
     const filteredResults = result.filter(item => {
         const matchesCheckedLines = checkedLines.length === 0 || checkedLines.includes(item.line);
-        const matchesChamp = champFilter === '' || champions.some(champ => champ.nameE === item.chams[0] && champ.nameK.includes(champFilter));
-        const matchesOpponent = opponentFilter === '' || champions.some(champ => champ.nameE === item.chams[1] && champ.nameK.includes(opponentFilter));
+        const matchesChamp = champFilter === '' || Object.values(champions.data).find(cham => cham.id === item.chams[0] && cham.name.includes(champFilter));
+        const matchesOpponent = opponentFilter === '' || Object.values(champions.data).find(cham => cham.id === item.chams[1] && cham.name.includes(opponentFilter));
+
         return matchesCheckedLines && matchesChamp && matchesOpponent;
     });
 
@@ -68,8 +69,8 @@ export default function ListsItem({ result, email }: ListsItemProps) {
         currentPage * ITEMS_PER_PAGE
     );
 
-    const getChampionImg = (championCode: string) => <Image className='rounded-md' alt={'champion'} src={`/championE/${championCode}.png`} width={35} height={35} />;
-    const getSpellImg = (spellCode: number) => <Image className='rounded-md' alt={'spell'} src={`/spellN/${spellCode}.png`} width={35} height={35} />;
+    const getChampionImg = (championCode: string) => <Image className='rounded-md' alt={'champion'} src={`/champion/${championCode}.png`} width={35} height={35} />;
+    const getSummonerImg = (spellCode: number) => <Image className='rounded-md' alt={'spell'} src={`/spellN/${spellCode}.png`} width={35} height={35} />;
     const array: any = [];
     const runeGroups = runesReforgedOld.map((runeGroup: any) => runeGroup.slots);
     const getRuneImg = (runeCode: number, line: number) => {
@@ -130,10 +131,10 @@ export default function ListsItem({ result, email }: ListsItemProps) {
                             <td className="border border-sky-300 p-1 text-center">{data.half}</td>
                             <td className="border border-sky-300 p-1 text-center">{getRuneImg4(getRuneImg(data.runes[0], 0))}</td>
                             <td className="border border-sky-300 p-1 text-center">{getRuneImg4(getRuneImg(data.runes[9], 0))}</td>
-                            <td className="border border-sky-300 p-1 text-center">{getSpellImg(data.spells[0])}</td>
-                            <td className="border border-sky-300 p-1 text-center">{getSpellImg(data.spells[1])}</td>
-                            <td className="border border-sky-300 p-1 text-center">{getSpellImg(data.spells[2])}</td>
-                            <td className="border border-sky-300 p-1 text-center">{getSpellImg(data.spells[3])}</td>
+                            <td className="border border-sky-300 p-1 text-center">{getSummonerImg(data.summoners[0])}</td>
+                            <td className="border border-sky-300 p-1 text-center">{getSummonerImg(data.summoners[1])}</td>
+                            <td className="border border-sky-300 p-1 text-center">{getSummonerImg(data.summoners[2])}</td>
+                            <td className="border border-sky-300 p-1 text-center">{getSummonerImg(data.summoners[3])}</td>
                             <td className="border border-sky-300 p-1 text-center">{data.lineResult}</td>
                             <td className="border border-sky-300 p-1 text-center">{data.gameResult}</td>
                             <td className="border border-sky-300 p-1 text-center">
@@ -150,7 +151,7 @@ export default function ListsItem({ result, email }: ListsItemProps) {
                                         setAfter(data.after6);
                                         setHalf(data.half);
                                         setReview(data.review);
-                                        data.spells.forEach((spell, index) => setSpells(index, spell));
+                                        data.summoners.forEach((summoner, index) => setSummoners(index, summoner));
                                         data.runes.forEach((rune, index) => setRunes(index, rune));
                                         data.items.forEach((item, index) => setItems(index, item));
                                         router.push('/edit/' + data._id);

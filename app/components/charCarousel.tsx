@@ -7,9 +7,9 @@ import Link from "next/link"
 import React from "react"
 import Autoplay from "embla-carousel-autoplay"
 import Image from "next/image"
-import { champions } from "../data/champions"
+import { champion } from "../data/champion"
 
-const champion: any = champions
+const champions: any = champion
 
 interface CharCarouselProps {
     recentData: {
@@ -38,7 +38,7 @@ export default function CharCarousel({ recentData, data2, data3 }: CharCarouselP
     )
 
     function getKoreanName(nameE: string) {
-        return champion.data[nameE]?.name || nameE;
+        return champions.data[nameE]?.name || nameE;
     }
 
     const getChampionChange1 = (koreanName: string) => {
