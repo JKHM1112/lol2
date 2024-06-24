@@ -5,6 +5,7 @@ import { getServerSession } from "next-auth";
 import React from "react";
 import ViewMyDetail from "./components/viewMyDetail";
 import ViewSimilarDetail from "./components/viewSimilarDetail";
+import ViewStatistics from "./components/viewStatistics";
 
 async function getAccount(puuid: string, api_key: string) {
     const url = `https://asia.api.riotgames.com/riot/account/v1/accounts/by-puuid/${puuid}`;
@@ -46,11 +47,14 @@ export default async function Detail(props: any) {
         <div className="flex">
             <div className="w-[300px] h-[700px] flex flex-col m-4">
                 <div className="border border-gray-300 rounded-md  p-2">
-                    <ViewMyDetail mydetail={mydetail} nameTagLine={nameTagLine} />
+                    <ViewMyDetail mydetail={JSON.parse(JSON.stringify(mydetail))} nameTagLine={JSON.parse(JSON.stringify(nameTagLine))} />
                 </div>
             </div>
-            <div className="w-[500px] h-[700px] flex flex-col m-4">
-                <ViewSimilarDetail filteredChamps={filteredChamps} mydetail={mydetail}/>
+            {/* <div className="w-[500px] h-[700px] flex flex-col m-4">
+                <ViewStatistics filteredChamps={JSON.parse(JSON.stringify(filteredChamps))} mydetail={JSON.parse(JSON.stringify(mydetail))} />
+            </div> */}
+            <div>
+                <ViewSimilarDetail filteredChamps={JSON.parse(JSON.stringify(filteredChamps))} mydetail={JSON.parse(JSON.stringify(mydetail))} />
             </div>
         </div>
     );
