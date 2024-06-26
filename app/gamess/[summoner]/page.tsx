@@ -1,5 +1,6 @@
 //처음 랭크 20게임 전적 검색
 import SelectedGames from "@/app/gamess/components/selectedGames";
+import SelectedProfile from "@/app/gamess/components/selectedProfile";
 import Games from "@/app/gamess/page";
 
 const api_key = process.env.RIOT_API_KEY as string;
@@ -11,7 +12,13 @@ function delay(ms: number) {
 async function fetchWithRetry(url: string, options: RequestInit, retries = 3) {
     for (let i = 0; i < retries; i++) {
         try {
-            const res = await fetch(url, options);
+            const res = await fetch(url, {
+                ...options,
+                headers: {
+                    ...options.headers,
+                    'Cache-Control': 'no-cache', // 캐시 무효화
+                },
+            });
             if (res.ok) {
                 return await res.json();
             } else {
@@ -189,14 +196,10 @@ export default async function GameSelect({ params }: { params: { summoner: strin
         );
     }
     return (
-        <div>
-            <div className="w-full flex justify-center">
-                <Games />
-            </div>
-            <div>
-                <SelectedGames fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult}
-                results={results} resultTimelines={resultTimelines} searchedpuuid={searchedpuuid} queue={420}/>
-            </div>
+        <div className="overflow-x-auto">
+            <Games />
+            <SelectedProfile fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} />
+            <SelectedGames fullSummonerName={params.summoner} results={results} resultTimelines={resultTimelines} searchedpuuid={searchedpuuid} queue={420} />
         </div>
     );
 }

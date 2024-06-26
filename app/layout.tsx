@@ -38,7 +38,7 @@ export default async function RootLayout({ children, }: Readonly<{
   return (
     <html lang="en">
       <body className={notoSansKr.className}>
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '20px', padding: '10px 0' }} className="navbar">
+        <div style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '20px', padding: '10px 0' }} className="navbar bg-gray-100">
           <Link href="/">hanogg </Link>
           {
             session ? <span><Link href="/write" > 직접입력하기 </Link></span> : <Link href={"/register"}>직접입력하기</Link>

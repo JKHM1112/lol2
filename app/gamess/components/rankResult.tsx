@@ -10,6 +10,7 @@ import { PieChart, Pie, Cell, Label, LineChart, Line, XAxis, YAxis } from 'recha
 import TotalResult from "@/app/gamess/components/totalResult";
 import TeamAnalysis from "@/app/gamess/components/teamAnalysis";
 import PersonalAnalysis from "@/app/gamess/components/personalAnalysis";
+import DataTransfer from "@/app/gamess/components/dataTransfer";
 
 interface Participant {
     puuid: string;
@@ -35,7 +36,7 @@ interface PlayerData {
     cs?: number;
     damageDealtToBuildings?: number;
 }
-export default function RankResult({ searchedpuuid, rankResults, rankResultTimelines, queue }: any) {
+export default function RankResult({ searchedpuuid, rankResults, rankResultTimelines, queue, tier }: any) {
     let winLoses: any[] = []
 
     function calculateOverallStats(rankResults: infoType[], puuid: string) {
@@ -363,7 +364,7 @@ export default function RankResult({ searchedpuuid, rankResults, rankResultTimel
                                                 </div>
                                             </TableCell>
                                             <TableCell className="flex items-center gap-2">
-                                                {/* <DataTransfer participant={rankResultInfo} i={i} puuid={searchedpuuid} tier={tier} rankResultTimeline={rankResultTimeline} characterNumber={characterNumber} skillOrder={skillOrder} /> */}
+                                                <DataTransfer participant={rankResultInfo} i={i} puuid={searchedpuuid} tier={tier} rankResultTimeline={rankResultTimeline} characterNumber={characterNumber} skillOrder={skillOrder} />
                                             </TableCell>
                                         </TableRow>
                                     </TableBody>

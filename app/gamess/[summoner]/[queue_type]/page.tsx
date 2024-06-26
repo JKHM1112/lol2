@@ -1,5 +1,6 @@
 //queue_type이 적혀 있는 최근 20게임.
 import SelectedGames from "@/app/gamess/components/selectedGames";
+import SelectedProfile from "@/app/gamess/components/selectedProfile";
 import Games from "@/app/gamess/page";
 
 const api_key = process.env.RIOT_API_KEY as string;
@@ -185,11 +186,19 @@ export default async function Queue_type({ params }: { params: { summoner: strin
             </div>
         );
     }
+    const soloQueueData = summonerLeaueDataResult.find((data: any) => data.queueType === "RANKED_SOLO_5x5");
+    const soloLeagueData = soloQueueData ? soloQueueData : {
+        tier: "UNRANK",
+        rank: "",
+        leaguePoints: 0,
+        wins: 0,
+        losses: 0
+    };
     return (
         <div>
             <Games />
-            <SelectedGames fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult}
-                results={results} resultTimelines={resultTimelines} searchedpuuid={searchedpuuid} queue={params.queue_type} />
+            <SelectedProfile fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} />
+            <SelectedGames fullSummonerName={params.summoner} results={results} resultTimelines={resultTimelines} searchedpuuid={searchedpuuid} queue={params.queue_type} tier={soloLeagueData.tier} />
         </div>
     )
 }

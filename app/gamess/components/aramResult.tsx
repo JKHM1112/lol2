@@ -158,9 +158,6 @@ export default function AramResult({ searchedpuuid, rankResults, rankResultTimel
         "BOTTOM": "바텀",
         "UTILITY": "서폿"
     };
-    const translatePosition = (position: string | undefined) => {
-        return position ? positionMapping[position] || position : "";
-    }
 
     const timeSinceGameEnd = (gameEndTime: number): string => {
         const now: Date = new Date();
@@ -305,7 +302,7 @@ export default function AramResult({ searchedpuuid, rankResults, rankResultTimel
                                         <TableRow className="flex p-2">
                                             <TableCell className="items-center p-1">
                                                 <div>
-                                                    {queue == 420 ? '솔로' : '자유'} {(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? "승리" : "패배")}
+                                                    칼바람 {(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? "승리" : "패배")}
                                                 </div>
                                                 <div>
                                                     {gameDuration(data.gameDuration)}
@@ -316,9 +313,6 @@ export default function AramResult({ searchedpuuid, rankResults, rankResultTimel
                                             </TableCell>
                                             <TableCell>
                                                 {getChampionImg1(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.championName)}
-                                                <div>
-                                                    {translatePosition(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.individualPosition)}
-                                                </div>
                                             </TableCell>
                                             <TableCell className="items-center gap-1">
                                                 <div className="flex items-center gap-1">
