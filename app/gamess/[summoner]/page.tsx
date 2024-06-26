@@ -1,5 +1,6 @@
-import Games from "../page";
-import SelectedGames from "./components/selectedGame";
+//처음 랭크 20게임 전적 검색
+import SelectedGames from "@/app/gamess/components/selectedGames";
+import Games from "@/app/gamess/page";
 
 const api_key = process.env.RIOT_API_KEY as string;
 
@@ -142,24 +143,23 @@ export default async function GameSelect({ params }: { params: { summoner: strin
     const [gameName, tagLines] = params.summoner.split('-');
     const tagLine = tagLines || 'KR1';
 
-    let searchedpuuid, aramMatchIds, rankedMatchIds, summonerData, summonerLeaueDataResult;
-    let rankResults: MatchData[] = [], rankResultTimelines: MatchData[] = [], aramResults: MatchData[] = []
+    let searchedpuuid, rankedMatchIds, summonerData, summonerLeaueDataResult;
+    let results: MatchData[] = [], resultTimelines: MatchData[] = []
     try {
-        const account = await getAccount(gameName, tagLine);    //puuid,gameName,tagLine
+        const account = await getAccount(gameName, tagLine);    // puuid, gameName, tagLine
         if (!account) throw new Error("소환사 정보가 없다.");
 
         searchedpuuid = account.puuid;
 
         // 비동기 작업을 병렬로 수행
-        [rankedMatchIds, aramMatchIds, summonerData] = await Promise.all([
+        [rankedMatchIds, summonerData] = await Promise.all([
             getRecentMatchIds(searchedpuuid, 420, 0, 20),
-            getRecentMatchIds(searchedpuuid, 450, 0, 10),
             getSummonerData(searchedpuuid)
         ]);
 
         const summonerDataId = summonerData.id;
         summonerLeaueDataResult = await getLeagueData(summonerDataId);
-        if (!rankedMatchIds || !aramMatchIds) {
+        if (!rankedMatchIds) {
             throw new Error("getMatchIds api오류");
         }
 
@@ -169,13 +169,11 @@ export default async function GameSelect({ params }: { params: { summoner: strin
             const matchTimeline = await getMatchDataTimeline(matchId);
             return { matchData, matchTimeline };
         });
-        const aramDataPromises = aramMatchIds.map(getMatchData);
 
         const rankDataResults = await Promise.all(rankDataPromises);
-        rankResults = rankDataResults.map(result => result.matchData);
-        rankResultTimelines = rankDataResults.map(result => result.matchTimeline);
+        results = rankDataResults.map(result => result.matchData);
+        resultTimelines = rankDataResults.map(result => result.matchTimeline);
 
-        aramResults = await Promise.all(aramDataPromises);
 
     } catch (error) {
         console.error("Error: ", error); // 추가적인 디버깅 정보를 위해
@@ -192,8 +190,13 @@ export default async function GameSelect({ params }: { params: { summoner: strin
     }
     return (
         <div>
-            <SelectedGames fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult}
-                rankResults={rankResults} rankResultTimelines={rankResultTimelines} aramResults={aramResults} searchedpuuid={searchedpuuid}/>
+            <div className="w-full flex justify-center">
+                <Games />
+            </div>
+            <div>
+                <SelectedGames fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult}
+                results={results} resultTimelines={resultTimelines} searchedpuuid={searchedpuuid} queue={420}/>
+            </div>
         </div>
     );
 }

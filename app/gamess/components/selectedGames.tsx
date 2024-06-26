@@ -1,21 +1,17 @@
-'use client'
 import Link from "next/link";
-import Games from "../../page";
 import React from "react";
-import { Button } from "@/components/ui/button";
-import RankResult from "./rankResult";
-import AramResult from "./aramResult";
 import Image from "next/image";
-import ReloadButton from "./reloadButton";
+import ReloadButton from "@/app/gamess/components/reloadButton";
+import RankResult from "@/app/gamess/components/rankResult";
+import AramResult from "@/app/gamess/components/aramResult";
 
-export default function SelectedGames({ fullSummonerName, summonerData, summonerLeaueDataResult, rankResults, rankResultTimelines, aramResults, searchedpuuid }: any) {
+export default function SelectedGames({ fullSummonerName, summonerData, summonerLeaueDataResult, results, resultTimelines, searchedpuuid, queue }: any) {
     const [gameName, tagLines] = fullSummonerName.split('-');
     const tagLine = tagLines || 'KR1';
     const decodedGameName = decodeURIComponent(gameName);
     const decodedTagLine = decodeURIComponent(tagLine);
     const gameNameTagLine = `${decodedGameName}#${decodedTagLine}`; //디코딩된 gameName#Tagline
 
-    const [activeTab, setActiveTab] = React.useState("RankGame");
     const soloQueueData = summonerLeaueDataResult.find((data: any) => data.queueType === "RANKED_SOLO_5x5");
     const leagueData = soloQueueData ? soloQueueData : {
         tier: "UNRANK",
@@ -28,9 +24,6 @@ export default function SelectedGames({ fullSummonerName, summonerData, summoner
     const oddsWinning = (leagueData.wins + leagueData.losses) > 0 ? (leagueData.wins / (leagueData.wins + leagueData.losses) * 100).toFixed(1) : 0;
     return (
         <div>
-            <div className="w-full flex justify-center">
-                <Games />
-            </div>
             <div className="w-full flex flex-col items-center">
                 <div className="flex justify-center items-center">
                     <div className="flex flex-col items-center w-[700px] h-[130px] p-4 box-border border-2 rounded-md shadow-lg bg-white">
@@ -45,9 +38,6 @@ export default function SelectedGames({ fullSummonerName, summonerData, summoner
                             <div className="text-lg font-semibold">
                                 {gameNameTagLine}
                             </div>
-                            <form action="/api/post/favorite" method="POST">
-                                <input name="favoritesPuuid" value={searchedpuuid} />
-                            </form>
                             <div className="text-sm text-gray-500">
                                 {leagueData.tier} {leagueData.rank} {leagueData.leaguePoints}LP
                             </div>
@@ -58,21 +48,29 @@ export default function SelectedGames({ fullSummonerName, summonerData, summoner
                                 {leagueData.wins}승 {leagueData.losses}패
                             </div>
                         </div>
-                        <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                            <Link href={`/games/${fullSummonerName}/progressGame`}>진행중인 게임 확인</Link>
-                            <Button className="" onClick={() => setActiveTab("RankGame")}>랭크게임</Button>
-                            <Button className="" onClick={() => setActiveTab("AramGame")}>칼바람나락</Button>
-                            <ReloadButton />
-                        </div>
                     </div>
                 </div>
-
+                <div className='flex justify-between'>
+                    <Link className={`w-1/3 px-4 py-2 ${queue == 420 ? 'bg-blue-500 text-white' : 'bg-gray-300'}`} href={`/gamess/${fullSummonerName}/420`}>솔로랭크
+                    </Link>
+                    <Link className={`w-1/3 px-4 py-2 ${queue == 440 ? 'bg-blue-500 text-white' : 'bg-gray-300'}`} href={`/gamess/${fullSummonerName}/440`}>자유랭크
+                    </Link>
+                    <Link className={`w-1/3 px-4 py-2 ${queue == 450 ? 'bg-blue-500 text-white' : 'bg-gray-300'}`} href={`/gamess/${fullSummonerName}/450`}>무작위 총격전
+                    </Link>
+                </div>
+                <div className='flex justify-between'>
+                    <Link href={`/gamess/${fullSummonerName}/progressGame`}>진행중인 게임 확인</Link>
+                    <ReloadButton />
+                </div>
                 <div>
-                    {activeTab === "RankGame" && (
-                        <RankResult searchedpuuid={summonerData.puuid} tier={leagueData.tier} rankResults={rankResults} rankResultTimelines={rankResultTimelines} />
+                    {queue == 420 && (
+                        <RankResult searchedpuuid={summonerData.puuid} rankResults={results} rankResultTimelines={resultTimelines} queue={queue} />
                     )}
-                    {activeTab === "AramGame" && (
-                        <AramResult aramResults={aramResults} searchedpuuid={summonerData.puuid} />
+                    {queue == 440 && (
+                        <RankResult searchedpuuid={summonerData.puuid} rankResults={results} rankResultTimelines={resultTimelines} queue={queue} />
+                    )}
+                    {queue == 450 && (
+                        <AramResult searchedpuuid={summonerData.puuid} rankResults={results} rankResultTimelines={resultTimelines} queue={queue} />
                     )}
                 </div>
             </div>

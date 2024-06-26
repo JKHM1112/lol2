@@ -25,7 +25,7 @@ export default function SkillBox({ skillOrder, chams }: any) {
         <Image className='rounded-md' alt={'spell'} src={`/spell/${skillCode}`} width={25} height={25} />
     );
     const getSkillImg2 = (skillCode: string) => (
-        <Image className='rounded-md' alt={'spell'} src={`/${skillCode}.png`} width={30} height={30} />
+        <Image className='rounded-md' alt={'spell'} src={`/${skillCode}.png`} width={25} height={25} />
     );
 
     const skillCounts: SkillCounts = { Q: 0, W: 0, E: 0 };
@@ -50,8 +50,8 @@ export default function SkillBox({ skillOrder, chams }: any) {
 
     return (
         <div>
-            <div className="flex-wrap p-2">
-                <div className="flex p-2 items-center space-x-2">
+            <div className="flex-wrap p-1">
+                <div className="flex p-1 items-center space-x-2">
                     {getSkillImg(sortedSkills[0] === 'Q' ? skillQIMG : sortedSkills[0] === 'W' ? skillWIMG : skillEIMG)}
                     {sortedSkills[0]}
                     <Image className='rounded-md' alt={'item'} src={'/greater.png'} width={30} height={30}></Image>
@@ -61,7 +61,7 @@ export default function SkillBox({ skillOrder, chams }: any) {
                     {getSkillImg(sortedSkills[2] === 'Q' ? skillQIMG : sortedSkills[2] === 'W' ? skillWIMG : skillEIMG)}
                     {sortedSkills[2]}
                 </div>
-                <div className="flex p-2 flex-wrap items-center space-x-2">
+                <div className="flex p-1 flex-wrap items-center space-x-2">
                     {skillOrder.map((skill: string, index: number) => (
                         <span key={index} className="">
                             {getSkillImg2(skill)}

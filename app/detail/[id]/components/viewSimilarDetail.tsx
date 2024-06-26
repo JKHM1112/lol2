@@ -289,16 +289,17 @@ export default function ViewSimilarDetail({ filteredChamps, mydetail }: any) {
                     <div className="flex flex-wrap w-full h-full">
                         <div className="w-1/2 h-1/2">
                             <ResponsiveContainer width="100%" height="100%">
-                                <BarChart data={visionScoreData}>
+                                <BarChart data={[
+                                    { name: '선 2렙', 선: levelUpComparison.level2.yes, 후: levelUpComparison.level2.no },
+                                    { name: '선 3렙', 선: levelUpComparison.level3.yes, 후: levelUpComparison.level3.no },
+                                    { name: '선 6렙', 선: levelUpComparison.level6.yes, 후: levelUpComparison.level6.no }
+                                ]}>
                                     <CartesianGrid strokeDasharray="3 3" />
                                     <XAxis dataKey="name" tick={{ fontSize: 10 }} tickLine={false} />
                                     <YAxis tick={{ fontSize: 10 }} />
                                     <Tooltip wrapperStyle={{ fontSize: '10px' }} />
-                                    <Bar dataKey="value" barSize={20}>
-                                        {visionScoreData.map((entry, index) => (
-                                            <Cell key={`cell-${index}`} fill={COLORS3[index % COLORS3.length]} />
-                                        ))}
-                                    </Bar>
+                                    <Bar dataKey="선" fill="#0088FE" />
+                                    <Bar dataKey="후" fill="#FF0000" />
                                 </BarChart>
                             </ResponsiveContainer>
                         </div>
@@ -331,17 +332,16 @@ export default function ViewSimilarDetail({ filteredChamps, mydetail }: any) {
                         </div>
                         <div className="w-1/2 h-1/2">
                             <ResponsiveContainer width="100%" height="100%">
-                                <BarChart data={[
-                                    { name: '선 2렙', 선: levelUpComparison.level2.yes, 후: levelUpComparison.level2.no },
-                                    { name: '선 3렙', 선: levelUpComparison.level3.yes, 후: levelUpComparison.level3.no },
-                                    { name: '선 6렙', 선: levelUpComparison.level6.yes, 후: levelUpComparison.level6.no }
-                                ]}>
+                                <BarChart data={visionScoreData}>
                                     <CartesianGrid strokeDasharray="3 3" />
                                     <XAxis dataKey="name" tick={{ fontSize: 10 }} tickLine={false} />
                                     <YAxis tick={{ fontSize: 10 }} />
                                     <Tooltip wrapperStyle={{ fontSize: '10px' }} />
-                                    <Bar dataKey="선" fill="#0088FE" />
-                                    <Bar dataKey="후" fill="#FF0000" />
+                                    <Bar dataKey="value" barSize={20}>
+                                        {visionScoreData.map((entry, index) => (
+                                            <Cell key={`cell-${index}`} fill={COLORS3[index % COLORS3.length]} />
+                                        ))}
+                                    </Bar>
                                 </BarChart>
                             </ResponsiveContainer>
                         </div>
