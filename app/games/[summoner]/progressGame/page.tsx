@@ -5,8 +5,8 @@ import Image from "next/image";
 import { champion } from "@/app/data/champion";
 import { runesReforged } from "@/app/data/runesReforged";
 import Link from "next/link";
-import ReloadButton from "../components/reloadButton";
-import ProgressRuneBox from "./components/progressRuneBox";
+import ReloadButton from "../../components/reloadButton";
+import ProgressRuneBox from "../../components/progressRuneBox";
 const api_key = process.env.RIOT_API_KEY as string
 
 async function getAccountData(summonerName: string, nextTag: string) {

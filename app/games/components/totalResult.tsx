@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, TableBody, TableHeader, TableHead, TableRow, TableCell } from "@/components/ui/table";
 import { Progress } from "@/components/ui/progress";
-import RuneBox from "./runeBox";
+import RuneBox from "@/app/games/components/runeBox";
 import Image from "next/image";
 import { Accordion, AccordionContent, AccordionItem } from '@/components/ui/accordion';
 import Link from 'next/link';

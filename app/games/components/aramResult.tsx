@@ -7,9 +7,9 @@ import { runesReforged } from "@/app/data/runesReforged"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { PieChart, Pie, Cell, Label, LineChart, Line, XAxis, YAxis } from 'recharts';
-import TotalResult from "@/app/gamess/components/totalResult";
-import TeamAnalysis from "@/app/gamess/components/teamAnalysis";
-import PersonalAnalysis from "@/app/gamess/components/personalAnalysis";
+import TotalResult from "@/app/games/components/totalResult";
+import TeamAnalysis from "@/app/games/components/teamAnalysis";
+import PersonalAnalysis from "@/app/games/components/personalAnalysis";
 
 interface Participant {
     puuid: string;

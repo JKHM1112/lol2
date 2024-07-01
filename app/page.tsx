@@ -1,6 +1,6 @@
 import { connectDB } from "@/util/database"
-import Games from "./games/page"
 import CharCarousel from "./components/charCarousel"
+import Games from "./games/page"
 
 interface dataInterface {
   chams: string[]

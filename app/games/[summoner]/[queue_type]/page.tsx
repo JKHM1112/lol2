@@ -1,7 +1,7 @@
 //queue_type이 적혀 있는 최근 20게임.
-import SelectedGames from "@/app/gamess/components/selectedGames";
-import SelectedProfile from "@/app/gamess/components/selectedProfile";
-import Games from "@/app/gamess/page";
+import SelectedGames from "@/app/games/components/selectedGames";
+import SelectedProfile from "@/app/games/components/selectedProfile";
+import Games from "@/app/games/page";
 
 const api_key = process.env.RIOT_API_KEY as string;
 

@@ -6,66 +6,114 @@ import * as React from 'react';
 
 interface searchInterface {
     searchFavorites: string[] | undefined;
+    searchRecently: string[] | undefined;
 }
 
-export default function SearchBar({ searchFavorites }: searchInterface) {
+export default function SearchBar({ searchFavorites, searchRecently }: searchInterface) {
     const [summonerName, setSummonerName] = React.useState(''); // 소환사 이름 저장
     const [recentSearches, setRecentSearches] = React.useState<string[]>([]); // 최근 검색어 목록 저장
-    const [favorites, setFavorites] = React.useState<string[]>(searchFavorites || []); // 즐겨찾기 목록 저장
+    const [favorites, setFavorites] = React.useState<string[]>([]); // 즐겨찾기 목록 저장
     const [showDropdown, setShowDropdown] = React.useState(false); // 드롭다운 보여줄지 결정
     const [selectedOption, setSelectedOption] = React.useState('recent'); // 선택한 옵션
     const router = useRouter();
 
-    React.useEffect(() => {
-        const storedSearches = localStorage.getItem('recentSearches');
-        if (storedSearches) {
-            setRecentSearches(JSON.parse(storedSearches));
-        }
-    }, []);
+    const isLoggedIn = Boolean(searchFavorites && searchRecently);
 
-    const handleSearch = (name: string) => {
+    React.useEffect(() => {
+        if (isLoggedIn) {
+            setRecentSearches(searchRecently || []);
+            setFavorites(searchFavorites || []);
+        } else {
+            const storedSearches = localStorage.getItem('recentSearches');
+            const storedFavorites = localStorage.getItem('favorites');
+            if (storedSearches) {
+                setRecentSearches(JSON.parse(storedSearches));
+            }
+            if (storedFavorites) {
+                setFavorites(JSON.parse(storedFavorites));
+            }
+        }
+    }, [isLoggedIn, searchFavorites, searchRecently]);
+
+    React.useEffect(() => {
+        if (!isLoggedIn) {
+            localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+        }
+    }, [recentSearches, isLoggedIn]);
+
+    React.useEffect(() => {
+        if (!isLoggedIn) {
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+        }
+    }, [favorites, isLoggedIn]);
+
+    const handleSearch = async (name: string) => {
         const formattedName = name.replace('#', '-');
         if (!recentSearches.includes(formattedName)) {
             const newSearches = [formattedName, ...recentSearches.slice(0, 19)]; // 20개만 저장
             setRecentSearches(newSearches);
-            localStorage.setItem('recentSearches', JSON.stringify(newSearches));
+            if (!isLoggedIn) {
+                localStorage.setItem('recentSearches', JSON.stringify(newSearches));
+            } else {
+                await fetch('/api/post/recently', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ recent: formattedName }),
+                });
+            }
         }
-        router.push('/gamess/' + formattedName);
+        router.push('/games/' + formattedName);
         setShowDropdown(false); // 검색 후 드롭다운 닫기
     };
 
-    const handleDeleteSearch = (name: string) => {
+    const handleDeleteSearch = async (name: string) => {
         const updatedSearches = recentSearches.filter(search => search !== name);
         setRecentSearches(updatedSearches);
-        localStorage.setItem('recentSearches', JSON.stringify(updatedSearches));
+        if (!isLoggedIn) {
+            localStorage.setItem('recentSearches', JSON.stringify(updatedSearches));
+        } else {
+            await fetch('/api/post/recently', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ recent: name }),
+            });
+        }
     };
 
     const handleDeleteFavorite = async (name: string) => {
         const updatedFavorites = favorites.filter(favorite => favorite !== name);
         setFavorites(updatedFavorites);
-        localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-
-        await fetch('/api/post/favorites', {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ favorite: name }),
-        });
+        if (!isLoggedIn) {
+            localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+        } else {
+            await fetch('/api/post/favorites', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ favorite: name }),
+            });
+        }
     };
 
     const addFavorite = async (name: string) => {
         const newFavorites = [...favorites, name];
         setFavorites(newFavorites);
-        localStorage.setItem('favorites', JSON.stringify(newFavorites));
-
-        await fetch('/api/post/favorites', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ favorite: name }),
-        });
+        if (!isLoggedIn) {
+            localStorage.setItem('favorites', JSON.stringify(newFavorites));
+        } else {
+            await fetch('/api/post/favorites', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ favorite: name }),
+            });
+        }
     };
 
     const toggleFavorite = (name: string) => {
@@ -82,7 +130,14 @@ export default function SearchBar({ searchFavorites }: searchInterface) {
                 <div className='flex'>
                     <Input
                         className='w-full'
-                        onChange={(e) => setSummonerName(e.target.value.replace('#', '-'))}
+                        onChange={(e) => {
+                            const value = e.target.value;
+                            if (value.includes('#')) {
+                                setSummonerName(value.replace('#', '-'));
+                            } else {
+                                setSummonerName(value + "-KR1");
+                            }
+                        }}
                         placeholder="플레이어 이름 + #KR1"
                         onFocus={() => setShowDropdown(true)}
                         onKeyDown={(e) => {
@@ -154,5 +209,5 @@ export default function SearchBar({ searchFavorites }: searchInterface) {
                 )}
             </div>
         </div>
-    )
+    );
 }

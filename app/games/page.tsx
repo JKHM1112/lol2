@@ -1,28 +1,40 @@
-'use client'
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import * as React from 'react'
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { connectDB } from "@/util/database";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
+import SearchBar from "./components/searchBar";
 
-export default function Games() {
-    const [summonerName, setSummonerName] = React.useState('')
-    const router = useRouter()
+interface Session {
+    user: {
+        email: string;
+    }
+}
+interface user_cred_DB {
+    favorites: string[]
+    recently: string[]
+    email: string
+}
+
+export default async function Games() {
+    const db = (await connectDB).db('dream');
+    let result = await db.collection('user_cred').find().sort({ _id: -1 }).toArray();
+
+    let email: string | null | undefined = '';
+    let searchFavorites: string[] = [];
+    let searchRecently: string[] = [];
+
+    let session: Session | null = await getServerSession(authOptions);
+    if (session) {
+        email = session.user.email;
+        const userCred = result.find((user: user_cred_DB) => user.email === email);
+        if (userCred) {
+            searchFavorites = userCred.favorites;
+            searchRecently = userCred.recently;
+        }
+    }
+
     return (
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }} className='flex items-center gap-2 p-4'>
-            <Input
-                className='w-72'
-                onChange={(e) => setSummonerName(e.target.value.replace('#', '-'))}
-                onKeyDown={(e) => {
-                    if (e.key === 'Enter') {
-                        router.push('/games/' + summonerName)
-                    }
-                }}
-                placeholder="플레이어 이름 + #KR1"
-            />
-            <Link href={'/games/' + summonerName}>
-                <Button>검색</Button>
-            </Link>
+        <div>
+            <SearchBar searchFavorites={searchFavorites} searchRecently={searchRecently} />
         </div>
-    )
+    );
 }

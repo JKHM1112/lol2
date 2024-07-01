@@ -1,57 +1,14 @@
 'use client'
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import ReloadButton from "@/app/gamess/components/reloadButton";
+import ReloadButton from "@/app/games/components/reloadButton";
 
-export default function SelectedProfile({ fullSummonerName, summonerData, summonerLeaueDataResult }: any) {
+export default function SelectedProfile({ fullSummonerName, summonerData, summonerLeaueDataResult,searchFavorites }: any) {
     const [gameName, tagLines] = fullSummonerName.split('-');
     const tagLine = tagLines || 'KR1';
     const decodedGameName = decodeURIComponent(gameName);
     const decodedTagLine = decodeURIComponent(tagLine);
     const gameNameTagLine = `${decodedGameName}#${decodedTagLine}`;
-
-    const [favorites, setFavorites] = useState<string[]>([]);
-
-    useEffect(() => {
-        const storedFavorites = localStorage.getItem('favorites');
-        if (storedFavorites) {
-            setFavorites(JSON.parse(storedFavorites));
-        }
-    }, []);
-
-    const addFavorite = (name: string) => {
-        const newFavorites = [...favorites, name];
-        setFavorites(newFavorites);
-        localStorage.setItem('favorites', JSON.stringify(newFavorites));
-        fetch('/api/post/favorites', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ favorite: name }),
-        });
-    };
-
-    const handleDeleteFavorite = (name: string) => {
-        const updatedFavorites = favorites.filter(favorite => favorite !== name);
-        setFavorites(updatedFavorites);
-        localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-        fetch('/api/post/favorites', {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ favorite: name }),
-        });
-    };
-
-    const toggleFavorite = (name: string) => {
-        if (favorites.includes(name)) {
-            handleDeleteFavorite(name);
-        } else {
-            addFavorite(name);
-        }
-    };
 
     const copyToClipboard = (text: string) => {
         navigator.clipboard.writeText(text);
@@ -123,12 +80,6 @@ export default function SelectedProfile({ fullSummonerName, summonerData, summon
                         <div className=" cursor-pointer" onClick={() => copyToClipboard(gameNameTagLine)}>
                             {gameNameTagLine}
                         </div>
-                        <button
-                            className={`p-4 ml-2 ${favorites.includes(gameNameTagLine) ? 'text-yellow-500' : 'text-gray-500'}`}
-                            onClick={() => toggleFavorite(gameNameTagLine)}
-                            >
-                            {favorites.includes(gameNameTagLine) ? '⭐' : '☆'}
-                        </button>
                         <ReloadButton />
                     </div>
                     <div className="h-1/2 flex space-x-4">
