@@ -7,9 +7,10 @@ import * as React from 'react';
 interface searchInterface {
     searchFavorites: string[] | undefined;
     searchRecently: string[] | undefined;
+    email: string;
 }
 
-export default function SearchBar({ searchFavorites, searchRecently }: searchInterface) {
+export default function SearchBar({ searchFavorites, searchRecently, email }: searchInterface) {
     const [summonerName, setSummonerName] = React.useState(''); // 소환사 이름 저장
     const [recentSearches, setRecentSearches] = React.useState<string[]>([]); // 최근 검색어 목록 저장
     const [favorites, setFavorites] = React.useState<string[]>([]); // 즐겨찾기 목록 저장
@@ -17,8 +18,10 @@ export default function SearchBar({ searchFavorites, searchRecently }: searchInt
     const [selectedOption, setSelectedOption] = React.useState('recent'); // 선택한 옵션
     const router = useRouter();
 
-    const isLoggedIn = Boolean(searchFavorites && searchRecently);
+    // 로그인 상태 확인
+    const isLoggedIn = Boolean(email != '');
 
+    // 초기화 시 localStorage에서 최근 검색어 및 즐겨찾기 목록 불러오기
     React.useEffect(() => {
         if (isLoggedIn) {
             setRecentSearches(searchRecently || []);
@@ -28,24 +31,14 @@ export default function SearchBar({ searchFavorites, searchRecently }: searchInt
             const storedFavorites = localStorage.getItem('favorites');
             if (storedSearches) {
                 setRecentSearches(JSON.parse(storedSearches));
+            } else {
             }
             if (storedFavorites) {
                 setFavorites(JSON.parse(storedFavorites));
+            } else {
             }
         }
-    }, [isLoggedIn, searchFavorites, searchRecently]);
-
-    React.useEffect(() => {
-        if (!isLoggedIn) {
-            localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
-        }
-    }, [recentSearches, isLoggedIn]);
-
-    React.useEffect(() => {
-        if (!isLoggedIn) {
-            localStorage.setItem('favorites', JSON.stringify(favorites));
-        }
-    }, [favorites, isLoggedIn]);
+    }, []);
 
     const handleSearch = async (name: string) => {
         const formattedName = name.replace('#', '-');

@@ -36,17 +36,17 @@ interface PlayerData {
     damageDealtToBuildings?: number;
 }
 
-export default function AramResult({ searchedpuuid, rankResults, rankResultTimelines, queue }: any) {
+export default function AramResult({ searchedpuuid, aramResults, aramResultTimelines }: any) {
     let winLoses: any[] = []
 
-    function calculateOverallStats(rankResults: infoType[], puuid: string) {
+    function calculateOverallStats(aramResults: infoType[], puuid: string) {
         let wins = 0;
         let losses = 0;
         let totalKills = 0;
         let totalDeaths = 0;
         let totalAssists = 0;
         let count = 0;
-        rankResults.forEach(result => {
+        aramResults.forEach(result => {
             const participant = result.info.participants.find((p: any) => p.puuid === searchedpuuid);
             if (participant) {
                 if (participant.win) {
@@ -75,13 +75,13 @@ export default function AramResult({ searchedpuuid, rankResults, rankResultTimel
         })
 
         const kda = totalDeaths === 0 ? (totalKills + totalAssists) : ((totalKills + totalAssists) / totalDeaths).toFixed(2);
-        const avgKills = (totalKills / rankResults.length).toFixed(1);
-        const avgDeaths = (totalDeaths / rankResults.length).toFixed(1);
-        const avgAssists = (totalAssists / rankResults.length).toFixed(1);
+        const avgKills = (totalKills / aramResults.length).toFixed(1);
+        const avgDeaths = (totalDeaths / aramResults.length).toFixed(1);
+        const avgAssists = (totalAssists / aramResults.length).toFixed(1);
         return {
             wins,
             losses,
-            winRate: ((wins / rankResults.length) * 100).toFixed(1),
+            winRate: ((wins / aramResults.length) * 100).toFixed(1),
             kda,
             avgKills,
             avgDeaths,
@@ -89,10 +89,10 @@ export default function AramResult({ searchedpuuid, rankResults, rankResultTimel
         };
     }
 
-    function calculateChampionStats(rankResults: infoType[], puuid: string) {
+    function calculateChampionStats(aramResults: infoType[], puuid: string) {
         const championStats: any = {};
 
-        rankResults.forEach(result => {
+        aramResults.forEach(result => {
             const participant = result.info.participants.find((p: any) => p.puuid === puuid);
             if (participant) {
                 const { championName, win, kills, deaths, assists } = participant;
@@ -177,7 +177,7 @@ export default function AramResult({ searchedpuuid, rankResults, rankResultTimel
         return deaths === 0 ? "Perfect" : ((kills + assists) / deaths).toFixed(2);
     }
 
-    const rankResultInfo = rankResults.map((data: infoType) => data.info);
+    const rankResultInfo = aramResults.map((data: infoType) => data.info);
 
     const getEventsByParticipantId = (timeline: any, participantId: any) => {
         let allEvents: any = [];
@@ -188,8 +188,8 @@ export default function AramResult({ searchedpuuid, rankResults, rankResultTimel
         return allEvents;
     }
 
-    const overallStats = calculateOverallStats(rankResults, searchedpuuid);
-    const championStats = calculateChampionStats(rankResults, searchedpuuid);
+    const overallStats = calculateOverallStats(aramResults, searchedpuuid);
+    const championStats = calculateChampionStats(aramResults, searchedpuuid);
     const winLoseData = [
         { name: 'Wins', value: overallStats.wins, fill: '#8884d8' },
         { name: 'Losses', value: overallStats.losses, fill: '#ff7300' }
@@ -252,7 +252,7 @@ export default function AramResult({ searchedpuuid, rankResults, rankResultTimel
                     const maxDamageDealt = Math.max(...participant.map((p: Participant) => p.totalDamageDealtToChampions));
                     const maxDamageTaken = Math.max(...participant.map((p: Participant) => p.totalDamageTaken));
 
-                    const rankResultTimeline = rankResultTimelines[i];
+                    const rankResultTimeline = aramResultTimelines[i];
                     if (!rankResultTimeline || !rankResultTimeline.info) {
                         return null;
                     }

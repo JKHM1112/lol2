@@ -1,10 +1,7 @@
 //처음 랭크 20게임 전적 검색
-import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 import SelectedGames from "@/app/games/components/selectedGames";
 import SelectedProfile from "@/app/games/components/selectedProfile";
 import Games from "@/app/games/page";
-import { connectDB } from "@/util/database";
-import { getServerSession } from "next-auth";
 
 const api_key = process.env.RIOT_API_KEY as string;
 
@@ -149,31 +146,13 @@ interface Participant {
     summonerId: string;
 }
 
-interface Session {
-    user: {
-        email: string;
-    }
-}
-interface user_cred_DB {
-    favorites: string[]
-    email: string
-}
 export default async function GameSelect({ params }: { params: { summoner: string } }) {
-    const db = (await connectDB).db('dream')
-    let result = await db.collection('user_cred').find().sort({ _id: -1 }).toArray()
-    let email: string | null | undefined = ''
-    let searchFavorites: string[] | undefined = []
-    let session: Session | null = await getServerSession(authOptions)
-    if (session) {
-        email = session.user.email
-        searchFavorites = result.find((favorite: user_cred_DB) => favorite.email === email).favorites
-    }
 
     const [gameName, tagLines] = params.summoner.split('-');
     const tagLine = tagLines || 'KR1';
 
     let searchedpuuid, rankedMatchIds, summonerData, summonerLeaueDataResult;
-    let results: MatchData[] = [], resultTimelines: MatchData[] = []
+    let resultData: MatchData[] = [], resultTimelines: MatchData[] = []
     try {
         const account = await getAccount(gameName, tagLine);    // puuid, gameName, tagLine
         if (!account) throw new Error("소환사 정보가 없다.");
@@ -198,12 +177,10 @@ export default async function GameSelect({ params }: { params: { summoner: strin
             const matchTimeline = await getMatchDataTimeline(matchId);
             return { matchData, matchTimeline };
         });
-
         const rankDataResults = await Promise.all(rankDataPromises);
-        results = rankDataResults.map(result => result.matchData);
+        resultData = rankDataResults.map(result => result.matchData);
         resultTimelines = rankDataResults.map(result => result.matchTimeline);
-
-
+        
     } catch (error) {
         console.error("Error: ", error); // 추가적인 디버깅 정보를 위해
         return (
@@ -220,8 +197,8 @@ export default async function GameSelect({ params }: { params: { summoner: strin
     return (
         <div className="overflow-x-auto">
             <Games />
-            <SelectedProfile fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} searchFavorites={searchFavorites}/>
-            <SelectedGames fullSummonerName={params.summoner} results={results} resultTimelines={resultTimelines} searchedpuuid={searchedpuuid} queue={420} />
+            <SelectedProfile fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} />
+            <SelectedGames fullSummonerName={params.summoner} resultData={resultData} resultTimelines={resultTimelines} searchedpuuid={searchedpuuid} queue={420} />
         </div>
     );
 }

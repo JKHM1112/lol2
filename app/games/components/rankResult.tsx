@@ -37,6 +37,7 @@ interface PlayerData {
     damageDealtToBuildings?: number;
 }
 export default function RankResult({ searchedpuuid, rankResults, rankResultTimelines, queue, tier }: any) {
+    console.log(rankResultTimelines)
     let winLoses: any[] = []
 
     function calculateOverallStats(rankResults: infoType[], puuid: string) {
@@ -207,9 +208,7 @@ export default function RankResult({ searchedpuuid, rankResults, rankResultTimel
                     </div>
                     <div className="text-center justify-between items-center">
                         <p>평균 KDA: {overallStats.kda}</p>
-                        <p>평균 킬: {overallStats.avgKills}</p>
-                        <p>평균 데스: {overallStats.avgDeaths}</p>
-                        <p>평균 어시스트: {overallStats.avgAssists}</p>
+                        <p>{overallStats.avgKills}/{overallStats.avgDeaths}/{overallStats.avgAssists}</p>
                     </div>
                     <div className="flex justify-between items-center">
                         {renderCharts && (

@@ -1,28 +1,24 @@
-//my-app/app/api/post/signup/route.ts
-
-import { connectDB } from "@/util/database"
-import { NextRequest } from "next/server"
+import { connectDB } from "@/util/database";
+import { NextRequest, NextResponse } from "next/server";
 import bcrypt from 'bcrypt';
 
 export async function POST(request: NextRequest) {
-    if (request.method == 'POST') {
-        const db = (await connectDB).db('dream')
-        const formData = await request.formData();
-        const name = formData.get('name')
-        const email = formData.get('email')
-        const password = formData.get('password')
-        const DBName = await db.collection('user_cred').findOne({ name: name })
-        const DBEmail = await db.collection('user_cred').findOne({ email: email })
+  if (request.method === 'POST') {
+    const db = (await connectDB).db('dream');
+    const { nickname, email, password } = await request.json();
 
-        if ((DBName && DBName.name === name) || (DBEmail && DBEmail.email === email)) {
-            return Response.redirect(new URL('/', request.nextUrl.origin));
-        }
+    const existingUserByNickname = await db.collection('user_cred').findOne({ nickname });
+    const existingUserByEmail = await db.collection('user_cred').findOne({ email });
 
-        if (password) {
-            const hash = await bcrypt.hash(password.toString(), 10)
-            await db.collection('user_cred').insertOne({ name, email, password: hash })
-        }
-
-        return Response.redirect(new URL('/', request.nextUrl.origin))
+    if (existingUserByNickname || existingUserByEmail) {
+      return NextResponse.json({ message: '닉네임 또는 이메일이 이미 사용 중입니다.' }, { status: 409 });
     }
+
+    if (password) {
+      const hash = await bcrypt.hash(password, 10);
+      await db.collection('user_cred').insertOne({ nickname, email, password: hash });
+    }
+
+    return NextResponse.redirect(new URL('/', request.nextUrl.origin));
+  }
 }

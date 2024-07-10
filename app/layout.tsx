@@ -50,9 +50,12 @@ export default async function RootLayout({ children, }: Readonly<{
           {
           }
           <Link href="/patchNotes"> 패치노트 </Link>
-          <Link href="/aramTierList"> 칼바람티어정리 </Link>
+          <Link href="/versus"> 상대법 검색 </Link>
           {
             session ? <></> : <Link href="/register"> 회원가입 </Link>
+          }
+          {
+            session ? <Link href="/saveGameHistory"> 계정등록</Link> : <></>
           }
           {
             session ? <span> {session.user.name} <LogoutBtn /> </span> : <LoginBtn />

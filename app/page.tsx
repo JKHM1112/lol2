@@ -41,13 +41,9 @@ export default async function Home() {
   }
 
   return (
-    <div>
-      <div>
+    <div className="flex">
         <Games />
-      </div>
-      <div>
         <CharCarousel recentData={recentData} data2={data2} data3={data3[0]} />
-      </div>
     </div>
   )
 }

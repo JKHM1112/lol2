@@ -144,7 +144,7 @@ export default async function Queue_type({ params }: { params: { summoner: strin
     const tagLine = tagLines || 'KR1';
 
     let searchedpuuid, matchIds, summonerData, summonerLeaueDataResult;
-    let results: MatchData[] = [], resultTimelines: MatchData[] = []
+    let resultData: MatchData[] = [], resultTimelines: MatchData[] = []
     try {
         const account = await getAccount(gameName, tagLine);    // puuid, gameName, tagLine
         if (!account) throw new Error("소환사 정보가 없다.");
@@ -171,7 +171,7 @@ export default async function Queue_type({ params }: { params: { summoner: strin
         });
 
         const rankDataResults = await Promise.all(rankDataPromises);
-        results = rankDataResults.map(result => result.matchData);
+        resultData = rankDataResults.map(result => result.matchData);
         resultTimelines = rankDataResults.map(result => result.matchTimeline);
 
 
@@ -198,7 +198,7 @@ export default async function Queue_type({ params }: { params: { summoner: strin
         <div>
             <Games />
             <SelectedProfile fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} />
-            <SelectedGames fullSummonerName={params.summoner} results={results} resultTimelines={resultTimelines} searchedpuuid={searchedpuuid} queue={params.queue_type} tier={soloLeagueData.tier} />
+            <SelectedGames fullSummonerName={params.summoner} resultData={resultData} resultTimelines={resultTimelines} searchedpuuid={searchedpuuid} queue={params.queue_type} tier={soloLeagueData.tier} />
         </div>
     )
 }

@@ -6,7 +6,7 @@ export default function ReloadButton() {
 
     return (
         <div>
-            <Button onClick={() => window.location.reload()}>전적 갱신</Button>
+            <Button onClick={() => window.location.reload()}>새로 고침</Button>
         </div>
     );
 }

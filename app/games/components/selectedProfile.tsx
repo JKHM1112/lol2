@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import ReloadButton from "@/app/games/components/reloadButton";
 
-export default function SelectedProfile({ fullSummonerName, summonerData, summonerLeaueDataResult,searchFavorites }: any) {
+export default function SelectedProfile({ fullSummonerName, summonerData, summonerLeaueDataResult}: any) {
     const [gameName, tagLines] = fullSummonerName.split('-');
     const tagLine = tagLines || 'KR1';
     const decodedGameName = decodeURIComponent(gameName);

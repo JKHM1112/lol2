@@ -34,7 +34,7 @@ export default async function Games() {
 
     return (
         <div>
-            <SearchBar searchFavorites={searchFavorites} searchRecently={searchRecently} />
+            <SearchBar searchFavorites={searchFavorites} searchRecently={searchRecently} email={email}/>
         </div>
     );
 }
