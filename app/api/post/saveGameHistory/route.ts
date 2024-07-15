@@ -7,7 +7,7 @@ import { z } from "zod";
 const api_key = process.env.RIOT_API_KEY as string;
 
 const schema = z.object({
-    email: z.string().email(),
+    email: z.string(),
     nickname: z.string(),
     tag: z.string(),
 });
@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
         const account = await getAccount(nickname, tag);
         const puuid = account.puuid;
 
-        const existingEntry = await db.collection('saveGameNickname').findOne({ email, nickname });
+        const existingEntry = await db.collection('saveGameNickname').findOne({ nickname, tag });
 
         if (existingEntry) {
             return NextResponse.json({ error: "이미 등록되어 있습니다." }, { status: 409 });

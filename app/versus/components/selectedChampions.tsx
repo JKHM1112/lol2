@@ -9,47 +9,72 @@ import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "@
 import AnalyzeTable from "./analyzeTable";
 import Image from "next/image";
 
-interface levelUpEvent {
+export interface LevelUpEvent {
     level: number;
     timestamp: number;
 }
-interface frameData {
+
+export interface FrameData {
     jungleMinionsKilled: number;
     minionsKilled: number;
     totalGold: number;
     xp: number;
 }
-interface Challenge {
+
+export interface Challenge {
     damagePerMinute: number;
     damageTakenOnTeamPercentage: number;
+    kda: number;
     killParticipation: number;
+    legendaryItemUsed: number[];
     soloKills: number;
     teamDamagePercentage: number;
     turretPlatesTaken: number;
-    visionScoreAdvantageLaneOpponent: number;
 }
-interface Participant {
+
+export interface Participant {
     assists: number;
-    challenges: Challenge[];
+    challenges: Challenge;
+    champExperience: number;
     champLevel: number;
     championName: string;
     damageDealtToBuildings: number;
     deaths: number;
+    goldEarned: number;
     individualPosition: string;
+    items: number[];
     kills: number;
+    magicDamageDealtToChampions: number;
+    magicDamageTaken: number;
+    physicalDamageDealtToChampions: number;
+    physicalDamageTaken: number;
+    participantId: number;
+    riotIdGameName: string;
+    riotIdTagline: string;
+    summoner1Id: number;
+    summoner2Id: number;
+    totalDamageDealtToChampions: number;
+    totalDamageTaken: number;
+    totalMinionsKilled: number;
+    trueDamageDealtToChampions: number;
+    trueDamageTaken: number;
     visionScore: number;
     win: boolean;
-    levelUpEvents: levelUpEvent[];
-    frameData: frameData[];
+    levelUpEvents: LevelUpEvent[];
+    frameData: FrameData[];
 }
 
-interface MatchData {
+export interface MatchData {
     info: {
+        gameDuration: number;
+        gameEndTimestamp: number;
+        gameStartTimestamp: number;
         gameVersion: string;
         participants: Participant[];
     };
     tier: string;
 }
+
 
 interface Props {
     topMatches: string;
@@ -64,7 +89,7 @@ const championInfo = champion;
 const championsList = Object.values(championInfo.data).map((champ) => ({
     englishName: champ.id,
     koreanName: champ.name,
-    imageUrl: '/Champion/' + champ.image.full
+    imageUrl: '/champion/' + champ.image.full
 }));
 
 const roles = [
@@ -99,8 +124,8 @@ const calculateWinRate = (matches: MatchData[], championName: string) => {
 };
 
 export default function ChampionSelector({ topMatches, jungleMatches, middleMatches, bottomMatches, utilityMatches }: Props) {
-    const [firstChampion, setFirstChampion] = useState<{ koreanName: string; englishName: string } | null>(null);//첫번째챔피언
-    const [secondChampion, setSecondChampion] = useState<{ koreanName: string; englishName: string } | null>(null);//두번째챔피언
+    const [firstChampion, setFirstChampion] = useState<{ koreanName: string; englishName: string; imageUrl: string; } | null>(null);//첫번째챔피언
+    const [secondChampion, setSecondChampion] = useState<{ koreanName: string; englishName: string; imageUrl: string; } | null>(null);//두번째챔피언
     const [selectedRole, setSelectedRole] = useState('ALL');//선택한라인
     const [selectedTierGroup, setSelectedTierGroup] = useState('ALL');//선택한티어
     const [isFirstChampionOpen, setIsFirstChampionOpen] = useState(false);
@@ -251,7 +276,7 @@ export default function ChampionSelector({ topMatches, jungleMatches, middleMatc
                 {firstChampion && (
                     <div className="flex flex-col items-center">
                         <div className="text-lg font-bold">{firstChampion.koreanName}</div>
-                        <Image alt={firstChampion.koreanName} src={'/Champion/' + firstChampion.englishName + '.png'} height={100} width={100} className="rounded-full" />
+                        <Image alt={firstChampion.koreanName} src={firstChampion.imageUrl} height={100} width={100} className="rounded-full" />
                         <div className="text-sm">승률: {firstChampionWinRate.toFixed(2)}%</div>
                         <div className="text-sm">표본수: {firstChampionMatches.length}</div>
                     </div>
@@ -266,13 +291,21 @@ export default function ChampionSelector({ topMatches, jungleMatches, middleMatc
                 {secondChampion && (
                     <div className="flex flex-col items-center">
                         <div className="text-lg font-bold">{secondChampion.koreanName}</div>
-                        <Image alt={secondChampion.koreanName} src={'/Champion/' + secondChampion.englishName + '.png'} height={100} width={100} className="rounded-full" />
+                        <Image alt={secondChampion.koreanName} src={secondChampion.imageUrl} height={100} width={100} className="rounded-full" />
                         <div className="text-sm">승률: {secondChampionWinRate.toFixed(2)}%</div>
                         <div className="text-sm">표본수: {secondChampionMatches.length}</div>
                     </div>
                 )}
             </div>
-            <AnalyzeTable firstChampionMatches={firstChampionMatches} secondChampionMatches={secondChampionMatches} bothChampionsMatches={bothChampionsMatches} />
+            <div>
+                {bothChampionsMatches && firstChampion && secondChampion && (
+                    <AnalyzeTable
+                        bothChampionsMatches={bothChampionsMatches}
+                        firstChampion={firstChampion?.englishName}
+                        secondChampion={secondChampion?.englishName}
+                    />
+                )}
+            </div>
         </div>
     );
 }

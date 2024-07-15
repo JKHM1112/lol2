@@ -36,11 +36,20 @@ async function getMatchData(matchId: string) {
             "Cache-Control": "no-cache, no-store, must-revalidate"
         }
     };
-    const response = await fetch(url, options);
-    if (!response.ok) {
-        throw new Error('match data 에러');
+
+    // 재시도 로직 추가
+    for (let i = 0; i < 3; i++) {
+        try {
+            const response = await fetch(url, options);
+            if (!response.ok) {
+                throw new Error('match data 에러');
+            }
+            return await response.json();
+        } catch (error) {
+            console.error(`Attempt ${i + 1} to fetch match data failed:`, error);
+            if (i === 2) throw error;  // 마지막 시도에서만 에러를 throw
+        }
     }
-    return await response.json();
 }
 
 async function getMatchTimeLine(matchId: string) {
@@ -56,11 +65,20 @@ async function getMatchTimeLine(matchId: string) {
             "Cache-Control": "no-cache, no-store, must-revalidate"
         }
     };
-    const response = await fetch(url, options);
-    if (!response.ok) {
-        throw new Error('match timeline 에러');
+
+    // 재시도 로직 추가
+    for (let i = 0; i < 3; i++) {
+        try {
+            const response = await fetch(url, options);
+            if (!response.ok) {
+                throw new Error('match timeline 에러');
+            }
+            return await response.json();
+        } catch (error) {
+            console.error(`Attempt ${i + 1} to fetch match timeline failed:`, error);
+            if (i === 2) throw error;  // 마지막 시도에서만 에러를 throw
+        }
     }
-    return await response.json();
 }
 
 export async function POST(request: NextRequest) {
@@ -93,7 +111,10 @@ export async function POST(request: NextRequest) {
                         if (!levelUpEventsByParticipant[participantId]) {
                             levelUpEventsByParticipant[participantId] = [];
                         }
-                        levelUpEventsByParticipant[participantId].push(event);
+                        levelUpEventsByParticipant[participantId].push({
+                            level: event.level,
+                            timestamp: event.timestamp
+                        });
                     }
                 });
 
@@ -116,21 +137,17 @@ export async function POST(request: NextRequest) {
                     participantsByPosition[position].push({
                         assists: participant.assists,
                         challenges: {
-                            damagePerMinute: participant.challenges.damagePerMinute,
-                            damageTakenOnTeamPercentage: participant.challenges.damageTakenOnTeamPercentage,
-                            gameLength: participant.challenges.gameLength,
-                            killParticipation: participant.challenges.killParticipation,
-                            laneMinionsFirst10Minutes: participant.challenges.laneMinionsFirst10Minutes,
-                            legendaryItemUsed: participant.challenges.legendaryItemUsed,
-                            soloKills: participant.challenges.soloKills,
-                            teamDamagePercentage: participant.challenges.teamDamagePercentage,
-                            turretPlatesTaken: participant.challenges.turretPlatesTaken,
-                            visionScoreAdvantageLaneOpponent: participant.challenges.visionScoreAdvantageLaneOpponent,
-                            visionScorePerMinute: participant.challenges.visionScorePerMinute
+                            damagePerMinute: participant.challenges.damagePerMinute,//분당피해량
+                            damageTakenOnTeamPercentage: participant.challenges.damageTakenOnTeamPercentage,//팀에서 받은 피해량 비율
+                            kda: participant.challenges.kda,//kda
+                            killParticipation: participant.challenges.killParticipation,//킬 참여율
+                            legendaryItemUsed: participant.challenges.legendaryItemUsed,// 사용한 전설 아이템
+                            soloKills: participant.challenges.soloKills,//솔로킬
+                            teamDamagePercentage: participant.challenges.teamDamagePercentage,//팀에서 가한 피해량 비율
+                            turretPlatesTaken: participant.challenges.turretPlatesTaken,//포탑골드
                         },
                         champExperience: participant.champExperience,
                         champLevel: participant.champLevel,
-                        championId: participant.championId,
                         championName: participant.championName,
                         damageDealtToBuildings: participant.damageDealtToBuildings,
                         deaths: participant.deaths,
@@ -146,23 +163,17 @@ export async function POST(request: NextRequest) {
                             participant.item6
                         ],
                         kills: participant.kills,
-                        lane: participant.lane,
                         magicDamageDealtToChampions: participant.magicDamageDealtToChampions,
                         magicDamageTaken: participant.magicDamageTaken,
                         physicalDamageDealtToChampions: participant.physicalDamageDealtToChampions,
                         physicalDamageTaken: participant.physicalDamageTaken,
                         participantId: participant.participantId,
-                        puuid: participant.puuid,
                         riotIdGameName: participant.riotIdGameName,
                         riotIdTagline: participant.riotIdTagline,
                         summoner1Id: participant.summoner1Id,
                         summoner2Id: participant.summoner2Id,
-                        summonerId: participant.summonerId,
-                        teamId: participant.teamId,
-                        teamPosition: participant.teamPosition,
                         totalDamageDealtToChampions: participant.totalDamageDealtToChampions,
                         totalDamageTaken: participant.totalDamageTaken,
-                        totalMinionsKilled: participant.totalMinionsKilled,
                         trueDamageDealtToChampions: participant.trueDamageDealtToChampions,
                         trueDamageTaken: participant.trueDamageTaken,
                         visionScore: participant.visionScore,
@@ -173,11 +184,24 @@ export async function POST(request: NextRequest) {
                 }
             });
 
+            let matchExists = false;
+
             for (const [position, participants] of Object.entries(participantsByPosition)) {
                 if (participants.length > 0) {
                     const collectionName = `matchData${position}`;
                     const existingMatch = await db.collection(collectionName).findOne({ 'metadata.matchId': matchId });
-                    if (!existingMatch) {
+                    if (existingMatch) {
+                        console.log(`매치 데이터가 이미 존재합니다: matchId = ${matchId}`);
+                        matchExists = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!matchExists) {
+                for (const [position, participants] of Object.entries(participantsByPosition)) {
+                    if (participants.length > 0) {
+                        const collectionName = `matchData${position}`;
                         const gameData = {
                             metadata: {
                                 matchId: matchData.metadata.matchId
@@ -192,7 +216,7 @@ export async function POST(request: NextRequest) {
                             tier: tier
                         };
                         const result = await db.collection(collectionName).insertOne(gameData);
-                        console.log(` match data에 ${collectionName}와 ID: ${result.insertedId} 삽입성공`);
+                        console.log(`match data에 ${collectionName}와 ID: ${result.insertedId} 삽입성공`);
                     }
                 }
             }
