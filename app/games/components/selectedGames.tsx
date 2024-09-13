@@ -10,9 +10,9 @@ export default function SelectedGames({ fullSummonerName, resultData, resultTime
                 <Link href={`/games/${fullSummonerName}/420`}>
                     <button className={`px-4 py-2 rounded-lg ${queue == 420 ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>솔로랭크</button>
                 </Link>
-                <Link href={`/games/${fullSummonerName}/440`}>
+                {/* <Link href={`/games/${fullSummonerName}/440`}>
                     <button className={`px-4 py-2 rounded-lg ${queue == 440 ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>자유랭크</button>
-                </Link>
+                </Link> */}
                 <Link href={`/games/${fullSummonerName}/450`}>
                     <button className={`px-4 py-2 rounded-lg ${queue == 450 ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>무작위 총격전</button>
                 </Link>

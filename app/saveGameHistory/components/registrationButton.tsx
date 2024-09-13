@@ -8,17 +8,18 @@ export interface NicknameTag {
     puuid: string;
     tag: string;
     tier: string;
-
 }
+
 interface UserSession {
     user: {
         name: string;
         email: string;
     }
 }
+
 interface Props {
     saveNickname: NicknameTag[];
-    session: UserSession
+    session: UserSession;
 }
 
 export default function RegistrationButton({ saveNickname, session }: Props) {
@@ -39,26 +40,26 @@ export default function RegistrationButton({ saveNickname, session }: Props) {
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ puuid: nickname.puuid, queue: 420, start: 0, games: 10, tier: nickname.tier }), // queue, start, games는 필요에 따라 조정하세요.
+                    body: JSON.stringify({ puuid: nickname.puuid, queue: 420, start: 0, games: 10, tier: nickname.tier }), // Adjust as necessary
                 });
 
                 const data = await response.json();
                 if (!response.ok) {
                     setMessage(data.error || 'Failed to save match data');
-                    break; // 오류가 발생하면 중지
+                    break; // Stop on error
                 }
             } catch (error) {
                 setMessage('An unexpected error occurred');
-                break; // 오류가 발생하면 중지
+                break; // Stop on error
             }
 
-            await new Promise(resolve => setTimeout(resolve, 10000)); // 6초 대기
+            await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 10 seconds
         }
 
         setCurrentNickname(null);
         setLoading(false);
         if (!message) {
-            setMessage('진행 완료');
+            setMessage('Registration completed');
         }
     };
 
@@ -70,12 +71,11 @@ export default function RegistrationButton({ saveNickname, session }: Props) {
                     className="p-2 bg-blue-500 text-white rounded"
                     disabled={loading}
                 >
-                    {loading ? '진행중...' : '진행 완료'}
+                    {loading ? 'Processing...' : 'Start Registration'}
                 </button>
             ) : null}
-            {currentNickname && <p className="mt-4">{currentNickname} ---- 진행중</p>}
+            {currentNickname && <p className="mt-4">{currentNickname} ---- Processing</p>}
             {message && <p className="mt-4">{message}</p>}
         </div>
     );
-    
 }

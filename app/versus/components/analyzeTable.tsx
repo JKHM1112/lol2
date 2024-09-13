@@ -42,8 +42,6 @@ export default function AnalyzeTable({ bothChampionsMatches, firstChampion, seco
     const [secondChampionDamageDealtToBuildings, setSecondChampionDamageDealtToBuildings] = useState(0);
     const [firstChampionVisionScore, setFirstChampionVisionScore] = useState(0);
     const [secondChampionVisionScore, setSecondChampionVisionScore] = useState(0);
-
-    console.log(firstChampionArray)
     useEffect(() => {
         const firstArray: Participant[] = [];
         const secondArray: Participant[] = [];
@@ -170,7 +168,7 @@ export default function AnalyzeTable({ bothChampionsMatches, firstChampion, seco
     }, [firstChampionArray, secondChampionArray]);
 
     return (
-        <div className="mt-4 p-4 bg-gray-800 text-white rounded-lg">
+        <div className="mt-4 p-4 rounded-lg">
             <div className=" justify-between items-center mb-4">
                 <div className="text-xl">{(100 * firstChampion2 / (firstChampion2 + secondChampion2)).toFixed(0)}% 선2렙 {(100 * secondChampion2 / (firstChampion2 + secondChampion2)).toFixed(0)}%</div>
                 <div className="text-xl">{(100 * firstChampion3 / (firstChampion3 + secondChampion3)).toFixed(0)}% 선3렙 {(100 * secondChampion3 / (firstChampion3 + secondChampion3)).toFixed(0)}%</div>
