@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useRouter } from 'next/navigation';
@@ -17,6 +17,7 @@ export default function SearchBar({ searchFavorites, searchRecently, email }: se
     const [showDropdown, setShowDropdown] = React.useState(false); // 드롭다운 보여줄지 결정
     const [selectedOption, setSelectedOption] = React.useState('recent'); // 선택한 옵션
     const router = useRouter();
+    const dropdownRef = React.useRef<HTMLDivElement>(null); // 드롭다운 참조
 
     // 로그인 상태 확인
     const isLoggedIn = Boolean(email != '');
@@ -31,13 +32,25 @@ export default function SearchBar({ searchFavorites, searchRecently, email }: se
             const storedFavorites = localStorage.getItem('favorites');
             if (storedSearches) {
                 setRecentSearches(JSON.parse(storedSearches));
-            } else {
             }
             if (storedFavorites) {
                 setFavorites(JSON.parse(storedFavorites));
-            } else {
             }
         }
+    }, []);
+
+    // 검색창 외부 클릭 시 드롭다운을 닫는 로직
+    React.useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setShowDropdown(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
     }, []);
 
     const handleSearch = async (name: string) => {
@@ -118,11 +131,12 @@ export default function SearchBar({ searchFavorites, searchRecently, email }: se
     };
 
     return (
-        <div className='flex flex-col justify-center items-center gap-2 p-4'>
-            <div className='relative w-72'>
-                <div className='flex'>
+        <div className="flex flex-col justify-center items-center gap-2 p-4">
+            <div className="relative w-96" ref={dropdownRef}>
+                {/* 검색창 */}
+                <div className="flex rounded-full border-2 border-gray-300 shadow-md">
                     <Input
-                        className='w-full'
+                        className="w-full rounded-l-full px-4 py-2 focus:outline-none focus:ring-0"
                         onChange={(e) => {
                             const value = e.target.value;
                             if (value.includes('#')) {
@@ -138,64 +152,57 @@ export default function SearchBar({ searchFavorites, searchRecently, email }: se
                                 handleSearch(summonerName);
                             }
                         }}
-                        onMouseEnter={() => setShowDropdown(true)}
-                        onMouseLeave={() => setShowDropdown(false)}
-                    />
-                    <Button onClick={() => handleSearch(summonerName)}>검색</Button>
+                    ></Input>
+                    <Button onClick={() => handleSearch(summonerName)} className="rounded-r-full bg-blue-500 text-white px-4 py-2">
+                        검색
+                    </Button>
                 </div>
+
+                {/* 드롭다운 */}
                 {showDropdown && (
-                    <div className='absolute bg-white border border-gray-300 rounded-b-lg shadow-md w-full max-h-40 overflow-y-scroll' onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
-                        <div className='flex justify-between'>
+                    <div className="absolute z-10 bg-white border-2 border-gray-300 rounded-b-lg shadow-lg w-full mt-1">
+                        <div className="flex justify-between">
                             <button
-                                className={`w-1/2 px-4 py-2 ${selectedOption === 'recent' ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}
+                                className={`w-1/2 px-4 py-2 ${selectedOption === 'recent' ? '' : 'bg-gray-200'}`}
                                 onClick={() => setSelectedOption('recent')}
                             >
                                 최근 검색
                             </button>
                             <button
-                                className={`w-1/2 px-4 py-2 ${selectedOption === 'favorites' ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}
+                                className={`w-1/2 px-4 py-2 ${selectedOption === 'favorites' ? '' : 'bg-gray-200'}`}
                                 onClick={() => setSelectedOption('favorites')}
                             >
                                 즐겨찾기
                             </button>
                         </div>
-                        <div className="overflow-y-scroll max-h-40">
-                            {selectedOption === 'recent' && (
-                                <div>
-                                    {recentSearches.map((search, index) => (
-                                        <div key={index} className='flex justify-between items-center p-2 cursor-pointer hover:bg-gray-200'>
-                                            <div onClick={() => handleSearch(search)}>
-                                                {search.replace('-', '#')}
-                                            </div>
-                                            <div className="flex items-center">
-                                                <button
-                                                    type="button"
-                                                    onClick={() => toggleFavorite(search)}
-                                                    className='ml-2'
-                                                >
-                                                    {favorites.includes(search) ? '⭐' : '☆'}
-                                                </button>
-                                                <button onClick={() => handleDeleteSearch(search)} className='text-red-500 ml-2'>
-                                                    x
-                                                </button>
-                                            </div>
+
+                        {/* 검색 결과 리스트 */}
+                        <div className="py-2">
+                            {selectedOption === 'recent' && recentSearches.length > 0 && (
+                                recentSearches.map((search, index) => (
+                                    <div key={index} className="flex justify-between items-center p-2 hover:bg-gray-200 cursor-pointer">
+                                        <div onClick={() => handleSearch(search)}>
+                                            {search.replace('-', '#')}
                                         </div>
-                                    ))}
-                                </div>
-                            )}
-                            {selectedOption === 'favorites' && (
-                                <div>
-                                    {favorites.map((favorite, index) => (
-                                        <div key={index} className='flex justify-between items-center p-2 cursor-pointer hover:bg-gray-200'>
-                                            <div onClick={() => handleSearch(favorite)}>
-                                                {favorite.replace('-', '#')}
-                                            </div>
-                                            <button onClick={() => handleDeleteFavorite(favorite)} className='text-red-500 ml-2'>
-                                                x
+                                        <div className="flex items-center space-x-2">
+                                            <button type="button" onClick={() => toggleFavorite(search)}>
+                                                {favorites.includes(search) ? '⭐' : '☆'}
                                             </button>
+                                            <button className="text-red-500" onClick={() => handleDeleteSearch(search)}>x</button>
                                         </div>
-                                    ))}
-                                </div>
+                                    </div>
+                                ))
+                            )}
+
+                            {selectedOption === 'favorites' && favorites.length > 0 && (
+                                favorites.map((favorite, index) => (
+                                    <div key={index} className="flex justify-between items-center p-2 hover:bg-gray-200 cursor-pointer">
+                                        <div onClick={() => handleSearch(favorite)}>
+                                            {favorite.replace('-', '#')}
+                                        </div>
+                                        <button className="text-red-500" onClick={() => handleDeleteFavorite(favorite)}>x</button>
+                                    </div>
+                                ))
                             )}
                         </div>
                     </div>

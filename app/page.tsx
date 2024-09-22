@@ -1,49 +1,18 @@
-import { connectDB } from "@/util/database"
-import CharCarousel from "./components/charCarousel"
-import Games from "./games/page"
-
-interface dataInterface {
-  chams: string[]
-  date: string
-  _id: string
-}
+import Link from "next/link";
+import Games from "./games/page";
+import RiotPatchNotes from "./components/riotPatchNotes";
 
 export default async function Home() {
-  const db = (await connectDB).db("dream")
-
-  const today = new Date()
-  const fourteenDaysAgo = new Date()
-  fourteenDaysAgo.setDate(today.getDate() - 14)
-  const fourteenDaysAgoString = fourteenDaysAgo.toISOString().split('T')[0]
-
-  let data1: dataInterface[] = await db.collection('dataEnteredDirectly').find().sort({ _id: -1 }).toArray()
-  let data2 = await db.collection('patchNotes').findOne({}, { sort: { _id: -1 } });
-  let data3 = await db.collection('patchNotes').find({}, { sort: { _id: -1 } }).skip(1).limit(1).toArray();
-  
-  if (data2) {
-    data2._id = data2._id.toString();
-  }
-  
-  if (data3.length > 0) {
-    data3[0]._id = data3[0]._id.toString();
-  }
-
-  let recentData = []
-  for (let item of data1) {
-    if (item.date >= fourteenDaysAgoString) {
-      recentData.push({
-        ...item,
-        _id: item._id.toString()
-      })
-    } else {
-      break
-    }
-  }
-
   return (
-    <div className="flex">
-        <Games />
-        <CharCarousel recentData={recentData} data2={data2} data3={data3[0]} />
+    <div className="flex flex-col justify-start items-center min-h-screen bg-gray-100">
+      <div className="searchLogo flex items-center justify-center mt-8 mb-6">
+        <span className="lolL">LOL</span>
+        <span className="recordL">RECORD</span>
+      </div>
+      <Games />
+      <div className="flex">
+        <RiotPatchNotes />
+      </div>
     </div>
-  )
+  );
 }
