@@ -15,7 +15,6 @@ export default function SummonerTitleBar({ gameNameTagLine, favorites, email }: 
         alert("닉네임이 복사되었습니다: " + text);
     };
 
-    const formattedGameNameTagLine = gameNameTagLine.replace("-", "#");
     const [isFavorite, setIsFavorite] = React.useState(false);
 
     const isLoggedIn = Boolean(email);

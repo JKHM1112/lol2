@@ -1,8 +1,6 @@
 'use client'
-import ReloadButton from "@/app/games/components/reloadButton";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
-
-
 
 export default function SaveGame({ session }: { session: any }) {
     const [error, setError] = useState<string | null>(null);
@@ -61,7 +59,9 @@ export default function SaveGame({ session }: { session: any }) {
                 <input type="hidden" name="email" defaultValue={session.user.email} />
                 <button type="submit" className="p-2 bg-blue-500 text-white rounded">등록</button>
             </form>
-            <ReloadButton />
+            <Button className="mt-2 w-28 bg-sky-500 text-white hover:bg-sky-600 rounded-full shadow-md px-4 py-2 transition-all duration-200 ease-in-out">
+                새로고침
+            </Button>
         </div>
     )
 }
