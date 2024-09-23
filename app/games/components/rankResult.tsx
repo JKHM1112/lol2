@@ -37,7 +37,6 @@ interface PlayerData {
     damageDealtToBuildings?: number;
 }
 export default function RankResult({ searchedpuuid, rankResults, rankResultTimelines, queue, tier }: any) {
-    console.log(rankResultTimelines)
     let winLoses: any[] = []
 
     function calculateOverallStats(rankResults: infoType[], puuid: string) {
@@ -111,7 +110,7 @@ export default function RankResult({ searchedpuuid, rankResults, rankResultTimel
 
         const sortedChampions = Object.entries(championStats)
             .sort(([, a]: any, [, b]: any) => b.games - a.games)
-            .slice(0, 4);
+            .slice(0, 3);
 
         return sortedChampions.map(([champion, stats]: any) => ({
             champion,
@@ -195,12 +194,60 @@ export default function RankResult({ searchedpuuid, rankResults, rankResultTimel
     const overallStats = calculateOverallStats(rankResults, searchedpuuid);
     const championStats = calculateChampionStats(rankResults, searchedpuuid);
     const winLoseData = [
-        { name: 'Wins', value: overallStats.wins, fill: '#8884d8' },
-        { name: 'Losses', value: overallStats.losses, fill: '#ff7300' }
+        { name: 'Wins', value: overallStats.wins, fill: '#FF0040' },
+        { name: 'Losses', value: overallStats.losses, fill: '#0000FF' }
     ];
     return (
-        <div>
-            <div className="p-4 bg-orange-300 text-white rounded-lg">
+        <div className="">
+            <div className="flex">
+                {/*20게임 전적 통합*/}
+                <div className="w-[280px] h-[115px] bg-white rounded-lg shadow-md m-1">
+                    <div className="flex justify-around">
+                        {renderCharts && (
+                            <PieChart width={90} height={95} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+                                <Pie data={winLoseData} cx={45} cy={45} innerRadius={25} fill="#FF0040" paddingAngle={5} dataKey="value">
+                                    {winLoseData.map((entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={entry.fill} />
+                                    ))}
+                                    <Label className="p-1" value={overallStats.winRate} position="center" fill="#0000FF" style={{ fontSize: '18px' }} />
+                                </Pie>
+                            </PieChart>
+                        )}
+                        <div className="place-content-center">
+                            <p className="text-[14px] font-bold">{overallStats.wins + overallStats.losses}게임</p>
+                            <p className="text-[12px]">  {overallStats.wins}승 {overallStats.losses}패</p>
+                        </div>
+                        <div className="place-content-center">
+                            <p className="text-[12px]">{overallStats.kda} KDA</p>
+                            <p className="text-[12px]">{overallStats.avgKills} / {overallStats.avgDeaths} / {overallStats.avgAssists}</p>
+                        </div>
+                    </div>
+                </div>
+                {/*최근 많이 플레이한 챔피언*/}
+                <div className="w-[160px] h-[115px] bg-white rounded-lg shadow-md m-2">
+                    <p className=" ml-2 text-[10px]">최근 많이 플레이한 챔피언</p>
+                    {championStats.map((champ, index) => (
+                        <div key={index} className="flex ml-2">
+                            <div>
+                                <Image className="rounded-md mr-2" alt='champion' src={`/champion/${champ.champion}.png`} width={20} height={20} />
+                            </div>
+                            <div>
+                                <p className={parseFloat(champ.winRate) >= 50 ? "text-blue-500 text-[10px]" : "text-red-500 text-[10px]"}>승률: {champ.winRate}%</p>
+                                <div className="flex">
+                                    <p className="text-[10px]">{champ.wins}승{champ.losses}패</p>
+                                    <p className="text-[10px]">KDA: {champ.kda}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                {/*포지션 분포도*/}
+                <div className="w-[200px] h-[115px] bg-white rounded-lg shadow-md m-2">
+
+
+                </div>
+            </div>
+            <div className="p-4 bg-orange-300 text-white rounded-lg w-[500px]">
                 <div className="flex justify-between items-center">
                     <div className="text-center justify-between items-center">
                         <p className={parseFloat(overallStats.winRate) >= 50 ? "text-blue-500" : "text-red-500"}>승률: {overallStats.winRate}%</p>
@@ -243,7 +290,7 @@ export default function RankResult({ searchedpuuid, rankResults, rankResultTimel
                     ))}
                 </div>
             </div>
-            <Accordion type="single" collapsible>
+            <Accordion className="w-[500px]" type="single" collapsible>
                 {rankResultInfo.map((data: any, i: number) => {
                     const participant = data.participants;
                     const blueTeam = participant.slice(0, 5);
@@ -297,7 +344,7 @@ export default function RankResult({ searchedpuuid, rankResults, rankResultTimel
                         }
                     }).filter((skill: string) => skill !== '');
                     return (
-                        <AccordionItem style={{ width: '800px', margin: '0 auto' }} className="" key={'item' + i} value={'item' + i}>
+                        <AccordionItem style={{ width: '500px', margin: '0 auto' }} className="" key={'item' + i} value={'item' + i}>
                             <AccordionTrigger className={cn("", data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? 'bg-sky-200' : 'bg-rose-200')}>
                                 <Table>
                                     <TableBody>

@@ -6,6 +6,7 @@ import { getServerSession } from "next-auth";
 import { connectDB } from "@/util/database";
 import { Noto_Sans_KR } from "next/font/google";
 import type { Metadata } from "next";
+import Games from "./games/page";
 import "./globals.css";
 
 interface UserSession {
@@ -36,8 +37,8 @@ export default async function RootLayout({ children, }: Readonly<{ children: Rea
   return (
     <html lang="en">
       <body className={notoSansKr.className}>
-        <div className="navbar flex items-center justify-between p-4">
-          <div className="flex items-center space-x-6">
+        <div className="navbar flex flex-wrap items-center justify-between px-2 py-2 md:justify-center md:gap-4">
+          <div className="flex flex-wrap items-center space-x-4 text-sm">
             <Link href="/">
               <div className="searchLogo">
                 <span className="lolS">LOL</span>
@@ -45,15 +46,15 @@ export default async function RootLayout({ children, }: Readonly<{ children: Rea
               </div>
             </Link>
             <Link href="/lists">기록실</Link>
-            <Link href="/versus">상대법 검색</Link>
-            <Link href="/charSearch">챔피언검색</Link>
+            <Link href="/versus">상대법</Link>
+            <Link href="/charSearch">챔피언</Link>
             {session ? (
               <Link href="/write">직접입력하기</Link>
             ) : (
-              <Link href="/register">직접입력하기</Link>
+              <></>
             )}
+            <Games />
             {!session && <Link href="/register">회원가입</Link>}
-            {session && <Link href="/saveGameHistory">계정등록</Link>}
           </div>
           {session ? (
             <div className="flex items-center space-x-4">

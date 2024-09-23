@@ -1,12 +1,16 @@
-import Games from "@/app/games/page";
-import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow, } from "@/components/ui/table"
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow, } from "@/components/ui/table"
 
 import Image from "next/image";
 import { champion } from "@/app/data/champion";
 import { runesReforged } from "@/app/data/runesReforged";
 import Link from "next/link";
-import ReloadButton from "../../components/reloadButton";
 import ProgressRuneBox from "../../components/progressRuneBox";
+import SummonerTitleBar from "../../components/summonerTitleBar";
+import { connectDB } from "@/util/database";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
+import { getSummonerData } from "@/app/riotApi";
+import { Button } from "@/components/ui/button";
 const api_key = process.env.RIOT_API_KEY as string
 
 async function getAccountData(summonerName: string, nextTag: string) {
@@ -69,7 +73,25 @@ async function getSummonerInformation(summonerId: string) {
     })
     return res.json()
 }
+interface UserSession {
+    user: {
+        name: string;
+        email: string;
+    };
+}
+
 export default async function ProgressGame({ params }: { params: { summoner: string } }) {
+    const db = (await connectDB).db("dream");
+    let session: UserSession | null = await getServerSession(authOptions);
+    let result;
+    let favorites: string[] = [];
+    if (session?.user) {
+        result = await db.collection("user_cred").findOne({ email: session.user.email });
+        if (result && result.favorites) {
+            favorites = result.favorites;
+        }
+    }
+
     const championData = champion
     const fullsummonerName = params.summoner;
     const [summonerName, tag] = fullsummonerName.split('-');
@@ -77,33 +99,71 @@ export default async function ProgressGame({ params }: { params: { summoner: str
     const decodedSummonerName = decodeURIComponent(summonerName)
     const decodedSummonerTag = decodeURIComponent(nextTag)
     const summonernameTag = decodedSummonerName + '#' + decodedSummonerTag;
-
     const accountData = await getAccountData(summonerName, nextTag);
+    const puuid = accountData.puuid;
+    const progressGame = await getProgressGame(puuid);
+    const summonerData = await getSummonerData(puuid);
 
     if (!accountData) {
         return <div>소환사 정보를 찾을 수 없습니다.</div>;
 
     }
 
-    const puuid = accountData.puuid;
-    const progressGame = await getProgressGame(puuid);
     if (!progressGame) {
         return (
-            <div>
-                <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                    <Games />
+            <div className="bg-gray-100 min-h-screen">
+                <div className="flex justify-center items-center py-2">
+                    <div className="w-[800px] flex items-center p-4 border rounded-lg bg-white shadow-md">
+                        <div className="relative w-1/5 flex flex-col items-center">
+                            <Image
+                                className="rounded-md"
+                                alt="profileIconId"
+                                src={`/profileicon/${summonerData.profileIconId}.png`}
+                                width={80}
+                                height={80}
+                            />
+                            <div className="absolute bottom-0 transform translate-y-1/2 bg-black text-white px-2 py-1 rounded-md text-sm">
+                                {summonerData.summonerLevel}
+                            </div>
+                        </div>
+                        <div className="w-4/5 flex flex-col pl-6">
+                            <SummonerTitleBar
+                                gameNameTagLine={summonernameTag}
+                                favorites={favorites}
+                                email={session?.user.email}
+                            />
+                        </div>
+                    </div>
                 </div>
-                <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }} className="flex items-center gap-4">
-                    {"소환사 닉네임: " + summonernameTag}
-                    <Link href={`/games/${params.summoner}/progressGame`}>진행중인 게임 확인</Link>
-                    <Link href={`/games/${params.summoner}/rankGame`}>랭크 정보 확인하기</Link>
-                    <Link href={`/games/${params.summoner}/aramGame`}>칼바람 정보 확인하기</Link>
+
+                <div className="flex justify-center items-center py-2">
+                    <div className="w-[800px] flex items-center justify-between p-4 border border-gray-300 rounded-lg bg-white shadow-lg">
+
+                        <Link href={"/games/" + decodedSummonerName + "-" + decodedSummonerTag}>
+                            <Button className="bg-blue-500 text-white px-6 py-2 rounded-full shadow-md hover:bg-blue-600 transition-all duration-300 ease-in-out">
+                                종합
+                            </Button>
+                        </Link>
+
+                        <Link href={"/games/" + decodedSummonerName + "-" + decodedSummonerTag + "/progressGame"}>
+                            <Button className="bg-green-500 text-white px-6 py-2 rounded-full shadow-md hover:bg-green-600 transition-all duration-300 ease-in-out">
+                                인게임
+                            </Button>
+                        </Link>
+                    </div>
                 </div>
-                <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                    소환사가 게임중이 아닙니다.
+                <div className="flex justify-center items-center py-2">
+                    <div className="w-[800px] flex items-center justify-center p-4 border rounded-lg bg-white shadow-md">
+                        <div className="text-center font-bold">
+                            <p>현재 게임중이 아닙니다.</p>
+                            <p>Game just started? Refresh when the Loading Screen appears.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        )
+        );
+
     }
 
     const participants = progressGame.participants
@@ -138,15 +198,11 @@ export default async function ProgressGame({ params }: { params: { summoner: str
 
     return (
         <div>
-            <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                <Games />
-            </div>
             <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }} className="flex items-center gap-4">
                 {"소환사 닉네임: " + summonernameTag}
                 <Link href={`/games/${params.summoner}/progressGame`}>진행중인 게임 확인</Link>
                 <Link href={`/games/${params.summoner}/rankGame`}>랭크 정보 확인하기</Link>
                 <Link href={`/games/${params.summoner}/aramGame`}>칼바람 정보 확인하기</Link>
-                <ReloadButton />
             </div>
             <Table>
                 <TableCaption>{summonernameTag} 의 진행중인 게임입니다.</TableCaption>

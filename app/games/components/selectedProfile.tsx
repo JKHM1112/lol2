@@ -1,7 +1,6 @@
 'use client'
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import ReloadButton from "@/app/games/components/reloadButton";
 
 export default function SelectedProfile({ fullSummonerName, summonerData, summonerLeaueDataResult}: any) {
     const [gameName, tagLines] = fullSummonerName.split('-');
@@ -69,19 +68,18 @@ export default function SelectedProfile({ fullSummonerName, summonerData, summon
     return (
         <div className="flex justify-center items-center p-4 bg-gray-100">
             <div className="w-[800px] h-[200px] flex items-center p-2 border-2 rounded-lg shadow-lg bg-white">
-                <div className="w-1/5 flex flex-col items-center">
+                {/* <div className="w-1/5 flex flex-col items-center">
                     <Image className="rounded-md" alt='profileIconId' src={`/profileicon/${summonerData.profileIconId}.png`} width={60} height={60} />
                     <div className="text-lg font-semibold mt-2">
                         {summonerData.summonerLevel}
                     </div>
-                </div>
+                </div> */}
                 <div className="w-2/5 flex flex-col items-center">
-                    <div className="h-1/2 flex items-center justify-between mb-4">
+                    {/* <div className="h-1/2 flex items-center justify-between mb-4">
                         <div className=" cursor-pointer" onClick={() => copyToClipboard(gameNameTagLine)}>
                             {gameNameTagLine}
                         </div>
-                        <ReloadButton />
-                    </div>
+                    </div> */}
                     <div className="h-1/2 flex space-x-4">
                         <button className={`px-4 py-2 rounded-lg ${selectedQueue === 'RANKED_SOLO_5x5' ? 'bg-blue-500 text-white' : 'bg-gray-300'}`} onClick={() => setSelectedQueue('RANKED_SOLO_5x5')} > 솔로랭크 </button>
                         <button className={`px-4 py-2 rounded-lg ${selectedQueue === 'RANKED_FLEX_SR' ? 'bg-blue-500 text-white' : 'bg-gray-300'}`} onClick={() => setSelectedQueue('RANKED_FLEX_SR')} > 자유랭크 </button>

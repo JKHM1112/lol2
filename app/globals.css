@@ -75,26 +75,10 @@
   }
 }
 
-.navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 10px 0;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-
 .searchLogo .lolS {
   font-size: 24px;
   font-weight: bold;
-  background: linear-gradient(to right, #e0cdcd, #d0191f);
+  background: linear-gradient(to right, #12e5c2, #2540ba);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -102,13 +86,15 @@
 .searchLogo .recordS {
   font-size: 24px;
   font-weight: bold;
-  color: #333;
+  background: linear-gradient(to right, #2540ba, #77e97f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .searchLogo .lolL {
   font-size: 60px;
   font-weight: bold;
-  background: linear-gradient(to right, #e0cdcd, #d0191f);
+  background: linear-gradient(to right, #12e5c2, #2540ba);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -116,7 +102,9 @@
 .searchLogo .recordL {
   font-size: 60px;
   font-weight: bold;
-  color: #333;
+  background: linear-gradient(to right, #2540ba, #77e97f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .navbar span {

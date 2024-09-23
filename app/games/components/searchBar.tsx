@@ -131,7 +131,7 @@ export default function SearchBar({ searchFavorites, searchRecently, email }: se
     };
 
     return (
-        <div className="flex flex-col justify-center items-center gap-2 p-4">
+        <div className="flex flex-col justify-center items-center gap-2 p-2">
             <div className="relative w-96" ref={dropdownRef}>
                 {/* 검색창 */}
                 <div className="flex rounded-full border-2 border-gray-300 shadow-md">

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Games from "./games/page";
 import RiotPatchNotes from "./components/riotPatchNotes";
 
