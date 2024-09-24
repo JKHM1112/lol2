@@ -4,10 +4,11 @@ import { Accordion, AccordionContent } from '@/components/ui/accordion';
 import React from 'react';
 import { ComposedChart, Bar, XAxis, YAxis, ResponsiveContainer, LabelList, Label } from 'recharts';
 import { PieChart, Pie, Cell } from 'recharts';
+import { cn } from "@/lib/utils";
 
 
-export default function TeamAnalysis({ allPlayers }: any) {
-    
+export default function TeamAnalysis({ allPlayers, gameResult }: any) {
+
     const getTotalSum = (array: any, key: any) => {
         return array.reduce((sum: any, player: any) => sum + (player[key] ?? 0), 0);
     };
@@ -78,19 +79,19 @@ export default function TeamAnalysis({ allPlayers }: any) {
             <AccordionContent>
                 <Table>
                     <TableHeader>
-                        <TableRow className="bg-gray-200">
-                            <TableHead className='text-sky-500 text-right'>승리팀</TableHead>
-                            <TableHead className='text-rose-500 text-left'>패배팀</TableHead>
+                        <TableRow className="bg-gray-200 hover:bg-gray-200">
+                            <TableHead className='text-sky-500 bg-blue-200 text-right'>승리팀</TableHead>
+                            <TableHead className='text-rose-500 bg-red-200 text-left'>패배팀</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         <TableRow>
                             <TableCell className="p-1">
-                                <div className="bg-sky-100 text-center  p-1">챔피언 처치</div>
+                                <div className={cn("text-center p-1", gameResult == 'win' ? 'bg-sky-200' : 'bg-rose-200')}>챔피언 처치</div>
                                 <div className="flex justify-between">
-                                    <div className="bg-sky-100 p-1 w-1/3">
-                                        <ResponsiveContainer width={120} height={165} >
-                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-sky-200 to-sky-100">
+                                        <ResponsiveContainer width={105} height={165} >
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 20, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="kills" barSize={20} fill="#3498db">
@@ -99,8 +100,8 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                             </ComposedChart>
                                         </ResponsiveContainer>
                                     </div>
-                                    <div className="">
-                                        <PieChart width={90} height={200} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-sky-100 to-rose-100">
+                                        <PieChart width={100} height={200} margin={{ top: 0, right: 0, bottom: 0, left: 10 }}>
                                             <Pie data={killSum} cx={45} cy={100} innerRadius={25} fill="#8884d8" paddingAngle={5} dataKey="value" >
                                                 {killSum.map((entry, index) => (
                                                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -110,9 +111,9 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                             </Pie>
                                         </PieChart>
                                     </div>
-                                    <div className="bg-rose-100 p-1 w-1/3">
-                                        <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-rose-100 to-rose-200">
+                                        <ResponsiveContainer width={105} height={165}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 20, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="kills" barSize={20} fill="#e74c3c">
@@ -122,11 +123,11 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                         </ResponsiveContainer>
                                     </div>
                                 </div>
-                                <div className="bg-sky-100 text-center  p-1 ">가한 피해량</div>
+                                <div className={cn("text-center p-1", gameResult == 'win' ? 'bg-sky-200' : 'bg-rose-200')}>가한 피해량</div>
                                 <div className="flex justify-between">
-                                    <div className="bg-rose-100 p-1 w-1/2">
-                                        <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-sky-200 to-sky-100">
+                                        <ResponsiveContainer width={105} height={165}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 20, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="totalDamageDealtToChampions" barSize={20} fill="#3498db" >
@@ -135,8 +136,8 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                             </ComposedChart>
                                         </ResponsiveContainer>
                                     </div>
-                                    <div className="">
-                                        <PieChart width={90} height={200} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-sky-100 to-rose-100">
+                                        <PieChart width={100} height={200} margin={{ top: 0, right: 0, bottom: 0, left: 10 }}>
                                             <Pie data={damageDealtToChampionsSum} cx={45} cy={100} innerRadius={25} fill="#8884d8" paddingAngle={5} dataKey="value" >
                                                 {damageDealtToChampionsSum.map((entry, index) => (
                                                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -146,9 +147,9 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                             </Pie>
                                         </PieChart>
                                     </div>
-                                    <div className="bg-rose-100 p-1 w-1/2">
-                                        <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-rose-100 to-rose-200">
+                                        <ResponsiveContainer width={105} height={165}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 20, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="totalDamageDealtToChampions" barSize={20} fill="#e74c3c" >
@@ -159,11 +160,11 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                     </div>
                                 </div>
 
-                                <div className="bg-sky-100 text-center  p-1 ">받은 피해량</div>
+                                <div className={cn("text-center p-1", gameResult == 'win' ? 'bg-sky-200' : 'bg-rose-200')}>받은 피해량</div>
                                 <div className="flex justify-between">
-                                    <div className="bg-rose-100 p-1 w-1/2">
-                                        <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-sky-200 to-sky-100">
+                                        <ResponsiveContainer width={105} height={165}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 20, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="totalDamageTaken" barSize={20} fill="#3498db" >
@@ -172,8 +173,8 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                             </ComposedChart>
                                         </ResponsiveContainer>
                                     </div>
-                                    <div className="">
-                                        <PieChart width={90} height={200} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-sky-100 to-rose-100">
+                                        <PieChart width={100} height={200} margin={{ top: 0, right: 0, bottom: 0, left: 10 }}>
                                             <Pie data={damageTakenSum} cx={45} cy={100} innerRadius={25} fill="#8884d8" paddingAngle={5} dataKey="value" >
                                                 {damageTakenSum.map((entry, index) => (
                                                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -183,9 +184,9 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                             </Pie>
                                         </PieChart>
                                     </div>
-                                    <div className="bg-rose-100 p-1 w-1/2">
-                                        <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-rose-100 to-rose-200">
+                                        <ResponsiveContainer width={105} height={165}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 20, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="totalDamageTaken" barSize={20} fill="#e74c3c" >
@@ -197,11 +198,11 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                 </div>
                             </TableCell>
                             <TableCell className="p-1">
-                                <div className="bg-sky-100 text-center  p-1">골드 획득량</div>
+                                <div className={cn("text-center p-1", gameResult == 'win' ? 'bg-sky-200' : 'bg-rose-200')}>골드 획득량</div>
                                 <div className="flex justify-between">
-                                    <div className="bg-rose-100 x w-1/2">
-                                        <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-sky-200 to-sky-100">
+                                        <ResponsiveContainer width={105} height={165}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 20, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="goldEarned" barSize={20} fill="#3498db" >
@@ -210,8 +211,8 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                             </ComposedChart>
                                         </ResponsiveContainer>
                                     </div>
-                                    <div className="">
-                                        <PieChart width={90} height={200} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-sky-100 to-rose-100">
+                                        <PieChart width={100} height={200} margin={{ top: 0, right: 0, bottom: 0, left: 10 }}>
                                             <Pie data={goldEarnedSum} cx={45} cy={100} innerRadius={25} fill="#8884d8" paddingAngle={5} dataKey="value" >
                                                 {goldEarnedSum.map((entry, index) => (
                                                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -221,9 +222,9 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                             </Pie>
                                         </PieChart>
                                     </div>
-                                    <div className="bg-rose-100 p-1 w-1/2">
-                                        <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-rose-100 to-rose-200">
+                                        <ResponsiveContainer width={105} height={165}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 20, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="goldEarned" barSize={20} fill="#e74c3c" >
@@ -234,11 +235,11 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                     </div>
                                 </div>
 
-                                <div className="bg-sky-100 text-center  p-1 ">CS</div>
+                                <div className={cn("text-center p-1", gameResult == 'win' ? 'bg-sky-200' : 'bg-rose-200')}>CS</div>
                                 <div className="flex justify-between">
-                                    <div className="bg-rose-100 p-1 w-1/2">
-                                        <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-sky-200 to-sky-100">
+                                        <ResponsiveContainer width={105} height={165}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 20, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="totalMinionsKilled" barSize={20} fill="#3498db" >
@@ -247,8 +248,8 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                             </ComposedChart>
                                         </ResponsiveContainer>
                                     </div>
-                                    <div className="">
-                                        <PieChart width={90} height={200} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-sky-100 to-rose-100">
+                                        <PieChart width={100} height={200} margin={{ top: 0, right: 0, bottom: 0, left: 10 }}>
                                             <Pie data={csSum} cx={45} cy={100} innerRadius={25} fill="#8884d8" paddingAngle={5} dataKey="value" >
                                                 {csSum.map((entry, index) => (
                                                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -258,9 +259,9 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                             </Pie>
                                         </PieChart>
                                     </div>
-                                    <div className="bg-rose-100 p-1 w-1/2">
-                                        <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-rose-100 to-rose-200">
+                                        <ResponsiveContainer width={105} height={165}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 20, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="totalMinionsKilled" barSize={20} fill="#e74c3c" >
@@ -271,11 +272,11 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                     </div>
                                 </div>
 
-                                <div className="bg-sky-100 text-center  p-1 ">포탑 피해량</div>
+                                <div className={cn("text-center p-1", gameResult == 'win' ? 'bg-sky-200' : 'bg-rose-200')}>포탑 피해량</div>
                                 <div className="flex justify-between">
-                                    <div className="bg-rose-100 p-1 w-1/2">
-                                        <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-sky-200 to-sky-100">
+                                        <ResponsiveContainer width={105} height={165}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(0, 5)} margin={{ top: 20, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="damageDealtToBuildings" barSize={20} fill="#3498db" >
@@ -284,8 +285,8 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                             </ComposedChart>
                                         </ResponsiveContainer>
                                     </div>
-                                    <div className="">
-                                        <PieChart width={90} height={200} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-sky-100 to-rose-100">
+                                        <PieChart width={100} height={200} margin={{ top: 0, right: 0, bottom: 0, left: 10 }}>
                                             <Pie data={damageDealtToBuildingsSum} cx={45} cy={100} innerRadius={25} fill="#8884d8" paddingAngle={5} dataKey="value" >
                                                 {damageDealtToBuildingsSum.map((entry, index) => (
                                                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -295,9 +296,9 @@ export default function TeamAnalysis({ allPlayers }: any) {
                                             </Pie>
                                         </PieChart>
                                     </div>
-                                    <div className="bg-rose-100 p-1 w-1/2">
-                                        <ResponsiveContainer width={120} height={165}>
-                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 10, right: -20, bottom: 0, left: -20 }}>
+                                    <div className="w-1/3 bg-gradient-to-r from-rose-100 to-rose-200">
+                                        <ResponsiveContainer width={105} height={165}>
+                                            <ComposedChart layout="vertical" data={allPlayers.slice(5, 10)} margin={{ top: 20, right: -20, bottom: 0, left: -20 }}>
                                                 <XAxis type="number" hide />
                                                 <YAxis dataKey="img" type="category" scale="band" tick={renderCustomAxisTick} />
                                                 <Bar dataKey="damageDealtToBuildings" barSize={20} fill="#e74c3c" >

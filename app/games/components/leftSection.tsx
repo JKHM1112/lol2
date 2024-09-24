@@ -6,7 +6,6 @@ export default function LeftSection({ fullSummonerName, summonerLeaueDataResult,
     const tagLine = tagLines || "KR1";
     const decodedGameName = decodeURIComponent(gameName);
     const decodedTagLine = decodeURIComponent(tagLine);
-    const gameNameTagLine = `${decodedGameName}#${decodedTagLine}`;
 
     const getLeagueData = (queueType: string) => {
         const data = summonerLeaueDataResult.find((entry: any) => entry.queueType === queueType);

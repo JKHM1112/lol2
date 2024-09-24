@@ -3,7 +3,7 @@ import { Table, TableBody, TableHeader, TableHead, TableRow, TableCell } from "@
 import { Progress } from "@/components/ui/progress";
 import RuneBox from "@/app/games/components/runeBox";
 import Image from "next/image";
-import { Accordion, AccordionContent, AccordionItem } from '@/components/ui/accordion';
+import { Accordion, AccordionContent } from '@/components/ui/accordion';
 import Link from 'next/link';
 
 const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/item/${itemCode}.png`} width={25} height={25} />
@@ -46,7 +46,7 @@ export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDama
             <AccordionContent>
                 <Table>
                     <TableHeader>
-                        <TableRow className="bg-sky-200">
+                        <TableRow className="bg-sky-200 hover:bg-sky-200 text-[12px]">
                             <TableHead>승리팀</TableHead>
                             <TableHead>K/D/A</TableHead>
                             <TableHead>가한 피해량</TableHead>
@@ -70,7 +70,7 @@ export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDama
                                         {createRuneImage1(findRuneIcon(data.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk, allRunes))}
                                         {createRuneImage1(getRuneImgMark(data.perks.styles.find((style: any) => style.description === "subStyle")?.style, runesReforged))}
                                     </div>
-                                    <div>
+                                    <div className='text-[12px] pt-2'>
                                         <Link href={`/games/${data.riotIdGameName}-${data.riotIdTagline}`}>{data.riotIdGameName}</Link>
                                     </div>
                                 </TableCell>
@@ -99,7 +99,7 @@ export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDama
                                     </div>
                                 </TableCell>
                                 <TableCell>
-                                    <div className="flex items-center gap-1">
+                                    <div className="flex items-center">
                                         {getItemImg(data.item0)}
                                         {getItemImg(data.item1)}
                                         {getItemImg(data.item2)}
@@ -116,7 +116,7 @@ export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDama
                         ))}
                     </TableBody>
                     <TableHeader>
-                        <TableRow className="bg-rose-200">
+                        <TableRow className="bg-rose-200 hover:bg-rose-200 text-[12px]">
                             <TableHead>패배팀</TableHead>
                             <TableHead>K/D/A</TableHead>
                             <TableHead>가한 피해량</TableHead>
@@ -140,7 +140,7 @@ export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDama
                                         {createRuneImage1(findRuneIcon(data.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk, allRunes))}
                                         {createRuneImage1(getRuneImgMark(data.perks.styles.find((style: any) => style.description === "subStyle")?.style, runesReforged))}
                                     </div>
-                                    <div>
+                                    <div className='text-[12px] pt-2'>
                                         <Link href={`/games/${data.riotIdGameName}-${data.riotIdTagline}`}>{data.riotIdGameName}</Link>
                                     </div>
                                 </TableCell>
@@ -169,7 +169,7 @@ export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDama
                                     </div>
                                 </TableCell>
                                 <TableCell>
-                                    <div className="flex items-center gap-1">
+                                    <div className="flex items-center">
                                         {getItemImg(data.item0)}
                                         {getItemImg(data.item1)}
                                         {getItemImg(data.item2)}

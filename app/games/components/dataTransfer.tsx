@@ -242,7 +242,7 @@ export default function DataTransfer({ participant, i, puuid, tier, rankResultTi
 
     return (
         <div>
-            <Button key={i} onClick={handleGameData}>데이터 전송</Button>
+            <Button className="bg-gradient-to-r from-blue-200 to-red-200 text-white h-[80px] w-[40px] px-4 py-2 rounded-lg hover:from-red-400 hover:to-blue-400" key={i} onClick={handleGameData}>기록</Button>
         </div>
     )
 }

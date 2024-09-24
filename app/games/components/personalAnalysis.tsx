@@ -9,7 +9,8 @@ type SkillCounts = {
     E: number;
 };
 
-export default function PersonalAnalysis({ participantsTimeLine1, championName }: any) {
+export default function PersonalAnalysis({ participantsTimeLine1, championName, runesReforged }: any) {
+    console.log(runesReforged)
 
     const getSkillImage = (skillSlot: number) => {
         const champion = Object.values(championFull.data).find((cham: any) => cham.id === championName || cham.key === championName);

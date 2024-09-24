@@ -43,22 +43,22 @@ export default function RuneBox({ gameData, i }: any) {
                         </div>
                         <div className="flex justify-between h-6">
                             {perkStyle1?.map(rune => (
-                                <Image key={rune.id} className={perkIds.includes(rune.id) ? '' : 'grayscale'} src={'/' + rune.icon} alt="1" height={30} width={30}></Image>
+                                <Image key={rune.id} className={perkIds.includes(rune.id) ? '' : 'grayscale brightness-1'} src={'/' + rune.icon} alt="1" height={30} width={30}></Image>
                             ))}
                         </div>
                         <div className="flex justify-between h-6">
                             {perkStyle2?.map(rune => (
-                                <Image key={rune.id} className={perkIds.includes(rune.id) ? '' : 'grayscale'} src={'/' + rune.icon} alt="1" height={30} width={30}></Image>
+                                <Image key={rune.id} className={perkIds.includes(rune.id) ? '' : 'grayscale brightness-1'} src={'/' + rune.icon} alt="1" height={30} width={30}></Image>
                             ))}
                         </div>
                         <div className="flex justify-between h-6">
                             {perkStyle3?.map(rune => (
-                                <Image key={rune.id} className={perkIds.includes(rune.id) ? '' : 'grayscale'} src={'/' + rune.icon} alt="1" height={30} width={30}></Image>
+                                <Image key={rune.id} className={perkIds.includes(rune.id) ? '' : 'grayscale brightness-1'} src={'/' + rune.icon} alt="1" height={30} width={30}></Image>
                             ))}
                         </div>
                         <div className="flex justify-between h-6">
                             {perkStyle4?.map(rune => (
-                                <Image key={rune.id} className={perkIds.includes(rune.id) ? '' : 'grayscale'} src={'/' + rune.icon} alt="1" height={30} width={30}></Image>
+                                <Image key={rune.id} className={perkIds.includes(rune.id) ? '' : 'grayscale brightness-1'} src={'/' + rune.icon} alt="1" height={30} width={30}></Image>
                             ))}
                         </div>
                         <div className="flex justify-center h-6">
@@ -72,17 +72,17 @@ export default function RuneBox({ gameData, i }: any) {
                         </div>
                         <div className="flex justify-between h-6">
                             {perkSubStyle2?.map(rune => (
-                                <Image key={rune.id} className={perkIds.includes(rune.id) ? '' : 'grayscale'} src={'/' + rune.icon} alt="1" height={30} width={30}></Image>
+                                <Image key={rune.id} className={perkIds.includes(rune.id) ? '' : 'grayscale brightness-1'} src={'/' + rune.icon} alt="1" height={30} width={30}></Image>
                             ))}
                         </div>
                         <div className="flex justify-between h-6">
                             {perkSubStyle3?.map(rune => (
-                                <Image key={rune.id} className={perkIds.includes(rune.id) ? '' : 'grayscale'} src={'/' + rune.icon} alt="1" height={30} width={30}></Image>
+                                <Image key={rune.id} className={perkIds.includes(rune.id) ? '' : 'grayscale brightness-1'} src={'/' + rune.icon} alt="1" height={30} width={30}></Image>
                             ))}
                         </div>
                         <div className="flex justify-between h-6">
                             {perkSubStyle4?.map(rune => (
-                                <Image key={rune.id} className={perkIds.includes(rune.id) ? '' : 'grayscale'} src={'/' + rune.icon} alt="1" height={30} width={30}></Image>
+                                <Image key={rune.id} className={perkIds.includes(rune.id) ? '' : 'grayscale brightness-1'} src={'/' + rune.icon} alt="1" height={30} width={30}></Image>
                             ))}
                         </div>
                         <div className="flex justify-center h-6">
@@ -94,17 +94,17 @@ export default function RuneBox({ gameData, i }: any) {
                         <div className="flex justify-center h-6"></div>
                         <div className="flex justify-between h-6">
                             {perkStatus1.map(rune => (
-                                <Image key={rune.id} className={perkIds[8] === rune.id ? '' : 'grayscale brightness-0.1'} src={rune.icon} alt="mainrune" height={30} width={30}></Image>
+                                <Image key={rune.id} className={perkIds[8] === rune.id ? '' : 'grayscale brightness-1'} src={rune.icon} alt="mainrune" height={30} width={30}></Image>
                             ))}
                         </div>
                         <div className="flex justify-between h-6">
                             {perkStatus2.map(rune => (
-                                <Image key={rune.id} className={perkIds[7] === rune.id ? '' : 'grayscale brightness-0.1'} src={rune.icon} alt="mainrune" height={30} width={30}></Image>
+                                <Image key={rune.id} className={perkIds[7] === rune.id ? '' : 'grayscale brightness-1'} src={rune.icon} alt="mainrune" height={30} width={30}></Image>
                             ))}
                         </div>
                         <div className="flex justify-between h-6">
                             {perkStatus3.map(rune => (
-                                <Image key={rune.id} className={perkIds[6] === rune.id ? '' : 'grayscale brightness-0.1'} src={rune.icon} alt="mainrune" height={30} width={30}></Image>
+                                <Image key={rune.id} className={perkIds[6] === rune.id ? '' : 'grayscale brightness-1'} src={rune.icon} alt="mainrune" height={30} width={30}></Image>
                             ))}
                         </div>
                         <div className="flex justify-center h-6">
