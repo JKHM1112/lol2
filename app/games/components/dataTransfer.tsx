@@ -10,11 +10,12 @@ interface DataTransferProps {
     puuid: string
     tier: string
     rankResultTimeline: any
-    characterNumber: number
-    skillOrder: []
+    characterParticipantId: number
+    participantsTimeLine: any
 }
 
-export default function DataTransfer({ participant, i, puuid, tier, rankResultTimeline, characterNumber, skillOrder }: DataTransferProps) {
+export default function DataTransfer({ participant, i, puuid, tier, rankResultTimeline, characterParticipantId, participantsTimeLine }: DataTransferProps) {
+
     const { setLines, setParticipants, setSelectedGame, setItems, setPuuid, setSummoners, setRunes, setChampions, setTier,
         setTimeLineLevelUp1, setTimeLineLevelUp2, setTimeLineObject1, setTimeLineObject2, setGameExtracted1, setGameExtracted2, setTimeLineKda1, setTimeLineKda2,
         setTurretPlatesTaken, setVisionScore, setSkillOrder } = useUserStore()
@@ -32,6 +33,17 @@ export default function DataTransfer({ participant, i, puuid, tier, rankResultTi
         individualPosition = '';
     }
 
+    const skillEvents = participantsTimeLine.filter((event: any) => event.type === 'SKILL_LEVEL_UP').map((event: any) => ({ skillSlot: event.skillSlot, timestamp: event.timestamp }));
+  
+    const skillOrder = skillEvents.map((event: any) => {
+        switch (event.skillSlot) {
+            case 1: return 'Q';
+            case 2: return 'W';
+            case 3: return 'E';
+            case 4: return 'R';
+            default: return '';
+        }
+    }).filter((skill: string) => skill !== '');
 
     const getEventsByParticipantId = (timeline: any, participantId: any) => {
         let allEvents: any = [];
@@ -53,17 +65,17 @@ export default function DataTransfer({ participant, i, puuid, tier, rankResultTi
         return allParticipantFrames;
     }
 
-    let characterNumber2 = 0;
-    if (characterNumber > 5) {
-        characterNumber2 = characterNumber - 5;
+    let characterParticipantId2 = 0;
+    if (characterParticipantId > 5) {
+        characterParticipantId2 = characterParticipantId - 5;
     } else {
-        characterNumber2 = characterNumber + 5;
+        characterParticipantId2 = characterParticipantId + 5;
     }
 
-    const participantsTimeLine1 = getEventsByParticipantId(rankResultTimeline, characterNumber);// 검색된 소환사의 게임 타임라인2
-    const participantsTimeLine2 = getEventsByParticipantId(rankResultTimeline, characterNumber2);// 검색된 소환사의 게임 상대방 타임라인2
-    const gameTimeline1 = getParticipantFramesByParticipantId(rankResultTimeline, characterNumber);//0분 부터 해서 1분 단위로 기록3
-    const gameTimeline2 = getParticipantFramesByParticipantId(rankResultTimeline, characterNumber2);//0분 부터 해서 1분 단위로 기록3
+    const participantsTimeLine1 = getEventsByParticipantId(rankResultTimeline, characterParticipantId);// 검색된 소환사의 게임 타임라인2
+    const participantsTimeLine2 = getEventsByParticipantId(rankResultTimeline, characterParticipantId2);// 검색된 소환사의 게임 상대방 타임라인2
+    const gameTimeline1 = getParticipantFramesByParticipantId(rankResultTimeline, characterParticipantId);//0분 부터 해서 1분 단위로 기록3
+    const gameTimeline2 = getParticipantFramesByParticipantId(rankResultTimeline, characterParticipantId2);//0분 부터 해서 1분 단위로 기록3
 
     const filterAndExtractLevelUp = (events: any[], type: string) => {
         return events.filter(event => event.type === type).map(event => ({

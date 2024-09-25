@@ -6,41 +6,34 @@ import Image from "next/image";
 import { Accordion, AccordionContent } from '@/components/ui/accordion';
 import Link from 'next/link';
 
-const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/item/${itemCode}.png`} width={25} height={25} />
-const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/champion/${championCode}.png`} width={35} height={35} />
-const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={20} height={20} />
 
-const createRuneImage1 = (runeCode: string) => (
-    <Image className='rounded-md' alt='rune' src={`/${runeCode}`} width={20} height={20} />
-);
 
-const createRuneImage2 = (runeCode: string) => (
-    <Image className='rounded-md' alt='rune' src={`/${runeCode}`} width={20} height={20} />
-);
+export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDamageTaken, allRunes, runesReforged }: any) {
 
-const findRuneIcon = (runeCode: number, allRunes: any) => {
-    const rune = allRunes.find((rune: any) => rune.id === runeCode);
-    return rune?.icon || '0.png';
-};
+    //아이템 번호를 가지고 이미지로 바꿔준다.
+    const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/item/${itemCode}.png`} width={30} height={30} />
+    //챔피언 영문으로 이미지로 바꿔준다.
+    const getChampionImg1 = (championCode: string) => <Image className='m-1 rounded-md' alt={'champion1'} src={`/champion/${championCode}.png`} width={50} height={50} />
+    //spell 영문으로 이미지로 바꿔준다.
+    const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={24} height={24} />
 
-const getRuneImgMark = (runeCode: number, runesReforged: any) => {
-    const rune = runesReforged.find((rune: any) => rune.id === runeCode);
-    return rune?.icon || '0.png';
-};
+    //rune icon 번호를 영문으로 변환후 이미지로 바꿔준다.
+    const findRuneIcon = (runeCode: number, allRunes: any) => {
+        const rune = allRunes.find((rune: any) => rune.id === runeCode);
+        return <Image className='rounded-md' alt='rune' src={`/${rune.icon}`} width={20} height={20} /> || '0.png';
+    };
 
-interface TotalResultProps {
-    winTeam: any[];
-    loseTeam: any[];
-    maxDamageDealt: number;
-    maxDamageTaken: number;
-    allRunes: any[];
-    runesReforged: any[];
-}
-const getGrade = (kills: number, deaths: number, assists: number) => {
-    return deaths === 0 ? "Perfect" : ((kills + assists) / deaths).toFixed(2);
-};
+    //rune 테마 번호를 영문으로 변환후 이미지로 바꿔준다.
+    const getRuneImgMark = (runeCode: number, runesReforged: any) => {
+        const rune = runesReforged.find((rune: any) => rune.id === runeCode);
+        return <Image className='rounded-md' alt='rune' src={`/${rune.icon}`} width={20} height={20} /> || '0.png';
+    };
 
-export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDamageTaken, allRunes, runesReforged }: TotalResultProps) {
+    //kda 계산
+    const getGrade = (kills: number, deaths: number, assists: number) => {
+        return deaths === 0 ? "Perfect" : ((kills + assists) / deaths).toFixed(2);
+    };
+
     return (
         <Accordion type="single" collapsible >
             <AccordionContent>
@@ -62,24 +55,24 @@ export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDama
                                     <div className="flex items-center gap-1">
                                         {getChampionImg1(data.championName)}
                                     </div>
-                                    <div className=" items-center gap-1">
+                                    <div className=" items-center pt-1">
                                         {getSpellImg(data.summoner1Id)}
                                         {getSpellImg(data.summoner2Id)}
                                     </div>
-                                    <div className=" items-center gap-1">
-                                        {createRuneImage1(findRuneIcon(data.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk, allRunes))}
-                                        {createRuneImage1(getRuneImgMark(data.perks.styles.find((style: any) => style.description === "subStyle")?.style, runesReforged))}
+                                    <div className=" items-center pt-2">
+                                        {(findRuneIcon(data.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk, allRunes))}
+                                        {(getRuneImgMark(data.perks.styles.find((style: any) => style.description === "subStyle")?.style, runesReforged))}
                                     </div>
-                                    <div className='text-[12px] pt-2'>
+                                    <div className='text-[12px] pt-4'>
                                         <Link href={`/games/${data.riotIdGameName}-${data.riotIdTagline}`}>{data.riotIdGameName}</Link>
                                     </div>
                                 </TableCell>
                                 <TableCell>
-                                    <div className=" items-center gap-1">
+                                    <div className=" items-center ">
                                         {(data.kills)}/{(data.deaths)}/{(data.assists)}
                                     </div>
-                                    <div className=" items-center gap-1">
-                                        {getGrade((data.kills), (data.deaths), (data.assists))} : 1
+                                    <div className=" items-center ">
+                                        {getGrade((data.kills), (data.deaths), (data.assists))}
                                     </div>
                                 </TableCell>
                                 <TableCell className="text-center">
@@ -132,24 +125,24 @@ export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDama
                                     <div className="flex items-center gap-1">
                                         {getChampionImg1(data.championName)}
                                     </div>
-                                    <div className=" items-center gap-1">
+                                    <div className=" items-center pt-1">
                                         {getSpellImg(data.summoner1Id)}
                                         {getSpellImg(data.summoner2Id)}
                                     </div>
-                                    <div className=" items-center gap-1">
-                                        {createRuneImage1(findRuneIcon(data.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk, allRunes))}
-                                        {createRuneImage1(getRuneImgMark(data.perks.styles.find((style: any) => style.description === "subStyle")?.style, runesReforged))}
+                                    <div className=" items-center pt-2">
+                                        {(findRuneIcon(data.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk, allRunes))}
+                                        {(getRuneImgMark(data.perks.styles.find((style: any) => style.description === "subStyle")?.style, runesReforged))}
                                     </div>
-                                    <div className='text-[12px] pt-2'>
+                                    <div className='text-[12px] pt-4'>
                                         <Link href={`/games/${data.riotIdGameName}-${data.riotIdTagline}`}>{data.riotIdGameName}</Link>
                                     </div>
                                 </TableCell>
                                 <TableCell>
-                                    <div className=" items-center gap-1">
+                                    <div className=" items-center ">
                                         {(data.kills)}/{(data.deaths)}/{(data.assists)}
                                     </div>
-                                    <div className=" items-center gap-1">
-                                        {getGrade((data.kills), (data.deaths), (data.assists))} : 1
+                                    <div className=" items-center ">
+                                        {getGrade((data.kills), (data.deaths), (data.assists))}
                                     </div>
                                 </TableCell>
                                 <TableCell className="text-center">
