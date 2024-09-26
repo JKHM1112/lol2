@@ -1,7 +1,8 @@
 //queue_type이 적혀 있는 최근 10게임.
 import SelectedGames from "@/app/games/components/selectedGames";
-import SelectedProfile from "@/app/games/components/selectedProfile";
 import { getAccount, getLeagueData, getMatchData, getMatchDataTimeline, getRecentMatchIds, getSummonerData } from "@/app/riotApi";
+import ProfileSection from "../../components/profileSection";
+import LeftSection from "../../components/leftSection";
 
 
 interface MatchData {
@@ -68,9 +69,14 @@ export default async function Queue_type({ params }: { params: { summoner: strin
         losses: 0
     };
     return (
-        <div>
-            <SelectedProfile fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} />
-            <SelectedGames fullSummonerName={params.summoner} resultData={resultData} resultTimelines={resultTimelines} searchedpuuid={searchedpuuid} queue={params.queue_type} tier={soloLeagueData.tier} />
+        <div className="overflow-x-auto w-full bg-gray-100">
+            <div className="flex-row flex-col items-center min-w-[1200px]">
+                <ProfileSection fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} resultData={resultData} />
+                <div className="flex bg-gray-100 w-full min-w-[1200px] justify-center overflow-x-auto">
+                    <LeftSection fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} resultData={resultData} />
+                    <SelectedGames fullSummonerName={params.summoner} resultData={resultData} resultTimelines={resultTimelines} searchedpuuid={searchedpuuid} queue={params.queue_type} tier={soloLeagueData.tier} />
+                </div>
+            </div>
         </div>
     )
 }

@@ -1,15 +1,15 @@
 'use client'
-import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import Image from "next/image"
 import * as React from "react"
+import { PieChart, Pie, Cell, Label, ResponsiveContainer, BarChart, Bar, RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts';
+import Image from "next/image"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { runesReforged } from "@/app/data/runesReforged"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { PieChart, Pie, Cell, Label, LineChart, Line, XAxis, YAxis } from 'recharts';
 import TotalResult from "@/app/games/components/totalResult";
 import TeamAnalysis from "@/app/games/components/teamAnalysis";
 import PersonalAnalysis from "@/app/games/components/personalAnalysis";
+import Link from "next/link";
 
 interface Participant {
     puuid: string;
@@ -37,128 +37,118 @@ interface PlayerData {
 }
 
 export default function AramResult({ searchedpuuid, aramResults, aramResultTimelines }: any) {
-    let winLoses: any[] = []
+    let winLoses = []
+    let initialPositionStats = [
+        { name: 'TOP', win: 0, lose: 0 },
+        { name: 'JUNGLE', win: 0, lose: 0 },
+        { name: 'MIDDLE', win: 0, lose: 0 },
+        { name: 'BOTTOM', win: 0, lose: 0 },
+        { name: 'UTILITY', win: 0, lose: 0 },
+    ];
+    const rankResultInfo = aramResults.map((data: infoType) => data.info);
 
-    function calculateOverallStats(aramResults: infoType[], puuid: string) {
-        let wins = 0;
-        let losses = 0;
-        let totalKills = 0;
-        let totalDeaths = 0;
-        let totalAssists = 0;
-        let count = 0;
+
+    // 포지션별 승리 또는 패배 기록 함수
+    const updatePositionStats = (positionName: string, isWin: boolean) => {
+        const position = initialPositionStats.find((pos: any) => pos.name === positionName);
+        if (position) {
+            isWin ? position.win++ : position.lose++;
+        }
+    };
+
+    const calculateOverallStats = (aramResults: infoType[], puuid: string) => {
+        let wins = 0, losses = 0, totalKills = 0, totalDeaths = 0, totalAssists = 0, count = 0;
+
         aramResults.forEach(result => {
-            const participant = result.info.participants.find((p: any) => p.puuid === searchedpuuid);
-            if (participant) {
-                if (participant.win) {
-                    wins++;
-                    winLoses.push({ winOrLose: 'win' });
-                }
-                else {
-                    losses++;
-                    winLoses.push({ winOrLose: 'lose' });
-                }
+            const participant = result.info.participants.find((p: any) => p.puuid === puuid);
 
-                totalKills += participant.kills;
-                totalDeaths += participant.deaths;
-                totalAssists += participant.assists;
+            if (participant) {
+                const { individualPosition, win, kills, deaths, assists } = participant;
+
+                win ? wins++ : losses++;
+                winLoses.push({ winOrLose: win ? 'win' : 'lose' });
+
+                totalKills += kills;
+                totalDeaths += deaths;
+                totalAssists += assists;
+
+                updatePositionStats(individualPosition, win);
             }
         });
-        winLoses.reverse();
 
-        winLoses = winLoses.map(entry => {
-            if (entry.winOrLose === 'win') {
-                count++;
-            } else {
-                count--;
-            }
-            return { ...entry, count: count }
-        })
-
+        const winRate = ((wins / aramResults.length) * 100).toFixed(1);
         const kda = totalDeaths === 0 ? (totalKills + totalAssists) : ((totalKills + totalAssists) / totalDeaths).toFixed(2);
         const avgKills = (totalKills / aramResults.length).toFixed(1);
         const avgDeaths = (totalDeaths / aramResults.length).toFixed(1);
         const avgAssists = (totalAssists / aramResults.length).toFixed(1);
-        return {
-            wins,
-            losses,
-            winRate: ((wins / aramResults.length) * 100).toFixed(1),
-            kda,
-            avgKills,
-            avgDeaths,
-            avgAssists
-        };
-    }
 
-    function calculateChampionStats(aramResults: infoType[], puuid: string) {
+        return { wins, losses, winRate, kda, avgKills, avgDeaths, avgAssists };
+    };
+
+    const calculateChampionStats = (aramResults: infoType[], puuid: string) => {
         const championStats: any = {};
 
         aramResults.forEach(result => {
             const participant = result.info.participants.find((p: any) => p.puuid === puuid);
+
             if (participant) {
                 const { championName, win, kills, deaths, assists } = participant;
                 if (!championStats[championName]) {
                     championStats[championName] = { wins: 0, losses: 0, totalKills: 0, totalDeaths: 0, totalAssists: 0, games: 0 };
                 }
                 championStats[championName].games++;
-                if (win) championStats[championName].wins++;
-                else championStats[championName].losses++;
+                win ? championStats[championName].wins++ : championStats[championName].losses++;
                 championStats[championName].totalKills += kills;
                 championStats[championName].totalDeaths += deaths;
                 championStats[championName].totalAssists += assists;
             }
         });
 
-        const sortedChampions = Object.entries(championStats)
+        return Object.entries(championStats)
             .sort(([, a]: any, [, b]: any) => b.games - a.games)
-            .slice(0, 4);
+            .slice(0, 3)
+            .map(([champion, stats]: any) => ({
+                champion,
+                winRate: ((stats.wins / stats.games) * 100).toFixed(1),
+                kda: stats.totalDeaths === 0 ? (stats.totalKills + stats.totalAssists) : ((stats.totalKills + stats.totalAssists) / stats.totalDeaths).toFixed(2),
+                ...stats
+            }));
+    };
 
-        return sortedChampions.map(([champion, stats]: any) => ({
-            champion,
-            winRate: ((stats.wins / stats.games) * 100).toFixed(1),
-            kda: stats.totalDeaths === 0 ? (stats.totalKills + stats.totalAssists) : ((stats.totalKills + stats.totalAssists) / stats.totalDeaths).toFixed(2),
-            ...stats
-        }));
-    }
+    const overallStats = calculateOverallStats(aramResults, searchedpuuid);
+    const championStats = calculateChampionStats(aramResults, searchedpuuid);
+    const winLoseData = [
+        { name: 'Wins', value: overallStats.wins, fill: '#0000FF' },
+        { name: 'Losses', value: overallStats.losses, fill: '#FF0040' }
+    ];
 
     const [activeTab, setActiveTab] = React.useState("TotalResult");
-    const [renderCharts, setRenderCharts] = React.useState(false);
 
-    React.useEffect(() => {
-        setRenderCharts(true);
-    }, []);
-    const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/item/${itemCode}.png`} width={35} height={35} />
-    const getChampionImg1 = (championCode: string) => <Image className='rounded-md' alt={'champion1'} src={`/champion/${championCode}.png`} width={40} height={40} />
-    const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={25} height={25} />
+
+
     const allRunes = runesReforged.flatMap((runeGroup: any) => runeGroup.slots.flatMap((slot: any) => slot.runes));
 
-    const findRuneIcon = (runeCode: number) => {
-        const rune = allRunes.find((rune: any) => rune.id === runeCode);
-        return rune?.icon || '0.png';
-    };
+    //아이템 번호를 가지고 이미지로 바꿔준다.
+    const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/item/${itemCode}.png`} width={30} height={30} />
+    //챔피언 영문으로 이미지로 바꿔준다.
+    const getChampionImg1 = (championCode: string, widthN: number, heightN: number) => <Image className='m-1 rounded-md' alt={'champion1'} src={`/champion/${championCode}.png`} width={widthN} height={heightN} />
+    //spell 영문으로 이미지로 바꿔준다.
+    const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={24} height={24} />
 
-    const getRuneImgMark = (runeCode: number) => {
-        const rune = runesReforged.find((rune: any) => rune.id === runeCode);
-        return rune?.icon || '0.png';
-    };
+    //rune icon 번호를 영문으로 변환후 이미지로 바꿔준다.
+    const findRuneIcon = (runeCode: number) => { const rune = allRunes.find((rune: any) => rune.id === runeCode); return <Image className='rounded-md' alt='rune' src={`/${rune?.icon}`} width={24} height={24} /> || '0.png'; };
 
-    const createRuneImage1 = (runeCode: string) => (
-        <Image className='rounded-md' alt='rune' src={`/${runeCode}`} width={25} height={25} />
-    );
+    //rune 테마 번호를 영문으로 변환후 이미지로 바꿔준다.
+    const getRuneImgMark = (runeCode: number) => { const rune = runesReforged.find((rune: any) => rune.id === runeCode); return <Image className='rounded-md' alt='rune' src={`/${rune?.icon}`} width={24} height={24} /> || '0.png'; };
 
+    //게임 진행 시간 계산
     const gameDuration = (duration: number) => {
         const minutes = Math.floor(duration / 60)
         const seconds = duration % 60
         return minutes + '분 ' + seconds + '초'
     }
 
-    const positionMapping: { [key: string]: string } = {
-        "TOP": "탑",
-        "JUNGLE": "정글",
-        "MIDDLE": "미드",
-        "BOTTOM": "바텀",
-        "UTILITY": "서폿"
-    };
-
+    //몇일 전 게임인지 계산
     const timeSinceGameEnd = (gameEndTime: number): string => {
         const now: Date = new Date();
         const gameEndDate: Date = new Date(gameEndTime);
@@ -173,11 +163,10 @@ export default function AramResult({ searchedpuuid, aramResults, aramResultTimel
         }
     }
 
-    const getGrade = (kills: number, deaths: number, assists: number) => {
-        return deaths === 0 ? "Perfect" : ((kills + assists) / deaths).toFixed(2);
+    //kda계산
+    const getGrade = (kda: { kills: number, deaths: number, assists: number }) => {
+        return kda.deaths === 0 ? "Perfect" : ((kda.kills + kda.assists) / kda.deaths).toFixed(2);
     }
-
-    const rankResultInfo = aramResults.map((data: infoType) => data.info);
 
     const getEventsByParticipantId = (timeline: any, participantId: any) => {
         let allEvents: any = [];
@@ -188,60 +177,67 @@ export default function AramResult({ searchedpuuid, aramResults, aramResultTimel
         return allEvents;
     }
 
-    const overallStats = calculateOverallStats(aramResults, searchedpuuid);
-    const championStats = calculateChampionStats(aramResults, searchedpuuid);
-    const winLoseData = [
-        { name: 'Wins', value: overallStats.wins, fill: '#8884d8' },
-        { name: 'Losses', value: overallStats.losses, fill: '#ff7300' }
-    ];
     return (
-        <div>
-            <div className="p-4 bg-orange-300 text-white rounded-lg">
-                <div className="flex justify-between items-center">
-                    <div className="text-center justify-between items-center">
-                        <p className={parseFloat(overallStats.winRate) >= 50 ? "text-blue-500" : "text-red-500"}>승률: {overallStats.winRate}%</p>
-                        <p> 승리: {overallStats.wins} 패배: {overallStats.losses}</p>
-                    </div>
-                    <div className="text-center justify-between items-center">
-                        <p>평균 KDA: {overallStats.kda}</p>
-                        <p>평균 킬: {overallStats.avgKills}</p>
-                        <p>평균 데스: {overallStats.avgDeaths}</p>
-                        <p>평균 어시스트: {overallStats.avgAssists}</p>
-                    </div>
-                    <div className="flex justify-between items-center">
-                        {renderCharts && (
-                            <>
-                                <PieChart width={90} height={90} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
-                                    <Pie data={winLoseData} cx={45} cy={45} innerRadius={25} fill="#8884d8" paddingAngle={5} dataKey="value">
-                                        {winLoseData.map((entry, index) => (
-                                            <Cell key={`cell-${index}`} fill={entry.fill} />
-                                        ))}
-                                        <Label className="p-1" value={overallStats.winRate} position="center" fill="#e74c3c" style={{ fontSize: '18px' }} />
-                                    </Pie>
-                                </PieChart>
-                                <LineChart width={300} height={100} data={winLoses} margin={{ top: 30, right: 0, bottom: 0, left: 0 }}>
-                                    <Line type="basis" dataKey="count" stroke="#8884d8" dot={false} />
-                                    <YAxis domain={[(dataMin: number) => Math.min(dataMin), (dataMax: number) => Math.max(dataMax)]} />
-                                    <XAxis tick={false} axisLine={false}>
-                                        <Label value="승패 그래프" position="insideBottom" />
-                                    </XAxis>
-                                </LineChart>
-                            </>
-                        )}
+        <div className="">
+            <div className="flex">
+                {/*20게임 전적 통합*/}
+                <div className="w-[280px] h-[115px] bg-white rounded-lg shadow-md m-1">
+                    <div className="flex justify-around">
+                        <PieChart width={90} height={95} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+                            <Pie data={winLoseData} cx={45} cy={45} innerRadius={25} fill="#0000FF" paddingAngle={5} dataKey="value">
+                                {winLoseData.map((entry, index) => (
+                                    <Cell key={`cell-${index}`} fill={entry.fill} />
+                                ))}
+                                <Label className="p-1" value={overallStats.winRate} position="center" fill="#FF0040" style={{ fontSize: '18px' }} />
+                            </Pie>
+                        </PieChart>
+                        <div className="place-content-center">
+                            <p className="text-[14px] font-bold">{overallStats.wins + overallStats.losses}게임</p>
+                            <p className="text-[12px]">  {overallStats.wins}승 {overallStats.losses}패</p>
+                        </div>
+                        <div className="place-content-center">
+                            <p className="text-[12px]">{overallStats.kda} KDA</p>
+                            <p className="text-[12px]">{overallStats.avgKills} / {overallStats.avgDeaths} / {overallStats.avgAssists}</p>
+                        </div>
                     </div>
                 </div>
-                <div className="mt-4 flex justify-around justify-between items-center">
+                {/*최근 많이 플레이한 챔피언*/}
+                <div className="w-[160px] h-[115px] bg-white rounded-lg shadow-md m-2">
+                    <p className=" ml-2 text-[11px]">최근 많이 플레이한 챔피언</p>
                     {championStats.map((champ, index) => (
-                        <div key={index} className="text-center">
-                            <Image className='rounded-md' alt='champion' src={`/champion/${champ.champion}.png`} width={40} height={40} />
-                            <p className={parseFloat(champ.winRate) >= 50 ? "text-blue-500" : "text-red-500"}>승률: {champ.winRate}%</p>
-                            <p>KDA: {champ.kda}</p>
-                            <p>승리: {champ.wins} 패배: {champ.losses}</p>
+                        <div key={index} className="flex ml-2">
+                            <div>
+                                <Image className="rounded-md mt-1 mr-2" alt='champion' src={`/champion/${champ.champion}.png`} width={25} height={25} />
+                            </div>
+                            <div>
+                                <div className="flex">
+                                    <p className="text-[10px] pr-1">{champ.wins}승{champ.losses}패 </p>
+                                    <p className={parseFloat(champ.winRate) >= 50 ? "text-blue-500 text-[10px]" : "text-red-500 text-[10px]"}> 승률: {champ.winRate}%</p>
+                                </div>
+                                <p className="text-[10px]">KDA: {champ.kda}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
+                {/*포지션 분포도*/}
+                <div className="w-[200px] h-[115px] bg-white rounded-lg shadow-md m-2">
+                    <p className=" ml-2 text-[11px]">포지션 분포도</p>
+                    <ResponsiveContainer width="100%" height="70%">
+                        <BarChart width={200} height={70} data={initialPositionStats} margin={{ top: 0, right: 5, left: 5, bottom: 0 }}>
+                            <Bar dataKey="win" fill="#0000FF" />
+                            <Bar dataKey="lose" fill="#FF0040" />
+                        </BarChart>
+                    </ResponsiveContainer>
+                    <div className="flex justify-between w-[185px]">
+                        {['TOP', 'JUNGLE', 'MIDDLE', 'BOTTOM', 'UTILITY'].map((position, index) => (
+                            <Image key={index} className="ml-4" alt={position} src={`/line/${position}.png`} width={15} height={15} />
+                        ))}
+                    </div>
+                </div>
             </div>
-            <Accordion type="single" collapsible>
+
+            {/*하단에 20개 게임 전적 검색 */}
+            <Accordion className="w-[670px]" type="single" collapsible>
                 {rankResultInfo.map((data: any, i: number) => {
                     const participant = data.participants;
                     const blueTeam = participant.slice(0, 5);
@@ -251,14 +247,15 @@ export default function AramResult({ searchedpuuid, aramResults, aramResultTimel
                     const loseTeam = isBlueTeamWin ? redTeam : blueTeam;
                     const maxDamageDealt = Math.max(...participant.map((p: Participant) => p.totalDamageDealtToChampions));
                     const maxDamageTaken = Math.max(...participant.map((p: Participant) => p.totalDamageTaken));
-
                     const rankResultTimeline = aramResultTimelines[i];
                     if (!rankResultTimeline || !rankResultTimeline.info) {
                         return null;
                     }
-                    const characterNumber = rankResultTimeline.info.participants.find((p: any) => p.puuid === searchedpuuid)?.participantId;
+                    const characterParticipantId = rankResultTimeline.info.participants.find((p: any) => p.puuid === searchedpuuid)?.participantId;
 
+                    //내 챔피언 이름
                     const championName = data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.championName
+                    //randarChart 계산1
                     const allPlayers: any = [...winTeam, ...loseTeam].map(player => ({
                         name: player.championName,
                         kills: player.kills,
@@ -269,113 +266,134 @@ export default function AramResult({ searchedpuuid, aramResults, aramResultTimel
                         damageDealtToBuildings: player.damageDealtToBuildings,
                         img: `/champion/${player.championName}.png`
                     }));
+                    //randarChart 계산2
                     const rankMetric = (array: PlayerData[], key: keyof PlayerData) => {
-                        array.sort((a, b) => ((b[key] as number) || 0) - ((a[key] as number) || 0));
+                        array.sort((a, b) => ((b[key] as number) || 0) - ((a[key] as number) || 0)).reverse();
                         return array.findIndex(player => player.name === championName) + 1;
                     };
+                    //randarChart 계산3
                     const rankings = [
-                        rankMetric(allPlayers, 'kills'),
-                        rankMetric(allPlayers, 'totalDamageDealtToChampions'),
-                        rankMetric(allPlayers, 'totalDamageTaken'),
-                        rankMetric(allPlayers, 'goldEarned'),
-                        rankMetric(allPlayers, 'cs'),
-                        rankMetric(allPlayers, 'damageDealtToBuildings')
+                        { name: '킬', rank: rankMetric(allPlayers, 'kills'), fullMark: 10, },
+                        { name: '받은피해량', rank: rankMetric(allPlayers, 'totalDamageDealtToChampions'), fullMark: 10, },
+                        { name: '골드', rank: rankMetric(allPlayers, 'totalDamageTaken'), fullMark: 10, },
+                        { name: '포탑에가한피해량', rank: rankMetric(allPlayers, 'goldEarned'), fullMark: 10, },
+                        { name: '미니언', rank: rankMetric(allPlayers, 'cs'), fullMark: 10, },
+                        { name: '가한피해량', rank: rankMetric(allPlayers, 'damageDealtToBuildings'), fullMark: 10, },
                     ];
 
-                    const participantsTimeLine1 = getEventsByParticipantId(rankResultTimeline, characterNumber);// 검색된 소환사의 게임 타임라인2
+                    // 검색된 소환사의 게임 타임라인
+                    const participantsTimeLine = getEventsByParticipantId(rankResultTimeline, characterParticipantId);
 
-                    const skillEvents = participantsTimeLine1.filter((event: any) => event.type === 'SKILL_LEVEL_UP').map((event: any) => ({ skillSlot: event.skillSlot, timestamp: event.timestamp }));
-                    const skillOrder = skillEvents.map((event: any) => {
-                        switch (event.skillSlot) {
-                            case 1: return 'Q';
-                            case 2: return 'W';
-                            case 3: return 'E';
-                            case 4: return 'R';
-                            default: return '';
-                        }
-                    }).filter((skill: string) => skill !== '');
                     return (
-                        <AccordionItem style={{ width: '800px', margin: '0 auto' }} className="" key={'item' + i} value={'item' + i}>
-                            <AccordionTrigger className={cn("", data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? 'bg-sky-200' : 'bg-rose-200')}>
-                                <Table>
-                                    <TableBody>
-                                        <TableRow className="flex p-2">
-                                            <TableCell className="items-center p-1">
-                                                <div>
-                                                    칼바람 {(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? "승리" : "패배")}
+                        <AccordionItem className="w-[670px] ml-1" key={'item' + i} value={'item' + i}>
+                            <AccordionTrigger className={cn("rounded-md h-[110px]", data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? 'bg-blue-100 border-l-4 border-blue-400 pl-1' : 'bg-red-100 border-l-4 border-red-400 pl-1')}>
+                                <div className="w-full caption-bottom text-sm">
+                                    <div className="flex">
+                                        <div>
+                                            <div className={cn("", data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? 'text-[12px] text-blue-500' : 'text-[12px] text-red-500')}>
+                                              칼바람
+                                            </div>
+                                            <div className="text-[10px] ">
+                                                {timeSinceGameEnd(data.gameEndTimestamp)}
+                                            </div>
+                                            <div className={cn("", data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? 'text-[12px] text-blue-500' : 'text-[12px] text-red-500')}>
+                                                {(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? "승리" : "패배")}
+                                            </div>
+                                            <div className="text-[10px]">
+                                                {gameDuration(data.gameDuration)}
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="flex">
+                                                {getChampionImg1(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.championName, 50, 50)}
+                                                <div className="flex m-1">
+                                                    <div className="items-center gap-1">
+                                                        {getSpellImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.summoner1Id)}
+                                                        {getSpellImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.summoner2Id)}
+                                                    </div>
+                                                    <div className="items-center gap-1">
+                                                        {findRuneIcon(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk)}
+                                                        {getRuneImgMark(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.perks.styles.find((style: any) => style.description === "subStyle")?.style)}
+                                                    </div>
                                                 </div>
-                                                <div>
-                                                    {gameDuration(data.gameDuration)}
-                                                </div>
-                                                <div>
-                                                    {timeSinceGameEnd(data.gameEndTimestamp)}
-                                                </div>
-                                            </TableCell>
-                                            <TableCell>
-                                                {getChampionImg1(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.championName)}
-                                            </TableCell>
-                                            <TableCell className="items-center gap-1">
-                                                <div className="flex items-center gap-1">
-                                                    {getSpellImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.summoner1Id)}
-                                                    {createRuneImage1(findRuneIcon(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk))}
-                                                </div>
-                                                <div className="flex items-center gap-1">
-                                                    {getSpellImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.summoner2Id)}
-                                                    {createRuneImage1(getRuneImgMark(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.perks.styles.find((style: any) => style.description === "subStyle")?.style))}
-                                                </div>
-                                            </TableCell>
-                                            <TableCell className="items-center gap-1">
-                                                <div className="flex items-center gap-1">
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item0)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item1)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item2)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item3)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item4)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item5)}
-                                                    {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item6)}
-                                                </div>
-                                                <div className="flex items-center gap-1">
-                                                    <div className="items-center">
+                                                <div className="items-center m-2">
+                                                    <div className="flex ">
                                                         {data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.kills}/
                                                         {data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.deaths}/
                                                         {data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.assists}
                                                     </div>
-                                                    <div className="items-center">
-                                                        평점:
-                                                        {getGrade((data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.kills),
-                                                            (data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.deaths),
-                                                            (data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.assists))}
+                                                    <div className="flex no-underline">
+                                                        {getGrade((data.participants.find((p: Participant) => p.puuid === searchedpuuid)))}
                                                     </div>
                                                 </div>
-                                            </TableCell>
-                                            <TableCell className="p-1">
-                                                <div className="grid grid-cols-6 grid-rows-1 gap-1">
-                                                    {rankings.map((rank, index) => (
-                                                        <div key={index} className={`p-1 ${rank <= 2 ? 'bg-green-500' : rank <= 4 ? 'bg-yellow-500' : 'bg-red-500'} text-white text-center`}>
-                                                            {rank}
+                                            </div>
+                                            <div className="flex gap-1">
+                                                {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item0)}
+                                                {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item1)}
+                                                {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item2)}
+                                                {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item3)}
+                                                {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item4)}
+                                                {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item5)}
+                                                {getItemImg(data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.item6)}
+                                            </div>
+                                        </div>
+
+                                        {/*내 게임 평가*/}
+                                        <div className="pl-2 pr-2">
+                                            <ResponsiveContainer width={140} height={100}>
+                                                <RadarChart cx="50%" cy="50%" outerRadius="80%" data={rankings} margin={{ top: 0, right: 30, bottom: 0, left: 30 }}>
+                                                    <PolarGrid />
+                                                    <PolarAngleAxis dataKey="name" fontSize={8} />
+                                                    <Radar name="Performance" dataKey="rank" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                                                </RadarChart>
+                                            </ResponsiveContainer>
+                                        </div>
+
+
+                                        {/*챔피언 5vs5 */}
+                                        <div className="pr-4">
+                                            <div className="flex">
+                                                <div>
+                                                    {blueTeam.slice(0, 5).map((player: any, index: number) => (
+                                                        <div key={index} className="flex items-center">
+                                                            <div>{getChampionImg1(player.championName, 12, 12)}</div>
+                                                            <Link className="w-[48px] text-[12px] truncate overflow-hidden text-left " href={`/games/${player.riotIdGameName}-${player.riotIdTagline}`}>
+                                                                {player.riotIdGameName}
+                                                            </Link>
                                                         </div>
                                                     ))}
                                                 </div>
-                                            </TableCell>
-                                            <TableCell className="flex items-center gap-2">
-                                                {/* <DataTransfer participant={rankResultInfo} i={i} puuid={searchedpuuid} tier={tier} rankResultTimeline={rankResultTimeline} characterNumber={characterNumber} skillOrder={skillOrder} /> */}
-                                            </TableCell>
-                                        </TableRow>
-                                    </TableBody>
-                                </Table>
+                                                <div>
+                                                    {redTeam.slice(0, 5).map((player: any, index: number) => (
+                                                        <div key={index} className="flex items-center">
+                                                            <div>{getChampionImg1(player.championName, 12, 12)}</div>
+                                                            <Link className="w-[48px] text-[12px] truncate overflow-hidden text-left" href={`/games/${player.riotIdGameName}-${player.riotIdTagline}`}>
+                                                                {player.riotIdGameName}
+                                                            </Link>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </AccordionTrigger>
+
+                            {/*안에 내용 보여줄것*/}
                             <Accordion type="single" collapsible>
-                                <AccordionContent className="bg-green-100">
-                                    <Button className="" onClick={() => setActiveTab("TotalResult")}>TotalResult</Button>
-                                    <Button className="" onClick={() => setActiveTab("TeamAnalysis")}>TeamAnalysis</Button>
-                                    <Button className="" onClick={() => setActiveTab("personalAnalysis")}>personalAnalysis</Button>
+                                <AccordionContent className="bg-gray-100 pb-1">
+                                    <div className="mt-1 mb-1 ">
+                                        <Button className="mr-4 bg-white text-black border-2 hover:bg-gray-200" onClick={() => setActiveTab("TotalResult")}>종합 결과</Button>
+                                        <Button className="mr-4 bg-white text-black border-2 hover:bg-gray-200" onClick={() => setActiveTab("TeamAnalysis")}>팀 분석</Button>
+                                        <Button className="mr-4 bg-white text-black border-2 hover:bg-gray-200" onClick={() => setActiveTab("personalAnalysis")}>개인 분석</Button>
+                                    </div>
                                     {activeTab === "TotalResult" && (
                                         <TotalResult winTeam={winTeam} loseTeam={loseTeam} maxDamageDealt={maxDamageDealt} maxDamageTaken={maxDamageTaken} allRunes={allRunes} runesReforged={runesReforged} />
                                     )}
                                     {activeTab === "TeamAnalysis" && (
-                                        <TeamAnalysis allPlayers={allPlayers} />
+                                        <TeamAnalysis allPlayers={allPlayers} gameResult={data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? 'win' : 'lose'} />
                                     )}{activeTab === "personalAnalysis" && (
-                                        <PersonalAnalysis participantsTimeLine1={participantsTimeLine1} championName={championName} />
+                                        <PersonalAnalysis allPlayers={[...winTeam, ...loseTeam]} puuid={searchedpuuid} rankResultTimeline={rankResultTimeline} />
                                     )}
                                 </AccordionContent>
                             </Accordion>

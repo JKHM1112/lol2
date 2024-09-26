@@ -63,7 +63,7 @@ console.log(loseTeam)
                                         {(findRuneIcon(data.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk, allRunes))}
                                         {(getRuneImgMark(data.perks.styles.find((style: any) => style.description === "subStyle")?.style, runesReforged))}
                                     </div>
-                                    <div className='text-[12px] pt-4'>
+                                    <div className='w-[72px] text-[12px] truncate overflow-hidden text-left pt-4'>
                                         <Link href={`/games/${data.riotIdGameName}-${data.riotIdTagline}`}>{data.riotIdGameName}</Link>
                                     </div>
                                 </TableCell>
@@ -133,7 +133,7 @@ console.log(loseTeam)
                                         {(findRuneIcon(data.perks.styles.find((style: any) => style.description === "primaryStyle")?.selections[0].perk, allRunes))}
                                         {(getRuneImgMark(data.perks.styles.find((style: any) => style.description === "subStyle")?.style, runesReforged))}
                                     </div>
-                                    <div className='text-[12px] pt-4'>
+                                    <div className='w-[72px] text-[12px] truncate overflow-hidden text-left pt-4'>
                                         <Link href={`/games/${data.riotIdGameName}-${data.riotIdTagline}`}>{data.riotIdGameName}</Link>
                                     </div>
                                 </TableCell>

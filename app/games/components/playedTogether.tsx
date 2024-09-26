@@ -102,7 +102,7 @@ export default function PlayedTogether({ resultData, decodedGameName, decodedTag
     const sortedEnemyTeam = sortSummoners([...enemyTeam]);
 
     return (
-        <div className="w-[300px] bg-white rounded-lg shadow-md p-4">
+        <div className="w-[320px] bg-white rounded-lg shadow-md p-4">
             <h2 className="text-lg text-center font-semibold mb-4">함께 플레이한 소환사들</h2>
             <div className="flex justify-around  mb-2">
                 <button className={`px-4 py-2 rounded ${isShowingOurTeam ? "bg-blue-500 text-white" : "bg-gray-200 text-black"}`} onClick={() => setIsShowingOurTeam(true)} >

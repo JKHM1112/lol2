@@ -35,12 +35,12 @@ export default function LeftSection({ fullSummonerName, summonerLeaueDataResult,
     const renderLeagueData = (leagueData: any, queueType: string) => {
         return (
             <div>
-                <div className="border p-2 rounded-t-lg shadow-md w-[300px] bg-white">
+                <div className="border p-2 rounded-t-lg shadow-md w-[320px] bg-white">
                     <div className="justify-between items-center">
                         <p className="font-bold">{queueType === "RANKED_SOLO_5x5" ? "솔로 랭크" : "자유 랭크"}</p>
                     </div>
                 </div>
-                <div className="border p-1 rounded-b-lg shadow-md w-[300px] bg-white">
+                <div className="border p-1 rounded-b-lg shadow-md w-[320px] bg-white">
                     <div className="flex">
                         <Image className="w-1/4" alt={`${queueType}-tier`} src={`/emblems/${leagueData.tier}.png`} width={50} height={50} />
                         <div className="p-1">
@@ -106,7 +106,6 @@ export default function LeftSection({ fullSummonerName, summonerLeaueDataResult,
 
     return (
         <div>
-
             {/* 티어 및 승률 표시 구역 */}
             <div className="flex justify-center items-center p-1">
                 {renderLeagueData(soloLeagueData, "RANKED_SOLO_5x5")}

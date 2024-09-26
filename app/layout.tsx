@@ -37,7 +37,7 @@ export default async function RootLayout({ children, }: Readonly<{ children: Rea
   return (
     <html lang="en">
       <body className={notoSansKr.className}>
-        <div className="navbar flex flex-wrap items-center justify-between px-2 py-2 md:justify-center md:gap-4">
+        <div className="navbar flex flex-wrap items-center justify-between px-4 py-2 md:justify-center md:gap-4 max-w-full">
           <div className="flex flex-wrap items-center space-x-4 text-sm">
             <Link href="/">
               <div className="searchLogo">
@@ -65,7 +65,9 @@ export default async function RootLayout({ children, }: Readonly<{ children: Rea
             <LoginBtn />
           )}
         </div>
-        {children}
+        <main className="min-h-screen max-w-full overflow-x-hidden">
+          {children}
+        </main>
       </body>
     </html>
   );

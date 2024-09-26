@@ -37,18 +37,21 @@ export default async function GameSelect({ params }: { params: { summoner: strin
     } catch (error) {
         console.error("Error: ", error);
         return (
-            <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+            <div className="flex justify-center w-full">
                 <h4>소환사가 존재하지 않습니다. 다시 입력해주세요.</h4>
             </div>
         );
     }
 
     return (
-        <div className="overflow-x-auto">
-            <ProfileSection fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} resultData={resultData} />
-            <div className="flex bg-gray-100 justify-center p-2">
-                <LeftSection fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} resultData={resultData} />
-                <SelectedGames fullSummonerName={params.summoner} resultData={resultData} resultTimelines={resultTimelines} searchedpuuid={searchedpuuid} queue={420} />
+        <div className="overflow-x-auto w-full bg-gray-100">
+            <div className="flex-row flex-col items-center min-w-[1200px]">
+                <ProfileSection fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} resultData={resultData} />
+
+                <div className="flex bg-gray-100 w-full min-w-[1200px] justify-center overflow-x-auto">
+                    <LeftSection fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} resultData={resultData} />
+                    <SelectedGames fullSummonerName={params.summoner} resultData={resultData} resultTimelines={resultTimelines} searchedpuuid={searchedpuuid} queue={420} />
+                </div>
             </div>
         </div>
     );
