@@ -1,6 +1,6 @@
 'use client'
 import * as React from "react"
-import { PieChart, Pie, Cell, Label, ResponsiveContainer, BarChart, Bar, XAxis, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
+import { PieChart, Pie, Cell, Label, ResponsiveContainer, BarChart, Bar, RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts';
 import Image from "next/image"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { runesReforged } from "@/app/data/runesReforged"
@@ -399,7 +399,7 @@ export default function RankResult({ searchedpuuid, rankResults, rankResultTimel
                                     {activeTab === "TeamAnalysis" && (
                                         <TeamAnalysis allPlayers={allPlayers} gameResult={data.participants.find((p: Participant) => p.puuid === searchedpuuid)?.win ? 'win' : 'lose'} />
                                     )}{activeTab === "personalAnalysis" && (
-                                        <PersonalAnalysis participantsTimeLine={participantsTimeLine} championName={championName} runesReforged={runesReforged} />
+                                        <PersonalAnalysis allPlayers={[...winTeam, ...loseTeam]} puuid={searchedpuuid} rankResultTimeline={rankResultTimeline} />
                                     )}
                                 </AccordionContent>
                             </Accordion>

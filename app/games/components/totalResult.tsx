@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 
 export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDamageTaken, allRunes, runesReforged }: any) {
-
+console.log(loseTeam)
     //아이템 번호를 가지고 이미지로 바꿔준다.
     const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/item/${itemCode}.png`} width={30} height={30} />
     //챔피언 영문으로 이미지로 바꿔준다.

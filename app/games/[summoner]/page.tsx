@@ -34,7 +34,6 @@ export default async function GameSelect({ params }: { params: { summoner: strin
         const rankDataResults = await Promise.all(rankDataPromises);
         resultData = rankDataResults.map(result => result.matchData);
         resultTimelines = rankDataResults.map(result => result.matchTimeline);
-
     } catch (error) {
         console.error("Error: ", error);
         return (
