@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { initialParticipant } from "../write/components/participants";
 
 interface UserStoreState {
     participants: any[]
@@ -59,7 +58,18 @@ interface UserStoreState {
 }
 
 const useUserStore = create<UserStoreState>((set, get) => ({
-    participants: [initialParticipant],
+    participants: [{
+        "participants": [
+            {
+                individualPosition: "미드",
+                puuid: "",
+            },
+            {
+                individualPosition: "미드",
+                puuid: "qwerasdfzxcv",
+            }
+        ]
+    }],
     setParticipants: (participants) => {
         set({ participants })
     },

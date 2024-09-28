@@ -6,7 +6,7 @@ import Image from "next/image";
 import useUserStore from "@/app/hooks/useUserStore";
 import { summoner } from "@/app/data/summoner";
 
-export default function Summoners() {
+export default function Summoners({ dataActiveTab }: any) {
     const summonerData = summoner;
     const [summonerOpen, setSummonerOpen] = useState(Array(4).fill(false));
     const { summoners, setSummoners } = useUserStore();
@@ -24,47 +24,54 @@ export default function Summoners() {
 
     const selectedSpells = ['내 스펠D', '내 스펠F', '상대 스펠D', '상대 스펠F'];
 
-    return (
-        <div>
-            {summoners.map((selectedSummoner, i) => (
-                <div className="flex items-center space-x-4" key={i}>
-                    <Popover open={summonerOpen[i]} onOpenChange={(value) => handleSpellOpen(i, value)}>
-                        <PopoverTrigger asChild>
-                            <Button variant="outline" size="sm" className="w-[150px] justify-start">
-                                {summoners[i] && findSummonerNameK(summoners[i]) ? (
-                                    <>
-                                        <Image alt={findSummonerNameK(summoners[i])} src={'/spellN/' + summoners[i] + '.png'} height={20} width={20} />
-                                        {findSummonerNameK(summoners[i])}
-                                    </>
-                                ) : (
-                                    selectedSpells[i]
-                                )}
-                            </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="p-0" side="right" align="start">
-                            <Command>
-                                <CommandInput placeholder="Change spell..." />
-                                <CommandList>
-                                    <CommandEmpty>No spells found.</CommandEmpty>
-                                    <CommandGroup>
-                                        {Object.values(summonerData.data).map((summoner: any, j) => (
-                                            <CommandItem key={j} value={summoner.name} onSelect={() => {
-                                                setSummoners(i, summoner.key);
-                                                handleSpellOpen(i, false);
-                                            }}>
-                                                <Image alt={summoner.name} src={'/spellN/' + summoner.key + '.png'} height={20} width={20} />
-                                                <span className="mr-2">{summoner.name}</span>
-                                            </CommandItem>
-                                        ))}
-                                    </CommandGroup>
-                                </CommandList>
-                            </Command>
-                        </PopoverContent>
-                    </Popover>
-                </div>
-            ))}
+    const renderSummoners = (startIndex: number, endIndex: number) => {
+        return summoners.slice(startIndex, endIndex).map((selectedSummoner, i) => (
+            <div className="flex items-center " key={i + startIndex}>
+                <Popover open={summonerOpen[i + startIndex]} onOpenChange={(value) => handleSpellOpen(i + startIndex, value)}>
+                    <PopoverTrigger asChild>
+                        <Button variant="outline" size="sm" className="w-full justify-start">
+                            {summoners[i + startIndex] && findSummonerNameK(summoners[i + startIndex]) ? (
+                                <>
+                                    <Image alt={findSummonerNameK(summoners[i + startIndex])} src={'/spellN/' + summoners[i + startIndex] + '.png'} height={25} width={25} className="rounded" />
+                                    <span className="ml-2">{findSummonerNameK(summoners[i + startIndex])}</span>
+                                </>
+                            ) : (
+                                selectedSpells[i + startIndex]
+                            )}
+                        </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="p-0 w-[180px]" side="right" align="start">
+                        <Command>
+                            <CommandInput placeholder="스펠 검색..." />
+                            <CommandList>
+                                <CommandEmpty>스펠을 찾을 수 없습니다.</CommandEmpty>
+                                <CommandGroup>
+                                    {Object.values(summonerData.data).map((summoner: any, j) => (
+                                        <CommandItem key={j} value={summoner.name} onSelect={() => {
+                                            setSummoners(i + startIndex, summoner.key);
+                                            handleSpellOpen(i + startIndex, false);
+                                        }}>
+                                            <Image alt={summoner.name} src={'/spellN/' + summoner.key + '.png'} height={20} width={20} className="rounded" />
+                                            <span className="ml-2">{summoner.name}</span>
+                                        </CommandItem>
+                                    ))}
+                                </CommandGroup>
+                            </CommandList>
+                        </Command>
+                    </PopoverContent>
+                </Popover>
+            </div>
+        ));
+    };
 
-            <input style={{ display: 'none' }} name="summoners" value={JSON.stringify(summoners)} readOnly />
+    return (
+        <div className="flex w-full">
+            <div className="flex flex-col gap-2 ml-8">
+                {dataActiveTab == "MyData" && renderSummoners(0, 2)}
+            </div>
+            <div className="flex flex-col gap-2">
+                {dataActiveTab == "YourData" && renderSummoners(2, 4)}
+            </div>
         </div>
     );
 }

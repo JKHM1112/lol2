@@ -6,8 +6,7 @@ import Image from "next/image";
 import useUserStore from "@/app/hooks/useUserStore";
 import { item } from "@/app/data/item";
 
-export default function Items() {
-
+export default function Items({ dataActiveTab }: any) {
     const itemData = item;
     const itemsList = Object.entries(itemData.data).map(([id, item]) => ({
         id,
@@ -36,36 +35,35 @@ export default function Items() {
 
     const renderItems = (startIndex: number, endIndex: number) => {
         return (
-            <div>
+            <div className="grid grid-cols-1 gap-2 m-3 ">
                 {items.slice(startIndex, endIndex).map((selectedItem, i) => (
                     <div className="flex items-center space-x-4" key={i + startIndex}>
                         <Popover open={itemOpen[i + startIndex]} onOpenChange={(value) => handleItemOpen(i + startIndex, value)}>
                             <PopoverTrigger asChild>
-                                <Button variant="outline" size="sm" className="w-[140px] justify-start">
+                                <Button variant="outline" size="sm" className="w-full justify-start">
                                     {items[i + startIndex] && findItemNameNK(items[i + startIndex]) ? (
                                         <>
-                                            <Image alt={findItemNameNK(items[i + startIndex])} src={findItemImage(items[i + startIndex])} height={20} width={20}></Image>
-                                            {findItemNameNK(items[i + startIndex])}
+                                            <Image alt={findItemNameNK(items[i + startIndex])} src={findItemImage(items[i + startIndex])} height={25} width={25} className="rounded" />
+                                            <span className="ml-2">{findItemNameNK(items[i + startIndex])}</span>
                                         </>
                                     ) : (
-                                        <>+ Set item</>
+                                        <>아이템 선택</>
                                     )}
                                 </Button>
                             </PopoverTrigger>
                             <PopoverContent className="p-0" side="right" align="start">
                                 <Command>
-                                    <CommandInput placeholder="Change item..." />
+                                    <CommandInput placeholder="아이템 검색..." />
                                     <CommandList>
-                                        <CommandEmpty>No item found.</CommandEmpty>
+                                        <CommandEmpty>아이템을 찾을 수 없습니다.</CommandEmpty>
                                         <CommandGroup>
                                             {itemsList.map((item: any, j: number) => (
                                                 <CommandItem key={j} value={item.nameK} onSelect={() => {
                                                     setItems(i + startIndex, item.id);
                                                     handleItemOpen(i + startIndex, false);
-                                                }}
-                                                >
-                                                    <Image alt={item.nameK} src={item.img} height={20} width={20}></Image>
-                                                    <span className="mr-2">{item.nameK}</span>
+                                                }}>
+                                                    <Image alt={item.nameK} src={item.img} height={20} width={20} className="rounded" />
+                                                    <span className="ml-2">{item.nameK}</span>
                                                 </CommandItem>
                                             ))}
                                         </CommandGroup>
@@ -82,14 +80,11 @@ export default function Items() {
     return (
         <div className="flex">
             <div>
-                <h2>Items Set 1</h2>
-                {renderItems(0, 7)}
+                {dataActiveTab == "MyData" && renderItems(0, 7)}
             </div>
             <div>
-                <h2>Items Set 2</h2>
-                {renderItems(7, 14)}
+                {dataActiveTab == "YourData" && renderItems(7, 14)}
             </div>
-            <input style={{ display: 'none' }} name="items" value={JSON.stringify(items)} readOnly />
         </div>
     );
 }

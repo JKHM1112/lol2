@@ -44,10 +44,10 @@ const schema = zfd.formData({
     turretPlatesTaken: zfd.text(z.string().optional()),
     visionScore: zfd.text(z.string().optional()),
     skillOrder: zfd.text(z.string().optional()),
-    before6: zfd.numeric(z.number().min(1).max(5).optional()),
-    after6: zfd.numeric(z.number().min(1).max(5).optional()),
-    side1: zfd.numeric(z.number().min(1).max(5).optional()),
-    teamFight1: zfd.numeric(z.number().min(1).max(5).optional()),
+    before6: zfd.numeric(z.number().min(0).max(5).optional()),
+    after6: zfd.numeric(z.number().min(0).max(5).optional()),
+    side1: zfd.numeric(z.number().min(0).max(5).optional()),
+    teamFight1: zfd.numeric(z.number().min(0).max(5).optional()),
     lineResult: zfd.text(z.string().optional()),
     gameResult: zfd.text(z.string().optional()),
     review: zfd.text(z.string().optional()),
@@ -56,11 +56,17 @@ const schema = zfd.formData({
 
 export async function POST(request: NextRequest) {
     let session = await getServerSession(authOptions)
+
     if (!session) {
         return Response.redirect(new URL('/register', request.nextUrl.origin))
     }
+
     const formData = await request.formData()
-    const parsedData = schema.parse(formData);
+    let parsedData = schema.parse(formData);
+
+    parsedData = Object.fromEntries(
+        Object.entries(parsedData).map(([key, value]) => [key, value === undefined ? null : value])
+    );
     const chamsArray = JSON.parse(parsedData.chams || '[]');
     const runesArray = JSON.parse(parsedData.runes || '[]');
     const summonersArray = JSON.parse(parsedData.summoners || '[]');
@@ -97,16 +103,30 @@ export async function POST(request: NextRequest) {
         email: session?.user?.email,
     };
     const api_key = process.env.RIOT_API_KEY as string;
-    let puuid, summonerAccount;
-    if (parsedData.puuid) {
-        puuid = parsedData.puuid;
-        summonerAccount = await getAccount(puuid, api_key);
+    let puuid = parsedData.puuid;
+    let summonerAccount;
+    if (puuid) {
+        try {
+            summonerAccount = await getAccount(puuid, api_key);
+        } catch (error) {
+            console.error("Error fetching Riot account:", error);
+        }
     }
-    const name = summonerAccount.gameName;
-    const tagLine = summonerAccount.tagLine;
-    const nameTagLine = name + "#" + tagLine
-    const db = (await connectDB).db('dream')
-    await db.collection('dataEnteredDirectly').insertOne(data)
+    console.log(data)
+    if (summonerAccount) {
+        const name = summonerAccount.gameName;
+        const tagLine = summonerAccount.tagLine;
+        const nameTagLine = `${name}#${tagLine}`;
 
-    return Response.redirect(new URL(`/games/${nameTagLine}`, request.nextUrl.origin))
+        // MongoDB에 데이터 저장
+        const db = (await connectDB).db('dream');
+        await db.collection('dataEnteredDirectly').insertOne(data);
+
+        return Response.redirect(new URL(`/games/${nameTagLine}`, request.nextUrl.origin));
+    } else {
+        // Riot API로부터 정보를 얻지 못했을 때
+        const db = (await connectDB).db('dream');
+        await db.collection('dataEnteredDirectly').insertOne(data);
+        return Response.redirect(new URL('/', request.nextUrl.origin));
+    }
 }

@@ -1,75 +1,99 @@
 'use client'
-import { Button } from "@/components/ui/button";
-import { ResizableHandle, ResizablePanel, ResizablePanelGroup, } from "@/components/ui/resizable"
+import useUserStore from "../hooks/useUserStore";
+import React from "react";
+import ChampionLineSelect from "./components/championLineSelect";
+import RuneSelect from "./components/runeSelect";
 import Items from "./components/items";
-import Runes from "./components/runes";
 import Summoners from "./components/summoner";
 import Difficulty from "./components/difficulty";
-import Lines from "./components/lineResult";
-import LineChampions from "./components/lineChampions";
-import useUserStore from "../hooks/useUserStore";
+import Lines from "./components/lines";
+
 export default function Write() {
     const { timeLineLevelUp1, timeLineLevelUp2, gameExtracted1, gameExtracted2, timeLineKda1, timeLineKda2,
-        timeLineObject1, timeLineObject2, turretPlatesTaken, visionScore, tier, puuid ,skillOrder} = useUserStore();
+        timeLineObject1, timeLineObject2, turretPlatesTaken, visionScore, tier, puuid, skillOrder,
+        champions, lines, runes, items, summoners, lineResults, gameResults, review, before, after, side, teamFight
+    } = useUserStore();
     const currentDate = new Date().toISOString().split('T')[0]
-
+    const [dataActiveTab, setDataActiveTab] = React.useState("MyData");
     return (
-        <div className="flex items-center gap-4 justify-center">
-            <form action="/api/post/newListWrite" method="POST">
-                <ResizablePanelGroup direction="horizontal" className="items-center justify-center p-2 ">
-                    <ResizablePanelGroup direction="horizontal" className="min-h-[600px] min-w-[600px] rounded-lg border">
-                        <ResizablePanel defaultSize={10}>
-                            <ResizablePanelGroup direction="vertical" className="rounded-lg border">
-                                <ResizablePanel defaultSize={20} className="flex items-center justify-center p-2">
-                                    <div className="p-2">
-                                        <LineChampions />
-                                        <Difficulty />
-                                        <Lines />
-                                    </div>
-                                </ResizablePanel>
-                                <ResizableHandle />
-                                <ResizablePanel defaultSize={9} className="flex  items-center justify-center p-2">
-                                    <div className="p-2">
-                                        <Summoners />
-                                    </div>
-                                    <Button type="submit">전송하기</Button>
-                                </ResizablePanel>
-                            </ResizablePanelGroup>
-                        </ResizablePanel>
-                        <ResizableHandle />
-                        <ResizablePanel defaultSize={18}>
-                            <ResizablePanelGroup direction="horizontal" className=" rounded-lg border">
-                                <ResizablePanel defaultSize={15} className="flex items-center justify-center p-2">
-                                    <div >
-                                        <Runes />
-                                    </div>
-                                </ResizablePanel>
-                                <ResizableHandle />
-                                <ResizablePanel defaultSize={15} className="flex items-center justify-center p-2">
-                                    <div className="p-2">
-                                        <Items />
-                                    </div>
-                                </ResizablePanel>
-                            </ResizablePanelGroup>
-                        </ResizablePanel>
-                    </ResizablePanelGroup>
-                </ResizablePanelGroup>
+        <div className="overflow-x-auto flex justify-center">
+            <div className="min-w-[1000px] bg-gray-100 rounded-md mt-4">
+                <div className="flex flex-row justify-center gap-8 m-4">
+                    <button className={`border-2 px-4 py-2 rounded-md transition-all duration-300 ease-in-out ${dataActiveTab === "MyData"
+                        ? "bg-sky-500 text-white border-sky-500 scale-110"
+                        : "bg-sky-300 text-white hover:bg-sky-200 scale-90"
+                        }`} onClick={() => setDataActiveTab("MyData")}>
+                        내 기록
+                    </button>
 
-                <input style={{ display: 'none' }} name="date" defaultValue={currentDate}></input>
-                <input style={{ display: 'none' }} name="timeLineLevel1" defaultValue={JSON.stringify(timeLineLevelUp1)}></input>
-                <input style={{ display: 'none' }} name="timeLineLevel2" defaultValue={JSON.stringify(timeLineLevelUp2)}></input>
-                <input style={{ display: 'none' }} name="gameExtracted1" defaultValue={JSON.stringify(gameExtracted1)}></input>
-                <input style={{ display: 'none' }} name="gameExtracted2" defaultValue={JSON.stringify(gameExtracted2)}></input>
-                <input style={{ display: 'none' }} name="timeLineObject1" defaultValue={JSON.stringify(timeLineObject1)}></input>
-                <input style={{ display: 'none' }} name="timeLineObject2" defaultValue={JSON.stringify(timeLineObject2)}></input>
-                <input style={{ display: 'none' }} name="timeLineKda1" defaultValue={JSON.stringify(timeLineKda1)}></input>
-                <input style={{ display: 'none' }} name="timeLineKda2" defaultValue={JSON.stringify(timeLineKda2)}></input>
-                <input style={{ display: 'none' }} name="turretPlatesTaken" defaultValue={JSON.stringify(turretPlatesTaken)}></input>
-                <input style={{ display: 'none' }} name="visionScore" defaultValue={JSON.stringify(visionScore)}></input>
-                <input style={{ display: 'none' }} name="skillOrder" defaultValue={JSON.stringify(skillOrder)}></input>
-                <input style={{ display: 'none' }} name="tier" defaultValue={tier}></input>
-                <input style={{ display: 'none' }} name="puuid" defaultValue={puuid}></input>
-            </form>
-        </div >
+                    <button className={`border-2 px-4 py-2 rounded-md transition-all duration-300 ease-in-out ${dataActiveTab === "YourData"
+                        ? "bg-sky-500 text-white border-sky-500 scale-110"
+                        : "bg-sky-300 text-white hover:bg-sky-200 scale-90"
+                        }`} onClick={() => setDataActiveTab("YourData")}>
+                        네 기록
+                    </button>
+                </div>
+
+                <div>
+                    <div className="flex flex-row justify-center gap-8">
+                        <div>
+                            <ChampionLineSelect dataActiveTab={dataActiveTab} />
+                        </div>
+                        <form action="/api/post/newListWrite" method="POST">
+                            <input style={{ display: 'none' }} name="chams" value={JSON.stringify(champions)} readOnly />
+                            <input style={{ display: 'none' }} name="line" value={lines} readOnly />
+                            <input style={{ display: 'none' }} name="runes" value={JSON.stringify(runes)} readOnly />
+                            <input style={{ display: 'none' }} name="items" value={JSON.stringify(items)} readOnly />
+                            <input style={{ display: 'none' }} name="summoners" value={JSON.stringify(summoners)} readOnly />
+                            <input style={{ display: 'none' }} name="date" defaultValue={currentDate}></input>
+                            <input style={{ display: 'none' }} name="timeLineLevel1" defaultValue={JSON.stringify(timeLineLevelUp1)}></input>
+                            <input style={{ display: 'none' }} name="timeLineLevel2" defaultValue={JSON.stringify(timeLineLevelUp2)}></input>
+                            <input style={{ display: 'none' }} name="gameExtracted1" defaultValue={JSON.stringify(gameExtracted1)}></input>
+                            <input style={{ display: 'none' }} name="gameExtracted2" defaultValue={JSON.stringify(gameExtracted2)}></input>
+                            <input style={{ display: 'none' }} name="timeLineObject1" defaultValue={JSON.stringify(timeLineObject1)}></input>
+                            <input style={{ display: 'none' }} name="timeLineObject2" defaultValue={JSON.stringify(timeLineObject2)}></input>
+                            <input style={{ display: 'none' }} name="timeLineKda1" defaultValue={JSON.stringify(timeLineKda1)}></input>
+                            <input style={{ display: 'none' }} name="timeLineKda2" defaultValue={JSON.stringify(timeLineKda2)}></input>
+                            <input style={{ display: 'none' }} name="turretPlatesTaken" defaultValue={JSON.stringify(turretPlatesTaken)}></input>
+                            <input style={{ display: 'none' }} name="visionScore" defaultValue={JSON.stringify(visionScore)}></input>
+                            <input style={{ display: 'none' }} name="skillOrder" defaultValue={JSON.stringify(skillOrder)}></input>
+                            <input style={{ display: 'none' }} name="tier" defaultValue={tier}></input>
+                            <input style={{ display: 'none' }} name="puuid" defaultValue={puuid}></input>
+                            <input style={{ display: 'none' }} name="lineResult" value={lineResults} readOnly />
+                            <input style={{ display: 'none' }} name="gameResult" value={gameResults} readOnly />
+                            <input style={{ display: 'none' }} name="review" value={review} readOnly />
+                            <input style={{ display: 'none' }} name="before6" value={before} readOnly />
+                            <input style={{ display: 'none' }} name="after6" value={after} readOnly />
+                            <input style={{ display: 'none' }} name="side1" value={side} readOnly />
+                            <input style={{ display: 'none' }} name="teamFight1" value={teamFight} readOnly />
+                            <button className="border-2 px-4 py-2 rounded-md">전송</button>
+                        </form>
+                    </div>
+
+                    <div>
+                        <div className="flex justify-center">
+                            {/* 아이템박스 / 스펠*/}
+                            <div className="flex flex-col">
+                                <div className="w-[180px] bg-gray-200 rounded-md my-4">
+                                    <Items dataActiveTab={dataActiveTab} />
+                                </div>
+                                <div className="w-[180px] bg-gray-200 rounded-md mb-4 ">
+                                    <Summoners dataActiveTab={dataActiveTab} />
+                                </div>
+                            </div>
+                            {/* 룬박스*/}
+                            <div className="w-[450px] bg-gray-200 rounded-md m-4">
+                                <RuneSelect dataActiveTab={dataActiveTab} />
+                            </div>
+                            {/* 난이도 박스 */}
+                            <div className="w-[250px] bg-gray-200 rounded-md m-4">
+                                <Difficulty />
+                                <Lines />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }

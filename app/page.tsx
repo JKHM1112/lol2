@@ -1,5 +1,6 @@
 import Games from "./games/page";
 import RiotPatchNotes from "./components/riotPatchNotes";
+import CharSearch from "./charSearch/page";
 
 export default async function Home() {
   return (

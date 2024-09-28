@@ -23,12 +23,11 @@ const schema = zfd.formData({
     lineResult: zfd.text(z.string().optional()),
     gameResult: zfd.text(z.string().optional()),
     review: zfd.text(z.string().optional()),
-    date: zfd.text(z.string().optional()),
 });
 
 export async function POST(request: NextRequest) {
-    const formData = await request.formData()
 
+    const formData = await request.formData()
     const parsedData = schema.parse(formData);
     const chamsArray = JSON.parse(parsedData.chams || '[]');
     const runesArray = JSON.parse(parsedData.runes || '[]');
