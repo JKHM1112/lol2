@@ -22,11 +22,11 @@ export default function Summoners({ dataActiveTab }: any) {
         return summoner ? summoner.name : '';
     };
 
-    const selectedSpells = ['내 스펠D', '내 스펠F', '상대 스펠D', '상대 스펠F'];
+    const selectedSpells = ['내 스펠D', '내 스펠F', '네 스펠D', '네 스펠F'];
 
     const renderSummoners = (startIndex: number, endIndex: number) => {
         return summoners.slice(startIndex, endIndex).map((selectedSummoner, i) => (
-            <div className="flex items-center " key={i + startIndex}>
+            <div className="grid grid-cols-1 gap-2 m-2" key={i + startIndex}>
                 <Popover open={summonerOpen[i + startIndex]} onOpenChange={(value) => handleSpellOpen(i + startIndex, value)}>
                     <PopoverTrigger asChild>
                         <Button variant="outline" size="sm" className="w-full justify-start">
@@ -65,11 +65,11 @@ export default function Summoners({ dataActiveTab }: any) {
     };
 
     return (
-        <div className="flex w-full">
-            <div className="flex flex-col gap-2 ml-8">
+        <div className="flex">
+            <div>
                 {dataActiveTab == "MyData" && renderSummoners(0, 2)}
             </div>
-            <div className="flex flex-col gap-2">
+            <div>
                 {dataActiveTab == "YourData" && renderSummoners(2, 4)}
             </div>
         </div>

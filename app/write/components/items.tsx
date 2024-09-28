@@ -35,7 +35,7 @@ export default function Items({ dataActiveTab }: any) {
 
     const renderItems = (startIndex: number, endIndex: number) => {
         return (
-            <div className="grid grid-cols-1 gap-2 m-3 ">
+            <div className="grid grid-cols-1 gap-2 m-2">
                 {items.slice(startIndex, endIndex).map((selectedItem, i) => (
                     <div className="flex items-center space-x-4" key={i + startIndex}>
                         <Popover open={itemOpen[i + startIndex]} onOpenChange={(value) => handleItemOpen(i + startIndex, value)}>

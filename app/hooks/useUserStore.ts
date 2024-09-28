@@ -73,7 +73,7 @@ const useUserStore = create<UserStoreState>((set, get) => ({
     setParticipants: (participants) => {
         set({ participants })
     },
-    champions: Array(4).fill(''),
+    champions: Array(8).fill(''),
     setChampions: (index, champion) => {
         const updatedChampions = [...get().champions]
         updatedChampions[index] = champion

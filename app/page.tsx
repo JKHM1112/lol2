@@ -4,7 +4,7 @@ import CharSearch from "./charSearch/page";
 
 export default async function Home() {
   return (
-    <div className="flex flex-col justify-start items-center min-h-screen bg-gray-100">
+    <div className="flex flex-col justify-start items-center min-w-[1200px] min-h-[1000px] bg-gray-100">
       <div className="searchLogo flex items-center justify-center mt-8 mb-6">
         <span className="lolL">LOL</span>
         <span className="recordL">RECORD</span>

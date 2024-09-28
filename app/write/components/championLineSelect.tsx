@@ -41,9 +41,11 @@ export default function ChampionLineSelect({ dataActiveTab }: any) {
         return champion ? champion.nameK : nameE;
     };
 
-    // 챔피언 선택 시 처리
-    const handleChampionSelect = (index: number, championName: string) => {
-        setChampions(index, championName);
+    // 챔피언 선택 시 처리 (영문명과 한글명을 각각 저장)
+    const handleChampionSelect = (index: number, championNameE: string) => {
+        const championNameK = nameChangeEK(championNameE); // 영문명을 한글명으로 변환
+        setChampions(index, championNameE);  // 영문 챔피언 이름 저장
+        setChampions(index + 4, championNameK);  // 한글 챔피언 이름 저장
     };
 
     const firstIndex = dataActiveTab === "MyData" ? 0 : 1;
@@ -55,11 +57,11 @@ export default function ChampionLineSelect({ dataActiveTab }: any) {
         <div className="flex flex-row justify-center">
             <Popover>
                 <PopoverTrigger asChild>
-                    <Button className="text-black mr-4 bg-sky-300 hover:bg-sky-200">
+                    <Button className={`text-black mr-4 ${dataActiveTab === "MyData" ? "bg-blue-200" : "bg-red-200"}`}>
                         {champions[firstIndex] ? (
                             <div className="flex flex-row">
                                 <Image className="rounded-md" alt={champions[firstIndex]} src={`/champion/${champions[firstIndex]}.png`} height={25} width={25} />
-                                {nameChangeEK(champions[firstIndex])}
+                                {champions[firstIndex + 4] || nameChangeEK(champions[firstIndex])} {/* 한글명이 있으면 표시 */}
                             </div>
                         ) : (
                             <>챔1 선택</>
@@ -84,11 +86,11 @@ export default function ChampionLineSelect({ dataActiveTab }: any) {
             {(lines === "바텀" || lines === "서폿") && (
                 <Popover>
                     <PopoverTrigger asChild>
-                        <Button className="text-black mr-4 bg-sky-300 hover:bg-sky-200">
+                        <Button className={`text-black mr-4 ${dataActiveTab === "MyData" ? "bg-blue-200" : "bg-red-200"}`}>
                             {champions[secondIndex] ? (
                                 <>
                                     <Image className="rounded-md" alt={champions[secondIndex]} src={`/champion/${champions[secondIndex]}.png`} height={25} width={25} />
-                                    {nameChangeEK(champions[secondIndex])}
+                                    {champions[secondIndex + 4] || nameChangeEK(champions[secondIndex])} {/* 한글명이 있으면 표시 */}
                                 </>
                             ) : (
                                 <>챔2 선택</>
@@ -115,41 +117,40 @@ export default function ChampionLineSelect({ dataActiveTab }: any) {
             {/* 라인을 선택한다. */}
             <div className="flex flex-row gap-2">
                 <button
-                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === "TOP"
-                        ? "bg-sky-500 text-white border-sky-500 scale-110"
-                        : "bg-sky-300 text-white hover:bg-sky-200 scale-90"}`}
+                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === "탑"
+                        ? "bg-gray-500 text-white border-gray-500 scale-110"
+                        : "bg-gray-300 text-white hover:bg-gray-200 scale-90"}`}
                     onClick={() => { setLineActiveTab("탑"); setLines('탑'); }} >
                     탑
                 </button>
                 <button
-                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === "JUNGLE"
-                        ? "bg-sky-500 text-white border-sky-500 scale-110"
-                        : "bg-sky-300 text-white hover:bg-sky-200 scale-90"}`}
+                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === "정글"
+                        ? "bg-gray-500 text-white border-gray-500 scale-110"
+                        : "bg-gray-300 text-white hover:bg-gray-200 scale-90"}`}
                     onClick={() => { setLineActiveTab("정글"); setLines('정글'); }} >
                     정글
                 </button>
                 <button
-                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === "MIDDLE"
-                        ? "bg-sky-500 text-white border-sky-500 scale-110"
-                        : "bg-sky-300 text-white hover:bg-sky-200 scale-90"}`}
+                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === "미드"
+                        ? "bg-gray-500 text-white border-gray-500 scale-110"
+                        : "bg-gray-300 text-white hover:bg-gray-200 scale-90"}`}
                     onClick={() => { setLineActiveTab("미드"); setLines('미드'); }} >
                     미드
                 </button>
                 <button
-                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === "BOTTOM"
-                        ? "bg-sky-500 text-white border-sky-500 scale-110"
-                        : "bg-sky-300 text-white hover:bg-sky-200 scale-90"}`} onClick={() => { setLineActiveTab("바텀"); setLines('바텀'); }} >
+                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === "바텀"
+                        ? "bg-gray-500 text-white border-gray-500 scale-110"
+                        : "bg-gray-300 text-white hover:bg-gray-200 scale-90"}`} onClick={() => { setLineActiveTab("바텀"); setLines('바텀'); }} >
                     원딜
                 </button>
                 <button
-                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === "UTILITY"
-                        ? "bg-sky-500 text-white border-sky-500 scale-110"
-                        : "bg-sky-300 text-white hover:bg-sky-200 scale-90"}`}
+                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === "서폿"
+                        ? "bg-gray-500 text-white border-gray-500 scale-110"
+                        : "bg-gray-300 text-white hover:bg-gray-200 scale-90"}`}
                     onClick={() => { setLineActiveTab("서폿"); setLines('서폿'); }}>
                     서폿
                 </button>
             </div>
-
-        </div >
+        </div>
     );
 }

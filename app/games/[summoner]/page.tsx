@@ -17,7 +17,7 @@ export default async function GameSelect({ params }: { params: { summoner: strin
 
         // 비동기 작업 병렬 처리
         [rankedMatchIds, summonerData] = await Promise.all([
-            getRecentMatchIds(searchedpuuid, 420, 0, 20),
+            getRecentMatchIds(searchedpuuid, 420, 0, 10),
             getSummonerData(searchedpuuid)
         ]);
         const summonerDataId = summonerData.id;
@@ -44,11 +44,10 @@ export default async function GameSelect({ params }: { params: { summoner: strin
     }
 
     return (
-        <div className="overflow-x-auto w-full bg-gray-100">
-            <div className="flex-row flex-col items-center min-w-[1200px]">
+        <div className="w-full bg-gray-100">
+            <div className="flex-row bg-gray-100 flex-col items-center min-w-[1200px]">
                 <ProfileSection fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} resultData={resultData} />
-
-                <div className="flex bg-gray-100 w-full min-w-[1200px] justify-center overflow-x-auto">
+                <div className="flex bg-gray-100 w-full min-w-[1200px] justify-center">
                     <LeftSection fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} resultData={resultData} />
                     <SelectedGames fullSummonerName={params.summoner} resultData={resultData} resultTimelines={resultTimelines} searchedpuuid={searchedpuuid} queue={420} />
                 </div>

@@ -43,7 +43,7 @@ export default async function Detail(props: any) {
     const tagLine = summonerAccount.tagLine;
     const nameTagLine = name + "#" + tagLine
     return (
-        <div className="overflow-x-auto">
+        <div className="min-w-[1200px]">
             <div className="flex">
                 <div >
                     <div className="border border-gray-300 rounded-md  p-2">

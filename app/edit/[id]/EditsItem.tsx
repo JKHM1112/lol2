@@ -16,7 +16,7 @@ export default function EditsItem({ props }: any) {
     const [dataActiveTab, setDataActiveTab] = React.useState("MyData");
 
     return (
-        <div className="overflow-x-auto flex justify-center">
+        <div className="min-w-[1200px] flex justify-center">
             <div className="min-w-[1000px] bg-gray-100 rounded-md mt-4">
                 <div className="flex flex-row justify-center gap-8 m-4">
                     <button className={`border-2 px-4 py-2 rounded-md transition-all duration-300 ease-in-out ${dataActiveTab === "MyData"

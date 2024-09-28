@@ -16,7 +16,7 @@ export default function Write() {
     const currentDate = new Date().toISOString().split('T')[0]
     const [dataActiveTab, setDataActiveTab] = React.useState("MyData");
     return (
-        <div className="overflow-x-auto flex justify-center">
+        <div className="flex justify-center min-w-[1200px]">
             <div className="min-w-[1000px] bg-gray-100 rounded-md mt-4">
                 <div className="flex flex-row justify-center gap-8 m-4">
                     <button className={`border-2 px-4 py-2 rounded-md transition-all duration-300 ease-in-out ${dataActiveTab === "MyData"
@@ -27,8 +27,8 @@ export default function Write() {
                     </button>
 
                     <button className={`border-2 px-4 py-2 rounded-md transition-all duration-300 ease-in-out ${dataActiveTab === "YourData"
-                        ? "bg-sky-500 text-white border-sky-500 scale-110"
-                        : "bg-sky-300 text-white hover:bg-sky-200 scale-90"
+                        ? "bg-red-500 text-white border-red-500 scale-110"
+                        : "bg-red-300 text-white hover:bg-red-200 scale-90"
                         }`} onClick={() => setDataActiveTab("YourData")}>
                         네 기록
                     </button>
@@ -74,21 +74,25 @@ export default function Write() {
                         <div className="flex justify-center">
                             {/* 아이템박스 / 스펠*/}
                             <div className="flex flex-col">
-                                <div className="w-[180px] bg-gray-200 rounded-md my-4">
+                                <div className={`w-[180px] m-2 rounded-md ${dataActiveTab === "MyData" ? "bg-blue-200" : "bg-red-200"}`} >
                                     <Items dataActiveTab={dataActiveTab} />
                                 </div>
-                                <div className="w-[180px] bg-gray-200 rounded-md mb-4 ">
+                                <div className={`w-[180px] m-2 rounded-md ${dataActiveTab === "MyData" ? "bg-blue-200" : "bg-red-200"}`} >
                                     <Summoners dataActiveTab={dataActiveTab} />
                                 </div>
                             </div>
                             {/* 룬박스*/}
-                            <div className="w-[450px] bg-gray-200 rounded-md m-4">
+                            <div className={`w-[450px] m-2 rounded-md ${dataActiveTab === "MyData" ? "bg-blue-200" : "bg-red-200"}`}>
                                 <RuneSelect dataActiveTab={dataActiveTab} />
                             </div>
                             {/* 난이도 박스 */}
-                            <div className="w-[250px] bg-gray-200 rounded-md m-4">
-                                <Difficulty />
-                                <Lines />
+                            <div className="flex flex-col">
+                                <div className={`w-[250] m-2 rounded-md ${dataActiveTab === "MyData" ? "bg-blue-200" : "bg-red-200"}`} >
+                                    <Difficulty />
+                                </div>
+                                <div className={`w-[250] m-2 rounded-md ${dataActiveTab === "MyData" ? "bg-blue-200" : "bg-red-200"}`} >
+                                    <Lines />
+                                </div>
                             </div>
                         </div>
                     </div>

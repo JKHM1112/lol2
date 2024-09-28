@@ -4,8 +4,9 @@ import RankResult from "@/app/games/components/rankResult";
 import AramResult from "@/app/games/components/aramResult";
 
 export default function SelectedGames({ fullSummonerName, resultData, resultTimelines, searchedpuuid, queue, tier }: any) {
+  
     return (
-        <div className="">
+        <div>
             <div className="mt-1">
                 <Link href={`/games/${fullSummonerName}/420`}>
                     <button className={`mr-4 px-4 py-2  border-2 border-gray-300 rounded-lg ${queue == 420 ? 'bg-blue-500 text-white' : 'bg-white'}`}>솔로랭크</button>

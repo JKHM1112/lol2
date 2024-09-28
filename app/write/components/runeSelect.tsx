@@ -74,7 +74,7 @@ export default function RuneSelect({ dataActiveTab }: any) {
     const subSlots2 = findSlotsById(runesReforged, subId2, 1) || [];
 
     return (
-        <div className="flex flex-row bg-gray-200 p-4 rounded-lg ">
+        <div className="flex flex-row  p-4 rounded-lg ">
             {/* Main Rune Selection */}
             <div className="flex flex-col w-1/2 p-2">
                 {dataActiveTab === "MyData" &&
