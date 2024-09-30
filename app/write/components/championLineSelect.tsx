@@ -117,34 +117,34 @@ export default function ChampionLineSelect({ dataActiveTab }: any) {
             {/* 라인을 선택한다. */}
             <div className="flex flex-row gap-2">
                 <button
-                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === "탑"
+                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === ("탑" || "TOP")
                         ? "bg-gray-500 text-white border-gray-500 scale-110"
                         : "bg-gray-300 text-white hover:bg-gray-200 scale-90"}`}
                     onClick={() => { setLineActiveTab("탑"); setLines('탑'); }} >
                     탑
                 </button>
                 <button
-                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === "정글"
+                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === ("정글" || "JUNGLE")
                         ? "bg-gray-500 text-white border-gray-500 scale-110"
                         : "bg-gray-300 text-white hover:bg-gray-200 scale-90"}`}
                     onClick={() => { setLineActiveTab("정글"); setLines('정글'); }} >
                     정글
                 </button>
                 <button
-                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === "미드"
+                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === ("미드" || "MIDDLE")
                         ? "bg-gray-500 text-white border-gray-500 scale-110"
                         : "bg-gray-300 text-white hover:bg-gray-200 scale-90"}`}
                     onClick={() => { setLineActiveTab("미드"); setLines('미드'); }} >
                     미드
                 </button>
                 <button
-                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === "바텀"
+                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === ("바텀" || "BOTTOM")
                         ? "bg-gray-500 text-white border-gray-500 scale-110"
                         : "bg-gray-300 text-white hover:bg-gray-200 scale-90"}`} onClick={() => { setLineActiveTab("바텀"); setLines('바텀'); }} >
                     원딜
                 </button>
                 <button
-                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === "서폿"
+                    className={`border-2 px-4 py-1 rounded-md transition-all duration-300 ease-in-out ${lineActiveTab === ("서폿" || "UTILITY")
                         ? "bg-gray-500 text-white border-gray-500 scale-110"
                         : "bg-gray-300 text-white hover:bg-gray-200 scale-90"}`}
                     onClick={() => { setLineActiveTab("서폿"); setLines('서폿'); }}>

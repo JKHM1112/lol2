@@ -25,7 +25,9 @@ export default async function Lists() {
     }));
 
     return (
-        <ListsCards result={result} email={email} />
+        <div>
+            <ListsCards result={result} email={email} />
+        </div>
     )
 
 }

@@ -3,8 +3,8 @@ import React from "react";
 import RankResult from "@/app/games/components/rankResult";
 import AramResult from "@/app/games/components/aramResult";
 
-export default function SelectedGames({ fullSummonerName, resultData, resultTimelines, searchedpuuid, queue, tier }: any) {
-  
+export default function SelectedGames({ fullSummonerName, resultData, resultTimelines, searchedpuuid, queue, tier, session }: any) {
+
     return (
         <div>
             <div className="mt-1">
@@ -20,10 +20,10 @@ export default function SelectedGames({ fullSummonerName, resultData, resultTime
             </div>
             <div className="w-full flex justify-center">
                 {queue == 420 && (
-                    <RankResult searchedpuuid={searchedpuuid} rankResults={resultData} rankResultTimelines={resultTimelines} queue={queue} tier={tier} />
+                    <RankResult searchedpuuid={searchedpuuid} rankResults={resultData} rankResultTimelines={resultTimelines} queue={queue} tier={tier} session={session} />
                 )}
                 {queue == 440 && (
-                    <RankResult searchedpuuid={searchedpuuid} rankResults={resultData} rankResultTimelines={resultTimelines} queue={queue} tier={tier} />
+                    <RankResult searchedpuuid={searchedpuuid} rankResults={resultData} rankResultTimelines={resultTimelines} queue={queue} tier={tier} session={session} />
                 )}
                 {queue == 450 && (
                     <AramResult searchedpuuid={searchedpuuid} aramResults={resultData} aramResultTimelines={resultTimelines} />

@@ -9,20 +9,21 @@ import Link from 'next/link';
 
 
 export default function TotalResult({ winTeam, loseTeam, maxDamageDealt, maxDamageTaken, allRunes, runesReforged }: any) {
-console.log(loseTeam)
+    console.log(loseTeam)
     //아이템 번호를 가지고 이미지로 바꿔준다.
-    const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/item/${itemCode}.png`} width={30} height={30} />
+    const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/item/${itemCode}.png` || `/0.png`} width={30} height={30} />
     //챔피언 영문으로 이미지로 바꿔준다.
-    const getChampionImg1 = (championCode: string) => <Image className='m-1 rounded-md' alt={'champion1'} src={`/champion/${championCode}.png`} width={50} height={50} />
+    const getChampionImg1 = (championCode: string) => <Image className='m-1 rounded-md' alt={'champion1'} src={`/champion/${championCode}.png` || `/0.png`} width={50} height={50} />
     //spell 영문으로 이미지로 바꿔준다.
-    const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={24} height={24} />
+    const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png` || `/0.png`} width={24} height={24} />
 
     //rune icon 번호를 영문으로 변환후 이미지로 바꿔준다.
     const findRuneIcon = (runeCode: number, allRunes: any) => {
         const rune = allRunes.find((rune: any) => rune.id === runeCode);
-        return <Image className='rounded-md' alt='rune' src={`/${rune.icon}`} width={20} height={20} /> || '0.png';
-    };
-
+        const iconSrc = rune ? `/${rune.icon}` : '/0.png'; // 룬을 찾지 못하면 기본 이미지로 설정
+        return <Image className='rounded-md' alt='rune' src={iconSrc} width={24} height={24} />
+    }
+    
     //rune 테마 번호를 영문으로 변환후 이미지로 바꿔준다.
     const getRuneImgMark = (runeCode: number, runesReforged: any) => {
         const rune = runesReforged.find((rune: any) => rune.id === runeCode);

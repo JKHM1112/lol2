@@ -3,6 +3,8 @@ import SelectedGames from "@/app/games/components/selectedGames";
 import { getAccount, getLeagueData, getMatchData, getMatchDataTimeline, getRecentMatchIds, getSummonerData } from "@/app/riotApi";
 import ProfileSection from "../../components/profileSection";
 import LeftSection from "../../components/leftSection";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 
 
 interface MatchData {
@@ -14,7 +16,16 @@ interface MatchData {
 interface Participant {
     summonerId: string;
 }
+
+interface UserSession {
+    user: {
+        name: string;
+        email: string;
+    };
+}
+
 export default async function Queue_type({ params }: { params: { summoner: string, queue_type: number } }) {
+    let session: UserSession | null = await getServerSession(authOptions);
     const [gameName, tagLines] = params.summoner.split('-');
     const tagLine = tagLines || 'KR1';
 
@@ -74,7 +85,7 @@ export default async function Queue_type({ params }: { params: { summoner: strin
                 <ProfileSection fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} resultData={resultData} />
                 <div className="flex bg-gray-100 w-full min-w-[1200px] justify-center">
                     <LeftSection fullSummonerName={params.summoner} summonerData={summonerData} summonerLeaueDataResult={summonerLeaueDataResult} resultData={resultData} />
-                    <SelectedGames fullSummonerName={params.summoner} resultData={resultData} resultTimelines={resultTimelines} searchedpuuid={searchedpuuid} queue={params.queue_type} tier={soloLeagueData.tier} />
+                    <SelectedGames fullSummonerName={params.summoner} resultData={resultData} resultTimelines={resultTimelines} searchedpuuid={searchedpuuid} queue={params.queue_type} tier={soloLeagueData.tier} session={session} />
                 </div>
             </div>
         </div>

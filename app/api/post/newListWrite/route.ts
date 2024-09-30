@@ -112,7 +112,7 @@ export async function POST(request: NextRequest) {
             console.error("Error fetching Riot account:", error);
         }
     }
-    console.log(data)
+
     if (summonerAccount) {
         const name = summonerAccount.gameName;
         const tagLine = summonerAccount.tagLine;

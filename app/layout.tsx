@@ -37,7 +37,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
       </head>
       <body className={notoSansKr.className}>
         <div className="flex flex-col max-w-full overflow-x-auto overflow-y-auto">

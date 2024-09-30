@@ -39,7 +39,7 @@ interface PlayerData {
     damageDealtToBuildings?: number;
 }
 
-export default function RankResult({ searchedpuuid, rankResults, rankResultTimelines, queue, tier }: any) {
+export default function RankResult({ searchedpuuid, rankResults, rankResultTimelines, queue, tier, session }: any) {
     let winLoses = []
     let initialPositionStats = [
         { name: 'TOP', win: 0, lose: 0 },
@@ -139,7 +139,11 @@ export default function RankResult({ searchedpuuid, rankResults, rankResultTimel
     const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={24} height={24} />
 
     //rune icon 번호를 영문으로 변환후 이미지로 바꿔준다.
-    const findRuneIcon = (runeCode: number) => { const rune = allRunes.find((rune: any) => rune.id === runeCode); return <Image className='rounded-md' alt='rune' src={`/${rune?.icon}`} width={24} height={24} /> || '0.png'; };
+    const findRuneIcon = (runeCode: number) => {
+        const rune = allRunes.find((rune: any) => rune.id === runeCode);
+        const iconSrc = rune ? `/${rune.icon}` : '/0.png'; // 룬을 찾지 못하면 기본 이미지로 설정
+        return <Image className='rounded-md' alt='rune' src={iconSrc} width={24} height={24} />
+    }
 
     //rune 테마 번호를 영문으로 변환후 이미지로 바꿔준다.
     const getRuneImgMark = (runeCode: number) => { const rune = runesReforged.find((rune: any) => rune.id === runeCode); return <Image className='rounded-md' alt='rune' src={`/${rune?.icon}`} width={24} height={24} /> || '0.png'; };
@@ -378,9 +382,10 @@ export default function RankResult({ searchedpuuid, rankResults, rankResultTimel
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="flex flex-col justify-center items-center space-y-2">
+                                        {session && <div className="flex flex-col justify-center items-center space-y-2">
                                             <DataTransfer participant={rankResultInfo} i={i} puuid={searchedpuuid} tier={tier} rankResultTimeline={rankResultTimeline} characterParticipantId={characterParticipantId} participantsTimeLine={participantsTimeLine} />
-                                        </div>
+                                        </div>}
+
                                     </div>
                                 </div>
                             </AccordionTrigger>

@@ -91,14 +91,7 @@ export default function ListsCards({ result, email }: ListsCardsProps) {
                     ))}
                 </div>
 
-                {/* 페이지네이션 */}
-                <div className="flex justify-center mt-2">
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                        <button key={page} onClick={() => handlePageChange(page)} className={`mx-1 px-3 py-1 border rounded-lg ${page === currentPage ? 'bg-blue-500 text-white' : 'bg-gray-300 hover:bg-gray-400'}`} >
-                            {page}
-                        </button>
-                    ))}
-                </div>
+
 
                 <div className="grid grid-cols-2 gap-4 mt-2">
                     {paginatedResult.map((data, index) => (
@@ -143,6 +136,15 @@ export default function ListsCards({ result, email }: ListsCardsProps) {
                                 </div>
                             </div>
                         </div>
+                    ))}
+                </div>
+                
+                {/* 페이지네이션 */}
+                <div className="flex justify-center mt-2">
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                        <button key={page} onClick={() => handlePageChange(page)} className={`mx-1 px-3 py-1 border rounded-lg ${page === currentPage ? 'bg-blue-500 text-white' : 'bg-gray-300 hover:bg-gray-400'}`} >
+                            {page}
+                        </button>
                     ))}
                 </div>
             </div>
