@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import useUserStore from "../hooks/useUserStore";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue, } from "@/components/ui/select"
 import ShowChart from "./showChart";
 import { Button } from "@/components/ui/button";
 
@@ -45,7 +44,8 @@ export default function ListsCards({ dataEnteredDirectly, email, riotPatchNotes 
     const [enemyChampSearch, setEnemyChampSearch] = useState(''); // 상대 챔피언 검색 상태
     const [flipped, setFlipped] = useState<{ [key: string]: boolean }>({}); //뒤집힘 상태
     const [chartData, setChartData] = useState<any[]>([]); // 차트 데이터를 저장할 상태 추가
-    const [chamActiveTab, setChamActiveTab] = React.useState("MyCham");
+    console.log(chartData)
+    const [searchPerformed, setSearchPerformed] = useState(false); // 검색이 수행되었는지 여부를 저장하는 상태
 
     // 페이지에 따라 보여줄 데이터 슬라이스
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -57,35 +57,40 @@ export default function ListsCards({ dataEnteredDirectly, email, riotPatchNotes 
         return closestPatch.length > 0 ? closestPatch[0].title : "패치 없음";
     }
 
-    // 검색된 결과 필터링 (내 챔피언: cham[4], 상대 챔피언: cham[5]를 한글로 필터링)
-    const filteredResult = dataEnteredDirectly.filter(item => {
+    const filteredMyChampResults = dataEnteredDirectly.filter(item => {
         const myChampMatch = myChampSearch === '' || (item.chams[4] && item.chams[4].includes(myChampSearch));
-        const enemyChampMatch = enemyChampSearch === '' || (item.chams[5] && item.chams[5].includes(enemyChampSearch));
-        return myChampMatch && enemyChampMatch;
+        return myChampMatch;
     });
 
-    // function1 정의: 차트 데이터를 설정
-    const function1 = () => {
-    if (chamActiveTab === "MyCham") {
-        // 내 챔피언 검색 필터 실행
-        const filteredResult = dataEnteredDirectly.filter(item => {
-            const myChampMatch = myChampSearch === '' || (item.chams[4] && item.chams[4].includes(myChampSearch));
-            return myChampMatch;
-        });
-        setChartData(filteredResult);
-    } else if (chamActiveTab === "YourCham") {
-        // 상대 챔피언 검색 필터 실행
-        const filteredResult = dataEnteredDirectly.filter(item => {
-            const enemyChampMatch = enemyChampSearch === '' || (item.chams[5] && item.chams[5].includes(enemyChampSearch));
-            return enemyChampMatch;
-        });
-        setChartData(filteredResult);
-    }
-};
+    const filteredEnemyChampResults = dataEnteredDirectly.filter(item => {
+        const enemyChampMatch = enemyChampSearch === '' || (item.chams[5] && item.chams[5].includes(enemyChampSearch));
+        return enemyChampMatch;
+    });
 
+    const handleSearch = (type: "my" | "enemy") => {
+        setSearchPerformed(true); // 검색이 수행되었음을 표시
+        if (type === "my") {
+            setCurrentPage(1);
+            setChartData(filteredMyChampResults);
+        } else if (type === "enemy") {
+            setCurrentPage(1);
+            setChartData(filteredEnemyChampResults);
+        }
+    };
 
-    const paginatedResult = filteredResult.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-    const totalPages = Math.ceil(filteredResult.length / ITEMS_PER_PAGE); // 총 페이지 수
+    const handleReset = () => {
+        setMyChampSearch('');
+        setEnemyChampSearch('');
+        setSearchPerformed(false);
+        setCurrentPage(1);
+        setChartData([]); // 기본 데이터를 다시 검색
+    };
+
+    // 초기에는 dataEnteredDirectly를 사용하고, 검색 후에는 chartData를 사용
+    const currentData = searchPerformed ? chartData : dataEnteredDirectly;
+
+    const paginatedResult = currentData.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+    const totalPages = Math.ceil(currentData.length / ITEMS_PER_PAGE); // 총 페이지 수
 
     // 페이지네이션 핸들러
     const handlePageChange = (page: number) => {
@@ -104,32 +109,34 @@ export default function ListsCards({ dataEnteredDirectly, email, riotPatchNotes 
         }));
     };
 
-
     return (
         <div className="flex justify-center min-w-[1200px] ">
             <div className="min-w-[1000px] bg-gray-100 rounded-lg shadow-md mt-4 p-4">
-                <div className="flex flex-row justify-center gap-8 m-4">
-                    <button className={`border-2 px-2 py-1 rounded-md transition-all duration-300 ease-in-out ${chamActiveTab === "MyCham"
-                        ? "bg-sky-500 border-sky-500 scale-110"
-                        : "bg-sky-300 hover:bg-sky-200 scale-90"
-                        }`} onClick={() => setChamActiveTab("MyCham")}>
-                        <input className="p-1 border rounded" type="text" size={14} placeholder="내 챔피언 검색" value={myChampSearch} onChange={(e) => setMyChampSearch(e.target.value)} />
-                    </button>
-                    <button className={`border-2 px-2 py-1 rounded-md transition-all duration-300 ease-in-out ${chamActiveTab === "YourCham"
-                        ? "bg-red-500 border-red-500 scale-110"
-                        : "bg-red-300 hover:bg-red-200 scale-90"
-                        }`} onClick={() => setChamActiveTab("YourCham")}>
-                        <input className="p-1 border rounded" type="text" size={14} placeholder="상대 챔피언 검색" value={enemyChampSearch} onChange={(e) => setEnemyChampSearch(e.target.value)} />
-                    </button>
-                    <Button onClick={function1}>검색</Button>
+                {/* 내 챔피언 검색 */}
+                <div className="flex flex-row">
+                    <div className="flex flex-row justify-center m-4">
+                        <input className="p-1 border rounded" type="text" size={10} placeholder="내 챔피언 검색" value={myChampSearch} onChange={(e) => setMyChampSearch(e.target.value)} />
+                        <Button className="px-4 bg-blue-500 text-white hover:bg-blue-600" onClick={() => handleSearch("my")}></Button>
+                    </div>
+
+                    {/* 상대 챔피언 검색 */}
+                    <div className="flex flex-row justify-center m-4">
+                        <input className="p-1 border rounded" type="text" size={10} placeholder="상대 챔피언 검색" value={enemyChampSearch} onChange={(e) => setEnemyChampSearch(e.target.value)} />
+                        <Button className="px-4 bg-red-500 text-white hover:bg-red-600" onClick={() => handleSearch("enemy")}></Button>
+                    </div>
+
+                    {/* 리셋 버튼 */}
+                    <div className="flex flex-row justify-center  m-4">
+                        <Button className="px-2 bg-gray-500 text-white hover:bg-gray-600" onClick={handleReset}>리셋</Button>
+                    </div>
                 </div>
+
                 <div className="flex flex-row">
                     <div className="w-1/4 mt-2">
                         {paginatedResult.map((data, index) => (
                             <div key={data._id} className="rounded-md p-2 mx-2 bg-white">
                                 {flipped[data._id] ? (
                                     <div className="flex flex-col p-2 rounded-lg bg-gray-100">
-                                        {/* 카드 뒷면에 보여줄 내용 */}
                                         <div className="w-[160px] truncate overflow-hidden text-gray-700 font-semibold">작성자: {data.email}</div>
                                         <div className="text-gray-500">패치버전: {getLatestPatchTitle(data.date)}</div>
                                         <div className="text-gray-500">티어: {(data.tier == null ? "UNRANK" : data.tier)}</div>
@@ -153,7 +160,7 @@ export default function ListsCards({ dataEnteredDirectly, email, riotPatchNotes 
                                                     <button className="px-2 py-1 bg-green-300 text-white rounded-lg hover:bg-green-100"
                                                         onClick={() => {
                                                             setLines(data.line);
-                                                            data.chams.forEach((cham, index) => setChampions(index, cham));
+                                                            data.chams.forEach((cham: any, index: number) => setChampions(index, cham));
                                                             setLineResults(data.lineResult);
                                                             setGameResults(data.gameResult);
                                                             setBefore(data.before6);
@@ -161,9 +168,9 @@ export default function ListsCards({ dataEnteredDirectly, email, riotPatchNotes 
                                                             setSide(data.side1);
                                                             setTeamFight(data.teamFight1);
                                                             setReview(data.review);
-                                                            data.summoners.forEach((summoner, index) => setSummoners(index, summoner));
-                                                            data.runes.forEach((rune, index) => setRunes(index, rune));
-                                                            data.items.forEach((item, index) => setItems(index, item));
+                                                            data.summoners.forEach((summoner: any, index: number) => setSummoners(index, summoner));
+                                                            data.runes.forEach((rune: any, index: number) => setRunes(index, rune));
+                                                            data.items.forEach((item: any, index: number) => setItems(index, item));
                                                             router.push('/edit/' + data._id);
                                                         }} >수정</button>
                                                     <button className="px-2 py-1 bg-red-300 text-white rounded-lg hover:bg-red-100"
