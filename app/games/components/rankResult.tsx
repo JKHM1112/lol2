@@ -135,7 +135,7 @@ export default function RankResult({ searchedpuuid, rankResults, rankResultTimel
     const getItemImg = (itemCode: number) => <Image className='rounded-md' alt={'item1'} src={`/item/${itemCode}.png`} width={30} height={30} />
     //챔피언 영문으로 이미지로 바꿔준다.
     const getChampionImg1 = (championCode: string, widthN: number, heightN: number) => <Image className='m-1 rounded-md' alt={'champion1'} src={`/champion/${championCode}.png`} width={widthN} height={heightN} />
-    //spell 영문으로 이미지로 바꿔준다.
+    //spell 숫자로 이미지로 바꿔준다.
     const getSpellImg = (SpellCode: number) => <Image className='rounded-md' alt={'spell1'} src={`/spellN/${SpellCode}.png`} width={24} height={24} />
 
     //rune icon 번호를 영문으로 변환후 이미지로 바꿔준다.

@@ -44,9 +44,8 @@ export default function ListsCards({ dataEnteredDirectly, email, riotPatchNotes 
     const [enemyChampSearch, setEnemyChampSearch] = useState(''); // 상대 챔피언 검색 상태
     const [flipped, setFlipped] = useState<{ [key: string]: boolean }>({}); //뒤집힘 상태
     const [chartData, setChartData] = useState<any[]>([]); // 차트 데이터를 저장할 상태 추가
-    console.log(chartData)
     const [searchPerformed, setSearchPerformed] = useState(false); // 검색이 수행되었는지 여부를 저장하는 상태
-
+    const [myEnemy, setMyEnemy] = useState('');
     // 페이지에 따라 보여줄 데이터 슬라이스
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
 
@@ -70,9 +69,11 @@ export default function ListsCards({ dataEnteredDirectly, email, riotPatchNotes 
     const handleSearch = (type: "my" | "enemy") => {
         setSearchPerformed(true); // 검색이 수행되었음을 표시
         if (type === "my") {
+            setMyEnemy(type)
             setCurrentPage(1);
             setChartData(filteredMyChampResults);
         } else if (type === "enemy") {
+            setMyEnemy(type)
             setCurrentPage(1);
             setChartData(filteredEnemyChampResults);
         }
@@ -98,7 +99,7 @@ export default function ListsCards({ dataEnteredDirectly, email, riotPatchNotes 
     };
 
     // 챔피언 영문으로 이미지로 바꿔준다.
-    const getChampionImg1 = (championCode: string, widthN: number, heightN: number) => (
+    const getChampionImg = (championCode: string, widthN: number, heightN: number) => (
         <Image className='rounded-md' alt={'champion1'} src={`/championLoading/${championCode}_0.jpg`} width={widthN} height={heightN} />
     );
 
@@ -149,8 +150,8 @@ export default function ListsCards({ dataEnteredDirectly, email, riotPatchNotes 
                                     <div className={`flex flex-col ${data.gameResult === "승리" ? "bg-blue-100" : "bg-red-100"} p-2 rounded-lg`}>
                                         <div className="flex flex-row mx-2 justify-center">
                                             <div className="flex items-center gap-8">
-                                                {getChampionImg1(data.chams[0], 60, 60)}
-                                                {getChampionImg1(data.chams[1], 60, 60)}
+                                                {getChampionImg(data.chams[0], 60, 60)}
+                                                {getChampionImg(data.chams[1], 60, 60)}
                                             </div>
                                         </div>
                                         <div className="flex flex-row justify-center gap-8">
@@ -191,7 +192,7 @@ export default function ListsCards({ dataEnteredDirectly, email, riotPatchNotes 
                     </div>
                     <div className="gap-4 mt-2 w-3/4">
                         <div className="rounded-md p-4 mx-2 bg-white">
-                            <ShowChart chartData={chartData} />
+                            <ShowChart chartData={chartData} myEnemy={myEnemy} />
                         </div>
                     </div>
                 </div>

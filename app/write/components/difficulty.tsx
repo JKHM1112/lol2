@@ -45,38 +45,38 @@ export default function Difficulty() {
         <div className="p-1">
             <div>
                 <Label className="mb-2 text-gray-700 font-semibold pl-4">
-                    6렙 전 난이도 (1-5)
+                    6렙 전 난이도 (1-10)
                 </Label>
                 <div className="flex items-center space-x-2 pr-4 pl-4">
                     <Input value={before6} name="before6" readOnly className="w-12 text-center" />
-                    <Slider onValueChange={handleBefore6Change} value={[before6]} max={5} min={1} step={1} className="w-full" />
+                    <Slider onValueChange={handleBefore6Change} value={[before6]} max={10} min={1} step={1} className="w-full" />
                 </div>
             </div>
             <div>
                 <Label className="mb-2 text-gray-700 font-semibold pl-4">
-                    6렙 후 난이도 (1-5)
+                    6렙 후 난이도 (1-10)
                 </Label>
                 <div className="flex items-center space-x-2 pr-4 pl-4">
                     <Input value={after6} name="after6" readOnly className="w-12 text-center" />
-                    <Slider onValueChange={handleAfter6Change} value={[after6]} max={5} min={1} step={1} className="w-full" />
+                    <Slider onValueChange={handleAfter6Change} value={[after6]} max={10} min={1} step={1} className="w-full" />
                 </div>
             </div>
             <div>
                 <Label className="mb-2 text-gray-700 font-semibold pl-4 ">
-                    사이드 난이도 (1-5)
+                    사이드 난이도 (1-10)
                 </Label>
                 <div className="flex items-center space-x-2 pr-4 pl-4">
                     <Input value={side1} name="side1" readOnly className="w-12 text-center" />
-                    <Slider onValueChange={handleSideChange} value={[side1]} max={5} min={1} step={1} className="w-full" />
+                    <Slider onValueChange={handleSideChange} value={[side1]} max={10} min={1} step={1} className="w-full" />
                 </div>
             </div>
             <div>
                 <Label className="mb-2 text-gray-700 font-semibold pl-4">
-                    한타 난이도 (1-5)
+                    한타 난이도 (1-10)
                 </Label>
                 <div className="flex items-center space-x-2 pr-4 pl-4">
                     <Input value={teamFight1} name="teamFight1" readOnly className="w-12 text-center" />
-                    <Slider onValueChange={handleTeamfightChange} value={[teamFight1]} max={5} min={1} step={1} className="w-full" />
+                    <Slider onValueChange={handleTeamfightChange} value={[teamFight1]} max={10} min={1} step={1} className="w-full" />
                 </div>
             </div>
         </div>
