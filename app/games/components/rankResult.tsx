@@ -364,7 +364,7 @@ export default function RankResult({ searchedpuuid, rankResults, rankResultTimel
                                                     {blueTeam.slice(0, 5).map((player: any, index: number) => (
                                                         <div key={index} className="flex items-center">
                                                             <div>{getChampionImg1(player.championName, 12, 12)}</div>
-                                                            <Link className="w-[48px] text-[12px] truncate overflow-hidden text-left " href={`/games/${player.riotIdGameName}-${player.riotIdTagline}`}>
+                                                            <Link className="w-[48px] text-[12px] truncate overflow-hidden text-left" href={`/games/${player.riotIdGameName}-${player.riotIdTagline}`}>
                                                                 {player.riotIdGameName}
                                                             </Link>
                                                         </div>

@@ -3,6 +3,7 @@
 import useUserStore from "@/app/hooks/useUserStore";
 import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation";
+import { champion } from "@/app/data/champion";
 
 interface DataTransferProps {
     participant: any[]
@@ -18,7 +19,9 @@ export default function DataTransfer({ participant, i, puuid, tier, rankResultTi
 
     const { setLines, setParticipants, setSelectedGame, setItems, setPuuid, setSummoners, setRunes, setChampions, setTier,
         setTimeLineLevelUp1, setTimeLineLevelUp2, setTimeLineObject1, setTimeLineObject2, setGameExtracted1, setGameExtracted2, setTimeLineKda1, setTimeLineKda2,
-        setTurretPlatesTaken, setVisionScore, setSkillOrder } = useUserStore()
+        setTurretPlatesTaken, setVisionScore, setSkillOrder } = useUserStore();
+
+
     const router = useRouter();
     const participant1 = participant[i].participants.find((participant: any) => participant.puuid === puuid);
     const participant1Line = participant1.individualPosition;
@@ -34,7 +37,7 @@ export default function DataTransfer({ participant, i, puuid, tier, rankResultTi
     }
 
     const skillEvents = participantsTimeLine.filter((event: any) => event.type === 'SKILL_LEVEL_UP').map((event: any) => ({ skillSlot: event.skillSlot, timestamp: event.timestamp }));
-  
+
     const skillOrder = skillEvents.map((event: any) => {
         switch (event.skillSlot) {
             case 1: return 'Q';
@@ -144,11 +147,27 @@ export default function DataTransfer({ participant, i, puuid, tier, rankResultTi
         participant3 = participant[i].participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId === participant1ParticipantId + 1) || defaultParticipant;
         participant4 = participant[i].participants.find((participant: any) => participant.individualPosition === individualPosition && participant.participantId !== participant1ParticipantId - 1) || defaultParticipant;
     }
+    const championData = champion;
+    const championsList = Object.values(championData.data).map((champion) => ({
+        nameE: champion.id,
+        nameK: champion.name,
+        img: '/Champion/' + champion.image.full
+    }));
+
+    const nameChangeEK = (nameE: string) => {
+        const champion = championsList.find(champ => champ.nameE === nameE);
+        return champion ? champion.nameK : nameE;
+    };
 
     const champion1 = participant1.championName;
     const champion2 = participant2.championName;
     const champion3 = participant3.championName;
     const champion4 = participant4.championName;
+    const champion5=nameChangeEK(champion1)
+    const champion6=nameChangeEK(champion2)
+    const champion7=nameChangeEK(champion3)
+    const champion8=nameChangeEK(champion4)
+
     const spell1 = participant1.summoner1Id;
     const spell2 = participant1.summoner2Id;
     const spell3 = participant2.summoner1Id;
@@ -196,6 +215,10 @@ export default function DataTransfer({ participant, i, puuid, tier, rankResultTi
         setChampions(1, champion2);//챔2
         setChampions(2, champion3);//챔3
         setChampions(3, champion4);//챔4
+        setChampions(4, champion5);//챔1
+        setChampions(5, champion6);//챔2
+        setChampions(6, champion7);//챔3
+        setChampions(7, champion8);//챔4
         setLines(participant1Line);//내 라인
         setSelectedGame(i);//내 게임 번호
         setPuuid(puuid);//puuid

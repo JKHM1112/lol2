@@ -55,7 +55,7 @@ export default async function RiotPatchNotes() {
                     {patchNoteUrl.slice(0, 3).map((note: PatchNote, index: number) => (
                         <li key={index} className="flex justify-between items-center py-2 border-b last:border-none">
                             <Link href={note.url}>
-                                <span className="text-black-600 hover:underline">{note.title}</span>
+                                <span className="text-black-600 hover:underline">{note.title} 패치노트</span>
                             </Link>
                             <span className="text-sm text-gray-500">{calculateDaysAgo(note.date)}일 전</span>
                         </li>

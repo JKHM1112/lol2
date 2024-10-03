@@ -10,7 +10,7 @@ export default async function Home() {
         <span className="recordL">RECORD</span>
       </div>
       <Games />
-      <div className="flex">
+      <div className="flex gap-2">
         <RiotPatchNotes />
       </div>
     </div>
