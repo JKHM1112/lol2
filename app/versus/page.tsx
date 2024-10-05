@@ -10,12 +10,14 @@ export default async function Versus() {
     let bottomData = await db.collection('matchDataBOTTOM').find().toArray()
     let utilityData = await db.collection('matchDataUTILITY').find().toArray()
     return (
-        <div>
-            <SelectedChampions topMatches={JSON.stringify(topData)}
-                jungleMatches={JSON.stringify(jungleData)}
-                middleMatches={JSON.stringify(middleData)}
-                bottomMatches={JSON.stringify(bottomData)}
-                utilityMatches={JSON.stringify(utilityData)} />
-        </div>
+        <div className="flex justify-center min-w-[1200px] ">
+            <div className="min-w-[1000px] min-h-[600px] bg-gray-100 rounded-lg shadow-md mt-4 p-4">
+                <SelectedChampions topMatches={JSON.stringify(topData)}
+                    jungleMatches={JSON.stringify(jungleData)}
+                    middleMatches={JSON.stringify(middleData)}
+                    bottomMatches={JSON.stringify(bottomData)}
+                    utilityMatches={JSON.stringify(utilityData)} />
+            </div>
+        </div >
     );
 }

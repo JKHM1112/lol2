@@ -8,6 +8,7 @@ import { Noto_Sans_KR } from "next/font/google";
 import type { Metadata } from "next";
 import Games from "./games/page";
 import "./globals.css";
+import SaveGameHistory from "./saveGameHistory/page";
 
 interface UserSession {
   user: {
@@ -66,6 +67,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               ) : (
                 <LoginBtn />
               )}
+              {session?.user.email == "admin" ? (
+                <div className="flex items-center space-x-4">
+                  <Link href={"/saveGameHistory2"}>닉네임등록</Link>
+                </div>
+              ) : (
+                <></>
+              )}
+
             </div>
           </div>
 
