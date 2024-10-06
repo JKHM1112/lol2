@@ -1,5 +1,5 @@
 import { connectDB } from "@/util/database";
-import SelectedChampions from "./selectedChampions";
+import SelectedChampions from "./components/selectedChampions";
 
 export default async function versus2() {
     const db = (await connectDB).db('dream');
@@ -13,11 +13,8 @@ export default async function versus2() {
 
 
     return (
-        <div className="flex justify-center min-w-[1200px] ">
-            <div className="min-w-[1000px] min-h-[600px] bg-gray-100 rounded-lg shadow-md mt-4 p-4">
-
-                <SelectedChampions versusCollection={versusCollection} />
-            </div>
+        <div>
+            <SelectedChampions versusCollection={versusCollection} />
         </div>
     )
 }

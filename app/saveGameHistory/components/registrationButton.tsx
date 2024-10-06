@@ -35,12 +35,12 @@ export default function RegistrationButton({ saveNickname, session }: Props) {
             setCurrentNickname(nickname.nickname);
 
             try {
-                const response = await fetch('/api/post/fetchRecentMatches', {
+                const response = await fetch('/api/post/fetchRecentMatches2', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ puuid: nickname.puuid, queue: 420, start: 0, games: 10, tier: nickname.tier }), // Adjust as necessary
+                    body: JSON.stringify({ puuid: nickname.puuid, queue: 420, start: 0, games: 20, tier: nickname.tier }), // Adjust as necessary
                 });
 
                 const data = await response.json();
@@ -53,7 +53,7 @@ export default function RegistrationButton({ saveNickname, session }: Props) {
                 break; // Stop on error
             }
 
-            await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 10 seconds
+            await new Promise(resolve => setTimeout(resolve, 20000)); // Wait for 10 seconds
         }
 
         setCurrentNickname(null);

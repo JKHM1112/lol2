@@ -1,6 +1,6 @@
 'use client'
 import RegistrationButton, { NicknameTag } from "./registrationButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface UserSession {
     user: {
@@ -18,13 +18,23 @@ export default function CheckNickname({ saveNickname, session }: CheckNicknamePr
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
     const totalPages = Math.ceil(saveNickname.length / itemsPerPage);
+    
+    // 배열을 랜덤으로 섞는 함수
+    // const [shuffledNicknames, setShuffledNicknames] = useState<NicknameTag[]>([]);
+    // const shuffleArray = (array: NicknameTag[]) => {
+    //     return array.sort(() => Math.random() - 0.5);
+    // };
+    // useEffect(() => {
+    //     setShuffledNicknames(shuffleArray([...saveNickname]));
+    // }, [saveNickname]);
 
     const currentNicknames = saveNickname.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-
+    //RegistrationButton에 currentNicknames 보내면 현재 페이지 닉네임만 전송 saveNickname 보내면 전부다 전송
+    //shuffledNicknames을 보내면 랜덤으로 전송
     return (
         <div className="max-w-md mx-auto mt-10 p-6 border border-gray-300 rounded-lg shadow-lg">
             <h4 className="text-2xl font-bold mb-4">등록된 닉네임과 태그</h4>
-            <RegistrationButton saveNickname={currentNicknames} session={session} />
+            <RegistrationButton saveNickname={saveNickname} session={session} />
             <table className="min-w-full bg-white">
                 <thead>
                     <tr>

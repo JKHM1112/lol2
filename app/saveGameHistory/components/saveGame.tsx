@@ -5,6 +5,10 @@ import { useState } from "react";
 export default function SaveGame({ session }: { session: any }) {
     const [error, setError] = useState<string | null>(null);
     const [success, setSuccess] = useState<string | null>(null);
+    // 새로고침 함수
+    const refreshPage = () => {
+        window.location.reload();
+    };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -59,7 +63,7 @@ export default function SaveGame({ session }: { session: any }) {
                 <input type="hidden" name="email" defaultValue={session.user.email} />
                 <button type="submit" className="p-2 bg-blue-500 text-white rounded">등록</button>
             </form>
-            <Button className="mt-2 w-28 bg-sky-500 text-white hover:bg-sky-600 rounded-full shadow-md px-4 py-2 transition-all duration-200 ease-in-out">
+            <Button className="mt-2 w-28 bg-sky-500 text-white hover:bg-sky-600 rounded-full shadow-md px-4 py-2 transition-all duration-200 ease-in-out" onClick={refreshPage}>
                 새로고침
             </Button>
         </div>

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import LogoutBtn from "./LogoutBtn";
-import LoginBtn from "./LoginBtn";
+import LogoutBtn from "./components/LogoutBtn";
+import LoginBtn from "./components/LoginBtn";
 import { authOptions } from "./api/auth/[...nextauth]/authOptions";
 import { getServerSession } from "next-auth";
 import { connectDB } from "@/util/database";
@@ -8,7 +8,6 @@ import { Noto_Sans_KR } from "next/font/google";
 import type { Metadata } from "next";
 import Games from "./games/page";
 import "./globals.css";
-import SaveGameHistory from "./saveGameHistory/page";
 
 interface UserSession {
   user: {
@@ -69,7 +68,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               )}
               {session?.user.email == "admin" ? (
                 <div className="flex items-center space-x-4">
-                  <Link href={"/saveGameHistory2"}>닉네임등록</Link>
+                  <Link href={"/saveGameHistory"}>닉네임등록</Link>
                 </div>
               ) : (
                 <></>

@@ -298,13 +298,13 @@ export default function ChampionSelector({ topMatches, jungleMatches, middleMatc
                 )}
             </div>
             <div>
-                {bothChampionsMatches && firstChampion && secondChampion && (
+                {/* {bothChampionsMatches && firstChampion && secondChampion && (
                     <AnalyzeTable
                         bothChampionsMatches={bothChampionsMatches}
                         firstChampion={firstChampion?.englishName}
                         secondChampion={secondChampion?.englishName}
                     />
-                )}
+                )} */}
             </div>
         </div>
     );

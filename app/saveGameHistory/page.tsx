@@ -20,6 +20,11 @@ export default async function SaveGameHistory() {
         user = await db.collection('user_cred').findOne({ email: session.user.email });
         saveNickname = await db.collection('saveGameNickname').find().sort({ _id: -1 }).toArray();
     }
+
+    saveNickname = saveNickname.map((item: any) => ({
+        ...item,
+        _id: item._id.toString(),  // MongoDB ObjectId를 문자열로 변환
+    }));
     if (session)
         return (
             <div>
