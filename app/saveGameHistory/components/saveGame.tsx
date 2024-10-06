@@ -54,7 +54,7 @@ export default function SaveGame({ session }: { session: any }) {
     };
 
     return (
-        <div className="max-w-md mx-auto mt-10 p-6 border border-gray-300 rounded-lg shadow-lg">
+        <div className="mt-10 p-6 border border-gray-200 rounded-md shadow-md">
             <h4 className="text-2xl font-bold mb-4">Riot 닉네임과 태그 등록</h4>
             {error && <p className="text-red-500 mb-4">{error}</p>}
             {success && <p className="text-green-500 mb-4">{success}</p>}

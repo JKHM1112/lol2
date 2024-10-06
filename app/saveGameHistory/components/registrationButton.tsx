@@ -35,31 +35,31 @@ export default function RegistrationButton({ saveNickname, session }: Props) {
             setCurrentNickname(nickname.nickname);
 
             try {
-                const response = await fetch('/api/post/fetchRecentMatches2', {
+                const response = await fetch('/api/post/fetchRecentMatches', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ puuid: nickname.puuid, queue: 420, start: 0, games: 10, tier: nickname.tier }), // Adjust as necessary
+                    body: JSON.stringify({ puuid: nickname.puuid, queue: 420, start: 0, games: 10, tier: nickname.tier }), 
                 });
 
                 const data = await response.json();
                 if (!response.ok) {
-                    setMessage(data.error || 'Failed to save match data');
-                    break; // Stop on error
+                    setMessage(data.error || 'match data 저장 오류');
+                    break; 
                 }
             } catch (error) {
-                setMessage('An unexpected error occurred');
-                break; // Stop on error
+                setMessage('예상치 못한 오류');
+                break;
             }
 
-            await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 10 seconds
+            await new Promise(resolve => setTimeout(resolve, 10000)); //10초 딜레이
         }
 
         setCurrentNickname(null);
         setLoading(false);
         if (!message) {
-            setMessage('Registration completed');
+            setMessage('등록 완료');
         }
     };
 
@@ -71,7 +71,7 @@ export default function RegistrationButton({ saveNickname, session }: Props) {
                     className="p-2 bg-blue-500 text-white rounded"
                     disabled={loading}
                 >
-                    {loading ? 'Processing...' : 'Start Registration'}
+                    {loading ? '진행중...' : '게임 등록'}
                 </button>
             ) : null}
             {currentNickname && <p className="mt-4">{currentNickname} ---- Processing</p>}

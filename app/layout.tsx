@@ -41,7 +41,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={notoSansKr.className}>
         <div className="flex flex-col max-w-full overflow-x-auto overflow-y-auto">
           <div className="navbar flex flex-wrap items-center justify-center px-4 py-2 min-w-[1200px]">
-            <div className="flex items-center space-x-4 text-sm">
+            <div className="flex items-center space-x-2 text-sm">
               <Link href="/">
                 <div className="searchLogo">
                   <span className="lolS">LOL</span>
@@ -56,6 +56,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               ) : (
                 <></>
               )}
+              {session ? (
+                <div className="flex items-center space-x-4">
+                  <Link href={"/saveGameHistory"}>닉네임등록</Link>
+                </div>
+              ) : (
+                <></>
+              )}
               <Games />
               {!session && <Link href="/register">회원가입</Link>}
               {session ? (
@@ -65,13 +72,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                 </div>
               ) : (
                 <LoginBtn />
-              )}
-              {session?.user.email == "admin" ? (
-                <div className="flex items-center space-x-4">
-                  <Link href={"/saveGameHistory"}>닉네임등록</Link>
-                </div>
-              ) : (
-                <></>
               )}
 
             </div>
