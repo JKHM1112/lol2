@@ -53,6 +53,7 @@ export async function POST(request: NextRequest) {
                         level5: 0,
                         level6: 0,
                     };
+
                     // 선 2렙 ~ 6렙 추적
                     [2, 3, 4, 5, 6].forEach((level) => {
                         const eventA = eventsA?.find((e: any) => e.level === level);
@@ -89,8 +90,8 @@ export async function POST(request: NextRequest) {
                     const damageDealtToBuildingsB = participantB.damageDealtToBuildings || 0;
                     const visionScoreA = participantA.visionScore || 0;
                     const visionScoreB = participantB.visionScore || 0;
-                    const winA = participantA.win == true ? 1 : 0;
-                    const winB = participantB.win == true ? 1 : 0;
+                    const winA = participantA.win ? 1 : 0;
+                    const winB = participantB.win ? 1 : 0;
 
                     const frameA = matchTimeLine.info.frames[12]?.participantFrames?.[i + 1];
                     const frameB = matchTimeLine.info.frames[12]?.participantFrames?.[i + 6];
@@ -117,7 +118,7 @@ export async function POST(request: NextRequest) {
                         championName: champB,
                         [`${gameVersion}.${lineB}.${champA}.matchId`]: matchId,
                     });
-                    
+
                     // 첫 번째 방향: A vs B
                     if (!existingA) {
                         const existingDataA = await versusCollection.findOne({ championName: champA });
@@ -278,60 +279,60 @@ export async function POST(request: NextRequest) {
                                         currentLevelsE + (firstToLevel.level6 > 0 ? 1 : 0)
                                     ],
                                     [`${gameVersion}.${lineB}.${champA}.damagePerMinute`]: [
-                                        currentDamagePerMinuteA + damagePerMinuteA,
-                                        currentDamagePerMinuteB + damagePerMinuteB
+                                        currentDamagePerMinuteA + damagePerMinuteB,
+                                        currentDamagePerMinuteB + damagePerMinuteA,
                                     ],
                                     [`${gameVersion}.${lineB}.${champA}.teamDamagePercentage`]: [
-                                        currentTeamDamagePercentageA + teamDamagePercentageA,
-                                        currentTeamDamagePercentageB + teamDamagePercentageB
+                                        currentTeamDamagePercentageA + teamDamagePercentageB,
+                                        currentTeamDamagePercentageB + teamDamagePercentageA,
                                     ],
                                     [`${gameVersion}.${lineB}.${champA}.damageTakenOnTeamPercentage`]: [
-                                        currentDamageTakenOnTeamPercentageA + damageTakenOnTeamPercentageA,
-                                        currentDamageTakenOnTeamPercentageB + damageTakenOnTeamPercentageB
+                                        currentDamageTakenOnTeamPercentageA + damageTakenOnTeamPercentageB,
+                                        currentDamageTakenOnTeamPercentageB + damageTakenOnTeamPercentageA,
                                     ],
                                     [`${gameVersion}.${lineB}.${champA}.kda`]: [
-                                        currentKdaA + kdaA,
-                                        currentKdaB + kdaB
+                                        currentKdaA + kdaB,
+                                        currentKdaB + kdaA,
                                     ],
                                     [`${gameVersion}.${lineB}.${champA}.killParticipation`]: [
-                                        currentKillParticipationA + killParticipationA,
-                                        currentKillParticipationB + killParticipationB
+                                        currentKillParticipationA + killParticipationB,
+                                        currentKillParticipationB + killParticipationA,,
                                     ],
                                     [`${gameVersion}.${lineB}.${champA}.soloKills`]: [
-                                        currentSoloKillsA + soloKillsA,
-                                        currentSoloKillsB + soloKillsB
+                                        currentSoloKillsA + soloKillsB,
+                                        currentSoloKillsB + soloKillsA,
                                     ],
                                     [`${gameVersion}.${lineB}.${champA}.turretPlatesTaken`]: [
-                                        currentTurretPlatesTakenA + turretPlatesTakenA,
-                                        currentTurretPlatesTakenB + turretPlatesTakenB
+                                        currentTurretPlatesTakenA + turretPlatesTakenB,
+                                        currentTurretPlatesTakenB + turretPlatesTakenA,
                                     ],
                                     [`${gameVersion}.${lineB}.${champA}.damageDealtToBuildings`]: [
-                                        currentDamageDealtToBuildingsA + damageDealtToBuildingsA,
-                                        currentDamageDealtToBuildingsB + damageDealtToBuildingsB
+                                        currentDamageDealtToBuildingsA + damageDealtToBuildingsB,
+                                        currentDamageDealtToBuildingsB + damageDealtToBuildingsA,
                                     ],
                                     [`${gameVersion}.${lineB}.${champA}.visionScore`]: [
-                                        currentVisionScoreA + visionScoreA,
-                                        currentVisionScoreB + visionScoreB
+                                        currentVisionScoreA + visionScoreB,
+                                        currentVisionScoreB + visionScoreA,
                                     ],
                                     [`${gameVersion}.${lineB}.${champA}.win`]: [
-                                        currentWinA + winA,
-                                        currentWinB + winB
+                                        currentWinB + winA,
+                                        currentWinA + winB,
                                     ],
                                     [`${gameVersion}.${lineB}.${champA}.jungleMinionsKilled`]: [
-                                        currentJungleMinionsKilledA + jungleMinionsKilledA,
-                                        currentJungleMinionsKilledB + jungleMinionsKilledB
+                                        currentJungleMinionsKilledA + jungleMinionsKilledB,
+                                        currentJungleMinionsKilledB + jungleMinionsKilledA,
                                     ],
                                     [`${gameVersion}.${lineB}.${champA}.minionsKilled`]: [
-                                        currentMinionsKilledA + minionsKilledA,
-                                        currentMinionsKilledB + minionsKilledB
+                                        currentMinionsKilledA + minionsKilledB,
+                                        currentMinionsKilledB + minionsKilledA,
                                     ],
                                     [`${gameVersion}.${lineB}.${champA}.totalGold`]: [
-                                        currentTotalGoldA + totalGoldA,
-                                        currentTotalGoldB + totalGoldB
+                                        currentTotalGoldA + totalGoldB,
+                                        currentTotalGoldB + totalGoldA,
                                     ],
                                     [`${gameVersion}.${lineB}.${champA}.xp`]: [
-                                        currentXpA + xpA,
-                                        currentXpB + xpB
+                                        currentXpA + xpB,
+                                        currentXpB + xpA,
                                     ],
                                 },
                                 $addToSet: { [`${gameVersion}.${lineB}.${champA}.matchId`]: matchId },

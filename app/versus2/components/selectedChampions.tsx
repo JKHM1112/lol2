@@ -56,7 +56,6 @@ export default function SelectedChampions({ versusCollection }: { versusCollecti
     const [version, setVersion] = useState("19");
     const [isFirstChampionOpen, setIsFirstChampionOpen] = useState(false);
     const [isSecondChampionOpen, setIsSecondChampionOpen] = useState(false);
-
     const handleReset = () => {
         setFirstChampion(null);
         setSecondChampion(null);
@@ -77,18 +76,68 @@ export default function SelectedChampions({ versusCollection }: { versusCollecti
             setGameData(data);
         }
     };
+    const calculateOverallWinRate = (chams: any) => {
+        if (!chams) return null;
+
+        const championData = versusCollection.find(
+            (item: any) => item.championName === chams.englishName
+        );
+
+        if (!championData) return null;
+
+        let totalWins = 0;
+        let totalGames = 0;
+
+        // 각 라인의 데이터를 순회하면서 승리와 경기 수를 더함
+        for (const lineKey in championData[version]) {
+            for (const opponent in championData[version][lineKey]) {
+                const gameData = championData[version][lineKey][opponent];
+                if (gameData) {
+                    totalWins += gameData.win[0];
+                    totalGames += gameData.win[0] + gameData.win[1];
+                }
+            }
+        }
+
+        // 전체 승률을 계산하여 반환
+        return totalGames > 0 ? Math.round((totalWins / totalGames) * 100) : null;
+    };
+
+    const calculateTotalSampleSize = (chams: any) => {
+        if (!chams) return null;
+
+        const championData = versusCollection.find(
+            (item: any) => item.championName === chams.englishName
+        );
+
+        if (!championData) return null;
+
+        let totalGames = 0;
+
+        // 각 라인의 데이터를 순회하면서 전체 게임 수를 더함
+        for (const lineKey in championData[version]) {
+            for (const opponent in championData[version][lineKey]) {
+                const gameData = championData[version][lineKey][opponent];
+                if (gameData) {
+                    totalGames += gameData.win[0] + gameData.win[1];
+                }
+            }
+        }
+
+        return totalGames;
+    };
 
     useEffect(() => {
         if (firstChampion && secondChampion && line && version) {
             function1();
         }
     }, [firstChampion, secondChampion, line, version]);
-    console.log(gameData)
+
     return (
         <div className="flex justify-center min-w-[1200px] ">
             <div className="min-w-[1000px] min-h-[600px] bg-gray-100 rounded-lg shadow-md mt-4 p-4">
                 <div className="flex items-center space-x-4">
-                    <Button onClick={handleReset} variant="outline" size="sm">리셋</Button>
+                    <Button className="" onClick={handleReset} variant="outline" size="sm">리셋</Button>
                     <Popover open={isFirstChampionOpen} onOpenChange={setIsFirstChampionOpen}>
                         <PopoverTrigger asChild>
                             <Button variant="outline" size="sm" className="w-[150px] justify-start">
@@ -141,19 +190,16 @@ export default function SelectedChampions({ versusCollection }: { versusCollecti
                         </PopoverContent>
                     </Popover>
                 </div>
-                <div className="flex flex-row">
-                    <Select onValueChange={(value) => setLine(value)} defaultValue="">
-                        <SelectTrigger className="w-[180px]">
-                            <SelectValue placeholder="라인 선택" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            {lineDetails.map((line) => (
-                                <SelectItem key={line.value} value={line.value}>
-                                    {line.label}
-                                </SelectItem>
-                            ))}
-                        </SelectContent>
-                    </Select>
+                <div className="flex flex-row gap-2">
+                    {lineDetails.map((lineOption) => (
+                        <Button
+                            key={lineOption.value}
+                            onClick={() => setLine(lineOption.value)}
+                            className="bg-white text-black hover:bg-secondary/90 transition-all"
+                        >
+                            {lineOption.label}
+                        </Button>
+                    ))}
                     <Select onValueChange={(value) => setVersion(value)} defaultValue="19">
                         <SelectTrigger className="w-[180px]">
                             <SelectValue placeholder="버전 선택" />
@@ -170,14 +216,29 @@ export default function SelectedChampions({ versusCollection }: { versusCollecti
                 <div className="flex flex-row">
                     {firstChampion && (
                         <div className="flex flex-col items-center">
+                            {/* 전체 승률 계산 및 출력 */}
+                            {calculateOverallWinRate(firstChampion) !== null && (
+                                <div className="text-sm">전체 승률: {calculateOverallWinRate(firstChampion)}%</div>
+                            )}
+                        </div>
+                    )}
+                    {firstChampion && (
+                        <div className="flex flex-col items-center">
+                            {/* 전체 승률 계산 및 출력 */}
+                            {calculateTotalSampleSize(firstChampion) !== null && (
+                                <div className="text-sm">전체 판수: {calculateTotalSampleSize(firstChampion)}</div>
+                            )}
+                        </div>
+                    )}
+                    {firstChampion && (
+                        <div className="flex flex-col items-center">
                             <div className="text-lg font-bold">{firstChampion.koreanName}</div>
                             <Image className="rounded-full" alt={firstChampion.koreanName} src={'/champion/' + firstChampion.imageUrl} height={100} width={100} />
                         </div>
                     )}
                     {gameData && (
                         <div className="flex flex-col items-center">
-                            <div className="text-lg font-bold">상대 승률</div>
-                            <div className="text-sm">승률: {Math.round(gameData.win[0] / (gameData.win[0] + gameData.win[1]) * 100)}%</div>
+                            <div className="text-sm">상대 승률: {Math.round(gameData.win[0] / (gameData.win[0] + gameData.win[1]) * 100)}%</div>
                             <div className="text-sm">표본수: {gameData.win[0] + gameData.win[1]}</div>
                         </div>
                     )}
@@ -185,6 +246,22 @@ export default function SelectedChampions({ versusCollection }: { versusCollecti
                         <div className="flex flex-col items-center">
                             <div className="text-lg font-bold">{secondChampion.koreanName}</div>
                             <Image className="rounded-full" alt={secondChampion.koreanName} src={'/champion/' + secondChampion.imageUrl} height={100} width={100} />
+                        </div>
+                    )}
+                    {secondChampion && (
+                        <div className="flex flex-col items-center">
+                            {/* 전체 승률 계산 및 출력 */}
+                            {calculateOverallWinRate(secondChampion) !== null && (
+                                <div className="text-sm">전체 승률: {calculateOverallWinRate(secondChampion)}%</div>
+                            )}
+                        </div>
+                    )}
+                    {secondChampion && (
+                        <div className="flex flex-col items-center">
+                            {/* 전체 승률 계산 및 출력 */}
+                            {calculateTotalSampleSize(secondChampion) !== null && (
+                                <div className="text-sm">전체 판수: {calculateTotalSampleSize(secondChampion)}</div>
+                            )}
                         </div>
                     )}
                 </div>
