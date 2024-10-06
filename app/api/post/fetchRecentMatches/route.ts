@@ -315,8 +315,8 @@ export async function POST(request: NextRequest) {
                                         currentVisionScoreB + visionScoreA,
                                     ],
                                     [`${gameVersion}.${lineB}.${champA}.win`]: [
-                                        currentWinB + winA,
                                         currentWinA + winB,
+                                        currentWinB + winA,
                                     ],
                                     [`${gameVersion}.${lineB}.${champA}.jungleMinionsKilled`]: [
                                         currentJungleMinionsKilledA + jungleMinionsKilledB,
