@@ -52,7 +52,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <Link href="/versus">상대법</Link>
               <Link href="/charSearch">챔피언</Link>
               {session ? (
-                <Link href="/write">직접입력하기</Link>
+                <Link href="/write">직접입력하기</Link>        
               ) : (
                 <></>
               )}

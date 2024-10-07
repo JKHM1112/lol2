@@ -1,149 +1,71 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { champion } from "@/app/data/champion";
-import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Command, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem } from "@/components/ui/command";
+import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "@/components/ui/select";
-import AnalyzeTable from "./analyzeTable";
 import Image from "next/image";
+import { relative } from "path";
 
-export interface LevelUpEvent {
-    level: number;
-    timestamp: number;
+// 챔피언 데이터와 관련된 인터페이스 정의
+interface GameData {
+    levels: [number, number, number, number, number];
+    jungleMinionsKilled: [number, number];
+    minionsKilled: [number, number];
+    totalGold: [number, number];
+    win: [number, number];
+    xp: [number, number];
+    damagePerMinute: [number, number];
+    teamDamagePercentage: [number, number];
+    damageTakenOnTeamPercentage: [number, number];
+    turretPlatesTaken: [number, number];
+    damageDealtToBuildings: [number, number];
+    killParticipation: [number, number];
+    soloKills: [number, number];
+    kda: [number, number];
+    visionScore: [number, number];
 }
 
-export interface FrameData {
-    jungleMinionsKilled: number;
-    minionsKilled: number;
-    totalGold: number;
-    xp: number;
-}
-
-export interface Challenge {
-    damagePerMinute: number;
-    damageTakenOnTeamPercentage: number;
-    kda: number;
-    killParticipation: number;
-    legendaryItemUsed: number[];
-    soloKills: number;
-    teamDamagePercentage: number;
-    turretPlatesTaken: number;
-}
-
-export interface Participant {
-    assists: number;
-    challenges: Challenge;
-    champExperience: number;
-    champLevel: number;
-    championName: string;
-    damageDealtToBuildings: number;
-    deaths: number;
-    goldEarned: number;
-    individualPosition: string;
-    items: number[];
-    kills: number;
-    magicDamageDealtToChampions: number;
-    magicDamageTaken: number;
-    physicalDamageDealtToChampions: number;
-    physicalDamageTaken: number;
-    participantId: number;
-    riotIdGameName: string;
-    riotIdTagline: string;
-    summoner1Id: number;
-    summoner2Id: number;
-    totalDamageDealtToChampions: number;
-    totalDamageTaken: number;
-    totalMinionsKilled: number;
-    trueDamageDealtToChampions: number;
-    trueDamageTaken: number;
-    visionScore: number;
-    win: boolean;
-    levelUpEvents: LevelUpEvent[];
-    frameData: FrameData[];
-}
-
-export interface MatchData {
-    info: {
-        gameDuration: number;
-        gameEndTimestamp: number;
-        gameStartTimestamp: number;
-        gameVersion: string;
-        participants: Participant[];
-    };
-    tier: string;
-}
-
-
-interface Props {
-    topMatches: string;
-    jungleMatches: string;
-    middleMatches: string;
-    bottomMatches: string;
-    utilityMatches: string;
-}
-
-const championInfo = champion;
-
-const championsList = Object.values(championInfo.data).map((champ) => ({
+// 챔피언 데이터 설정
+const championDetails = Object.values(champion.data).map((champ) => ({
     englishName: champ.id,
     koreanName: champ.name,
-    imageUrl: '/champion/' + champ.image.full
+    imageUrl: champ.image.full
 }));
 
-const roles = [
-    { value: 'ALL', label: '전체' },
-    { value: 'TOP', label: '탑' },
-    { value: 'JUNGLE', label: '정글' },
-    { value: 'MIDDLE', label: '미드' },
-    { value: 'BOTTOM', label: '원딜' },
-    { value: 'UTILITY', label: '서폿' },
-]
-
-const tierGroups = [
-    { value: 'ALL', label: '전체' },
-    { value: 'PART1', label: '아브실골' },
-    { value: 'PART2', label: '플에다' },
-    { value: 'PART3', label: '마그마챌' }
+const lineDetails = [
+    { value: 'top', label: '탑' },
+    { value: 'jungle', label: '정글' },
+    { value: 'middle', label: '미드' },
+    { value: 'bottom', label: '원딜' },
+    { value: 'utility', label: '서폿' },
 ];
 
-const tierMap: { [key: string]: string[] } = {
-    PART1: ['IRON', 'BRONZE', 'SILVER', 'GOLD'],
-    PART2: ['PLATINUM', 'EMERALD', 'DIAMOND'],
-    PART3: ['MASTER', 'GRANDMASTER', 'CHALLENGER']
-};
+const versionDetails = [
+    { version: '19' },
+    { version: '18' },
+    { version: '17' },
+    { version: '16' },
+    { version: '15' },
+];
 
-const calculateWinRate = (matches: MatchData[], championName: string) => {
-    const totalMatches = matches.length;
-    const wins = matches.reduce((acc, match) => {
-        const participant = match.info.participants.find(p => p.championName === championName);
-        return acc + (participant && participant.win ? 1 : 0);
-    }, 0);
-    return totalMatches > 0 ? (wins / totalMatches) * 100 : 0;
-};
 
-export default function ChampionSelector({ topMatches, jungleMatches, middleMatches, bottomMatches, utilityMatches }: Props) {
-    const [firstChampion, setFirstChampion] = useState<{ koreanName: string; englishName: string; imageUrl: string; } | null>(null);//첫번째챔피언
-    const [secondChampion, setSecondChampion] = useState<{ koreanName: string; englishName: string; imageUrl: string; } | null>(null);//두번째챔피언
-    const [selectedRole, setSelectedRole] = useState('ALL');//선택한라인
-    const [selectedTierGroup, setSelectedTierGroup] = useState('ALL');//선택한티어
+
+export default function SelectedChampions({ versusCollection }: { versusCollection: any }) {
+    const [gameData, setGameData] = useState<GameData | null>(null);
+    const [firstChampion, setFirstChampion] = useState<any>(null);
+    const [secondChampion, setSecondChampion] = useState<any>(null);
+    const [line, setLine] = useState('');
+    const [version, setVersion] = useState("19");
     const [isFirstChampionOpen, setIsFirstChampionOpen] = useState(false);
     const [isSecondChampionOpen, setIsSecondChampionOpen] = useState(false);
-
-    const matches: { [key: string]: MatchData[] } = {
-        TOP: JSON.parse(topMatches),
-        JUNGLE: JSON.parse(jungleMatches),
-        MIDDLE: JSON.parse(middleMatches),
-        BOTTOM: JSON.parse(bottomMatches),
-        UTILITY: JSON.parse(utilityMatches)
-    };
 
     const handleReset = () => {
         setFirstChampion(null);
         setSecondChampion(null);
-        setSelectedRole('ALL');
-        setSelectedTierGroup('ALL');
+        setLine('ALL');
     };
 
     const handleSwapChampions = () => {
@@ -151,160 +73,213 @@ export default function ChampionSelector({ topMatches, jungleMatches, middleMatc
         setSecondChampion(firstChampion);
     };
 
-    const filterMatchesByChampion = (champion: string, role: string, tierGroup: string): MatchData[] => {
-        let result: MatchData[] = [];
-        Object.entries(matches).forEach(([roleKey, matchArray]) => {
-            if (role === 'ALL' || role === roleKey) {
-                matchArray.forEach(match => {
-                    if ((tierGroup === 'ALL' || tierMap[tierGroup].includes(match.tier)) &&
-                        match.info.participants.some(participant => participant.championName === champion)) {
-                        result.push(match);
+    // 통합된 데이터 조회 및 처리 함수 (승률, 판수, 상대 챔피언 전적)
+    const calculateChampionStats = (chams: any, versusCollection: any, version: string, line: string) => {
+        if (!chams) return { totalWins: 0, totalGames: 0, relativeRecord: [] };
+
+        const championData = versusCollection.find((item: any) => item.championName === chams.englishName);
+        if (!championData) return { totalWins: 0, totalGames: 0, relativeRecord: [] };
+
+        let totalWins = 0;
+        let totalGames = 0;
+        let relativeRecord: any[] = [];
+
+        for (const lineKey in championData[version]) {
+            for (const opponent in championData[version][lineKey]) {
+                const gameData = championData[version][lineKey][opponent];
+                if (gameData) {
+                    const games = gameData.win[0] + gameData.win[1];
+                    const winRate = games > 0 ? Math.round((gameData.win[0] / games) * 10000) / 100 : 0;
+
+                    totalWins += gameData.win[0];
+                    totalGames += games;
+
+                    if (lineKey === line) {
+                        const opponentData = champion.data[opponent as keyof typeof champion.data];
+                        relativeRecord.push({
+                            koreanName: opponentData?.name || opponent,
+                            englishName: opponent,
+                            winRate: winRate,
+                            totalGames: games
+                        });
                     }
-                });
+                }
             }
-        });
-        return result;
+        }
+
+        return {
+            totalWins,
+            totalGames,
+            relativeRecord: relativeRecord.filter(record => record.totalGames >= 10).sort((a, b) => b.winRate - a.winRate),
+        };
     };
 
-    const filterMatchesByTwoChampions = (champion1: string, champion2: string, role: string, tierGroup: string): MatchData[] => {
-        let result: MatchData[] = [];
-        Object.entries(matches).forEach(([roleKey, matchArray]) => {
-            if (role === 'ALL' || role === roleKey) {
-                matchArray.forEach(match => {
-                    const hasChampion1 = match.info.participants.some(participant => participant.championName === champion1);
-                    const hasChampion2 = match.info.participants.some(participant => participant.championName === champion2);
-                    if ((tierGroup === 'ALL' || tierMap[tierGroup].includes(match.tier)) && hasChampion1 && hasChampion2) {
-                        result.push(match);
-                    }
-                });
-            }
-        });
-        return result;
-    };
 
-    const firstChampionMatches = firstChampion ? filterMatchesByChampion(firstChampion.englishName, selectedRole, selectedTierGroup) : [];
-    const secondChampionMatches = secondChampion ? filterMatchesByChampion(secondChampion.englishName, selectedRole, selectedTierGroup) : [];
-    const bothChampionsMatches = (firstChampion && secondChampion) ? filterMatchesByTwoChampions(firstChampion.englishName, secondChampion.englishName, selectedRole, selectedTierGroup) : [];
+    useEffect(() => {
+        if (firstChampion && secondChampion && line && version) {
+            const data = versusCollection.find(
+                (item: any) => item.championName === firstChampion.englishName
+            )?.[version]?.[line]?.[secondChampion.englishName];
+            setGameData(data);
+        }
+    }, [firstChampion, secondChampion, line, version]);
+    //챔피언에 따라 상대방의 승률 이름 등 정보가 있다.
+    const firstChampionStats = calculateChampionStats(firstChampion, versusCollection, version, line);
+    const secondChampionStats = calculateChampionStats(secondChampion, versusCollection, version, line);
 
-    const firstChampionWinRate = firstChampion ? calculateWinRate(firstChampionMatches, firstChampion.englishName) : 0;
-    const secondChampionWinRate = secondChampion ? calculateWinRate(secondChampionMatches, secondChampion.englishName) : 0;
-    const bothChampionsWinRate = (firstChampion && secondChampion) ? calculateWinRate(bothChampionsMatches, firstChampion.englishName) : 0;
+   
 
     return (
-        <div className="flex flex-col items-center space-y-4">
-            <div className="flex items-center space-x-4">
-                <Button onClick={handleReset} variant="outline" size="sm">리셋</Button>
-                <Popover open={isFirstChampionOpen} onOpenChange={setIsFirstChampionOpen}>
-                    <PopoverTrigger asChild>
-                        <Button variant="outline" size="sm" className="w-[150px] justify-start">
-                            {firstChampion ? firstChampion.koreanName : '내 챔피언 선택'}
+        <div className="flex justify-center min-w-[1200px] ">
+            <div className="min-w-[1000px] min-h-[600px] bg-gray-100 rounded-lg shadow-md mt-4 p-4">
+                <div className="flex items-center gap-2">
+                    <Button className="" onClick={handleReset} variant="outline" size="sm">리셋</Button>
+                    <Popover open={isFirstChampionOpen} onOpenChange={setIsFirstChampionOpen}>
+                        <PopoverTrigger asChild>
+                            <Button variant="outline" size="sm" className="w-[150px] justify-start">
+                                {firstChampion ? firstChampion.koreanName : '내 챔피언 선택'}
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="p-0" side="right" align="start">
+                            <Command>
+                                <CommandInput placeholder="챔피언 선택..." />
+                                <CommandList>
+                                    <CommandEmpty>챔피언을 찾을 수 없습니다.</CommandEmpty>
+                                    <CommandGroup>
+                                        {championDetails.map((champ) => (
+                                            <CommandItem key={champ.koreanName} value={champ.koreanName} onSelect={() => {
+                                                setFirstChampion(champ);
+                                                setIsFirstChampionOpen(false);
+                                            }}>
+                                                <span className="mr-2">{champ.koreanName}</span>
+                                            </CommandItem>
+                                        ))}
+                                    </CommandGroup>
+                                </CommandList>
+                            </Command>
+                        </PopoverContent>
+                    </Popover>
+                    <Button onClick={handleSwapChampions} variant="outline" size="sm">변경하기</Button>
+                    <Popover open={isSecondChampionOpen} onOpenChange={setIsSecondChampionOpen}>
+                        <PopoverTrigger asChild>
+                            <Button variant="outline" size="sm" className="w-[150px] justify-start">
+                                {secondChampion ? secondChampion.koreanName : '상대 챔피언 선택'}
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="p-0" side="right" align="start">
+                            <Command>
+                                <CommandInput placeholder="챔피언 선택..." />
+                                <CommandList>
+                                    <CommandEmpty>챔피언을 찾을 수 없습니다.</CommandEmpty>
+                                    <CommandGroup>
+                                        {championDetails.map((champ) => (
+                                            <CommandItem key={champ.koreanName} value={champ.koreanName} onSelect={() => {
+                                                setSecondChampion(champ);
+                                                setIsSecondChampionOpen(false);
+                                            }}>
+                                                <span className="mr-2">{champ.koreanName}</span>
+                                            </CommandItem>
+                                        ))}
+                                    </CommandGroup>
+                                </CommandList>
+                            </Command>
+                        </PopoverContent>
+                    </Popover>
+                </div>
+
+                {/* Line and Version Selector */}
+                <div className="flex flex-row gap-2">
+                    {lineDetails.map((lineOption) => (
+                        <Button key={lineOption.value} onClick={() => setLine(lineOption.value)}
+                            className={`${line === lineOption.value ? 'bg-gray-300 hover:bg-secondary/90 text-black' : 'bg-white text-black hover:bg-secondary/90'} transition-all`}>
+                            {lineOption.label}
                         </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="p-0" side="right" align="start">
-                        <Command>
-                            <CommandInput placeholder="챔피언 선택..." />
-                            <CommandList>
-                                <CommandEmpty>챔피언을 찾을 수 없습니다.</CommandEmpty>
-                                <CommandGroup>
-                                    {championsList.map((champ) => (
-                                        <CommandItem key={champ.koreanName} value={champ.koreanName} onSelect={() => {
-                                            setFirstChampion(champ);
-                                            setIsFirstChampionOpen(false);
-                                        }}>
-                                            <span className="mr-2">{champ.koreanName}</span>
-                                        </CommandItem>
-                                    ))}
-                                </CommandGroup>
-                            </CommandList>
-                        </Command>
-                    </PopoverContent>
-                </Popover>
-                <Button onClick={handleSwapChampions} variant="outline" size="sm">변경하기</Button>
-                <Popover open={isSecondChampionOpen} onOpenChange={setIsSecondChampionOpen}>
-                    <PopoverTrigger asChild>
-                        <Button variant="outline" size="sm" className="w-[150px] justify-start">
-                            {secondChampion ? secondChampion.koreanName : '상대 챔피언 선택'}
-                        </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="p-0" side="right" align="start">
-                        <Command>
-                            <CommandInput placeholder="챔피언 선택..." />
-                            <CommandList>
-                                <CommandEmpty>챔피언을 찾을 수 없습니다.</CommandEmpty>
-                                <CommandGroup>
-                                    {championsList.map((champ) => (
-                                        <CommandItem key={champ.koreanName} value={champ.koreanName} onSelect={() => {
-                                            setSecondChampion(champ);
-                                            setIsSecondChampionOpen(false);
-                                        }}>
-                                            <span className="mr-2">{champ.koreanName}</span>
-                                        </CommandItem>
-                                    ))}
-                                </CommandGroup>
-                            </CommandList>
-                        </Command>
-                    </PopoverContent>
-                </Popover>
-            </div>
-            <div className="mt-4 flex items-center space-x-4">
-                <Select onValueChange={(value) => setSelectedRole(value)} defaultValue="ALL">
-                    <SelectTrigger className="w-[180px]">
-                        <SelectValue placeholder="라인 선택" />
-                    </SelectTrigger>
-                    <SelectContent>
-                        {roles.map((role) => (
-                            <SelectItem key={role.value} value={role.value}>
-                                {role.label}
-                            </SelectItem>
+                    ))}
+                    <Select onValueChange={(value) => setVersion(value)} defaultValue="19">
+                        <SelectTrigger className="w-[180px]">
+                            <SelectValue placeholder="버전 선택" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            {versionDetails.map((tier) => (
+                                <SelectItem key={tier.version} value={tier.version}>
+                                    14.{tier.version}
+                                </SelectItem>
+                            ))}
+                        </SelectContent>
+                    </Select>
+                </div>
+
+                {/* Display Champion Stats */}
+                <div className="flex flex-row gap-2">
+                    {firstChampion && (
+                        <div className="flex flex-col items-center">
+                            {firstChampionStats && (
+                                <>
+                                    <div className="text-sm">전체 승률: {Math.round((firstChampionStats.totalWins / firstChampionStats.totalGames) * 10000) / 100}%</div>
+                                    <div className="text-sm">전체 판수: {firstChampionStats.totalGames}</div>
+                                </>
+                            )}
+                            <div className="text-lg font-bold">{firstChampion.koreanName}</div>
+                            <Image className="rounded-full" alt={firstChampion.koreanName} src={'/champion/' + firstChampion.imageUrl} height={100} width={100} />
+                        </div>
+                    )}
+                    {gameData && (
+                        <div className="flex flex-col items-center">
+                            <div className="text-sm">상대 승률: {Math.round(gameData.win[0] / (gameData.win[0] + gameData.win[1]) * 10000) / 100}%</div>
+                            <div className="text-sm">표본수: {gameData.win[0] + gameData.win[1]}</div>
+                        </div>
+                    )}
+
+                    {secondChampion && (
+                        <div className="flex flex-col items-center">
+                            {secondChampionStats && (
+                                <>
+                                    <div className="text-sm">전체 승률: {Math.round((secondChampionStats.totalWins / secondChampionStats.totalGames) * 10000) / 100}%</div>
+                                    <div className="text-sm">전체 판수: {secondChampionStats.totalGames}</div>
+                                </>
+                            )}
+                            <div className="text-lg font-bold">{secondChampion.koreanName}</div>
+                            <Image className="rounded-full" alt={secondChampion.koreanName} src={'/champion/' + secondChampion.imageUrl} height={100} width={100} />
+                        </div>
+                    )}
+                </div>
+
+                {/* 상대 전적 출력 */}
+                <div className="flex flex-row gap-2">
+                    <div className="flex flex-col border-2 rounded-md bg-gray-200 w-1/5 overflow-y-auto">
+                        {secondChampionStats.relativeRecord.map((record) => (
+                            <div className="flex flex-row">
+                                <Image className="rounded-full" alt={record.englishName} src={`/champion/${record.englishName}.png`} height={50} width={50}
+                                    onClick={() => setFirstChampion({
+                                        koreanName: record.koreanName,
+                                        englishName: record.englishName,
+                                        imageUrl: `${record.englishName}.png`
+                                    })}
+                                />
+                                <div className="text-sm mt-2">판수: {record.totalGames}</div>
+                                <div className="text-sm mt-2">승률: {record.winRate}%</div>
+                            </div>
                         ))}
-                    </SelectContent>
-                </Select>
-                <Select onValueChange={(value) => setSelectedTierGroup(value)} defaultValue="ALL">
-                    <SelectTrigger className="w-[180px]">
-                        <SelectValue placeholder="티어 선택" />
-                    </SelectTrigger>
-                    <SelectContent>
-                        {tierGroups.map((tier) => (
-                            <SelectItem key={tier.value} value={tier.value}>
-                                {tier.label}
-                            </SelectItem>
+                    </div>
+                    <div className="flex flex-col border-2 rounded-md bg-gray-200 w-3/5 ">
+
+                    </div>
+                    <div className="flex flex-col border-2 rounded-md bg-gray-200 w-1/5 overflow-y-auto">
+                        {firstChampionStats.relativeRecord.map((record) => (
+                            <div className="flex flex-row">
+                                <Image className="rounded-full" alt={record.englishName} src={`/champion/${record.englishName}.png`} height={50} width={50}
+                                    onClick={() => setSecondChampion({
+                                        koreanName: record.koreanName,
+                                        englishName: record.englishName,
+                                        imageUrl: `${record.englishName}.png`
+                                    })}
+                                />
+                                <div className="text-sm mt-2">판수: {record.totalGames}</div>
+                                <div className="text-sm mt-2">승률: {record.winRate}%</div>
+                            </div>
                         ))}
-                    </SelectContent>
-                </Select>
-            </div>
-            <div className="mt-4 flex items-center space-x-8">
-                {firstChampion && (
-                    <div className="flex flex-col items-center">
-                        <div className="text-lg font-bold">{firstChampion.koreanName}</div>
-                        <Image alt={firstChampion.koreanName} src={firstChampion.imageUrl} height={100} width={100} className="rounded-full" />
-                        <div className="text-sm">승률: {firstChampionWinRate.toFixed(2)}%</div>
-                        <div className="text-sm">표본수: {firstChampionMatches.length}</div>
                     </div>
-                )}
-                {bothChampionsMatches.length > 0 && (
-                    <div className="flex flex-col items-center">
-                        <div className="text-lg font-bold">상대 승률</div>
-                        <div className="text-sm">승률: {bothChampionsWinRate.toFixed(2)}%</div>
-                        <div className="text-sm">표본수: {bothChampionsMatches.length}</div>
-                    </div>
-                )}
-                {secondChampion && (
-                    <div className="flex flex-col items-center">
-                        <div className="text-lg font-bold">{secondChampion.koreanName}</div>
-                        <Image alt={secondChampion.koreanName} src={secondChampion.imageUrl} height={100} width={100} className="rounded-full" />
-                        <div className="text-sm">승률: {secondChampionWinRate.toFixed(2)}%</div>
-                        <div className="text-sm">표본수: {secondChampionMatches.length}</div>
-                    </div>
-                )}
-            </div>
-            <div>
-                {/* {bothChampionsMatches && firstChampion && secondChampion && (
-                    <AnalyzeTable
-                        bothChampionsMatches={bothChampionsMatches}
-                        firstChampion={firstChampion?.englishName}
-                        secondChampion={secondChampion?.englishName}
-                    />
-                )} */}
+                </div>
             </div>
         </div>
     );
