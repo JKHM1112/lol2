@@ -127,7 +127,7 @@ export default function SelectedChampions({ versusCollection }: { versusCollecti
     const firstChampionStats = calculateChampionStats(firstChampion, versusCollection, version, line);
     const secondChampionStats = calculateChampionStats(secondChampion, versusCollection, version, line);
 
-   
+
 
     return (
         <div className="flex justify-center min-w-[1200px] ">
@@ -247,7 +247,7 @@ export default function SelectedChampions({ versusCollection }: { versusCollecti
                 {/* 상대 전적 출력 */}
                 <div className="flex flex-row gap-2">
                     <div className="flex flex-col border-2 rounded-md bg-gray-200 w-1/5 overflow-y-auto">
-                        {secondChampionStats.relativeRecord.map((record) => (
+                        {secondChampionStats.relativeRecord.map((record, index) => (
                             <div className="flex flex-row">
                                 <Image className="rounded-full" alt={record.englishName} src={`/champion/${record.englishName}.png`} height={50} width={50}
                                     onClick={() => setFirstChampion({
@@ -265,7 +265,7 @@ export default function SelectedChampions({ versusCollection }: { versusCollecti
 
                     </div>
                     <div className="flex flex-col border-2 rounded-md bg-gray-200 w-1/5 overflow-y-auto">
-                        {firstChampionStats.relativeRecord.map((record) => (
+                        {firstChampionStats.relativeRecord.map((record, index) => (
                             <div className="flex flex-row">
                                 <Image className="rounded-full" alt={record.englishName} src={`/champion/${record.englishName}.png`} height={50} width={50}
                                     onClick={() => setSecondChampion({
