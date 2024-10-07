@@ -122,7 +122,7 @@ export default function SelectedChampions({ versusCollection }: { versusCollecti
             )?.[version]?.[line]?.[secondChampion.englishName];
             setGameData(data);
         }
-    }, [firstChampion, secondChampion, line, version]);
+    }, [firstChampion, secondChampion, line, version, versusCollection]);
     //챔피언에 따라 상대방의 승률 이름 등 정보가 있다.
     const firstChampionStats = calculateChampionStats(firstChampion, versusCollection, version, line);
     const secondChampionStats = calculateChampionStats(secondChampion, versusCollection, version, line);
@@ -248,7 +248,7 @@ export default function SelectedChampions({ versusCollection }: { versusCollecti
                 <div className="flex flex-row gap-2">
                     <div className="flex flex-col border-2 rounded-md bg-gray-200 w-1/5 overflow-y-auto">
                         {secondChampionStats.relativeRecord.map((record, index) => (
-                            <div className="flex flex-row">
+                            <div key="index" className="flex flex-row">
                                 <Image className="rounded-full" alt={record.englishName} src={`/champion/${record.englishName}.png`} height={50} width={50}
                                     onClick={() => setFirstChampion({
                                         koreanName: record.koreanName,
@@ -266,7 +266,7 @@ export default function SelectedChampions({ versusCollection }: { versusCollecti
                     </div>
                     <div className="flex flex-col border-2 rounded-md bg-gray-200 w-1/5 overflow-y-auto">
                         {firstChampionStats.relativeRecord.map((record, index) => (
-                            <div className="flex flex-row">
+                            <div key="index" className="flex flex-row">
                                 <Image className="rounded-full" alt={record.englishName} src={`/champion/${record.englishName}.png`} height={50} width={50}
                                     onClick={() => setSecondChampion({
                                         koreanName: record.koreanName,

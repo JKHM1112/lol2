@@ -51,7 +51,7 @@ export default function SearchBar({ searchFavorites, searchRecently, email }: se
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, []);
+    }, [isLoggedIn,searchFavorites,searchRecently]);
 
     const handleSearch = async (name: string) => {
         const formattedName = name.replace('#', '-');
