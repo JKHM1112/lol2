@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 export default function SaveGame({ session }: { session: any }) {
+    const [nicknameTag, setNicknameTag] = useState<string>('');
     const [error, setError] = useState<string | null>(null);
     const [success, setSuccess] = useState<string | null>(null);
     // 새로고침 함수
@@ -43,6 +44,7 @@ export default function SaveGame({ session }: { session: any }) {
             } else if (response.ok) {
                 setSuccess(data.message);
                 setError(null);
+                setNicknameTag(''); // 제출 후 입력란 비우기
             } else {
                 setError("등록에 실패했습니다.");
                 setSuccess(null);
@@ -59,7 +61,7 @@ export default function SaveGame({ session }: { session: any }) {
             {error && <p className="text-red-500 mb-4">{error}</p>}
             {success && <p className="text-green-500 mb-4">{success}</p>}
             <form onSubmit={handleSubmit}>
-                <input name="nicknameTag" type="text" placeholder="Riot 닉네임 및 태그" required className="p-2 border border-gray-300 rounded" />
+                <input name="nicknameTag" type="text" onChange={(e) => setNicknameTag(e.target.value)} placeholder="Riot 닉네임 및 태그" required className="p-2 border border-gray-300 rounded" />
                 <input type="hidden" name="email" defaultValue={session.user.email} />
                 <button type="submit" className="p-2 bg-blue-500 text-white rounded">등록</button>
             </form>

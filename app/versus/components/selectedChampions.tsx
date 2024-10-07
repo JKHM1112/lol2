@@ -47,8 +47,7 @@ const versionDetails = [
     { version: '19' },
     { version: '18' },
     { version: '17' },
-    { version: '16' },
-    { version: '15' },
+
 ];
 
 
@@ -110,7 +109,7 @@ export default function SelectedChampions({ versusCollection }: { versusCollecti
         return {
             totalWins,
             totalGames,
-            relativeRecord: relativeRecord.filter(record => record.totalGames >= 10).sort((a, b) => b.winRate - a.winRate),
+            relativeRecord: relativeRecord.filter(record => record.totalGames >= 1).sort((a, b) => b.winRate - a.winRate),
         };
     };
 

@@ -53,7 +53,7 @@ export default function RegistrationButton({ saveNickname, session }: Props) {
                 break;
             }
 
-            await new Promise(resolve => setTimeout(resolve, 10000)); //10초 딜레이
+            await new Promise(resolve => setTimeout(resolve, 1000)); //10초 딜레이
         }
 
         setCurrentNickname(null);
