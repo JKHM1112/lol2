@@ -40,7 +40,7 @@ export default function RegistrationButton({ saveNickname, session }: Props) {
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ puuid: nickname.puuid, queue: 420, start: 0, games: 10, tier: nickname.tier }), 
+                    body: JSON.stringify({ puuid: nickname.puuid, queue: 420, start: 0, games: 5, tier: nickname.tier }), 
                 });
 
                 const data = await response.json();

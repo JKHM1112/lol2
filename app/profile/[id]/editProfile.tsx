@@ -80,7 +80,7 @@ export default function EditProfile({ profileInformation }: { profileInformation
     };
 
     return (
-        <div className="max-w-[800px] bg-white mx-auto p-6 border border-gray-300 rounded-lg shadow-lg">
+        <div className="min-w-[800px] bg-gray-100 rounded-md shadow mt-4 p-4">
             {error && <p className="text-red-500 mb-4">{error}</p>}
             {success && <p className="text-green-500 mb-4">{success}</p>}
             

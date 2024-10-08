@@ -8,6 +8,8 @@ import { Noto_Sans_KR } from "next/font/google";
 import type { Metadata } from "next";
 import Games from "./games/page";
 import "./globals.css";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import Image from "next/image";
 
 interface UserSession {
   user: {
@@ -48,33 +50,42 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                   <span className="recordS">RECORD</span>
                 </div>
               </Link>
-              <Link href="/lists">기록실</Link>
-              <Link href="/versus">상대법</Link>
-              <Link href="/charSearch">챔피언</Link>
+              <Link className="hover:bg-gray-200 rounded-md" href="/lists">기록실</Link>
+              <Link className="hover:bg-gray-200 rounded-md" href="/versus">상대법</Link>
+              <Link className="hover:bg-gray-200 rounded-md" href="/charSearch">챔피언</Link>
               {session ? (
-                <Link href="/write">직접입력하기</Link>        
-              ) : (
-                <></>
-              )}
-              {session ? (
-                <div className="flex items-center space-x-4">
-                  <Link href={"/saveGameHistory"}>닉네임등록</Link>
-                </div>
+                <Link className="hover:bg-gray-200 rounded-md" href="/write">직접입력하기</Link>
               ) : (
                 <></>
               )}
               <Games />
-              {!session && <Link href="/register">회원가입</Link>}
-              {session ? (
-                <div className="flex items-center space-x-4">
-                  <Link href={"/profile/" + result._id}>{session.user.name}</Link>
-                  <LogoutBtn />
-                </div>
-              ) : (
-                <LoginBtn />
-              )}
-
             </div>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="hover:bg-gray-200">
+                <Image alt={'setting'} src="/setting.png" height={30} width={30}></Image>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                {session && (
+                  <DropdownMenuLabel className="hover:bg-gray-200 text-left">
+                    <Link href={"/profile/" + result._id}>{session.user.name}</Link>
+                  </DropdownMenuLabel>
+                )}
+                <DropdownMenuSeparator />
+                {!session && (
+                  <DropdownMenuItem className="hover:bg-gray-200 text-left font-normal">
+                    <Link href="/register">회원가입</Link>
+                  </DropdownMenuItem>
+                )}
+                {session && (
+                  <DropdownMenuItem className="hover:bg-gray-200 text-left font-normal">
+                    <Link href={"/saveGameHistory"}>닉네임등록</Link>
+                  </DropdownMenuItem>
+                )}
+                <DropdownMenuItem className="hover:bg-gray-200 text-left font-normal">
+                  {session ? (<LogoutBtn />) : (<LoginBtn />)}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* 하단 콘텐츠 */}
