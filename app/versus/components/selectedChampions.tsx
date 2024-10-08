@@ -68,13 +68,13 @@ const statsList = [
 export default function SelectedChampions({ versusCollection }: { versusCollection: any }) {
     const [gameData, setGameData] = useState<GameData | null>(null);
     const [firstChampion, setFirstChampion] = useState<any>(null);
+    console.log(firstChampion)
     const [secondChampion, setSecondChampion] = useState<any>(null);
     const [line, setLine] = useState('');
     const [version, setVersion] = useState("19");
 
     const [isFirstChampionOpen, setIsFirstChampionOpen] = useState(false);
     const [isSecondChampionOpen, setIsSecondChampionOpen] = useState(false);
-
     const handleReset = () => {
         setFirstChampion(null);
         setSecondChampion(null);

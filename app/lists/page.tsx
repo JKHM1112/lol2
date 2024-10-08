@@ -13,6 +13,7 @@ export default async function Lists() {
     const db = (await connectDB).db('dream')
     let dataEnteredDirectly = await db.collection('dataEnteredDirectly').find().sort({ _id: -1 }).toArray()
     let riotPatchNotes = await db.collection('riotPatchNotes').find().sort({ _id: -1 }).toArray()
+    let versusCollection = await db.collection('versusData').find().sort({ _id: -1 }).toArray()
 
 
     let session: Session | null = await getServerSession(authOptions)
@@ -26,14 +27,19 @@ export default async function Lists() {
         ...item,
         _id: item._id.toString(),  // MongoDB ObjectId를 문자열로 변환
     }));
-    
+
     riotPatchNotes = riotPatchNotes.map((item: any) => ({
+        ...item,
+        _id: item._id.toString(),  // MongoDB ObjectId를 문자열로 변환
+    }));
+
+    versusCollection = versusCollection.map((item: any) => ({
         ...item,
         _id: item._id.toString(),  // MongoDB ObjectId를 문자열로 변환
     }));
     return (
         <div>
-            <ListsCards dataEnteredDirectly={dataEnteredDirectly} email={email} riotPatchNotes={riotPatchNotes}/>
+            <ListsCards dataEnteredDirectly={dataEnteredDirectly} email={email} riotPatchNotes={riotPatchNotes} versusCollection={versusCollection} />
         </div>
     )
 

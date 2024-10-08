@@ -9,7 +9,6 @@ const excludedItems = [
 ];
 
 export default function ShowChart({ chartData, myEnemy }: { chartData: any[], myEnemy: string }) {
-    console.log(chartData)
     const [newData, setNewData] = useState<any[]>([]);
     const [sortType, setSortType] = useState<'difficulty' | 'winrate' | 'count'>('difficulty');
     const [selectedChampion, setSelectedChampion] = useState<string | null>(null); // 선택된 챔피언
