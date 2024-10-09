@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { champion } from "@/app/data/champion";
-import { Button } from "@/components/ui/button";
 import { Command, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem } from "@/components/ui/command";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "@/components/ui/select";
 import Image from "next/image";
 
@@ -44,10 +44,10 @@ const lineDetails = [
 ];
 
 const versionDetails = [
+    { version: '20' },
     { version: '19' },
     { version: '18' },
     { version: '17' },
-
 ];
 
 const statsList = [
@@ -68,17 +68,16 @@ const statsList = [
 export default function SelectedChampions({ versusCollection }: { versusCollection: any }) {
     const [gameData, setGameData] = useState<GameData | null>(null);
     const [firstChampion, setFirstChampion] = useState<any>(null);
-    console.log(firstChampion)
     const [secondChampion, setSecondChampion] = useState<any>(null);
     const [line, setLine] = useState('');
-    const [version, setVersion] = useState("19");
+    const [version, setVersion] = useState("20");
 
     const [isFirstChampionOpen, setIsFirstChampionOpen] = useState(false);
     const [isSecondChampionOpen, setIsSecondChampionOpen] = useState(false);
     const handleReset = () => {
         setFirstChampion(null);
         setSecondChampion(null);
-        setLine('ALL');
+        setLine('');
     };
 
     const handleSwapChampions = () => {
@@ -160,6 +159,26 @@ export default function SelectedChampions({ versusCollection }: { versusCollecti
 
 
     useEffect(() => {
+        if (firstChampion && secondChampion) {
+            const lines = ['top', 'jungle', 'middle', 'bottom', 'utility'];
+            let maxWinValue = -Infinity;
+            let bestLine = '';
+            lines.forEach((line) => {
+                const lineData = versusCollection.find(
+                    (item: any) => item.championName === firstChampion.englishName
+                )?.[version]?.[line]?.[secondChampion.englishName];
+
+                if (lineData) {
+                    const winSum = lineData.win[0] + lineData.win[1]; // win[0] + win[1] 계산
+
+                    if (winSum > maxWinValue) {
+                        maxWinValue = winSum;
+                        bestLine = line; // 가장 큰 값을 가진 라인 저장
+                    }
+                }
+            });
+            setLine(bestLine);
+        }
         if (firstChampion && secondChampion && line && version) {
             const data = versusCollection.find(
                 (item: any) => item.championName === firstChampion.englishName
@@ -239,7 +258,7 @@ export default function SelectedChampions({ versusCollection }: { versusCollecti
                             {lineOption.label}
                         </Button>
                     ))}
-                    <Select onValueChange={(value) => setVersion(value)} defaultValue="19">
+                    <Select onValueChange={(value) => setVersion(value)} defaultValue={version}>
                         <SelectTrigger className="w-[180px]">
                             <SelectValue placeholder="버전 선택" />
                         </SelectTrigger>

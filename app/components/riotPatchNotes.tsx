@@ -43,8 +43,8 @@ export default async function RiotPatchNotes() {
     };
 
     return (
-        <div>
-            <div className="flex justify-between items-center p-1 mb-2 mt-10">
+        <div className=" flex flex-col justify-center items-center">
+            <div className="flex justify-between items-center w-[400px] p-1 pb-2 pt-10">
                 <h2 className="text-xl font-bold text-green-500">RIOT 공지사항</h2>
                 <Link href="https://www.leagueoflegends.com/ko-kr/news/tags/patch-notes/">
                     <span className="text-sm text-blue-500 hover:underline">더보기</span>
