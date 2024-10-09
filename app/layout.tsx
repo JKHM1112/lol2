@@ -8,7 +8,7 @@ import { Noto_Sans_KR } from "next/font/google";
 import type { Metadata } from "next";
 import Games from "./games/page";
 import "./globals.css";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import Image from "next/image";
 
 interface UserSession {
@@ -50,14 +50,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                   <span className="recordS">RECORD</span>
                 </div>
               </Link>
-              <Link className="hover:bg-gray-200 rounded-md" href="/lists">기록실</Link>
-              <Link className="hover:bg-gray-200 rounded-md" href="/versus">상대법</Link>
-              <Link className="hover:bg-gray-200 rounded-md" href="/charSearch">챔피언</Link>
+              <Link className="hover:bg-gray-200 rounded-md" href="/recordRoom">기록실</Link>
               {session ? (
-                <Link className="hover:bg-gray-200 rounded-md" href="/write">직접입력하기</Link>
+                <Link className="hover:bg-gray-200 rounded-md" href="/write">기록하기</Link>
               ) : (
                 <></>
               )}
+              <Link className="hover:bg-gray-200 rounded-md" href="/versus">상대법</Link>
+              <Link className="hover:bg-gray-200 rounded-md" href="/charSearch">챔피언</Link>
               <Games />
             </div>
             <DropdownMenu>
@@ -78,7 +78,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                 )}
                 {session && (
                   <DropdownMenuItem className="hover:bg-gray-200 text-left font-normal">
-                    <Link href={"/saveGameHistory"}>닉네임등록</Link>
+                    <Link href={"/recordGame"}>닉네임등록</Link>
                   </DropdownMenuItem>
                 )}
                 <DropdownMenuItem className="hover:bg-gray-200 text-left font-normal">
