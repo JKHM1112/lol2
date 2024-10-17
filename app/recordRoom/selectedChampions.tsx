@@ -59,7 +59,7 @@ export default function SelectedChampions({ versusCollection, myChampSearch, ene
     const [firstChampion, setFirstChampion] = useState<any>(null);
     const [secondChampion, setSecondChampion] = useState<any>(null);
     const [line, setLine] = useState('');
-    const [version, setVersion] = useState("19");
+    const [version, setVersion] = useState("20");
     const [check, setCheck] = useState(false);
     console.log(firstChampion)
     console.log(secondChampion)
@@ -178,7 +178,7 @@ export default function SelectedChampions({ versusCollection, myChampSearch, ene
     }, [versusCollection, check == true]);
 
     return (
-        <div className="min-w-[400px] bg-white rounded-lg shadow-md mt-1">
+        <div className="min-w-[500px] bg-white rounded-lg shadow-md mt-1">
             {/*둘째줄*/}
             <div className="flex flex-row justify-center gap-2 mt-1">
                 <Button onClick={() => function1()}>조회</Button>
@@ -271,7 +271,7 @@ export default function SelectedChampions({ versusCollection, myChampSearch, ene
             <div className="flex flex-row gap-1 mt-2">
                 <div className="flex flex-col border-2 rounded-md bg-gray-200 w-1/5 max-h-[400px] overflow-y-auto ml-2">
                     {secondChampionStats.relativeRecord.reverse().map((record, index) => (
-                        <div key="index" className="flex flex-row p-1 gap-1">
+                        <div key="index" className="flex max-h-[45px] flex-row p-1 gap-1">
                             <Image className="rounded-full" alt={record.englishName} src={`/champion/${record.englishName}.png`} height={40} width={40}
                                 onClick={() => setFirstChampion({
                                     koreanName: record.koreanName,
@@ -390,10 +390,9 @@ export default function SelectedChampions({ versusCollection, myChampSearch, ene
                         </div>
                     )}
                 </div>
-
                 <div className="flex flex-col border-2 rounded-md bg-gray-200 w-1/5 max-h-[400px] overflow-y-auto mr-2">
                     {firstChampionStats.relativeRecord.map((record, index) => (
-                        <div key="index" className="flex flex-row p-1 gap-1">
+                        <div key="index" className="flex max-h-[45px] flex-row p-1 gap-1">
                             <Image className="rounded-full" alt={record.englishName} src={`/champion/${record.englishName}.png`} height={40} width={40}
                                 onClick={() => setSecondChampion({
                                     koreanName: record.koreanName,
@@ -402,13 +401,12 @@ export default function SelectedChampions({ versusCollection, myChampSearch, ene
                                 })}
                             />
                             <div className="flex flex-col">
-                                <div className={(100 - record.winRate) >= 50 ? 'text-blue-500 text-xs' : 'text-red-500 text-xs'}>승률: {record.winRate}%</div>
+                                <div className={(100 - record.winRate) >= 50 ? 'text-blue-500 text-xs' : 'text-red-500 text-xs'}>승률: {Math.round((100 - record.winRate))}%</div>
                                 <div className="text-xs">판수: {record.totalGames}</div>
                             </div>
                         </div>
                     ))}
                 </div>
-
             </div>
         </div>
     );

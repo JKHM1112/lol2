@@ -525,7 +525,7 @@ export default function ListsCards({ dataEnteredDirectly, email, riotPatchNotes,
                                                 세부사항
                                             </button>
                                         </PopoverTrigger>
-                                        <PopoverContent className="w-[600px]  !important" side="right" align="start">
+                                        <PopoverContent className="min-w-[600px]  !important" side="right" align="start">
                                             <Command>
                                                 <CommandList className="min-h-[500px] !important">
                                                     <SelectedChampions versusCollection={versusCollection} myChampSearch={myChampSearch} enemyChampSearch={enemyChampSearch} />
