@@ -1,7 +1,7 @@
 //그대로 가져오면됨.
 export const item = {
     "type": "item",
-    "version": "14.10.1",
+    "version": "14.19.1",
     "basic": {
         "name": "",
         "rune": {
@@ -114,12 +114,12 @@ export const item = {
             "into": [
                 "3005",
                 "3047",
-                "3117",
                 "3006",
                 "3009",
                 "3010",
                 "3020",
                 "3111",
+                "3117",
                 "3158"
             ],
             "image": {
@@ -145,7 +145,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMovementSpeedMod": 25
@@ -171,10 +172,10 @@ export const item = {
                 "h": 48
             },
             "gold": {
-                "base": 250,
+                "base": 200,
                 "purchasable": true,
-                "total": 250,
-                "sell": 175
+                "total": 200,
+                "sell": 140
             },
             "tags": [
                 "ManaRegen"
@@ -184,7 +185,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {}
         },
@@ -221,7 +223,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {}
         },
@@ -236,12 +239,14 @@ export const item = {
             "into": [
                 "4637",
                 "3084",
-                "3075",
                 "3083",
                 "3116",
                 "3119",
                 "3143",
                 "6667",
+                "3748",
+                "6665",
+                "6609",
                 "8001"
             ],
             "image": {
@@ -267,7 +272,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 350
@@ -283,11 +289,10 @@ export const item = {
                 "3031",
                 "6670",
                 "3086",
+                "6676",
                 "3033",
-                "3036",
                 "3508",
-                "3095",
-                "6676"
+                "3095"
             ],
             "image": {
                 "full": "1018.png",
@@ -312,7 +317,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.15
@@ -328,6 +334,8 @@ export const item = {
                 "3135",
                 "3115",
                 "3116",
+                "3118",
+                "3165",
                 "6621",
                 "6657"
             ],
@@ -354,7 +362,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 45
@@ -362,7 +371,7 @@ export const item = {
         },
         "1027": {
             "name": "사파이어 수정",
-            "description": "<mainText><stats>마나 <attention>250</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>마나 <attention>300</attention></stats><br><br></mainText>",
             "colloq": ";sapphire;crystal;blue",
             "plaintext": "마나가 증가합니다.",
             "into": [
@@ -380,10 +389,10 @@ export const item = {
                 "h": 48
             },
             "gold": {
-                "base": 350,
+                "base": 300,
                 "purchasable": true,
-                "total": 350,
-                "sell": 245
+                "total": 300,
+                "sell": 210
             },
             "tags": [
                 "Mana"
@@ -393,10 +402,11 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMPPoolMod": 250
+                "FlatMPPoolMod": 300
             }
         },
         "1028": {
@@ -407,27 +417,25 @@ export const item = {
             "into": [
                 "3742",
                 "1011",
-                "3071",
                 "6662",
                 "2021",
                 "3012",
                 "3147",
-                "3084",
-                "3053",
                 "2502",
                 "3023",
                 "3044",
+                "3053",
                 "3066",
                 "3067",
+                "3075",
                 "3211",
-                "3748",
+                "3161",
                 "3801",
                 "3803",
-                "6665",
                 "4401",
                 "4635",
                 "6035",
-                "6609",
+                "6610",
                 "6660"
             ],
             "image": {
@@ -453,7 +461,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 150
@@ -465,6 +474,7 @@ export const item = {
             "colloq": ";300;300갑;천갑;cloth;armor",
             "plaintext": "방어력이 약간 증가합니다.",
             "into": [
+                "2421",
                 "2420",
                 "1031",
                 "2019",
@@ -501,7 +511,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatArmorMod": 15
@@ -522,6 +533,7 @@ export const item = {
                 "3109",
                 "2502",
                 "3002",
+                "3075",
                 "6665"
             ],
             "image": {
@@ -547,7 +559,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatArmorMod": 40
@@ -556,7 +569,7 @@ export const item = {
         },
         "1033": {
             "name": "마법무효화의 망토",
-            "description": "<mainText><stats>마법 저항력 <attention>25</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>마법 저항력 <attention>20</attention></stats><br><br></mainText>",
             "colloq": ";null;magic;mantle;null-magic",
             "plaintext": "마법 저항력이 약간 증가합니다.",
             "into": [
@@ -582,10 +595,10 @@ export const item = {
                 "h": 48
             },
             "gold": {
-                "base": 450,
+                "base": 400,
                 "purchasable": true,
-                "total": 450,
-                "sell": 315
+                "total": 400,
+                "sell": 280
             },
             "tags": [
                 "SpellBlock"
@@ -595,15 +608,16 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatSpellBlockMod": 25
+                "FlatSpellBlockMod": 20
             }
         },
         "1035": {
             "name": "잉걸불 칼",
-            "description": "<mainText><stats></stats><br><br><li><passive>불태우기:</passive> 적에게 피해를 입히면 일정 시간 동안 불태웁니다.<li><passive>승부의 길:</passive> 강타를 5회 사용하면 이 아이템을 소모해 강타를 <attention>승부의 강타</attention>로 업그레이드하고 몬스터에게 입히는 피해량을 증가시킵니다. 승부의 강타는 챔피언에게 표식을 남깁니다. 표식이 있는 동안 대상에게 적중 시 추가 고정 피해를 입히고, 대상으로부터 입는 피해량은 감소합니다.<li><passive>사냥꾼:</passive> 대형 몬스터 처치 시 추가 경험치를 얻습니다.<li><passive>만회:</passive> 정글 또는 강에 있을 때 마나를 회복합니다. <br><br><rules>이 아이템을 <status>소모</status>하면 모든 아이템의 효과를 영구히 얻고 몬스터에게 입히는 강타 피해가 증가합니다. 정글 몬스터보다 미니언으로부터 더 많은 골드를 획득했다면, 미니언으로부터 얻는 골드와 경험치가 크게 감소합니다. 광역 공격 시에는 체력 회복 감소 효과가 적용되지 않습니다. 게임의 평균 챔피언 레벨보다 2레벨 뒤쳐졌다면 몬스터 처치 시 추가 경험치를 얻습니다. </rules><br><br><rules>승부의 강타는 기본 공격 또는 스킬로 피해를 입힐 때만 대상을 불태웁니다.</rules></mainText>",
+            "description": "<mainText><stats></stats><br><br><passive>7%</passive> 정글 몬스터 상대로 모든 피해 흡혈<br><li><passive>불태우기:</passive> 정글 몬스터에게 피해를 입히면 5초 동안 불태워 <magicDamage>0의 마법 피해</magicDamage>를 입힙니다.<li><passive>승부의 길:</passive> 강타를 5회 사용하면 이 아이템을 <status>소모</status>해 강타를 <attention>승부의 강타</attention>로 업그레이드하며 몬스터에게 입히는 피해가 <trueDamage>900</trueDamage>까지, 미니언에게 입히는 피해가 <trueDamage>500+대상 최대 체력의 10%</trueDamage>까지 증가합니다. 승부의 강타는 4초 동안 챔피언에게 표식을 남깁니다. 표식이 남은 챔피언을 공격하면 2.5초에 걸쳐 <trueDamage>0의 고정 피해</trueDamage>를 추가로 입힙니다. 표식이 남은 챔피언에게 받는 피해량은 10% 감소합니다.<li><passive>사냥꾼:</passive> 대형 정글 몬스터 처치 시 추가 경험치를 얻습니다.<li><passive>만회:</passive> 정글 또는 강에 있을 때 (잃은 마나에 비례하여) 초당 최대 <scaleMana>0의 마나</scaleMana>를 회복합니다. <br><br><rules>이 아이템을 <status>소모</status>하면 모든 아이템의 효과를 영구히 얻고 몬스터에게 입히는 강타 피해가 증가합니다. 정글 몬스터보다 미니언으로부터 더 많은 골드를 획득했다면, 미니언으로부터 얻는 골드와 경험치가 크게 감소합니다. 광역 공격 시에는 체력 회복 감소 효과가 적용되지 않습니다. 게임의 평균 챔피언 레벨보다 2레벨 뒤쳐졌다면 몬스터 처치 시 추가 경험치를 얻습니다. </rules><br><rules>승부의 강타는 기본 공격 또는 스킬로 피해를 입힐 때만 대상을 불태웁니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "inStore": false,
@@ -632,7 +646,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -654,6 +669,7 @@ export const item = {
                 "2021",
                 "6670",
                 "3133",
+                "6671",
                 "3004",
                 "3035",
                 "3044",
@@ -665,7 +681,6 @@ export const item = {
                 "3123",
                 "3134",
                 "6699",
-                "6671",
                 "6692"
             ],
             "image": {
@@ -692,7 +707,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 10
@@ -704,14 +720,16 @@ export const item = {
             "colloq": ";pick;axe;pickaxe",
             "plaintext": "공격력이 상당히 증가합니다.",
             "into": [
+                "3071",
                 "6333",
                 "2020",
                 "3031",
+                "3142",
                 "3153",
-                "3053",
-                "3032",
                 "3039",
+                "3053",
                 "3072",
+                "3087",
                 "3124",
                 "3181",
                 "3139",
@@ -745,7 +763,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 25
@@ -758,13 +777,14 @@ export const item = {
             "plaintext": "공격력이 대폭 증가합니다.",
             "into": [
                 "3031",
+                "6671",
                 "3146",
+                "6676",
                 "3026",
+                "3032",
                 "3508",
                 "3072",
-                "4403",
-                "6671",
-                "6676"
+                "4403"
             ],
             "image": {
                 "full": "1038.png",
@@ -789,7 +809,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 40
@@ -797,7 +818,7 @@ export const item = {
         },
         "1039": {
             "name": "빗발칼날",
-            "description": "<mainText><stats></stats><br><br><li><passive>불태우기:</passive> 적에게 피해를 입히면 일정 시간 동안 불태웁니다.<li><passive>차가운 길:</passive> 강타를 5회 사용하면 이 아이템을 소모해 강타를 <attention>혹한의 강타</attention>로 업그레이드하고 몬스터에게 입히는 피해량을 증가시킵니다. 혹한의 강타를 챔피언에게 사용하면 고정 피해를 입히고 이동 속도를 훔칩니다.<li><passive>사냥꾼:</passive> 대형 몬스터 처치 시 추가 경험치를 얻습니다.<li><passive>만회:</passive> 정글 또는 강에 있을 때 마나를 회복합니다. <br><br><rules>이 아이템을 <status>소모</status>하면 모든 아이템의 효과를 영구히 얻고 몬스터에게 입히는 강타 피해가 증가합니다. 정글 몬스터보다 미니언으로부터 더 많은 골드를 획득했다면, 미니언으로부터 얻는 골드와 경험치가 크게 감소합니다. 광역 공격 시에는 체력 회복 감소 효과가 적용되지 않습니다. 게임의 평균 챔피언 레벨보다 2레벨 뒤쳐졌다면 몬스터 처치 시 추가 경험치를 얻습니다. </rules><br><br></mainText>",
+            "description": "<mainText><stats></stats><br><br><passive>7%</passive> 정글 몬스터 상대로 모든 피해 흡혈<br><li><passive>불태우기:</passive> 정글 몬스터에게 피해를 입히면 5초 동안 불태워 <magicDamage>0의 마법 피해</magicDamage>를 입힙니다.<li><passive>차가운 길:</passive> 강타를 5회 사용하면 이 아이템을 <status>소모</status>해 강타를 <attention>혹한의 강타</attention>로 업그레이드하며 몬스터에게 입히는 피해가 <trueDamage>900</trueDamage>까지, 미니언에게 입히는 피해가 <trueDamage>500+대상 최대 체력의 10%</trueDamage>까지 증가합니다. 혹한의 강타는 챔피언에게 <trueDamage>0의 고정 피해</trueDamage>를 입히고 2초 동안 <speed>이동 속도를 20%</speed> 훔칩니다.<li><passive>사냥꾼:</passive> 대형 정글 몬스터 처치 시 추가 경험치를 얻습니다.<li><passive>만회:</passive> 정글 또는 강에 있을 때 (잃은 마나에 비례하여) 초당 최대 <scaleMana>0의 마나</scaleMana>를 회복합니다. <br><br><rules>이 아이템을 <status>소모</status>하면 모든 아이템의 효과를 영구히 얻고 몬스터에게 입히는 강타 피해가 증가합니다. 정글 몬스터보다 미니언으로부터 더 많은 골드를 획득했다면, 미니언으로부터 얻는 골드와 경험치가 크게 감소합니다. 광역 공격 시에는 체력 회복 감소 효과가 적용되지 않습니다. 게임의 평균 챔피언 레벨보다 2레벨 뒤쳐졌다면 몬스터 처치 시 추가 경험치를 얻습니다. </rules></mainText>",
             "colloq": ";jungle;Jungle;정글",
             "plaintext": "정글에서 마나 재생을 돕고 몬스터에게 피해를 입힙니다.",
             "inStore": false,
@@ -826,7 +847,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -838,7 +860,7 @@ export const item = {
         },
         "1040": {
             "name": "흑요석 검",
-            "description": "<mainText><stats></stats><br><br><li><passive>불태우기:</passive> 적에게 피해를 입히면 일정 시간 동안 불태웁니다.<li><passive>자동의 길:</passive> 강타를 5회 사용하면 이 아이템을 소모해 공격-강타를 업그레이드하며 몬스터에게 입히는 피해가 증가합니다.<li><passive>사냥꾼:</passive> 대형 몬스터 처치 시 추가 경험치를 얻습니다.<li><passive>만회:</passive> 정글 또는 강에 있을 때 마나를 회복합니다. <br><br><rules>이 아이템을 <status>소모</status>하면 모든 아이템의 효과를 영구히 얻고 몬스터에게 입히는 강타 피해가 증가합니다. 정글 몬스터보다 미니언으로부터 더 많은 골드를 획득했다면, 미니언으로부터 얻는 골드와 경험치가 크게 감소합니다. 광역 공격 시에는 체력 회복 감소 효과가 적용되지 않습니다. 게임의 평균 챔피언 레벨보다 2레벨 뒤쳐졌다면 몬스터 처치 시 추가 경험치를 얻습니다. </rules></mainText>",
+            "description": "<mainText><stats></stats><br><br><passive>8%</passive> 정글 몬스터 상대로 모든 피해 흡혈<br><li><passive>불태우기:</passive> 정글 몬스터에게 피해를 입히면 5초 동안 불태워 <magicDamage>0의 마법 피해</magicDamage>를 입힙니다.<li><passive>자동의 길:</passive> 강타를 5회 사용하면 이 아이템을 <status>소모</status>해 공격-강타를 업그레이드하며 몬스터에게 입히는 피해가 <trueDamage>900</trueDamage>까지 증가합니다.<li><passive>사냥꾼:</passive> 대형 정글 몬스터 처치 시 추가 경험치를 얻습니다.<li><passive>만회:</passive> 정글 또는 강에 있을 때 (잃은 마나에 비례하여) 초당 최대 <scaleMana>0의 마나</scaleMana>를 회복합니다. <br><br><rules>이 아이템을 <status>소모</status>하면 모든 아이템의 효과를 영구히 얻고 몬스터에게 입히는 강타 피해가 증가합니다. 정글 몬스터보다 미니언으로부터 더 많은 골드를 획득했다면, 미니언으로부터 얻는 골드와 경험치가 크게 감소합니다. 광역 공격 시에는 체력 회복 감소 효과가 적용되지 않습니다. 게임의 평균 챔피언 레벨보다 2레벨 뒤쳐졌다면 몬스터 처치 시 추가 경험치를 얻습니다. </rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
@@ -862,11 +884,12 @@ export const item = {
                 "Jungle"
             ],
             "maps": {
-                "11": true,
+                "11": false,
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -883,12 +906,12 @@ export const item = {
             "plaintext": "공격 속도가 약간 증가합니다.",
             "into": [
                 "1043",
-                "3091",
                 "3086",
-                "3131",
                 "3006",
                 "3046",
                 "3051",
+                "3073",
+                "3131",
                 "3144",
                 "6631",
                 "6675",
@@ -904,10 +927,10 @@ export const item = {
                 "h": 48
             },
             "gold": {
-                "base": 300,
+                "base": 250,
                 "purchasable": true,
-                "total": 300,
-                "sell": 210
+                "total": 250,
+                "sell": 175
             },
             "tags": [
                 "AttackSpeed"
@@ -917,7 +940,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "PercentAttackSpeedMod": 0.1
@@ -925,7 +949,7 @@ export const item = {
         },
         "1043": {
             "name": "곡궁",
-            "description": "<mainText><stats>공격 속도 <attention>15%</attention></stats><br><br>기본 공격 적중 시 추가 물리 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>15%</attention></stats><br><br><passive>독침</passive><br>기본 공격 <OnHit>적중 시</OnHit> <physicalDamage>15의 추가 물리 피해</physicalDamage>를 입힙니다.</mainText>",
             "colloq": ";공속활;고래;recurve;bow",
             "plaintext": "공격 속도가 대폭 증가합니다.",
             "from": [
@@ -949,7 +973,7 @@ export const item = {
                 "h": 48
             },
             "gold": {
-                "base": 400,
+                "base": 450,
                 "purchasable": true,
                 "total": 700,
                 "sell": 490
@@ -963,7 +987,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "PercentAttackSpeedMod": 0.15
@@ -976,10 +1001,12 @@ export const item = {
             "colloq": ";책;amptome;amplifying;tome",
             "plaintext": "주문력이 약간 상승합니다.",
             "into": [
+                "2421",
                 "2420",
                 "3145",
                 "4642",
                 "4637",
+                "4628",
                 "3916",
                 "6656",
                 "3113",
@@ -1017,7 +1044,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 20
@@ -1062,7 +1090,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 15,
@@ -1072,7 +1101,7 @@ export const item = {
         },
         "1054": {
             "name": "도란의 방패",
-            "description": "<mainText><stats>체력 <attention>110</attention></stats><br><br><passive>인내의 집중력</passive><li>미니언에게 기본 공격 시 <physicalDamage>5의 물리 피해</physicalDamage>를 추가로 입힙니다.<li>5초마다 <healing>체력을 4</healing> 회복합니다. 챔피언, 대형 또는 에픽 정글 몬스터에게 피해를 입으면 8초 동안 최대 <healing>45의 체력</healing>을 회복합니다. 회복량은 체력이 낮을수록 증가합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>110</attention></stats><br><br><passive>인내의 집중력</passive><br>5초마다 <healing>체력을 4</healing> 회복합니다. <br>챔피언에게 피해를 입으면 8초 동안 <healing>체력</healing>을 회복합니다.<br><br><passive>도움의 손길</passive><br>미니언에게 기본 공격 시 <physicalDamage>5의 추가 물리 피해</physicalDamage>를 입힙니다.</mainText>",
             "colloq": ";도란실드;doran's;shield;dshield",
             "plaintext": "방어에 특화된 시작 아이템입니다.",
             "image": {
@@ -1100,7 +1129,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 110,
@@ -1115,7 +1145,7 @@ export const item = {
         },
         "1055": {
             "name": "도란의 검",
-            "description": "<mainText><stats>공격력 <attention>10</attention><br>체력 <attention>100</attention><br>생명력 흡수 <attention>3.5%</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>10</attention><br>체력 <attention>80</attention><br>생명력 흡수 <attention>3%</attention></stats><br><br></mainText>",
             "colloq": ";도란칼;doran's;blade;dblade",
             "plaintext": "공격에 특화된 시작 아이템입니다.",
             "image": {
@@ -1144,17 +1174,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 100,
+                "FlatHPPoolMod": 80,
                 "FlatPhysicalDamageMod": 10,
-                "PercentLifeStealMod": 0.035
+                "PercentLifeStealMod": 0.03
             }
         },
         "1056": {
             "name": "도란의 반지",
-            "description": "<mainText><stats>주문력 <attention>18</attention><br>체력 <attention>90</attention></stats><br><br><passive>회복</passive><li>매초 마나를 회복합니다. 마나를 회복할 수 없으면 체력을 회복합니다.<li>기본 공격 시 미니언에게 추가 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>18</attention><br>체력 <attention>90</attention></stats><br><br><passive>회복</passive><br>매초 <scaleMana>1.25의 마나</scaleMana>를 회복합니다. <br><br><passive>도움의 손길</passive><br>미니언에게 기본 공격 시 <physicalDamage>5의 추가 물리 피해</physicalDamage>를 입힙니다.</mainText>",
             "colloq": ";도란링;doran's;ring;dring",
             "plaintext": "스킬 사용에 특화된 시작 아이템입니다.",
             "image": {
@@ -1183,7 +1214,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 90,
@@ -1192,7 +1224,7 @@ export const item = {
         },
         "1057": {
             "name": "음전자 망토",
-            "description": "<mainText><stats>마법 저항력 <attention>50</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>마법 저항력 <attention>45</attention></stats><br><br></mainText>",
             "colloq": ";조개;negatron;cloak",
             "plaintext": "마법 저항력이 상당히 증가합니다.",
             "from": [
@@ -1217,8 +1249,8 @@ export const item = {
             "gold": {
                 "base": 450,
                 "purchasable": true,
-                "total": 900,
-                "sell": 630
+                "total": 850,
+                "sell": 595
             },
             "tags": [
                 "SpellBlock"
@@ -1228,16 +1260,17 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatSpellBlockMod": 50
+                "FlatSpellBlockMod": 45
             },
             "depth": 2
         },
         "1058": {
             "name": "쓸데없이 큰 지팡이",
-            "description": "<mainText><stats>주문력 <attention>70</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>주문력 <attention>65</attention></stats><br><br></mainText>",
             "colloq": ";nlr;needlessly;large;rod",
             "plaintext": "주문력이 대폭 상승합니다.",
             "into": [
@@ -1246,6 +1279,7 @@ export const item = {
                 "3146",
                 "3102",
                 "3089",
+                "3100",
                 "3128",
                 "4403"
             ],
@@ -1259,10 +1293,10 @@ export const item = {
                 "h": 48
             },
             "gold": {
-                "base": 1250,
+                "base": 1200,
                 "purchasable": true,
-                "total": 1250,
-                "sell": 875
+                "total": 1200,
+                "sell": 840
             },
             "tags": [
                 "SpellDamage"
@@ -1272,15 +1306,16 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 70
+                "FlatMagicDamageMod": 65
             }
         },
         "1082": {
             "name": "암흑의 인장",
-            "description": "<mainText><stats>주문력 <attention>15</attention><br>체력 <attention>50</attention></stats><br><br><passive>영광</passive><br>적을 처치하거나 어시스트를 올릴 때 중첩을 획득합니다. 중첩당 주문력을 얻습니다. 사망 시 중첩 일부가 사라집니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>15</attention><br>체력 <attention>50</attention></stats><br><br><passive>영광</passive><br><keyword>처치 관여</keyword> 시 <passive>영광</passive>을 최대 10 중첩까지 얻습니다. 사망 시 <passive>영광</passive> 5 중첩을 잃습니다.<br><passive>영광</passive>당 <scaleAP>4의 주문력</scaleAP>을 얻습니다.</mainText>",
             "colloq": ";Noxian;dark;seal",
             "plaintext": "주문력과 마나가 상승하며 적을 처치할 때마다 더욱 강력해집니다.",
             "into": [
@@ -1311,7 +1346,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 50,
@@ -1320,7 +1356,7 @@ export const item = {
         },
         "1083": {
             "name": "수확의 낫",
-            "description": "<mainText><stats>공격력 <attention>7</attention></stats><br><br><passive>수확</passive><li>공격 적중 시 <healing>체력을 3</healing> 회복합니다.<li>공격로 미니언 처치 시 추가로 <goldGain>1</goldGain>골드를 얻습니다. (최대 100골드) 미니언을 총 100회 처치하면 <goldGain>350</goldGain>의 추가 골드를 얻습니다.<br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>7</attention></stats><br><br><passive>수확</passive><br><OnHit>적중 시</OnHit> <healing>체력을 3</healing> 회복합니다.<br>미니언 처치 시 <gold>1</gold>골드를 얻습니다. (최대 <gold>100</gold>골드) 한도에 도달하면 <gold>350골드</gold>를 더 얻습니다.<br></mainText>",
             "colloq": ";도란칼;cull",
             "plaintext": "피해를 입히고 적중 시 생명력을 흡수합니다. 미니언 처치 시 추가 골드를 얻습니다.",
             "image": {
@@ -1348,7 +1384,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 7
@@ -1356,7 +1393,7 @@ export const item = {
         },
         "1101": {
             "name": "새끼 화염발톱",
-            "description": "<mainText><stats></stats><br><br><li><passive>정글 동료:</passive> 정글에서 챔피언을 도와주는 <font color='#DD2E2E'>화염발톱</font>을 소환합니다.<li><passive>화염발톱의 화력:</passive> 완전히 성장하면 주기적으로 챔피언의 다음 공격을 강화해 적 챔피언에게 추가 <passive>피해</passive>를 입히고 <status>둔화</status>시킵니다.</mainText>",
+            "description": "<mainText><stats></stats><br><br><passive>정글 동료</passive><br>몬스터를 상대할 때 도와주는 <font color='#DD2E2E'>화염발톱</font>을 소환합니다.<br><br><passive>화염발톱의 화력</passive><br>몬스터를 사냥할수록 동료가 성장하며 <spellName>강타</spellName>를 강화합니다. 완전히 성장하면 주기적으로 다음 기본 공격 또는 스킬을 강화해 적을 불태우고 <status>둔화</status>시킵니다. 대형 몬스터 처치 시 이 효과가 즉시 준비됩니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
@@ -1382,13 +1419,14 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {}
         },
         "1102": {
             "name": "새끼 바람돌이",
-            "description": "<mainText><stats></stats><br><br><li><passive>정글 동료:</passive> 정글에서 챔피언을 도와주는 <font color='#38A8E8'>바람돌이</font>를 소환합니다.<li><passive>바람돌이의 발걸음:</passive> 완전히 성장하면 챔피언이 수풀에 들어가거나 몬스터를 처치할 때 <speed>이동 속도</speed>를 높여줍니다.</mainText>",
+            "description": "<mainText><stats></stats><br><br><passive>정글 동료</passive><br>몬스터를 상대할 때 도와주는 <font color='#38A8E8'>바람돌이</font>를 소환합니다.<br><br><passive>바람돌이의 발걸음</passive><br>몬스터를 사냥할수록 동료가 성장하며 <spellName>강타</spellName>를 강화합니다. 완전히 성장하면 수풀에 들어갔을 때 <speed>이동 속도</speed>를 높여주며 대형 몬스터를 처치하면 더 높여줍니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
@@ -1414,7 +1452,8 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -1426,7 +1465,7 @@ export const item = {
         },
         "1103": {
             "name": "새끼 이끼쿵쿵이",
-            "description": "<mainText><stats></stats><br><br><li><passive>정글 동료:</passive> 정글에서 챔피언을 도와주는 <font color='#1CA935'>이끼쿵쿵이</font>를 소환합니다. <li><passive>이끼쿵쿵이의 용기:</passive> 완전히 성장하면 챔피언에게 <shield>영구적인 보호막</shield>을 씌워줍니다. 이 보호막은 몬스터를 처치하거나 전투에서 벗어나 있으면 재생됩니다. 이 보호막이 유지되는 동안 강인함 및 둔화 저항을 0% 얻습니다.</mainText>",
+            "description": "<mainText><stats></stats><br><br><passive>정글 동료</passive><br>몬스터를 상대할 때 도와주는 <font color='#1CA935'>이끼쿵쿵이</font>를 소환합니다.<br><br><passive>이끼쿵쿵이의 용기</passive><br>몬스터를 사냥할수록 동료가 성장하며 <spellName>강타</spellName>를 강화합니다. 완전히 성장하면 챔피언에게 <shield>보호막</shield>을 씌워줍니다. 이 보호막은 대형 몬스터를 처치하거나 전투에서 벗어나 있으면 재생됩니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
@@ -1452,7 +1491,8 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -1493,7 +1533,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -1502,6 +1543,117 @@ export const item = {
                 "Effect3Amount": "20",
                 "Effect4Amount": "180"
             }
+        },
+        "1105": {
+            "name": "새끼 이끼쿵쿵이",
+            "description": "<mainText><stats></stats><br><br><passive>정글 동료</passive><br>몬스터를 상대할 때 도와주는 <font color='#1CA935'>이끼쿵쿵이</font>를 소환합니다.<br><br><passive>이끼쿵쿵이의 용기</passive><br>몬스터를 사냥할수록 동료가 성장하며 <spellName>강타</spellName>를 강화합니다. 완전히 성장하면 챔피언에게 <shield>보호막</shield>을 씌워줍니다. 이 보호막은 대형 몬스터를 처치하거나 전투에서 벗어나 있으면 재생됩니다.</mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "1105.png",
+                "sprite": "item0.png",
+                "group": "item",
+                "x": 96,
+                "y": 144,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 450,
+                "purchasable": true,
+                "total": 450,
+                "sell": 180
+            },
+            "tags": [
+                "Jungle"
+            ],
+            "maps": {
+                "11": true,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": false
+            },
+            "stats": {},
+            "effect": {
+                "Effect1Amount": "60",
+                "Effect2Amount": "25",
+                "Effect3Amount": "5",
+                "Effect4Amount": "8"
+            }
+        },
+        "1106": {
+            "name": "새끼 바람돌이",
+            "description": "<mainText><stats></stats><br><br><passive>정글 동료</passive><br>몬스터를 상대할 때 도와주는 <font color='#38A8E8'>바람돌이</font>를 소환합니다.<br><br><passive>바람돌이의 발걸음</passive><br>몬스터를 사냥할수록 동료가 성장하며 <spellName>강타</spellName>를 강화합니다. 완전히 성장하면 수풀에 들어갔을 때 <speed>이동 속도</speed>를 높여주며 대형 몬스터를 처치하면 더 높여줍니다.</mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "1106.png",
+                "sprite": "item0.png",
+                "group": "item",
+                "x": 144,
+                "y": 144,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 450,
+                "purchasable": true,
+                "total": 450,
+                "sell": 180
+            },
+            "tags": [
+                "Jungle"
+            ],
+            "maps": {
+                "11": true,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": false
+            },
+            "stats": {},
+            "effect": {
+                "Effect1Amount": "60",
+                "Effect2Amount": "25",
+                "Effect3Amount": "5",
+                "Effect4Amount": "8"
+            }
+        },
+        "1107": {
+            "name": "새끼 화염발톱",
+            "description": "<mainText><stats></stats><br><br><passive>정글 동료</passive><br>몬스터를 상대할 때 도와주는 <font color='#DD2E2E'>화염발톱</font>을 소환합니다.<br><br><passive>화염발톱의 화력</passive><br>몬스터를 사냥할수록 동료가 성장하며 <spellName>강타</spellName>를 강화합니다. 완전히 성장하면 주기적으로 다음 기본 공격 또는 스킬을 강화해 적을 불태우고 <status>둔화</status>시킵니다. 대형 몬스터 처치 시 이 효과가 즉시 준비됩니다.</mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "1107.png",
+                "sprite": "item0.png",
+                "group": "item",
+                "x": 192,
+                "y": 144,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 450,
+                "purchasable": true,
+                "total": 450,
+                "sell": 180
+            },
+            "tags": [
+                "Jungle"
+            ],
+            "maps": {
+                "11": true,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": false
+            },
+            "stats": {}
         },
         "126697": {
             "name": "오만<br>",
@@ -1512,14 +1664,11 @@ export const item = {
                 "3134",
                 "3133"
             ],
-            "into": [
-                "127008"
-            ],
             "image": {
                 "full": "126697.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 96,
+                "x": 240,
                 "y": 144,
                 "w": 48,
                 "h": 48
@@ -1527,8 +1676,8 @@ export const item = {
             "gold": {
                 "base": 900,
                 "purchasable": true,
-                "total": 3000,
-                "sell": 2100
+                "total": 2950,
+                "sell": 2065
             },
             "tags": [
                 "Damage",
@@ -1542,55 +1691,13 @@ export const item = {
                 "12": true,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 60
             },
             "depth": 3
-        },
-        "127008": {
-            "name": "영혼의 평정",
-            "description": "<mainText><stats>공격력 <ornnBonus>75</ornnBonus><br>물리 관통력 <ornnBonus>27</ornnBonus><br>스킬 가속 <ornnBonus>20</ornnBonus></stats><br><br><passive>명성</passive><br>자신이 피해를 입힌 챔피언이 죽으면 공격력을 얻습니다.<br><br><passive>자존심</passive><br>챔피언 처치 시 자신을 본뜬 조각상을 생성합니다. 이미 조각상이 있으면 조각상을 업그레이드합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "126697"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "127008.png",
-                "sprite": "item0.png",
-                "group": "item",
-                "x": 144,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "Damage",
-                "Active",
-                "CooldownReduction",
-                "ArmorPenetration",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": true,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatPhysicalDamageMod": 75
-            },
-            "depth": 4
         },
         "1500": {
             "name": "관통 탄환",
@@ -1602,7 +1709,7 @@ export const item = {
                 "full": "1500.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 144,
                 "w": 48,
                 "h": 48
@@ -1623,7 +1730,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -1643,7 +1751,7 @@ export const item = {
                 "full": "1501.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 144,
                 "w": 48,
                 "h": 48
@@ -1662,18 +1770,19 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {},
             "effect": {
-                "Effect1Amount": "0.5",
+                "Effect1Amount": "0.85",
                 "Effect2Amount": "5",
                 "Effect3Amount": "0.35"
             }
         },
         "1502": {
             "name": "이중 갑옷",
-            "description": "<mainText><stats></stats><br><br><mainText><unique>이중 갑옷:</unique> 근처에 적 미니언이 없으면 입는 피해량이 66.66% 감소하고 고정 피해를 입지 않습니다.</mainText></mainText>",
+            "description": "<mainText><stats></stats><br><br><mainText><unique>보강:</unique> 근처에 적 공격로 미니언이나 협곡의 전령이 없으면 입는 피해량이 (고정 피해 포함) 80% 감소합니다.</mainText></mainText>",
             "colloq": "",
             "plaintext": "",
             "inStore": false,
@@ -1681,7 +1790,7 @@ export const item = {
                 "full": "1502.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 144,
                 "w": 48,
                 "h": 48
@@ -1702,11 +1811,12 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {},
             "effect": {
-                "Effect1Amount": "66.66"
+                "Effect1Amount": "80"
             }
         },
         "1503": {
@@ -1719,7 +1829,7 @@ export const item = {
                 "full": "1503.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 144,
                 "w": 48,
                 "h": 48
@@ -1740,7 +1850,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -1757,8 +1868,8 @@ export const item = {
                 "full": "1504.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 384,
-                "y": 144,
+                "x": 0,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -1778,7 +1889,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -1790,90 +1902,12 @@ export const item = {
         },
         "1506": {
             "name": "이중 갑옷",
-            "description": "<mainText><stats></stats><br><br><mainText><unique>이중 갑옷:</unique> 근처에 적 미니언이 없으면 입는 피해량이 66% 감소하고 고정 피해를 입지 않습니다.<br><unique>재생 </unique>기지 포탑은 체력 재생 능력이 있지만 현재 체력에 해당되는 상한선까지만 재생됩니다. 체력 재생 상한선은 총 3단계로, 33%, 66%, 100%입니다.</mainText></mainText>",
+            "description": "<mainText><stats></stats><br><br><mainText><unique>보강:</unique> 근처에 적 공격로 미니언이나 협곡의 전령이 없으면 입는 피해량이 (고정 피해 포함) 66% 감소합니다.<br><unique>재생: </unique>기지 포탑은 체력 재생 능력이 있지만 현재 체력에 해당되는 상한선까지만 재생됩니다. 체력 재생 상한선은 총 3단계로, 33%, 66%, 100%입니다.</mainText></mainText>",
             "colloq": "",
             "plaintext": "",
             "inStore": false,
             "image": {
                 "full": "1506.png",
-                "sprite": "item0.png",
-                "group": "item",
-                "x": 432,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 0,
-                "sell": 0
-            },
-            "tags": [
-                "Armor",
-                "ManaRegen",
-                "OnHit"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": true
-            },
-            "stats": {},
-            "effect": {
-                "Effect1Amount": "66",
-                "Effect2Amount": "66"
-            }
-        },
-        "1507": {
-            "name": "과충전",
-            "description": "",
-            "colloq": "",
-            "plaintext": "",
-            "inStore": false,
-            "image": {
-                "full": "1507.png",
-                "sprite": "item0.png",
-                "group": "item",
-                "x": 0,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 0,
-                "sell": 0
-            },
-            "tags": [
-                "Armor",
-                "ManaRegen",
-                "OnHit"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": true
-            },
-            "stats": {},
-            "effect": {
-                "Effect1Amount": "75",
-                "Effect2Amount": "75"
-            }
-        },
-        "1508": {
-            "name": "방탄 양말",
-            "description": "",
-            "colloq": "",
-            "plaintext": "",
-            "inStore": false,
-            "image": {
-                "full": "1508.png",
                 "sprite": "item0.png",
                 "group": "item",
                 "x": 48,
@@ -1897,18 +1931,23 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
-            "stats": {}
+            "stats": {},
+            "effect": {
+                "Effect1Amount": "66",
+                "Effect2Amount": "66"
+            }
         },
-        "1509": {
-            "name": "체질",
+        "1507": {
+            "name": "과충전",
             "description": "",
             "colloq": "",
             "plaintext": "",
             "inStore": false,
             "image": {
-                "full": "1509.png",
+                "full": "1507.png",
                 "sprite": "item0.png",
                 "group": "item",
                 "x": 96,
@@ -1932,18 +1971,23 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
-            "stats": {}
+            "stats": {},
+            "effect": {
+                "Effect1Amount": "75",
+                "Effect2Amount": "75"
+            }
         },
-        "1510": {
-            "name": "특이 체질",
+        "1508": {
+            "name": "방탄 양말",
             "description": "",
             "colloq": "",
             "plaintext": "",
             "inStore": false,
             "image": {
-                "full": "1510.png",
+                "full": "1508.png",
                 "sprite": "item0.png",
                 "group": "item",
                 "x": 144,
@@ -1967,18 +2011,19 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
-        "1511": {
-            "name": "슈퍼 메크 방어구",
+        "1509": {
+            "name": "체질",
             "description": "",
             "colloq": "",
             "plaintext": "",
             "inStore": false,
             "image": {
-                "full": "1511.png",
+                "full": "1509.png",
                 "sprite": "item0.png",
                 "group": "item",
                 "x": 192,
@@ -2002,18 +2047,19 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
-        "1512": {
-            "name": "슈퍼 메크 전력장",
+        "1510": {
+            "name": "특이 체질",
             "description": "",
             "colloq": "",
             "plaintext": "",
             "inStore": false,
             "image": {
-                "full": "1512.png",
+                "full": "1510.png",
                 "sprite": "item0.png",
                 "group": "item",
                 "x": 240,
@@ -2037,7 +2083,80 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
+            },
+            "stats": {}
+        },
+        "1511": {
+            "name": "슈퍼 메크 방어구",
+            "description": "",
+            "colloq": "",
+            "plaintext": "",
+            "inStore": false,
+            "image": {
+                "full": "1511.png",
+                "sprite": "item0.png",
+                "group": "item",
+                "x": 288,
+                "y": 192,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": false,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [
+                "Armor",
+                "ManaRegen",
+                "OnHit"
+            ],
+            "maps": {
+                "11": true,
+                "12": true,
+                "21": true,
+                "22": false,
+                "30": true,
+                "33": false
+            },
+            "stats": {}
+        },
+        "1512": {
+            "name": "슈퍼 메크 전력장",
+            "description": "",
+            "colloq": "",
+            "plaintext": "",
+            "inStore": false,
+            "image": {
+                "full": "1512.png",
+                "sprite": "item0.png",
+                "group": "item",
+                "x": 336,
+                "y": 192,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": false,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [
+                "Armor",
+                "ManaRegen",
+                "OnHit"
+            ],
+            "maps": {
+                "11": true,
+                "12": true,
+                "21": true,
+                "22": false,
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -2051,7 +2170,7 @@ export const item = {
                 "full": "1515.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 192,
                 "w": 48,
                 "h": 48
@@ -2070,14 +2189,15 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {},
             "effect": {
-                "Effect1Amount": "40",
+                "Effect1Amount": "50",
                 "Effect2Amount": "125",
                 "Effect3Amount": "20",
-                "Effect4Amount": "45",
+                "Effect4Amount": "20",
                 "Effect5Amount": "0.17"
             }
         },
@@ -2089,88 +2209,6 @@ export const item = {
             "inStore": false,
             "image": {
                 "full": "1516.png",
-                "sprite": "item0.png",
-                "group": "item",
-                "x": 336,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 0,
-                "sell": 0
-            },
-            "tags": [
-                "HealthRegen",
-                "ManaRegen",
-                "OnHit"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {},
-            "effect": {
-                "Effect1Amount": "0.3",
-                "Effect2Amount": "0.4",
-                "Effect3Amount": "1.2",
-                "Effect4Amount": "3"
-            }
-        },
-        "1517": {
-            "name": "구조물 현상금",
-            "description": "",
-            "colloq": "",
-            "plaintext": "",
-            "inStore": false,
-            "image": {
-                "full": "1517.png",
-                "sprite": "item0.png",
-                "group": "item",
-                "x": 384,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 0,
-                "sell": 0
-            },
-            "tags": [
-                "HealthRegen",
-                "ManaRegen",
-                "OnHit"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {},
-            "effect": {
-                "Effect1Amount": "0.3",
-                "Effect2Amount": "0.4",
-                "Effect3Amount": "1.2",
-                "Effect4Amount": "3"
-            }
-        },
-        "1518": {
-            "name": "구조물 현상금",
-            "description": "",
-            "colloq": "",
-            "plaintext": "",
-            "inStore": false,
-            "image": {
-                "full": "1518.png",
                 "sprite": "item0.png",
                 "group": "item",
                 "x": 432,
@@ -2194,7 +2232,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -2204,14 +2243,14 @@ export const item = {
                 "Effect4Amount": "3"
             }
         },
-        "1519": {
+        "1517": {
             "name": "구조물 현상금",
             "description": "",
             "colloq": "",
             "plaintext": "",
             "inStore": false,
             "image": {
-                "full": "1519.png",
+                "full": "1517.png",
                 "sprite": "item0.png",
                 "group": "item",
                 "x": 0,
@@ -2235,7 +2274,92 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
+            },
+            "stats": {},
+            "effect": {
+                "Effect1Amount": "0.3",
+                "Effect2Amount": "0.4",
+                "Effect3Amount": "1.2",
+                "Effect4Amount": "3"
+            }
+        },
+        "1518": {
+            "name": "구조물 현상금",
+            "description": "",
+            "colloq": "",
+            "plaintext": "",
+            "inStore": false,
+            "image": {
+                "full": "1518.png",
+                "sprite": "item0.png",
+                "group": "item",
+                "x": 48,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": false,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [
+                "HealthRegen",
+                "ManaRegen",
+                "OnHit"
+            ],
+            "maps": {
+                "11": true,
+                "12": true,
+                "21": true,
+                "22": false,
+                "30": false,
+                "33": false
+            },
+            "stats": {},
+            "effect": {
+                "Effect1Amount": "0.3",
+                "Effect2Amount": "0.4",
+                "Effect3Amount": "1.2",
+                "Effect4Amount": "3"
+            }
+        },
+        "1519": {
+            "name": "구조물 현상금",
+            "description": "",
+            "colloq": "",
+            "plaintext": "",
+            "inStore": false,
+            "image": {
+                "full": "1519.png",
+                "sprite": "item0.png",
+                "group": "item",
+                "x": 96,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": false,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [
+                "HealthRegen",
+                "ManaRegen",
+                "OnHit"
+            ],
+            "maps": {
+                "11": true,
+                "12": true,
+                "21": true,
+                "22": false,
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -2255,7 +2379,7 @@ export const item = {
                 "full": "1520.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 240,
                 "w": 48,
                 "h": 48
@@ -2276,7 +2400,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -2294,7 +2419,7 @@ export const item = {
                 "full": "1521.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 240,
                 "w": 48,
                 "h": 48
@@ -2313,7 +2438,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -2332,7 +2458,7 @@ export const item = {
                 "full": "1522.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 240,
                 "w": 48,
                 "h": 48
@@ -2352,7 +2478,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -2368,7 +2495,7 @@ export const item = {
         },
         "2003": {
             "name": "체력 물약",
-            "description": "<mainText><stats></stats><br><br><active>사용 시 - 소모:</active> 15초에 걸쳐 <healing>120의 체력</healing>을 회복합니다.<br><br><rules>최대로 보유할 수 있는 체력 물약 수는 5개입니다.</rules></mainText>",
+            "description": "<mainText><stats></stats><br><br><active>사용</active><br>15초에 걸쳐 <healing>120의 체력</healing>을 회복합니다.</mainText>",
             "colloq": ";포션;체포;빨간;빨포;potion;health",
             "plaintext": "사용하면 일정 시간 동안 체력이 회복됩니다.",
             "stacks": 5,
@@ -2377,7 +2504,7 @@ export const item = {
                 "full": "2003.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 240,
                 "w": 48,
                 "h": 48
@@ -2399,13 +2526,14 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {}
         },
         "2010": {
             "name": "굳건한 의지의 완전한 비스킷",
-            "description": "<mainText><stats></stats><br><br><active>사용 시 - 소모:</active> 5초에 걸쳐 <healing>잃은 체력</healing>과 <scaleMana>마나</scaleMana>의 8%를 회복합니다. 비스킷을 먹거나 팔면 영구히 <scaleMana>최대 마나가 40</scaleMana> 증가합니다. </mainText>",
+            "description": "<mainText><stats></stats><br><br><active>사용 시 - 소모:</active> 5초에 걸쳐 <healing>잃은 체력의 12%</healing>를 회복합니다. 비스킷을 먹거나 판매하면 영구히 <healing>최대 체력이 30</healing> 증가합니다. </mainText>",
             "colloq": ";biscuit;rejuvenation",
             "plaintext": "",
             "stacks": 10,
@@ -2416,7 +2544,7 @@ export const item = {
                 "full": "2010.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 240,
                 "w": 48,
                 "h": 48
@@ -2433,7 +2561,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -2456,7 +2585,7 @@ export const item = {
                 "full": "2015.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 240,
                 "w": 48,
                 "h": 48
@@ -2476,7 +2605,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 15
@@ -2502,7 +2632,7 @@ export const item = {
                 "full": "2019.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 240,
                 "w": 48,
                 "h": 48
@@ -2522,7 +2652,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatArmorMod": 30,
@@ -2532,7 +2663,7 @@ export const item = {
         },
         "2020": {
             "name": "야수화",
-            "description": "<mainText><stats>공격력 <attention>25</attention><br>스킬 가속 <attention>10</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>25</attention><br>스킬 가속 <attention>10</attention><br>물리 관통력 <attention>5</attention></stats><br><br></mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -2541,16 +2672,15 @@ export const item = {
             ],
             "into": [
                 "6698",
-                "6699",
-                "6694",
-                "6696"
+                "6696",
+                "6699"
             ],
             "image": {
                 "full": "2020.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 384,
-                "y": 240,
+                "x": 0,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -2570,7 +2700,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 25
@@ -2592,6 +2723,7 @@ export const item = {
                 "3073",
                 "3814",
                 "3181",
+                "3161",
                 "3748",
                 "6610"
             ],
@@ -2599,8 +2731,8 @@ export const item = {
                 "full": "2021.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 432,
-                "y": 240,
+                "x": 48,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -2619,7 +2751,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 250,
@@ -2649,7 +2782,7 @@ export const item = {
                 "full": "2022.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 0,
+                "x": 96,
                 "y": 288,
                 "w": 48,
                 "h": 48
@@ -2668,13 +2801,14 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {}
         },
         "2031": {
             "name": "충전형 물약",
-            "description": "<mainText><stats></stats><br><br><active>사용 시 - 소모:</active> 충전량을 1회 소모해 12초 동안 <healing>100의 체력</healing>을 회복합니다. 충전량은 최대 2회이며 상점 방문 시 다시 채워집니다.</mainText>",
+            "description": "<mainText><stats></stats><br><br><active>사용 시</active> (충전량 2회)<br>12초에 걸쳐 <healing>100의 체력</healing>을 회복합니다. <br>상점을 이용할 때마다 새로 생성됩니다.</mainText>",
             "colloq": ";refillable;potion",
             "plaintext": "점차 체력이 회복되며, 상점에 가면 다시 충전됩니다.",
             "into": [
@@ -2684,7 +2818,7 @@ export const item = {
                 "full": "2031.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 288,
                 "w": 48,
                 "h": 48
@@ -2707,7 +2841,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {}
         },
@@ -2724,7 +2859,7 @@ export const item = {
                 "full": "2033.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 288,
                 "w": 48,
                 "h": 48
@@ -2747,21 +2882,22 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "depth": 2
         },
         "2049": {
             "name": "수호자의 부적",
-            "description": "<mainText><stats>체력 회복 및 보호막 <attention>20%</attention><br>주문력 <attention>20</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>회복</passive><br>5초마다 <scaleMana>10의 마나</scaleMana>를 회복합니다. 마나를 획득할 수 없으면 <healing>0.6의 체력</healing>을 회복합니다.</mainText>",
+            "description": "<mainText><stats>체력 회복 및 보호막 <attention>15%</attention><br>주문력 <attention>20</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>회복</passive><br>5초마다 <scaleMana>10의 마나</scaleMana>를 회복합니다. 마나를 획득할 수 없으면 <healing>3의 체력</healing>을 회복합니다.</mainText>",
             "colloq": ";sightstone;stone;guardian's;amulet",
             "plaintext": "체력이 늘어나고 계속해서 투명 와드를 얻을 수 있습니다.",
             "image": {
                 "full": "2049.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 288,
                 "w": 48,
                 "h": 48
@@ -2784,7 +2920,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 20
@@ -2799,7 +2936,7 @@ export const item = {
                 "full": "2050.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 288,
                 "w": 48,
                 "h": 48
@@ -2822,7 +2959,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300,
@@ -2831,14 +2969,14 @@ export const item = {
         },
         "2051": {
             "name": "수호자의 뿔피리",
-            "description": "<mainText><stats>체력 <attention>150</attention></stats><br><br><br><li><passive>회복:</passive> 점차 체력이 회복됩니다.<li><passive>불굴의 의지:</passive> 적 챔피언의 기본 공격과 스킬 공격 피해량을 막아줍니다.<li><passive>전설급:</passive> 이 아이템은 <rarityLegendary>전설급</rarityLegendary> 아이템으로 간주됩니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>150</attention></stats><br><br><br><li><passive>회복:</passive> 5초마다 <healing>체력을 20</healing> 회복합니다.<li><passive>불굴의 의지:</passive> 적 챔피언의 기본 공격과 스킬 공격 피해량을 15만큼 막아줍니다. (지속 피해 스킬의 경우 25%의 효과)<br></mainText>",
             "colloq": ";Golden Arm of Kobe;Golden Bicep of Kobe;guardian's;Horn; Horn of the ManWolf; ManWolf",
             "plaintext": "탱커에게 특화된 시작 아이템입니다.",
             "image": {
                 "full": "2051.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 288,
                 "w": 48,
                 "h": 48
@@ -2859,7 +2997,8 @@ export const item = {
                 "12": true,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 150,
@@ -2882,7 +3021,7 @@ export const item = {
                 "full": "2052.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 288,
                 "w": 48,
                 "h": 48
@@ -2899,13 +3038,14 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
         "2055": {
             "name": "제어 와드",
-            "description": "<mainText><stats></stats><br><br><active>사용 시 - 소모:</active> 주변 지역을 드러내 주는 강력한 제어 와드를 설치합니다. 근처의 <keywordStealth>투명</keywordStealth>한 덫과 <keywordStealth>위장</keywordStealth> 중인 적을 드러내고 적의 투명 와드를 감지해 무력화합니다.<br><br><rules>최대 2개의 제어 와드를 소지할 수 있습니다. 제어 와드로 다른 제어 와드를 무력화시킬 수 없습니다.</rules></mainText>",
+            "description": "<mainText><stats></stats><br><br><active>사용</active><br>시야를 밝히고 적 투명 와드, 함정, <keywordStealth>위장</keywordStealth>한 적을 드러내는 제어 와드를 설치합니다.</mainText>",
             "colloq": ";orange;control;ward",
             "plaintext": "일정 지역 안의 와드와 투명 덫을 무력화시킵니다.",
             "stacks": 2,
@@ -2915,7 +3055,7 @@ export const item = {
                 "full": "2055.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 288,
                 "w": 48,
                 "h": 48
@@ -2937,7 +3077,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -2958,8 +3099,8 @@ export const item = {
                 "full": "2056.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 384,
-                "y": 288,
+                "x": 0,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -2980,33 +3121,31 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {}
         },
         "2065": {
             "name": "슈렐리아의 군가",
-            "description": "<mainText><stats>주문력 <attention>50</attention><br>스킬 가속 <attention>15</attention><br>이동 속도 <attention>5%</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><br><br><active>활성화</active> (0초)<br><active>고무적인 연설</active><br>주변 아군들의 이동 속도가 상승합니다.<br><br></mainText>",
+            "description": "<mainText><stats>주문력 <attention>50</attention><br>스킬 가속 <attention>15</attention><br>이동 속도 <attention>4%</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><active>고무적인 연설</active> (0초)<br>주변 아군의 <speed>이동 속도를 4초 동안 30%</speed> 상승시킵니다.</mainText>",
             "colloq": ";shurelya's;reverie;슈렐;talisman;ascension;승천;tbfpffldk;tbfpf;ahdtkd;battlesong",
             "plaintext": "사용하면 주변 아군의 속도가 빨라집니다.",
             "from": [
                 "3113",
                 "4642"
             ],
-            "into": [
-                "7020"
-            ],
             "image": {
                 "full": "2065.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 432,
-                "y": 288,
+                "x": 48,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 350,
+                "base": 400,
                 "purchasable": true,
                 "total": 2200,
                 "sell": 1540
@@ -3024,17 +3163,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 50,
-                "PercentMovementSpeedMod": 0.05
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 3
         },
         "2138": {
             "name": "강철의 영약",
-            "description": "<mainText><stats></stats><br><br><active>사용 시 - 소모:</active> 3분 동안 <scaleHealth>체력이 300</scaleHealth>, 강인함이 25% 증가하고, 챔피언이 거대해집니다. 이 효과가 활성화된 동안 이동하면 길이 생겨 그 위의 아군 챔피언들은 <speed>이동 속도가 15%</speed> 상승합니다.<br><br><rules>다른 종류의 영약을 마시면 기존 영약의 효과가 사라집니다.</rules></mainText>",
+            "description": "<mainText><stats></stats><br><br><active>사용</active><br>3분 동안 <scaleHealth>체력이 300</scaleHealth>, 강인함이 25% 증가하고, 크기가 거대해집니다. 이 효과가 활성화된 동안 길을 남기며 그 위의 아군 챔피언들은 <speed>이동 속도가 15%</speed> 상승합니다.</mainText>",
             "colloq": ";white;elixir;of;iron",
             "plaintext": "일시적으로 방어 관련 능력치를 높여줍니다. 아군이 뒤따라올 수 있는 자취를 남깁니다.",
             "consumed": true,
@@ -3043,7 +3183,7 @@ export const item = {
                 "full": "2138.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 0,
+                "x": 96,
                 "y": 336,
                 "w": 48,
                 "h": 48
@@ -3065,7 +3205,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -3081,7 +3222,7 @@ export const item = {
         },
         "2139": {
             "name": "마법의 영약",
-            "description": "<mainText><stats></stats><br><br><br><br><rules><attention>9</attention>레벨 이상일 때만 구매할 수 있습니다. 마법의 영약 고정 피해 효과는 포탑을 공격할 때 재사용 대기시간이 없습니다. 다른 종류의 영약을 마시면 기존 영약의 효과가 사라집니다.</rules><active>사용 시 - 소모:</active> 3분 동안 <scaleAP>주문력이 50</scaleAP>, <scaleMana>마나 재생력이 15%</scaleMana> 증가합니다. 활성화된 동안 챔피언이나 포탑에 피해를 입히면 <trueDamage>25의 추가 고정 피해</trueDamage>를 입힙니다. (재사용 대기시간 5초)</mainText>",
+            "description": "<mainText><stats></stats><br><br><active>사용</active><br>3분 동안 <scaleAP>주문력이 50</scaleAP>, <scaleMana>마나 재생력이 15%</scaleMana> 증가합니다. 활성화된 동안 챔피언이나 포탑에 피해를 입히면 <trueDamage>25의 추가 고정 피해</trueDamage>를 입힙니다. (챔피언이 대상일 경우 5초)</mainText>",
             "colloq": ";blue;elixir;of;sorcery",
             "plaintext": "일시적으로 주문력을 올려주며, 챔피언과 포탑에 대한 추가 피해량이 적용됩니다.",
             "consumed": true,
@@ -3090,7 +3231,7 @@ export const item = {
                 "full": "2139.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 336,
                 "w": 48,
                 "h": 48
@@ -3111,7 +3252,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -3127,7 +3269,7 @@ export const item = {
         },
         "2140": {
             "name": "분노의 영약",
-            "description": "<mainText><stats></stats><br><br><active>사용 시 - 소모:</active> 3분 동안 <scaleAD>공격력이 30</scaleAD>, 챔피언 대상 <lifeSteal>물리 피해 흡혈이 12%</lifeSteal> 증가합니다.<br><br><rules>다른 종류의 영약을 마시면 기존 영약의 효과가 사라집니다.</rules></mainText>",
+            "description": "<mainText><stats></stats><br><br><active>사용</active><br>3분 동안 <scaleAD>공격력이 30</scaleAD>, 챔피언 대상 <lifeSteal>물리 피해 흡혈이 12%</lifeSteal> 증가합니다.</mainText>",
             "colloq": ";red;elixir;of;wrath",
             "plaintext": "일시적으로 공격력을 올려주며, 챔피언에게 물리 피해를 입히면 체력이 회복됩니다.",
             "consumed": true,
@@ -3136,7 +3278,7 @@ export const item = {
                 "full": "2140.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 336,
                 "w": 48,
                 "h": 48
@@ -3158,7 +3300,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -3183,7 +3326,7 @@ export const item = {
                 "full": "2141.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 336,
                 "w": 48,
                 "h": 48
@@ -3203,7 +3346,8 @@ export const item = {
                 "12": true,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {}
         },
@@ -3218,7 +3362,7 @@ export const item = {
                 "full": "2142.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 336,
                 "w": 48,
                 "h": 48
@@ -3238,7 +3382,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -3253,7 +3398,7 @@ export const item = {
                 "full": "2143.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 336,
                 "w": 48,
                 "h": 48
@@ -3273,7 +3418,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -3288,7 +3434,7 @@ export const item = {
                 "full": "2144.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 336,
                 "w": 48,
                 "h": 48
@@ -3308,7 +3454,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -3318,13 +3465,12 @@ export const item = {
             "colloq": "",
             "plaintext": "",
             "consumed": true,
-            "consumeOnFull": true,
             "inStore": false,
             "image": {
                 "full": "2145.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 336,
                 "w": 48,
                 "h": 48
@@ -3343,13 +3489,14 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
         "2150": {
             "name": "숙련의 영약",
-            "description": "<mainText><stats></stats><br><br><active>사용 시 - 소모:</active> 스킬 포인트를 1 획득합니다.<br><br><rules>이 아이템으로 레벨을 올리거나 스킬 포인트를 일반적인 최대치 이상으로 할당할 수는 없습니다.</rules></mainText>",
+            "description": "<mainText><stats></stats><br><br><active>사용</active><br>스킬 포인트를 1 획득합니다.<br><br><rules>이 아이템으로 레벨을 올리거나 스킬 포인트를 일반적인 최대치 이상으로 할당할 수는 없습니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "consumed": true,
@@ -3358,8 +3505,8 @@ export const item = {
                 "full": "2150.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 384,
-                "y": 336,
+                "x": 0,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -3377,13 +3524,14 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {}
         },
         "2151": {
             "name": "탐욕의 영약",
-            "description": "<mainText><stats></stats><br><br><active>사용 시 - 소모:</active> 사용 시 60초 동안 미니언에게 기본 공격 적중 시 <trueDamage>5의 고정 피해</trueDamage>를 입힙니다. 효과가 사라질 때 40골드를 획득합니다. </mainText>",
+            "description": "<mainText><stats></stats><br><br><active>사용</active><br>60초 동안 미니언에게 기본 공격 적중 시 <trueDamage>5의 고정 피해</trueDamage>를 입힙니다. 효과가 사라질 때 40골드를 획득합니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "consumed": true,
@@ -3392,8 +3540,8 @@ export const item = {
                 "full": "2151.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 432,
-                "y": 336,
+                "x": 48,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -3413,13 +3561,14 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {}
         },
         "2152": {
             "name": "힘의 영약",
-            "description": "<mainText><stats></stats><br><br><active>사용 시 - 소모:</active> 사용 시 60초 동안 20의 적응형 능력치를 얻습니다. </mainText>",
+            "description": "<mainText><stats></stats><br><br><active>사용</active><br>60초 동안 20의 적응형 능력치를 얻습니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "consumed": true,
@@ -3428,7 +3577,7 @@ export const item = {
                 "full": "2152.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 0,
+                "x": 96,
                 "y": 384,
                 "w": 48,
                 "h": 48
@@ -3448,7 +3597,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {}
         },
@@ -3463,7 +3613,7 @@ export const item = {
                 "full": "220000.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 384,
                 "w": 48,
                 "h": 48
@@ -3498,7 +3648,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -3513,7 +3664,7 @@ export const item = {
                 "full": "220001.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 384,
                 "w": 48,
                 "h": 48
@@ -3547,7 +3698,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -3562,7 +3714,7 @@ export const item = {
                 "full": "220002.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 384,
                 "w": 48,
                 "h": 48
@@ -3593,7 +3745,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -3608,7 +3761,7 @@ export const item = {
                 "full": "220003.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 384,
                 "w": 48,
                 "h": 48
@@ -3637,7 +3790,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -3652,7 +3806,7 @@ export const item = {
                 "full": "220004.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 384,
                 "w": 48,
                 "h": 48
@@ -3688,7 +3842,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -3703,7 +3858,7 @@ export const item = {
                 "full": "220005.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 384,
                 "w": 48,
                 "h": 48
@@ -3734,7 +3889,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -3749,7 +3905,7 @@ export const item = {
                 "full": "220006.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 384,
                 "w": 48,
                 "h": 48
@@ -3781,7 +3937,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -3796,8 +3953,8 @@ export const item = {
                 "full": "220007.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 384,
-                "y": 384,
+                "x": 0,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -3837,7 +3994,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -3851,8 +4009,8 @@ export const item = {
                 "full": "221011.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 432,
-                "y": 384,
+                "x": 48,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -3870,7 +4028,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300
@@ -3886,7 +4045,7 @@ export const item = {
                 "full": "221026.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 0,
+                "x": 96,
                 "y": 432,
                 "w": 48,
                 "h": 48
@@ -3905,7 +4064,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 50
@@ -3921,7 +4081,7 @@ export const item = {
                 "full": "221031.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 432,
                 "w": 48,
                 "h": 48
@@ -3940,7 +4100,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatArmorMod": 30
@@ -3956,7 +4117,7 @@ export const item = {
                 "full": "221038.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 432,
                 "w": 48,
                 "h": 48
@@ -3975,7 +4136,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 40
@@ -3983,7 +4145,7 @@ export const item = {
         },
         "221043": {
             "name": "곡궁",
-            "description": "<mainText><stats>공격 속도 <attention>30%</attention></stats><br><br>기본 공격 적중 시 추가 물리 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>30%</attention></stats><br><br><passive>독침</passive><br>기본 공격 <OnHit>적중 시</OnHit> <physicalDamage>15의 추가 물리 피해</physicalDamage>를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "inStore": false,
@@ -3991,16 +4153,16 @@ export const item = {
                 "full": "221043.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 400,
+                "base": 450,
                 "purchasable": false,
-                "total": 400,
-                "sell": 280
+                "total": 450,
+                "sell": 315
             },
             "tags": [
                 "AttackSpeed"
@@ -4010,7 +4172,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "PercentAttackSpeedMod": 0.3
@@ -4026,7 +4189,7 @@ export const item = {
                 "full": "221053.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 432,
                 "w": 48,
                 "h": 48
@@ -4046,7 +4209,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 20,
@@ -4063,7 +4227,7 @@ export const item = {
                 "full": "221057.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 432,
                 "w": 48,
                 "h": 48
@@ -4082,7 +4246,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 30
@@ -4098,16 +4263,16 @@ export const item = {
                 "full": "221058.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 1250,
+                "base": 1200,
                 "purchasable": false,
-                "total": 1250,
-                "sell": 875
+                "total": 1200,
+                "sell": 0
             },
             "tags": [
                 "SpellDamage"
@@ -4117,7 +4282,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 120
@@ -4133,7 +4299,7 @@ export const item = {
                 "full": "222022.png",
                 "sprite": "item0.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 432,
                 "w": 48,
                 "h": 48
@@ -4152,21 +4318,22 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
         "222051": {
             "name": "수호자의 뿔피리",
-            "description": "<mainText><stats>체력 <buffedStat>300</buffedStat></stats><br><br><br><li><passive>회복:</passive> 점차 체력이 회복됩니다.<li><passive>불굴의 의지:</passive> 적 챔피언의 기본 공격과 스킬 공격 피해량을 막아줍니다.<li><passive>전설급:</passive> 이 아이템은 <rarityLegendary>전설급</rarityLegendary> 아이템으로 간주됩니다.</mainText>",
+            "description": "<mainText><stats>체력 <buffedStat>300</buffedStat></stats><br><br><passive>회복</passive><br>5초마다 <healing>체력을 20</healing> 회복합니다.<br><br><passive>불굴의 의지</passive><br>적 챔피언의 기본 공격과 스킬 공격 피해량을 12만큼 막아줍니다. (지속 피해 스킬의 경우 25%의 효과)</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "222051.png",
-                "sprite": "item0.png",
+                "sprite": "item1.png",
                 "group": "item",
-                "x": 384,
-                "y": 432,
+                "x": 0,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
@@ -4186,7 +4353,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300,
@@ -4199,18 +4367,15 @@ export const item = {
         },
         "222065": {
             "name": "슈렐리아의 군가",
-            "description": "<mainText><stats>주문력 <attention>55</attention><br>스킬 가속 <attention>15</attention><br>기본 마나 재생 <attention>125%</attention><br>이동 속도 <attention>5%</attention></stats><br><br><br><br><br><br><active>활성화</active> (0초)<br><active>고무적인 연설</active><br>몇 초 동안 주변 아군들의 이동 속도가 상승합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>55</attention><br>스킬 가속 <attention>15</attention><br>기본 마나 재생 <attention>125%</attention><br>이동 속도 <attention>4%</attention></stats><br><br><br><br><br><br><active>활성화</active> (0초)<br><active>고무적인 연설</active><br>주변 아군의 이동 속도를 4초 동안 60% 상승시킵니다.</mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227020"
-            ],
             "image": {
                 "full": "222065.png",
-                "sprite": "item0.png",
+                "sprite": "item1.png",
                 "group": "item",
-                "x": 432,
-                "y": 432,
+                "x": 48,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
@@ -4233,11 +4398,12 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 55,
-                "PercentMovementSpeedMod": 0.05
+                "PercentMovementSpeedMod": 0.04
             }
         },
         "222141": {
@@ -4251,7 +4417,7 @@ export const item = {
                 "full": "222141.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 0,
+                "x": 96,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -4271,20 +4437,21 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
         "222502": {
             "name": "끝없는 절망",
-            "description": "<mainText><stats>체력 <attention>350</attention><br>방어력 <attention>45</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>고뇌</passive><br>챔피언과 전투 중일 때 몇 초마다 주변 적 챔피언에게 마법 피해를 입히고 피해량에 따라 체력을 회복합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>350</attention><br>방어력 <attention>45</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>고뇌</passive><br>챔피언과 전투 중일 때 5초마다 주변 적 챔피언에게 <magicDamage>마법 피해</magicDamage>를 입히고 피해량의 <healing>250%만큼 체력을 회복</healing>합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "222502.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -4306,7 +4473,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 350,
@@ -4315,14 +4483,14 @@ export const item = {
         },
         "222503": {
             "name": "어둠불꽃 횃불",
-            "description": "<mainText><stats>주문력 <attention>60</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>20</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>주문력 <attention>60</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>악의의 불길</passive><br>스킬로 피해를 입히면 적을 불태웁니다. 몬스터에게는 피해량이 증가합니다.<br><br><passive>어둠불꽃</passive><br><passive>악의의 불길</passive>에 영향을 받는 적 챔피언, 에픽 몬스터, 대형 몬스터 하나당 <scaleAP>주문력</scaleAP>이 증가합니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "222503.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -4344,7 +4512,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 600,
@@ -4353,14 +4522,14 @@ export const item = {
         },
         "222504": {
             "name": "케이닉 루컨",
-            "description": "<mainText><stats>체력 <attention>350</attention><br>마법 저항력 <attention>80</attention><br>기본 체력 재생 <attention>150%</attention></stats><br><br><passive>마법사의 파멸</passive><br>15초 동안 <magicDamage>마법 피해</magicDamage>를 받지 않으면 <magicDamage>0의 마법 피해를 흡수하는 보호막</magicDamage>을 얻습니다. <br><br></mainText>",
+            "description": "<mainText><stats>체력 <attention>350</attention><br>마법 저항력 <attention>80</attention><br>기본 체력 재생 <attention>100%</attention></stats><br><br><passive>마법사의 파멸</passive><br>15초 동안 마법 피해를 받지 않으면 <shield>마법 보호막</shield>을 얻습니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "222504.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -4381,7 +4550,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 80,
@@ -4390,17 +4560,14 @@ export const item = {
         },
         "223001": {
             "name": "저녁갑주",
-            "description": "<mainText><stats>체력 <buffedStat>400</buffedStat><br>방어력 <attention>30</attention><br>마법 저항력 <attention>30</attention><br>스킬 가속 <attention>10</attention></stats><br><br><br><li><passive>광휘:</passive> 챔피언을 <status>이동 불가</status> 상태로 만들거나 자신이 <status>이동 불가</status> 상태가 되면 대상과 주변 적 챔피언들이 받는 피해가 증가합니다.<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 <attention> 방어력 및 마법 저항력</attention></mainText>",
+            "description": "<mainText><stats>체력 <buffedStat>400</buffedStat><br>방어력 <attention>30</attention><br>마법 저항력 <attention>30</attention><br>스킬 가속 <attention>10</attention></stats><br><br><br><li><passive>광휘:</passive> 챔피언을 <status>이동 불가</status> 상태로 만들거나 자신이 <status>이동 불가</status> 상태가 되면 5초 동안 대상과 주변 적 챔피언들이 받는 피해가 <buffedStat>20% 증가</buffedStat>합니다. <br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 <attention>방어력 및 마법 저항력 5</attention></mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227023"
-            ],
             "image": {
                 "full": "223001.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -4422,7 +4589,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 30,
@@ -4432,14 +4600,14 @@ export const item = {
         },
         "223002": {
             "name": "개척자",
-            "description": "<mainText><stats>체력 <attention>200</attention><br>방어력 <attention>40</attention><br>이동 속도 <attention>5%</attention></stats><br><br><passive>진두지휘</passive><br>이동 시 <speed>20의 추가 이동 속도</speed>를 얻습니다. 최대 이동 속도일 때 아군 챔피언의 이동 속도를 자신의 15%만큼 증가시키는 자취를 남깁니다. 다음 기본 공격 시 추가 이동 속도를 잃으며, 추가로 근접 챔피언의 경우 대상을 1초 동안 50% <keyword>둔화</keyword>시킵니다.<br><br></mainText>",
+            "description": "<mainText><stats>체력 <attention>250</attention><br>방어력 <attention>40</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>진두지휘</passive><br>이동 시 최대 <speed>20의 추가 이동 속도</speed>를 얻습니다. <br>최대 이동 속도일 때:<li>아군 챔피언의 <speed>이동 속도를 자신의 15%만큼</speed> 증가시키는 자취를 남깁니다. <li>근접 챔피언이면 다음 기본 공격 시 대상을 1초 동안 50% <keyword>둔화</keyword>시킵니다.<br><br></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223002.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -4460,24 +4628,25 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 200,
+                "FlatHPPoolMod": 250,
                 "FlatArmorMod": 40,
-                "PercentMovementSpeedMod": 0.05
+                "PercentMovementSpeedMod": 0.04
             }
         },
         "223003": {
             "name": "대천사의 지팡이",
-            "description": "<mainText><stats>주문력 <attention>60</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>경탄</passive><br>추가 마나만큼 주문력을 얻습니다.<br><li><passive>마나 충전</passive><br><buffedStat>2번의 전투 라운드 후</buffedStat> 이 아이템은 <rarityLegendary>대천사의 포옹</rarityLegendary>으로 변합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>60</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>경탄</passive> <br><scaleMana>추가 마나의 1%</scaleMana>만큼 주문력을 얻습니다.<br><br><passive>마나 충전</passive><br><buffedStat>2번의 전투 라운드 후</buffedStat> 이 아이템은 <rarityLegendary>대천사의 포옹</rarityLegendary>으로 변합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223003.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -4498,7 +4667,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 600,
@@ -4508,14 +4678,14 @@ export const item = {
         },
         "223004": {
             "name": "마나무네",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>마나 <attention>500</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>경탄</passive><br><scaleAD>공격력을 최대 마나만큼</scaleAD> 추가로 얻습니다. <br><passive>마나 충전</passive><br><buffedStat>2번의 전투 라운드 후</buffedStat> 이 아이템은 <rarityLegendary>무라마나</rarityLegendary>로 변합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>45</attention><br>마나 <attention>500</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>경탄</passive><br><scaleAD>공격력을 0</scaleAD>만큼 추가로 얻습니다. <br><br><passive>마나 충전</passive><br><buffedStat>2번의 전투 라운드 후</buffedStat> 이 아이템은 <rarityLegendary>무라마나</rarityLegendary>로 변합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223004.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -4538,7 +4708,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 500,
@@ -4552,76 +4723,6 @@ export const item = {
             "plaintext": "",
             "image": {
                 "full": "223005.png",
-                "sprite": "item1.png",
-                "group": "item",
-                "x": 384,
-                "y": 0,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 500,
-                "purchasable": true,
-                "total": 500,
-                "sell": 250
-            },
-            "tags": [
-                "Boots"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": true
-            },
-            "stats": {
-                "FlatMovementSpeedMod": 55
-            }
-        },
-        "223006": {
-            "name": "광전사의 군화",
-            "description": "<mainText><stats>공격 속도 <buffedStat>45%</buffedStat><br>이동 속도 <attention>30</attention></stats><br><br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "image": {
-                "full": "223006.png",
-                "sprite": "item1.png",
-                "group": "item",
-                "x": 432,
-                "y": 0,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 500,
-                "purchasable": true,
-                "total": 500,
-                "sell": 250
-            },
-            "tags": [
-                "AttackSpeed",
-                "Boots"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": true
-            },
-            "stats": {
-                "FlatMovementSpeedMod": 30,
-                "PercentAttackSpeedMod": 0.45
-            }
-        },
-        "223009": {
-            "name": "신속의 장화",
-            "description": "<mainText><stats>이동 속도 <buffedStat>70</buffedStat></stats><br><br>이동 속도 둔화 효과가 <buffedStat>40%</buffedStat> 감소합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "image": {
-                "full": "223009.png",
                 "sprite": "item1.png",
                 "group": "item",
                 "x": 0,
@@ -4643,7 +4744,80 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
+            },
+            "stats": {
+                "FlatMovementSpeedMod": 55
+            }
+        },
+        "223006": {
+            "name": "광전사의 군화",
+            "description": "<mainText><stats>공격 속도 <buffedStat>45%</buffedStat><br>이동 속도 <attention>30</attention></stats><br><br></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "223006.png",
+                "sprite": "item1.png",
+                "group": "item",
+                "x": 48,
+                "y": 48,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 500,
+                "purchasable": true,
+                "total": 500,
+                "sell": 250
+            },
+            "tags": [
+                "AttackSpeed",
+                "Boots"
+            ],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": true,
+                "33": false
+            },
+            "stats": {
+                "FlatMovementSpeedMod": 30,
+                "PercentAttackSpeedMod": 0.45
+            }
+        },
+        "223009": {
+            "name": "신속의 장화",
+            "description": "<mainText><stats>이동 속도 <buffedStat>70</buffedStat></stats><br><br>이동 속도 둔화 효과가 <buffedStat>40%</buffedStat> 감소합니다.</mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "223009.png",
+                "sprite": "item1.png",
+                "group": "item",
+                "x": 96,
+                "y": 48,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 500,
+                "purchasable": true,
+                "total": 500,
+                "sell": 250
+            },
+            "tags": [
+                "Boots"
+            ],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMovementSpeedMod": 70
@@ -4661,7 +4835,7 @@ export const item = {
                 "full": "223011.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -4682,7 +4856,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 40
@@ -4697,7 +4872,7 @@ export const item = {
                 "full": "223020.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -4717,7 +4892,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMovementSpeedMod": 55
@@ -4728,14 +4904,14 @@ export const item = {
         },
         "223026": {
             "name": "수호 천사",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>방어력 <attention>40</attention></stats><br><br><br><li><passive>구원의 은총:</passive> 치명적인 피해를 입으면 4초 동안 경직에 걸린 다음 <healing>기본 체력의 50%</healing>, <scaleMana>최대 마나의 100%</scaleMana>를 회복합니다. 이 효과에는 1라운드의 재사용 대기시간이 적용됩니다.<br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>45</attention><br>방어력 <attention>40</attention></stats><br><br><passive>환생</passive><br>치명적인 피해를 입으면 4초 동안 경직에 걸린 다음 <healing>기본 체력의 50%</healing>, <scaleMana>최대 마나의 100%</scaleMana>를 회복합니다. <buffedStat>이 효과에는 1라운드의 재사용 대기시간이 적용됩니다</buffedStat>.<br></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223026.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -4755,7 +4931,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatArmorMod": 40,
@@ -4770,17 +4947,14 @@ export const item = {
         },
         "223031": {
             "name": "무한의 대검",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>치명타 확률 <attention>25%</attention><br>치명타 피해량 <attention>50%</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>55</attention><br>치명타 확률 <attention>25%</attention><br>치명타 피해량 <attention>40%</attention></stats><br><br></mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227031"
-            ],
             "image": {
                 "full": "223031.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -4800,7 +4974,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
@@ -4809,7 +4984,7 @@ export const item = {
         },
         "223032": {
             "name": "윤 탈 야생화살",
-            "description": "<mainText><stats>공격력 <attention>50</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>톱날</passive><br>치명타 적중 시 중첩 가능한 출혈 효과를 적용하여 2초 동안 <scaleAD>0의 물리 피해</scaleAD>를 입힙니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>50</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>톱날</passive><br>기본 공격 시 치명타가 적용되면 2초 동안 <scaleAD>0의 추가 물리 피해</scaleAD>를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "inStore": false,
@@ -4817,7 +4992,7 @@ export const item = {
                 "full": "223032.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -4837,7 +5012,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
@@ -4853,7 +5029,7 @@ export const item = {
                 "full": "223033.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -4874,7 +5050,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
@@ -4890,7 +5067,7 @@ export const item = {
                 "full": "223036.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -4911,7 +5088,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
@@ -4923,15 +5101,15 @@ export const item = {
         },
         "223039": {
             "name": "아트마의 심판",
-            "description": "<mainText><stats>체력 <attention>700</attention><br>치명타 확률 <attention>15%</attention></stats><br><br><passive>큰손</passive><br>추가 체력 100당 치명타 확률이 1% 증가해 최대 30%까지 증가합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>700</attention><br>치명타 확률 <attention>20%</attention></stats><br><br><passive>큰손</passive><br>추가 체력 100당 치명타 확률이 1% 증가해 최대 30%까지 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223039.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 384,
-                "y": 48,
+                "x": 0,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
@@ -4951,16 +5129,17 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 700,
-                "FlatCritChanceMod": 0.15
+                "FlatCritChanceMod": 0.2
             }
         },
         "223040": {
             "name": "대천사의 포옹",
-            "description": "<mainText><stats>주문력 <attention>80</attention><br>마나 <attention>1000</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>경탄</passive><br>마나에 따라 주문력을 얻습니다.<br><br><passive>생명선</passive><br>체력이 30% 밑으로 떨어질 만큼 피해를 입으면 현재 마나에 비례해 보호막을 얻습니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>80</attention><br>마나 <attention>1000</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>경탄</passive><br><scaleMana>추가 마나의 2%</scaleMana>만큼 주문력을 얻습니다.<br><br><passive>생명선</passive><br>체력이 30% 밑으로 떨어질 만큼 피해를 입으면 3초 동안 350+현재 마나의 25%에 해당하는 피해를 흡수하는 보호막을 얻습니다. (0초)</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 223003,
@@ -4969,8 +5148,8 @@ export const item = {
                 "full": "223040.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 432,
-                "y": 48,
+                "x": 48,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
@@ -4990,7 +5169,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 1000,
@@ -4999,7 +5179,7 @@ export const item = {
         },
         "223042": {
             "name": "무라마나",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>마나 <attention>860</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>경탄</passive><br>마나에 따라 추가 공격력을 얻습니다. <br><li><passive>충격</passive><br>기본 공격으로 챔피언에게 추가 물리 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>45</attention><br>마나 <attention>860</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>경탄</passive><br><scaleAD>공격력을 0</scaleAD>만큼 추가로 얻습니다.<br><br><passive>충격</passive><br>챔피언에게 기본 공격 시 0의 물리 피해(<OnHit>적중 시</OnHit> )를 추가로 입힙니다. 스킬로 챔피언에게 피해를 입히면 {{ Item_Melee_Ranged_Split }}의 물리 피해를 추가로 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 223004,
@@ -5008,7 +5188,7 @@ export const item = {
                 "full": "223042.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 0,
+                "x": 96,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -5031,7 +5211,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 860,
@@ -5040,14 +5221,14 @@ export const item = {
         },
         "223046": {
             "name": "유령 무희",
-            "description": "<mainText><stats>공격 속도 <attention>60%</attention><br>이동 속도 <attention>12%</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>망령의 왈츠</passive><br><status>유체화</status> 상태가 됩니다.<br><br><rules><status>유체화</status> 상태인 유닛은 다른 유닛과 충돌하지 않습니다.</rules></mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>60%</attention><br>이동 속도 <attention>8%</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>망령의 왈츠</passive><br><keyword>유체화</keyword> 상태가 됩니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223046.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -5068,12 +5249,13 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
                 "PercentAttackSpeedMod": 0.6,
-                "PercentMovementSpeedMod": 0.12
+                "PercentMovementSpeedMod": 0.08
             }
         },
         "223047": {
@@ -5085,7 +5267,7 @@ export const item = {
                 "full": "223047.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -5105,7 +5287,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMovementSpeedMod": 30,
@@ -5117,14 +5300,14 @@ export const item = {
         },
         "223050": {
             "name": "지크의 융합",
-            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>25</attention><br>스킬 가속 <attention>15</attention><br>마법 저항력 <attention>25</attention></stats><br><br><passive>서리불꽃 폭풍</passive> <br>궁극기 사용 시 주변에 폭풍을 소환합니다. 폭풍은 적 챔피언에게 마법 피해를 입히고 <keyword>둔화</keyword>시킵니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>25</attention><br>스킬 가속 <attention>15</attention><br>마법 저항력 <attention>25</attention></stats><br><br><passive>서리불꽃 폭풍</passive> (0초)<br>궁극기 사용 시 주변에 5초 동안 폭풍을 소환합니다. 폭풍은 적 챔피언에게 매초 <magicDamage>0의 마법 피해</magicDamage>를 입히고 30% <keyword>둔화</keyword>시킵니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223050.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -5146,7 +5329,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 25,
@@ -5156,14 +5340,14 @@ export const item = {
         },
         "223053": {
             "name": "스테락의 도전",
-            "description": "<mainText><stats>체력 <attention>300</attention><br>강인함 <attention>20%</attention></stats><br><br><br><li><passive>잡아채는 발톱:</passive> 기본 공격력을 추가 공격력으로 얻습니다.<li><passive>생명선:</passive> 체력이 30% 밑으로 떨어질 만큼 피해를 입으면 보호막과 강인함을 얻습니다. 보호막 피해 흡수량은 점차 감소합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>300</attention><br>강인함 <attention>20%</attention></stats><br><br><passive>잡아채는 발톱</passive><br><scaleAD>0의 추가 공격력</scaleAD>을 얻습니다.<br><br><passive>생명선</passive> (0초)<br>체력이 30% 밑으로 떨어질 만큼 피해를 입으면 <shield>0의 피해를 흡수하는 보호막</shield>을 얻습니다. 보호막 피해 흡수량은 4.5초에 걸쳐 점차 감소합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223053.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -5184,7 +5368,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300
@@ -5192,7 +5377,7 @@ export const item = {
         },
         "223057": {
             "name": "광휘의 검",
-            "description": "<mainText><stats>스킬 가속 <attention>10</attention></stats><br><br><passive>주문 검</passive><br>스킬을 사용하고 나면 다음 기본 공격 시 추가 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>스킬 가속 <attention>10</attention></stats><br><br><passive>주문 검</passive> (0초)<br>스킬을 사용하고 나면 다음 기본 공격 시 <OnHit>적중 시</OnHit> <physicalDamage>추가 물리 피해</physicalDamage>를 입힙니다.<br></mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -5203,7 +5388,7 @@ export const item = {
                 "full": "223057.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -5223,7 +5408,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {},
             "depth": 2
@@ -5237,7 +5423,7 @@ export const item = {
                 "full": "223065.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -5260,7 +5446,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 40,
@@ -5277,7 +5464,7 @@ export const item = {
                 "full": "223067.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -5298,7 +5485,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300
@@ -5306,15 +5494,15 @@ export const item = {
         },
         "223068": {
             "name": "태양불꽃 방패",
-            "description": "<mainText><stats>체력 <attention>400</attention><br>방어력 <attention>40</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>불사르기:</passive><br>피해를 받거나 입히면 주변 적들에게 3초 동안 초당 <magicDamage>(12+2.5% bonus Health)의 마법 피해</magicDamage>를 입힙니다. (미니언 대상 25%) 챔피언이나 에픽 몬스터에게 이 효과로 피해를 입히면 중첩이 1회 쌓여 다음 <passive>불사르기</passive> 피해량이 5초 동안 10% 증가합니다. (최대 10회 중첩)<br></mainText>",
+            "description": "<mainText><stats>체력 <attention>400</attention><br>방어력 <attention>40</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>불사르기</passive><br>피해를 받거나 입히면 주변 적들에게 3초 동안 매초 <magicDamage>마법 피해</magicDamage>를 입힙니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223068.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 384,
-                "y": 96,
+                "x": 0,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -5335,7 +5523,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 400,
@@ -5344,15 +5533,15 @@ export const item = {
         },
         "223071": {
             "name": "칠흑의 양날 도끼",
-            "description": "<mainText><stats>공격력 <attention>40</attention><br>체력 <attention>350</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>깎아내기</passive><br>챔피언에게 물리 피해를 입히면 방어력을 감소시키는 중첩을 1회 적용합니다.<br><br><passive>열정</passive><br>물리 피해를 입히면 이동 속도가 상승합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>40</attention><br>체력 <attention>350</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>깎아내기</passive><br>챔피언에게 <physicalDamage>물리 피해</physicalDamage>를 입히면 6초 동안 <scaleArmor>방어력을 6% 감소</scaleArmor>시키는 중첩을 1회 적용합니다. (최대 <scaleArmor>방어력 30% 감소</scaleArmor>)<br><br><passive>열정</passive><br><physicalDamage>물리 피해</physicalDamage>를 입히면 2초 동안 <speed>20의 이동 속도</speed>를 얻습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223071.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 432,
-                "y": 96,
+                "x": 48,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -5376,7 +5565,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 350,
@@ -5397,14 +5587,14 @@ export const item = {
         },
         "223072": {
             "name": "피바라기",
-            "description": "<mainText><stats>공격력 <attention>70</attention><br>생명력 흡수 <attention>18%</attention></stats><br><br><passive>영액의 보호막</passive><br>생명력 흡수 효과로 체력 회복 시 초과분을 보호막으로 전환합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>70</attention><br>생명력 흡수 <attention>18%</attention></stats><br><br><passive>영액의 보호막</passive><br>생명력 흡수 효과로 체력 회복 시 초과분을 <shield>보호막</shield>으로 전환합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223072.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 0,
+                "x": 96,
                 "y": 144,
                 "w": 48,
                 "h": 48
@@ -5424,7 +5614,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 70,
@@ -5433,14 +5624,14 @@ export const item = {
         },
         "223073": {
             "name": "실험적 마공학판",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>공격 속도 <attention>25%</attention><br>체력 <attention>300</attention></stats><br><br><passive>마공학 충전</passive><br>궁극기의 스킬 가속이 증가합니다.<br><br><passive>폭주</passive><br>궁극기를 사용한 후 잠시 동안 공격 속도와 추가 이동 속도를 얻습니다.<br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>40</attention><br>공격 속도 <attention>20%</attention><br>체력 <attention>450</attention></stats><br><br><passive>마공학 충전</passive><br>궁극기 가속이 30 증가합니다.<br><br><passive>폭주</passive> (0초)<br>궁극기를 사용한 후 8초 동안 <attackSpeed>공격 속도가 30%</attackSpeed>, <speed>이동 속도가 15%</speed> 증가합니다. <br></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223073.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 144,
                 "w": 48,
                 "h": 48
@@ -5464,24 +5655,25 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 300,
-                "FlatPhysicalDamageMod": 55,
-                "PercentAttackSpeedMod": 0.25
+                "FlatHPPoolMod": 450,
+                "FlatPhysicalDamageMod": 40,
+                "PercentAttackSpeedMod": 0.2
             }
         },
         "223074": {
             "name": "굶주린 히드라",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>스킬 가속 <attention>20</attention><br>생명력 흡수 <attention>15%</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 주변 적들에게 물리 피해를 입힙니다.<br><br><active>활성화</active> (0초)<br><active>굶주린 초승달</active><br>주변 적에게 생명력을 흡수하는 물리 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>55</attention><br>스킬 가속 <attention>15</attention><br>생명력 흡수 <attention>15%</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 주변 적들에게 <physicalDamage>물리 피해</physicalDamage>를 입힙니다.<active>굶주린 초승달</active> (0초)<br>주변 적에게 <physicalDamage>물리 피해</physicalDamage>를 입힙니다. <br>이 피해에는 생명력 흡수가 적용됩니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223074.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 144,
                 "w": 48,
                 "h": 48
@@ -5504,7 +5696,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 55,
@@ -5513,14 +5706,14 @@ export const item = {
         },
         "223075": {
             "name": "가시 갑옷",
-            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>60</attention></stats><br><br><br><li><passive>가시:</passive> 기본 공격에 맞으면 공격한 적에게 피해를 입히고, 대상이 챔피언일 경우 <status>40%</status>의 고통스러운 상처를 남깁니다.<br><br><rules><status>고통스러운 상처</status>는 치유 및 회복 효과를 감소시킵니다.</rules></mainText>",
+            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>60</attention></stats><br><br><passive>가시</passive><br>기본 공격에 맞으면 공격한 적에게 <magicDamage>마법 피해</magicDamage>를 입히고, 대상이 챔피언일 경우 3초 동안 40%의 <keyword>상처</keyword>를 남깁니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223075.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 144,
                 "w": 48,
                 "h": 48
@@ -5540,7 +5733,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300,
@@ -5549,17 +5743,14 @@ export const item = {
         },
         "223078": {
             "name": "삼위일체",
-            "description": "<mainText><stats>공격력 <attention>30</attention><br>공격 속도 <attention>25%</attention><br>체력 <attention>300</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>주문 검</passive><br>스킬을 사용하고 나면 다음 기본 공격 시 추가 물리 피해를 입힙니다.<br><br><passive>가속</passive><br>기본 공격 시 이동 속도를 얻습니다.<br><br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>35</attention><br>공격 속도 <attention>25%</attention><br>체력 <attention>300</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>주문 검</passive> (0초)<br>스킬을 사용하고 나면 다음 기본 공격 시 <physicalDamage>추가 물리 피해</physicalDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.<br> <br><passive>가속</passive><br>기본 공격을 가하면 2초 동안 <speed>이동 속도가 20</speed> 상승합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227018"
-            ],
             "image": {
                 "full": "223078.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 144,
                 "w": 48,
                 "h": 48
@@ -5584,11 +5775,12 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300,
-                "FlatPhysicalDamageMod": 30,
+                "FlatPhysicalDamageMod": 35,
                 "PercentAttackSpeedMod": 0.25
             },
             "effect": {
@@ -5601,17 +5793,14 @@ export const item = {
         },
         "223084": {
             "name": "강철심장",
-            "description": "<mainText><stats>체력 <attention>700</attention><br>기본 체력 재생 <attention>200%</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>거인의 흡수</passive> 대상별: (0초)<br>700의 사거리 내에 있는 챔피언을 상대로 0초 동안 강력한 공격을 충전합니다. 충전된 공격은 대상에 <physicalDamage>125+<scaleHealth>아이템 체력의 12%</scaleHealth>에 해당하는 추가 물리 피해</physicalDamage>를 입히고 그 피해의 12%만큼<scaleHealth> 영구 최대 체력</scaleHealth>을 부여합니다.<br><br><passive>거인</passive><br><scaleHealth>최대 체력 1000</scaleHealth>당 크기가 3% 증가합니다. (최대 30%) </mainText>",
+            "description": "<mainText><stats>체력 <attention>700</attention><br>기본 체력 재생 <attention>100%</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>거인의 흡수</passive> 대상 하나당 (0초)<br>적 챔피언이 몇 초 동안 근처에 있으면 다음 기본 공격 시 해당 대상에게 <physicalDamage>125+아이템 체력의 12%</physicalDamage>에 해당하는 <physicalDamage>추가 물리 피해</physicalDamage>를 입히고 피해의 <scaleHealth>12%</scaleHealth>만큼 <scaleHealth>최대 체력</scaleHealth>이 증가합니다.<br><br><passive>거인</passive><br><scaleHealth>최대 체력 1000</scaleHealth>당 크기가 3% 증가합니다. (최대 30%) </mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227025"
-            ],
             "image": {
                 "full": "223084.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 144,
                 "w": 48,
                 "h": 48
@@ -5631,7 +5820,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 700
@@ -5639,14 +5829,14 @@ export const item = {
         },
         "223085": {
             "name": "루난의 허리케인",
-            "description": "<mainText><stats>공격 속도 <attention>45%</attention><br>치명타 확률 <attention>25%</attention><br>이동 속도 <attention>7%</attention></stats><br><br><passive>바람의 분노</passive><br>기본 공격 시 대상 주변 최대 2명의 적에게 작은 탄환을 발사합니다. 이 탄환에는 치명타 및 적중 시 효과가 적용됩니다.<br><br><rules>원거리 챔피언 전용 아이템입니다.</rules></mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>45%</attention><br>치명타 확률 <attention>25%</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>바람의 분노</passive><br>기본 공격 시 대상 근처에 있는 적 2명에게 추가로 탄환을 발사합니다.<br>각 탄환은 <physicalDamage>물리 피해</physicalDamage>를 입히고 <OnHit>적중 시</OnHit> 효과를 적용합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223085.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 144,
                 "w": 48,
                 "h": 48
@@ -5668,12 +5858,13 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
                 "PercentAttackSpeedMod": 0.45,
-                "PercentMovementSpeedMod": 0.07
+                "PercentMovementSpeedMod": 0.04
             },
             "effect": {
                 "Effect1Amount": "0",
@@ -5686,14 +5877,14 @@ export const item = {
         },
         "223087": {
             "name": "스태틱의 단검",
-            "description": "<mainText><stats>공격력 <attention>50</attention><br>공격 속도 <attention>40%</attention></stats><br><br><li><passive>전기충격:</passive> 주변 적에게 튕기는 연쇄 번개를 발사합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>50</attention><br>공격 속도 <attention>40%</attention></stats><br><br><passive>충전 상태</passive><br>이동하거나 공격하면 충전 상태로 공격할 수 있습니다.<br><br><passive>전기충격</passive><br><buffedStat>기본 공격 시</buffedStat>, 연쇄 번개를 발사하여 최대 <attention>6명의 대상</attention>에게 <magicDamage>90의 마법 피해</magicDamage>를 입힙니다.<br><br><buffedStat>아레나에서는 충전이 두 배 빠르게 중첩됩니다.</buffedStat></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223087.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 144,
                 "w": 48,
                 "h": 48
@@ -5706,7 +5897,6 @@ export const item = {
             },
             "tags": [
                 "Damage",
-                "CriticalStrike",
                 "AttackSpeed",
                 "OnHit"
             ],
@@ -5715,24 +5905,26 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 50,
-                "PercentAttackSpeedMod": 0.4
+                "PercentAttackSpeedMod": 0.4,
+                "PercentMovementSpeedMod": 0.04
             }
         },
         "223089": {
             "name": "라바돈의 죽음모자",
-            "description": "<mainText><stats>주문력 <attention>70</attention></stats><br><br><passive>신비한 작품</passive><br>총 <scaleAP>주문력이 35%</scaleAP> 증가합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>70</attention></stats><br><br><passive>신비한 작품</passive><br>총 <scaleAP>주문력이 30%</scaleAP> 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223089.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 384,
-                "y": 144,
+                "x": 0,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -5750,7 +5942,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 70
@@ -5758,15 +5951,15 @@ export const item = {
         },
         "223091": {
             "name": "마법사의 최후",
-            "description": "<mainText><stats>공격 속도 <attention>50%</attention><br>마법 저항력 <attention>40</attention><br>강인함 <attention>20%</attention></stats><br><br><br><li><passive>난투:</passive> 기본 공격 적중 시 마법 피해를 입히고 이동 속도가 상승합니다.</mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>50%</attention><br>마법 저항력 <attention>40</attention><br>강인함 <attention>20%</attention></stats><br><br><passive>난투</passive><br>기본 공격이 <magicDamage>추가 마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223091.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 432,
-                "y": 144,
+                "x": 48,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -5787,7 +5980,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 40,
@@ -5796,14 +5990,14 @@ export const item = {
         },
         "223094": {
             "name": "고속 연사포",
-            "description": "<mainText><stats>공격 속도 <attention>30%</attention><br>치명타 확률 <attention>25%</attention><br>이동 속도 <attention>7%</attention></stats><br><br><br><li><passive>충전 상태</passive><br>이동하거나 공격하면 충전 상태로 공격할 수 있습니다.<li><passive>저격수:</passive> 충전 상태로 공격 시 추가 피해를 입히며 사거리가 증가합니다.<br><br><rules>사거리는 최대 150유닛 거리까지만 증가할 수 있습니다.</rules></mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>30%</attention><br>치명타 확률 <attention>25%</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>충전 상태</passive><br>이동하거나 공격하면 충전 상태로 공격할 수 있습니다.<br><br><passive>저격수</passive><br>충전 상태로 공격 시 <magicDamage>200의 추가 마법 피해</magicDamage>를 입히며 사거리가 35% 증가합니다.<br><br><buffedStat>아레나에서는 충전이 두 배 빠르게 중첩됩니다.</buffedStat><br></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223094.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 0,
+                "x": 96,
                 "y": 192,
                 "w": 48,
                 "h": 48
@@ -5824,24 +6018,25 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
                 "PercentAttackSpeedMod": 0.3,
-                "PercentMovementSpeedMod": 0.07
+                "PercentMovementSpeedMod": 0.04
             }
         },
         "223095": {
             "name": "폭풍갈퀴",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>공격 속도 <attention>25%</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><br><li><passive>충전 상태</passive><br>이동하거나 공격하면 충전 상태로 공격할 수 있습니다.<li><passive>번개:</passive> 충전 상태로 기본 공격 시 추가 마법 피해를 입히고 이동 속도가 증가합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>45</attention><br>공격 속도 <attention>25%</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>충전 상태</passive><br>이동하거나 공격하면 충전 상태로 공격할 수 있습니다.<br><br><passive>번개</passive><br>충전 상태로 공격 시 <magicDamage>0의 추가 마법 피해</magicDamage>를 입히고 1.5초 동안 <speed>이동 속도가 50%</speed> 증가합니다.<br><br><buffedStat>아레나에서는 충전이 두 배 빠르게 중첩됩니다.</buffedStat><br></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223095.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 192,
                 "w": 48,
                 "h": 48
@@ -5861,7 +6056,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
@@ -5871,14 +6067,14 @@ export const item = {
         },
         "223100": {
             "name": "리치베인",
-            "description": "<mainText><stats>주문력 <attention>80</attention><br>이동 속도 <attention>10%</attention><br>스킬 가속 <attention>20</attention></stats><br><br><br><li><passive>주문 검:</passive> 스킬을 사용하고 나면 다음 기본 공격 시 추가 마법 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>80</attention><br>이동 속도 <attention>10%</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>주문 검</passive> (0초)<br>스킬을 사용하고 나면 다음 기본 공격 시 <magicDamage>추가 마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223100.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 192,
                 "w": 48,
                 "h": 48
@@ -5900,7 +6096,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 80,
@@ -5909,14 +6106,14 @@ export const item = {
         },
         "223102": {
             "name": "밴시의 장막",
-            "description": "<mainText><stats>주문력 <attention>80</attention><br>마법 저항력 <attention>50</attention></stats><br><br><passive>무효화</passive><br>적의 다음 스킬을 막아 주는 주문 방어막을 생성합니다.<br><br><rules>효과가 다시 활성화되기 전에 챔피언으로부터 피해를 입으면 재사용 대기시간이 초기화됩니다.</rules></mainText>",
+            "description": "<mainText><stats>주문력 <attention>80</attention><br>마법 저항력 <attention>50</attention></stats><br><br><passive>무효화</passive> (0초)<br>적의 다음 스킬을 막아 주는 주문 방어막을 생성합니다.<br><br><rules>챔피언에게 피해를 입으면 아이템 재사용 대기시간이 초기화됩니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223102.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 192,
                 "w": 48,
                 "h": 48
@@ -5936,14 +6133,15 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 50,
                 "FlatMagicDamageMod": 80
             },
             "effect": {
-                "Effect1Amount": "30",
+                "Effect1Amount": "40",
                 "Effect2Amount": "45",
                 "Effect3Amount": "10",
                 "Effect4Amount": "-0.1",
@@ -5961,16 +6159,16 @@ export const item = {
                 "full": "223105.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 192,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 450,
+                "base": 500,
                 "purchasable": false,
-                "total": 450,
-                "sell": 315
+                "total": 500,
+                "sell": 350
             },
             "tags": [
                 "SpellBlock",
@@ -5983,7 +6181,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 25,
@@ -5992,14 +6191,14 @@ export const item = {
         },
         "223107": {
             "name": "구원",
-            "description": "<mainText><stats>체력 <attention>300</attention><br>기본 마나 재생 <attention>100%</attention><br>체력 회복 및 보호막 <attention>16%</attention><br>스킬 가속 <attention>15</attention></stats><br><br><br><br><active>활성화</active> (0초)<br><active>중재</active><br>거리 안의 위치를 지정합니다. 2.5초 후 빛을 한 줄기 불러와 아군의 체력을 회복시키고 적 챔피언에게 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>300</attention><br>기본 마나 재생 <attention>100%</attention><br>체력 회복 및 보호막 <attention>16%</attention><br>스킬 가속 <attention>15</attention></stats><br><br><br><br><active>사용 시 -</active> <active>중재:</active> 5500 거리 안의 위치를 지정합니다. 2.5초 후 빛을 한 줄기 불러와 아군 챔피언의 <buffedStat>체력을 300~600(아군 )</buffedStat>만큼 회복시키고 적 챔피언에게 <trueDamage>최대 체력의 10%에 해당하는 고정 피해</trueDamage>를 입힙니다. (90(0초))</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223107.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 192,
                 "w": 48,
                 "h": 48
@@ -6021,7 +6220,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300
@@ -6029,14 +6229,14 @@ export const item = {
         },
         "223109": {
             "name": "기사의 맹세",
-            "description": "<mainText><stats>체력 <attention>400</attention><br>방어력 <attention>40</attention><br>스킬 가속 <attention>15</attention><br>기본 체력 재생 <attention>125%</attention></stats><br><br><br><br><passive>희생:</passive> <attention>보호</attention> 중인 아군이 근처에 있으면 아군이 입는 피해량을 대신 입고 <attention>보호</attention> 중인 아군이 챔피언에게 가하는 피해량에 비례해 체력을 회복합니다.<br><br><br><br><br><active>활성화</active> (0초)<br><active>맹세</active><br><attention>보호</attention>할 아군을 대상으로 지정합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>400</attention><br>방어력 <attention>40</attention><br>스킬 가속 <attention>15</attention><br>기본 체력 재생 <attention>125%</attention></stats><br><br><passive>희생</passive><br><attention>보호</attention> 중인 아군 근처에 있으면 해당 아군이 입는 피해량의 12%를 대신 입고 해당 아군이 챔피언에게 입히는 피해량의 10%만큼 체력을 <healing>회복</healing>합니다.<br><br><br><br><active>활성화</active> (0초)<br><active>맹세</active><br><attention>보호</attention>할 아군을 대상으로 지정합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223109.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 192,
                 "w": 48,
                 "h": 48
@@ -6061,7 +6261,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 400,
@@ -6070,14 +6271,14 @@ export const item = {
         },
         "223110": {
             "name": "얼어붙은 심장",
-            "description": "<mainText><stats>방어력 <attention>90</attention><br>마나 <attention>400</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>혹한의 포옹</passive><br>주변 적의 <attackSpeed>공격 속도</attackSpeed>를 감소시킵니다.<br><br><passive>견고</passive><br> 기본 공격으로 받는 피해량이 감소합니다.</mainText>",
+            "description": "<mainText><stats>방어력 <attention>90</attention><br>마나 <attention>400</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>혹한의 포옹</passive><br>주변 챔피언의 <attackSpeed>공격 속도</attackSpeed>를 <attackSpeed>20%</attackSpeed>만큼 감소시킵니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223110.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 192,
                 "w": 48,
                 "h": 48
@@ -6100,7 +6301,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 400,
@@ -6116,8 +6318,8 @@ export const item = {
                 "full": "223111.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 384,
-                "y": 192,
+                "x": 0,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
@@ -6137,7 +6339,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 35,
@@ -6146,15 +6349,15 @@ export const item = {
         },
         "223112": {
             "name": "수호자의 보주",
-            "description": "<mainText><stats>주문력 <attention>55</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>회복</passive><br>일정 시간 동안 마나를 회복합니다. 마나를 회복할 수 없을 때는 대신 체력을 회복합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>55</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>회복</passive><br>5초마다 <scaleMana>10의 마나</scaleMana>를 회복합니다. 마나를 획득할 수 없으면 <healing>15의 체력</healing>을 회복합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223112.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 432,
-                "y": 192,
+                "x": 48,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
@@ -6176,7 +6379,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 55
@@ -6187,14 +6391,14 @@ export const item = {
         },
         "223115": {
             "name": "내셔의 이빨",
-            "description": "<mainText><stats>주문력 <attention>70</attention><br>공격 속도 <attention>45%</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>이케시아의 이빨</passive><br>기본 공격 시 마법 피해(<OnHit>적중 시</OnHit> )를 입힙니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>70</attention><br>공격 속도 <attention>45%</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>이케시아의 이빨</passive><br>기본 공격이 <magicDamage>추가 마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223115.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 0,
+                "x": 96,
                 "y": 240,
                 "w": 48,
                 "h": 48
@@ -6216,7 +6420,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 70,
@@ -6232,7 +6437,7 @@ export const item = {
                 "full": "223116.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 240,
                 "w": 48,
                 "h": 48
@@ -6253,7 +6458,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 350,
@@ -6270,14 +6476,14 @@ export const item = {
         },
         "223118": {
             "name": "악의",
-            "description": "<mainText><stats>주문력 <attention>70</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>경멸</passive><br>궁극기의 스킬 가속이 증가합니다.<br><br><passive>증오안개</passive><br>궁극기로 챔피언에게 피해를 입히면 대상 발밑의 지면을 불태워 피해를 입히고 마법 저항력을 감소시킵니다. <br></mainText>",
+            "description": "<mainText><stats>주문력 <attention>70</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>경멸</passive><br>궁극기 가속이 20 증가합니다.<br><br><passive>증오안개</passive><br>궁극기로 챔피언에게 피해를 입히면 3초 동안 대상 발밑의 지면을 불태워 매초 <magicDamage>마법 피해</magicDamage>를 입히고 <scaleMR>마법 저항력</scaleMR>을 감소시킵니다. <br></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223118.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 240,
                 "w": 48,
                 "h": 48
@@ -6298,7 +6504,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 600,
@@ -6307,14 +6514,14 @@ export const item = {
         },
         "223119": {
             "name": "혹한의 손길",
-            "description": "<mainText><stats>체력 <attention>500</attention><br>마나 <attention>500</attention><br>스킬 가속 <attention>15</attention></stats><br><br><br><li><passive>경탄:</passive> <scaleHealth>총 마나만큼 체력</scaleHealth>을 추가로 얻습니다.<li><passive>마나 충전:</passive> <buffedStat>2번의 전투 라운드 후</buffedStat> 이 아이템은 <rarityLegendary>종말의 겨울</rarityLegendary>로 변합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>500</attention><br>마나 <attention>500</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>경탄</passive><br><scaleHealth>0만큼 체력</scaleHealth>을 추가로 얻습니다.<br><br><passive>마나 충전</passive><br><buffedStat>2번의 전투 라운드 후</buffedStat> 이 아이템은 <rarityLegendary>종말의 겨울</rarityLegendary>로 변합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223119.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 240,
                 "w": 48,
                 "h": 48
@@ -6335,7 +6542,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 500,
@@ -6344,7 +6552,7 @@ export const item = {
         },
         "223121": {
             "name": "종말의 겨울",
-            "description": "<mainText><stats>체력 <attention>500</attention><br>마나 <attention>860</attention><br>스킬 가속 <attention>20</attention></stats><br><br><li><passive>경탄:</passive> 마나에 따라 추가 체력을 얻습니다.<li><passive>불변:</passive> 적 챔피언을 <status>이동 불가</status> 또는 <status>둔화</status> 상태로 만들면 보호막을 얻습니다. 근처에 적이 둘 이상 있으면 보호막의 피해 흡수량이 증가합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>500</attention><br>마나 <attention>860</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>경탄</passive><br><scaleHealth>0의 체력</scaleHealth>을 얻습니다.<br><br><passive>불변</passive> (0초)<br>적 챔피언을 <keyword>이동 불가</keyword> 또는 <keyword>둔화</keyword> (근접 챔피언 전용) 상태로 만들면 3초 동안 <shield>보호막</shield>을 얻습니다. <br>근처에 적이 둘 이상 있으면 보호막의 피해 흡수량이 80% 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 223119,
@@ -6353,7 +6561,7 @@ export const item = {
                 "full": "223121.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 240,
                 "w": 48,
                 "h": 48
@@ -6374,7 +6582,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 860,
@@ -6383,17 +6592,14 @@ export const item = {
         },
         "223124": {
             "name": "구인수의 격노검",
-            "description": "<mainText><stats>공격력 <attention>20</attention><br>주문력 <attention>25</attention><br>공격 속도 <attention>25%</attention></stats><br><br><br><li><passive>분노:</passive> 기본 공격 시 추가 피해(<OnHit>적중 시</OnHit> )를 입힙니다.<br><li><passive>들끓는 일격:</passive> 기본 공격 시 <attackSpeed>공격 속도</attackSpeed>가 증가합니다. 해당 효과는 최대치까지 중첩될 수 있습니다. 최대 중첩 시 세 번째 기본 공격을 가할 때마다 <OnHit>적중 시</OnHit> 효과를 두 번씩 적용합니다.<br><br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>20</attention><br>주문력 <attention>25</attention><br>공격 속도 <attention>25%</attention></stats><br><br>기본 공격 시 <magicDamage>30의 마법 피해(<OnHit>적중 시</OnHit> )</magicDamage>를 입힙니다.<br><br><passive>들끓는 일격</passive><br>기본 공격 시 <attackSpeed>공격 속도가 8%</attackSpeed> 증가합니다. 해당 효과는 4번까지 중첩되어 최대 <attackSpeed>공격 속도가 0</attackSpeed>까지 증가합니다. 최대 중첩 시 세 번째 기본 공격을 가할 때마다 <OnHit>적중 시</OnHit> 효과를 두 번씩 적용합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227030"
-            ],
             "image": {
                 "full": "223124.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 240,
                 "w": 48,
                 "h": 48
@@ -6415,7 +6621,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 25,
@@ -6447,7 +6654,7 @@ export const item = {
                 "full": "223135.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 240,
                 "w": 48,
                 "h": 48
@@ -6467,7 +6674,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 65
@@ -6475,14 +6683,14 @@ export const item = {
         },
         "223137": {
             "name": "무덤꽃",
-            "description": "<mainText><stats>주문력 <attention>60</attention><br>마법 관통력 <attention>30%</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>죽음에서 피어난 생명</passive><br>적 챔피언에게 피해를 입히고 해당 챔피언 위치에 치유의 힘을 폭발시켜 아군의 체력을 회복시킵니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>60</attention><br>마법 관통력 <attention>30%</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>죽음에서 피어난 생명</passive> (0초)<br>자신이 피해를 입힌 챔피언이 3초 안에 죽으면 시체에서 치유의 힘이 퍼져 <healing>체력을 회복</healing>시킵니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223137.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 240,
                 "w": 48,
                 "h": 48
@@ -6503,7 +6711,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 60
@@ -6511,15 +6720,15 @@ export const item = {
         },
         "223139": {
             "name": "헤르메스의 시미터",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>마법 저항력 <attention>50</attention><br>생명력 흡수 <attention>10%</attention></stats><br><br><br><br><active>사용 시 -</active> <active>수은:</active> 모든 군중 제어 효과가 제거되며, 이동 속도가 증가합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>45</attention><br>마법 저항력 <attention>40</attention><br>생명력 흡수 <attention>10%</attention></stats><br><br><br><br><active>활성화</active><br><active>수은</active><br>모든 군중 제어 효과(<keyword>공중에 뜸</keyword> 제외)를 제거하고 이동 속도가 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223139.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 384,
-                "y": 240,
+                "x": 0,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -6542,10 +6751,11 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatSpellBlockMod": 50,
+                "FlatSpellBlockMod": 40,
                 "FlatPhysicalDamageMod": 45,
                 "PercentLifeStealMod": 0.1
             },
@@ -6557,18 +6767,15 @@ export const item = {
         },
         "223142": {
             "name": "요우무의 유령검",
-            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <attention>22</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>출몰</passive> <br>전투에서 벗어나 있을 때 <speed>이동 속도</speed>가 상승합니다.<br><br><br><active>활성화</active> (0초)<br><active>망령의 발걸음</active><br>이동 속도가 상승하고 유체화 효과를 얻습니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <attention>22</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>출몰</passive> <br>전투에서 벗어나 있을 때 <speed>이동 속도가 60</speed> 상승합니다.<br><br><active>활성화</active> (0초)<br><active>망령의 발걸음</active><br>이동 속도가 상승하고 유체화 효과를 얻습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227029"
-            ],
             "image": {
                 "full": "223142.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 432,
-                "y": 240,
+                "x": 48,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -6589,7 +6796,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 60
@@ -6597,14 +6805,14 @@ export const item = {
         },
         "223143": {
             "name": "란두인의 예언",
-            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>75</attention></stats><br><br><passive>견고</passive><br>기본 공격으로 받는 피해량이 감소합니다.<br><br><passive>치명타 저항</passive><br>치명타로 받는 피해량이 30% 감소합니다.<br><br><br><br><active>활성화</active> (0초)<br><active>억제</active><br>주변 적들에게 <status>둔화 효과</status>를 적용합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>75</attention></stats><br><br><passive>저항</passive><br>치명타로 받는 피해량이 30% 감소합니다.<br><br><active>활성화</active><br><active>억제</active> (0초)<br>주변 적들에게 2초 동안 70%의 <keyword>둔화 효과</keyword>를 적용합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223143.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 0,
+                "x": 96,
                 "y": 288,
                 "w": 48,
                 "h": 48
@@ -6626,7 +6834,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300,
@@ -6642,7 +6851,7 @@ export const item = {
                 "full": "223146.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 288,
                 "w": 48,
                 "h": 48
@@ -6665,7 +6874,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 90,
@@ -6674,17 +6884,14 @@ export const item = {
         },
         "223152": {
             "name": "마법공학 로켓 벨트",
-            "description": "<mainText><stats>주문력 <attention>95</attention><br>체력 <attention>400</attention><br>스킬 가속 <attention>20</attention></stats><br><br><br><br><active>사용 시 -</active> <active>초음속:</active> 지정 방향으로 돌진하며 부채꼴 모양으로 피해를 입히는 마법 탄환을 발사합니다. 그리고 적 챔피언 방향으로 이동할 때 이동 속도가 상승합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>95</attention><br>체력 <attention>400</attention><br>스킬 가속 <attention>20</attention></stats><br><br><active>초음속</active> (0초)<br>지정 방향으로 돌진하며 <magicDamage>마법 피해</magicDamage>를 입히는 탄환을 발사합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227011"
-            ],
             "image": {
                 "full": "223152.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 288,
                 "w": 48,
                 "h": 48
@@ -6708,7 +6915,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 400,
@@ -6717,14 +6925,14 @@ export const item = {
         },
         "223153": {
             "name": "몰락한 왕의 검",
-            "description": "<mainText><stats>공격력 <attention>30</attention><br>공격 속도 <attention>20%</attention><br>생명력 흡수 <attention>10%</attention></stats><br><br><passive>안개의 검</passive><br>기본 공격 시 적 현재 체력에 따라 추가 물리 피해(<OnHit>적중 시</OnHit> )를 입힙니다.<br><br><passive>할퀴는 그림자</passive> (0초)<br>챔피언에게 첫 기본 공격 시 대상을 둔화시킵니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>30</attention><br>공격 속도 <attention>20%</attention><br>생명력 흡수 <attention>10%</attention></stats><br><br><passive>안개의 검</passive><br>기본 공격 시 적의 현재 체력의 <physicalDamage>일정 비율</physicalDamage>만큼 <physicalDamage>추가 물리 피해</physicalDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.<br><br><passive>할퀴는 그림자</passive> (0초)<br>챔피언에게 3회 기본 공격을 가하면 1초 동안 30% <status>둔화</status>시킵니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223153.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 288,
                 "w": 48,
                 "h": 48
@@ -6740,15 +6948,15 @@ export const item = {
                 "AttackSpeed",
                 "LifeSteal",
                 "Slow",
-                "OnHit",
-                "NonbootsMovement"
+                "OnHit"
             ],
             "maps": {
                 "11": false,
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 30,
@@ -6758,7 +6966,7 @@ export const item = {
         },
         "223156": {
             "name": "맬모셔스의 아귀",
-            "description": "<mainText><stats>공격력 <attention>50</attention><br>스킬 가속 <attention>15</attention><br>마법 저항력 <attention>40</attention></stats><br><br><passive>생명선</passive><br>마법 피해를 받아 체력이 30% 아래가 될 경우 마법 피해를 흡수하는 보호막을 얻습니다. <passive>생명선</passive> 효과가 발동하면 전투가 끝날 때까지 모든 피해 흡혈 효과를 얻습니다.  </mainText>",
+            "description": "<mainText><stats>공격력 <attention>50</attention><br>스킬 가속 <attention>15</attention><br>마법 저항력 <attention>40</attention></stats><br><br><passive>생명선</passive> (0초)<br>체력이 30% 밑으로 떨어질 만큼 마법 피해를 입으면 5초 동안 <shield>마법 피해를 흡수하는 보호막</shield>을 얻고 전투가 끝날 때까지 <lifeSteal>12%의 모든 피해 흡혈</lifeSteal>을 얻습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "stacks": 0,
@@ -6766,7 +6974,7 @@ export const item = {
                 "full": "223156.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 288,
                 "w": 48,
                 "h": 48
@@ -6789,7 +6997,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 40,
@@ -6798,14 +7007,14 @@ export const item = {
         },
         "223157": {
             "name": "존야의 모래시계",
-            "description": "<mainText><stats>주문력 <attention>80</attention><br>방어력 <attention>50</attention></stats><br><br><active>시간 정지</active><br>2.5초 동안 <keyword>경직</keyword> 상태가 됩니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>80</attention><br>방어력 <attention>50</attention></stats><br><br><br><br><active>활성화</active> (0초)<br><active>경직</active> <br>2.5초 동안 <status>무적</status> 및 <status>대상으로 지정할 수 없는 상태</status>가 되지만, 그동안 아무런 행동도 할 수 없습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223157.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 288,
                 "w": 48,
                 "h": 48
@@ -6826,7 +7035,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 80,
@@ -6840,14 +7050,14 @@ export const item = {
         },
         "223158": {
             "name": "명석함의 아이오니아 장화",
-            "description": "<mainText><stats>스킬 가속 <buffedStat>40</buffedStat><br>이동 속도 <attention>45</attention></stats><br><br>소환사 주문 가속이 12 증가합니다.</mainText>",
+            "description": "<mainText><stats>스킬 가속 <buffedStat>40</buffedStat><br>이동 속도 <attention>45</attention></stats><br><br>소환사 주문 가속이 10 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223158.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 288,
                 "w": 48,
                 "h": 48
@@ -6867,7 +7077,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMovementSpeedMod": 45
@@ -6875,14 +7086,14 @@ export const item = {
         },
         "223161": {
             "name": "쇼진의 창",
-            "description": "<mainText><stats>공격력 <attention>40</attention><br>체력 <attention>300</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>드래곤의 힘</passive> <br>일반 스킬의 스킬 가속이 증가합니다.<br><br><passive>집중된 의지</passive> <br>스킬 적중 시 중첩을 얻습니다. 중첩당 스킬 피해량이 증가합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>40</attention><br>체력 <attention>300</attention><br>스킬 가속 <attention>0</attention></stats><br><br><passive>드래곤의 힘</passive> <br>기본 스킬 가속이 15 증가합니다.<br><br><passive>집중된 의지</passive> <br>스킬 적중 시 6초 동안 스킬 피해가 3% 증가합니다. (4회 중첩)</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223161.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 288,
                 "w": 48,
                 "h": 48
@@ -6903,7 +7114,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300,
@@ -6919,8 +7131,8 @@ export const item = {
                 "full": "223165.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 384,
-                "y": 288,
+                "x": 0,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -6931,6 +7143,7 @@ export const item = {
                 "sell": 1250
             },
             "tags": [
+                "Health",
                 "SpellDamage",
                 "CooldownReduction",
                 "AbilityHaste"
@@ -6940,7 +7153,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 250,
@@ -6957,8 +7171,8 @@ export const item = {
                 "full": "223172.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 432,
-                "y": 288,
+                "x": 48,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -6980,7 +7194,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "PercentAttackSpeedMod": 0.5,
@@ -6996,7 +7211,7 @@ export const item = {
                 "full": "223177.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 0,
+                "x": 96,
                 "y": 336,
                 "w": 48,
                 "h": 48
@@ -7010,7 +7225,6 @@ export const item = {
             "tags": [
                 "Damage",
                 "AttackSpeed",
-                "LifeSteal",
                 "Lane",
                 "AbilityHaste"
             ],
@@ -7019,7 +7233,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 250,
@@ -7031,14 +7246,14 @@ export const item = {
         },
         "223181": {
             "name": "선체파괴자",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>체력 <attention>450</attention><br>이동 속도 <attention>5%</attention></stats><br><br><passive>선장</passive><br>챔피언에게 다섯 번째 기본 공격을 가할 때마다 <physicalDamage>추가 물리 피해</physicalDamage>를 입힙니다.<br><br><passive>단독 전투</passive><br><buffedStat>900 거리 안에 아군 챔피언이 없다면 방어력과 마법 저항력이 증가합니다</buffedStat>. <br><br><rules>아군 챔피언이 너무 가까이 오면 단독 전투 효과로 얻은 방어력과 마법 저항력이 3초에 걸쳐 사라집니다.</rules></mainText>",
+            "description": "<mainText><stats>공격력 <attention>55</attention><br>체력 <attention>450</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>선장</passive><br>챔피언과 에픽 몬스터에게 다섯 번째 기본 공격을 가할 때마다 <physicalDamage>추가 물리 피해</physicalDamage>를 입힙니다. 대상이 구조물일 경우 피해량이 증가합니다.<br><br><passive>승선 부대</passive><br>주변 공성 미니언과 슈퍼 미니언이 <scaleArmor>방어력</scaleArmor> 및 <scaleMR>마법 저항력</scaleMR>을 얻습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223181.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 336,
                 "w": 48,
                 "h": 48
@@ -7062,25 +7277,26 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 450,
                 "FlatMovementSpeedMod": 0.05,
                 "FlatPhysicalDamageMod": 55,
-                "PercentMovementSpeedMod": 0.05
+                "PercentMovementSpeedMod": 0.04
             }
         },
         "223184": {
             "name": "수호자의 망치",
-            "description": "<mainText><stats>공격력 <attention>25</attention><br>공격 속도 <attention>35%</attention><br>생명력 흡수 <attention>8%</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>25</attention><br>공격 속도 <attention>35%</attention><br>생명력 흡수 <attention>5%</attention></stats><br><br></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223184.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 336,
                 "w": 48,
                 "h": 48
@@ -7094,6 +7310,7 @@ export const item = {
             "tags": [
                 "Health",
                 "Damage",
+                "LifeSteal",
                 "CooldownReduction",
                 "Lane"
             ],
@@ -7102,24 +7319,25 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 25,
                 "PercentAttackSpeedMod": 0.35,
-                "PercentLifeStealMod": 0.08
+                "PercentLifeStealMod": 0.05
             }
         },
         "223185": {
             "name": "수호자의 단검",
-            "description": "<mainText><stats>공격력 <attention>25</attention><br>물리 관통력 <attention>15</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>수확자</passive> <br>힘의 꽃 효과가 25% 증가합니다. 식물을 공격한 후 3초 동안 이동 속도가 100 증가합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>25</attention><br>물리 관통력 <attention>11</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>수확자</passive> <br>힘의 꽃 효과가 20% 증가합니다. 식물을 공격한 후 3초 동안 이동 속도가 100 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223185.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 336,
                 "w": 48,
                 "h": 48
@@ -7140,7 +7358,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 25
@@ -7148,17 +7367,14 @@ export const item = {
         },
         "223190": {
             "name": "강철의 솔라리 펜던트",
-            "description": "<mainText><stats>체력 <attention>400</attention><br>방어력 <attention>35</attention><br>마법 저항력 <attention>35</attention><br>스킬 가속 <attention>25</attention></stats><br><br><br><br><active>활성화</active> (0초)<br><active>헌신</active><br>주변 아군에게 <shield>보호막</shield>을 부여합니다. 보호막은 서서히 사라집니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>400</attention><br>방어력 <attention>35</attention><br>마법 저항력 <attention>35</attention><br>스킬 가속 <attention>25</attention></stats><br><br><br><br><active>활성화</active> (0초)<br><active>헌신</active><br>주변 아군들에게 <buffedStat>600~1200(아군 )의 피해를 흡수하는 보호막</buffedStat>을 부여합니다. 보호막 피해 흡수량은 <buffedStat>5초</buffedStat>에 걸쳐 점차 감소합니다. </mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227019"
-            ],
             "image": {
                 "full": "223190.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 336,
                 "w": 48,
                 "h": 48
@@ -7183,7 +7399,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 35,
@@ -7193,14 +7410,14 @@ export const item = {
         },
         "223193": {
             "name": "가고일 돌갑옷",
-            "description": "<mainText><stats>방어력 <nerfedStat>35</nerfedStat><br>마법 저항력 <nerfedStat>35</nerfedStat><br>스킬 가속 <attention>15</attention></stats><br><br><br><br><br><br><active>활성화</active> (0초)<br><active>불굴</active><br>크기가 커지며 피해를 흡수하는 보호막을 얻습니다. 보호막은 점차 사라집니다.</mainText>",
+            "description": "<mainText><stats>방어력 <nerfedStat>35</nerfedStat><br>마법 저항력 <nerfedStat>35</nerfedStat><br>스킬 가속 <attention>15</attention></stats><br><br><br><li><passive>구축:</passive> 챔피언에게 피해를 받으면 중첩을 1회 얻어 6초 동안 <scaleArmor>방어력이 0</scaleArmor>, <scaleMR>마법 저항력이 0</scaleMR> 증가합니다.<br><br><rules>챔피언당 하나씩 최대 5회까지 중첩됩니다.</rules><br><br><br><br><active>활성화</active> (0초)<br><active>불굴</active><br>크기가 커지며 피해를 흡수하는 보호막을 얻습니다. 보호막은 점차 사라집니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223193.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 336,
                 "w": 48,
                 "h": 48
@@ -7223,7 +7440,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 35,
@@ -7232,14 +7450,14 @@ export const item = {
         },
         "223222": {
             "name": "미카엘의 축복",
-            "description": "<mainText><stats>체력 <buffedStat>400</buffedStat><br>기본 마나 재생 <attention>100%</attention><br>보호막 및 체력 회복 <buffedStat>16%</buffedStat></stats><br><br><br><br><active>활성화</active> (0초)<br><active>정화</active><br>체력을 회복하고 아군 챔피언에게 걸린 모든 군중 제어 효과(<status>공중에 뜸</status> 및 <status>제압</status> 제외)를 제거합니다.</mainText>",
+            "description": "<mainText><stats>체력 <buffedStat>400</buffedStat><br>기본 마나 재생 <attention>100%</attention><br>보호막 및 체력 회복 <buffedStat>16%</buffedStat></stats><br><br><br><br><active>활성화</active> (0초)<br><active>정화</active><br>아군 챔피언에게 걸린 모든 군중 제어 효과(<status>공중에 뜸</status> 및 <status>제압</status> 제외)를 제거하고 체력을 150~240 (아군 ) 회복합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223222.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 336,
                 "w": 48,
                 "h": 48
@@ -7263,7 +7481,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 400
@@ -7271,14 +7490,14 @@ export const item = {
         },
         "223302": {
             "name": "경계",
-            "description": "<mainText><stats>공격력 <attention>30</attention><br>공격 속도 <attention>25%</attention></stats><br><br><passive>그림자</passive><br>기본 공격 시 마법 피해(<OnHit>적중 시</OnHit> )를 입힙니다.<br><br><passive>빛과 어둠</passive><br>챔피언에게 기본 공격 시 <keywordMajor>빛</keywordMajor>과 <keywordMajor>어둠</keywordMajor> 적중 효과를 번갈아 가며 적용합니다. <li><keywordMajor>빛</keywordMajor> 기본 공격 시 <scaleArmor>방어력</scaleArmor>과 <scaleMR>마법 저항력</scaleMR>을 얻습니다.<li><keywordMajor>어둠</keywordMajor> 기본 공격 시 <scaleArmor>방어구 관통력</scaleArmor>과 <scaleMR>마법 관통력</scaleMR>을 얻습니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>30</attention><br>공격 속도 <attention>25%</attention></stats><br><br><passive>그림자</passive><br>기본 공격 시 <magicDamage>30의 추가 마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.<br><br><passive>빛과 어둠</passive><br>챔피언에게 기본 공격 시 <keywordMajor>빛</keywordMajor>과 <keywordMajor>어둠</keywordMajor> 기본 공격을 번갈아 가며 적용합니다. <li><keywordMajor>빛</keywordMajor> 기본 공격 시 5초 동안 <scaleArmor>방어력</scaleArmor>과 <scaleMR>마법 저항력</scaleMR>이 증가합니다. <li><keywordMajor>어둠</keywordMajor> 기본 공격 시 5초 동안 <scaleArmor>방어구 관통력</scaleArmor>과 <scaleMR>마법 관통력</scaleMR>이 8% 증가합니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223302.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 336,
                 "w": 48,
                 "h": 48
@@ -7301,7 +7520,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 30,
@@ -7310,15 +7530,15 @@ export const item = {
         },
         "223504": {
             "name": "불타는 향로",
-            "description": "<mainText><stats>주문력 <attention>30</attention><br>체력 회복 및 보호막 <attention>12%</attention><br>기본 마나 재생 <attention>125%</attention><br>이동 속도 <attention>8%</attention></stats><br><br><passive>축성</passive><br>다른 아군을 치유하거나 보호막을 씌워주면 6초 동안 자신과 대상 아군의 공격 속도가 <attackSpeed>40%</attackSpeed> 상승하고 공격 시 <magicDamage>25의 마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>30</attention><br>체력 회복 및 보호막 <attention>12%</attention><br>기본 마나 재생 <attention>125%</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>축성</passive><br>다른 아군을 치유하거나 보호막을 씌워주면 6초 동안 자신과 대상 아군의 공격 속도가 <attackSpeed>40%</attackSpeed> 상승하고 공격 시 <magicDamage>25의 마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223504.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 384,
-                "y": 336,
+                "x": 0,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -7339,24 +7559,25 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 30,
-                "PercentMovementSpeedMod": 0.08
+                "PercentMovementSpeedMod": 0.04
             }
         },
         "223508": {
             "name": "정수 약탈자",
-            "description": "<mainText><stats>공격력 <attention>50</attention><br>스킬 가속 <attention>20</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>정수 흡수</passive><br>기본 공격 적중 시 마나를 회복합니다.<br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>50</attention><br>스킬 가속 <attention>20</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>정수 흡수</passive><br>기본 공격 시 <scaleMana>마나</scaleMana>(<OnHit>적중 시</OnHit> )를 얻습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223508.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 432,
-                "y": 336,
+                "x": 48,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -7379,7 +7600,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
@@ -7395,7 +7617,7 @@ export const item = {
                 "full": "223742.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 0,
+                "x": 96,
                 "y": 384,
                 "w": 48,
                 "h": 48
@@ -7417,7 +7639,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300,
@@ -7427,14 +7650,14 @@ export const item = {
         },
         "223748": {
             "name": "거대한 히드라",
-            "description": "<mainText><stats>공격력 <attention>40</attention><br>체력 <attention>400</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 <physicalDamage>0의 물리 피해</physicalDamage> <OnHit>적중 시</OnHit> 를 추가로 입히고 대상 뒤의 적들에게 <physicalDamage>0의 물리 피해</physicalDamage>를 입힙니다.<br><br><active>활성화</active><br><active>거대한 초승달</active><br>다음 기본 공격 시 <passive>쪼개기</passive>가 대상과 근처 충격파 범위에 추가 물리 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>40</attention><br>체력 <attention>400</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 적중 시 대상 뒤의 적들에게 <physicalDamage>물리 피해</physicalDamage>를 입힙니다.<active>거대한 초승달</active> (0초)<br>다음 <passive>쪼개기</passive>를 강화하여 <physicalDamage>추가 물리 피해</physicalDamage>(<OnHit>적중 시</OnHit> )를 입히고 대상 뒤의 적들에게 <physicalDamage>추가 물리 피해</physicalDamage>를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "223748.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 384,
                 "w": 48,
                 "h": 48
@@ -7456,7 +7679,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 400,
@@ -7465,7 +7689,7 @@ export const item = {
         },
         "223814": {
             "name": "밤의 끝자락",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>물리 관통력 <attention>14</attention><br>체력 <attention>375</attention></stats><br><br><passive>무효화</passive> (0초)<br>적의 다음 스킬을 막아 주는 주문 방어막을 생성합니다.<br><br><rules>효과가 다시 활성화되기 전에 피해를 입으면 재사용 대기시간이 초기화됩니다.</rules></mainText>",
+            "description": "<mainText><stats>공격력 <attention>45</attention><br>물리 관통력 <attention>14</attention><br>체력 <attention>375</attention></stats><br><br><passive>무효화</passive> (0초)<br>적의 다음 스킬을 막아 주는 주문 방어막을 생성합니다.<br><br><rules>챔피언에게 피해를 입으면 아이템 재사용 대기시간이 초기화됩니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "stacks": 0,
@@ -7473,7 +7697,7 @@ export const item = {
                 "full": "223814.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 384,
                 "w": 48,
                 "h": 48
@@ -7494,7 +7718,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 375,
@@ -7516,7 +7741,7 @@ export const item = {
                 "full": "224004.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 384,
                 "w": 48,
                 "h": 48
@@ -7536,7 +7761,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 55
@@ -7544,14 +7770,14 @@ export const item = {
         },
         "224005": {
             "name": "제국의 명령",
-            "description": "<mainText><stats>주문력 <attention>60</attention><br>스킬 가속 <attention>35</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><passive>합동 공격</passive><br>적 챔피언을 <status>둔화</status> 또는 <status>이동 불가</status> 상태로 만들면 표식을 남깁니다. 표식이 남겨진 적 챔피언에게는 아군 챔피언이 추가 피해를 입히며, 자신과 아군의 이동 속도가 상승합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>60</attention><br>스킬 가속 <attention>35</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><passive>합동 공격</passive> 대상별: (0초)<br>적 챔피언을 <keyword>둔화</keyword> 또는 <keyword>이동 불가</keyword> 상태로 만들면 5초 동안 표식을 남깁니다. 아군 챔피언이 대상에게 피해를 입히면 표식이 폭발하며 <magicDamage>현재 체력의 10%에 해당하는 마법 피해</magicDamage>를 입히고 2초 동안 자신과 아군의 <speed>이동 속도가 25%</speed> 상승합니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "224005.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 384,
                 "w": 48,
                 "h": 48
@@ -7573,7 +7799,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 60
@@ -7581,14 +7808,14 @@ export const item = {
         },
         "224401": {
             "name": "대자연의 힘",
-            "description": "<mainText><stats>체력 <attention>400</attention><br>마법 저항력 <attention>50</attention><br>이동 속도 <attention>5%</attention></stats><br><br><passive>흡입</passive><br>적 챔피언에게 <magicDamage>마법 피해</magicDamage>를 입으면 <attention>굳건함</attention> 중첩을 1회 얻습니다. 적의 <status>이동 불가</status> 효과를 받으면 추가로 중첩을 얻습니다.<br><li><passive>분산</passive><br><attention>굳건함</attention>이 최대로 중첩되면 마법 저항력과 이동 속도가 증가합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>400</attention><br>마법 저항력 <attention>50</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>흡입</passive><br>적 챔피언에게 <magicDamage>마법 피해</magicDamage>를 입으면 7초 동안 <attention>굳건함</attention> 중첩을 1회 얻습니다. (최대 10중첩) 적의 <status>이동 불가</status> 효과를 받으면 추가로 중첩을 2회 얻습니다.<br><br><passive>분산</passive><br><attention>굳건함</attention>이 10회 중첩되면 <scaleMR>마법 저항력이 50</scaleMR>, 이동 속도가 14% 증가합니다.<br><br><rules>같은 스킬로는 <attention>굳건함</attention> 중첩을 1초에 1회만 얻을 수 있습니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "224401.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 384,
                 "w": 48,
                 "h": 48
@@ -7609,24 +7836,25 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 50,
                 "FlatHPPoolMod": 400,
-                "PercentMovementSpeedMod": 0.05
+                "PercentMovementSpeedMod": 0.04
             }
         },
         "224403": {
             "name": "황금 뒤집개",
-            "description": "<mainText><stats>공격력 <attention>100</attention><br>주문력 <attention>150</attention><br>공격 속도 <attention>70%</attention><br>치명타 확률 <attention>35%</attention><br>체력 <attention>350</attention><br>방어력 <attention>40</attention><br>마법 저항력 <attention>40</attention><br>마나 <attention>350</attention><br>스킬 가속 <attention>20</attention><br>이동 속도 <attention>10%</attention><br>생명력 흡수 <attention>15%</attention><br>기본 체력 재생 <attention>200%</attention><br>기본 마나 재생 <attention>200%</attention></stats><br><br><passive>무언가 하고 있음</passive><br>영구히 불타오릅니다!</mainText>",
+            "description": "<mainText><stats>공격력 <attention>90</attention><br>주문력 <attention>125</attention><br>공격 속도 <attention>60%</attention><br>치명타 확률 <attention>25%</attention><br>체력 <attention>350</attention><br>방어력 <attention>40</attention><br>마법 저항력 <attention>40</attention><br>마나 <attention>350</attention><br>스킬 가속 <attention>20</attention><br>이동 속도 <attention>10%</attention><br>생명력 흡수 <attention>15%</attention><br>기본 체력 재생 <attention>200%</attention><br>기본 마나 재생 <attention>200%</attention></stats><br><br><passive>무언가 하고 있음</passive><br>영구히 불타오릅니다!<br><br><b>증강 필요: <gold>퀘스트: 우르프의 챔피언</gold></b><br><br><flavorText>''무슨 쓸모가 있을 텐데...<br>거절한다, 이건 만능이라고!''</flavorText></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "224403.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 384,
                 "w": 48,
                 "h": 48
@@ -7657,31 +7885,32 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 40,
                 "FlatMPPoolMod": 350,
                 "FlatHPPoolMod": 350,
-                "FlatMagicDamageMod": 150,
+                "FlatMagicDamageMod": 125,
                 "FlatArmorMod": 40,
-                "FlatCritChanceMod": 0.35,
-                "FlatPhysicalDamageMod": 100,
-                "PercentAttackSpeedMod": 0.7,
+                "FlatCritChanceMod": 0.25,
+                "FlatPhysicalDamageMod": 90,
+                "PercentAttackSpeedMod": 0.6,
                 "PercentLifeStealMod": 0.15,
                 "PercentMovementSpeedMod": 0.1
             }
         },
         "224628": {
             "name": "지평선의 초점",
-            "description": "<mainText><stats>주문력 <attention>80</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>초강력 사격</passive><br>600 거리보다 멀리에서 대상을 지정하지 않는 스킬로 챔피언에게 피해를 입히거나 <status>둔화 또는 이동 불가</status> 상태로 만들면 대상의 <keywordStealth>위치를 드러내고</keywordStealth> 자신이 입히는 피해를 증가시킵니다.<br><br><rules><passive>초강력 사격</passive>을 발동하는 스킬 역시 피해량이 증가합니다. 소환물이나 이동 불가 효과가 없는 덫은 이 효과를 발동시키지 않습니다. 범위 지정 스킬은 처음에만 이 효과를 발동시키고, 거리는 사용 시 위치 기준으로 계산됩니다. </rules></mainText>",
+            "description": "<mainText><stats>주문력 <attention>80</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>초강력 사격</passive><br>600 거리 이상에서 스킬로 챔피언에게 피해를 입히면 6초 동안 대상의 <keywordStealth>위치를 드러냅니다</keywordStealth>. <keywordStealth>위치가 드러난</keywordStealth> 적에게 초강력 사격으로 입히는 피해량이 <buffedstat>15%</buffedstat> 증가합니다.<br><br><passive>집중</passive> (0초)<br><passive>초강력 사격</passive> 발동 시 3초 동안 대상으로부터 1400의 사거리 내에 있는 다른 모든 적 챔피언의 <keywordStealth>위치를 드러냅니다</keywordStealth>.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "224628.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 384,
                 "w": 48,
                 "h": 48
@@ -7701,7 +7930,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 80
@@ -7709,15 +7939,15 @@ export const item = {
         },
         "224629": {
             "name": "우주의 추진력",
-            "description": "<mainText><stats>체력 <attention>250</attention><br>주문력 <attention>65</attention><br>스킬 가속 <attention>35</attention><br>이동 속도 <attention>5%</attention></stats><br><br><passive>마법의 춤</passive><br>적 챔피언에게 스킬 피해를 입히면 2초 동안 <speed>이동 속도가 0</speed> 증가합니다. </mainText>",
+            "description": "<mainText><stats>체력 <attention>350</attention><br>주문력 <attention>65</attention><br>스킬 가속 <attention>35</attention><br>이동 속도 <attention>5%</attention></stats><br><br><passive>마법의 춤</passive><br>챔피언에게 <magicDamage>마법 피해</magicDamage> 또는 <trueDamage>고정 피해</trueDamage>를 입히면 2초 동안 <speed>이동 속도</speed>가 증가합니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "224629.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 384,
-                "y": 384,
+                "x": 0,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -7738,28 +7968,26 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 250,
+                "FlatHPPoolMod": 350,
                 "FlatMagicDamageMod": 65,
                 "PercentMovementSpeedMod": 0.05
             }
         },
         "224633": {
             "name": "균열 생성기",
-            "description": "<mainText><stats>주문력 <attention>60</attention><br>체력 <attention>350</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>공허의 부패</passive><br>적 챔피언과 전투 중 매초 추가 피해를 입힙니다. 피해량이 최대가 되면 모든 피해 흡혈을 얻습니다.<br><br><passive>공허의 마력</passive><br>추가 체력의 일정 비율만큼 주문력이 상승합니다. </mainText>",
+            "description": "<mainText><stats>주문력 <attention>60</attention><br>체력 <attention>350</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>공허의 부패</passive><br>적 챔피언과 전투 중 매초 2%의 추가 피해(최대 10%)를 입힙니다. 피해량이 최대가 되면 <omnivamp>모든 피해 흡혈</omnivamp>을 얻습니다.<br><br><passive>공허의 마력</passive><br><scaleHealth>추가 체력</scaleHealth>의 2%만큼 <scaleAP>주문력</scaleAP>이 상승합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227009"
-            ],
             "image": {
                 "full": "224633.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 432,
-                "y": 384,
+                "x": 48,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -7780,7 +8008,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 350,
@@ -7789,17 +8018,14 @@ export const item = {
         },
         "224636": {
             "name": "밤의 수확자",
-            "description": "<mainText><stats>주문력 <attention>90</attention><br>체력 <attention>400</attention><br>스킬 가속 <buffedStat>40</buffedStat></stats><br><br><passive>영혼 찢기</passive><br>기본 공격이나 스킬로 챔피언에게 피해를 입히면 추가 마법 피해를 입히고 이동 속도가 상승합니다.<br></mainText>",
+            "description": "<mainText><stats>주문력 <attention>90</attention><br>체력 <attention>400</attention><br>스킬 가속 <buffedStat>40</buffedStat></stats><br><br><passive>영혼 찢기</passive><br>기본 공격이나 스킬로 챔피언에게 피해를 입히면 <magicDamage>0의 마법 피해</magicDamage>를 추가로 입히고 1.5초 동안 <speed>이동 속도가 25%</speed> 상승합니다. <buffedstat>(챔피언당 15(0초))</buffedstat><br><br><rules>다른 챔피언에게 피해를 입히면 이동 속도 추가 효과의 지속시간이 늘어납니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227010"
-            ],
             "image": {
                 "full": "224636.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 0,
+                "x": 96,
                 "y": 432,
                 "w": 48,
                 "h": 48
@@ -7822,7 +8048,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 400,
@@ -7831,14 +8058,14 @@ export const item = {
         },
         "224637": {
             "name": "악마의 포옹",
-            "description": "<mainText><stats>주문력 <nerfedStat>45</nerfedStat><br>체력 <attention>350</attention></stats><br><br><passive>아자카나의 응시</passive><br>스킬 피해를 입히면 적을 불태워 매초 최대 체력에 비례한 마법 피해를 입힙니다.<br><br><passive>어둠의 계약</passive> <br><scaleHealth>추가 체력</scaleHealth>만큼 <scaleAP>주문력</scaleAP>을 얻습니다. </mainText>",
+            "description": "<mainText><stats>주문력 <nerfedStat>45</nerfedStat><br>체력 <attention>350</attention></stats><br><br><passive>아자카나의 응시</passive><br>스킬 피해를 입히면 4초 동안 적을 불태워 매초 {{ Item_Melee_Ranged_Split }}의 <magicDamage>최대 체력에 비례한 마법 피해</magicDamage>를 입힙니다. <br><br><passive>어둠의 계약</passive><br><scaleHealth>추가 체력</scaleHealth>의 2%만큼 <scaleAP>주문력</scaleAP>을 얻습니다. <br><br><rules><passive>아자카나의 응시</passive>가 몬스터를 상대로는 최대 40의 피해를 입힙니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "224637.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 432,
                 "w": 48,
                 "h": 48
@@ -7858,7 +8085,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 350,
@@ -7867,17 +8095,14 @@ export const item = {
         },
         "224644": {
             "name": "부서진 여왕의 왕관",
-            "description": "<mainText><stats>주문력 <attention>80</attention><br>체력 <attention>250</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>방호</passive><br><keywordMajor>보호</keywordMajor>를 받아 챔피언으로부터 받는 피해가 감소합니다. <keywordMajor>보호</keywordMajor> 효과는 챔피언에게 피해를 받은 후 2.5초 동안 지속됩니다. <br></mainText>",
+            "description": "<mainText><stats>주문력 <attention>80</attention><br>체력 <attention>250</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>방호</passive><br><keywordMajor>보호</keywordMajor>를 받아 챔피언으로부터 받는 피해가 40% 감소합니다. <keywordMajor>보호</keywordMajor> 효과는 챔피언에게 피해를 받은 후 2.5초 동안 지속됩니다. (0초) <br><br><rules>챔피언에게 피해를 입으면 아이템 재사용 대기시간이 초기화됩니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227024"
-            ],
             "image": {
                 "full": "224644.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 432,
                 "w": 48,
                 "h": 48
@@ -7900,7 +8125,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 600,
@@ -7910,14 +8136,14 @@ export const item = {
         },
         "224645": {
             "name": "그림자불꽃",
-            "description": "<mainText><stats>주문력 <attention>100</attention><br>마법 관통력 <attention>10</attention></stats><br><br><passive>잿덩이꽃</passive><br>체력이 낮은 적에게 <magicDamage>마법 피해</magicDamage>와 <trueDamage>고정 피해</trueDamage>가 치명타로 적용됩니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>100</attention><br>마법 관통력 <attention>10</attention></stats><br><br><passive>잿덩이꽃</passive><br>체력이 35% 아래인 적에게 <magicDamage>마법 피해</magicDamage>와 <trueDamage>고정 피해</trueDamage>가 치명타로 적용되어 20%의 추가 피해를 입힙니다. 이미 치명타가 적용된 공격이라면 피해가 20% 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "224645.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 432,
                 "w": 48,
                 "h": 48
@@ -7937,7 +8163,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 100
@@ -7945,14 +8172,14 @@ export const item = {
         },
         "224646": {
             "name": "폭풍 쇄도",
-            "description": "<mainText><stats>주문력 <attention>80</attention><br>마법 관통력 <attention>10</attention><br>이동 속도 <attention>8%</attention></stats><br><br><passive>폭풍 약탈자</passive><br>짧은 지속시간 내로 챔피언 최대 체력의 35%에 해당하는 피해를 입히면 <passive>질풍</passive>을 적용하고 이동 속도가 증가합니다.<br><br><passive>질풍</passive><br>몇 초 후에 대상을 가격하여 마법 피해를 입힙니다. 가격 전에 대상이 사망할 경우 즉시 폭발해 넓은 범위에 피해를 입히고 추가 골드를 획득합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>80</attention><br>마법 관통력 <attention>15</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>폭풍 약탈자</passive> (0초)<br>2.5초 내로 챔피언 최대 체력의 25%에 해당하는 피해를 입히면 <passive>질풍</passive>을 적용하고 1.5초 동안 <speed>이동 속도가 25%</speed> 증가합니다.<br><br><passive>질풍</passive><br>2초 후에 <magicDamage>마법 피해</magicDamage>를 입힙니다. <passive>질풍</passive>이 발동하기 전에 대상이 사망할 경우 주변 적에게 피해를 입히고 <gold>30골드</gold>를 획득합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "224646.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 432,
                 "w": 48,
                 "h": 48
@@ -7974,11 +8201,12 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 80,
-                "PercentMovementSpeedMod": 0.08
+                "PercentMovementSpeedMod": 0.04
             }
         },
         "226035": {
@@ -7991,7 +8219,7 @@ export const item = {
                 "full": "226035.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 432,
                 "w": 48,
                 "h": 48
@@ -8014,7 +8242,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 40,
@@ -8029,7 +8258,7 @@ export const item = {
         },
         "226333": {
             "name": "죽음의 무도",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>스킬 가속 <attention>10</attention><br>방어력 <attention>40</attention></stats><br><br><passive>고통 무시</passive><br>자신이 받은 피해를 일정 시간에 걸쳐서 입습니다.<br><br><passive>반항</passive><br>챔피언 처치 관여 시 <passive>고통 무시</passive>의 지속 피해 효과가 사라지고 일정 시간 동안 체력을 회복합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>45</attention><br>스킬 가속 <attention>10</attention><br>방어력 <attention>50</attention></stats><br><br><passive>고통 무시</passive><br>자신이 받은 피해의 일정 비율만큼을 3초에 걸쳐서 입습니다.<br><br><passive>반항</passive><br>자신이 피해를 입힌 챔피언이 3초 안에 죽으면 <passive>고통 무시</passive>의 지속 피해 효과가 사라지고 2초에 걸쳐 <healing>체력</healing>을 회복합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "stacks": 0,
@@ -8037,7 +8266,7 @@ export const item = {
                 "full": "226333.png",
                 "sprite": "item1.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 432,
                 "w": 48,
                 "h": 48
@@ -8058,10 +8287,11 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatArmorMod": 40,
+                "FlatArmorMod": 50,
                 "FlatPhysicalDamageMod": 45
             }
         },
@@ -8072,82 +8302,6 @@ export const item = {
             "plaintext": "",
             "image": {
                 "full": "226609.png",
-                "sprite": "item1.png",
-                "group": "item",
-                "x": 336,
-                "y": 432,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 2500,
-                "purchasable": true,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "Health",
-                "Damage",
-                "CooldownReduction",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": true
-            },
-            "stats": {
-                "FlatHPPoolMod": 400,
-                "FlatPhysicalDamageMod": 45
-            }
-        },
-        "226610": {
-            "name": "갈라진 하늘",
-            "description": "<mainText><stats>공격력 <attention>40</attention><br>체력 <attention>350</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>라이트실드 타격</passive><br>챔피언에게 처음 기본 공격을 가할 때 치명타로 적용되고 체력을 회복합니다. <br><br><rules>초과된 회복량은 잠시 동안 추가 체력으로 전환됩니다.</rules></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "image": {
-                "full": "226610.png",
-                "sprite": "item1.png",
-                "group": "item",
-                "x": 384,
-                "y": 432,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 2500,
-                "purchasable": true,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "Health",
-                "Damage",
-                "CooldownReduction",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": true
-            },
-            "stats": {
-                "FlatHPPoolMod": 350,
-                "FlatPhysicalDamageMod": 40
-            }
-        },
-        "226616": {
-            "name": "흐르는 물의 지팡이",
-            "description": "<mainText><stats>주문력 <attention>30</attention><br>체력 회복 및 보호막 <attention>12%</attention><br>기본 마나 재생 <attention>125%</attention><br>이동 속도 <attention>10%</attention></stats><br><br><passive>급류</passive><br>다른 아군의 체력을 회복시키거나 보호막을 씌우면 주문력과 스킬 가속이 증가합니다.<br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "image": {
-                "full": "226616.png",
                 "sprite": "item1.png",
                 "group": "item",
                 "x": 432,
@@ -8162,8 +8316,8 @@ export const item = {
                 "sell": 1250
             },
             "tags": [
-                "SpellDamage",
-                "ManaRegen",
+                "Health",
+                "Damage",
                 "CooldownReduction",
                 "AbilityHaste"
             ],
@@ -8172,23 +8326,21 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 30,
-                "PercentMovementSpeedMod": 0.1
+                "FlatHPPoolMod": 400,
+                "FlatPhysicalDamageMod": 45
             }
         },
-        "226617": {
-            "name": "월석 재생기",
-            "description": "<mainText><stats>주문력 <attention>30</attention><br>체력 <attention>200</attention><br>스킬 가속 <attention>30</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><passive>별빛 은총</passive><br>아군을 상대로 체력을 회복시키거나 보호막을 씌우면 (자신을 제외하고) 가장 가까이 있는 아군 챔피언에게 연쇄 효과가 적용되며 기존 수치에 비례해 체력을 회복시키거나 피해를 흡수하는 보호막을 부여합니다.</mainText>",
+        "226610": {
+            "name": "갈라진 하늘",
+            "description": "<mainText><stats>공격력 <attention>40</attention><br>체력 <attention>350</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>라이트실드 타격</passive> 대상 하나당 (0초)<br>챔피언에게 처음 기본 공격을 가할 때 <attention>치명타</attention>로 적용되고 <healing>체력을 회복</healing>합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227021"
-            ],
             "image": {
-                "full": "226617.png",
+                "full": "226610.png",
                 "sprite": "item2.png",
                 "group": "item",
                 "x": 0,
@@ -8204,6 +8356,44 @@ export const item = {
             },
             "tags": [
                 "Health",
+                "Damage",
+                "CooldownReduction",
+                "AbilityHaste"
+            ],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": true,
+                "33": false
+            },
+            "stats": {
+                "FlatHPPoolMod": 350,
+                "FlatPhysicalDamageMod": 40
+            }
+        },
+        "226616": {
+            "name": "흐르는 물의 지팡이",
+            "description": "<mainText><stats>주문력 <attention>30</attention><br>체력 회복 및 보호막 <attention>12%</attention><br>기본 마나 재생 <attention>125%</attention><br>이동 속도 <attention>10%</attention></stats><br><br><passive>급류</passive><br>아군의 체력을 회복시키거나 보호막을 씌우면 4초 동안 자신과 대상의 <magicDamage>주문력이 0</magicDamage>, <speed>이동 속도가 0%</speed> 증가합니다.</mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "226616.png",
+                "sprite": "item2.png",
+                "group": "item",
+                "x": 48,
+                "y": 0,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 2500,
+                "purchasable": true,
+                "total": 2500,
+                "sell": 1250
+            },
+            "tags": [
                 "SpellDamage",
                 "ManaRegen",
                 "CooldownReduction",
@@ -8214,26 +8404,24 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 200,
-                "FlatMagicDamageMod": 30
+                "FlatMagicDamageMod": 30,
+                "PercentMovementSpeedMod": 0.1
             }
         },
-        "226620": {
-            "name": "헬리아의 메아리",
-            "description": "<mainText><stats>주문력 <attention>30</attention><br>체력 <attention>300</attention><br>스킬 가속 <attention>30</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><br><li><passive>영혼 흡수:</passive> 챔피언에게 피해를 입히면 <passive>영혼 파편</passive>을 얻습니다. 아군을 상대로 체력을 회복시키거나 보호막을 씌우면 모든 <passive>영혼 파편</passive>을 소모하여 체력을 회복하고 가장 가까운 적 챔피언에게 파편 하나당 마법 피해를 입힙니다.<br></mainText>",
+        "226617": {
+            "name": "월석 재생기",
+            "description": "<mainText><stats>주문력 <attention>30</attention><br>체력 <attention>200</attention><br>스킬 가속 <attention>30</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><passive>별빛 은총</passive><br>자신을 포함한 아군의 체력을 회복시키거나 보호막을 씌우면 다른 아군 챔피언에게 연쇄 효과가 적용되며 기존 수치의 <healing>20%</healing>만큼 체력을 회복시키거나 <shield>25%</shield>만큼 피해를 흡수하는 보호막을 씌웁니다.<br><br><rules>레벨 비례 효과는 아군의 레벨에 따라 상승합니다.<br>근처에 아군이 없으면 같은 대상을 상대로 기존 수치의 <healing>20%</healing>만큼 회복시키거나 <shield>25%</shield>만큼 피해를 흡수하는 보호막을 추가로 부여합니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227033"
-            ],
             "image": {
-                "full": "226620.png",
+                "full": "226617.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 48,
+                "x": 96,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -8256,7 +8444,48 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
+            },
+            "stats": {
+                "FlatHPPoolMod": 200,
+                "FlatMagicDamageMod": 30
+            }
+        },
+        "226620": {
+            "name": "헬리아의 메아리",
+            "description": "<mainText><stats>주문력 <attention>30</attention><br>체력 <attention>300</attention><br>스킬 가속 <attention>30</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><passive>영혼 흡수</passive><br>챔피언에게 피해를 입히면 <passive>영혼 파편</passive>을 최대 3개까지 얻습니다. <br>아군을 상대로 체력을 회복시키거나 보호막을 씌우면 모든 <passive>영혼 파편</passive>을 소모하여 <healing>체력</healing>을 회복하고 가장 가까운 적 챔피언에게 파편 하나당 <magicDamage>마법 피해</magicDamage>를 입힙니다.</mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "226620.png",
+                "sprite": "item2.png",
+                "group": "item",
+                "x": 144,
+                "y": 0,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 2500,
+                "purchasable": true,
+                "total": 2500,
+                "sell": 1250
+            },
+            "tags": [
+                "Health",
+                "SpellDamage",
+                "ManaRegen",
+                "CooldownReduction",
+                "AbilityHaste"
+            ],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300,
@@ -8265,14 +8494,14 @@ export const item = {
         },
         "226621": {
             "name": "새벽심장",
-            "description": "<mainText><stats>주문력 <attention>40</attention><br>체력 회복 및 보호막 <attention>12%</attention><br>기본 마나 재생 <attention>100%</attention></stats><br><br><passive>태초의 빛</passive><br>기본 마나 재생 100%당 <healing>체력 회복 및 보호막 효과가 3%</healing>, <scaleAP>주문력이 5</scaleAP> 증가합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>60</attention><br>체력 회복 및 보호막 <attention>16%</attention><br>기본 마나 재생 <attention>100%</attention></stats><br><br><passive>태초의 빛</passive><br>기본 마나 재생 100%당 <healing>체력 회복 및 보호막 효과가 2%</healing>, <scaleAP>주문력이 10</scaleAP> 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "226621.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -8292,26 +8521,24 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 40
+                "FlatMagicDamageMod": 60
             }
         },
         "226630": {
             "name": "선혈포식자",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>체력 <attention>400</attention><br>스킬 가속 <attention>10</attention><br>모든 피해 흡혈 <attention>8%</attention></stats><br><br>선혈포식자<br><br><active>사용 시 -</active> <active>갈망의 가르기:</active> 주변 적에게 피해를 입힙니다. 챔피언을 맞힐 때마다 체력을 회복합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>45</attention><br>체력 <attention>400</attention><br>스킬 가속 <attention>10</attention><br>모든 피해 흡혈 <attention>8%</attention></stats><br><br><br><br><active>사용 시 -</active> <active>갈망의 가르기:</active> 주변 적에게 피해를 입힙니다. 챔피언을 맞힐 때마다 체력을 회복합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "inStore": false,
-            "into": [
-                "227015"
-            ],
             "image": {
                 "full": "226630.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -8336,7 +8563,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 400,
@@ -8345,17 +8573,14 @@ export const item = {
         },
         "226631": {
             "name": "발걸음 분쇄기",
-            "description": "<mainText><stats>공격력 <attention>50</attention><br>공격 속도 <attention>15%</attention><br>체력 <attention>375</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 주변 적들에게 물리 피해를 입힙니다.<br><br><passive>담금질</passive><br><physicalDamage>물리 피해</physicalDamage>를 입히면 이동 속도가 상승합니다.<br><br><active>활성화</active><br><active>파괴의 충격파</active><br>물리 피해를 입히며 주변 적을 <status>둔화</status>시키고 챔피언 하나당 이동 속도를 얻습니다. 스킬을 시전하는 동안 이동할 수 있습니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>50</attention><br>공격 속도 <attention>15%</attention><br>체력 <attention>375</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 주변 적들에게 <physicalDamage>물리 피해</physicalDamage>를 입힙니다.<active>파괴의 충격파</active> (0초)<br><physicalDamage>물리 피해</physicalDamage>를 입히고 주변 적을 40% <status>둔화</status>시킵니다.<br>적중한 챔피언 하나당 3초 동안 <speed>이동 속도가 40% 증가했다가 점차 감소</speed>합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227016"
-            ],
             "image": {
                 "full": "226631.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -8378,7 +8603,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 375,
@@ -8388,17 +8614,14 @@ export const item = {
         },
         "226632": {
             "name": "신성한 파괴자",
-            "description": "<mainText><stats>공격력 <nerfedStat>30</nerfedStat><br>체력 <nerfedStat>200</nerfedStat><br>스킬 가속 <attention>20</attention></stats><br><br><passive>주문 검</passive><br>스킬을 사용하고 나면 다음 기본 공격 시 추가 피해(<OnHit>적중 시</OnHit> )를 입힙니다. 대상이 챔피언일 경우 체력을 회복합니다.<br></mainText>",
+            "description": "<mainText><stats>공격력 <nerfedStat>30</nerfedStat><br>체력 <nerfedStat>200</nerfedStat><br>스킬 가속 <attention>20</attention></stats><br><br><passive>주문 검</passive><br>스킬을 사용하고 나면 다음 기본 공격 시 <physicalDamage>대상 최대 체력의 0+{{ Item_Melee_Ranged_Split_B }}에 해당하는 물리 피해</physicalDamage>를 추가로 입힙니다. {{ Item_Cooldown }} 대상이 챔피언일 경우 <healing>감소 전 피해량의 55%</healing>만큼 체력을 회복합니다.<br><br><rules><passive>주문 검</passive>은 유닛에게 최소 0의 피해를 입히고 몬스터에게는 최대 0의 피해를 입힙니다. {{ Item_Melee_Ranged_Rules }}</rules></mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227017"
-            ],
             "image": {
                 "full": "226632.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -8423,7 +8646,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 200,
@@ -8432,17 +8656,14 @@ export const item = {
         },
         "226653": {
             "name": "리안드리의 고통",
-            "description": "<mainText><stats>주문력 <attention>60</attention><br>체력 <attention>300</attention></stats><br><br><passive>고통</passive><br>스킬로 피해를 입히면 적을 불태웁니다.<br><br><passive>고난</passive><br>적 챔피언과 전투 중 매초 추가 피해를 입힙니다. </mainText>",
+            "description": "<mainText><stats>주문력 <attention>50</attention><br>체력 <attention>250</attention></stats><br><br><passive>고통</passive><br>스킬 공격이 적을 불태워 3초 동안 매초 <magicDamage>최대 체력의 2%에 해당하는 마법 피해</magicDamage>를 입힙니다.<br><br><passive>고난</passive><br>적 챔피언과 전투 중 매초 2%의 추가 피해를 입힙니다. (최대 6%)</mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227012"
-            ],
             "image": {
                 "full": "226653.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -8462,26 +8683,24 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 300,
-                "FlatMagicDamageMod": 60
+                "FlatHPPoolMod": 250,
+                "FlatMagicDamageMod": 50
             }
         },
         "226655": {
             "name": "루덴의 동반자",
-            "description": "<mainText><stats>주문력 <attention>80</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>발사</passive><br>스킬로 적에게 피해를 입히면 모든 충전 중첩을 소모하여, 소모한 충전 하나당 대상과 주변 다른 대상 한 명에게 추가 마법 피해를 입힙니다. 사거리 안에 다른 대상이 없을 경우 첫 번째 대상에게 남은 사격 충전 중첩만큼 피해를 반복해서 입힙니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>85</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>발사</passive> (0초)<br>스킬로 적에게 피해를 입히면 총알을 6발 발사하여 대상과 주변 적에게 <magicDamage>추가 마법 피해</magicDamage>를 입힙니다. 첫 번째 대상에게 남은 발을 발사하여 35%의 피해를 입힙니다.<br></mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227013"
-            ],
             "image": {
                 "full": "226655.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -8503,11 +8722,12 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 600,
-                "FlatMagicDamageMod": 80
+                "FlatMagicDamageMod": 85
             }
         },
         "226656": {
@@ -8515,15 +8735,12 @@ export const item = {
             "description": "<mainText><stats>주문력 <buffedStat>80</buffedStat><br>체력 <buffedStat>500</buffedStat><br>마나 <attention>600</attention><br>스킬 가속 <attention>20</attention></stats><br><br><br><br><active>활성화</active> (0초)<br><active>빙결</active><br> 원뿔 범위 내의 적들에게 피해를 입히고 맞은 적들을 <status>둔화</status>시킵니다. 범위 중앙의 적들은 <status>속박</status>됩니다.</mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227014"
-            ],
             "image": {
                 "full": "226656.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 384,
-                "y": 0,
+                "x": 0,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -8547,7 +8764,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 600,
@@ -8560,15 +8778,12 @@ export const item = {
             "description": "<mainText><stats>주문력 <attention>60</attention><br>체력 <attention>350</attention><br>마나 <attention>350</attention></stats><br><br><passive>불멸의 시간</passive><br><buffedStat>2번의 전투 라운드 후</buffedStat> <magicDamage>주문력이 0</magicDamage>, <scaleHealth>체력이 0</scaleHealth>, <scaleMana>마나가 0</scaleMana> 추가로 증가하고 레벨이 오릅니다.<br><br><passive>영원</passive><br>챔피언에게 피해를 받으면 감소 전 피해량의 7%에 해당하는 <scaleMana>마나</scaleMana>를 회복합니다. 스킬 사용 시 사용한 <scaleMana>마나</scaleMana>의 25%에 해당하는 체력을 회복합니다. 스킬 사용 1회당 초당 최대 <scaleHealth>20의 체력</scaleHealth>을 회복합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227028"
-            ],
             "image": {
                 "full": "226657.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 432,
-                "y": 0,
+                "x": 48,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -8590,7 +8805,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 350,
@@ -8600,17 +8816,14 @@ export const item = {
         },
         "226662": {
             "name": "얼어붙은 건틀릿",
-            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>45</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>주문 검</passive><br>스킬을 사용하고 나면 다음 기본 공격 시 추가 피해를 입히고 2초 동안 서리 영역을 생성합니다. 서리 영역을 지나는 적들은 <status>둔화</status>됩니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>45</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>주문 검</passive> (0초)<br>스킬을 사용하고 나면 다음 기본 공격 시 <physicalDamage>추가 물리 피해</physicalDamage>(<OnHit>적중 시</OnHit> )를 입히고 <status>둔화</status>시키는 서리 영역을 2초 동안 생성합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227005"
-            ],
             "image": {
                 "full": "226662.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 0,
+                "x": 96,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -8634,7 +8847,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300,
@@ -8643,14 +8857,14 @@ export const item = {
         },
         "226664": {
             "name": "공허한 광휘",
-            "description": "<mainText><stats>체력 <attention>450</attention><br>마법 저항력 <attention>40</attention><br>스킬 가속 <attention>10</attention><br>기본 체력 재생 <attention>100%</attention></stats><br><br><passive>불사르기</passive><br>피해를 받거나 입히면 주변 적들에게 마법 피해를 입힙니다.<br><br><passive>황폐</passive><br>적을 처치하면 주변에 마법 피해를 입힙니다.<br><br></mainText>",
+            "description": "<mainText><stats>체력 <attention>450</attention><br>마법 저항력 <attention>40</attention><br>스킬 가속 <attention>10</attention><br>기본 체력 재생 <attention>100%</attention></stats><br><br><passive>불사르기</passive><br>피해를 받거나 입히면 주변 적들에게 3초 동안 매초 <magicDamage>마법 피해</magicDamage>를 입힙니다. <br><br><passive>황폐</passive><br>적을 처치하면 주변에 <magicDamage>마법 피해</magicDamage>를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "226664.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -8674,7 +8888,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 40,
@@ -8683,17 +8898,14 @@ export const item = {
         },
         "226665": {
             "name": "해신 작쇼",
-            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>35</attention><br>마법 저항력 <attention>35</attention></stats><br><br><passive>공허 태생의 저항력</passive><br>챔피언과 전투를 벌이는 동안 강화되어 전투가 끝날 때까지 추가 <scaleArmor>방어력</scaleArmor> 및 <scaleMR>마법 저항력</scaleMR>이 증가합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>35</attention><br>마법 저항력 <attention>35</attention></stats><br><br><passive>공허 태생의 저항력</passive><br>챔피언과 5초 이상 전투를 벌이면 전투가 끝날 때까지 추가 <scaleArmor>방어력</scaleArmor> 및 <scaleMR>마법 저항력</scaleMR>이 30% 증가합니다.<br><br></mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227026"
-            ],
             "image": {
                 "full": "226665.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -8715,7 +8927,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 35,
@@ -8725,17 +8938,14 @@ export const item = {
         },
         "226667": {
             "name": "광휘의 미덕",
-            "description": "<mainText><stats>체력 <attention>350</attention><br>방어력 <attention>30</attention><br>마법 저항력 <attention>30</attention><br>스킬 가속 <attention>10</attention></stats><br><br><br><li><passive>인도하는 빛:</passive> 궁극기를 사용하면 초월하여 최대 체력이 증가합니다. 초월 상태에서 자신과 아군이 서서히 체력을 회복합니다.<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 체력</mainText>",
+            "description": "<mainText><stats>체력 <attention>350</attention><br>방어력 <attention>30</attention><br>마법 저항력 <attention>30</attention><br>스킬 가속 <attention>10</attention></stats><br><br><br><li><passive>인도하는 빛:</passive> 궁극기를 사용하면 초월하여 9초 동안 최대 체력이 12.5% 증가합니다. 초월 상태에서 1200의 사거리 내의 자신과 아군이 지속시간 동안 최대 체력의 <buffedStat>16%</buffedStat>만큼 회복합니다. <buffedStat>(45(0초))</buffedStat><br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 체력 <attention>75</attention></mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227027"
-            ],
             "image": {
                 "full": "226667.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -8759,7 +8969,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 30,
@@ -8772,14 +8983,11 @@ export const item = {
             "description": "<mainText><stats>공격력 <buffedStat>60</buffedStat><br>공격 속도 <buffedStat>40%</buffedStat><br>치명타 확률 <attention>20%</attention><br>이동 속도 <attention>7%</attention></stats><br><br><br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 공격력 <attention>5</attention>.<br><br><rules>미사일의 최대 피해는 체력이 25% 이하인 적에게 적용됩니다.<br>폭우 돌진으로 지형은 통과할 수 없습니다.</rules><br><br><active>사용 시 -</active> <active>폭우:</active> 지정 방향으로 돌진하며 착지 지점 주변 체력이 가장 낮은 적에게 발사체 3개를 날려 물리 피해를 입힙니다. 체력이 낮을수록 피해량이 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227006"
-            ],
             "image": {
                 "full": "226671.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -8802,7 +9010,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.2,
@@ -8813,14 +9022,14 @@ export const item = {
         },
         "226672": {
             "name": "크라켄 학살자",
-            "description": "<mainText><stats>공격력 <attention>30</attention><br>공격 속도 <attention>35%</attention><br>이동 속도 <attention>7%</attention></stats><br><br><br><li><passive>벼락:</passive> 세 번째 기본 공격을 가할 때마다 적중 시 추가 물리 피해를 입힙니다. 같은 대상에게 반복해서 적중하면 입히는 피해량이 증가합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>30</attention><br>공격 속도 <attention>35%</attention><br>이동 속도 <attention>7%</attention></stats><br><br><passive>벼락</passive><br>세 번째 기본 공격마다 <physicalDamage>추가 물리 피해</physicalDamage>(<OnHit>적중 시</OnHit> )를 입힙니다. 잃은 체력에 따라 피해량이 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "226672.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -8842,7 +9051,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 30,
@@ -8852,14 +9062,14 @@ export const item = {
         },
         "226673": {
             "name": "불멸의 철갑궁",
-            "description": "<mainText><stats>공격력 <attention>40</attention><br>치명타 확률 <attention>20%</attention><br>생명력 흡수 <attention>10%</attention></stats><br><br><passive>생명선</passive><br>피해를 받아 체력이 30% 아래가 될 경우 피해를 흡수하는 보호막을 얻습니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>40</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>생명선</passive> (0초)<br>체력이 30% 밑으로 떨어질 만큼 피해를 입으면 3초 동안 <shield>일정 피해를 흡수하는 보호막</shield>을 얻습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "226673.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -8879,27 +9089,24 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatCritChanceMod": 0.2,
-                "FlatPhysicalDamageMod": 40,
-                "PercentLifeStealMod": 0.1
+                "FlatCritChanceMod": 0.25,
+                "FlatPhysicalDamageMod": 40
             }
         },
         "226675": {
             "name": "나보리 명멸검",
-            "description": "<mainText><stats>공격 속도 <attention>35%</attention><br>치명타 확률 <attention>25%</attention><br>이동 속도 <attention>7%</attention></stats><br><br><passive>깨달음</passive><br>기본 공격 시 궁극기 이외의 스킬의 재사용 대기시간이 감소합니다.</mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>35%</attention><br>치명타 확률 <attention>25%</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>깨달음</passive><br>기본 공격 시 궁극기 이외의 스킬의 남은 재사용 대기시간이 <attention>15%</attention> 감소합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227032"
-            ],
             "image": {
                 "full": "226675.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -8920,12 +9127,13 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
                 "PercentAttackSpeedMod": 0.35,
-                "PercentMovementSpeedMod": 0.07
+                "PercentMovementSpeedMod": 0.04
             },
             "effect": {
                 "Effect1Amount": "0.5",
@@ -8935,15 +9143,15 @@ export const item = {
         },
         "226676": {
             "name": "징수의 총",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>치명타 확률 <attention>25%</attention><br>물리 관통력 <attention>18</attention></stats><br><br><passive>죽음과 세금</passive><br>적 챔피언에게 피해를 입혀 체력이 5% 아래가 되면 처형합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>45</attention><br>치명타 확률 <attention>25%</attention><br>물리 관통력 <attention>12</attention></stats><br><br><passive>죽음과 세금</passive><br>적 챔피언에게 피해를 입혀 체력이 5% 아래가 되면 처형합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "226676.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 384,
-                "y": 48,
+                "x": 0,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
@@ -8963,7 +9171,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
@@ -8972,18 +9181,15 @@ export const item = {
         },
         "226691": {
             "name": "드락사르의 황혼검",
-            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <buffedStat>22</buffedStat><br>스킬 가속 <attention>15</attention></stats><br><br><br><li><passive>밤의 추적자:</passive> 대상이 잃은 체력에 비례해 스킬 피해량이 최대 일정 비율까지 증가합니다. 자신이 피해를 입힌 챔피언이 3초 안에 죽으면 1.5초 동안 구조물이 아닌 대상으로부터 <keywordStealth>대상으로 지정할 수 없는 상태</keywordStealth>가 됩니다. (10(0초))<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 스킬 가속 및 이동 속도.<br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <buffedStat>22</buffedStat><br>스킬 가속 <attention>15</attention></stats><br><br><br><li><passive>밤의 추적자:</passive> 대상이 잃은 체력에 비례해 스킬 피해량이 최대 25%까지 증가합니다. 자신이 피해를 입힌 챔피언이 3초 안에 죽으면 1.5초 동안 구조물이 아닌 대상으로부터 <keywordStealth>대상으로 지정할 수 없는 상태</keywordStealth>가 됩니다. 이 효과는 자신의 다음 행동까지 유지됩니다. (10(0초))<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 스킬 가속 <attention>5</attention> 및 이동 속도 <attention>5</attention><br></mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227002"
-            ],
             "image": {
                 "full": "226691.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 432,
-                "y": 48,
+                "x": 48,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
@@ -9007,7 +9213,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 60
@@ -9015,17 +9222,14 @@ export const item = {
         },
         "226692": {
             "name": "월식",
-            "description": "<mainText><stats>공격력 <attention>60</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>늘 떠오르는 달</passive><br>2초 내에 한 챔피언에게 별개의 기본 공격이나 스킬로 2회 공격하면 피해를 추가로 입히고 이동 속도가 상승하며 일정 피해를 흡수하는 보호막을 얻습니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>50</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>늘 떠오르는 달</passive> (0초)<br>2초 내에 한 챔피언에게 별개의 기본 공격이나 스킬로 2회 공격하면 2초 동안 <shield>일정 피해를 흡수하는 보호막</shield>을 얻습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
-            "into": [
-                "227001"
-            ],
             "image": {
                 "full": "226692.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 0,
+                "x": 96,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -9046,22 +9250,23 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatPhysicalDamageMod": 60
+                "FlatPhysicalDamageMod": 50
             }
         },
         "226693": {
             "name": "자객의 발톱",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>물리 관통력 <buffedStat>22</buffedStat><br>스킬 가속 <attention>15</attention></stats><br><br><br><br><li><passive>모래 공습:</passive> 돌진이나 순간이동 후 또는 은신에서 벗어난 후 챔피언에게 기본 공격 시 물리 피해를 추가로 입힙니다. 또한 근접 챔피언의 경우 대상을 <status>둔화</status>시킵니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>55</attention><br>물리 관통력 <buffedStat>22</buffedStat><br>스킬 가속 <attention>15</attention></stats><br><br><br><br><li><passive>모래 공습:</passive> 돌진이나 순간이동 후 또는 은신에서 벗어난 후 챔피언에게 기본 공격 시 <physicalDamage>{{ Item_Melee_Ranged_Split }}의 물리 피해</physicalDamage>(3{{ Item_Cooldown }})를 추가로 입힙니다. 또한 근접 챔피언의 경우 대상을 0.5초 동안 99% <status>둔화</status>시킵니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "226693.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 48,
+                "x": 144,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -9083,7 +9288,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 55
@@ -9098,7 +9304,7 @@ export const item = {
                 "full": "226694.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 96,
+                "x": 192,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -9120,7 +9326,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 40
@@ -9128,14 +9335,14 @@ export const item = {
         },
         "226695": {
             "name": "독사의 송곳니",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>물리 관통력 <attention>19</attention></stats><br><br><passive>보호막 파괴자</passive><br>적 챔피언에게 피해를 입히면 받는 보호막의 효과를 감소시킵니다. 보호막 파괴자에 영향을 받지 않은 적에게 피해를 입히면 보호막을 모두 감소시킵니다.<br><br>아이템 성능은 근접 챔피언과 원거리 챔피언에게 각각 다르게 적용됩니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>55</attention><br>물리 관통력 <attention>19</attention></stats><br><br><br><br><passive>보호막 파괴자</passive><br>적 챔피언에게 피해를 입히면 3초 동안 받는 보호막의 효과를 0% 감소시킵니다. 보호막 파괴자에 영향을 받지 않은 적에게 피해를 입히면 보호막을 0% 감소시킵니다.<br><br><rules>일반 보호막과 물리 피해 보호막에는 영향을 주지만 마법 피해 전용 보호막에는 영향을 주지 않습니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "226695.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 144,
+                "x": 240,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -9155,7 +9362,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 55
@@ -9163,14 +9371,14 @@ export const item = {
         },
         "226696": {
             "name": "원칙의 원형낫",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>물리 관통력 <attention>22</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>잠언</passive><br><buffedStat>궁극기의 피해량이 20% 증가합니다.</buffedStat></mainText>",
+            "description": "<mainText><stats>공격력 <attention>45</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>전이 표식</passive><br>자신이 피해를 입힌 챔피언이 3초 안에 죽으면 궁극기 총 재사용 대기시간의 일부를 돌려받습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "226696.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 192,
+                "x": 288,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -9191,7 +9399,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 45
@@ -9199,14 +9408,14 @@ export const item = {
         },
         "226697": {
             "name": "오만",
-            "description": "<mainText><stats>공격력 <attention>50</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>명성</passive><br>처치 시 챔피언 처치에 비례해 일시 공격력을 얻습니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>50</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>명성</passive><br>자신이 피해를 입힌 챔피언이 3초 안에 죽으면 <buffedStat>라운드가 끝나거나</buffedStat> 죽을 때까지 <physicalDamage>공격력이 15</physicalDamage> 증가합니다. 이 효과가 발동할 때마다 명성의 <physicalDamage>공격력이 2씩 영구히 증가</physicalDamage>합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "226697.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 240,
+                "x": 336,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -9229,7 +9438,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 50
@@ -9237,14 +9447,14 @@ export const item = {
         },
         "226698": {
             "name": "불경한 히드라",
-            "description": "<mainText><stats>공격력 <attention>50</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 추가 피해(<OnHit>적중 시</OnHit> )를 입히고, 충격파를 발산해 대상 뒤의 적들에게 피해를 입힙니다.<br><br><active>활성화</active><br><active>이단의 가르기</active><br>주변 적들에게 물리 피해를 입힙니다. 체력이 낮은 적에게는 피해량이 증가합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>50</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 주변 적들에게 <physicalDamage>물리 피해</physicalDamage>를 입힙니다.<active>이단의 가르기</active> (0초)<br>주변에 <physicalDamage>0의 물리 피해</physicalDamage>를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "226698.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 288,
+                "x": 384,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -9267,7 +9477,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 50
@@ -9275,14 +9486,14 @@ export const item = {
         },
         "226699": {
             "name": "벼락폭풍검",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>전류 자극</passive><br>돌진 및 은신이 충전 상태 중첩을 더 빨리 쌓이게 합니다.<br><br><passive>창공</passive><br>충전 상태로 공격 시 적에게 추가 물리 피해를 입히고 둔화시킵니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>50</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>전류 자극</passive><br>돌진 및 은신이 <keyword>충전 상태</keyword> 중첩을 75% 더 빨리 쌓이게 합니다.<br><br><passive>창공</passive><br><keyword>충전 상태로 공격</keyword> 시 적에게 <physicalDamage>추가 물리 피해</physicalDamage>를 입히고 0.75초 동안 <keyword>둔화</keyword>시킵니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "226699.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 336,
+                "x": 432,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -9305,23 +9516,24 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatPhysicalDamageMod": 45
+                "FlatPhysicalDamageMod": 50
             }
         },
         "226701": {
             "name": "기회",
-            "description": "<mainText><stats>공격력 <attention>50</attention><br>물리 관통력 <attention>18</attention><br>이동 속도 <attention>5%</attention></stats><br><br><passive>명성</passive><br>자신이 피해를 입힌 챔피언이 죽으면 공격력을 얻습니다.<br><br><passive>자존심</passive><br>챔피언 처치 시 자신을 본뜬 조각상을 생성합니다. 이미 조각상이 있으면 조각상을 업그레이드합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>50</attention><br>물리 관통력 <attention>15</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>준비</passive><br>8초 동안 챔피언과 전투를 벌이지 않으면 <scaleLethality>물리 관통력</scaleLethality>이 증가합니다. 이 물리 관통력 증가 효과는 챔피언에게 피해를 입힐 경우 3초 후에 사라집니다.<br><br><passive>탈출</passive><br>자신이 피해를 입힌 챔피언이 3초 안에 죽으면 1.5초 동안 <speed>이동 속도가 200 증가했다가 점차 감소</speed>합니다.<br></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "226701.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 384,
-                "y": 96,
+                "x": 0,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -9342,1293 +9554,13 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 50,
-                "PercentMovementSpeedMod": 0.05
+                "PercentMovementSpeedMod": 0.04
             }
-        },
-        "227001": {
-            "name": "천체 정렬",
-            "description": "<mainText><stats>공격력 <ornnBonus>90</ornnBonus><br>스킬 가속 <ornnBonus>20</ornnBonus></stats><br><br><passive>늘 떠오르는 달</passive><br>20초 내에 한 챔피언에게 별개의 기본 공격이나 스킬로 2회 공격하면 피해를 추가로 입히고 이동 속도가 상승하며 일정 피해를 흡수하는 보호막을 얻습니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "226692"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227001.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 432,
-                "y": 96,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "Damage",
-                "CooldownReduction",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatPhysicalDamageMod": 90
-            },
-            "depth": 2
-        },
-        "227002": {
-            "name": "드락사르의 암흑검",
-            "description": "<mainText><stats>공격력 <ornnBonus>75</ornnBonus><br>물리 관통력 <ornnBonus>26</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><br><li><passive>밤의 추적자:</passive> 대상이 잃은 체력에 비례해 스킬 피해량이 최대 일정 비율까지 증가합니다. 자신이 피해를 입힌 챔피언이 3초 안에 죽으면 1.5초 동안 구조물이 아닌 대상으로부터 <keywordStealth>대상으로 지정할 수 없는 상태</keywordStealth>가 됩니다. (10(0초))<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 스킬 가속 및 이동 속도.<br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "226691"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227002.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 0,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "Damage",
-                "Stealth",
-                "CooldownReduction",
-                "Slow",
-                "NonbootsMovement",
-                "ArmorPenetration",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatPhysicalDamageMod": 75
-            },
-            "depth": 2
-        },
-        "227005": {
-            "name": "얼어붙은 주먹",
-            "description": "<mainText><stats>체력 <ornnBonus>550</ornnBonus><br>방어력 <ornnBonus>70</ornnBonus><br>스킬 가속 <ornnBonus>15</ornnBonus></stats><br><br><passive>주문 검</passive><br>스킬을 사용하고 나면 다음 기본 공격 시 추가 피해를 입히고 2초 동안 서리 영역을 생성합니다. 서리 영역을 지나는 적들은 <status>둔화</status>됩니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "226662"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227005.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 48,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "Health",
-                "Armor",
-                "CooldownReduction",
-                "Slow",
-                "OnHit",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 550,
-                "FlatArmorMod": 70
-            },
-            "depth": 2
-        },
-        "227006": {
-            "name": "태풍",
-            "description": "<mainText><stats>공격력 <ornnBonus>80</ornnBonus><br>공격 속도 <ornnBonus>55%</ornnBonus><br>치명타 확률 <attention>20%</attention><br>이동 속도 <ornnBonus>10%</ornnBonus></stats><br><br><br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 공격력 <attention>5</attention>.<br><br><rules>미사일의 최대 피해는 체력이 25% 이하인 적에게 적용됩니다.<br>폭우 돌진으로 지형은 통과할 수 없습니다.</rules><br><br><active>사용 시 -</active> <active>폭우:</active> 지정 방향으로 돌진하며 착지 지점 주변 체력이 가장 낮은 적에게 발사체 3개를 날려 물리 피해를 입힙니다. 체력이 낮을수록 피해량이 증가합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "226671"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227006.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 96,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "Damage",
-                "CriticalStrike",
-                "AttackSpeed",
-                "Active",
-                "NonbootsMovement"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatCritChanceMod": 0.2,
-                "FlatPhysicalDamageMod": 80,
-                "PercentAttackSpeedMod": 0.55,
-                "PercentMovementSpeedMod": 0.1
-            },
-            "depth": 2
-        },
-        "227009": {
-            "name": "이케시아의 저주",
-            "description": "<mainText><stats>주문력 <ornnBonus>90</ornnBonus><br>체력 <ornnBonus>600</ornnBonus><br>스킬 가속 <ornnBonus>20</ornnBonus></stats><br><br><passive>공허의 부패</passive><br>적 챔피언과 전투 중 매초 추가 피해를 입힙니다. 피해량이 최대가 되면 모든 피해 흡혈을 얻습니다.<br><br><passive>공허의 마력</passive><br>추가 체력의 일정 비율만큼 주문력이 상승합니다. </mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "224633"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227009.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 144,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "Health",
-                "SpellDamage",
-                "CooldownReduction",
-                "SpellVamp"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 600,
-                "FlatMagicDamageMod": 90
-            },
-            "depth": 2
-        },
-        "227010": {
-            "name": "어스름의 기원",
-            "description": "<mainText><stats>주문력 <ornnBonus>120</ornnBonus><br>체력 <ornnBonus>500</ornnBonus><br>스킬 가속 <ornnBonus>50</ornnBonus></stats><br><br><passive>영혼 찢기</passive><br>기본 공격이나 스킬로 챔피언에게 피해를 입히면 추가 마법 피해를 입히고 이동 속도가 상승합니다.<br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "224636"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227010.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 192,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "Health",
-                "SpellDamage",
-                "CooldownReduction",
-                "NonbootsMovement",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 500,
-                "FlatMagicDamageMod": 120
-            },
-            "depth": 2
-        },
-        "227011": {
-            "name": "업그레이드 비행팩",
-            "description": "<mainText><stats>주문력 <ornnBonus>120</ornnBonus><br>마법 관통력 <ornnBonus>15</ornnBonus><br>체력 <ornnBonus>500</ornnBonus></stats><br><br><br><br><active>사용 시 -</active> <active>초음속:</active> 지정 방향으로 돌진하며 부채꼴 모양으로 피해를 입히는 마법 탄환을 발사합니다. 그리고 적 챔피언 방향으로 이동할 때 이동 속도가 상승합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "223152"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227011.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 240,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "Health",
-                "SpellDamage",
-                "Active",
-                "CooldownReduction",
-                "NonbootsMovement",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 500,
-                "FlatMagicDamageMod": 120
-            },
-            "depth": 2
-        },
-        "227012": {
-            "name": "리안드리의 슬픔",
-            "description": "<mainText><stats>주문력 <ornnBonus>100</ornnBonus><br>마나 <ornnBonus>800</ornnBonus></stats><br><br><passive>고통</passive><br>스킬로 피해를 입히면 적을 불태웁니다.<br><br><passive>고난</passive><br>적 챔피언과 전투 중 매초 추가 피해를 입힙니다. </mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "226653"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227012.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 288,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "Health",
-                "SpellDamage"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMPPoolMod": 800,
-                "FlatHPPoolMod": 300,
-                "FlatMagicDamageMod": 100
-            },
-            "depth": 2
-        },
-        "227013": {
-            "name": "무기의 위력",
-            "description": "<mainText><stats>주문력 <ornnBonus>100</ornnBonus><br>마법 관통력 <ornnBonus>13</ornnBonus><br>마나 <ornnBonus>800</ornnBonus></stats><br><br><passive>발사</passive><br>스킬로 적에게 피해를 입히면 모든 충전 중첩을 소모하여, 소모한 충전 하나당 대상과 주변 다른 대상 한 명에게 추가 마법 피해를 입힙니다. 사거리 안에 다른 대상이 없을 경우 첫 번째 대상에게 남은 사격 충전 중첩만큼 피해를 반복해서 입힙니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "226655"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227013.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 336,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "SpellDamage",
-                "Mana",
-                "CooldownReduction",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMPPoolMod": 800,
-                "FlatMagicDamageMod": 100
-            },
-            "depth": 2
-        },
-        "227014": {
-            "name": "영원한 겨울",
-            "description": "<mainText><stats>주문력 <ornnBonus>100</ornnBonus><br>체력 <ornnBonus>650</ornnBonus><br>마나 <ornnBonus>800</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><br><br><active>활성화</active> (0초)<br><active>빙결</active><br> 원뿔 범위 내의 적들에게 피해를 입히고 맞은 적들을 <status>둔화</status>시킵니다. 범위 중앙의 적들은 <status>속박</status>됩니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "226656"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227014.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 384,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "Health",
-                "SpellDamage",
-                "Mana",
-                "Active",
-                "CooldownReduction",
-                "Slow",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMPPoolMod": 800,
-                "FlatHPPoolMod": 650,
-                "FlatMagicDamageMod": 100
-            },
-            "depth": 2
-        },
-        "227015": {
-            "name": "무한한 허기",
-            "description": "<mainText><stats>공격력 <attention>65</attention><br>체력 <attention>600</attention><br>스킬 가속 <ornnBonus>25</ornnBonus><br>모든 피해 흡혈 <ornnBonus>12%</ornnBonus></stats><br><br>선혈포식자<br><br><active>사용 시 -</active> <active>갈망의 가르기:</active> 주변 적에게 피해를 입힙니다. 챔피언을 맞힐 때마다 체력을 회복합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "226630"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227015.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 432,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "Health",
-                "Damage",
-                "LifeSteal",
-                "Active",
-                "CooldownReduction",
-                "SpellVamp",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 600,
-                "FlatPhysicalDamageMod": 65
-            },
-            "depth": 2
-        },
-        "227016": {
-            "name": "몽상파쇄자",
-            "description": "<mainText><stats>공격력 <attention>60</attention><br>공격 속도 <ornnBonus>30%</ornnBonus><br>체력 <ornnBonus>400</ornnBonus></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 주변 적들에게 물리 피해를 입힙니다.<br><br><passive>담금질</passive><br><physicalDamage>물리 피해</physicalDamage>를 입히면 이동 속도가 상승합니다.<br><br><active>활성화</active><br><active>파괴의 충격파</active><br>물리 피해를 입히며 주변 적을 <status>둔화</status>시키고 챔피언 하나당 이동 속도를 얻습니다. 스킬을 시전하는 동안 이동할 수 있습니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "226631"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227016.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 0,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "Health",
-                "Damage",
-                "AttackSpeed",
-                "Slow",
-                "NonbootsMovement"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 400,
-                "FlatPhysicalDamageMod": 60,
-                "PercentAttackSpeedMod": 0.3
-            },
-            "depth": 2
-        },
-        "227017": {
-            "name": "신성시해자",
-            "description": "<mainText><stats>공격력 <nerfedStat>55</nerfedStat><br>체력 <nerfedStat>350</nerfedStat><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><passive>주문 검</passive><br>스킬을 사용하고 나면 다음 기본 공격 시 추가 피해(<OnHit>적중 시</OnHit> )를 입힙니다. 대상이 챔피언일 경우 체력을 회복합니다.<br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "226632"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227017.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 48,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "Health",
-                "Damage",
-                "CooldownReduction",
-                "OnHit",
-                "MagicPenetration",
-                "ArmorPenetration",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 350,
-                "FlatPhysicalDamageMod": 55
-            },
-            "depth": 2
-        },
-        "227018": {
-            "name": "무한한 삼위일체",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>공격 속도 <ornnBonus>45%</ornnBonus><br>체력 <attention>445</attention><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><passive>주문 검</passive><br>스킬을 사용하고 나면 다음 기본 공격 시 추가 물리 피해를 입힙니다.<br><br><passive>가속</passive><br>기본 공격 시 이동 속도를 얻습니다.<br><br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "223078"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227018.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 96,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "Health",
-                "Damage",
-                "AttackSpeed",
-                "CooldownReduction",
-                "OnHit",
-                "NonbootsMovement",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 445,
-                "FlatPhysicalDamageMod": 45,
-                "PercentAttackSpeedMod": 0.45
-            },
-            "effect": {
-                "Effect1Amount": "25",
-                "Effect2Amount": "60",
-                "Effect3Amount": "2",
-                "Effect4Amount": "1.5",
-                "Effect5Amount": "1.5"
-            },
-            "depth": 2
-        },
-        "227019": {
-            "name": "황금 새벽의 유물함",
-            "description": "<mainText><stats>체력 <attention>600</attention><br>스킬 가속 <ornnBonus>35</ornnBonus><br>방어력 <ornnBonus>40</ornnBonus><br>마법 저항력 <ornnBonus>40</ornnBonus></stats><br><br><br><br><active>활성화</active> (0초)<br><active>헌신</active><br>주변 아군에게 <shield>보호막</shield>을 부여합니다. 보호막은 서서히 사라집니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "223190"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227019.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 144,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "Health",
-                "SpellBlock",
-                "Armor",
-                "Aura",
-                "Active",
-                "MagicResist",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatSpellBlockMod": 40,
-                "FlatHPPoolMod": 600,
-                "FlatArmorMod": 40
-            },
-            "depth": 2
-        },
-        "227020": {
-            "name": "슈렐리아의 진혼곡",
-            "description": "<mainText><stats>주문력 <ornnBonus>75</ornnBonus><br>체력 <ornnBonus>600</ornnBonus><br>기본 마나 재생 <attention>200%</attention><br>기본 마나 재생 <ornnBonus>200%</ornnBonus></stats><br><br><br><br><br><br><active>활성화</active> (0초)<br><active>고무적인 연설</active><br>몇 초 동안 주변 아군들의 이동 속도가 상승합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "222065"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227020.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 192,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "SpellDamage",
-                "ManaRegen",
-                "Active",
-                "CooldownReduction",
-                "NonbootsMovement",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 600,
-                "FlatMagicDamageMod": 75,
-                "PercentMovementSpeedMod": 0.05
-            },
-            "depth": 2
-        },
-        "227021": {
-            "name": "성운 투척기",
-            "description": "<mainText><stats>주문력 <ornnBonus>80</ornnBonus><br>체력 <ornnBonus>300</ornnBonus><br>스킬 가속 <ornnBonus>35</ornnBonus><br>기본 마나 재생 <ornnBonus>200%</ornnBonus></stats><br><br><passive>별빛 은총</passive><br>아군을 상대로 체력을 회복시키거나 보호막을 씌우면 (자신을 제외하고) 가장 가까이 있는 아군 챔피언에게 연쇄 효과가 적용되며 기존 수치에 비례해 체력을 회복시키거나 피해를 흡수하는 보호막을 부여합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "226617"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227021.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 240,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "Health",
-                "SpellDamage",
-                "ManaRegen",
-                "CooldownReduction",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 300,
-                "FlatMagicDamageMod": 80
-            },
-            "depth": 2
-        },
-        "227023": {
-            "name": "별의 균형",
-            "description": "<mainText><stats>체력 <ornnBonus>600</ornnBonus><br>방어력 <ornnBonus>40</ornnBonus><br>마법 저항력 <ornnBonus>40</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><br><li><passive>광휘:</passive> 챔피언을 <status>이동 불가</status> 상태로 만들거나 자신이 <status>이동 불가</status> 상태가 되면 대상과 주변 적 챔피언들이 받는 피해가 증가합니다.<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 <attention> 방어력 및 마법 저항력</attention></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "223001"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227023.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 288,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "Health",
-                "SpellBlock",
-                "Armor",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatSpellBlockMod": 40,
-                "FlatHPPoolMod": 600,
-                "FlatArmorMod": 40
-            },
-            "depth": 2
-        },
-        "227024": {
-            "name": "중단",
-            "description": "<mainText><stats>주문력 <ornnBonus>100</ornnBonus><br>체력 <ornnBonus>350</ornnBonus><br>마나 <ornnBonus>800</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><passive>방호</passive><br><keywordMajor>보호</keywordMajor>를 받아 챔피언으로부터 받는 피해가 감소합니다. <keywordMajor>보호</keywordMajor> 효과는 챔피언에게 피해를 받은 후 2.5초 동안 지속됩니다. <br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "224644"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227024.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 336,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "Health",
-                "SpellDamage",
-                "Mana",
-                "NonbootsMovement",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMPPoolMod": 800,
-                "FlatHPPoolMod": 350,
-                "FlatMagicDamageMod": 100
-            },
-            "depth": 2
-        },
-        "227025": {
-            "name": "레비아탄",
-            "description": "<mainText><stats>체력 <ornnBonus>1050</ornnBonus><br>기본 체력 재생 <ornnBonus>300%</ornnBonus><br>스킬 가속 <ornnBonus>15</ornnBonus></stats><br><br><passive>거인의 흡수</passive> 대상별: (0초)<br>700의 사거리 내에 있는 챔피언을 상대로 0초 동안 강력한 공격을 충전합니다. 충전된 공격은 대상에 <physicalDamage>125+<scaleHealth>아이템 체력의 12%</scaleHealth>에 해당하는 추가 물리 피해</physicalDamage>를 입히고 그 피해의 12%만큼<scaleHealth> 영구 최대 체력</scaleHealth>을 부여합니다.<br><br><passive>거인</passive><br><scaleHealth>최대 체력 1000</scaleHealth>당 크기가 3% 증가합니다. (최대 30%) </mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "223084"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227025.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 384,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "Health",
-                "HealthRegen"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 1050
-            },
-            "depth": 2
-        },
-        "227026": {
-            "name": "무언의 기생갑",
-            "description": "<mainText><stats>체력 <attention>450</attention><br>방어력 <ornnBonus>40</ornnBonus><br>마법 저항력 <ornnBonus>40</ornnBonus></stats><br><br><passive>공허 태생의 저항력</passive><br>챔피언과 전투를 벌이는 동안 강화되어 전투가 끝날 때까지 추가 <scaleArmor>방어력</scaleArmor> 및 <scaleMR>마법 저항력</scaleMR>이 증가합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "226665"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227026.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 432,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "Health",
-                "SpellBlock",
-                "Armor",
-                "MagicResist"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatSpellBlockMod": 40,
-                "FlatHPPoolMod": 450,
-                "FlatArmorMod": 40
-            },
-            "depth": 2
-        },
-        "227027": {
-            "name": "태고의 새벽",
-            "description": "<mainText><stats>체력 <ornnBonus>550</ornnBonus><br>방어력 <ornnBonus>40</ornnBonus><br>마법 저항력 <ornnBonus>40</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><br><li><passive>인도하는 빛:</passive> 궁극기를 사용하면 초월하여 최대 체력이 증가합니다. 초월 상태에서 자신과 아군이 서서히 체력을 회복합니다.<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 체력</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "226667"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227027.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 0,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "Health",
-                "SpellBlock",
-                "Armor",
-                "Aura",
-                "CooldownReduction",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatSpellBlockMod": 40,
-                "FlatHPPoolMod": 550,
-                "FlatArmorMod": 40
-            },
-            "depth": 2
-        },
-        "227028": {
-            "name": "무한 융합",
-            "description": "<mainText><stats>주문력 <ornnBonus>90</ornnBonus><br>체력 <ornnBonus>550</ornnBonus><br>마나 <ornnBonus>550</ornnBonus></stats><br><br><passive>불멸의 시간</passive><br><buffedStat>2번의 전투 라운드 후</buffedStat> <magicDamage>주문력이 0</magicDamage>, <scaleHealth>체력이 0</scaleHealth>, <scaleMana>마나가 0</scaleMana> 추가로 증가하고 레벨이 오릅니다.<br><br><passive>영원</passive><br>챔피언에게 피해를 받으면 감소 전 피해량의 7%에 해당하는 <scaleMana>마나</scaleMana>를 회복합니다. 스킬 사용 시 사용한 <scaleMana>마나</scaleMana>의 25%에 해당하는 체력을 회복합니다. 스킬 사용 1회당 초당 최대 <scaleHealth>20의 체력</scaleHealth>을 회복합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "226657"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "227028.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 48,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1250
-            },
-            "tags": [
-                "Health",
-                "HealthRegen",
-                "SpellDamage",
-                "Mana",
-                "ManaRegen"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMPPoolMod": 550,
-                "FlatHPPoolMod": 550,
-                "FlatMagicDamageMod": 90
-            },
-            "depth": 2
-        },
-        "227029": {
-            "name": "요우무의 각성",
-            "description": "<mainText><stats>공격력 <ornnBonus>75</ornnBonus><br>물리 관통력 <ornnBonus>26</ornnBonus><br>스킬 가속 <ornnBonus>20</ornnBonus></stats><br><br><passive>출몰</passive> <br>전투에서 벗어나 있을 때 <speed>이동 속도</speed>가 상승합니다.<br><br><br><active>활성화</active> (0초)<br><active>망령의 발걸음</active><br><speed>이동 속도</speed>가 상승하고 <keyword>유체화</keyword> 상태가 됩니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "223142"
-            ],
-            "inStore": false,
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "227029.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 96,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1750
-            },
-            "tags": [
-                "Damage",
-                "Active",
-                "NonbootsMovement",
-                "ArmorPenetration"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatPhysicalDamageMod": 75
-            },
-            "effect": {
-                "Effect1Amount": "45",
-                "Effect2Amount": "0",
-                "Effect3Amount": "0",
-                "Effect4Amount": "0",
-                "Effect5Amount": "6",
-                "Effect6Amount": "40"
-            },
-            "depth": 2
-        },
-        "227030": {
-            "name": "들끓는 슬픔",
-            "description": "<mainText><stats>공격력 <ornnBonus>35</ornnBonus><br>주문력 <ornnBonus>35</ornnBonus><br>공격 속도 <ornnBonus>40%</ornnBonus></stats><br><br><passive>분노</passive><br>기본 공격 시 <magicDamage>30의 마법 피해(<OnHit>적중 시</OnHit> )</magicDamage>를 입힙니다.<br><br><passive>들끓는 일격</passive><br>기본 공격 시 <attackSpeed>공격 속도가 8%</attackSpeed> 증가합니다. 해당 효과는 4번까지 중첩되어 최대 <attackSpeed>공격 속도가 0</attackSpeed>까지 증가합니다. 최대 중첩 시 세 번째 기본 공격을 가할 때마다 <OnHit>적중 시</OnHit> 효과를 두 번씩 적용합니다.<br><br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "223124"
-            ],
-            "inStore": false,
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "227030.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 144,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1750
-            },
-            "tags": [
-                "Damage",
-                "AttackSpeed",
-                "SpellDamage",
-                "OnHit"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMagicDamageMod": 35,
-                "FlatPhysicalDamageMod": 35,
-                "PercentAttackSpeedMod": 0.4
-            },
-            "effect": {
-                "Effect1Amount": "0.08",
-                "Effect2Amount": "2.5",
-                "Effect3Amount": "2.5",
-                "Effect4Amount": "3",
-                "Effect5Amount": "4",
-                "Effect6Amount": "0.1",
-                "Effect7Amount": "0.1",
-                "Effect8Amount": "15",
-                "Effect9Amount": "1",
-                "Effect10Amount": "3",
-                "Effect11Amount": "0",
-                "Effect12Amount": "0",
-                "Effect13Amount": "3"
-            },
-            "depth": 2
-        },
-        "227031": {
-            "name": "궁극의 검",
-            "description": "<mainText><stats>공격력 <ornnBonus>105</ornnBonus><br>치명타 확률 <attention>25%</attention><br>치명타 피해량 <attention>50%</attention></stats><br><br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "223031"
-            ],
-            "inStore": false,
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "227031.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 192,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1750
-            },
-            "tags": [
-                "CriticalStrike",
-                "Damage"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatCritChanceMod": 0.25,
-                "FlatPhysicalDamageMod": 105
-            },
-            "depth": 2
-        },
-        "227032": {
-            "name": "명멸",
-            "description": "<mainText><stats>공격력 <ornnBonus>90</ornnBonus><br>치명타 확률 <attention>25%</attention><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><passive>깨달음</passive><br>기본 공격 시 기본 스킬의 재사용 대기시간이 감소합니다.<br><br><passive>비영구</passive><br>스킬이 치명타 확률에 비례해 증가한 피해를 입힙니다. </mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "226675"
-            ],
-            "inStore": false,
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "227032.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 240,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1750
-            },
-            "tags": [
-                "CriticalStrike",
-                "AttackSpeed",
-                "NonbootsMovement"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatCritChanceMod": 0.25,
-                "FlatPhysicalDamageMod": 90,
-                "PercentAttackSpeedMod": 0.4,
-                "PercentMovementSpeedMod": 0.07
-            },
-            "effect": {
-                "Effect1Amount": "0.5",
-                "Effect2Amount": "1",
-                "Effect3Amount": "90"
-            },
-            "depth": 2
-        },
-        "227033": {
-            "name": "비명을 지르는 도시의 외침",
-            "description": "<mainText><stats>주문력 <ornnBonus>60</ornnBonus><br>체력 <ornnBonus>500</ornnBonus><br>스킬 가속 <ornnBonus>45</ornnBonus><br>기본 마나 재생 <ornnBonus>225%</ornnBonus></stats><br><br><br><li><passive>영혼 흡수:</passive> 챔피언에게 피해를 입히면 <passive>영혼 파편</passive>을 얻습니다. 아군을 상대로 체력을 회복시키거나 보호막을 씌우면 모든 <passive>영혼 파편</passive>을 소모하여 체력을 회복하고 가장 가까운 적 챔피언에게 파편 하나당 마법 피해를 입힙니다.<br><li><passive>불협화음:</passive> <scaleMana>기본 마나 재생</scaleMana>당 <scaleAP>주문력</scaleAP>을 얻습니다. 조화를 비활성화합니다.<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 <attention>스킬 가속.</attention><br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "226620"
-            ],
-            "inStore": false,
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "227033.png",
-                "sprite": "item2.png",
-                "group": "item",
-                "x": 288,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2500,
-                "sell": 1750
-            },
-            "tags": [
-                "Health",
-                "SpellDamage",
-                "ManaRegen",
-                "CooldownReduction",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 500,
-                "FlatMagicDamageMod": 60
-            },
-            "depth": 2
         },
         "228001": {
             "name": "증오의 사슬",
@@ -10639,8 +9571,8 @@ export const item = {
                 "full": "228001.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 336,
-                "y": 240,
+                "x": 48,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -10661,7 +9593,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 600
@@ -10669,15 +9602,15 @@ export const item = {
         },
         "228002": {
             "name": "우글렛의 마녀 모자",
-            "description": "<mainText><stats>주문력 <ornnBonus>300</ornnBonus><br>방어력 <ornnBonus>50</ornnBonus><br>스킬 가속 <ornnBonus>20</ornnBonus></stats><br><br><passive>신비한 작품</passive><br>총 <scaleAP>주문력이 50%</scaleAP> 증가합니다.<br><br><b>증강 필요: <prismatic>퀘스트: 우글렛의 마녀 모자</prismatic></b><active>시간 정지</active><br>2.5초 동안 <keyword>경직</keyword> 상태가 됩니다.</mainText>",
+            "description": "<mainText><stats>주문력 <ornnBonus>300</ornnBonus><br>방어력 <ornnBonus>50</ornnBonus><br>스킬 가속 <ornnBonus>20</ornnBonus></stats><br><br><passive>신비한 작품</passive><br>총 <scaleAP>주문력이 50%</scaleAP> 증가합니다.<br><br><b>증강 필요: <prismatic>퀘스트: 우글렛의 마녀 모자</prismatic></b><br><br><active>활성화</active> (0초)<br><active>경직</active> <br>2.5초 동안 <status>무적</status> 및 <status>대상으로 지정할 수 없는 상태</status>가 되지만, 그동안 아무런 행동도 할 수 없습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "228002.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 384,
-                "y": 240,
+                "x": 96,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -10697,7 +9630,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 300,
@@ -10719,8 +9653,8 @@ export const item = {
                 "full": "228003.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 432,
-                "y": 240,
+                "x": 144,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -10740,7 +9674,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.2,
@@ -10757,8 +9692,8 @@ export const item = {
                 "full": "228004.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 0,
-                "y": 288,
+                "x": 192,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -10779,7 +9714,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 100,
@@ -10790,7 +9726,7 @@ export const item = {
         },
         "228005": {
             "name": "흑요석 양날 도끼",
-            "description": "<mainText><stats>공격력 <ornnBonus>70</ornnBonus><br>체력 <ornnBonus>700</ornnBonus><br>스킬 가속 <ornnBonus>40</ornnBonus></stats><br><br><passive>깎아내기</passive><br>챔피언에게 물리 피해를 입히면 방어력을 감소시키는 중첩을 1회 적용합니다.<br><br><passive>열정</passive><br>물리 피해를 입히면 이동 속도가 상승합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <ornnBonus>70</ornnBonus><br>체력 <ornnBonus>700</ornnBonus><br>스킬 가속 <ornnBonus>40</ornnBonus></stats><br><br><passive>깎아내기</passive><br>챔피언에게 <physicalDamage>물리 피해</physicalDamage>를 입히면 0.1초 동안 대상의 <scaleArmor>방어력이 7%</scaleArmor> 감소합니다. (5회 중첩)<br><br><passive>열정</passive><br><physicalDamage>물리 피해</physicalDamage>를 입히면 2초 동안 <speed>이동 속도가 20</speed> 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "inStore": false,
@@ -10798,8 +9734,8 @@ export const item = {
                 "full": "228005.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 48,
-                "y": 288,
+                "x": 240,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -10823,7 +9759,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 700,
@@ -10844,7 +9781,7 @@ export const item = {
         },
         "228006": {
             "name": "핏빛 칼날",
-            "description": "<mainText><stats>공격력 <ornnBonus>130</ornnBonus><br>공격 속도 <ornnBonus>40%</ornnBonus><br>스킬 가속 <ornnBonus>20</ornnBonus><br>생명력 흡수 <ornnBonus>30%</ornnBonus></stats><br><br><br><li><passive>쪼개기:</passive> 기본 공격과 스킬 적중 시 대상 주변에 있는 600 범위 내의 다른 적들에게 <physicalDamage>{{ Item_Melee_Ranged_Split }}의 물리 피해</physicalDamage>를 입히고 적중 시 효과를 발동합니다.<br><li><passive>안개의 검:</passive> 기본 공격 시 <nerfedStat>적 현재 체력에 따라 {{ Item_Melee_Ranged_Split_B }}의 물리 피해</nerfedStat>({{ Item_Keyword_OnHit }})를 입힙니다.<li><passive>흡수:</passive> 챔피언에게 3회 기본 공격을 가하면 <magicDamage>0의 마법 피해</magicDamage>를 입히고 2초 동안 <speed>이동 속도를 25%</speed> 훔칩니다. (30{{ Item_Cooldown }})<br><rules><passive>안개의 검</passive>은 미니언 및 정글 몬스터에게 최대 60의 피해를 입힙니다.<br>{{ Item_Melee_Ranged_Rules }}</rules>{{ Item_OnActivation }} {{ Item_Cooldown }}<br><active>굶주린 초승달</active><br>주변 적에게 생명력을 흡수하는 물리 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>공격력 <ornnBonus>130</ornnBonus><br>공격 속도 <ornnBonus>40%</ornnBonus><br>스킬 가속 <ornnBonus>15</ornnBonus><br>생명력 흡수 <ornnBonus>30%</ornnBonus></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 주변 적들에게 <physicalDamage>물리 피해</physicalDamage>를 입힙니다.<active>굶주린 초승달</active> (0초)<br>주변 적에게 <physicalDamage>물리 피해</physicalDamage>를 입힙니다. <br>이 피해에는 생명력 흡수가 적용됩니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "inStore": false,
@@ -10852,8 +9789,8 @@ export const item = {
                 "full": "228006.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 96,
-                "y": 288,
+                "x": 288,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -10875,7 +9812,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 130,
@@ -10885,7 +9823,7 @@ export const item = {
         },
         "228008": {
             "name": "룬 글레이브",
-            "description": "<mainText><stats>공격력 <ornnBonus>65</ornnBonus><br>주문력 <ornnBonus>85</ornnBonus><br>공격 속도 <ornnBonus>33%</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus><br>체력 <ornnBonus>600</ornnBonus><br>방어력 <ornnBonus>50</ornnBonus><br>이동 속도 <ornnBonus>10%</ornnBonus><br>치명타 확률 <attention>20%</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>공격력 <ornnBonus>65</ornnBonus><br>주문력 <ornnBonus>85</ornnBonus><br>공격 속도 <ornnBonus>30%</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus><br>체력 <ornnBonus>600</ornnBonus><br>방어력 <ornnBonus>50</ornnBonus><br>이동 속도 <ornnBonus>10%</ornnBonus><br>치명타 확률 <attention>20%</attention></stats><br><br></mainText>",
             "colloq": "",
             "plaintext": "",
             "inStore": false,
@@ -10893,8 +9831,8 @@ export const item = {
                 "full": "228008.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 144,
-                "y": 288,
+                "x": 336,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -10918,7 +9856,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 600,
@@ -10926,7 +9865,7 @@ export const item = {
                 "FlatArmorMod": 50,
                 "FlatCritChanceMod": 0.2,
                 "FlatPhysicalDamageMod": 65,
-                "PercentAttackSpeedMod": 0.33,
+                "PercentAttackSpeedMod": 0.3,
                 "PercentMovementSpeedMod": 0.1
             },
             "effect": {
@@ -10939,15 +9878,15 @@ export const item = {
         },
         "228020": {
             "name": "심연의 가면",
-            "description": "<mainText><stats>체력 <attention>300</attention><br>마법 저항력 <attention>50</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>파괴</passive><br>주변 적 챔피언들의 마법 저항력을 감소시킵니다. 영향을 받는 적 하나당 마법 저항력을 얻습니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>300</attention><br>마법 저항력 <attention>50</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>파괴</passive><br>주변 적 챔피언들의 <scaleMR>마법 저항력을 30%</scaleMR> 감소시킵니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "228020.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 192,
-                "y": 288,
+                "x": 384,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -10970,7 +9909,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 50,
@@ -10990,8 +9930,8 @@ export const item = {
                 "full": "2403.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 240,
-                "y": 288,
+                "x": 432,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -11007,13 +9947,14 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {}
         },
         "2420": {
             "name": "추적자의 팔목 보호대",
-            "description": "<mainText><stats>주문력 <attention>45</attention><br>방어력 <attention>25</attention></stats><br><br><active>활성화</active><br><active>시간 정지</active> (한 번만 사용가능)<br>2.5초 동안 <keyword>경직</keyword> 상태가 됩니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>40</attention><br>방어력 <attention>25</attention></stats><br><br><active>시간 정지</active> (한 번만 사용가능)<br>2.5초 동안 <keyword>경직</keyword> 상태가 됩니다.</mainText>",
             "colloq": ";whsdi;존야;모래시계",
             "plaintext": "사용하면 아무런 행동도 취할 수 없는 대신 공격도 받지 않는 무적 상태가 됩니다.",
             "from": [
@@ -11029,8 +9970,8 @@ export const item = {
                 "full": "2420.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 288,
-                "y": 288,
+                "x": 0,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -11050,10 +9991,11 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 45,
+                "FlatMagicDamageMod": 40,
                 "FlatArmorMod": 25
             },
             "effect": {
@@ -11064,9 +10006,14 @@ export const item = {
         },
         "2421": {
             "name": "부서진 팔목 보호대",
-            "description": "<mainText><stats>주문력 <attention>45</attention><br>방어력 <attention>25</attention></stats><br><br><passive>조각난 시간</passive><br>팔목 보호대는 망가졌지만 업그레이드는 가능합니다.<br><br><rules>팔목 보호대를 하나 망가뜨린 후에는 상점에서 <rarityGeneric>부서진 팔목 보호대</rarityGeneric>만 살 수 있습니다.</rules><br><br></mainText>",
+            "description": "<mainText><stats>주문력 <attention>40</attention><br>방어력 <attention>25</attention></stats><br><br><passive>조각난 시간</passive><br>팔목 보호대는 망가졌지만 업그레이드는 가능합니다.<br><br><rules>팔목 보호대를 하나 망가뜨린 후에는 상점에서 <rarityGeneric>부서진 팔목 보호대</rarityGeneric>만 살 수 있습니다.</rules><br><br></mainText>",
             "colloq": ";shattered;armguard",
             "plaintext": "초시계로 업그레이드할 수 있습니다.",
+            "from": [
+                "1052",
+                "1029",
+                "1052"
+            ],
             "hideFromAll": true,
             "into": [
                 "3157"
@@ -11075,13 +10022,13 @@ export const item = {
                 "full": "2421.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 336,
-                "y": 288,
+                "x": 48,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 1600,
+                "base": 500,
                 "purchasable": true,
                 "total": 1600,
                 "sell": 640
@@ -11092,10 +10039,11 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 45,
+                "FlatMagicDamageMod": 40,
                 "FlatArmorMod": 25
             },
             "effect": {
@@ -11104,7 +10052,8 @@ export const item = {
                 "Effect3Amount": "0",
                 "Effect4Amount": "0",
                 "Effect5Amount": "300"
-            }
+            },
+            "depth": 2
         },
         "2422": {
             "name": "약간 신비한 신발",
@@ -11125,8 +10074,8 @@ export const item = {
                 "full": "2422.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 384,
-                "y": 288,
+                "x": 96,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -11144,7 +10093,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMovementSpeedMod": 25
@@ -11152,7 +10102,7 @@ export const item = {
         },
         "2501": {
             "name": "지배자의 피갑옷",
-            "description": "<mainText><stats>공격력 <attention>40</attention><br>체력 <attention>500</attention></stats><br><br><passive>폭정</passive><br><healing>추가 체력</healing>의 2%에 해당하는 <scaleAD>공격력</scaleAD>을 얻습니다. <br><br><passive>응징</passive><br>잃은 체력에 비례해 <scaleAD>공격력</scaleAD>이 10%까지 증가합니다. </mainText>",
+            "description": "<mainText><stats>공격력 <attention>30</attention><br>체력 <attention>550</attention></stats><br><br><passive>폭정</passive><br><healing>추가 체력</healing>의 2%에 해당하는 <scaleAD>공격력</scaleAD>을 얻습니다. <br><br><passive>응징</passive><br>잃은 체력에 비례해 <scaleAD>공격력</scaleAD>이 10%까지 증가합니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -11163,8 +10113,8 @@ export const item = {
                 "full": "2501.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 432,
-                "y": 288,
+                "x": 144,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -11183,17 +10133,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 500,
-                "FlatPhysicalDamageMod": 40
+                "FlatHPPoolMod": 550,
+                "FlatPhysicalDamageMod": 30
             },
             "depth": 3
         },
         "2502": {
             "name": "끝없는 절망",
-            "description": "<mainText><stats>체력 <attention>400</attention><br>방어력 <attention>55</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>고뇌</passive><br>챔피언과 전투 중일 때 몇 초마다 주변 적 챔피언에게 마법 피해를 입히고 피해량에 따라 체력을 회복합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>350</attention><br>방어력 <attention>60</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>고뇌</passive><br>챔피언과 전투 중일 때 5초마다 주변 적 챔피언에게 <magicDamage>마법 피해</magicDamage>를 입히고 피해량의 <healing>250%만큼 체력을 회복</healing>합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -11201,15 +10152,12 @@ export const item = {
                 "3067",
                 "1028"
             ],
-            "into": [
-                "7034"
-            ],
             "image": {
                 "full": "2502.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 0,
-                "y": 336,
+                "x": 192,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -11230,17 +10178,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 400,
-                "FlatArmorMod": 55
+                "FlatHPPoolMod": 350,
+                "FlatArmorMod": 60
             },
             "depth": 3
         },
         "2503": {
             "name": "어둠불꽃 횃불",
-            "description": "<mainText><stats>주문력 <attention>90</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>악의의 불길</passive><br>스킬로 피해를 입히면 적을 불태웁니다. 몬스터에게는 피해량이 증가합니다.<br><br><passive>어둠불꽃</passive><br>악의의 불길에 영향을 받는 적 챔피언, 에픽 몬스터, 대형 몬스터 하나당 <scaleAP>주문력</scaleAP>이 증가합니다. </mainText>",
+            "description": "<mainText><stats>주문력 <attention>80</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>악의의 불길</passive><br>스킬로 적에게 피해를 입히면 3초 동안 <magicDamage>추가 마법 피해</magicDamage>를 입힙니다.<br><br><passive>어둠불꽃</passive><br><passive>악의의 불길</passive>에 영향을 받는 적 챔피언, 에픽 몬스터, 대형 몬스터 하나당 <scaleAP>주문력이 4%</scaleAP> 증가합니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -11251,8 +10200,8 @@ export const item = {
                 "full": "2503.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 48,
-                "y": 336,
+                "x": 240,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -11273,17 +10222,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 600,
-                "FlatMagicDamageMod": 90
+                "FlatMagicDamageMod": 80
             },
             "depth": 3
         },
         "2504": {
             "name": "케이닉 루컨",
-            "description": "<mainText><stats>체력 <attention>400</attention><br>마법 저항력 <attention>80</attention><br>기본 체력 재생 <attention>150%</attention></stats><br><br><passive>마법사의 파멸</passive><br>15초 동안 <magicDamage>마법 피해</magicDamage>를 받지 않으면 <magicDamage>0의 마법 피해를 흡수하는 보호막</magicDamage>을 얻습니다. <br><br></mainText>",
+            "description": "<mainText><stats>체력 <attention>400</attention><br>마법 저항력 <attention>80</attention><br>기본 체력 재생 <attention>100%</attention></stats><br><br><passive>마법사의 파멸</passive><br>15초 동안 마법 피해를 받지 않으면 <shield>마법 보호막</shield>을 얻습니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -11294,13 +10244,13 @@ export const item = {
                 "full": "2504.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 96,
-                "y": 336,
+                "x": 288,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 750,
+                "base": 800,
                 "purchasable": true,
                 "total": 2900,
                 "sell": 2030
@@ -11315,7 +10265,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 80,
@@ -11325,7 +10276,7 @@ export const item = {
         },
         "2508": {
             "name": "운명의 재",
-            "description": "<mainText><stats>주문력 <attention>40</attention></stats><br><br><passive>발화</passive><br>스킬로 피해를 입히면 적을 불태웁니다. 몬스터에게는 피해량이 증가합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>30</attention></stats><br><br><passive>발화</passive><br>스킬 공격이 3초 동안 <magicDamage>15의 추가 마법 피해</magicDamage>를 입힙니다.<br>몬스터에게는 <magicDamage>60의 마법 피해</magicDamage>를 추가로 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -11339,8 +10290,8 @@ export const item = {
                 "full": "2508.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 144,
-                "y": 336,
+                "x": 336,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -11358,16 +10309,17 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 40
+                "FlatMagicDamageMod": 30
             },
             "depth": 2
         },
         "3001": {
             "name": "저녁갑주",
-            "description": "<mainText><stats>체력 <attention>200</attention><br>방어력 <attention>30</attention><br>마법 저항력 <attention>30</attention><br>스킬 가속 <attention>20</attention></stats><br><br><br><li><passive>광휘:</passive> 챔피언을 <status>이동 불가</status> 상태로 만들거나 자신이 <status>이동 불가</status> 상태가 되면 대상과 주변 적 챔피언들이 받는 피해가 증가합니다.<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 <attention> 방어력 및 마법 저항력</attention></mainText>",
+            "description": "<mainText><stats>체력 <attention>200</attention><br>방어력 <attention>30</attention><br>마법 저항력 <attention>30</attention><br>스킬 가속 <attention>20</attention></stats><br><br><br><li><passive>광휘:</passive> 챔피언을 <status>이동 불가</status> 상태로 만들거나 자신이 <status>이동 불가</status> 상태가 되면 5초 동안 대상과 주변 적 챔피언들이 받는 피해가 7% 증가합니다. <br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 <scaleArmor>방어력</scaleArmor> <attention>및</attention> <scaleMR>마법 저항력</scaleMR> <attention>5</attention><attention>.</attention></mainText>",
             "colloq": ";심홀;어비셜;abyssal;scepter",
             "plaintext": "근처의 적이 입는 마법 피해가 증가합니다.",
             "from": [
@@ -11375,20 +10327,17 @@ export const item = {
                 "1033"
             ],
             "inStore": false,
-            "into": [
-                "7023"
-            ],
             "image": {
                 "full": "3001.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 192,
-                "y": 336,
+                "x": 384,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 800,
+                "base": 850,
                 "purchasable": false,
                 "total": 2300,
                 "sell": 1610
@@ -11404,7 +10353,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 30,
@@ -11415,7 +10365,7 @@ export const item = {
         },
         "3002": {
             "name": "개척자",
-            "description": "<mainText><stats>체력 <attention>200</attention><br>방어력 <attention>40</attention><br>이동 속도 <attention>5%</attention></stats><br><br><passive>진두지휘</passive><br>이동 시 <speed>20의 추가 이동 속도</speed>를 얻습니다. 최대 이동 속도일 때 아군 챔피언의 이동 속도를 자신의 15%만큼 증가시키는 자취를 남깁니다. 다음 기본 공격 시 추가 이동 속도를 잃으며, 추가로 근접 챔피언의 경우 대상을 1초 동안 50% <keyword>둔화</keyword>시킵니다.<br><br></mainText>",
+            "description": "<mainText><stats>체력 <attention>250</attention><br>방어력 <attention>40</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>진두지휘</passive><br>이동 시 최대 <speed>20의 추가 이동 속도</speed>를 얻습니다. <br>최대 이동 속도일 때:<li>아군 챔피언의 <speed>이동 속도를 자신의 15%만큼</speed> 증가시키는 자취를 남깁니다. <li>근접 챔피언이면 다음 기본 공격 시 대상을 1초 동안 50% <keyword>둔화</keyword>시킵니다.<br><br></mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -11426,16 +10376,16 @@ export const item = {
                 "full": "3002.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 240,
-                "y": 336,
+                "x": 432,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 900,
+                "base": 800,
                 "purchasable": true,
-                "total": 2500,
-                "sell": 1750
+                "total": 2400,
+                "sell": 1680
             },
             "tags": [
                 "Health",
@@ -11447,18 +10397,19 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 200,
+                "FlatHPPoolMod": 250,
                 "FlatArmorMod": 40,
-                "PercentMovementSpeedMod": 0.05
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 3
         },
         "3003": {
             "name": "대천사의 지팡이",
-            "description": "<mainText><stats>주문력 <attention>80</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>경탄</passive><br>추가 마나만큼 주문력을 얻습니다.<br><br><passive>마나순환</passive><br>대상에게 스킬을 적중시키면 중첩을 하나 소모해 추가 마나를 얻습니다. 추가 마나가 최대치인 360에 도달하면 <rarityLegendary>대천사의 포옹</rarityLegendary>으로 변합니다.<br><br></mainText>",
+            "description": "<mainText><stats>주문력 <attention>70</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>경탄</passive><br><scaleMana>추가 마나의 1%</scaleMana>만큼 주문력을 얻습니다.<br><br><passive>마나순환</passive> (8초, 최대 충전량 5회)<br>스킬 적중 시 <scaleMana>5의 최대 마나</scaleMana>(챔피언 상대 시 두 배)를 얻습니다.<br><scaleMana>360의 최대 마나</scaleMana>에서 <rarityLegendary>대천사의 포옹</rarityLegendary>으로 변합니다.</mainText>",
             "colloq": "",
             "plaintext": "최대 마나량에 따라 주문력이 대폭 상승합니다.",
             "from": [
@@ -11470,13 +10421,13 @@ export const item = {
                 "full": "3003.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 288,
-                "y": 336,
+                "x": 0,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 400,
+                "base": 450,
                 "purchasable": true,
                 "total": 2900,
                 "sell": 2030
@@ -11491,17 +10442,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 600,
-                "FlatMagicDamageMod": 80
+                "FlatMagicDamageMod": 70
             },
             "depth": 3
         },
         "3004": {
             "name": "마나무네",
-            "description": "<mainText><stats>공격력 <attention>35</attention><br>마나 <attention>500</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>경탄</passive><br>마나에 따라 추가 공격력을 얻습니다.<br><br><passive>마나순환</passive><br>대상에게 스킬 또는 기본 공격을 적중시키면 추가 마나를 얻습니다. 추가 마나가 최대치에 도달하면 <rarityLegendary>무라마나</rarityLegendary>로 변합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>35</attention><br>마나 <attention>500</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>경탄</passive><br><scaleAD>0의 추가 공격력</scaleAD>을 얻습니다.<br><br><passive>마나순환</passive> (8초, 최대 충전량 4회)<br>기본 공격과 스킬 적중 시 <scaleMana>3의 최대 마나</scaleMana>(챔피언 상대 시 두 배)를 얻습니다.<br><scaleMana>360의 최대 마나</scaleMana>에서 <rarityLegendary>무라마나</rarityLegendary>로 변합니다.</mainText>",
             "colloq": "",
             "plaintext": "최대 마나량에 따라 공격력이 상승합니다.",
             "from": [
@@ -11513,13 +10465,13 @@ export const item = {
                 "full": "3004.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 336,
-                "y": 336,
+                "x": 48,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 1050,
+                "base": 1100,
                 "purchasable": true,
                 "total": 2900,
                 "sell": 2030
@@ -11536,7 +10488,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 500,
@@ -11556,8 +10509,8 @@ export const item = {
                 "full": "3005.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 384,
-                "y": 336,
+                "x": 96,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
@@ -11575,7 +10528,8 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMovementSpeedMod": 45
@@ -11584,11 +10538,12 @@ export const item = {
         },
         "3006": {
             "name": "광전사의 군화",
-            "description": "<mainText><stats>공격 속도 <attention>35%</attention><br>이동 속도 <attention>45</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>25%</attention><br>이동 속도 <attention>45</attention></stats><br><br></mainText>",
             "colloq": ";berserker;greaves",
             "plaintext": "이동 속도와 공격 속도가 상승합니다.",
             "from": [
                 "1001",
+                "1042",
                 "1042"
             ],
             "into": [
@@ -11598,13 +10553,13 @@ export const item = {
                 "full": "3006.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 432,
-                "y": 336,
+                "x": 144,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 500,
+                "base": 300,
                 "purchasable": true,
                 "total": 1100,
                 "sell": 770
@@ -11618,17 +10573,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMovementSpeedMod": 45,
-                "PercentAttackSpeedMod": 0.35
+                "PercentAttackSpeedMod": 0.25
             },
             "depth": 2
         },
         "3009": {
             "name": "신속의 장화",
-            "description": "<mainText><stats>이동 속도 <attention>60</attention></stats><br><br><keyword>둔화</keyword> 효과가 25% 감소합니다.</mainText>",
+            "description": "<mainText><stats>이동 속도 <attention>60</attention></stats><br><br><passive>날쌘 발걸음</passive><br><keyword>둔화</keyword> 효과가 25% 감소합니다.</mainText>",
             "colloq": ";boots;of;swiftness",
             "plaintext": "이동 속도가 증가하고, 둔화 효과를 감소시킵니다.",
             "from": [
@@ -11638,16 +10594,16 @@ export const item = {
                 "full": "3009.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 0,
-                "y": 384,
+                "x": 192,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 600,
+                "base": 700,
                 "purchasable": true,
-                "total": 900,
-                "sell": 630
+                "total": 1000,
+                "sell": 700
             },
             "tags": [
                 "Boots"
@@ -11657,7 +10613,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMovementSpeedMod": 60
@@ -11666,7 +10623,7 @@ export const item = {
         },
         "3010": {
             "name": "공생형 밑창",
-            "description": "<mainText><stats>이동 속도 <attention>35</attention></stats><br><br>강화 귀환 효과를 얻습니다.<br><br>150000의 거리를 이동하면 <rarityLegendary>하나 된 영혼</rarityLegendary>으로 변신합니다.</mainText>",
+            "description": "<mainText><stats>이동 속도 <attention>35</attention></stats><br><br><passive>공허 태생</passive><br>강화 귀환 효과를 얻습니다.<br><br><passive>공생</passive><br>150000의 거리를 이동하면 <rarityLegendary>하나 된 영혼</rarityLegendary>으로 변신합니다.</mainText>",
             "colloq": ";catalyst;protector",
             "plaintext": "마나를 소모해 체력을 회복합니다.",
             "from": [
@@ -11679,8 +10636,8 @@ export const item = {
                 "full": "3010.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 48,
-                "y": 384,
+                "x": 240,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
@@ -11698,7 +10655,8 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMovementSpeedMod": 35
@@ -11719,16 +10677,16 @@ export const item = {
                 "full": "3011.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 96,
-                "y": 384,
+                "x": 288,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 500,
                 "purchasable": false,
-                "total": 2100,
-                "sell": 1470
+                "total": 1900,
+                "sell": 1330
             },
             "tags": [
                 "SpellDamage",
@@ -11740,7 +10698,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 35
@@ -11761,16 +10720,16 @@ export const item = {
                 "full": "3012.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 144,
-                "y": 384,
+                "x": 336,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 300,
                 "purchasable": false,
-                "total": 950,
-                "sell": 665
+                "total": 900,
+                "sell": 630
             },
             "tags": [
                 "Health",
@@ -11781,7 +10740,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 200
@@ -11790,7 +10750,7 @@ export const item = {
         },
         "3013": {
             "name": "하나 된 영혼",
-            "description": "<mainText><stats>이동 속도 <attention>45</attention></stats><br><br>귀환이 강화됩니다.<br><br>전투에서 벗어나 있을 때 <speed>45의 이동 속도</speed>를 얻습니다.</mainText>",
+            "description": "<mainText><stats>이동 속도 <attention>45</attention></stats><br><br><passive>공허 태생</passive><br>강화 귀환 효과를 얻습니다.<br><br><passive>동시성</passive><br>전투에서 벗어나 있을 때 <speed>45의 이동 속도</speed>를 얻습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -11801,8 +10761,8 @@ export const item = {
                 "full": "3013.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 192,
-                "y": 384,
+                "x": 384,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
@@ -11820,7 +10780,8 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMovementSpeedMod": 45
@@ -11829,7 +10790,7 @@ export const item = {
         },
         "3020": {
             "name": "마법사의 신발",
-            "description": "<mainText><stats>마법 관통력 <attention>18</attention><br>이동 속도 <attention>45</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>마법 관통력 <attention>15</attention><br>이동 속도 <attention>45</attention></stats><br><br></mainText>",
             "colloq": ";sorcerer's;shoes",
             "plaintext": "이동 속도와 마법 피해량이 증가합니다.",
             "from": [
@@ -11839,8 +10800,8 @@ export const item = {
                 "full": "3020.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 240,
-                "y": 384,
+                "x": 432,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
@@ -11859,7 +10820,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMovementSpeedMod": 45
@@ -11886,8 +10848,8 @@ export const item = {
                 "full": "3023.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 288,
-                "y": 384,
+                "x": 0,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -11907,7 +10869,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 150,
@@ -11917,7 +10880,7 @@ export const item = {
         },
         "3024": {
             "name": "얼음 방패",
-            "description": "<mainText><stats>방어력 <attention>20</attention><br>마나 <attention>250</attention><br>스킬 가속 <attention>10</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>방어력 <attention>25</attention><br>마나 <attention>300</attention><br>스킬 가속 <attention>10</attention></stats><br><br></mainText>",
             "colloq": ";glacial;shroud;buckler",
             "plaintext": "방어력과 재사용 대기시간 감소율이 증가합니다.",
             "from": [
@@ -11932,16 +10895,16 @@ export const item = {
                 "full": "3024.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 336,
-                "y": 384,
+                "x": 48,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 50,
                 "purchasable": true,
-                "total": 950,
-                "sell": 665
+                "total": 900,
+                "sell": 630
             },
             "tags": [
                 "Armor",
@@ -11954,17 +10917,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMPPoolMod": 250,
-                "FlatArmorMod": 20
+                "FlatMPPoolMod": 300,
+                "FlatArmorMod": 25
             },
             "depth": 2
         },
         "3026": {
             "name": "수호 천사",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>방어력 <attention>45</attention></stats><br><br><passive>환생</passive><br>치명적인 피해를 입으면 잠시 후 부활합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>55</attention><br>방어력 <attention>45</attention></stats><br><br><passive>환생</passive> (0초)<br>치명적인 피해를 입으면 4초 동안 <keyword>경직</keyword>에 걸린 다음 <healing>기본 체력의 50%</healing>, <scaleMana>최대 마나의 100%</scaleMana>를 회복합니다.</mainText>",
             "colloq": ";가엔;ga;guardian;angel;가앤",
             "plaintext": "주기적으로 챔피언 사망 시 부활시켜 줍니다.",
             "from": [
@@ -11975,8 +10939,8 @@ export const item = {
                 "full": "3026.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 384,
-                "y": 384,
+                "x": 96,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -11995,7 +10959,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatArmorMod": 45,
@@ -12011,7 +10976,7 @@ export const item = {
         },
         "3031": {
             "name": "무한의 대검",
-            "description": "<mainText><stats>공격력 <attention>80</attention><br>치명타 확률 <attention>25%</attention><br>치명타 피해량 <attention>50%</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>70</attention><br>치명타 확률 <attention>25%</attention><br>치명타 피해량 <attention>40%</attention></stats><br><br></mainText>",
             "colloq": ";인피;무대;ie;infinity;edge",
             "plaintext": "치명타 확률이 대폭 증가합니다.",
             "from": [
@@ -12019,23 +10984,20 @@ export const item = {
                 "1037",
                 "1018"
             ],
-            "into": [
-                "7031"
-            ],
             "image": {
                 "full": "3031.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 432,
-                "y": 384,
+                "x": 144,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 625,
+                "base": 825,
                 "purchasable": true,
-                "total": 3400,
-                "sell": 2380
+                "total": 3600,
+                "sell": 2520
             },
             "tags": [
                 "CriticalStrike",
@@ -12046,34 +11008,35 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
-                "FlatPhysicalDamageMod": 80
+                "FlatPhysicalDamageMod": 70
             },
             "depth": 2
         },
         "3032": {
             "name": "윤 탈 야생화살",
-            "description": "<mainText><stats>공격력 <attention>65</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>톱날</passive><br>치명타 공격이 추가 지속 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>65</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>톱날</passive><br>기본 공격 시 치명타가 적용되면 2초 동안 <scaleAD>추가 물리 피해</scaleAD>를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
-                "1037",
+                "1038",
                 "6670"
             ],
             "image": {
                 "full": "3032.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 0,
-                "y": 432,
+                "x": 192,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 925,
+                "base": 600,
                 "purchasable": true,
                 "total": 3200,
                 "sell": 2240
@@ -12087,7 +11050,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
@@ -12097,7 +11061,7 @@ export const item = {
         },
         "3033": {
             "name": "필멸자의 운명",
-            "description": "<mainText><stats>공격력 <attention>40</attention><br>방어구 관통력 <attention>35%</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>고통스러운 상처</passive><br>적 챔피언에게 물리 피해를 입히면 3초 동안 <keyword>40%의 고통스러운 상처</keyword>를 남깁니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>35</attention><br>방어구 관통력 <attention>30%</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>고통스러운 상처</passive><br>적 챔피언에게 물리 피해를 입히면 3초 동안 <keyword>40%의 상처</keyword>를 남깁니다.</mainText>",
             "colloq": ";grievous;rhxhdtmfjdnstkdcj;고통스러운상처;rhxhdtmfjdns;tkdcj;고통;상처;필멸자;처형;필멸;최후;속삭임;cjgud;vlfauf;mortal;reminder",
             "plaintext": "체력 회복력과 방어력이 뛰어난 적에게 효과적입니다.",
             "from": [
@@ -12109,16 +11073,16 @@ export const item = {
                 "full": "3033.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 48,
-                "y": 432,
+                "x": 240,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 150,
+                "base": 350,
                 "purchasable": true,
-                "total": 3000,
-                "sell": 2100
+                "total": 3200,
+                "sell": 2240
             },
             "tags": [
                 "Damage",
@@ -12130,11 +11094,12 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
-                "FlatPhysicalDamageMod": 40
+                "FlatPhysicalDamageMod": 35
             },
             "depth": 3
         },
@@ -12156,8 +11121,8 @@ export const item = {
                 "full": "3035.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 96,
-                "y": 432,
+                "x": 288,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -12176,7 +11141,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 20
@@ -12185,24 +11151,24 @@ export const item = {
         },
         "3036": {
             "name": "도미닉 경의 인사",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>방어구 관통력 <attention>40%</attention><br>치명타 확률 <attention>25%</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>35</attention><br>방어구 관통력 <attention>35%</attention><br>치명타 확률 <attention>25%</attention></stats><br><br></mainText>",
             "colloq": ";라위;lw;lord;dominik's;regards",
             "plaintext": "체력과 방어력이 뛰어난 적에게 효과적입니다.",
             "from": [
                 "3035",
-                "1018"
+                "6670"
             ],
             "image": {
                 "full": "3036.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 144,
-                "y": 432,
+                "x": 336,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 950,
+                "base": 250,
                 "purchasable": true,
                 "total": 3000,
                 "sell": 2100
@@ -12217,11 +11183,12 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
-                "FlatPhysicalDamageMod": 45
+                "FlatPhysicalDamageMod": 35
             },
             "effect": {
                 "Effect1Amount": "0.2"
@@ -12241,8 +11208,8 @@ export const item = {
                 "full": "3039.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 192,
-                "y": 432,
+                "x": 384,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -12263,7 +11230,8 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 30,
@@ -12274,7 +11242,7 @@ export const item = {
         },
         "3040": {
             "name": "대천사의 포옹",
-            "description": "<mainText><stats>주문력 <attention>80</attention><br>마나 <attention>1000</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>경탄</passive> <scaleMana>추가 마나의 2%</scaleMana>만큼 주문력을 얻습니다.<br><passive>생명선</passive> (90(0초))<br>체력이 30% 밑으로 떨어질 만큼 피해를 입으면 3초 동안 <shield>250+현재 마나 보호막의 20%에 해당하는 피해를 흡수하는 보호막</shield>을 얻습니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>70</attention><br>마나 <attention>1000</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>경탄</passive><br><scaleMana>추가 마나의 2%</scaleMana>만큼 주문력을 얻습니다.<br><br><passive>생명선</passive> (0초)<br>체력이 30% 밑으로 떨어질 만큼 피해를 입으면 3초 동안 <shield>200+현재 마나의 20%에 해당하는 피해를 흡수하는 보호막</shield>을 얻습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 3003,
@@ -12283,8 +11251,8 @@ export const item = {
                 "full": "3040.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 240,
-                "y": 432,
+                "x": 432,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -12304,16 +11272,17 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 1000,
-                "FlatMagicDamageMod": 80
+                "FlatMagicDamageMod": 70
             }
         },
         "3041": {
             "name": "메자이의 영혼약탈자",
-            "description": "<mainText><stats>주문력 <attention>20</attention><br>체력 <attention>100</attention></stats><br><br><passive>영광</passive><li>적을 처치하거나 어시스트를 올릴 때 중첩을 획득합니다. 중첩당 주문력을 얻습니다. 사망 시 중첩 일부가 사라집니다.<li>10중첩 이상일 때 이동 속도가 상승합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>20</attention><br>체력 <attention>100</attention></stats><br><br><passive>영광</passive><br><keyword>처치 관여</keyword> 시 <passive>영광</passive>을 최대 25 중첩까지 얻습니다. 사망 시 <passive>영광</passive> 10중첩을 잃습니다.<br><passive>영광</passive> 하나당 <scaleAP>5의 주문력</scaleAP>을 얻으며, <passive>영광</passive>이 10중첩 이상이면 <speed>이동 속도가 10%</speed>를 증가합니다.</mainText>",
             "colloq": ";mejai's;soulstealer",
             "plaintext": "챔피언을 처치하거나 어시스트를 올릴 경우, 주문력이 오릅니다.",
             "from": [
@@ -12323,8 +11292,8 @@ export const item = {
                 "full": "3041.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 288,
-                "y": 432,
+                "x": 0,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -12344,7 +11313,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 100,
@@ -12354,7 +11324,7 @@ export const item = {
         },
         "3042": {
             "name": "무라마나",
-            "description": "<mainText><stats>공격력 <attention>35</attention><br>마나 <attention>860</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>경탄</passive><br>마나에 따라 추가 공격력을 얻습니다.<br><br><passive>충격</passive><br>기본 공격과 공격 스킬로 챔피언에게 추가 물리 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>35</attention><br>마나 <attention>860</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>경탄</passive><br><scaleAD>0의 추가 공격력</scaleAD>을 얻습니다.<br><br><passive>충격</passive><br>챔피언에게 기본 공격 시 <physicalDamage>0의 추가 물리 피해</physicalDamage>(<OnHit>적중 시</OnHit> )를 입힙니다. <br>스킬로 챔피언에게 피해를 입히면 <physicalDamage>{{ Item_Melee_Ranged_Split }}의 추가 물리 피해</physicalDamage>를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 3004,
@@ -12363,16 +11333,16 @@ export const item = {
                 "full": "3042.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 336,
-                "y": 432,
+                "x": 48,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 3000,
+                "base": 2900,
                 "purchasable": false,
-                "total": 3000,
-                "sell": 2100
+                "total": 2900,
+                "sell": 2030
             },
             "tags": [
                 "Damage",
@@ -12386,7 +11356,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 860,
@@ -12395,7 +11366,7 @@ export const item = {
         },
         "3044": {
             "name": "탐식의 망치",
-            "description": "<mainText><stats>공격력 <attention>15</attention><br>체력 <attention>200</attention></stats><br><br><passive>분노</passive><br>기본 공격 시 이동 속도가 증가합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>15</attention><br>체력 <attention>200</attention></stats><br><br><passive>분노</passive><br>기본 공격을 가하면 2초 동안 <speed>이동 속도</speed>가 상승합니다.</mainText>",
             "colloq": ";탐망;phage",
             "plaintext": "적을 공격하거나 처치하면 이동 속도가 잠시 상승합니다.",
             "from": [
@@ -12405,6 +11376,7 @@ export const item = {
             "into": [
                 "3071",
                 "3078",
+                "3073",
                 "6631",
                 "6630"
             ],
@@ -12412,8 +11384,8 @@ export const item = {
                 "full": "3044.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 384,
-                "y": 432,
+                "x": 96,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -12433,7 +11405,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 200,
@@ -12453,7 +11426,7 @@ export const item = {
         },
         "3046": {
             "name": "유령 무희",
-            "description": "<mainText><stats>공격 속도 <attention>60%</attention><br>치명타 확률 <attention>25%</attention><br>이동 속도 <attention>12%</attention></stats><br><br><passive>망령의 왈츠</passive><br><status>유체화</status> 상태가 됩니다.</mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>60%</attention><br>치명타 확률 <attention>25%</attention><br>이동 속도 <attention>8%</attention></stats><br><br><passive>망령의 왈츠</passive><br><keyword>유체화</keyword> 상태가 됩니다.</mainText>",
             "colloq": ";팬댄;pd;phantom;dancer",
             "plaintext": "적을 공격할 때 더 빠르게 움직이며 체력이 낮으면 보호막이 생성됩니다.",
             "from": [
@@ -12465,16 +11438,16 @@ export const item = {
                 "full": "3046.png",
                 "sprite": "item2.png",
                 "group": "item",
-                "x": 432,
-                "y": 432,
+                "x": 144,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 900,
+                "base": 950,
                 "purchasable": true,
-                "total": 2600,
-                "sell": 1820
+                "total": 2650,
+                "sell": 1855
             },
             "tags": [
                 "CriticalStrike",
@@ -12486,18 +11459,19 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
                 "PercentAttackSpeedMod": 0.6,
-                "PercentMovementSpeedMod": 0.12
+                "PercentMovementSpeedMod": 0.08
             },
             "depth": 3
         },
         "3047": {
             "name": "판금 장화",
-            "description": "<mainText><stats>방어력 <attention>25</attention><br>이동 속도 <attention>45</attention></stats><br><br>기본 공격으로 받는 피해량이 8% 감소합니다.</mainText>",
+            "description": "<mainText><stats>방어력 <attention>25</attention><br>이동 속도 <attention>45</attention></stats><br><br><passive>장갑판</passive><br>기본 공격으로 받는 피해량이 12% 감소합니다.</mainText>",
             "colloq": ";닌탑;타비;ninja;tabi;plated;steelcaps",
             "plaintext": "이동 속도가 증가하고, 적에게 받는 기본 공격의 피해가 줄어듭니다.",
             "from": [
@@ -12506,18 +11480,18 @@ export const item = {
             ],
             "image": {
                 "full": "3047.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 0,
-                "y": 0,
+                "x": 192,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 400,
+                "base": 600,
                 "purchasable": true,
-                "total": 1000,
-                "sell": 700
+                "total": 1200,
+                "sell": 840
             },
             "tags": [
                 "Armor",
@@ -12528,20 +11502,21 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMovementSpeedMod": 45,
                 "FlatArmorMod": 25
             },
             "effect": {
-                "Effect1Amount": "0.08"
+                "Effect1Amount": "0.12"
             },
             "depth": 2
         },
         "3050": {
             "name": "지크의 융합",
-            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>25</attention><br>마법 저항력 <attention>25</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>서리불꽃 폭풍</passive> <br>궁극기 사용 시 주변에 폭풍을 소환합니다. 폭풍은 적 챔피언에게 마법 피해를 입히고 <keyword>둔화</keyword>시킵니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>25</attention><br>마법 저항력 <attention>25</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>서리불꽃 폭풍</passive> (0초)<br>궁극기 사용 시 주변에 5초 동안 폭풍을 소환합니다. 폭풍은 적 챔피언에게 매초 <magicDamage>30의 마법 피해</magicDamage>를 입히고 30% <keyword>둔화</keyword>시킵니다.</mainText>",
             "colloq": ";haroldandkumar;zeke's;convergence",
             "plaintext": "궁극기 사용 시 아군 한 명과 함께 추가 효과를 받습니다.",
             "from": [
@@ -12551,15 +11526,15 @@ export const item = {
             ],
             "image": {
                 "full": "3050.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 48,
-                "y": 0,
+                "x": 240,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 650,
+                "base": 700,
                 "purchasable": true,
                 "total": 2200,
                 "sell": 1540
@@ -12575,7 +11550,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 25,
@@ -12597,24 +11573,22 @@ export const item = {
             "into": [
                 "3078",
                 "6672",
-                "3087",
-                "3073",
                 "3302"
             ],
             "image": {
                 "full": "3051.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 96,
-                "y": 0,
+                "x": 288,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 300,
+                "base": 250,
                 "purchasable": true,
-                "total": 1300,
-                "sell": 910
+                "total": 1200,
+                "sell": 840
             },
             "tags": [
                 "Damage",
@@ -12625,7 +11599,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 20,
@@ -12635,7 +11610,7 @@ export const item = {
         },
         "3053": {
             "name": "스테락의 도전",
-            "description": "<mainText><stats>체력 <attention>400</attention><br>강인함 <attention>20%</attention></stats><br><br><passive>잡아채는 발톱</passive><br>추가 공격력을 얻습니다.<br><br><passive>생명선</passive> (0초)<br>체력이 30% 밑으로 떨어질 만큼 피해를 입으면 보호막을 얻습니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>400</attention><br>강인함 <attention>20%</attention></stats><br><br><passive>잡아채는 발톱</passive><br><scaleAD>추가 공격력</scaleAD>을 얻습니다.<br><br><passive>생명선</passive> (0초)<br>체력이 30% 밑으로 떨어질 만큼 피해를 입으면 4.5초 동안 <shield>피해를 흡수하며 점차 사라지는 보호막</shield>을 얻습니다.</mainText>",
             "colloq": ";juggernaut;primal;sterak's;gage",
             "plaintext": "대량의 피해를 보호막으로 막아줍니다.",
             "from": [
@@ -12645,10 +11620,10 @@ export const item = {
             ],
             "image": {
                 "full": "3053.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 144,
-                "y": 0,
+                "x": 336,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -12668,7 +11643,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 400
@@ -12677,7 +11653,7 @@ export const item = {
         },
         "3057": {
             "name": "광휘의 검",
-            "description": "<mainText><stats>스킬 가속 <attention>10</attention></stats><br><br><passive>주문 검</passive><br>스킬을 사용하고 나면 다음 기본 공격 시 추가 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>스킬 가속 <attention>10</attention></stats><br><br><passive>주문 검</passive> (0초)<br>스킬을 사용하고 나면 다음 기본 공격 시 <OnHit>적중 시</OnHit> <physicalDamage>추가 물리 피해</physicalDamage>를 입힙니다.<br></mainText>",
             "colloq": ";sheen",
             "plaintext": "스킬 공격 다음 공격에 추가 피해가 적용됩니다.",
             "from": [
@@ -12691,10 +11667,10 @@ export const item = {
             ],
             "image": {
                 "full": "3057.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 192,
-                "y": 0,
+                "x": 384,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -12713,14 +11689,15 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "depth": 2
         },
         "3065": {
             "name": "정령의 형상",
-            "description": "<mainText><stats>체력 <attention>450</attention><br>마법 저항력 <attention>60</attention><br>스킬 가속 <attention>10</attention><br>기본 체력 재생 <attention>100%</attention></stats><br><br><passive>무한한 활력</passive><br>자신이 받는 모든 체력 회복 및 보호막 효과가 25% 증가합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>400</attention><br>마법 저항력 <attention>50</attention><br>스킬 가속 <attention>10</attention><br>기본 체력 재생 <attention>100%</attention></stats><br><br><passive>무한한 활력</passive><br>자신이 받는 회복 효과와 보호막 효과가 25% 증가합니다.</mainText>",
             "colloq": ";비사지;sv;spirit;visage",
             "plaintext": "체력이 오르며 치유 효과가 커집니다.",
             "from": [
@@ -12729,18 +11706,18 @@ export const item = {
             ],
             "image": {
                 "full": "3065.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 240,
-                "y": 0,
+                "x": 432,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 850,
+                "base": 650,
                 "purchasable": true,
-                "total": 2900,
-                "sell": 2030
+                "total": 2700,
+                "sell": 1890
             },
             "tags": [
                 "Health",
@@ -12754,17 +11731,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatSpellBlockMod": 60,
-                "FlatHPPoolMod": 450
+                "FlatSpellBlockMod": 50,
+                "FlatHPPoolMod": 400
             },
             "depth": 3
         },
         "3066": {
             "name": "비상의 월갑",
-            "description": "<mainText><stats>체력 <attention>150</attention><br>이동 속도 <attention>5%</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>체력 <attention>200</attention><br>이동 속도 <attention>4%</attention></stats><br><br></mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -12774,14 +11752,15 @@ export const item = {
                 "3742",
                 "3002",
                 "3083",
+                "3181",
                 "4401"
             ],
             "image": {
                 "full": "3066.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 288,
-                "y": 0,
+                "x": 0,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -12800,11 +11779,12 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 150,
-                "PercentMovementSpeedMod": 0.05
+                "FlatHPPoolMod": 200,
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 2
         },
@@ -12818,6 +11798,7 @@ export const item = {
                 "2022"
             ],
             "into": [
+                "3071",
                 "3050",
                 "6620",
                 "6656",
@@ -12829,7 +11810,7 @@ export const item = {
                 "3107",
                 "3152",
                 "3119",
-                "3161",
+                "3165",
                 "3190",
                 "3222",
                 "4403",
@@ -12841,10 +11822,10 @@ export const item = {
             ],
             "image": {
                 "full": "3067.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 336,
-                "y": 0,
+                "x": 48,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -12864,7 +11845,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 200
@@ -12873,7 +11855,7 @@ export const item = {
         },
         "3068": {
             "name": "태양불꽃 방패",
-            "description": "<mainText><stats>체력 <attention>350</attention><br>방어력 <attention>50</attention><br>스킬 가속 <attention>10</attention></stats><br><br><br><li><passive>불사르기:</passive> 피해를 받거나 입히면 주변 적들에게 3초 동안 초당 <magicDamage>(15+ 최대 체력의 1.75%)의 마법 피해</magicDamage>를 입힙니다. (미니언 대상 25%) 챔피언이나 에픽 몬스터에게 이 효과로 피해를 입히면 중첩이 1회 쌓여 다음 <passive>불사르기</passive> 피해량이 5초 동안 10% 증가합니다. (최대 6회 중첩)<br></mainText>",
+            "description": "<mainText><stats>체력 <attention>350</attention><br>방어력 <attention>50</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>불사르기</passive><br>피해를 받거나 입히면 주변 적들에게 3초 동안 매초 <magicDamage>마법 피해</magicDamage>를 입힙니다. </mainText>",
             "colloq": ";선파;썬파;태불;sunfire;cape;aegis",
             "plaintext": "방어력이 높고 주변 적에게 지속적으로 피해를 입힙니다. 적을 이동 불가 상태로 만들면 화염을 방출해 피해를 입힙니다.",
             "from": [
@@ -12882,10 +11864,10 @@ export const item = {
             ],
             "image": {
                 "full": "3068.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 384,
-                "y": 0,
+                "x": 96,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -12906,7 +11888,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 350,
@@ -12916,7 +11899,7 @@ export const item = {
         },
         "3070": {
             "name": "여신의 눈물",
-            "description": "<mainText><stats>마나 <attention>240</attention></stats><br><br><br><li><passive>집중:</passive> 기본 공격 시 미니언에게 추가 물리 피해를 입힙니다.<li><passive>마나순환:</passive> 대상에게 스킬을 적중시키면 중첩을 하나 소모해 <scaleMana>3의 추가 마나</scaleMana>를 얻습니다. 챔피언 대상으로는 두 배로 적용됩니다. 추가 마나는 최대 360까지 얻을 수 있습니다.<br><br><rules>8초마다 새로운 <passive>마나 충전</passive> 중첩을 얻습니다. (최대 4)</rules></mainText>",
+            "description": "<mainText><stats>마나 <attention>240</attention></stats><br><br><passive>마나순환</passive> (8초, 최대 충전량 4회)<br>스킬 적중 시 <scaleMana>3의 최대 마나</scaleMana>(챔피언 상대 시 두 배, 최대 <scaleMana>360</scaleMana>)를 얻습니다.<br><br><passive>도움의 손길</passive><br>미니언에게 기본 공격 시 <physicalDamage>5의 물리 피해</physicalDamage>를 추가로 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "마나를 소모하면 최대 마나량이 증가합니다.",
             "into": [
@@ -12926,10 +11909,10 @@ export const item = {
             ],
             "image": {
                 "full": "3070.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 432,
-                "y": 0,
+                "x": 144,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -12948,7 +11931,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 240
@@ -12956,28 +11940,25 @@ export const item = {
         },
         "3071": {
             "name": "칠흑의 양날 도끼",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>체력 <attention>400</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>깎아내기</passive><br>챔피언에게 물리 피해를 입히면 방어력을 감소시키는 중첩을 1회 적용합니다.<br><br><passive>열정</passive><br>물리 피해를 입히면 이동 속도가 상승합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>40</attention><br>체력 <attention>400</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>깎아내기</passive><br>챔피언에게 <physicalDamage>물리 피해</physicalDamage>를 입히면 6초 동안 대상의 <scaleArmor>방어력이 6%</scaleArmor> 감소합니다. (5회 중첩)<br><br><passive>열정</passive><br><physicalDamage>물리 피해</physicalDamage>를 입히면 2초 동안 <speed>이동 속도가 20</speed> 증가합니다.</mainText>",
             "colloq": ";블클;bc;black;cleaver",
             "plaintext": "적 챔피언에게 물리 피해를 입히면 적의 방어력이 감소합니다.",
             "from": [
                 "3044",
-                "3133",
-                "1028"
-            ],
-            "into": [
-                "7037"
+                "3067",
+                "1037"
             ],
             "image": {
                 "full": "3071.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 0,
-                "y": 48,
+                "x": 192,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 400,
+                "base": 225,
                 "purchasable": true,
                 "total": 3000,
                 "sell": 2100
@@ -12996,11 +11977,12 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 400,
-                "FlatPhysicalDamageMod": 55
+                "FlatPhysicalDamageMod": 40
             },
             "effect": {
                 "Effect1Amount": "0",
@@ -13018,7 +12000,7 @@ export const item = {
         },
         "3072": {
             "name": "피바라기",
-            "description": "<mainText><stats>공격력 <attention>80</attention><br>생명력 흡수 <attention>18%</attention></stats><br><br><passive>영액의 보호막</passive><br>생명력 흡수 효과로 체력 회복 시 초과분을 보호막으로 전환합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>80</attention><br>생명력 흡수 <attention>15%</attention></stats><br><br><passive>영액의 보호막</passive><br>생명력 흡수 효과로 체력 회복 시 초과분을 <shield>보호막</shield>으로 전환합니다.</mainText>",
             "colloq": ";블서;블써;bt;bloodthirster",
             "plaintext": "공격력 및 생명력 흡수가 증가하며, 생명력 흡수가 최대 체력 이상으로 가능해집니다.",
             "from": [
@@ -13028,10 +12010,10 @@ export const item = {
             ],
             "image": {
                 "full": "3072.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 48,
-                "y": 48,
+                "x": 240,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -13050,37 +12032,36 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 80,
-                "PercentLifeStealMod": 0.18
+                "PercentLifeStealMod": 0.15
             },
             "depth": 3
         },
         "3073": {
             "name": "실험적 마공학판",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>공격 속도 <attention>25%</attention><br>체력 <attention>300</attention></stats><br><br><passive>마공학 충전</passive><br>궁극기의 스킬 가속이 증가합니다.<br><br><passive>폭주</passive><br>궁극기를 사용한 후 잠시 동안 공격 속도와 추가 이동 속도를 얻습니다.<br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>40</attention><br>공격 속도 <attention>20%</attention><br>체력 <attention>450</attention></stats><br><br><passive>마공학 충전</passive><br>궁극기 가속이 30 증가합니다.<br><br><passive>폭주</passive> (0초)<br>궁극기를 사용한 후 8초 동안 <attackSpeed>공격 속도가 30%</attackSpeed>, <speed>이동 속도가 15%</speed> 증가합니다. <br></mainText>",
             "colloq": ";tear;goddess;experimental;hexplate",
             "plaintext": "마나를 소모하면 최대 마나량이 증가합니다.",
             "from": [
                 "2021",
-                "3051"
-            ],
-            "into": [
-                "7036"
+                "3044",
+                "1042"
             ],
             "image": {
                 "full": "3073.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 96,
-                "y": 48,
+                "x": 288,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 550,
+                "base": 500,
                 "purchasable": true,
                 "total": 3000,
                 "sell": 2100
@@ -13098,18 +12079,19 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 300,
-                "FlatPhysicalDamageMod": 55,
-                "PercentAttackSpeedMod": 0.25
+                "FlatHPPoolMod": 450,
+                "FlatPhysicalDamageMod": 40,
+                "PercentAttackSpeedMod": 0.2
             },
             "depth": 3
         },
         "3074": {
             "name": "굶주린 히드라",
-            "description": "<mainText><stats>공격력 <attention>70</attention><br>스킬 가속 <attention>20</attention><br>생명력 흡수 <attention>12%</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 주변 적들에게 물리 피해를 입힙니다.<br><br><active>활성화</active> (0초)<br><active>굶주린 초승달</active><br>주변 적에게 생명력을 흡수하는 물리 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>65</attention><br>스킬 가속 <attention>15</attention><br>생명력 흡수 <attention>12%</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 주변 적들에게 <physicalDamage>물리 피해</physicalDamage>를 입힙니다.<active>굶주린 초승달</active> (0초)<br>주변 적에게 <physicalDamage>물리 피해</physicalDamage>를 입힙니다. <br>이 피해에는 생명력 흡수가 적용됩니다.</mainText>",
             "colloq": ";ravenous;hydra",
             "plaintext": "근접 공격으로 주변의 적에게 피해를 주면 체력이 회복됩니다. ",
             "from": [
@@ -13119,15 +12101,15 @@ export const item = {
             ],
             "image": {
                 "full": "3074.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 144,
-                "y": 48,
+                "x": 336,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 100,
+                "base": 150,
                 "purchasable": true,
                 "total": 3300,
                 "sell": 2310
@@ -13144,37 +12126,39 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatPhysicalDamageMod": 70,
+                "FlatPhysicalDamageMod": 65,
                 "PercentLifeStealMod": 0.12
             },
             "depth": 3
         },
         "3075": {
             "name": "가시 갑옷",
-            "description": "<mainText><stats>체력 <attention>350</attention><br>방어력 <attention>70</attention></stats><br><br><passive>가시</passive><br>기본 공격에 맞으면 공격한 적에게 피해를 입히고, 대상이 챔피언일 경우 40%의 <keyword>고통스러운 상처</keyword>를 남깁니다.<br><br><rules><status>고통스러운 상처</status>는 치유 및 회복 효과를 감소시킵니다.</rules><br><br></mainText>",
+            "description": "<mainText><stats>체력 <attention>150</attention><br>방어력 <attention>80</attention></stats><br><br><passive>가시</passive><br>기본 공격에 맞으면 공격한 적에게 <magicDamage>마법 피해</magicDamage>를 입히고, 대상이 챔피언일 경우 3초 동안 40%의 <keyword>상처</keyword>를 남깁니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
                 "3076",
-                "1011"
+                "1031",
+                "1028"
             ],
             "image": {
                 "full": "3075.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 192,
-                "y": 48,
+                "x": 384,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 1000,
+                "base": 450,
                 "purchasable": true,
-                "total": 2700,
-                "sell": 1890
+                "total": 2450,
+                "sell": 1715
             },
             "tags": [
                 "Health",
@@ -13185,17 +12169,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 350,
-                "FlatArmorMod": 70
+                "FlatHPPoolMod": 150,
+                "FlatArmorMod": 80
             },
             "depth": 3
         },
         "3076": {
             "name": "덤불 조끼",
-            "description": "<mainText><stats>방어력 <attention>30</attention></stats><br><br><passive>가시</passive><br>기본 공격에 맞으면 공격한 적에게 피해를 입히고, 대상이 챔피언일 경우 40%의 고통스러운 상처를 남깁니다.<br><br><rules><status>고통스러운 상처</status>는 치유 및 회복 효과를 감소시킵니다.</rules></mainText>",
+            "description": "<mainText><stats>방어력 <attention>30</attention></stats><br><br><passive>가시</passive><br>기본 공격에 맞으면 공격한 적에게 <magicDamage>0의 마법 피해</magicDamage>를 입히고, 대상이 챔피언일 경우 3초 동안 <keyword>40%의 상처</keyword>를 남깁니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -13207,10 +12192,10 @@ export const item = {
             ],
             "image": {
                 "full": "3076.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 240,
-                "y": 48,
+                "x": 432,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -13228,7 +12213,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatArmorMod": 30
@@ -13237,7 +12223,7 @@ export const item = {
         },
         "3077": {
             "name": "티아맷",
-            "description": "<mainText><stats>공격력 <attention>20</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 주변 적들에게 물리 피해를 입힙니다.<br><br>아이템 성능은 근접 챔피언과 원거리 챔피언에게 각각 다르게 적용됩니다.<br><br><br><active>활성화</active> (0초)<br><active>초승달</active><br>주변 적에게 <physicalDamage>0의 물리 피해</physicalDamage>를 입힙니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>20</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 주변 적들에게 <physicalDamage>물리 피해</physicalDamage>를 입힙니다.<active>초승달</active> (0초)<br>주변 적에게 <physicalDamage>물리 피해</physicalDamage>를 입힙니다.</mainText>",
             "colloq": ";tiamat",
             "plaintext": "주변 적에게 근접 피해를 입힙니다.",
             "from": [
@@ -13252,10 +12238,10 @@ export const item = {
             ],
             "image": {
                 "full": "3077.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 288,
-                "y": 48,
+                "x": 0,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -13274,7 +12260,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 20
@@ -13283,7 +12270,7 @@ export const item = {
         },
         "3078": {
             "name": "삼위일체",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>공격 속도 <attention>33%</attention><br>체력 <attention>300</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>주문 검</passive><br>스킬을 사용하고 나면 다음 기본 공격 시 추가 물리 피해를 입힙니다.<br><br><passive>가속</passive><br>기본 공격 시 이동 속도를 얻습니다.<br><br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>36</attention><br>공격 속도 <attention>30%</attention><br>체력 <attention>333</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>주문 검</passive> (0초)<br>스킬을 사용하고 나면 다음 기본 공격 시 <physicalDamage>추가 물리 피해</physicalDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.<br> <br><passive>가속</passive><br>기본 공격을 가하면 2초 동안 <speed>이동 속도가 20</speed> 상승합니다.</mainText>",
             "colloq": ";트포;triforce;tons of damage;trinity;force",
             "plaintext": "취급주의: 이 아이템만 갖추면 '엄청난 피해'를 줄 수 있죠...",
             "from": [
@@ -13291,20 +12278,17 @@ export const item = {
                 "3044",
                 "3051"
             ],
-            "into": [
-                "7018"
-            ],
             "image": {
                 "full": "3078.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 336,
-                "y": 48,
+                "x": 48,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 33,
+                "base": 133,
                 "purchasable": true,
                 "total": 3333,
                 "sell": 2333
@@ -13323,12 +12307,13 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 300,
-                "FlatPhysicalDamageMod": 45,
-                "PercentAttackSpeedMod": 0.33
+                "FlatHPPoolMod": 333,
+                "FlatPhysicalDamageMod": 36,
+                "PercentAttackSpeedMod": 0.3
             },
             "effect": {
                 "Effect1Amount": "25",
@@ -13354,10 +12339,10 @@ export const item = {
             ],
             "image": {
                 "full": "3082.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 384,
-                "y": 48,
+                "x": 96,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -13375,7 +12360,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatArmorMod": 40
@@ -13384,7 +12370,7 @@ export const item = {
         },
         "3083": {
             "name": "워모그의 갑옷",
-            "description": "<mainText><stats>체력 <attention>1000</attention><br>이동 속도 <attention>5%</attention><br>기본 체력 재생 <attention>100%</attention></stats><br><br><passive>워모그의 심장</passive><br>추가 체력이 1300 이상일 때, 6초 동안 피해를 입지 않으면 매초 체력을 회복합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>1000</attention><br>이동 속도 <attention>4%</attention><br>기본 체력 재생 <attention>100%</attention></stats><br><br><passive>워모그의 심장</passive><br>추가 체력이 1500일 때, 6초 동안 피해를 입지 않으면 초당 <healing>체력</healing>을 회복하고 <speed>이동 속도가 4%</speed> 증가합니다.</mainText>",
             "colloq": ";warmog;armor",
             "plaintext": "체력과 체력 재생량이 대폭 상승합니다.",
             "from": [
@@ -13394,18 +12380,18 @@ export const item = {
             ],
             "image": {
                 "full": "3083.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 432,
-                "y": 48,
+                "x": 144,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 600,
+                "base": 800,
                 "purchasable": true,
-                "total": 3100,
-                "sell": 2170
+                "total": 3300,
+                "sell": 2310
             },
             "tags": [
                 "Health",
@@ -13417,38 +12403,36 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 1000,
-                "PercentMovementSpeedMod": 0.05
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 3
         },
         "3084": {
             "name": "강철심장",
-            "description": "<mainText><stats>체력 <attention>900</attention><br>기본 체력 재생 <attention>200%</attention></stats><br><br><passive>거인의 흡수</passive> 대상별: (0초)<br>주변에 있는 챔피언을 상대로 일정 시간 동안 강력한 공격을 충전합니다. 충전된 공격은 대상에 추가 물리 피해를 입히고 영구적으로 최대 체력을 부여합니다.<br><br><passive>거인</passive><br>최대 체력에 따라 크기가 증가합니다. </mainText>",
+            "description": "<mainText><stats>체력 <attention>900</attention><br>기본 체력 재생 <attention>100%</attention></stats><br><br><passive>거인의 흡수</passive> 대상 하나당 (0초)<br>적 챔피언이 몇 초 동안 근처에 있으면 다음 기본 공격 시 해당 대상에게 <physicalDamage>80+아이템 체력의 12%</physicalDamage>에 해당하는 <physicalDamage>추가 물리 피해</physicalDamage>를 입히고 피해의 <scaleHealth>12%</scaleHealth>만큼 <scaleHealth>최대 체력</scaleHealth>이 증가합니다.<br><br><passive>거인</passive><br><scaleHealth>최대 체력 1000</scaleHealth>당 크기가 3% 증가합니다. (최대 30%) </mainText>",
             "colloq": ";overlord;bloodmail;heartsteel",
             "plaintext": "적을 처치하거나 어시스트를 올리면 체력이 회복됩니다.",
             "from": [
                 "1011",
                 "3801",
-                "1028"
-            ],
-            "into": [
-                "7025"
+                "1011"
             ],
             "image": {
                 "full": "3084.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 0,
-                "y": 96,
+                "x": 192,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 900,
+                "base": 400,
                 "purchasable": true,
                 "total": 3000,
                 "sell": 2100
@@ -13462,7 +12446,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 900
@@ -13471,7 +12456,7 @@ export const item = {
         },
         "3085": {
             "name": "루난의 허리케인",
-            "description": "<mainText><stats>공격 속도 <attention>40%</attention><br>치명타 확률 <attention>25%</attention><br>이동 속도 <attention>7%</attention></stats><br><br><passive>쪼기</passive><br>기본 공격 적중 시 추가 마법 피해를 입힙니다.<br><br><passive>바람의 분노</passive><br>기본 공격 시 대상 주변 최대 2명의 적에게 작은 탄환을 발사합니다. 이 탄환에는 치명타 및 적중 시 효과가 적용됩니다.<br><br><rules>원거리 챔피언 전용 아이템입니다.</rules></mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>40%</attention><br>치명타 확률 <attention>25%</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>바람의 분노</passive><br>기본 공격 시 대상 근처에 있는 적 2명에게 추가로 탄환을 발사합니다.<br>각 탄환은 <physicalDamage>물리 피해</physicalDamage>를 입히고 <OnHit>적중 시</OnHit> 효과를 적용합니다.</mainText>",
             "colloq": ";runaan's;hurricane",
             "plaintext": "원거리 공격 시 주변의 적들에게 두 발의 탄환을 발사합니다.",
             "from": [
@@ -13480,18 +12465,18 @@ export const item = {
             ],
             "image": {
                 "full": "3085.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 48,
-                "y": 96,
+                "x": 240,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 600,
+                "base": 850,
                 "purchasable": true,
-                "total": 2600,
-                "sell": 1820
+                "total": 2650,
+                "sell": 1855
             },
             "tags": [
                 "CriticalStrike",
@@ -13504,12 +12489,13 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
                 "PercentAttackSpeedMod": 0.4,
-                "PercentMovementSpeedMod": 0.07
+                "PercentMovementSpeedMod": 0.04
             },
             "effect": {
                 "Effect1Amount": "0",
@@ -13523,7 +12509,7 @@ export const item = {
         },
         "3086": {
             "name": "열정의 검",
-            "description": "<mainText><stats>공격 속도 <attention>15%</attention><br>치명타 확률 <attention>20%</attention><br>이동 속도 <attention>5%</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>15%</attention><br>치명타 확률 <attention>15%</attention><br>이동 속도 <attention>4%</attention></stats><br><br></mainText>",
             "colloq": ";zeal",
             "plaintext": "치명타 확률, 이동 속도와 공격 속도가 약간 상승합니다.",
             "from": [
@@ -13532,26 +12518,26 @@ export const item = {
             ],
             "into": [
                 "3094",
+                "6671",
                 "3046",
                 "3085",
                 "4403",
-                "6671",
                 "6675"
             ],
             "image": {
                 "full": "3086.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 96,
-                "y": 96,
+                "x": 288,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 200,
+                "base": 350,
                 "purchasable": true,
-                "total": 1100,
-                "sell": 770
+                "total": 1200,
+                "sell": 840
             },
             "tags": [
                 "CriticalStrike",
@@ -13563,35 +12549,37 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatCritChanceMod": 0.2,
+                "FlatCritChanceMod": 0.15,
                 "PercentAttackSpeedMod": 0.15,
-                "PercentMovementSpeedMod": 0.05
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 2
         },
         "3087": {
             "name": "스태틱의 단검",
-            "description": "<mainText><stats>공격력 <attention>50</attention><br>공격 속도 <attention>40%</attention></stats><br><br><passive>전기충격</passive><br>충전 상태로 공격 시 연쇄 번개를 발사하여 마법 피해를 입힙니다. </mainText>",
+            "description": "<mainText><stats>공격력 <attention>50</attention><br>공격 속도 <attention>40%</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>전기불꽃</passive> (0초)<br>미니언이나 몬스터를 처치하면 연쇄 번개를 발사하여 최대 <attention>6</attention>명의 대상에게 <magicDamage>120의 마법 피해</magicDamage>를 입힙니다.<br><br><passive>전기충격</passive> <br>처치 관여 시 연쇄 번개를 발사하여 무제한의 대상에게 <magicDamage>270의 마법 피해</magicDamage>를 입힙니다.</mainText>",
             "colloq": ";statikk;shiv",
             "plaintext": "이동 시 점차 충전되어, 기본 공격 시 연쇄 번개를 발사합니다.",
             "from": [
                 "3144",
-                "3051"
+                "6690",
+                "1037"
             ],
             "image": {
                 "full": "3087.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 144,
-                "y": 96,
+                "x": 336,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 700,
+                "base": 650,
                 "purchasable": true,
                 "total": 2900,
                 "sell": 2030
@@ -13599,44 +12587,44 @@ export const item = {
             "tags": [
                 "Damage",
                 "AttackSpeed",
-                "OnHit"
+                "OnHit",
+                "NonbootsMovement"
             ],
             "maps": {
                 "11": true,
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 50,
-                "PercentAttackSpeedMod": 0.4
+                "PercentAttackSpeedMod": 0.4,
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 3
         },
         "3089": {
             "name": "라바돈의 죽음모자",
-            "description": "<mainText><stats>주문력 <attention>140</attention></stats><br><br><passive>신비한 작품</passive><br>총 <scaleAP>주문력이 35%</scaleAP> 증가합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>130</attention></stats><br><br><passive>신비한 작품</passive><br>총 <scaleAP>주문력이 30%</scaleAP> 증가합니다.</mainText>",
             "colloq": ";데캡;데스캡;데쓰캡;dc;banksys;hat;rabadon's;deathcap",
             "plaintext": "주문력이 대폭 상승합니다.",
             "from": [
                 "1058",
                 "1058"
             ],
-            "into": [
-                "7003"
-            ],
             "image": {
                 "full": "3089.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 192,
-                "y": 96,
+                "x": 384,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 1100,
+                "base": 1200,
                 "purchasable": true,
                 "total": 3600,
                 "sell": 2520
@@ -13649,34 +12637,35 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 140
+                "FlatMagicDamageMod": 130
             },
             "depth": 2
         },
         "3091": {
             "name": "마법사의 최후",
-            "description": "<mainText><stats>공격 속도 <attention>55%</attention><br>마법 저항력 <attention>50</attention><br>강인함 <attention>20%</attention></stats><br><br><passive>난투</passive><br>기본 공격 적중 시 마법 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>50%</attention><br>마법 저항력 <attention>45</attention><br>강인함 <attention>20%</attention></stats><br><br><passive>난투</passive><br>기본 공격이 <magicDamage>추가 마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.</mainText>",
             "colloq": ";위치엔드;wit's;end",
             "plaintext": "마법 피해를 견디고 체력을 회복합니다.",
             "from": [
                 "1043",
                 "1057",
-                "1042"
+                "1043"
             ],
             "image": {
                 "full": "3091.png",
-                "sprite": "item3.png",
+                "sprite": "item2.png",
                 "group": "item",
-                "x": 240,
-                "y": 96,
+                "x": 432,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 900,
+                "base": 550,
                 "purchasable": true,
                 "total": 2800,
                 "sell": 1960
@@ -13692,17 +12681,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatSpellBlockMod": 50,
-                "PercentAttackSpeedMod": 0.55
+                "FlatSpellBlockMod": 45,
+                "PercentAttackSpeedMod": 0.5
             },
             "depth": 3
         },
         "3094": {
             "name": "고속 연사포",
-            "description": "<mainText><stats>공격 속도 <attention>35%</attention><br>치명타 확률 <attention>25%</attention><br>이동 속도 <attention>7%</attention></stats><br><br><passive>저격수</passive><br>충전 상태로 기본 공격 시 추가 마법 피해를 입히고 사거리가 증가합니다.</mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>35%</attention><br>치명타 확률 <attention>25%</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>저격수</passive><br><keyword>충전 상태로 기본 공격</keyword> 시 <magicDamage>40의 추가 마법 피해</magicDamage>를 입히고 공격 사거리가 35% 증가합니다.</mainText>",
             "colloq": ";고속;연사포;rapid;firecannon",
             "plaintext": "이동하며 완전히 충전하면 강력한 일격을 발사합니다.",
             "from": [
@@ -13713,16 +12703,16 @@ export const item = {
                 "full": "3094.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 288,
-                "y": 96,
+                "x": 0,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 600,
+                "base": 850,
                 "purchasable": true,
-                "total": 2600,
-                "sell": 1820
+                "total": 2650,
+                "sell": 1855
             },
             "tags": [
                 "CriticalStrike",
@@ -13734,18 +12724,19 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
                 "PercentAttackSpeedMod": 0.35,
-                "PercentMovementSpeedMod": 0.07
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 3
         },
         "3095": {
             "name": "폭풍갈퀴",
-            "description": "<mainText><stats>공격력 <attention>65</attention><br>공격 속도 <attention>0%</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>번개</passive><br>충전 상태로 공격 시 추가 마법 피해를 입히고 이동 속도가 증가합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>65</attention><br>공격 속도 <attention>0%</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>막강한 치명타</passive><br>치명타 공격이 추가 피해를 입힙니다.</mainText>",
             "colloq": ";바람검;stormrazor",
             "plaintext": "다른 충전 효과를 크게 강화시킵니다.",
             "from": [
@@ -13753,23 +12744,20 @@ export const item = {
                 "1018",
                 "2015"
             ],
-            "into": [
-                "7040"
-            ],
             "image": {
                 "full": "3095.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 336,
-                "y": 96,
+                "x": 48,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 500,
                 "purchasable": true,
-                "total": 3200,
-                "sell": 2240
+                "total": 3100,
+                "sell": 2170
             },
             "tags": [
                 "Damage",
@@ -13780,7 +12768,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
@@ -13790,28 +12779,28 @@ export const item = {
         },
         "3100": {
             "name": "리치베인",
-            "description": "<mainText><stats>주문력 <attention>100</attention><br>이동 속도 <attention>8%</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>주문 검</passive><br>스킬을 사용하고 나면 다음 기본 공격 시 추가 마법 피해(<OnHit>적중 시</OnHit> )를 입힙니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>115</attention><br>이동 속도 <attention>4%</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>주문 검</passive> (0초)<br>스킬을 사용하고 나면 다음 기본 공격 시 <magicDamage>추가 마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.</mainText>",
             "colloq": ";lich;bane",
             "plaintext": "스킬 공격 다음 공격에 추가 피해가 적용됩니다.",
             "from": [
                 "3057",
                 "3113",
-                "3145"
+                "1058"
             ],
             "image": {
                 "full": "3100.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 384,
-                "y": 96,
+                "x": 96,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 250,
+                "base": 200,
                 "purchasable": true,
-                "total": 3100,
-                "sell": 2170
+                "total": 3200,
+                "sell": 2240
             },
             "tags": [
                 "SpellDamage",
@@ -13824,17 +12813,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 100,
-                "PercentMovementSpeedMod": 0.08
+                "FlatMagicDamageMod": 115,
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 3
         },
         "3102": {
             "name": "밴시의 장막",
-            "description": "<mainText><stats>주문력 <attention>120</attention><br>마법 저항력 <attention>50</attention></stats><br><br><passive>무효화</passive><br>주문 방어막을 얻습니다.<br></mainText>",
+            "description": "<mainText><stats>주문력 <attention>105</attention><br>마법 저항력 <attention>40</attention></stats><br><br><passive>무효화</passive> (0초)<br>적의 다음 스킬을 막아 주는 주문 방어막을 생성합니다.</mainText>",
             "colloq": ";bv;banshee;veil",
             "plaintext": "주기적으로 적 스킬 공격을 막아줍니다.",
             "from": [
@@ -13845,16 +12835,16 @@ export const item = {
                 "full": "3102.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 432,
-                "y": 96,
+                "x": 144,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 250,
+                "base": 200,
                 "purchasable": true,
-                "total": 3100,
-                "sell": 2170
+                "total": 3000,
+                "sell": 2100
             },
             "tags": [
                 "SpellBlock",
@@ -13865,14 +12855,15 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatSpellBlockMod": 50,
-                "FlatMagicDamageMod": 120
+                "FlatSpellBlockMod": 40,
+                "FlatMagicDamageMod": 105
             },
             "effect": {
-                "Effect1Amount": "30",
+                "Effect1Amount": "40",
                 "Effect2Amount": "45",
                 "Effect3Amount": "10",
                 "Effect4Amount": "-0.1",
@@ -13900,13 +12891,13 @@ export const item = {
                 "full": "3105.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 0,
-                "y": 144,
+                "x": 192,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 450,
+                "base": 500,
                 "purchasable": true,
                 "total": 1200,
                 "sell": 840
@@ -13922,7 +12913,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 30,
@@ -13932,7 +12924,7 @@ export const item = {
         },
         "3107": {
             "name": "구원",
-            "description": "<mainText><stats>체력 <attention>200</attention><br>스킬 가속 <attention>15</attention><br>기본 마나 재생 <attention>100%</attention><br>체력 회복 및 보호막 <attention>15%</attention></stats><br><br><active>활성화</active><br><active>중재</active><br>위치를 지정하여 대상 범위 안에 있는 아군 챔피언의 체력을 회복시키고 적 챔피언에게는 고정 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>200</attention><br>스킬 가속 <attention>15</attention><br>기본 마나 재생 <attention>100%</attention><br>체력 회복 및 보호막 <attention>10%</attention></stats><br><br><active>중재</active> (0초)<br>2.5초 후 대상 범위 안에 있는 아군 챔피언의 <healing>체력을 200~400(아군 )</healing>만큼 회복시키고 적 챔피언에게 <trueDamage>최대 체력의 10%에 해당하는 고정 피해</trueDamage>를 입힙니다.</mainText>",
             "colloq": ";구원;redemption;rndnjs",
             "plaintext": "활성화하면 주변 지역의 아군을 회복시키고 적에게는 피해를 입힙니다.",
             "from": [
@@ -13943,13 +12935,13 @@ export const item = {
                 "full": "3107.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 48,
-                "y": 144,
+                "x": 240,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 700,
+                "base": 900,
                 "purchasable": true,
                 "total": 2300,
                 "sell": 1610
@@ -13965,7 +12957,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 200
@@ -13990,25 +12983,23 @@ export const item = {
                 "4005",
                 "3003",
                 "6616",
-                "3118",
                 "3128",
-                "3137",
-                "3165"
+                "3137"
             ],
             "image": {
                 "full": "3108.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 96,
-                "y": 144,
+                "x": 288,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 250,
+                "base": 200,
                 "purchasable": true,
-                "total": 900,
-                "sell": 630
+                "total": 850,
+                "sell": 595
             },
             "tags": [
                 "SpellDamage",
@@ -14020,7 +13011,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 25
@@ -14032,7 +13024,7 @@ export const item = {
         },
         "3109": {
             "name": "기사의 맹세",
-            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>40</attention><br>스킬 가속 <attention>15</attention><br>기본 체력 재생 <attention>100%</attention></stats><br><br><passive>희생</passive><br><attention>보호</attention> 중인 아군이 근처에 있으면 아군이 입는 피해량을 대신 입고 <attention>보호</attention> 중인 아군이 챔피언에게 가하는 피해량에 비례해 체력을 회복합니다.<br><br><br><active>활성화</active> (0초)<br><active>맹세</active><br><attention>보호</attention>할 아군을 대상으로 지정합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>200</attention><br>방어력 <attention>40</attention><br>스킬 가속 <attention>10</attention><br>기본 체력 재생 <attention>100%</attention></stats><br><br><passive>희생</passive><br><attention>보호</attention> 중인 아군 근처에 있으면 해당 아군이 입는 피해량의 12%를 대신 입고 해당 아군이 챔피언에게 입히는 피해량의 <healing>10%만큼 체력을 회복</healing>합니다.<active>맹세</active> (0초)<br><attention>보호</attention>할 아군을 대상으로 지정합니다.</mainText>",
             "colloq": ";knight's;vow",
             "plaintext": "동료를 지정해 서로를 보호합니다.",
             "from": [
@@ -14044,16 +13036,16 @@ export const item = {
                 "full": "3109.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 144,
-                "y": 144,
+                "x": 336,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 300,
+                "base": 400,
                 "purchasable": true,
-                "total": 2200,
-                "sell": 1540
+                "total": 2300,
+                "sell": 1610
             },
             "tags": [
                 "Health",
@@ -14069,17 +13061,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 300,
+                "FlatHPPoolMod": 200,
                 "FlatArmorMod": 40
             },
             "depth": 3
         },
         "3110": {
             "name": "얼어붙은 심장",
-            "description": "<mainText><stats>방어력 <attention>65</attention><br>마나 <attention>400</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>혹한의 포옹</passive><br>주변 적의 <attackSpeed>공격 속도</attackSpeed>를 20%만큼 감소시킵니다.<br><br><passive>견고</passive><br>기본 공격으로 받는 피해량이 최대 0 감소합니다. 이 수치는 피해량의 0%를 넘을 수 없습니다.</mainText>",
+            "description": "<mainText><stats>방어력 <attention>75</attention><br>마나 <attention>400</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>혹한의 포옹</passive><br>주변 챔피언의 <attackSpeed>공격 속도</attackSpeed>를 <attackSpeed>20%</attackSpeed>만큼 감소시킵니다.</mainText>",
             "colloq": ";얼심;프하;frozen;heart",
             "plaintext": "방어력이 대폭 증가하고, 적의 기본 공격이 느려집니다.",
             "from": [
@@ -14090,13 +13083,13 @@ export const item = {
                 "full": "3110.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 192,
-                "y": 144,
+                "x": 384,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 550,
+                "base": 600,
                 "purchasable": true,
                 "total": 2500,
                 "sell": 1750
@@ -14113,17 +13106,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 400,
-                "FlatArmorMod": 65
+                "FlatArmorMod": 75
             },
             "depth": 3
         },
         "3111": {
             "name": "헤르메스의 발걸음",
-            "description": "<mainText><stats>마법 저항력 <attention>25</attention><br>이동 속도 <attention>45</attention><br>강인함 <attention>30%</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>마법 저항력 <attention>20</attention><br>이동 속도 <attention>45</attention><br>강인함 <attention>30%</attention></stats><br><br></mainText>",
             "colloq": ";mercury's;treads",
             "plaintext": "이동 속도가 증가하고, 방해 효과의 지속시간이 줄어듭니다.",
             "from": [
@@ -14134,16 +13128,16 @@ export const item = {
                 "full": "3111.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 240,
-                "y": 144,
+                "x": 432,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 350,
+                "base": 600,
                 "purchasable": true,
-                "total": 1100,
-                "sell": 770
+                "total": 1300,
+                "sell": 910
             },
             "tags": [
                 "Boots",
@@ -14155,25 +13149,26 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatSpellBlockMod": 25,
+                "FlatSpellBlockMod": 20,
                 "FlatMovementSpeedMod": 45
             },
             "depth": 2
         },
         "3112": {
             "name": "수호자의 보주",
-            "description": "<mainText><stats>주문력 <attention>50</attention><br>체력 <attention>150</attention></stats><br><br><br><li><passive>회복:</passive> 점차 마나를 회복합니다. 마나를 회복할 수 없을 때는 대신 체력을 회복합니다.<li><passive>전설급:</passive> 이 아이템은 <rarityLegendary>전설급</rarityLegendary> 아이템으로 간주됩니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>50</attention><br>체력 <attention>150</attention></stats><br><br><br><li><passive>회복:</passive> 5초마다 <scaleMana>10의 마나</scaleMana>를 회복합니다. 마나를 획득할 수 없으면 <healing>15의 체력</healing>을 회복합니다.<br></mainText>",
             "colloq": ";Guardian's;orb;winter",
             "plaintext": "마법사에게 특화된 시작 아이템입니다.",
             "image": {
                 "full": "3112.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 288,
-                "y": 144,
+                "x": 0,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -14194,7 +13189,8 @@ export const item = {
                 "12": true,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 150,
@@ -14206,7 +13202,7 @@ export const item = {
         },
         "3113": {
             "name": "에테르 환영",
-            "description": "<mainText><stats>주문력 <attention>30</attention><br>이동 속도 <attention>5%</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>주문력 <attention>30</attention><br>이동 속도 <attention>4%</attention></stats><br><br></mainText>",
             "colloq": ";aether;wisp",
             "plaintext": "주문력과 이동 속도를 높여줍니다.",
             "from": [
@@ -14223,16 +13219,16 @@ export const item = {
                 "full": "3113.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 336,
-                "y": 144,
+                "x": 48,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 450,
+                "base": 500,
                 "purchasable": true,
-                "total": 850,
-                "sell": 595
+                "total": 900,
+                "sell": 630
             },
             "tags": [
                 "NonbootsMovement",
@@ -14243,11 +13239,12 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 30,
-                "PercentMovementSpeedMod": 0.05
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 2
         },
@@ -14271,16 +13268,16 @@ export const item = {
                 "full": "3114.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 384,
-                "y": 144,
+                "x": 96,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 550,
+                "base": 400,
                 "purchasable": true,
-                "total": 800,
-                "sell": 560
+                "total": 600,
+                "sell": 420
             },
             "tags": [
                 "ManaRegen"
@@ -14290,14 +13287,15 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "depth": 2
         },
         "3115": {
             "name": "내셔의 이빨",
-            "description": "<mainText><stats>주문력 <attention>90</attention><br>공격 속도 <attention>50%</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>이케시아의 이빨</passive><br>기본 공격 시 <magicDamage>마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>80</attention><br>공격 속도 <attention>50%</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>이케시아의 이빨</passive><br>기본 공격이 <magicDamage>추가 마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.</mainText>",
             "colloq": ";nashor's;tooth",
             "plaintext": "공격 속도, 주문력, 재사용 대기시간 감소율이 증가합니다.",
             "from": [
@@ -14305,20 +13303,17 @@ export const item = {
                 "1026",
                 "3108"
             ],
-            "into": [
-                "7042"
-            ],
             "image": {
                 "full": "3115.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 432,
-                "y": 144,
+                "x": 144,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 550,
+                "base": 600,
                 "purchasable": true,
                 "total": 3000,
                 "sell": 2100
@@ -14334,17 +13329,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 90,
+                "FlatMagicDamageMod": 80,
                 "PercentAttackSpeedMod": 0.5
             },
             "depth": 3
         },
         "3116": {
             "name": "라일라이의 수정홀",
-            "description": "<mainText><stats>주문력 <attention>75</attention><br>체력 <attention>400</attention></stats><br><br><passive>서리</passive><br>스킬로 적에게 피해를 입히면 1초 동안 30% <keyword>둔화</keyword>시킵니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>65</attention><br>체력 <attention>400</attention></stats><br><br><passive>서리</passive><br>스킬로 적에게 피해를 입히면 1초 동안 30% <keyword>둔화</keyword>시킵니다.</mainText>",
             "colloq": ";rylai's;crystal;scepter",
             "plaintext": "스킬 및 마법 피해를 입히면 적이 둔화에 걸립니다.",
             "from": [
@@ -14356,8 +13352,8 @@ export const item = {
                 "full": "3116.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 0,
-                "y": 192,
+                "x": 192,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -14377,11 +13373,12 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 400,
-                "FlatMagicDamageMod": 75
+                "FlatMagicDamageMod": 65
             },
             "effect": {
                 "Effect1Amount": "-0.3",
@@ -14406,8 +13403,8 @@ export const item = {
                 "full": "3117.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 48,
-                "y": 192,
+                "x": 240,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -14425,7 +13422,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMovementSpeedMod": 45
@@ -14444,27 +13442,24 @@ export const item = {
         },
         "3118": {
             "name": "악의",
-            "description": "<mainText><stats>주문력 <attention>80</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>경멸</passive><br>궁극기의 스킬 가속이 증가합니다.<br><br><passive>증오안개</passive><br>궁극기로 챔피언에게 피해를 입히면 대상 발밑의 지면을 불태워 피해를 입히고 마법 저항력을 감소시킵니다. <br></mainText>",
+            "description": "<mainText><stats>주문력 <attention>85</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>경멸</passive><br>궁극기 가속이 20 증가합니다.<br><br><passive>증오안개</passive><br>궁극기로 챔피언에게 피해를 입히면 3초 동안 대상 발밑의 지면을 불태워 매초 <magicDamage>마법 피해</magicDamage>를 입히고 <scaleMR>마법 저항력</scaleMR>을 감소시킵니다. <br></mainText>",
             "colloq": ";Malignance",
             "plaintext": "동료를 지정해 서로를 보호합니다.",
             "from": [
                 "3802",
-                "3108"
-            ],
-            "into": [
-                "7004"
+                "1026"
             ],
             "image": {
                 "full": "3118.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 96,
-                "y": 192,
+                "x": 288,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 600,
+                "base": 650,
                 "purchasable": true,
                 "total": 2700,
                 "sell": 1890
@@ -14479,17 +13474,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 600,
-                "FlatMagicDamageMod": 80
+                "FlatMagicDamageMod": 85
             },
             "depth": 3
         },
         "3119": {
             "name": "혹한의 손길",
-            "description": "<mainText><stats>체력 <attention>550</attention><br>마나 <attention>500</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>경탄</passive><br><scaleHealth>0만큼 체력</scaleHealth>을 추가로 얻습니다.<br><br><passive>마나순환</passive><br>대상에게 스킬 또는 기본 공격을 적중시키면 중첩을 하나 소모해 추가 마나를 얻습니다. 추가 마나가 최대치에 도달하면 <rarityLegendary>종말의 겨울</rarityLegendary>로 변합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>550</attention><br>마나 <attention>500</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>경탄</passive><br><scaleHealth>0의 체력</scaleHealth>을 얻습니다.<br><br><passive>마나순환</passive> (8초, 최대 충전량 4회)<br>기본 공격과 스킬 적중 시 <scaleMana>3의 최대 마나</scaleMana>(챔피언 상대 시 두 배)를 얻습니다.<br><scaleMana>360의 최대 마나</scaleMana>에서 <rarityLegendary>종말의 겨울</rarityLegendary>로 변합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -14501,8 +13497,8 @@ export const item = {
                 "full": "3119.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 144,
-                "y": 192,
+                "x": 336,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -14522,7 +13518,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 500,
@@ -14532,7 +13529,7 @@ export const item = {
         },
         "3121": {
             "name": "종말의 겨울",
-            "description": "<mainText><stats>체력 <attention>550</attention><br>마나 <attention>860</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>경탄</passive><br><scaleHealth>0만큼 체력</scaleHealth>을 추가로 얻습니다.<br><br><passive>불변</passive> (0초)<br>적 챔피언을 <status>이동 불가</status> 또는 <status>둔화</status> (근접 챔피언 전용) 상태로 만들면 3초 동안 <scaleMana>0+현재 마나의 4.5%</scaleMana>에 해당하는 피해를 흡수하는 보호막을 얻습니다. 근처에 적이 둘 이상 있으면 보호막의 피해 흡수량이 <attention>80%</attention> 증가합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>550</attention><br>마나 <attention>860</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>경탄</passive><br><scaleHealth>0의 체력</scaleHealth>을 얻습니다.<br><br><passive>불변</passive> (0초)<br>적 챔피언을 <keyword>이동 불가</keyword> 또는 <keyword>둔화</keyword> (근접 챔피언 전용) 상태로 만들면 3초 동안 <shield>보호막</shield>을 얻습니다. <br>근처에 적이 둘 이상 있으면 보호막의 피해 흡수량이 80% 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 3119,
@@ -14541,8 +13538,8 @@ export const item = {
                 "full": "3121.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 192,
-                "y": 192,
+                "x": 384,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -14562,7 +13559,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 860,
@@ -14571,7 +13569,7 @@ export const item = {
         },
         "3123": {
             "name": "처형인의 대검",
-            "description": "<mainText><stats>공격력 <attention>15</attention></stats><br><br><passive>고통스러운 상처</passive><br>챔피언에게 물리 피해를 입히면 3초 동안 <keyword>40%의 고통스러운 상처</keyword>를 남깁니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>15</attention></stats><br><br><passive>고통스러운 상처</passive><br>챔피언에게 물리 피해를 입히면 3초 동안 <keyword>40%의 상처</keyword>를 남깁니다.</mainText>",
             "colloq": ";grievous;executioner's;calling",
             "plaintext": "회복력이 뛰어난 적에게 효과적입니다.",
             "from": [
@@ -14585,8 +13583,8 @@ export const item = {
                 "full": "3123.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 240,
-                "y": 192,
+                "x": 432,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -14604,7 +13602,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 15
@@ -14616,7 +13615,7 @@ export const item = {
         },
         "3124": {
             "name": "구인수의 격노검",
-            "description": "<mainText><stats>공격력 <attention>35</attention><br>주문력 <attention>35</attention><br>공격 속도 <attention>25%</attention></stats><br><br><passive>분노</passive><br>기본 공격 시 <magicDamage>30의 마법 피해(<OnHit>적중 시</OnHit> )</magicDamage>를 입힙니다.<br><br><passive>들끓는 일격</passive><br>기본 공격 시 <attackSpeed>공격 속도가 8%</attackSpeed> 증가합니다. 해당 효과는 4번까지 중첩되어 최대 <attackSpeed>공격 속도가 0</attackSpeed>까지 증가합니다. 최대 중첩 시 세 번째 기본 공격을 가할 때마다 <OnHit>적중 시</OnHit> 효과를 두 번씩 적용합니다.<br><br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>30</attention><br>주문력 <attention>30</attention><br>공격 속도 <attention>25%</attention></stats><br><br><passive>분노</passive><br>공격 시 <magicDamage>30의 추가 마법 피해(<OnHit>적중 시</OnHit> )</magicDamage>를 입힙니다.<br><br><passive>들끓는 일격</passive><br>기본 공격 시 3초 동안 <attackSpeed>공격 속도가 8%</attackSpeed> 증가합니다. (4회 중첩) <br>최대 중첩 시 세 번째 기본 공격을 가할 때마다 <OnHit>적중 시</OnHit> 효과를 두 번씩 적용합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -14624,15 +13623,12 @@ export const item = {
                 "1043",
                 "1037"
             ],
-            "into": [
-                "7030"
-            ],
             "image": {
                 "full": "3124.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 288,
-                "y": 192,
+                "x": 0,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
@@ -14653,11 +13649,12 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 35,
-                "FlatPhysicalDamageMod": 35,
+                "FlatMagicDamageMod": 30,
+                "FlatPhysicalDamageMod": 30,
                 "PercentAttackSpeedMod": 0.25
             },
             "effect": {
@@ -14690,16 +13687,16 @@ export const item = {
                 "full": "3128.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 336,
-                "y": 192,
+                "x": 48,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 850,
                 "purchasable": true,
-                "total": 3000,
-                "sell": 2100
+                "total": 2900,
+                "sell": 2030
             },
             "tags": [
                 "SpellDamage",
@@ -14710,7 +13707,8 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 120
@@ -14731,16 +13729,16 @@ export const item = {
                 "full": "3131.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 384,
-                "y": 192,
+                "x": 96,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 800,
                 "purchasable": true,
-                "total": 2400,
-                "sell": 1680
+                "total": 2300,
+                "sell": 1610
             },
             "tags": [
                 "Damage",
@@ -14752,7 +13750,8 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 30,
@@ -14779,39 +13778,38 @@ export const item = {
                 "1036"
             ],
             "into": [
-                "3071",
                 "6333",
                 "126697",
+                "6696",
                 "3156",
                 "6693",
-                "6697",
                 "4402",
+                "6697",
                 "3004",
                 "3508",
                 "3074",
-                "3161",
                 "3179",
                 "6691",
                 "6609",
                 "6610",
                 "6632",
                 "6692",
-                "6696"
+                "6694"
             ],
             "image": {
                 "full": "3133.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 432,
-                "y": 192,
+                "x": 144,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 150,
+                "base": 100,
                 "purchasable": true,
-                "total": 1100,
-                "sell": 770
+                "total": 1050,
+                "sell": 735
             },
             "tags": [
                 "Damage",
@@ -14823,7 +13821,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 20
@@ -14846,20 +13845,20 @@ export const item = {
                 "6701",
                 "6693",
                 "6697",
-                "3131",
+                "6676",
                 "4004",
                 "3814",
+                "3131",
                 "3179",
                 "6691",
-                "6676",
                 "6695"
             ],
             "image": {
                 "full": "3134.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 0,
-                "y": 240,
+                "x": 192,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
@@ -14878,7 +13877,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 20
@@ -14887,7 +13887,7 @@ export const item = {
         },
         "3135": {
             "name": "공허의 지팡이",
-            "description": "<mainText><stats>주문력 <attention>80</attention><br>마법 관통력 <attention>40%</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>주문력 <attention>95</attention><br>마법 관통력 <attention>40%</attention></stats><br><br></mainText>",
             "colloq": ";보이드;void;staff",
             "plaintext": "마법 피해량이 증가합니다.",
             "from": [
@@ -14898,8 +13898,8 @@ export const item = {
                 "full": "3135.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 48,
-                "y": 240,
+                "x": 240,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
@@ -14918,16 +13918,17 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 80
+                "FlatMagicDamageMod": 95
             },
             "depth": 3
         },
         "3137": {
             "name": "무덤꽃",
-            "description": "<mainText><stats>주문력 <attention>70</attention><br>마법 관통력 <attention>30%</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>죽음에서 피어난 생명</passive><br>적 챔피언에게 피해를 입히고 해당 챔피언 위치에 치유의 힘을 폭발시켜 아군의 체력을 회복시킵니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>60</attention><br>마법 관통력 <attention>30%</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>죽음에서 피어난 생명</passive> (0초)<br>자신이 피해를 입힌 챔피언이 3초 안에 죽으면 시체에서 치유의 힘이 퍼져 <healing>체력을 회복</healing>시킵니다.</mainText>",
             "colloq": ";dervish;blade;cryptbloom",
             "plaintext": "사용하면 모든 해로운 효과가 제거되며, 이동 속도가 대폭 증가합니다.",
             "from": [
@@ -14938,13 +13939,13 @@ export const item = {
                 "full": "3137.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 96,
-                "y": 240,
+                "x": 288,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 850,
+                "base": 900,
                 "purchasable": true,
                 "total": 2850,
                 "sell": 1995
@@ -14959,16 +13960,17 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 70
+                "FlatMagicDamageMod": 60
             },
             "depth": 3
         },
         "3139": {
             "name": "헤르메스의 시미터",
-            "description": "<mainText><stats>공격력 <attention>40</attention><br>마법 저항력 <attention>50</attention><br>생명력 흡수 <attention>10%</attention></stats><br><br><br><br><active>활성화</active> (0초)<br><active>수은</active><br>모든 군중 제어 효과(<keyword>공중에 뜸</keyword> 제외)를 제거하고 1.5초 동안 <speed>50%의 이동 속도</speed>를 얻습니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>40</attention><br>마법 저항력 <attention>40</attention><br>생명력 흡수 <attention>10%</attention></stats><br><br><br><br><active>활성화</active><br><active>수은</active><br>모든 군중 제어 효과(<keyword>공중에 뜸</keyword> 제외)를 제거하고 이동 속도가 증가합니다.</mainText>",
             "colloq": ";mercurial;scimitar",
             "plaintext": "사용하면 모든 군중 제어 효과가 제거되며, 이동 속도가 대폭 증가합니다.",
             "from": [
@@ -14980,16 +13982,16 @@ export const item = {
                 "full": "3139.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 144,
-                "y": 240,
+                "x": 336,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 225,
+                "base": 125,
                 "purchasable": true,
-                "total": 3300,
-                "sell": 2310
+                "total": 3200,
+                "sell": 2240
             },
             "tags": [
                 "SpellBlock",
@@ -15004,10 +14006,11 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatSpellBlockMod": 50,
+                "FlatSpellBlockMod": 40,
                 "FlatPhysicalDamageMod": 40,
                 "PercentLifeStealMod": 0.1
             },
@@ -15020,7 +14023,7 @@ export const item = {
         },
         "3140": {
             "name": "수은 장식띠",
-            "description": "<mainText><stats>마법 저항력 <attention>30</attention></stats><br><br><active>활성화</active> (0초)<br><active>수은</active><br>모든 군중 제어 효과(<keyword>공중에 뜸</keyword> 제외)를 제거합니다.</mainText>",
+            "description": "<mainText><stats>마법 저항력 <attention>30</attention></stats><br><br><active>수은</active> (0초)<br>모든 군중 제어 효과(<keyword>공중에 뜸</keyword> 제외)를 제거합니다.</mainText>",
             "colloq": ";퀵실;qss;quicksilver;sash",
             "plaintext": "사용하면 모든 군중 제어 효과가 제거됩니다.",
             "from": [
@@ -15034,13 +14037,13 @@ export const item = {
                 "full": "3140.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 192,
-                "y": 240,
+                "x": 384,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 850,
+                "base": 900,
                 "purchasable": true,
                 "total": 1300,
                 "sell": 910
@@ -15054,7 +14057,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 30
@@ -15063,30 +14067,28 @@ export const item = {
         },
         "3142": {
             "name": "요우무의 유령검",
-            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <attention>18</attention></stats><br><br><passive>출몰</passive> <br>전투에서 벗어나 있을 때 <speed>이동 속도</speed>가 상승합니다.<br><br><br><active>활성화</active> (0초)<br><active>망령의 발걸음</active><br><speed>이동 속도</speed>가 상승하고 <keyword>유체화</keyword> 상태가 됩니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <attention>18</attention></stats><br><br><passive>출몰</passive> <br>전투에서 벗어나 있을 때 <speed>이동 속도가 20</speed> 상승합니다.<active>망령의 발걸음</active> (0초)<br>6초 동안 <speed>이동 속도</speed>가 상승하고 <keyword>유체화</keyword> 효과를 얻습니다.</mainText>",
             "colloq": ";물리관통력;물관;youmuu's;ghostblade",
             "plaintext": "사용하면 이동 속도가 대폭 상승합니다.",
             "from": [
                 "3134",
-                "6690"
-            ],
-            "into": [
-                "7029"
+                "6690",
+                "1037"
             ],
             "image": {
                 "full": "3142.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 240,
-                "y": 240,
+                "x": 432,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 800,
+                "base": 150,
                 "purchasable": true,
-                "total": 2700,
-                "sell": 1890
+                "total": 2800,
+                "sell": 1960
             },
             "tags": [
                 "Damage",
@@ -15099,7 +14101,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 60
@@ -15116,7 +14119,7 @@ export const item = {
         },
         "3143": {
             "name": "란두인의 예언",
-            "description": "<mainText><stats>체력 <attention>350</attention><br>방어력 <attention>75</attention></stats><br><br><passive>치명타 저항</passive><br>치명타로 받는 피해량이 감소합니다.<br><br><active>활성화</active><br><active>억제</active><br>주변 적들에게 <keyword>둔화 효과</keyword>를 적용합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>350</attention><br>방어력 <attention>75</attention></stats><br><br><passive>저항</passive><br>치명타로 받는 피해량이 30% 감소합니다.<active>억제</active> (0초)<br>주변 적을 2초 동안 70% <keyword>둔화</keyword>시킵니다.</mainText>",
             "colloq": ";randuin's;omen",
             "plaintext": "방어력이 대폭 강화됩니다. 사용하면 주변 적들이 둔화에 걸립니다.",
             "from": [
@@ -15127,8 +14130,8 @@ export const item = {
                 "full": "3143.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 288,
-                "y": 240,
+                "x": 0,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -15149,7 +14152,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 350,
@@ -15159,31 +14163,32 @@ export const item = {
         },
         "3144": {
             "name": "정찰병의 새총",
-            "description": "<mainText><stats>공격 속도 <attention>20%</attention></stats><br><br><passive>명중</passive> <br>챔피언에게 피해를 입히면 추가 마법 피해를 입힙니다. 기본 공격 시 재사용 대기시간이 감소합니다.</mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>20%</attention></stats><br><br><passive>명중</passive> (0초)<br>챔피언에게 피해를 입히면 <magicDamage>0의 추가 마법 피해</magicDamage>를 입힙니다. <br>기본 공격 시 이 스킬의 재사용 대기시간이 1초 감소합니다.</mainText>",
             "colloq": ";bilgewater;cutlass",
             "plaintext": "사용하면 마법 피해를 가하고 적 챔피언을 둔화시킵니다.",
             "from": [
+                "1042",
                 "1042"
             ],
             "into": [
                 "3094",
-                "3087",
-                "3085"
+                "3085",
+                "3087"
             ],
             "image": {
                 "full": "3144.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 336,
-                "y": 240,
+                "x": 48,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 600,
+                "base": 100,
                 "purchasable": true,
-                "total": 900,
-                "sell": 630
+                "total": 600,
+                "sell": 420
             },
             "tags": [
                 "AttackSpeed"
@@ -15193,7 +14198,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "PercentAttackSpeedMod": 0.2
@@ -15202,7 +14208,7 @@ export const item = {
         },
         "3145": {
             "name": "마법공학 교류 발전기",
-            "description": "<mainText><stats>주문력 <attention>45</attention></stats><br><br><passive>자극</passive><br>챔피언에게 피해를 입히면 추가 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>45</attention></stats><br><br><passive>자극</passive> (0초)<br>챔피언에게 피해를 입히면 <magicDamage>0의 추가 마법 피해</magicDamage>를 입힙니다.</mainText>",
             "colloq": ";흡총;hextech;revolver;hextech;alternator",
             "plaintext": "주문력이 상승합니다. 공격 시 주기적으로 추가 마법 피해를 입힙니다.",
             "from": [
@@ -15212,18 +14218,16 @@ export const item = {
             "into": [
                 "4646",
                 "4636",
-                "4628",
                 "4645",
                 "6655",
-                "3100",
                 "3152"
             ],
             "image": {
                 "full": "3145.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 384,
-                "y": 240,
+                "x": 96,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -15241,7 +14245,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 45
@@ -15261,16 +14266,16 @@ export const item = {
                 "full": "3146.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 432,
-                "y": 240,
+                "x": 144,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 750,
                 "purchasable": true,
-                "total": 3300,
-                "sell": 2310
+                "total": 3250,
+                "sell": 2275
             },
             "tags": [
                 "Damage",
@@ -15284,7 +14289,8 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 80,
@@ -15294,7 +14300,7 @@ export const item = {
         },
         "3147": {
             "name": "기괴한 가면",
-            "description": "<mainText><stats>주문력 <attention>30</attention><br>체력 <attention>200</attention></stats><br><br><passive>광기</passive><br>적 챔피언과 전투 중 매초 추가 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>30</attention><br>체력 <attention>200</attention></stats><br><br><passive>광기</passive><br>적 챔피언과 전투 중 매초 2%의 추가 피해를 입힙니다. (최대 6%) </mainText>",
             "colloq": ";물리관통력;haunting;guise",
             "plaintext": "적에게 기습 공격 시 추가 물리 피해를 입힙니다.",
             "from": [
@@ -15309,8 +14315,8 @@ export const item = {
                 "full": "3147.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 0,
-                "y": 288,
+                "x": 192,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -15329,7 +14335,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 200,
@@ -15339,22 +14346,19 @@ export const item = {
         },
         "3152": {
             "name": "마법공학 로켓 벨트",
-            "description": "<mainText><stats>주문력 <attention>70</attention><br>체력 <attention>300</attention><br>스킬 가속 <attention>15</attention></stats><br><br><active>활성화</active><br><active>초음속</active><br>지정 방향으로 돌진하며 부채꼴 모양으로 마법 피해를 입히는 마법 탄환을 발사합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>60</attention><br>체력 <attention>350</attention><br>스킬 가속 <attention>15</attention></stats><br><br><active>초음속</active> (0초)<br>지정 방향으로 돌진하며 <magicDamage>마법 피해</magicDamage>를 입히는 탄환을 발사합니다.</mainText>",
             "colloq": ";rocket belt;hextech;rocketbelt",
             "plaintext": "사용시 앞으로 돌진하며 강력한 폭발을 일으키는 탄환을 발사합니다.",
             "from": [
                 "3145",
                 "3067"
             ],
-            "into": [
-                "7011"
-            ],
             "image": {
                 "full": "3152.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 48,
-                "y": 288,
+                "x": 240,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -15377,17 +14381,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 300,
-                "FlatMagicDamageMod": 70
+                "FlatHPPoolMod": 350,
+                "FlatMagicDamageMod": 60
             },
             "depth": 3
         },
         "3153": {
             "name": "몰락한 왕의 검",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>공격 속도 <attention>30%</attention><br>생명력 흡수 <attention>10%</attention></stats><br><br><passive>안개의 검</passive><br>기본 공격 시 적 현재 체력에 따라 추가 물리 피해(<OnHit>적중 시</OnHit> )를 입힙니다.<br><br><passive>할퀴는 그림자</passive><br>챔피언에게 3회 기본 공격을 가하면 둔화시킵니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>40</attention><br>공격 속도 <attention>25%</attention><br>생명력 흡수 <attention>10%</attention></stats><br><br><passive>안개의 검</passive><br>기본 공격 시 적의 현재 체력의 <physicalDamage>일정 비율</physicalDamage>만큼 <physicalDamage>추가 물리 피해</physicalDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.<br><br><passive>할퀴는 그림자</passive> (0초)<br>챔피언에게 3회 기본 공격을 가하면 1초 동안 30% <status>둔화</status>시킵니다.</mainText>",
             "colloq": ";몰왕;몰왕검;brk;bork;bork;bork;botrk;blade;of;the;ruined;king",
             "plaintext": "상대의 체력에 비례하여 피해를 입히고, 상대의 이동 속도를 훔칠 수 있습니다.",
             "from": [
@@ -15399,8 +14404,8 @@ export const item = {
                 "full": "3153.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 96,
-                "y": 288,
+                "x": 288,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -15415,26 +14420,26 @@ export const item = {
                 "AttackSpeed",
                 "LifeSteal",
                 "Slow",
-                "OnHit",
-                "NonbootsMovement"
+                "OnHit"
             ],
             "maps": {
                 "11": true,
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatPhysicalDamageMod": 55,
-                "PercentAttackSpeedMod": 0.3,
+                "FlatPhysicalDamageMod": 40,
+                "PercentAttackSpeedMod": 0.25,
                 "PercentLifeStealMod": 0.1
             },
             "depth": 3
         },
         "3155": {
             "name": "주문포식자",
-            "description": "<mainText><stats>공격력 <attention>25</attention><br>마법 저항력 <attention>30</attention></stats><br><br><passive>생명선</passive><br>체력이 낮을 때 마법 피해를 받으면 마법 피해를 흡수하는 보호막을 얻습니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>25</attention><br>마법 저항력 <attention>25</attention></stats><br><br><passive>생명선</passive> (0초)<br>체력이 30% 밑으로 떨어질 만큼 마법 피해를 입으면 2.5초 동안 <shield>마법 피해를 흡수하는 보호막</shield>을 얻습니다.</mainText>",
             "colloq": ";hexdrinker",
             "plaintext": "공격력과 마법 저항력이 증가합니다.",
             "stacks": 0,
@@ -15450,13 +14455,13 @@ export const item = {
                 "full": "3155.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 144,
-                "y": 288,
+                "x": 336,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 150,
+                "base": 200,
                 "purchasable": true,
                 "total": 1300,
                 "sell": 910
@@ -15470,17 +14475,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatSpellBlockMod": 30,
+                "FlatSpellBlockMod": 25,
                 "FlatPhysicalDamageMod": 25
             },
             "depth": 2
         },
         "3156": {
             "name": "맬모셔스의 아귀",
-            "description": "<mainText><stats>공격력 <attention>70</attention><br>스킬 가속 <attention>15</attention><br>마법 저항력 <attention>40</attention></stats><br><br><passive>생명선</passive><br>마법 피해를 받아 체력이 30% 이하가 될 경우 마법 피해를 흡수하는 보호막을 얻습니다. <passive>생명선</passive> 효과가 발동하면 전투가 끝날 때까지 모든 피해 흡혈 효과를 얻습니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>60</attention><br>스킬 가속 <attention>15</attention><br>마법 저항력 <attention>40</attention></stats><br><br><passive>생명선</passive> (0초)<br>체력이 30% 밑으로 떨어질 만큼 마법 피해를 입으면 3초 동안 <shield>마법 피해를 흡수하는 보호막</shield>을 얻고 전투가 끝날 때까지 <lifeSteal>10%의 모든 피해 흡혈</lifeSteal>을 얻습니다.</mainText>",
             "colloq": ";맬모셔스의아귀;malmortius;apfahtutm;maw;of",
             "plaintext": "체력이 낮아지면 추가 공격력이 부여됩니다.",
             "stacks": 0,
@@ -15492,13 +14498,13 @@ export const item = {
                 "full": "3156.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 192,
-                "y": 288,
+                "x": 384,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 700,
+                "base": 750,
                 "purchasable": true,
                 "total": 3100,
                 "sell": 2170
@@ -15515,17 +14521,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 40,
-                "FlatPhysicalDamageMod": 70
+                "FlatPhysicalDamageMod": 60
             },
             "depth": 3
         },
         "3157": {
             "name": "존야의 모래시계",
-            "description": "<mainText><stats>주문력 <attention>120</attention><br>방어력 <attention>50</attention></stats><br><br><active>시간 정지</active><br>2.5초 동안 <keyword>경직</keyword> 상태가 됩니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>105</attention><br>방어력 <attention>50</attention></stats><br><br><active>시간 정지</active> (0초)<br>2.5초 동안 <keyword>경직</keyword> 상태가 됩니다.</mainText>",
             "colloq": ";zhg;zonyas;hourglass;zhonya's",
             "plaintext": "사용하면 아무런 행동도 취할 수 없는 대신 공격도 받지 않는 무적 상태가 됩니다.",
             "from": [
@@ -15536,13 +14543,13 @@ export const item = {
                 "full": "3157.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 240,
-                "y": 288,
+                "x": 432,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 400,
+                "base": 450,
                 "purchasable": true,
                 "total": 3250,
                 "sell": 2275
@@ -15557,10 +14564,11 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 120,
+                "FlatMagicDamageMod": 105,
                 "FlatArmorMod": 50
             },
             "effect": {
@@ -15572,7 +14580,7 @@ export const item = {
         },
         "3158": {
             "name": "명석함의 아이오니아 장화",
-            "description": "<mainText><stats>스킬 가속 <attention>15</attention><br>이동 속도 <attention>45</attention></stats><br><br>소환사 주문 가속이 12 증가합니다.<br><br></mainText>",
+            "description": "<mainText><stats>스킬 가속 <attention>10</attention><br>이동 속도 <attention>45</attention></stats><br><br><passive>아이오니아의 통찰</passive><br>소환사 주문 가속이 10 증가합니다.<br><br></mainText>",
             "colloq": "",
             "plaintext": "이동 속도와 재사용 대기시간 감소율이 증가합니다.",
             "from": [
@@ -15583,8 +14591,8 @@ export const item = {
                 "full": "3158.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 288,
-                "y": 288,
+                "x": 0,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -15603,7 +14611,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMovementSpeedMod": 45
@@ -15612,28 +14621,25 @@ export const item = {
         },
         "3161": {
             "name": "쇼진의 창",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>체력 <attention>300</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>드래곤의 힘</passive> <br>일반 스킬의 스킬 가속이 증가합니다.<br><br><passive>집중된 의지</passive> <br>스킬 적중 시 중첩을 얻습니다. 중첩당 스킬 피해량이 증가합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>45</attention><br>체력 <attention>450</attention></stats><br><br><passive>드래곤의 힘</passive> <br>기본 스킬 가속이 25 증가합니다.<br><br><passive>집중된 의지</passive> <br>스킬 적중 시 6초 동안 스킬 피해가 3% 증가합니다. (4회 중첩)</mainText>",
             "colloq": ";쇼진;shojin;tywls;tywlsdml;spear;of",
             "plaintext": "챔피언에게 받는 피해량이 고정된 수치만큼 감소합니다. 근처에 적 챔피언이 많을 때 공격하면 잠시 동안 이 수치가 증가합니다.",
             "from": [
-                "3067",
-                "3133",
-                "1037"
-            ],
-            "into": [
-                "7038"
+                "1037",
+                "2021",
+                "1028"
             ],
             "image": {
                 "full": "3161.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 336,
-                "y": 288,
+                "x": 48,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 325,
+                "base": 675,
                 "purchasable": true,
                 "total": 3100,
                 "sell": 2170
@@ -15648,39 +14654,42 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 300,
-                "FlatPhysicalDamageMod": 55
+                "FlatHPPoolMod": 450,
+                "FlatPhysicalDamageMod": 45
             },
             "depth": 3
         },
         "3165": {
             "name": "모렐로노미콘",
-            "description": "<mainText><stats>주문력 <attention>90</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>고통스러운 상처</passive><br>적 챔피언에게 마법 피해를 입히면 3초 동안 <keyword>40%의 고통스러운 상처</keyword>를 남깁니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>75</attention><br>체력 <attention>350</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>고통스러운 상처</passive><br>챔피언에게 마법 피해를 입히면 3초 동안 <keyword>40%의 상처</keyword>를 남깁니다.</mainText>",
             "colloq": ";nmst;grievous;morellonomicon",
             "plaintext": "마법 피해량이 증가합니다.",
             "from": [
                 "3916",
-                "3108"
+                "1026",
+                "3067"
             ],
             "image": {
                 "full": "3165.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 384,
-                "y": 288,
+                "x": 96,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 500,
                 "purchasable": true,
-                "total": 2200,
-                "sell": 1540
+                "total": 2950,
+                "sell": 2065
             },
             "tags": [
+                "Health",
                 "SpellDamage",
                 "CooldownReduction",
                 "AbilityHaste"
@@ -15690,16 +14699,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 90
+                "FlatHPPoolMod": 350,
+                "FlatMagicDamageMod": 75
             },
             "depth": 3
         },
         "3172": {
             "name": "서풍",
-            "description": "<mainText><stats>공격 속도 <attention>45%</attention><br>이동 속도 <attention>45</attention></stats><br><br><passive>바람처럼</passive><br>6초 동안 이동 속도(<OnHit>적중 시</OnHit> )가 5% 증가해 이동 속도가 최대 15%까지 증가합니다.</mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>45%</attention><br>이동 속도 <attention>45</attention></stats><br><br><passive>바람처럼</passive><br>기본 공격 시 6초 동안 <speed>이동 속도(<OnHit>적중 시</OnHit> )가 5%</speed>, 최대 <speed>15%</speed>까지 증가합니다.</mainText>",
             "colloq": ";zephyr",
             "plaintext": "이동 속도가 증가하고 강인함 효과를 받습니다.",
             "from": [
@@ -15709,8 +14720,8 @@ export const item = {
                 "full": "3172.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 432,
-                "y": 288,
+                "x": 144,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -15729,7 +14740,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMovementSpeedMod": 45,
@@ -15739,15 +14751,15 @@ export const item = {
         },
         "3177": {
             "name": "수호자의 검",
-            "description": "<mainText><stats>공격력 <attention>30</attention><br>체력 <attention>150</attention><br>스킬 가속 <attention>15</attention></stats><br><br><br><li><passive>전설급:</passive> 이 아이템은 <rarityLegendary>전설급</rarityLegendary> 아이템으로 간주됩니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>30</attention><br>체력 <attention>150</attention><br>스킬 가속 <attention>15</attention></stats><br><br></mainText>",
             "colloq": ";도란칼;ehfksrja;도란검;guardian's;blade",
             "plaintext": "공격에 특화된 시작 아이템입니다.",
             "image": {
                 "full": "3177.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 0,
-                "y": 336,
+                "x": 192,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -15768,7 +14780,8 @@ export const item = {
                 "12": true,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 150,
@@ -15780,7 +14793,7 @@ export const item = {
         },
         "3179": {
             "name": "그림자 검",
-            "description": "<mainText><stats>공격력 <attention>50</attention><br>물리 관통력 <attention>15</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>암전</passive><br>근처의 투명한 덫과 와드를 드러내고, 추가로 와드를 무력화시킵니다. 와드를 기본 공격하면 피해가 증가합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>50</attention><br>물리 관통력 <attention>15</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>암전</passive> (0초)<br>주변에 있는 적 투명 와드와 함정을 8초 동안 드러냅니다.<br><br><passive>진압</passive><br>와드를 기본 공격하면 추가 피해를 입힙니다.</mainText>",
             "colloq": ";물리관통력;물관;umbral;glaive",
             "plaintext": "주기적으로 덫 및 와드를 감지할 수 있습니다.",
             "from": [
@@ -15791,13 +14804,13 @@ export const item = {
                 "full": "3179.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 48,
-                "y": 336,
+                "x": 240,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 500,
+                "base": 550,
                 "purchasable": true,
                 "total": 2600,
                 "sell": 1820
@@ -15814,7 +14827,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 50
@@ -15828,25 +14842,25 @@ export const item = {
         },
         "3181": {
             "name": "선체파괴자",
-            "description": "<mainText><stats>공격력 <attention>65</attention><br>체력 <attention>350</attention><br>이동 속도 <attention>5%</attention></stats><br><br><passive>선장</passive><br>챔피언과 에픽 몬스터에게 다섯 번째 기본 공격을 가할 때마다 추가 물리 피해를 입힙니다. 대상이 구조물일 경우 피해량이 증가합니다.<br><br><passive>승선 부대</passive><br>주변 공성 미니언과 슈퍼 미니언이 방어력 및 마법 저항력을 얻습니다. </mainText>",
+            "description": "<mainText><stats>공격력 <attention>40</attention><br>체력 <attention>500</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>선장</passive><br>챔피언과 에픽 몬스터에게 다섯 번째 기본 공격을 가할 때마다 <physicalDamage>추가 물리 피해</physicalDamage>를 입힙니다. 대상이 구조물일 경우 피해량이 증가합니다.<br><br><passive>승선 부대</passive><br>주변 공성 미니언과 슈퍼 미니언이 <scaleArmor>방어력</scaleArmor> 및 <scaleMR>마법 저항력</scaleMR>을 얻습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
                 "2021",
-                "6690",
+                "3066",
                 "1037"
             ],
             "image": {
                 "full": "3181.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 96,
-                "y": 336,
+                "x": 288,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 75,
+                "base": 175,
                 "purchasable": true,
                 "total": 3000,
                 "sell": 2100
@@ -15858,29 +14872,30 @@ export const item = {
             ],
             "maps": {
                 "11": true,
-                "12": false,
+                "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 350,
-                "FlatPhysicalDamageMod": 65,
-                "PercentMovementSpeedMod": 0.05
+                "FlatHPPoolMod": 500,
+                "FlatPhysicalDamageMod": 40,
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 3
         },
         "3184": {
             "name": "수호자의 망치",
-            "description": "<mainText><stats>공격력 <attention>25</attention><br>체력 <attention>150</attention><br>생명력 흡수 <attention>7%</attention></stats><br><br><br><li><passive>전설급:</passive> 이 아이템은 <rarityLegendary>전설급</rarityLegendary> 아이템으로 간주됩니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>25</attention><br>체력 <attention>150</attention><br>생명력 흡수 <attention>5%</attention></stats><br><br></mainText>",
             "colloq": ";도란칼;guardian's;hammer",
             "plaintext": "공격에 특화된 시작 아이템입니다.",
             "image": {
                 "full": "3184.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 144,
-                "y": 336,
+                "x": 336,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -15901,17 +14916,18 @@ export const item = {
                 "12": true,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 150,
                 "FlatPhysicalDamageMod": 25,
-                "PercentLifeStealMod": 0.07
+                "PercentLifeStealMod": 0.05
             }
         },
         "3190": {
             "name": "강철의 솔라리 펜던트",
-            "description": "<mainText><stats>체력 <attention>200</attention><br>방어력 <attention>30</attention><br>마법 저항력 <attention>30</attention><br>스킬 가속 <attention>10</attention></stats><br><br><active>사용 시 -</active><active>헌신</active><br>주변 아군에게 <shield>보호막</shield>을 부여합니다. 보호막은 서서히 사라집니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>200</attention><br>방어력 <attention>25</attention><br>마법 저항력 <attention>25</attention><br>스킬 가속 <attention>10</attention></stats><br><br><active>헌신</active> (0초)<br>주변 아군들에게 <shield>200~360(아군 )의 피해를 흡수하는 보호막</shield>을 부여합니다. 보호막 피해 흡수량은 2.5초에 걸쳐 점차 감소합니다. </mainText>",
             "colloq": ";locket;of;the;iron;solari",
             "plaintext": "사용하면 주변 아군을 적의 공격에서 방어해 줍니다.",
             "from": [
@@ -15919,20 +14935,17 @@ export const item = {
                 "1029",
                 "1033"
             ],
-            "into": [
-                "7019"
-            ],
             "image": {
                 "full": "3190.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 192,
-                "y": 336,
+                "x": 384,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 650,
+                "base": 700,
                 "purchasable": true,
                 "total": 2200,
                 "sell": 1540
@@ -15951,18 +14964,19 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatSpellBlockMod": 30,
+                "FlatSpellBlockMod": 25,
                 "FlatHPPoolMod": 200,
-                "FlatArmorMod": 30
+                "FlatArmorMod": 25
             },
             "depth": 3
         },
         "3193": {
             "name": "가고일 돌갑옷",
-            "description": "<mainText><stats>방어력 <attention>60</attention><br>마법 저항력 <attention>60</attention><br>스킬 가속 <attention>15</attention></stats><br><br><br><li><passive>구축:</passive> 챔피언에게 피해를 받으면 중첩을 1회 얻어 <scaleArmor>방어력</scaleArmor>, <scaleMR>마법 저항력</scaleMR>이 증가합니다.<br><br><rules>챔피언당 하나씩 최대 5회까지 중첩됩니다.</rules><br><br><active>사용 시 -</active> <active>불굴:</active> 크기가 커지며 피해를 흡수하는 보호막을 얻습니다. 보호막은 점차 사라집니다.</mainText>",
+            "description": "<mainText><stats>방어력 <attention>60</attention><br>마법 저항력 <attention>60</attention><br>스킬 가속 <attention>15</attention></stats><br><br><br><li><passive>구축:</passive> 챔피언에게 피해를 받으면 중첩을 1회 얻어 6초 동안 <scaleArmor>방어력이 0</scaleArmor>, <scaleMR>마법 저항력이 0</scaleMR> 증가합니다.<br><br><rules>챔피언당 하나씩 최대 5회까지 중첩됩니다.</rules><br><br><active>사용 시 -</active> <active>불굴:</active> 크기가 커지며 피해를 흡수하는 보호막을 얻습니다. 보호막은 점차 사라집니다.</mainText>",
             "colloq": ";",
             "plaintext": "근처에 적이 많을 때 방어력을 크게 증가시킵니다.",
             "from": [
@@ -15975,16 +14989,16 @@ export const item = {
                 "full": "3193.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 240,
-                "y": 336,
+                "x": 432,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 1250,
+                "base": 1350,
                 "purchasable": false,
-                "total": 3200,
-                "sell": 2240
+                "total": 3250,
+                "sell": 2275
             },
             "tags": [
                 "SpellBlock",
@@ -15998,7 +15012,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 60,
@@ -16008,7 +15023,7 @@ export const item = {
         },
         "3211": {
             "name": "망령의 두건",
-            "description": "<mainText><stats>체력 <attention>200</attention><br>마법 저항력 <attention>25</attention><br>기본 체력 재생 <attention>100%</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>체력 <attention>200</attention><br>마법 저항력 <attention>35</attention><br>기본 체력 재생 <attention>100%</attention></stats><br><br></mainText>",
             "colloq": ";모자;hat;spectre's;cowl",
             "plaintext": "방어력이 증가하고, 피해를 입으면 체력이 재생됩니다.",
             "from": [
@@ -16025,13 +15040,13 @@ export const item = {
                 "full": "3211.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 288,
-                "y": 336,
+                "x": 0,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 100,
+                "base": 150,
                 "purchasable": true,
                 "total": 1250,
                 "sell": 875
@@ -16046,17 +15061,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatSpellBlockMod": 25,
+                "FlatSpellBlockMod": 35,
                 "FlatHPPoolMod": 200
             },
             "depth": 2
         },
         "3222": {
             "name": "미카엘의 축복",
-            "description": "<mainText><stats>체력 <attention>250</attention><br>기본 마나 재생 <attention>100%</attention><br>체력 회복 및 보호막 <attention>12%</attention><br>스킬 가속 <attention>15</attention></stats><br><br><active>활성화</active><br><active>정화</active> (0초)<br>아군 챔피언에게 걸린 모든 군중 제어 효과를 제거하고 체력을 회복시킵니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>250</attention><br>기본 마나 재생 <attention>100%</attention><br>체력 회복 및 보호막 <attention>12%</attention><br>스킬 가속 <attention>15</attention></stats><br><br><active>정화</active> (0초)<br>아군 챔피언에게 걸린 모든 군중 제어 효과(<keyword>공중에 뜸</keyword> 및 <keyword>제압</keyword> 제외)를 제거하고 <healing>체력을 100~250(아군 )</healing> 회복합니다.</mainText>",
             "colloq": ";mikael;crucible;mikael's;blessing",
             "plaintext": "사용하면 아군 챔피언 하나에게 걸린 방해 효과를 모두 제거해 줍니다.",
             "from": [
@@ -16067,13 +15083,13 @@ export const item = {
                 "full": "3222.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 336,
-                "y": 336,
+                "x": 48,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 700,
+                "base": 900,
                 "purchasable": true,
                 "total": 2300,
                 "sell": 1610
@@ -16091,7 +15107,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 250
@@ -16100,7 +15117,7 @@ export const item = {
         },
         "3302": {
             "name": "경계",
-            "description": "<mainText><stats>공격력 <attention>35</attention><br>공격 속도 <attention>35%</attention></stats><br><br><passive>그림자</passive><br>기본 공격 시 마법 피해(<OnHit>적중 시</OnHit> )를 입힙니다.<br><br><passive>빛과 어둠</passive><br>챔피언에게 기본 공격 시 <keywordMajor>빛</keywordMajor>과 <keywordMajor>어둠</keywordMajor> 적중 효과를 번갈아 가며 적용합니다. <li><keywordMajor>빛</keywordMajor> 기본 공격 시 <scaleArmor>방어력</scaleArmor>과 <scaleMR>마법 저항력</scaleMR>을 얻습니다.<li><keywordMajor>어둠</keywordMajor> 기본 공격 시 <scaleArmor>방어구 관통력</scaleArmor>과 <scaleMR>마법 관통력</scaleMR>을 얻습니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>30</attention><br>공격 속도 <attention>35%</attention></stats><br><br><passive>그림자</passive><br>기본 공격 시 <magicDamage>30의 추가 마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.<br><br><passive>빛과 어둠</passive><br>챔피언에게 기본 공격 시 <keywordMajor>빛</keywordMajor>과 <keywordMajor>어둠</keywordMajor> 기본 공격을 번갈아 가며 적용합니다. <li><keywordMajor>빛</keywordMajor> 기본 공격 시 5초 동안 <scaleArmor>방어력</scaleArmor>과 <scaleMR>마법 저항력</scaleMR>이 증가합니다. <li><keywordMajor>어둠</keywordMajor> 기본 공격 시 5초 동안 <scaleArmor>방어구 관통력</scaleArmor>과 <scaleMR>마법 관통력</scaleMR>이 10% 증가합니다. </mainText>",
             "colloq": ";relic;shield;terminus",
             "plaintext": "주기적으로 미니언을 처치하여 근처 아군을 치유하고 골드를 부여합니다.",
             "from": [
@@ -16111,13 +15128,13 @@ export const item = {
                 "full": "3302.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 384,
-                "y": 336,
+                "x": 96,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 1000,
+                "base": 1100,
                 "purchasable": true,
                 "total": 3000,
                 "sell": 2100
@@ -16134,17 +15151,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatPhysicalDamageMod": 35,
+                "FlatPhysicalDamageMod": 30,
                 "PercentAttackSpeedMod": 0.35
             },
             "depth": 3
         },
         "3330": {
             "name": "허수아비",
-            "description": "<mainText><stats></stats><br><br><br><active>사용 시 - 장신구:</active> 적에게 피들스틱과 똑같아 보이는 허수아비를 설치합니다. 허수아비는 최대 2회까지 충전됩니다.<br><br>적 챔피언이 가까이 다가가면 허수아비가 작동되어, 무작위 행동을 취한 후 파괴됩니다.</mainText>",
+            "description": "<mainText><stats></stats><br><br>팔 수 없음<br><br><active>사용 시 - 장신구:</active> 적에게 피들스틱과 똑같아 보이는 허수아비를 설치합니다. 허수아비는 0초 동안 유지됩니다. 0초마다 1회 충전되며, 최대 2회까지 충전됩니다.<br><br>적 챔피언이 가까이 다가가면 허수아비가 작동되어, 무작위 행동을 취한 후 파괴됩니다.</mainText>",
             "colloq": "노랑; 장신구; 와드",
             "plaintext": "주기적으로 투명 와드를 설치합니다.",
             "requiredChampion": "FiddleSticks",
@@ -16152,8 +15170,8 @@ export const item = {
                 "full": "3330.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 432,
-                "y": 336,
+                "x": 144,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
@@ -16175,7 +15193,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -16191,15 +15210,15 @@ export const item = {
         },
         "3340": {
             "name": "투명 와드",
-            "description": "<mainText><stats></stats><br><br><active>사용 시 - 장신구:</active> 아군 모두에게 주변 지역을 밝혀 주는 <keywordStealth>투명</keywordStealth> 와드 하나를 지면에 설치합니다. 투명 와드는 최대 2개까지 보유할 수 있습니다.</mainText>",
+            "description": "<mainText><stats></stats><br><br><active>사용 시</active> (<scaleLevel>210~120</scaleLevel>초, 최대 충전량 2회)<br><scaleLevel>90~120</scaleLevel>초 동안 시야를 밝혀 주는 <keyword>보이지 않는</keyword> 투명 와드를 설치합니다.</mainText>",
             "colloq": "노랑; 토템; 장신구",
             "plaintext": "주기적으로 투명 와드를 설치합니다.",
             "image": {
                 "full": "3340.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 0,
-                "y": 384,
+                "x": 192,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
@@ -16221,7 +15240,8 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -16245,8 +15265,8 @@ export const item = {
                 "full": "3348.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 48,
-                "y": 384,
+                "x": 240,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
@@ -16268,7 +15288,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -16282,8 +15303,8 @@ export const item = {
                 "full": "3349.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 96,
-                "y": 384,
+                "x": 288,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
@@ -16305,21 +15326,22 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {}
         },
         "3363": {
             "name": "망원형 개조",
-            "description": "<mainText><stats></stats><br><br><active>사용 시 - 장신구:</active> 최대 4000유닛 거리에 누구나 볼 수 있고 쉽게 파괴 가능한 와드를 설치합니다.</mainText>",
+            "description": "<mainText><stats></stats><br><br><active>사용 시</active> (<scaleLevel>198~99</scaleLevel>초)<br>2초 동안 멀리 떨어진 영역을 드러내고 적 챔피언을 발견하면 파괴되는 와드를 설치합니다.</mainText>",
             "colloq": ";파랑; 토템; 장신구;farsight;alteration",
             "plaintext": "설치 범위가 증가하며 대상 지역을 드러내 줍니다.",
             "image": {
                 "full": "3363.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 144,
-                "y": 384,
+                "x": 336,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
@@ -16339,7 +15361,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -16362,15 +15385,15 @@ export const item = {
         },
         "3364": {
             "name": "예언자의 렌즈",
-            "description": "<mainText><stats></stats><br><br><active>사용 시 - 장신구:</active> 근처를 수색해 적 유닛이 숨어 있으면 경고를 보내며 주변의 투명한 덫을 드러냅니다. 또한 적의 투명 와드를 드러내고 잠시 무력화시킵니다. 2회 재충전합니다.</mainText>",
+            "description": "<mainText><stats></stats><br><br><active>사용 시</active> (<scaleLevel>160~100</scaleLevel>초, 최대 충전량 2회)<br>주변에 있는 적의 투명 와드와 함정의 위치를 6초 동안 드러냅니다.</mainText>",
             "colloq": ";빨강;렌즈;장신구;oracle;lens",
             "plaintext": "근처의 투명한 와드와 덫을 일정 시간 동안 차단합니다.",
             "image": {
                 "full": "3364.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 192,
-                "y": 384,
+                "x": 384,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
@@ -16390,7 +15413,8 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -16417,8 +15441,8 @@ export const item = {
                 "full": "3400.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 240,
-                "y": 384,
+                "x": 432,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
@@ -16437,21 +15461,22 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
         "3430": {
             "name": "파멸의식 고서",
-            "description": "<mainText><stats>주문력 <attention>50</attention><br>스킬 가속 <attention>15</attention><br>치명타 확률 <attention>20%</attention></stats><br><br><passive>분노와 파멸</passive><br>6초 동안 스킬 사용 시 치명타 확률이 2.5% 증가해 치명타 확률이 최대 20%까지 증가합니다.<br><br><passive>난파선 인양</passive><br>스킬 사용 시 치명타 확률과 동일한 확률로 자신 또는 아군에게 3초 동안 0의 피해를 흡수하는 보호막을 부여합니다.<br></mainText>",
+            "description": "<mainText><stats>주문력 <attention>50</attention><br>스킬 가속 <attention>15</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>분노와 파멸</passive><br>6초 동안 스킬 사용 시 치명타 확률이 2.5% 증가해 치명타 확률이 최대 20%까지 증가합니다.<br><br><passive>난파선 인양</passive><br>스킬 사용 시 치명타 확률과 동일한 확률로 자신 또는 아군에게 3초 동안 0의 피해를 흡수하는 보호막을 부여합니다.<br></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "3430.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 288,
-                "y": 384,
+                "x": 0,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -16471,16 +15496,17 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 50,
-                "FlatCritChanceMod": 0.2
+                "FlatCritChanceMod": 0.25
             }
         },
         "3504": {
             "name": "불타는 향로",
-            "description": "<mainText><stats>주문력 <attention>50</attention><br>체력 회복 및 보호막 <attention>8%</attention><br>기본 마나 재생 <attention>125%</attention><br>이동 속도 <attention>8%</attention></stats><br><br><passive>축성</passive><br>아군을 치유하거나 보호막을 씌워주면 6초 동안 자신과 대상 아군의 공격 속도가 <attackSpeed>25%</attackSpeed> 상승하고 공격 시 <magicDamage>20의 마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>45</attention><br>체력 회복 및 보호막 <attention>10%</attention><br>기본 마나 재생 <attention>125%</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>축성</passive><br>아군을 치유하거나 보호막을 씌워주면 6초 동안 자신과 대상 아군의 <attackSpeed>공격 속도가 25%</attackSpeed> 상승하고 공격 시 <magicDamage>20의 마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.</mainText>",
             "colloq": ";ardent;censer",
             "plaintext": "다른 유닛에게 보호막과 치유 효과를 쓰면 잠깐 동안 대상과 자신의 공격 속도가 상승합니다. 또한 이 상태에서 기본 공격이 적중하면 추가 마법 피해를 입힙니다.",
             "from": [
@@ -16491,16 +15517,16 @@ export const item = {
                 "full": "3504.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 336,
-                "y": 384,
+                "x": 48,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 650,
+                "base": 700,
                 "purchasable": true,
-                "total": 2300,
-                "sell": 1610
+                "total": 2200,
+                "sell": 1540
             },
             "tags": [
                 "AttackSpeed",
@@ -16513,17 +15539,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 50,
-                "PercentMovementSpeedMod": 0.08
+                "FlatMagicDamageMod": 45,
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 3
         },
         "3508": {
             "name": "정수 약탈자",
-            "description": "<mainText><stats>공격력 <attention>65</attention><br>스킬 가속 <attention>25</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>정수 흡수</passive><br>기본 공격 적중 시 <scaleMana>마나</scaleMana>를 회복합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>65</attention><br>스킬 가속 <attention>20</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>정수 흡수</passive><br>기본 공격 시 <scaleMana>마나</scaleMana>(<OnHit>적중 시</OnHit> )를 얻습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -16535,16 +15562,16 @@ export const item = {
                 "full": "3508.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 384,
-                "y": 384,
+                "x": 96,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 200,
                 "purchasable": true,
-                "total": 3200,
-                "sell": 2240
+                "total": 3150,
+                "sell": 2205
             },
             "tags": [
                 "Damage",
@@ -16559,7 +15586,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
@@ -16578,8 +15606,8 @@ export const item = {
                 "full": "3513.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 432,
-                "y": 384,
+                "x": 144,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -16598,7 +15626,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {},
             "effect": {
@@ -16618,8 +15647,8 @@ export const item = {
                 "full": "3599.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 0,
-                "y": 432,
+                "x": 192,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -16637,7 +15666,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -16651,8 +15681,8 @@ export const item = {
                 "full": "3600.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 48,
-                "y": 432,
+                "x": 240,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -16670,13 +15700,14 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
         "3742": {
             "name": "망자의 갑옷",
-            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>45</attention><br>이동 속도 <attention>5%</attention></stats><br><br><passive>침몰시키는 자</passive><br>이동 시 추가 이동 속도를 얻습니다. 다음 기본 공격 시 물리 피해를 입히고 추가 이동 속도를 잃습니다.<br><br><passive>굴하지 않는 자</passive><br>이동 속도 둔화 효과가 줄어듭니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>350</attention><br>방어력 <attention>55</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>침몰시키는 자</passive><br>이동 시 최대 <speed>20의 추가 이동 속도</speed>를 얻습니다. 다음 기본 공격 시 <physicalDamage>추가 물리 피해</physicalDamage>를 입히고 추가 이동 속도를 잃습니다.<br><br><passive>굴하지 않는 자</passive><br><keyword>둔화</keyword> 효과가 25% 감소합니다.</mainText>",
             "colloq": ";juggernaut;dreadnought;dead;man's;plate",
             "plaintext": "이동 시 추진력이 올라 적들을 강하게 타격합니다.",
             "from": [
@@ -16688,8 +15719,8 @@ export const item = {
                 "full": "3742.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 96,
-                "y": 432,
+                "x": 288,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -16710,36 +15741,37 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 300,
-                "FlatArmorMod": 45,
-                "PercentMovementSpeedMod": 0.05
+                "FlatHPPoolMod": 350,
+                "FlatArmorMod": 55,
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 3
         },
         "3748": {
             "name": "거대한 히드라",
-            "description": "<mainText><stats>공격력 <attention>50</attention><br>체력 <attention>550</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 <physicalDamage>0의 물리 피해</physicalDamage> <OnHit>적중 시</OnHit> 를 추가로 입히고 대상 뒤의 적들에게 <physicalDamage>0의 물리 피해</physicalDamage>를 입힙니다.<br><br><active>활성화</active><br><active>거대한 초승달</active><br>다음 기본 공격 시 <passive>쪼개기</passive>가 대상과 근처 충격파 범위에 추가 물리 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>40</attention><br>체력 <attention>600</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 적중 시 대상 뒤의 적들에게 <physicalDamage>물리 피해</physicalDamage>를 입힙니다.<active>거대한 초승달</active> (0초)<br>다음 <passive>쪼개기</passive>를 강화하여 <physicalDamage>추가 물리 피해</physicalDamage>(<OnHit>적중 시</OnHit> )를 입히고 대상 뒤의 적들에게 <physicalDamage>추가 물리 피해</physicalDamage>를 입힙니다.</mainText>",
             "colloq": ";juggernaut;titanic;hydra",
             "plaintext": "본인 체력에 비례하여 광역 피해를 입힙니다.",
             "from": [
                 "3077",
                 "2021",
-                "1028"
+                "1011"
             ],
             "image": {
                 "full": "3748.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 144,
-                "y": 432,
+                "x": 336,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 550,
+                "base": 50,
                 "purchasable": true,
                 "total": 3300,
                 "sell": 2310
@@ -16755,11 +15787,12 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 550,
-                "FlatPhysicalDamageMod": 50
+                "FlatHPPoolMod": 600,
+                "FlatPhysicalDamageMod": 40
             },
             "depth": 3
         },
@@ -16780,8 +15813,8 @@ export const item = {
                 "full": "3801.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 192,
-                "y": 432,
+                "x": 384,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -16800,7 +15833,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 200
@@ -16829,13 +15863,13 @@ export const item = {
                 "full": "3802.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 240,
-                "y": 432,
+                "x": 432,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 200,
+                "base": 250,
                 "purchasable": true,
                 "total": 1200,
                 "sell": 840
@@ -16852,7 +15886,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 300,
@@ -16862,7 +15897,7 @@ export const item = {
         },
         "3803": {
             "name": "억겁의 카탈리스트",
-            "description": "<mainText><stats>체력 <attention>350</attention><br>마나 <attention>300</attention></stats><br><br><passive>영원</passive><br>챔피언에게 피해를 입으면 마나를 회복합니다. 스킬 사용 시 점차 체력을 회복합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>350</attention><br>마나 <attention>300</attention></stats><br><br><passive>영원</passive><br>챔피언에게 <scaleMana>입은 피해의 7%</scaleMana>를 <scaleMana>마나</scaleMana>로 회복합니다. <br>스킬 사용 시 사용한 <healing>마나의 25%만큼 체력을 회복</healing>합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -16877,13 +15912,13 @@ export const item = {
                 "full": "3803.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 288,
-                "y": 432,
+                "x": 0,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 550,
+                "base": 600,
                 "purchasable": true,
                 "total": 1300,
                 "sell": 910
@@ -16899,7 +15934,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 300,
@@ -16909,7 +15945,7 @@ export const item = {
         },
         "3814": {
             "name": "밤의 끝자락",
-            "description": "<mainText><stats>공격력 <attention>50</attention><br>물리 관통력 <attention>15</attention><br>체력 <attention>250</attention></stats><br><br><passive>무효화</passive><br>주문 방어막을 얻습니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>50</attention><br>물리 관통력 <attention>15</attention><br>체력 <attention>250</attention></stats><br><br><passive>무효화</passive> (0초)<br>적의 다음 스킬을 막아 주는 주문 방어막을 생성합니다.</mainText>",
             "colloq": ";물리관통력;edge;of;night",
             "plaintext": "주기적으로 적 스킬 공격을 막아줍니다.",
             "stacks": 0,
@@ -16921,16 +15957,16 @@ export const item = {
                 "full": "3814.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 336,
-                "y": 432,
+                "x": 48,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 650,
+                "base": 850,
                 "purchasable": true,
-                "total": 2800,
-                "sell": 1960
+                "total": 3000,
+                "sell": 2100
             },
             "tags": [
                 "Health",
@@ -16942,7 +15978,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 250,
@@ -16965,8 +16002,8 @@ export const item = {
                 "full": "3850.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 384,
-                "y": 432,
+                "x": 96,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -16989,7 +16026,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 25,
@@ -17007,7 +16045,7 @@ export const item = {
         },
         "3851": {
             "name": "얼음 송곳니",
-            "description": "<mainText><stats>주문력 <attention>15</attention><br>체력 <attention>70</attention><br>기본 마나 재생 <attention>50%</attention><br>10초당 골드 <attention>3</attention></stats><br><br><br><br><active>사용 시 -</active> <active>와드:</active> 아군 모두에게 주변 지역을 밝혀 주는 <keywordStealth>투명</keywordStealth> 와드 하나를 지면에 설치합니다. 투명 와드는 최대 3개까지 보유할 수 있으며 상점 방문 시 다시 채워집니다. <br><br><br><br><li><passive>헌납:</passive> 아군 챔피언 근처에 있을 때, 챔피언과 구조물에 피해를 입히는 스킬을 사용하거나 기본 공격 시 20골드를 획득합니다. 30초당 최대 3번까지만 발동합니다.<li><passive>퀘스트:</passive> 이 아이템으로 1000골드를 획득하면 <rarityLegendary>얼음 정수의 파편</rarityLegendary>으로 변합니다.<br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
+            "description": "<mainText><stats>주문력 <attention>15</attention><br>체력 <attention>70</attention><br>기본 마나 재생 <attention>50%</attention><br>10초당 골드 <attention>3</attention></stats><br><br><br><li><passive>헌납:</passive> 아군 챔피언 근처에 있을 때, 챔피언과 구조물에 피해를 입히는 스킬을 사용하거나 기본 공격 시 20골드를 획득합니다. 36초당 최대 3번까지만 발동합니다.<li><passive>퀘스트:</passive> 이 아이템으로 1000골드를 획득하면 <rarityLegendary>2단계 세계 룬</rarityLegendary>으로 변합니다.<br><br><rules>이 아이템을 보유한 아군이 너무 많은 미니언을 처치하면 미니언 처치 시 획득하는 골드가 감소합니다.</rules><br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 3850,
@@ -17016,8 +16054,8 @@ export const item = {
                 "full": "3851.png",
                 "sprite": "item3.png",
                 "group": "item",
-                "x": 432,
-                "y": 432,
+                "x": 144,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -17038,7 +16076,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 70,
@@ -17056,17 +16095,17 @@ export const item = {
         },
         "3853": {
             "name": "얼음 정수의 파편",
-            "description": "<mainText><stats>주문력 <attention>40</attention><br>체력 <attention>75</attention><br>기본 마나 재생 <attention>100%</attention><br>10초당 골드 <attention>3</attention></stats><br><br><br><br><active>사용 시 -</active> <active>와드:</active> 아군 모두에게 주변 지역을 밝혀 주는 <keywordStealth>투명</keywordStealth> 와드 하나를 지면에 설치합니다. 투명 와드는 최대 4개까지 보유할 수 있으며 상점 방문 시 다시 채워집니다. <br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
+            "description": "<mainText><stats>주문력 <attention>40</attention><br>체력 <attention>75</attention><br>기본 마나 재생 <attention>100%</attention><br>10초당 골드 <attention>3</attention></stats><br><br><br><br><rules>이 아이템을 보유한 아군이 너무 많은 미니언을 처치하면 미니언 처치 시 획득하는 골드가 감소합니다.</rules><br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 3851,
             "inStore": false,
             "image": {
                 "full": "3853.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 0,
-                "y": 0,
+                "x": 192,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -17087,7 +16126,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 75,
@@ -17099,15 +16139,15 @@ export const item = {
         },
         "3854": {
             "name": "강철 어깨 보호대",
-            "description": "<mainText><stats>공격력 <attention>4</attention><br>체력 <attention>50</attention><br>기본 체력 재생 <attention>50%</attention><br>10초당 골드 <attention>2</attention></stats><br><br><li><passive>전리품:</passive> 아군 챔피언 근처에 있으면 기본 공격 시 최대 체력이 근접 챔피언의 경우 50% (원거리 챔피언의 경우 30%) 이하인 미니언을 즉시 처형하고 가장 가까운 아군 챔피언과 함께 같은 양의 골드를 획득합니다. 이 효과는 35초마다 재충전됩니다. (최대 충전량 3회)<li><passive>퀘스트:</passive> 이 아이템으로 500골드를 획득하면 <rarityGeneric>룬 강철 어깨 갑옷</rarityGeneric>으로 변하며 <active>사용 시 -</active> <active>와드 설치</active> 효과를 획득합니다.<br><br><rules>이 아이템을 보유한 아군이 너무 많은 미니언을 처치하면 미니언 처치 시 획득하는 골드가 감소합니다.</rules></mainText>",
+            "description": "<mainText><stats>공격력 <attention>4</attention><br>체력 <attention>50</attention><br>기본 체력 재생 <attention>50%</attention><br>10초당 골드 <attention>2</attention></stats><br><br><br>{{ Item_Support_Spoils_Of_War_01 }}<li><passive>퀘스트:</passive> 이 아이템으로 500골드를 획득하면 <rarityGeneric>룬 강철 어깨 갑옷</rarityGeneric>으로 변하며 {{ Item_Active_Named_NoBullet }} <active>와드 설치</active> 효과를 획득합니다.<br><br><rules>{{ Item_Support_Minion_Warning }}</rules></mainText>",
             "colloq": "",
             "plaintext": "아군과 함께 미니언을 처치하면 골드를 획득하고 업그레이드됩니다.",
             "image": {
                 "full": "3854.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 48,
-                "y": 0,
+                "x": 240,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -17130,7 +16170,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 50,
@@ -17147,17 +16188,17 @@ export const item = {
         },
         "3855": {
             "name": "룬 강철 어깨 갑옷",
-            "description": "<mainText><stats>공격력 <attention>6</attention><br>체력 <attention>100</attention><br>기본 체력 재생 <attention>75%</attention><br>10초당 골드 <attention>3</attention></stats><br><br><br><br><active>사용 시 -</active> <active>와드:</active> 아군 모두에게 주변 지역을 밝혀 주는 <keywordStealth>투명</keywordStealth> 와드 하나를 지면에 설치합니다. 투명 와드는 최대 3개까지 보유할 수 있으며 상점 방문 시 다시 채워집니다. <br><li><passive>전리품:</passive> 아군 챔피언 근처에 있으면 기본 공격 시 최대 체력이 50% 이하인 미니언을 즉시 처형하고 가장 가까운 아군 챔피언과 함께 같은 양의 골드를 획득합니다. 이 효과는 35초마다 재충전됩니다. (최대 충전량 3회)<li><passive>퀘스트:</passive> 이 아이템으로 1000골드를 획득하면 <rarityLegendary>타곤 산의 방벽</rarityLegendary>으로 변합니다. <br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
+            "description": "<mainText><stats>공격력 <attention>6</attention><br>체력 <attention>100</attention><br>기본 체력 재생 <attention>75%</attention><br>10초당 골드 <attention>3</attention></stats><br><br><br><li><passive>전리품:</passive> 아군 챔피언 근처에 있으면 기본 공격 시 최대 체력이 0% 이하인 미니언을 즉시 처형하고 가장 가까운 아군 챔피언과 함께 같은 양의 골드를 획득합니다. 이 효과는 0초마다 재충전됩니다. (최대 충전량 0회)<li><passive>퀘스트:</passive> 이 아이템으로 1000골드를 획득하면 <rarityLegendary>화이트록의 갑옷</rarityLegendary>으로 변합니다. <br><br><rules>이 아이템을 보유한 아군이 너무 많은 미니언을 처치하면 미니언 처치 시 획득하는 골드가 감소합니다.</rules><br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 3854,
             "inStore": false,
             "image": {
                 "full": "3855.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 96,
-                "y": 0,
+                "x": 288,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -17178,7 +16219,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 100,
@@ -17195,17 +16237,17 @@ export const item = {
         },
         "3857": {
             "name": "화이트록의 갑옷",
-            "description": "<mainText><stats>공격력 <attention>15</attention><br>체력 <attention>250</attention><br>기본 체력 재생 <attention>100%</attention><br>10초당 골드 <attention>3</attention></stats><br><br><br><br><active>사용 시 -</active> <active>와드:</active> 아군 모두에게 주변 지역을 밝혀 주는 <keywordStealth>투명</keywordStealth> 와드 하나를 지면에 설치합니다. 투명 와드는 최대 4개까지 보유할 수 있으며 상점 방문 시 다시 채워집니다. <br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
+            "description": "<mainText><stats>공격력 <attention>15</attention><br>체력 <attention>250</attention><br>기본 체력 재생 <attention>100%</attention><br>10초당 골드 <attention>3</attention></stats><br><br><br><br><rules>이 아이템을 보유한 아군이 너무 많은 미니언을 처치하면 미니언 처치 시 획득하는 골드가 감소합니다.</rules><br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 3855,
             "inStore": false,
             "image": {
                 "full": "3857.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 144,
-                "y": 0,
+                "x": 336,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -17226,7 +16268,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 250,
@@ -17238,15 +16281,15 @@ export const item = {
         },
         "3858": {
             "name": "고대유물 방패",
-            "description": "<mainText><stats>주문력 <attention>7</attention><br>체력 <attention>50</attention><br>기본 체력 재생 <attention>50%</attention><br>10초당 골드 <attention>2</attention></stats><br><br><li><passive>전리품:</passive> 아군 챔피언 근처에 있으면 기본 공격 시 최대 체력이 근접 챔피언의 경우 50% (원거리 챔피언의 경우 30%) 이하인 미니언을 즉시 처형하고 가장 가까운 아군 챔피언과 함께 같은 양의 골드를 획득합니다. 이 효과는 35초마다 재충전됩니다. (최대 충전량 3회)<li><passive>퀘스트:</passive> 이 아이템으로 500골드를 획득하면 <rarityGeneric>타곤 산의 방패</rarityGeneric>로 변하며 <active>사용 시 -</active> <active>와드 설치</active> 효과를 획득합니다.<br><br><rules>이 아이템을 보유한 아군이 너무 많은 미니언을 처치하면 미니언 처치 시 획득하는 골드가 감소합니다.</rules></mainText>",
+            "description": "<mainText><stats>주문력 <attention>7</attention><br>체력 <attention>50</attention><br>기본 체력 재생 <attention>50%</attention><br>10초당 골드 <attention>2</attention></stats><br><br><br>{{ Item_Support_Spoils_Of_War_01 }}<li><passive>퀘스트:</passive> 이 아이템으로 500골드를 획득하면 <rarityGeneric>타곤 산의 방패</rarityGeneric>로 변하며 {{ Item_Active_Named_NoBullet }} <active>와드 설치</active> 효과를 획득합니다.<br><br><rules>{{ Item_Support_Minion_Warning }}</rules></mainText>",
             "colloq": "",
             "plaintext": "아군과 함께 미니언을 처치하면 골드를 획득하고 업그레이드됩니다.",
             "image": {
                 "full": "3858.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 192,
-                "y": 0,
+                "x": 384,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -17269,7 +16312,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 50,
@@ -17286,17 +16330,17 @@ export const item = {
         },
         "3859": {
             "name": "타곤 산의 방패",
-            "description": "<mainText><stats>주문력 <attention>10</attention><br>체력 <attention>100</attention><br>기본 체력 재생 <attention>75%</attention><br>10초당 골드 <attention>3</attention></stats><br><br><br><br><active>사용 시 -</active> <active>와드:</active> 아군 모두에게 주변 지역을 밝혀 주는 <keywordStealth>투명</keywordStealth> 와드 하나를 지면에 설치합니다. 투명 와드는 최대 3개까지 보유할 수 있으며 상점 방문 시 다시 채워집니다. <br><li><passive>전리품:</passive> 아군 챔피언 근처에 있으면 기본 공격 시 최대 체력이 50% 이하인 미니언을 즉시 처형하고 가장 가까운 아군 챔피언과 함께 같은 양의 골드를 획득합니다. 이 효과는 35초마다 재충전됩니다. (최대 충전량 3회)<li><passive>퀘스트:</passive> 이 아이템으로 1000골드를 획득하면 <rarityLegendary>타곤 산의 방벽</rarityLegendary>으로 변합니다. <br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
+            "description": "<mainText><stats>주문력 <attention>10</attention><br>체력 <attention>100</attention><br>기본 체력 재생 <attention>75%</attention><br>10초당 골드 <attention>3</attention></stats><br><br><br><li><passive>전리품:</passive> 아군 챔피언 근처에 있으면 기본 공격 시 최대 체력이 0% 이하인 미니언을 즉시 처형하고 가장 가까운 아군 챔피언과 함께 같은 양의 골드를 획득합니다. 이 효과는 0초마다 재충전됩니다. (최대 충전량 0회)<li><passive>퀘스트:</passive> 이 아이템으로 1000골드를 획득하면 <rarityLegendary>타곤 산의 방벽</rarityLegendary>으로 변합니다. <br><br><rules>이 아이템을 보유한 아군이 너무 많은 미니언을 처치하면 미니언 처치 시 획득하는 골드가 감소합니다.</rules><br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 3858,
             "inStore": false,
             "image": {
                 "full": "3859.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 240,
-                "y": 0,
+                "x": 432,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -17317,7 +16361,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 100,
@@ -17334,17 +16379,17 @@ export const item = {
         },
         "3860": {
             "name": "타곤 산의 방벽",
-            "description": "<mainText><stats>주문력 <attention>20</attention><br>체력 <attention>250</attention><br>기본 체력 재생 <attention>100%</attention><br>10초당 골드 <attention>3</attention></stats><br><br><br><br><active>사용 시 -</active> <active>와드:</active> 아군 모두에게 주변 지역을 밝혀 주는 <keywordStealth>투명</keywordStealth> 와드 하나를 지면에 설치합니다. 투명 와드는 최대 4개까지 보유할 수 있으며 상점 방문 시 다시 채워집니다. <br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
+            "description": "<mainText><stats>주문력 <attention>20</attention><br>체력 <attention>250</attention><br>기본 체력 재생 <attention>100%</attention><br>10초당 골드 <attention>3</attention></stats><br><br><br><br><rules>이 아이템을 보유한 아군이 너무 많은 미니언을 처치하면 미니언 처치 시 획득하는 골드가 감소합니다.</rules><br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 3859,
             "inStore": false,
             "image": {
                 "full": "3860.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 288,
-                "y": 0,
+                "x": 0,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -17365,7 +16410,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 250,
@@ -17377,15 +16423,15 @@ export const item = {
         },
         "3862": {
             "name": "영혼의 낫",
-            "description": "<mainText><stats>공격력 <attention>6</attention><br>체력 <attention>25</attention><br>기본 마나 재생 <attention>25%</attention><br>10초당 골드 <attention>2</attention></stats><br><br><br><li><passive>헌납:</passive> 아군 챔피언 근처에 있을 때, 챔피언과 구조물에 피해를 입히는 스킬을 사용하거나 기본 공격 시 20골드를 획득합니다. 30초당 최대 3번까지만 발동합니다.<li><passive>퀘스트:</passive> 이 아이템으로 500골드를 획득하면 <rarityGeneric>해로윙 초승달낫</rarityGeneric>으로 변하며 <active>사용 시 -</active> <active>와드 설치</active> 효과를 획득합니다.<br><br><rules>이 아이템을 보유한 아군이 너무 많은 미니언을 처치하면 미니언 처치 시 획득하는 골드가 감소합니다.</rules></mainText>",
+            "description": "<mainText><stats>공격력 <attention>6</attention><br>체력 <attention>25</attention><br>기본 마나 재생 <attention>25%</attention><br>10초당 골드 <attention>2</attention></stats><br><br><br><li><passive>헌납:</passive> 아군 챔피언 근처에 있을 때, 챔피언과 구조물에 피해를 입히는 스킬을 사용하거나 기본 공격 시 20골드를 획득합니다. 36초당 최대 3번까지만 발동합니다.<li><passive>퀘스트:</passive> 이 아이템으로 500골드를 획득하면 <rarityGeneric>해로윙 초승달낫</rarityGeneric>으로 변하며 <active>사용 시 -</active> <active>와드 설치</active> 효과를 획득합니다.<br><br><rules>이 아이템을 보유한 아군이 너무 많은 미니언을 처치하면 미니언 처치 시 획득하는 골드가 감소합니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "적 챔피언에게 피해를 입히면 골드를 획득하고 업그레이드됩니다.",
             "image": {
                 "full": "3862.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 336,
-                "y": 0,
+                "x": 48,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -17408,7 +16454,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 25,
@@ -17433,10 +16480,10 @@ export const item = {
             "inStore": false,
             "image": {
                 "full": "3863.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 384,
-                "y": 0,
+                "x": 96,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -17457,7 +16504,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 60,
@@ -17475,17 +16523,17 @@ export const item = {
         },
         "3864": {
             "name": "검은 안개 낫",
-            "description": "<mainText><stats>공격력 <attention>20</attention><br>체력 <attention>75</attention><br>기본 마나 재생 <attention>100%</attention><br>10초당 골드 <attention>3</attention></stats><br><br><br><br><active>사용 시 -</active> <active>와드:</active> 아군 모두에게 주변 지역을 밝혀 주는 <keywordStealth>투명</keywordStealth> 와드 하나를 지면에 설치합니다. 투명 와드는 최대 4개까지 보유할 수 있으며 상점 방문 시 다시 채워집니다. <br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
+            "description": "<mainText><stats>공격력 <attention>20</attention><br>체력 <attention>75</attention><br>기본 마나 재생 <attention>100%</attention><br>10초당 골드 <attention>3</attention></stats><br><br><br><br><rules>이 아이템을 보유한 아군이 너무 많은 미니언을 처치하면 미니언 처치 시 획득하는 골드가 감소합니다.</rules><br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 3863,
             "inStore": false,
             "image": {
                 "full": "3864.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 432,
-                "y": 0,
+                "x": 144,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -17506,7 +16554,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 75,
@@ -17523,10 +16572,10 @@ export const item = {
             "plaintext": "",
             "image": {
                 "full": "3865.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 0,
-                "y": 48,
+                "x": 192,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -17549,7 +16598,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 30
@@ -17560,17 +16610,17 @@ export const item = {
         },
         "3866": {
             "name": "룬 나침반",
-            "description": "<mainText><stats>체력 <attention>100</attention><br>기본 체력 재생 <attention>50%</attention><br>기본 마나 재생 <attention>50%</attention><br>10초당 골드 <attention>5</attention></stats><br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. <br><br><br><br><passive>퀘스트</passive> <br>이 아이템으로 800골드를 획득하면 <rarityGeneric>룬 나침반</rarityGeneric>으로 변합니다. <passive>20</passive>초마다 중첩을 하나씩 얻고 최대 <passive>3</passive>회까지 중첩됩니다. 주변에 아군 챔피언이 있을 때 중첩을 하나 소모하고 골드를 획득합니다.<br><li>스킬 및 기본 공격으로 챔피언 및 건물에 피해를 입히면 근접 챔피언의 경우 <keywordMajor>24</keywordMajor>골드, 원거리 챔피언의 경우 <keywordMajor>22</keywordMajor>골드를 획득합니다.<li>어떤 방법으로든 미니언 처치 시 <keywordMajor>20</keywordMajor>골드를 획득하며 가장 가까운 아군 챔피언에게도 처치 골드가 주어집니다.<br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
+            "description": "<mainText><stats>체력 <attention>100</attention><br>기본 체력 재생 <attention>50%</attention><br>기본 마나 재생 <attention>50%</attention><br>10초당 골드 <attention>5</attention></stats><br><br><passive>서포터 퀘스트</passive><br>이 아이템으로 <keywordMajor>0</keywordMajor>골드를 획득하면 <rarityGeneric>세계의 결실</rarityGeneric>로 변합니다. <br><br><passive>재물 공유</passive> (0초, 최대 충전량 0회)<br>아군 챔피언 근처에서 적 챔피언에게 피해를 입히거나 미니언을 처치하면 골드를 획득합니다.<active>사용 시</active> (충전량 3회)<br>시야를 밝혀 주는 <keyword>보이지 않는</keyword> 투명 와드를 설치합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 3865,
             "inStore": false,
             "image": {
                 "full": "3866.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 48,
-                "y": 48,
+                "x": 240,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -17591,7 +16641,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 100
@@ -17602,7 +16653,7 @@ export const item = {
         },
         "3867": {
             "name": "세계의 결실",
-            "description": "<mainText><stats>10초당 골드 <attention>5</attention><br>기본 체력 재생 <attention>75%</attention><br>기본 마나 재생 <attention>75%</attention><br>체력 <attention>200</attention></stats><br><br><br><li><passive>업그레이드</passive> <br>이 아이템은 비용 소모 없이 <rarityLegendary>피의 노래</rarityLegendary>, <rarityLegendary>천상의 이의</rarityLegendary>, <rarityLegendary>꿈 생성기</rarityLegendary>, <rarityLegendary>자자크의 세계가시</rarityLegendary> 또는 <rarityLegendary>태양의 썰매</rarityLegendary>로 업그레이드할 수 있습니다.<br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. <br><br></mainText>",
+            "description": "<mainText><stats>10초당 골드 <attention>5</attention><br>기본 체력 재생 <attention>75%</attention><br>기본 마나 재생 <attention>75%</attention><br>체력 <attention>200</attention></stats><br><br><passive>업그레이드</passive> <br>이 아이템은 비용 소모 없이 <rarityLegendary>피의 노래</rarityLegendary>, <rarityLegendary>천상의 이의</rarityLegendary>, <rarityLegendary>꿈 생성기</rarityLegendary>, <rarityLegendary>자자크의 세계가시</rarityLegendary> 또는 <rarityLegendary>태양의 썰매</rarityLegendary>로 업그레이드할 수 있습니다.<active>사용 시</active> (충전량 4회)<br>시야를 밝혀 주는 <keyword>보이지 않는</keyword> 투명 와드를 설치합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 3866,
@@ -17616,10 +16667,10 @@ export const item = {
             ],
             "image": {
                 "full": "3867.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 96,
-                "y": 48,
+                "x": 288,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -17640,7 +16691,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 200
@@ -17651,7 +16703,7 @@ export const item = {
         },
         "3869": {
             "name": "천상의 이의",
-            "description": "<mainText><stats>체력 <attention>200</attention><br>기본 체력 재생 <attention>75%</attention><br>기본 마나 재생 <attention>75%</attention><br>10초당 골드 <attention>5</attention></stats><br><br><passive>산의 축복:</passive> <br>축복을 받아 챔피언으로부터 받는 피해가 감소합니다. 챔피언에게 피해를 받은 후 2초 동안 지속됩니다.<br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
+            "description": "<mainText><stats>체력 <attention>200</attention><br>기본 체력 재생 <attention>75%</attention><br>기본 마나 재생 <attention>75%</attention><br>10초당 골드 <attention>5</attention></stats><br><br><passive>산의 축복</passive> (0초)<br>챔피언에게 피해를 받은 후 2초 동안 챔피언으로부터 받는 피해가 근접 챔피언의 경우 35%, 원거리 챔피언의 경우 25% 감소합니다. 효과가 끝나면 1.5초 동안 주변 적을 50% 둔화시킵니다.<active>사용 시</active> (충전량 4회)<br>시야를 밝혀 주는 <keyword>보이지 않는</keyword> 투명 와드를 설치합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -17659,10 +16711,10 @@ export const item = {
             ],
             "image": {
                 "full": "3869.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 144,
-                "y": 48,
+                "x": 336,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -17684,7 +16736,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 200
@@ -17696,7 +16749,7 @@ export const item = {
         },
         "3870": {
             "name": "꿈 생성기",
-            "description": "<mainText><stats>체력 <attention>200</attention><br>기본 체력 재생 <attention>75%</attention><br>기본 마나 재생 <attention>75%</attention><br>10초당 골드 <attention>5</attention></stats><br><br><passive>꿈 생성기</passive><br>일정 시간 동안 <passive>파란색 꿈방울</passive>과 <passive>보라색 꿈방울</passive>을 얻습니다. 또한 다른 아군을 치유하거나 보호막을 씌워주면 대상에게 두 <passive>꿈방울</passive>을 모두 날려 보내 받는 피해를 감소시키고 입히는 피해량은 증가시킵니다.<br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
+            "description": "<mainText><stats>체력 <attention>200</attention><br>기본 체력 재생 <attention>75%</attention><br>기본 마나 재생 <attention>75%</attention><br>10초당 골드 <attention>5</attention></stats><br><br><passive>꿈 생성기</passive> (0초)<br>다른 아군에게 체력을 회복시키거나 보호막을 씌우면 대상에게 3초 동안 꿈방울을 붑니다. 해당 아군이 다음 기본 공격 시 <magicDamage>추가 마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입히며, 다음에 받는 피해는 감소합니다.<active>사용 시</active> (충전량 4회)<br>시야를 밝혀 주는 <keyword>보이지 않는</keyword> 투명 와드를 설치합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -17704,10 +16757,10 @@ export const item = {
             ],
             "image": {
                 "full": "3870.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 192,
-                "y": 48,
+                "x": 384,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -17729,7 +16782,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 200
@@ -17741,7 +16795,7 @@ export const item = {
         },
         "3871": {
             "name": "자자크의 세계가시",
-            "description": "<mainText><stats>체력 <attention>200</attention><br>기본 체력 재생 <attention>75%</attention><br>기본 마나 재생 <attention>75%</attention><br>10초당 골드 <attention>5</attention></stats><br><br><passive>공허 폭발</passive><br>스킬로 피해를 입힐 시 폭발을 일으켜 마법 피해를 입히고 대상의 최대 체력에 따라 피해를 입힙니다.<br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
+            "description": "<mainText><stats>체력 <attention>200</attention><br>기본 체력 재생 <attention>75%</attention><br>기본 마나 재생 <attention>75%</attention><br>10초당 골드 <attention>5</attention></stats><br><br><passive>공허 폭발</passive> (0초)<br>챔피언에게 스킬로 피해를 입히면 폭발이 일어나 <magicDamage>마법 피해</magicDamage>를 입힙니다.<br><br><active>사용 시</active> (충전량 4회)<br>시야를 밝혀 주는 <keyword>보이지 않는</keyword> 투명 와드를 설치합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -17749,10 +16803,10 @@ export const item = {
             ],
             "image": {
                 "full": "3871.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 240,
-                "y": 48,
+                "x": 432,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -17774,7 +16828,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 200
@@ -17786,7 +16841,7 @@ export const item = {
         },
         "3876": {
             "name": "태양의 썰매",
-            "description": "<mainText><stats>체력 <attention>200</attention><br>기본 체력 재생 <attention>75%</attention><br>기본 마나 재생 <attention>75%</attention><br>10초당 골드 <attention>5</attention></stats><br><br><passive>썰매 질주</passive><br>적 챔피언을 <status>둔화</status> 또는 <status>이동 불가</status> 상태로 만들면 자신과 주변 체력이 가장 낮은 아군이 추가 체력과 이동 속도를 얻습니다.<br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
+            "description": "<mainText><stats>체력 <attention>200</attention><br>기본 체력 재생 <attention>75%</attention><br>기본 마나 재생 <attention>75%</attention><br>10초당 골드 <attention>5</attention></stats><br><br><passive>썰매 질주</passive> (0초)<br>아군 주변의 적 챔피언을 <keyword>둔화</keyword> 또는 <keyword>이동 불가</keyword> 상태로 만들면 <healing>체력</healing>을 회복하고 2.5초 동안 자신과 주변 아군의 <speed>이동 속도가 20% 증가했다가 점차 감소</speed>합니다. <active>사용 시</active> (충전량 4회)<br>시야를 밝혀 주는 <keyword>보이지 않는</keyword> 투명 와드를 설치합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -17794,10 +16849,10 @@ export const item = {
             ],
             "image": {
                 "full": "3876.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 288,
-                "y": 48,
+                "x": 0,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -17819,7 +16874,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 200
@@ -17831,7 +16887,7 @@ export const item = {
         },
         "3877": {
             "name": "피의 노래",
-            "description": "<mainText><stats>체력 <attention>200</attention><br>기본 체력 재생 <attention>75%</attention><br>기본 마나 재생 <attention>75%</attention><br>10초당 골드 <attention>5</attention></stats><br><br><passive>주문 검</passive><br>스킬을 사용하고 난 후 10초 내로 적 챔피언에게 다음 기본 공격 적중 시 기본 공격력의 100%에 해당하는 추가 물리 피해를 입히고, 6초 동안 받는 피해를 증가시킵니다. <br><br><br><br><active>활성화</active><br><active>와드</active> <br>시야를 밝히는 <keywordStealth>투명</keywordStealth> 와드를 설치합니다. 투명 와드는 0개 보유할 수 있으며 상점 방문 시 다시 채워집니다. </mainText>",
+            "description": "<mainText><stats>체력 <attention>200</attention><br>기본 체력 재생 <attention>75%</attention><br>기본 마나 재생 <attention>75%</attention><br>10초당 골드 <attention>5</attention></stats><br><br><passive>주문 검</passive> (0초)<br>스킬을 사용하고 나면 다음 기본 공격 시 <physicalDamage>추가 물리 피해</physicalDamage>(<OnHit>적중 시</OnHit> )를 입힙니다. 대상이 챔피언일 경우 6초 동안 입히는 피해량이 증가합니다.<active>사용 시</active> (충전량 4회)<br>시야를 밝혀 주는 <keyword>보이지 않는</keyword> 투명 와드를 설치합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -17839,10 +16895,10 @@ export const item = {
             ],
             "image": {
                 "full": "3877.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 336,
-                "y": 48,
+                "x": 48,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -17864,7 +16920,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 200
@@ -17885,10 +16942,10 @@ export const item = {
             "requiredChampion": "Gangplank",
             "image": {
                 "full": "3901.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 384,
-                "y": 48,
+                "x": 96,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -17904,7 +16961,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -17919,10 +16977,10 @@ export const item = {
             "requiredChampion": "Gangplank",
             "image": {
                 "full": "3902.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 432,
-                "y": 48,
+                "x": 144,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -17938,7 +16996,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -17953,10 +17012,10 @@ export const item = {
             "requiredChampion": "Gangplank",
             "image": {
                 "full": "3903.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 0,
-                "y": 96,
+                "x": 192,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -17972,13 +17031,14 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
         "3916": {
             "name": "망각의 구",
-            "description": "<mainText><stats>주문력 <attention>30</attention></stats><br><br><passive>고통스러운 상처</passive><br>챔피언에게 마법 피해를 입히면 3초 동안 <keyword>40%의 고통스러운 상처</keyword>를 남깁니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>25</attention></stats><br><br><passive>고통스러운 상처</passive><br>챔피언에게 마법 피해를 입히면 3초 동안 <keyword>40%의 상처</keyword>를 남깁니다.</mainText>",
             "colloq": "",
             "plaintext": "마법 피해량이 증가합니다.",
             "stacks": 0,
@@ -17991,10 +17051,10 @@ export const item = {
             ],
             "image": {
                 "full": "3916.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 48,
-                "y": 96,
+                "x": 240,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -18012,10 +17072,11 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 30
+                "FlatMagicDamageMod": 25
             },
             "depth": 2
         },
@@ -18033,10 +17094,10 @@ export const item = {
             ],
             "image": {
                 "full": "4003.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 96,
-                "y": 96,
+                "x": 288,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -18055,7 +17116,8 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 20
@@ -18073,10 +17135,10 @@ export const item = {
             ],
             "image": {
                 "full": "4004.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 144,
-                "y": 96,
+                "x": 336,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -18095,7 +17157,8 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 70
@@ -18104,7 +17167,7 @@ export const item = {
         },
         "4005": {
             "name": "제국의 명령",
-            "description": "<mainText><stats>주문력 <attention>60</attention><br>스킬 가속 <attention>20</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><passive>합동 공격</passive><br>적 챔피언을 <status>둔화</status> 또는 <status>이동 불가</status> 상태로 만들면 표식을 남깁니다. 표식이 남겨진 적 챔피언에게는 아군 챔피언이 추가 피해를 입히며, 자신과 아군의 이동 속도가 상승합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>60</attention><br>스킬 가속 <attention>20</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><passive>합동 공격</passive> 대상 하나당 (0초)<br>적 챔피언을 <keyword>둔화</keyword> 또는 <keyword>이동 불가</keyword> 상태로 만들면 5초 동안 표식을 남깁니다. 아군 챔피언이 대상에게 피해를 입히면 표식이 폭발하며 <magicDamage>현재 체력의 10%에 해당하는 마법 피해</magicDamage>를 입힙니다. </mainText>",
             "colloq": ";imperial;mandate",
             "plaintext": "피해량의 일부를 나중에 받습니다.",
             "from": [
@@ -18113,18 +17176,18 @@ export const item = {
             ],
             "image": {
                 "full": "4005.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 192,
-                "y": 96,
+                "x": 384,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 400,
+                "base": 500,
                 "purchasable": true,
-                "total": 2300,
-                "sell": 1610
+                "total": 2250,
+                "sell": 1575
             },
             "tags": [
                 "SpellDamage",
@@ -18137,7 +17200,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 60
@@ -18151,10 +17215,10 @@ export const item = {
             "plaintext": "적에게 스킬로 피해를 입히면 주문 방어막이 생성됩니다.",
             "image": {
                 "full": "4010.png",
-                "sprite": "item4.png",
+                "sprite": "item3.png",
                 "group": "item",
-                "x": 240,
-                "y": 96,
+                "x": 432,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -18175,7 +17239,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 30,
@@ -18185,15 +17250,15 @@ export const item = {
         },
         "4011": {
             "name": "꽃피는 새벽의 검",
-            "description": "<mainText><stats>주문력 <attention>30</attention><br>체력 <attention>200</attention><br>체력 회복 및 보호막 <attention>12%</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>활기</passive><br>체력 회복 및 보호막 효과 1%당 공격 속도가 +1.2% 증가합니다. <br><br><passive>페퍼민트</passive><br><OnHit>적중 시</OnHit> , 주변에서 가장 체력이 낮은 아군 챔피언의 체력을 [15~45] (+추가 공격력의 10%) (+주문력의 7%) 회복시킵니다. 체력이 낮은 아군을 우선으로 합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>30</attention><br>체력 <attention>200</attention><br>체력 회복 및 보호막 <attention>12%</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>활기</passive><br>체력 회복 및 보호막 효과 1%당 공격 속도가 +1.2% 증가합니다. <br><br><passive>페퍼민트</passive><br><OnHit>적중 시</OnHit> , 주변에서 가장 체력이 낮은 아군 챔피언의 체력을 0 회복시킵니다. 체력이 낮은 아군을 우선으로 합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "4011.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 288,
-                "y": 96,
+                "x": 0,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
@@ -18215,7 +17280,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 200,
@@ -18231,8 +17297,8 @@ export const item = {
                 "full": "4012.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 336,
-                "y": 96,
+                "x": 48,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
@@ -18253,7 +17319,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 45,
@@ -18270,8 +17337,8 @@ export const item = {
                 "full": "4013.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 384,
-                "y": 96,
+                "x": 96,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
@@ -18292,7 +17359,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 30,
@@ -18302,15 +17370,15 @@ export const item = {
         },
         "4014": {
             "name": "얼어붙은 망치",
-            "description": "<mainText><stats>공격 속도 <attention>60%</attention><br>체력 <attention>600</attention></stats><br><br><br><li><passive>스며드는 냉기:</passive> <OnHit>적중 시</OnHit> 대상을 둔화합니다. (중첩 가능)</mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>60%</attention><br>체력 <attention>600</attention></stats><br><br><br><li><passive>스며드는 냉기:</passive> <OnHit>적중 시</OnHit> 대상을 1.5초간 {{ Item_Melee_Ranged_Split }} 둔화합니다. (35% 둔화될 때까지 중첩 가능)<br><br><rules>{{ Item_Melee_Ranged_Rules }}</rules><br></mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "4014.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 432,
-                "y": 96,
+                "x": 144,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
@@ -18331,7 +17399,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 600,
@@ -18347,8 +17416,8 @@ export const item = {
                 "full": "4015.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 0,
-                "y": 144,
+                "x": 192,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
@@ -18371,7 +17440,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 60,
@@ -18379,7 +17449,7 @@ export const item = {
             }
         },
         "4016": {
-            "name": "무언의 약속",
+            "name": "무언의 서약",
             "description": "<mainText><stats>주문력 <attention>50</attention><br>체력 회복 및 보호막 <attention>12%</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>서약</passive><br><attention>서약한</attention> 아군 주문력의 20%를 얻고 <attention>서약한</attention> 아군에게 내 스킬 가속의 20%를 부여합니다.<br><br><br><br><active>활성화</active> (0초)<br><active>서약</active><br>아군에게 <attention>서약</attention>합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
@@ -18387,8 +17457,8 @@ export const item = {
                 "full": "4016.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 48,
-                "y": 144,
+                "x": 240,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
@@ -18408,7 +17478,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 50
@@ -18416,15 +17487,15 @@ export const item = {
         },
         "4017": {
             "name": "지옥불 손도끼",
-            "description": "<mainText><stats>공격력 <attention>35</attention><br>물리 관통력 <attention>12</attention><br>모든 피해 흡혈 <attention>12%</attention></stats><br><br><passive>그을리기</passive><br><OnHit>적중 시</OnHit> 대상 현재 체력에 따라 체력을 회복하고 대상을 4초간 <keywordMajor>불태워</keywordMajor> 대상이 잃은 체력에 따라 물리 피해를 매초 입힙니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>35</attention><br>물리 관통력 <attention>12</attention><br>모든 피해 흡혈 <attention>10%</attention></stats><br><br><passive>그을리기</passive><br>스킬 적중 및 기본 공격 시 <OnHit>적중 시</OnHit> <healing>대상 현재 체력의 1.5%</healing>만큼 체력을 회복하고 대상을 4초간 <keywordMajor>불태워</keywordMajor> <physicalDamage>0+잃은 체력의 2%에 해당하는 물리 피해</physicalDamage>를 매초 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "image": {
                 "full": "4017.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 96,
-                "y": 144,
+                "x": 288,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
@@ -18436,6 +17507,8 @@ export const item = {
             },
             "tags": [
                 "Damage",
+                "LifeSteal",
+                "SpellVamp",
                 "OnHit",
                 "NonbootsMovement",
                 "ArmorPenetration"
@@ -18445,7 +17518,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 35
@@ -18453,7 +17527,7 @@ export const item = {
         },
         "4401": {
             "name": "대자연의 힘",
-            "description": "<mainText><stats>체력 <attention>400</attention><br>마법 저항력 <attention>55</attention><br>이동 속도 <attention>5%</attention></stats><br><br><passive>굳건함</passive><br>적 챔피언에게 <magicDamage>마법 피해</magicDamage>를 받으면 중첩을 얻습니다. 최대 8회까지 중첩됩니다. 8회 중첩되면 <scaleMR>마법 저항력이 70</scaleMR>, 이동 속도가 10% 증가합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>400</attention><br>마법 저항력 <attention>55</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>굳건함</passive><br>챔피언에게 마법 피해를 8회 받으면 <scaleMR>70의 마법 저항력</scaleMR> 및 <speed>6%의 추가 이동 속도</speed>를 얻습니다.</mainText>",
             "colloq": ";대자연의 힘;force;of;nature",
             "plaintext": "이동 속도와 마법 저항력이 증가하고 최대 체력에 비례해 체력을 재생합니다.",
             "from": [
@@ -18465,13 +17539,13 @@ export const item = {
                 "full": "4401.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 144,
-                "y": 144,
+                "x": 336,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 700,
+                "base": 750,
                 "purchasable": true,
                 "total": 2800,
                 "sell": 1960
@@ -18486,12 +17560,13 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 55,
                 "FlatHPPoolMod": 400,
-                "PercentMovementSpeedMod": 0.05
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 3
         },
@@ -18508,16 +17583,16 @@ export const item = {
                 "full": "4402.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 192,
-                "y": 144,
+                "x": 384,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 600,
                 "purchasable": true,
-                "total": 3000,
-                "sell": 2100
+                "total": 2950,
+                "sell": 2065
             },
             "tags": [
                 "Health",
@@ -18531,7 +17606,8 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 300,
@@ -18547,7 +17623,7 @@ export const item = {
         },
         "4403": {
             "name": "황금 뒤집개",
-            "description": "<mainText><stats>공격력 <attention>70</attention><br>주문력 <attention>120</attention><br>공격 속도 <attention>50%</attention><br>치명타 확률 <attention>30%</attention><br>체력 <attention>250</attention><br>방어력 <attention>30</attention><br>마법 저항력 <attention>30</attention><br>마나 <attention>250</attention><br>스킬 가속 <attention>20</attention><br>이동 속도 <attention>10%</attention><br>생명력 흡수 <attention>10%</attention><br>기본 체력 재생 <attention>100%</attention><br>기본 마나 재생 <attention>100%</attention></stats><br><br><br><li><passive>무언가 하고 있음:</passive> 영구히 불타오릅니다!</mainText>",
+            "description": "<mainText><stats>공격력 <attention>70</attention><br>주문력 <attention>120</attention><br>공격 속도 <attention>50%</attention><br>치명타 확률 <attention>30%</attention><br>체력 <attention>250</attention><br>방어력 <attention>30</attention><br>마법 저항력 <attention>30</attention><br>마나 <attention>250</attention><br>스킬 가속 <attention>20</attention><br>이동 속도 <attention>10%</attention><br>생명력 흡수 <attention>10%</attention><br>기본 체력 재생 <attention>100%</attention><br>기본 마나 재생 <attention>100%</attention></stats><br><br><br><li><passive>무언가 하고 있음:</passive> 영구히 불타오릅니다!<br><br><flavorText>\"분명 무슨 효과가 있을 겁니다...<br>거절한다, 이건 만능이라고.''</flavorText></mainText>",
             "colloq": ";",
             "plaintext": "만능 아이템입니다!",
             "from": [
@@ -18562,16 +17638,16 @@ export const item = {
                 "full": "4403.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 240,
-                "y": 144,
+                "x": 432,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 687,
                 "purchasable": true,
-                "total": 7237,
-                "sell": 5066
+                "total": 7287,
+                "sell": 5101
             },
             "tags": [
                 "Health",
@@ -18593,7 +17669,8 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 30,
@@ -18611,7 +17688,7 @@ export const item = {
         },
         "443054": {
             "name": "흑강철 발톱",
-            "description": "<mainText><stats>공격 속도 <attention>60%</attention><br>방어력 <attention>65</attention><br>이동 속도 <attention>10%</attention></stats><br><br><passive>깊은 상처</passive><br>기본 공격 적중 시 고정 피해를 입힙니다.</mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>50%</attention><br>방어력 <attention>55</attention><br>이동 속도 <attention>10%</attention></stats><br><br><passive>깊은 상처</passive><br>기본 공격 적중 시 고정 피해를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -18619,8 +17696,8 @@ export const item = {
                 "full": "443054.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 288,
-                "y": 144,
+                "x": 0,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -18640,11 +17717,12 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatArmorMod": 65,
-                "PercentAttackSpeedMod": 0.6,
+                "FlatArmorMod": 55,
+                "PercentAttackSpeedMod": 0.5,
                 "PercentMovementSpeedMod": 0.1
             }
         },
@@ -18658,8 +17736,8 @@ export const item = {
                 "full": "443055.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 336,
-                "y": 144,
+                "x": 48,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -18679,7 +17757,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 55,
@@ -18697,8 +17776,8 @@ export const item = {
                 "full": "443056.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 384,
-                "y": 144,
+                "x": 96,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -18722,7 +17801,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -18736,8 +17816,8 @@ export const item = {
                 "full": "443058.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 432,
-                "y": 144,
+                "x": 144,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -18756,7 +17836,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300,
@@ -18773,8 +17854,8 @@ export const item = {
                 "full": "443059.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 0,
-                "y": 192,
+                "x": 192,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -18793,7 +17874,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 100,
@@ -18802,7 +17884,7 @@ export const item = {
         },
         "443060": {
             "name": "신성의 검",
-            "description": "<mainText><stats>적응형 능력치 <attention>100</attention><br>치명타 확률 <attention>40%</attention></stats><br><br><passive>찰과상</passive><br>각 치명타가 치명타 확률에 비례해 (최대 50%까지) 무작위 <keyword>추가 치명타 피해</keyword>를 입힙니다.</mainText>",
+            "description": "<mainText><stats>적응형 능력치 <attention>110</attention><br>치명타 확률 <attention>40%</attention></stats><br><br><passive>찰과상</passive><br>각 치명타가 치명타 확률에 비례해 (최대 50%까지) 무작위 <keyword>추가 치명타 피해</keyword>를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -18810,8 +17892,8 @@ export const item = {
                 "full": "443060.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 48,
-                "y": 192,
+                "x": 240,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -18831,7 +17913,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.4
@@ -18839,7 +17922,7 @@ export const item = {
         },
         "443061": {
             "name": "엔트로피의 힘",
-            "description": "<mainText><stats>체력 <attention>900</attention><br>스킬 가속 <attention>30</attention><br>치명타 확률 <attention>30%</attention></stats><br><br><passive>위축</passive><br>이동 불가 군중 제어 효과 적용 시 <keyword>치명타 확률</keyword>이 적용되어 지속시간이 0.25+33%초 증가할 수 있습니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>900</attention><br>스킬 가속 <attention>30</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>위축</passive><br>이동 불가 군중 제어 효과 적용 시 <keyword>치명타 확률</keyword>이 적용되어 지속시간이 0.25+33%초 증가할 수 있습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -18847,8 +17930,8 @@ export const item = {
                 "full": "443061.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 96,
-                "y": 192,
+                "x": 288,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -18870,11 +17953,12 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 900,
-                "FlatCritChanceMod": 0.3
+                "FlatCritChanceMod": 0.25
             }
         },
         "443062": {
@@ -18887,8 +17971,8 @@ export const item = {
                 "full": "443062.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 144,
-                "y": 192,
+                "x": 336,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -18908,7 +17992,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 80
@@ -18916,7 +18001,7 @@ export const item = {
         },
         "443063": {
             "name": "일라이자의 기적",
-            "description": "<mainText><stats>방어력 <attention>70</attention><br>마법 저항력 <attention>70</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>인내의 생명력</passive><br>잃은 체력 100당 체력 회복 및 보호막 효과가 +1%, 최대 40%까지 증가합니다.</mainText>",
+            "description": "<mainText><stats>방어력 <attention>65</attention><br>마법 저항력 <attention>65</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>인내의 생명력</passive><br>잃은 체력 100당 체력 회복 및 보호막 효과가 +1%, 최대 35%까지 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -18924,8 +18009,8 @@ export const item = {
                 "full": "443063.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 192,
-                "y": 192,
+                "x": 384,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -18945,11 +18030,12 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatSpellBlockMod": 70,
-                "FlatArmorMod": 70
+                "FlatSpellBlockMod": 65,
+                "FlatArmorMod": 65
             }
         },
         "443064": {
@@ -18962,8 +18048,8 @@ export const item = {
                 "full": "443064.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 240,
-                "y": 192,
+                "x": 432,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -18999,13 +18085,14 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
         "443069": {
             "name": "불귀신",
-            "description": "<mainText><stats>공격력 <attention>50</attention><br>공격 속도 <attention>40%</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>전소</passive><br>치명타 적용 시:<li> <keywordMajor>화상</keywordMajor>을 적용해 2초에 걸쳐 0의 물리 피해를 입힙니다. 이 효과는 무제한 중첩할 수 있습니다.<li> 2초 동안 7%의 둔화를 적용합니다. 이 효과는 35%까지 중첩됩니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>45</attention><br>공격 속도 <attention>40%</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>전소</passive><br>치명타 적용 시:<li> 출혈을 적용해 2초에 걸쳐 0의 물리 피해를 입힙니다. 이 효과는 무제한 중첩할 수 있습니다.<li> 2초 동안 7%의 둔화를 적용합니다. 이 효과는 35%까지 중첩됩니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19013,8 +18100,8 @@ export const item = {
                 "full": "443069.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 288,
-                "y": 192,
+                "x": 0,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
@@ -19034,17 +18121,18 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
-                "FlatPhysicalDamageMod": 50,
+                "FlatPhysicalDamageMod": 45,
                 "PercentAttackSpeedMod": 0.4
             }
         },
         "443079": {
             "name": "터보 화공 탱크",
-            "description": "<mainText><stats>체력 <attention>1100</attention><br>이동 속도 <attention>15%</attention></stats><br><br><passive>충전 도약</passive><br>이동 속도 둔화 효과가 30% 줄어듭니다.<br><br><br><br><active>활성화</active> (0초)<br><active>고속 충전 완료</active><br>4초 동안 시야에 들어온 적 챔피언과 마주할 때 이동 속도가 60% 증가합니다. 적 챔피언이 근처에 있거나 지속시간이 끝난 후 충격파를 방출해 근처 주변 적을 2초 동안 50% 둔화시킵니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>1100</attention><br>이동 속도 <attention>15%</attention></stats><br><br><passive>충전 도약</passive><br>이동 속도 둔화 효과가 30% 줄어듭니다.<br><br><br><br><active>활성화</active> (0초)<br><active>고속 충전 완료</active><br>4초 동안 시야에 들어온 적 챔피언과 마주할 때 이동 속도가 80% 증가합니다. 적 챔피언이 근처에 있거나 지속시간이 끝난 후 충격파를 방출해 근처 주변 적을 2초 동안 60% 둔화시킵니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19052,8 +18140,8 @@ export const item = {
                 "full": "443079.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 336,
-                "y": 192,
+                "x": 48,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
@@ -19064,6 +18152,7 @@ export const item = {
                 "sell": 400
             },
             "tags": [
+                "Health",
                 "Active",
                 "NonbootsMovement"
             ],
@@ -19072,16 +18161,135 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 1100,
                 "PercentMovementSpeedMod": 0.15
             }
         },
+        "443080": {
+            "name": "쌍둥이 가면",
+            "description": "<mainText><stats></stats><br><br><passive>일심동체</passive><br>아군 체력, 방어력, 마법 저항력, 공격력, 주문력, 공격 속도, 스킬 가속의 일정 비율을 획득합니다. 아군이 <keywordMajor>쌍둥이 가면</keywordMajor>을 보유하고 살아 있으면 비율이 크게 증가합니다.</mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "specialRecipe": 220007,
+            "image": {
+                "full": "443080.png",
+                "sprite": "item4.png",
+                "group": "item",
+                "x": 96,
+                "y": 96,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 1000,
+                "purchasable": true,
+                "total": 1000,
+                "sell": 400
+            },
+            "tags": [
+                "Health",
+                "Armor",
+                "Damage",
+                "AttackSpeed",
+                "SpellDamage",
+                "MagicResist",
+                "AbilityHaste"
+            ],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": true,
+                "33": false
+            },
+            "stats": {}
+        },
+        "443081": {
+            "name": "마공화살 동료",
+            "description": "<mainText><stats>공격 속도 <attention>75%</attention><br>체력 <attention>500</attention></stats><br><br><passive>지원 사격</passive><br>아군 챔피언 근처에 있으면 <OnHit>적중 시</OnHit> 포고령 중첩을 얻습니다. 1회 중첩 시 다음 차례에 <OnHit>적중 시</OnHit> 효과를 적용하면 아군 또한 대상에게 화살을 발사하여 <physicalDamage>0의 물리 피해</physicalDamage>를 입히고 자신의 <OnHit>적중 시</OnHit> 효과를 적용합니다.<br><br><keywordMajor>지원 사격</keywordMajor>은 다른 <keywordMajor>지원 사격</keywordMajor>을 발동하지 않습니다.</mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "specialRecipe": 220007,
+            "image": {
+                "full": "443081.png",
+                "sprite": "item4.png",
+                "group": "item",
+                "x": 144,
+                "y": 96,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 1000,
+                "purchasable": true,
+                "total": 1000,
+                "sell": 400
+            },
+            "tags": [
+                "Health",
+                "AttackSpeed"
+            ],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": true,
+                "33": false
+            },
+            "stats": {
+                "FlatHPPoolMod": 500,
+                "PercentAttackSpeedMod": 0.75
+            }
+        },
+        "443090": {
+            "name": "사신의 대가",
+            "description": "<mainText><stats>적응형 능력치 <attention>40</attention><br>공격 속도 <attention>50%</attention><br>이동 속도 <attention>10%</attention></stats><br><br><passive>파종</passive><br>모든 공격의 공격 속도가 25% 증가합니다.<br><br><passive>수확</passive><br><OnHit>적중 시</OnHit> , <trueDamage>최대 체력 비례 고정 피해</trueDamage>를 입히고, 입힌 피해만큼 남은 라운드 동안 대상의 최대 체력을 낮춥니다. 같은 적에게 연속 적중 시 이 수치가 0.1% 증가합니다.</mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "specialRecipe": 220007,
+            "image": {
+                "full": "443090.png",
+                "sprite": "item4.png",
+                "group": "item",
+                "x": 192,
+                "y": 96,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 1000,
+                "purchasable": true,
+                "total": 1000,
+                "sell": 400
+            },
+            "tags": [
+                "Damage",
+                "AttackSpeed",
+                "SpellDamage",
+                "NonbootsMovement"
+            ],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": true,
+                "33": false
+            },
+            "stats": {
+                "PercentAttackSpeedMod": 0.5,
+                "PercentMovementSpeedMod": 0.1
+            }
+        },
         "443193": {
             "name": "가고일 돌갑옷",
-            "description": "<mainText><stats>방어력 <attention>90</attention><br>마법 저항력 <attention>90</attention><br>스킬 가속 <attention>15</attention><br>이동 속도 <attention>10%</attention></stats><br><br><br><br><br><br><active>활성화</active> (0초)<br><active>불굴</active><br>크기가 커지며 피해를 흡수하는 보호막을 얻습니다. 보호막은 점차 사라집니다.</mainText>",
+            "description": "<mainText><stats>방어력 <attention>65</attention><br>마법 저항력 <attention>65</attention><br>스킬 가속 <attention>15</attention><br>이동 속도 <attention>10%</attention></stats><br><br><br><br><br><br><active>활성화</active> (0초)<br><active>불굴</active><br>크기가 커지며 피해를 흡수하는 보호막을 얻습니다. 보호막은 점차 사라집니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19089,8 +18297,8 @@ export const item = {
                 "full": "443193.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 384,
-                "y": 192,
+                "x": 240,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
@@ -19112,17 +18320,18 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatSpellBlockMod": 90,
-                "FlatArmorMod": 90,
+                "FlatSpellBlockMod": 65,
+                "FlatArmorMod": 65,
                 "PercentMovementSpeedMod": 0.1
             }
         },
         "444636": {
             "name": "밤의 수확자",
-            "description": "<mainText><stats>주문력 <attention>90</attention><br>체력 <attention>400</attention><br>스킬 가속 <attention>40</attention></stats><br><br><passive>영혼 찢기</passive><br>기본 공격이나 스킬로 챔피언에게 피해를 입히면 추가 마법 피해를 입히고 이동 속도가 상승합니다.<br></mainText>",
+            "description": "<mainText><stats>주문력 <attention>90</attention><br>체력 <attention>400</attention><br>스킬 가속 <attention>40</attention></stats><br><br><passive>영혼 찢기</passive> 챔피언 하나당 (0초)<br>기본 공격이나 스킬로 챔피언에게 피해를 입히면 <magicDamage>0의 마법 피해</magicDamage>를 추가로 입히고 1.5초 동안 <speed>이동 속도가 40%</speed> 상승합니다.<br><br><rules>다른 챔피언에게 피해를 입히면 이동 속도 추가 효과의 지속시간이 늘어납니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19130,8 +18339,8 @@ export const item = {
                 "full": "444636.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 432,
-                "y": 192,
+                "x": 288,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
@@ -19153,7 +18362,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 400,
@@ -19162,7 +18372,7 @@ export const item = {
         },
         "444637": {
             "name": "악마의 포옹",
-            "description": "<mainText><stats>주문력 <attention>70</attention><br>체력 <attention>600</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>사악한 계약</passive><br>잃은 체력 300당 <scaleAP>주문력</scaleAP>이 최대 40%까지 +4% 증가합니다.<br><br><active>활성화</active> (0초)<br><active>힘의 대가</active><br>체력을 300 희생해 이동 속도가 100% 빨라집니다. 이동 속도는 2초에 걸쳐 원래대로 돌아옵니다. 죽음으로 이어지지 않습니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>80</attention><br>체력 <attention>700</attention><br>스킬 가속 <attention>30</attention></stats><br><br><passive>사악한 계약</passive><br>잃은 체력 300당 <scaleAP>주문력</scaleAP>이 최대 40%까지 +4% 증가합니다.<br><br><active>활성화</active> (0초)<br><active>힘의 대가</active><br>체력을 300 희생해 이동 속도가 100% 빨라집니다. 이동 속도는 3초에 걸쳐 원래대로 돌아옵니다. 죽음으로 이어지지 않습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19170,8 +18380,8 @@ export const item = {
                 "full": "444637.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 0,
-                "y": 240,
+                "x": 336,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
@@ -19192,16 +18402,17 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 600,
-                "FlatMagicDamageMod": 70
+                "FlatHPPoolMod": 700,
+                "FlatMagicDamageMod": 80
             }
         },
         "444644": {
             "name": "부서진 여왕의 왕관",
-            "description": "<mainText><stats>주문력 <attention>85</attention><br>체력 <attention>300</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>방호</passive><br><keywordMajor>보호</keywordMajor>를 받아 챔피언으로부터 받는 피해가 감소합니다. <keywordMajor>보호</keywordMajor> 효과는 챔피언에게 피해를 받은 후 3초 동안 지속됩니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>85</attention><br>체력 <attention>300</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>방호</passive><br><keywordMajor>보호</keywordMajor>를 받아 챔피언으로부터 받는 피해가 40% 감소합니다. <keywordMajor>보호</keywordMajor> 효과는 챔피언에게 피해를 받은 후 3초 동안 지속됩니다. (0초) <br><br><rules>챔피언에게 피해를 입으면 아이템 재사용 대기시간이 초기화됩니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19209,8 +18420,8 @@ export const item = {
                 "full": "444644.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 48,
-                "y": 240,
+                "x": 384,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
@@ -19232,7 +18443,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 600,
@@ -19242,7 +18454,7 @@ export const item = {
         },
         "446632": {
             "name": "신성한 파괴자",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>체력 <attention>350</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>주문 검</passive><br>스킬을 사용하고 나면 다음 기본 공격 시 추가 피해(<OnHit>적중 시</OnHit> )를 입힙니다. 대상이 챔피언일 경우 체력을 회복합니다.<br><br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>55</attention><br>체력 <attention>350</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>주문 검</passive> (0초)<br>스킬을 사용하고 나면 다음 기본 공격 시 <physicalDamage>대상 최대 체력의 0+{{ Item_Melee_Ranged_Split_Dynamic_B }}에 해당하는 물리 피해</physicalDamage>를 추가로 입힙니다. 대상이 챔피언일 경우 <healing>감소 전 피해량의 40%</healing>만큼 체력을 회복합니다.<br><br><rules><passive>주문 검</passive>은 유닛에게 최소 0의 피해를 입히고 몬스터에게는 최대 0의 피해를 입힙니다. {{ Item_Melee_Ranged_Rules }}</rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19250,8 +18462,8 @@ export const item = {
                 "full": "446632.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 96,
-                "y": 240,
+                "x": 432,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
@@ -19275,7 +18487,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 350,
@@ -19284,7 +18497,7 @@ export const item = {
         },
         "446656": {
             "name": "만년서리",
-            "description": "<mainText><stats>주문력 <attention>100</attention><br>체력 <attention>500</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>20</attention></stats><br><br><br><br><active>활성화</active> (0초)<br><active>빙결</active><br> 원뿔 범위 내의 적들에게 피해를 입히고 맞은 적들을 <status>둔화</status>시킵니다. 범위 중앙의 적들은 <status>속박</status>됩니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>100</attention><br>체력 <attention>500</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>25</attention></stats><br><br><br><br><active>활성화</active> (0초)<br><active>빙결</active><br> 원뿔 범위 내의 적들에게 피해를 입히고 맞은 적들을 <status>둔화</status>시킵니다. 범위 중앙의 적들은 <status>속박</status>됩니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19292,8 +18505,8 @@ export const item = {
                 "full": "446656.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 144,
-                "y": 240,
+                "x": 0,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -19317,7 +18530,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 600,
@@ -19327,7 +18541,7 @@ export const item = {
         },
         "446667": {
             "name": "광휘의 미덕",
-            "description": "<mainText><stats>체력 <attention>400</attention><br>방어력 <attention>35</attention><br>마법 저항력 <attention>35</attention><br>체력 회복 및 보호막 <attention>12%</attention></stats><br><br><passive>인도하는 빛</passive><br>궁극기를 사용하면 초월하여 최대 체력이 증가합니다. 초월 상태에서 자신과 아군이 서서히 체력을 회복합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>400</attention><br>방어력 <attention>35</attention><br>마법 저항력 <attention>35</attention><br>체력 회복 및 보호막 <attention>12%</attention></stats><br><br><br><br><active>활성화</active> (0초)<br><passive>인도하는 빛</passive><br>궁극기를 사용하면 초월하여 9초 동안 최대 체력이 12.5% 증가합니다. 초월 상태에서 1200의 사거리 내의 자신과 아군이 지속시간 동안 최대 체력의 10%만큼 회복합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19335,8 +18549,8 @@ export const item = {
                 "full": "446667.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 192,
-                "y": 240,
+                "x": 48,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -19359,7 +18573,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 35,
@@ -19369,7 +18584,7 @@ export const item = {
         },
         "446671": {
             "name": "돌풍",
-            "description": "<mainText><stats>공격력 <attention>60</attention><br>공격 속도 <attention>30%</attention><br>치명타 확률 <attention>20%</attention><br>이동 속도 <attention>12%</attention></stats><br><br><br><br><active>활성화</active> (0초)<br><active>폭우 II</active> <br>지정 방향으로 <buffedStat>지형을 넘어</buffedStat> 돌진하며 착지 지점 주변 체력이 가장 낮은 적에게 발사체 3개를 날려 물리 피해를 입힙니다. 체력이 낮을수록 피해량이 증가합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>65</attention><br>공격 속도 <attention>30%</attention><br>치명타 확률 <attention>25%</attention><br>이동 속도 <attention>12%</attention></stats><br><br><br><br><active>활성화</active> (0초)<br><active>폭우 II</active> <br>지정 방향으로 <buffedStat>지형을 넘어</buffedStat> 돌진하며 착지 지점 주변 체력이 가장 낮은 적에게 발사체 3개를 날려 물리 피해를 입힙니다. 체력이 낮을수록 피해량이 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19377,8 +18592,8 @@ export const item = {
                 "full": "446671.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 240,
-                "y": 240,
+                "x": 96,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -19400,18 +18615,19 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatCritChanceMod": 0.2,
-                "FlatPhysicalDamageMod": 60,
+                "FlatCritChanceMod": 0.25,
+                "FlatPhysicalDamageMod": 65,
                 "PercentAttackSpeedMod": 0.3,
                 "PercentMovementSpeedMod": 0.12
             }
         },
         "446691": {
             "name": "드락사르의 황혼검",
-            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <attention>22</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>밤의 추적자</passive><br>대상이 잃은 체력에 비례해 스킬 피해량이 최대 일정 비율까지 증가합니다. 자신이 피해를 입힌 챔피언이 3초 안에 죽으면 1.5초 동안 구조물이 아닌 대상으로부터 <keywordStealth>대상으로 지정할 수 없는 상태</keywordStealth>가 됩니다. (0초)</mainText>",
+            "description": "<mainText><stats>공격력 <attention>50</attention><br>물리 관통력 <attention>20</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>밤의 추적자</passive><br>대상이 잃은 체력에 비례해 스킬 피해량이 최대 {{ Item_Melee_Ranged_Split_Dynamic }}까지 증가합니다. 자신이 피해를 입힌 챔피언이 3초 안에 죽으면 1.5초 동안 구조물이 아닌 대상으로부터 <status>무형</status> 상태가 됩니다.<br><br><rules>무형 상태의 유닛은 구조물이 아닌 대상으로부터 대상으로 지정될 수 없고 공격으로부터 피해를 입지 않습니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19419,8 +18635,8 @@ export const item = {
                 "full": "446691.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 288,
-                "y": 240,
+                "x": 144,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -19444,15 +18660,16 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatPhysicalDamageMod": 60
+                "FlatPhysicalDamageMod": 50
             }
         },
         "446693": {
             "name": "자객의 발톱",
-            "description": "<mainText><stats>공격력 <attention>70</attention><br>물리 관통력 <attention>22</attention><br>스킬 가속 <attention>25</attention></stats><br><br><br><br><li><passive>모래 공습:</passive> 돌진이나 순간이동 후 또는 은신에서 벗어난 후 챔피언에게 기본 공격 시 물리 피해를 추가로 입힙니다. 또한 근접 챔피언의 경우 대상을 <status>둔화</status>시킵니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <attention>20</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>모래 공습</passive><br>돌진이나 순간이동 후 또는 은신에서 벗어난 후 챔피언에게 기본 공격 시 <physicalDamage>{{ Item_Melee_Ranged_Split }}의 물리 피해</physicalDamage>를 추가로 입힙니다. {{ Item_Cooldown }} 또한 근접 챔피언의 경우 대상을 0.5초 동안 99% <status>둔화</status>시킵니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19460,8 +18677,8 @@ export const item = {
                 "full": "446693.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 336,
-                "y": 240,
+                "x": 192,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -19473,7 +18690,6 @@ export const item = {
             },
             "tags": [
                 "Damage",
-                "CriticalStrike",
                 "CooldownReduction",
                 "ArmorPenetration",
                 "AbilityHaste"
@@ -19483,15 +18699,16 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatPhysicalDamageMod": 70
+                "FlatPhysicalDamageMod": 60
             }
         },
         "447100": {
             "name": "신기루 검",
-            "description": "<mainText><stats>적응형 능력치 <attention>55</attention><br>공격 속도 <attention>60%</attention><br>이동 속도 <attention>10%</attention></stats><br><br><passive>흐릿한 형체</passive><br>적중 시 <status>돌진</status>과 <status>순간이동</status> 스킬의 남은 재사용 대기시간이 12% 감소합니다. (궁극기는 4%까지 감소)</mainText>",
+            "description": "<mainText><stats>적응형 능력치 <attention>65</attention><br>공격 속도 <attention>60%</attention><br>이동 속도 <attention>12%</attention></stats><br><br><passive>흐릿한 형체</passive><br>적중 시 <status>돌진</status>과 <status>순간이동</status> 스킬의 남은 재사용 대기시간이 12% 감소합니다. (궁극기는 4%까지 감소)</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19499,8 +18716,8 @@ export const item = {
                 "full": "447100.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 384,
-                "y": 240,
+                "x": 240,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -19522,16 +18739,17 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "PercentAttackSpeedMod": 0.6,
-                "PercentMovementSpeedMod": 0.1
+                "PercentMovementSpeedMod": 0.12
             }
         },
         "447101": {
             "name": "도박꾼의 칼날",
-            "description": "<mainText><stats>공격 속도 <attention>60%</attention><br>스킬 가속 <attention>40</attention><br>이동 속도 <attention>8%</attention></stats><br><br><passive>예금</passive><br>기본 공격과 스킬이 적에게 적중하면 10% 확률로 30~240골드를 비축합니다. 라운드 승리 시 골드를 획득합니다. 라운드 패배 시 모은 돈의 25%를 잃습니다.</mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>70%</attention><br>스킬 가속 <attention>40</attention><br>이동 속도 <attention>8%</attention></stats><br><br><passive>예금</passive><br>기본 공격과 스킬이 적에게 적중하면 12% 확률로 30~245골드를 비축합니다. 라운드 승리 시 골드를 획득합니다. 라운드 패배 시 모은 돈의 25%를 잃습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19539,8 +18757,8 @@ export const item = {
                 "full": "447101.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 432,
-                "y": 240,
+                "x": 288,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -19560,10 +18778,11 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "PercentAttackSpeedMod": 0.6,
+                "PercentAttackSpeedMod": 0.7,
                 "PercentMovementSpeedMod": 0.08
             }
         },
@@ -19577,8 +18796,8 @@ export const item = {
                 "full": "447102.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 0,
-                "y": 288,
+                "x": 336,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -19598,7 +18817,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300,
@@ -19608,7 +18828,7 @@ export const item = {
         },
         "447103": {
             "name": "혈마법사의 투구",
-            "description": "<mainText><stats>공격력 <attention>60</attention><br>스킬 가속 <attention>30</attention><br>모든 피해 흡혈 <attention>10%</attention></stats><br><br><passive>붉은 연대</passive><br>생명력 흡수/모든 피해 흡혈 기준 30%: <healing>최대 체력이 500</healing> 증가합니다. 주변 적이 입는 모든 피해의 12%를 흡수합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>60</attention><br>스킬 가속 <attention>30</attention><br>모든 피해 흡혈 <attention>10%</attention></stats><br><br><passive>붉은 연대</passive><br>생명력 흡수/모든 피해 흡혈 기준 30%: <healing>최대 체력이 500</healing> 증가합니다. 주변 적이 입는 모든 피해의 10%를 흡수합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19616,8 +18836,8 @@ export const item = {
                 "full": "447103.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 48,
-                "y": 288,
+                "x": 384,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -19637,7 +18857,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 60
@@ -19653,8 +18874,8 @@ export const item = {
                 "full": "447104.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 96,
-                "y": 288,
+                "x": 432,
+                "y": 144,
                 "w": 48,
                 "h": 48
             },
@@ -19674,7 +18895,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 200,
@@ -19683,7 +18905,7 @@ export const item = {
         },
         "447105": {
             "name": "창공의 서약",
-            "description": "<mainText><stats>주문력 <attention>60</attention><br>체력 회복 및 보호막 <attention>18%</attention><br>스킬 가속 <attention>30</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><br><br><active>활성화</active> (0초)<br><active>경계</active><br>아군에게 순간이동하고 착지 시 5초 동안 <shield>0의 피해를 흡수하는 보호막</shield>을 부여합니다. 아군이 쓰러졌을 때 사용할 수 있습니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>70</attention><br>체력 회복 및 보호막 <attention>18%</attention><br>스킬 가속 <attention>30</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><br><br><active>활성화</active> (0초)<br><active>경계</active><br>아군에게 순간이동하고 착지 시 5초 동안 <shield>0의 피해를 흡수하는 보호막</shield>을 부여합니다. 아군이 쓰러졌을 때 사용할 수 있습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19691,8 +18913,8 @@ export const item = {
                 "full": "447105.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 144,
-                "y": 288,
+                "x": 0,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -19712,15 +18934,16 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 60
+                "FlatMagicDamageMod": 70
             }
         },
         "447106": {
             "name": "용의 심장",
-            "description": "<mainText><stats></stats><br><br><passive>내면의 열정</passive><br><scaleHealth>체력</scaleHealth>, <scaleArmor>방어력</scaleArmor>, <scaleMR>마법 저항력</scaleMR>, <physicalDamage>공격력</physicalDamage>, <magicDamage>주문력</magicDamage>, <attackSpeed>공격 속도</attackSpeed>, 스킬 가속이 5% 증가합니다. 증가 비율은 보유한 용 영혼 하나당 5%씩 증가합니다.<br><br>2라운드마다 용 영혼을 얻습니다.<br><br>이미 모든 원소의 영혼을 가지고 있다면 그 안에서 고대의 힘이 깨어납니다...<br><br><rules>라운드 5 이후 구매 시 바로 영혼 1개를 받습니다. 라운드 5 이후 2라운드마다 1개를 추가로 받습니다.</rules></mainText>",
+            "description": "<mainText><stats></stats><br><br><passive>내면의 열정</passive><br>보유한 용 영혼 하나당 <scaleHealth>체력</scaleHealth>, <scaleArmor>방어력</scaleArmor>, <scaleMR>마법 저항력</scaleMR>, <physicalDamage>공격력</physicalDamage>, <magicDamage>주문력</magicDamage>, <attackSpeed>공격 속도</attackSpeed>, 스킬 가속이 5%씩 증가합니다.<br><br>2라운드마다 용 영혼을 얻습니다.<br><br>이미 모든 원소의 영혼을 가진 상태에서 또 다른 영혼을 얻으면 내면에서 고대의 힘이 깨어납니다...<br><br><rules>라운드 5 이후 구매 시 바로 영혼 1개를 받습니다. 라운드 5 이후 2라운드마다 1개를 추가로 받습니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19728,8 +18951,8 @@ export const item = {
                 "full": "447106.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 192,
-                "y": 288,
+                "x": 48,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -19741,15 +18964,10 @@ export const item = {
             },
             "tags": [
                 "Health",
-                "SpellBlock",
                 "HealthRegen",
                 "Armor",
                 "Damage",
-                "CriticalStrike",
                 "AttackSpeed",
-                "LifeSteal",
-                "Mana",
-                "ManaRegen",
                 "MagicResist",
                 "AbilityHaste"
             ],
@@ -19758,7 +18976,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -19772,8 +18991,8 @@ export const item = {
                 "full": "447107.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 240,
-                "y": 288,
+                "x": 96,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -19794,7 +19013,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "PercentAttackSpeedMod": 0.5,
@@ -19811,8 +19031,8 @@ export const item = {
                 "full": "447108.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 288,
-                "y": 288,
+                "x": 144,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -19831,7 +19051,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 80,
@@ -19840,7 +19061,7 @@ export const item = {
         },
         "447109": {
             "name": "잔혹 행위",
-            "description": "<mainText><stats>주문력 <attention>80</attention><br>방어력 <attention>30</attention><br>마법 저항력 <attention>30</attention></stats><br><br><passive>추락을 목도하라</passive><br>적 챔피언에게 <status>이동 불가</status> 효과를 적용하면 대상 위로 혜성을 소환합니다. 혜성은 1초 후 떨어지며 해당 지역에 <magicDamage>0의 마법 피해</magicDamage>를 추가로 입힙니다. 이 효과는 스킬 사용 1회당 대상별 재사용 대기시간이 5초입니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>80</attention><br>방어력 <attention>30</attention><br>마법 저항력 <attention>30</attention></stats><br><br><passive>추락을 목도하라</passive><br>적 챔피언에게 <status>이동 불가</status> 또는 <status>속박</status> 효과를 적용하면 대상 위로 혜성을 소환합니다. 혜성은 1초 후 떨어지며 해당 지역에 <magicDamage>0의 마법 피해</magicDamage>를 추가로 입힙니다. 이 효과는 스킬 사용 1회당 대상별 재사용 대기시간이 6초입니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19848,8 +19069,8 @@ export const item = {
                 "full": "447109.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 336,
-                "y": 288,
+                "x": 192,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -19869,7 +19090,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 30,
@@ -19879,7 +19101,7 @@ export const item = {
         },
         "447110": {
             "name": "달빛 마법검",
-            "description": "<mainText><stats>주문력 <attention>70</attention><br>체력 <attention>350</attention><br>강인함 <attention>30%</attention></stats><br><br><passive>무자비</passive><br>스킬 사용 시 기본 공격 대기시간을 초기화하고 다음 2회의 기본 공격 시 <attackSpeed>공격 속도가 90%</attackSpeed> 증가합니다.<br><br>기본 공격 시 스킬 재사용 대기시간이 0.5초 감소합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>85</attention><br>체력 <attention>400</attention><br>강인함 <attention>30%</attention></stats><br><br><passive>무자비</passive><br>스킬 사용 시 기본 공격 대기시간을 초기화하고 다음 2회의 기본 공격 시 <attackSpeed>공격 속도가 90%</attackSpeed> 증가합니다.<br><br>기본 공격 시 스킬 재사용 대기시간이 0.5초 감소합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19887,8 +19109,8 @@ export const item = {
                 "full": "447110.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 384,
-                "y": 288,
+                "x": 240,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -19908,16 +19130,17 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 350,
-                "FlatMagicDamageMod": 70
+                "FlatHPPoolMod": 400,
+                "FlatMagicDamageMod": 85
             }
         },
         "447111": {
             "name": "지배자의 피갑옷",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>체력 <attention>500</attention></stats><br><br><passive>폭정</passive><br><scaleHealth>추가 체력</scaleHealth>의 3%만큼 <physicalDamage>공격력이 0</physicalDamage> 증가합니다.<br><br><passive>응징</passive><br>잃은 체력에 비례해 <physicalDamage>공격력이 12%</physicalDamage>까지 증가합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>55</attention><br>체력 <attention>500</attention></stats><br><br><passive>폭정</passive><br><scaleHealth>추가 체력</scaleHealth>의 3%만큼 <physicalDamage>공격력이 0</physicalDamage> 증가합니다.<br><br><passive>응징</passive><br>잃은 체력에 비례해 <physicalDamage>공격력이 12%</physicalDamage>까지 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19925,8 +19148,8 @@ export const item = {
                 "full": "447111.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 432,
-                "y": 288,
+                "x": 288,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -19945,16 +19168,17 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 500,
-                "FlatPhysicalDamageMod": 45
+                "FlatPhysicalDamageMod": 55
             }
         },
         "447112": {
             "name": "살점포식자",
-            "description": "<mainText><stats>적응형 능력치 <attention>70</attention><br>물리 관통력 <attention>18</attention><br>마법 관통력 <attention>18</attention></stats><br><br><passive>난도질</passive><br>피해를 입히면 5초 동안 <scaleArmor>방어력</scaleArmor>과 <scaleMR>마법 저항력</scaleMR>을 2 감소시킵니다. 최대 10회까지 중첩됩니다. 중첩에는 대상별 1초의 재사용 대기시간이 적용됩니다.<br><br><passive>포식</passive><br>챔피언 처치 관여 시 <healing>대상 최대 체력의 12%</healing>만큼 자신과 아군의 체력을 회복합니다.</mainText>",
+            "description": "<mainText><stats>적응형 능력치 <attention>70</attention><br>물리 관통력 <attention>18</attention><br>마법 관통력 <attention>18</attention></stats><br><br><passive>난도질</passive><br>피해를 입히면 5초 동안 <scaleArmor>방어력</scaleArmor>과 <scaleMR>마법 저항력</scaleMR>을 3 감소시킵니다. 최대 10회까지 중첩됩니다. 중첩에는 스킬당 1초의 재사용 대기시간이 적용됩니다.<br><br><passive>포식</passive><br>챔피언 처치 관여 시 <healing>대상 최대 체력의 18%</healing>만큼 자신과 아군의 체력을 회복합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19962,8 +19186,8 @@ export const item = {
                 "full": "447112.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 0,
-                "y": 336,
+                "x": 336,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -19974,22 +19198,24 @@ export const item = {
                 "sell": 400
             },
             "tags": [
-                "Health",
                 "Damage",
-                "AbilityHaste"
+                "SpellDamage",
+                "MagicPenetration",
+                "ArmorPenetration"
             ],
             "maps": {
                 "11": false,
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
         "447113": {
             "name": "폭발의 구",
-            "description": "<mainText><stats>주문력 <attention>90</attention><br>마법 관통력 <attention>12</attention><br>마나 <attention>400</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>폭탄</passive><br>스킬 피해가 대상에게 표식을 남겨 입힌 피해의 20%를 비축합니다. (<keyword>이동 불가</keyword> 상태인 적의 경우 30%로 증가) <br><br>대상에게 마지막 스킬 피해를 입힌 후 3초가 지나면 비축한 피해량을 대상에게 터뜨립니다. 대상을 처치할 만큼 피해량을 비축하면 그 즉시 터뜨립니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>90</attention><br>마법 관통력 <attention>12</attention><br>마나 <attention>400</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>폭탄</passive><br>스킬 피해가 대상에게 표식을 남겨 입힌 피해의 25%를 비축합니다. (<keyword>이동 불가</keyword> 상태인 적의 경우 30%로 증가) <br><br>대상에게 마지막 스킬 피해를 입힌 후 3초가 지나면 비축한 피해량을 대상에게 터뜨립니다. 대상을 처치할 만큼 피해량을 비축하면 그 즉시 터뜨립니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "specialRecipe": 220007,
@@ -19997,8 +19223,8 @@ export const item = {
                 "full": "447113.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 48,
-                "y": 336,
+                "x": 384,
+                "y": 192,
                 "w": 48,
                 "h": 48
             },
@@ -20018,33 +19244,391 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 400,
                 "FlatMagicDamageMod": 90
             }
         },
+        "447114": {
+            "name": "반향",
+            "description": "<mainText><stats>방어력 <attention>35</attention><br>마법 저항력 <attention>35</attention><br>공격 속도 <attention>40%</attention></stats><br><br><passive>반향 유발</passive><br>전투 시작 시 <attackSpeed>추가 공격 속도 10%</attackSpeed>당 <healing>최대 체력이 40</healing> 증가합니다.<br><br><passive>공명</passive><br>기본 공격 시 <magicDamage>0의 마법 피해(<OnHit>적중 시</OnHit> )</magicDamage>를 입힙니다.<br><br><passive>굉음</passive><br>적 챔피언을 <status>이동 불가</status> 상태로 만들면 8초 동안 중첩이 25회 쌓입니다. 중첩이 100회 쌓인 상태에서는 8초마다 주변 적을 <status>끌어당기고</status>, 적 챔피언을 <status>이동 불가</status> 상태로 만들면 <OnHit>적중 시</OnHit> 효과를 3회 적용합니다.</mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "specialRecipe": 220007,
+            "image": {
+                "full": "447114.png",
+                "sprite": "item4.png",
+                "group": "item",
+                "x": 432,
+                "y": 192,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 1000,
+                "purchasable": true,
+                "total": 1000,
+                "sell": 400
+            },
+            "tags": [
+                "Health",
+                "Armor",
+                "AttackSpeed",
+                "OnHit",
+                "MagicResist"
+            ],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": true,
+                "33": false
+            },
+            "stats": {
+                "FlatSpellBlockMod": 35,
+                "FlatArmorMod": 35,
+                "PercentAttackSpeedMod": 0.4
+            }
+        },
+        "447115": {
+            "name": "섭정 시해",
+            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <attention>15</attention><br>이동 속도 <attention>8%</attention></stats><br><br><passive>혈통 끊기</passive><br>라운드가 시작할 때마다 가장 체력이 낮은 적을 <keywordMajor>섭정</keywordMajor>으로 선언합니다. <keywordMajor>섭정</keywordMajor>을 처치하는 데 관여하면 영구적으로 <physicalDamage>공격력이 10</physicalDamage> 증가하고 궁극기 재사용 대기시간이 초기화됩니다.</mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "specialRecipe": 220007,
+            "image": {
+                "full": "447115.png",
+                "sprite": "item4.png",
+                "group": "item",
+                "x": 0,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 1000,
+                "purchasable": true,
+                "total": 1000,
+                "sell": 400
+            },
+            "tags": [
+                "Damage",
+                "NonbootsMovement",
+                "ArmorPenetration"
+            ],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": true,
+                "33": false
+            },
+            "stats": {
+                "FlatPhysicalDamageMod": 60,
+                "PercentMovementSpeedMod": 0.08
+            }
+        },
+        "447116": {
+            "name": "킨코우 십수",
+            "description": "<mainText><stats>적응형 능력치 <attention>70</attention><br>물리 관통력 <attention>12</attention><br>마법 관통력 <attention>12</attention><br>스킬 가속 <attention>30</attention></stats><br><br><passive>늑골 사이</passive><br>주변 적 챔피언의 약점이 보입니다. 약점을 통해 피해를 입히면 <trueDamage>최대 체력의 0에 해당하는 고정 피해</trueDamage>를 추가로 입히고 1.5초 동안 <speed>이동 속도가 0</speed> 증가합니다.</mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "specialRecipe": 220007,
+            "image": {
+                "full": "447116.png",
+                "sprite": "item4.png",
+                "group": "item",
+                "x": 48,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 1000,
+                "purchasable": true,
+                "total": 1000,
+                "sell": 400
+            },
+            "tags": [
+                "Damage",
+                "SpellDamage",
+                "MagicPenetration",
+                "ArmorPenetration",
+                "AbilityHaste"
+            ],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": true,
+                "33": false
+            },
+            "stats": {}
+        },
+        "447118": {
+            "name": "화염술사의 망토",
+            "description": "<mainText><stats>적응형 능력치 <attention>85</attention><br>체력 <attention>400</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>불꽃</passive> 재사용 대기시간 (5초)<br>적 챔피언에게 기본 공격 또는 스킬이 적중하면 대상을 <keywordMajor>불태우며</keywordMajor> 3초에 걸쳐 <magicDamage>0의 마법 피해</magicDamage>를 입힙니다.<br><br><passive>정화의 화염</passive> 챔피언 하나당 (0초) <br>적 챔피언에게 <keywordMajor>화상</keywordMajor>을 적용하면 5초 동안 주변에 <keywordMajor>불길</keywordMajor>을 생성합니다. <keywordMajor>불길</keywordMajor>에 있는 동안 <speed>이동 속도가 0</speed>, <lifeSteal>모든 피해 흡혈이 0</lifeSteal> 증가합니다. 안에 있는 적은 매초 <magicDamage>0의 마법 피해</magicDamage>를 입습니다.<br><br>각 <keywordMajor>불길</keywordMajor>의 크기와 세기는 근원이 되는 각 <keywordMajor>화상</keywordMajor>의 개수에 비례합니다.</mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "specialRecipe": 220007,
+            "image": {
+                "full": "447118.png",
+                "sprite": "item4.png",
+                "group": "item",
+                "x": 96,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 1000,
+                "purchasable": true,
+                "total": 1000,
+                "sell": 400
+            },
+            "tags": [
+                "Health",
+                "Damage",
+                "SpellDamage",
+                "SpellVamp"
+            ],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": true,
+                "33": false
+            },
+            "stats": {
+                "FlatHPPoolMod": 400
+            }
+        },
+        "447119": {
+            "name": "번개 막대",
+            "description": "<mainText><stats>체력 <attention>500</attention><br>방어력 <attention>30</attention><br>마법 저항력 <attention>30</attention><br>이동 속도 <attention>8%</attention></stats><br><br><passive>번개 소환</passive><br>16초마다 <keywordMajor>자동 사용</keywordMajor>으로 머리 위에 먹구름을 소환합니다. 먹구름은 잠시 후 번개를 내리쳐 <magicDamage>0+최대 체력의 10%에 해당하는 마법 피해</magicDamage>를 입히고 2초 동안 30% <status>둔화</status>시킵니다.<br><br>자신이 맞으면 2초 동안 <shield>0의 피해를 흡수하는 보호막</shield>을 얻습니다.<br><br><passive>완전 자동화</passive><br><keywordMajor>자동 사용</keywordMajor> 재사용 대기시간이 1초 감소하고 스킬 가속의 혜택을 받습니다.<br><br><rules>번개 소환의 최소 재사용 대기시간은 5초입니다.</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "specialRecipe": 220007,
+            "image": {
+                "full": "447119.png",
+                "sprite": "item4.png",
+                "group": "item",
+                "x": 144,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 1000,
+                "purchasable": true,
+                "total": 1000,
+                "sell": 400
+            },
+            "tags": [
+                "Damage",
+                "AttackSpeed"
+            ],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": true,
+                "33": false
+            },
+            "stats": {
+                "FlatSpellBlockMod": 30,
+                "FlatHPPoolMod": 500,
+                "FlatArmorMod": 30,
+                "PercentAttackSpeedMod": 0.3,
+                "PercentMovementSpeedMod": 0.08
+            }
+        },
+        "447120": {
+            "name": "다이아몬드 창",
+            "description": "<mainText><stats>적응형 능력치 <attention>75</attention><br>공격 속도 <attention>30%</attention></stats><br><br><passive>무기 뻗기</passive><br>공격 사거리가 75 증가합니다.<br><br><passive>최고의 공격점</passive><br>대상과 떨어진 거리에 비례해 기본 공격의 피해가 30%, 스킬 피해가 40%까지 증가합니다. 피해량은 1000유닛 거리에서 최대가 됩니다. </mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "specialRecipe": 220007,
+            "image": {
+                "full": "447120.png",
+                "sprite": "item4.png",
+                "group": "item",
+                "x": 192,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 1000,
+                "purchasable": true,
+                "total": 1000,
+                "sell": 400
+            },
+            "tags": [
+                "Damage",
+                "AttackSpeed"
+            ],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": true,
+                "33": false
+            },
+            "stats": {
+                "PercentAttackSpeedMod": 0.3
+            }
+        },
+        "447121": {
+            "name": "황혼의 끝자락",
+            "description": "<mainText><stats>공격력 <attention>70</attention><br>주문력 <attention>100</attention></stats><br><br><passive>사이의 길</passive><br>기준 <physicalDamage>추가 공격력 130</physicalDamage> 및 <scaleAP>주문력 180</scaleAP>: 전투를 시작할 때마다 <keywordMajor>영혼 세계</keywordMajor> 또는 <keywordMajor>물질 세계</keywordMajor> 중 하나에 무작위로 들어갑니다.<br><br><keywordMajor>영혼 세계</keywordMajor>: <scaleAP>주문력이 20%</scaleAP>, 스킬 가속이 0 증가합니다.<br><keywordMajor>물질 세계</keywordMajor>: <physicalDamage>공격력이 20%</physicalDamage>, <attackSpeed>공격 속도가 0</attackSpeed> 증가합니다.</mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "specialRecipe": 220007,
+            "image": {
+                "full": "447121.png",
+                "sprite": "item4.png",
+                "group": "item",
+                "x": 240,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 1000,
+                "purchasable": true,
+                "total": 1000,
+                "sell": 400
+            },
+            "tags": [
+                "Health",
+                "Armor",
+                "Damage",
+                "AttackSpeed",
+                "SpellDamage",
+                "MagicResist",
+                "AbilityHaste"
+            ],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": true,
+                "33": false
+            },
+            "stats": {
+                "FlatMagicDamageMod": 100,
+                "FlatPhysicalDamageMod": 70
+            }
+        },
+        "447122": {
+            "name": "블랙홀 건틀릿",
+            "description": "<mainText><stats>체력 <attention>900</attention><br>스킬 가속 <attention>25</attention><br>기본 체력 재생 <attention>200%</attention></stats><br><br><passive>응축</passive><br><OnHit>적중 시</OnHit> , <keywordMajor>응축</keywordMajor> 중첩을 1회 얻습니다. 적 챔피언을 <status>이동 불가</status>상태로 만들면 5회 얻습니다. 중첩은 남은 라운드 동안 최대 50회까지 유지됩니다. 중첩 하나당 자신의 크기가 1%, <healing>기본 체력 재생이 10%</healing> 증가합니다.<br><br><active>활성화</active> (0초)<br><active>암흑의 별</active><br>자신의 크기에 비례하는 블랙홀을 소환합니다. 주변 적을 35% <slow>둔화</slow>시키는 한편 중심에 있는 적을 가까이 끌어당기며 <magic>매초 0의 마법 피해</magic>를 입히고 <keywordMajor>응축</keywordMajor> 중첩을 1회 부여합니다. 블랙홀은 0초 동안 유지됩니다.<br><br><rules>중첩이 10회 쌓일 때마다 크기가 커집니다. </rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "specialRecipe": 220007,
+            "image": {
+                "full": "447122.png",
+                "sprite": "item4.png",
+                "group": "item",
+                "x": 288,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 1000,
+                "purchasable": true,
+                "total": 1000,
+                "sell": 400
+            },
+            "tags": [
+                "SpellBlock",
+                "AttackSpeed",
+                "OnHit",
+                "AbilityHaste"
+            ],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": true,
+                "33": false
+            },
+            "stats": {
+                "FlatHPPoolMod": 900
+            }
+        },
+        "447123": {
+            "name": "조종의 손아귀",
+            "description": "<mainText><stats>주문력 <attention>30</attention><br>체력 회복 및 보호막 <attention>15%</attention><br>스킬 가속 <attention>40</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><passive>배후 조종</passive> <br>챔피언에게 기본 공격을 가하면 5초 동안 중첩이 쌓입니다. 중첩이 4회 쌓이면 대상을 2초 동안 <status>광란</status> 상태로 만듭니다. <status>광란</status> 상태가 된 적은 <attackSpeed>공격 속도가 0</attackSpeed>, <speed>이동 속도가 40%</speed> 증가합니다. (재사용 대기시간 45초)<br><br>자신이나 아군에게 스킬로 <healing>체력 회복</healing>이나 <shield>보호막</shield>, 이로운 효과를 적용하면 재사용 대기시간이 5초 감소합니다.<br><br><rules>살아 있는 적이 하나밖에 없으면 같은 시간 동안 <status>공포</status>에 질리게 합니다.</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "specialRecipe": 220007,
+            "image": {
+                "full": "447123.png",
+                "sprite": "item4.png",
+                "group": "item",
+                "x": 336,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 1000,
+                "purchasable": true,
+                "total": 1000,
+                "sell": 400
+            },
+            "tags": [
+                "SpellDamage",
+                "ManaRegen",
+                "AbilityHaste"
+            ],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": true,
+                "33": false
+            },
+            "stats": {
+                "FlatMagicDamageMod": 30
+            }
+        },
         "4628": {
             "name": "지평선의 초점",
-            "description": "<mainText><stats>주문력 <attention>90</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>초강력 사격</passive><br>600 거리보다 멀리에서 대상을 지정하지 않는 스킬로 챔피언에게 피해를 입히거나 <status>둔화 또는 이동 불가</status> 상태로 만들면 대상의 <keywordStealth>위치를 드러내고</keywordStealth> 자신이 입히는 피해를 증가시킵니다.<br><br><rules><passive>초강력 사격</passive>을 발동하는 스킬 역시 피해량이 증가합니다. 소환물이나 이동 불가 효과가 없는 덫은 이 효과를 발동시키지 않습니다. 범위 지정 스킬은 처음에만 이 효과를 발동시키고, 거리는 사용 시 위치 기준으로 계산됩니다. </rules></mainText>",
+            "description": "<mainText><stats>주문력 <attention>75</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>초강력 사격</passive><br>600 거리 이상에서 스킬로 챔피언에게 피해를 입히면 6초 동안 대상의 <keywordStealth>위치를 드러냅니다</keywordStealth>. <br>이 아이템으로 <keywordStealth>위치가 드러난</keywordStealth> 적에게 입히는 피해는 10% 증가합니다.<br><br><passive>집중</passive> (0초)<br><passive>초강력 사격</passive> 발동 시 3초 동안 대상으로부터 1400의 사거리 내에 있는 다른 모든 적 챔피언의 <keywordStealth>위치를 드러냅니다</keywordStealth>.</mainText>",
             "colloq": "",
             "plaintext": "챔피언을 이동 불가 상태로 만들면 벼락이 떨어집니다.",
             "from": [
-                "3145",
-                "3108"
+                "3108",
+                "3108",
+                "1052"
             ],
             "image": {
                 "full": "4628.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 96,
-                "y": 336,
+                "x": 384,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 700,
+                "base": 600,
                 "purchasable": true,
                 "total": 2700,
                 "sell": 1890
@@ -20058,16 +19642,17 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 90
+                "FlatMagicDamageMod": 75
             },
             "depth": 3
         },
         "4629": {
             "name": "우주의 추진력",
-            "description": "<mainText><stats>주문력 <attention>80</attention><br>체력 <attention>250</attention><br>스킬 가속 <attention>25</attention><br>이동 속도 <attention>5%</attention></stats><br><br><passive>마법의 춤</passive><br>적 챔피언에게 스킬 피해를 입히면 2초 동안 <speed>이동 속도가 0</speed> 증가합니다. </mainText>",
+            "description": "<mainText><stats>주문력 <attention>70</attention><br>체력 <attention>350</attention><br>스킬 가속 <attention>25</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>마법의 춤</passive><br>챔피언에게 <magicDamage>마법 피해</magicDamage> 또는 <trueDamage>고정 피해</trueDamage>를 입히면 4초 동안 <speed>이동 속도</speed>가 증가합니다. </mainText>",
             "colloq": "",
             "plaintext": "재사용 대기시간이 대폭 감소합니다.",
             "from": [
@@ -20079,8 +19664,8 @@ export const item = {
                 "full": "4629.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 144,
-                "y": 336,
+                "x": 432,
+                "y": 240,
                 "w": 48,
                 "h": 48
             },
@@ -20101,12 +19686,13 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 250,
-                "FlatMagicDamageMod": 80,
-                "PercentMovementSpeedMod": 0.05
+                "FlatHPPoolMod": 350,
+                "FlatMagicDamageMod": 70,
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 3
         },
@@ -20126,8 +19712,8 @@ export const item = {
                 "full": "4630.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 192,
-                "y": 336,
+                "x": 0,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -20146,7 +19732,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 25
@@ -20155,7 +19742,7 @@ export const item = {
         },
         "4632": {
             "name": "신록의 장벽",
-            "description": "<mainText><stats>주문력 <attention>40</attention><br>마법 저항력 <attention>30</attention></stats><br><br><passive>무효화</passive> (0초)<br>적의 다음 스킬을 막아 주는 주문 방어막을 생성합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>40</attention><br>마법 저항력 <attention>25</attention></stats><br><br><passive>무효화</passive> (0초)<br>적의 다음 스킬을 막아 주는 주문 방어막을 생성합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -20170,13 +19757,13 @@ export const item = {
                 "full": "4632.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 240,
-                "y": 336,
+                "x": 48,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 350,
+                "base": 400,
                 "purchasable": true,
                 "total": 1600,
                 "sell": 1120
@@ -20190,37 +19777,35 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatSpellBlockMod": 30,
+                "FlatSpellBlockMod": 25,
                 "FlatMagicDamageMod": 40
             },
             "depth": 2
         },
         "4633": {
             "name": "균열 생성기",
-            "description": "<mainText><stats>주문력 <attention>80</attention><br>체력 <attention>350</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>공허의 부패</passive><br>적 챔피언과 전투 중 매초 추가 피해를 입힙니다. 피해량이 최대가 되면 모든 피해 흡혈을 얻습니다.<br><br><passive>공허의 마력</passive><br>추가 체력의 일정 비율만큼 주문력이 상승합니다. </mainText>",
+            "description": "<mainText><stats>주문력 <attention>70</attention><br>체력 <attention>350</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>공허의 부패</passive><br>적 챔피언과 전투 중 매초 2%의 추가 피해(최대 8%)를 입힙니다. 피해량이 최대가 되면 <omnivamp>모든 피해 흡혈</omnivamp>을 얻습니다.<br><br><passive>공허의 마력</passive><br><scaleHealth>추가 체력</scaleHealth>의 2%만큼 <scaleAP>주문력</scaleAP>이 상승합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
                 "3147",
                 "3108"
             ],
-            "into": [
-                "7009"
-            ],
             "image": {
                 "full": "4633.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 288,
-                "y": 336,
+                "x": 96,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 900,
+                "base": 950,
                 "purchasable": true,
                 "total": 3100,
                 "sell": 2170
@@ -20236,11 +19821,12 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 350,
-                "FlatMagicDamageMod": 80
+                "FlatMagicDamageMod": 70
             },
             "depth": 3
         },
@@ -20258,8 +19844,8 @@ export const item = {
                 "full": "4635.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 336,
-                "y": 336,
+                "x": 144,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -20279,7 +19865,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 250,
@@ -20289,7 +19876,7 @@ export const item = {
         },
         "4636": {
             "name": "밤의 수확자",
-            "description": "<mainText><stats>주문력 <attention>90</attention><br>체력 <attention>300</attention><br>스킬 가속 <attention>25</attention></stats><br><br><br><li><passive>영혼 찢기:</passive> 챔피언에게 기본 공격이나 스킬로 피해를 입히면 추가 마법 피해를 입히고 이동 속도가 상승합니다.<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 스킬 가속.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>90</attention><br>체력 <attention>300</attention><br>스킬 가속 <attention>25</attention></stats><br><br><br><li><passive>영혼 찢기:</passive> 챔피언에게 기본 공격이나 스킬로 피해를 입히면 <magicDamage>0의 마법 피해</magicDamage>를 추가로 입히고 1.5초 동안 <speed>이동 속도가 25%</speed> 상승합니다. (챔피언당 30(0초))<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 스킬 가속 <attention>5</attention><br><br><rules>다른 챔피언에게 피해를 입히면 이동 속도 추가 효과의 지속시간이 늘어납니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -20297,23 +19884,20 @@ export const item = {
                 "3108"
             ],
             "inStore": false,
-            "into": [
-                "7010"
-            ],
             "image": {
                 "full": "4636.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 384,
-                "y": 336,
+                "x": 192,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 815,
                 "purchasable": false,
-                "total": 2815,
-                "sell": 1971
+                "total": 2765,
+                "sell": 1936
             },
             "tags": [
                 "Health",
@@ -20327,7 +19911,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300,
@@ -20337,7 +19922,7 @@ export const item = {
         },
         "4637": {
             "name": "악마의 포옹",
-            "description": "<mainText><stats>주문력 <attention>75</attention><br>체력 <attention>350</attention></stats><br><br><br><li><passive>아자카나의 응시:</passive> 스킬 피해를 입히면 적을 불태워 매초 최대 체력에 비례한 마법 피해를 입힙니다.<li><passive>어둠의 계약:</passive> <scaleHealth>추가 체력</scaleHealth>만큼 <scaleAP>주문력</scaleAP>을 얻습니다. </mainText>",
+            "description": "<mainText><stats>주문력 <attention>75</attention><br>체력 <attention>350</attention></stats><br><br><br><li><passive>아자카나의 응시:</passive> 스킬 피해를 입히면 4초 동안 적을 불태워 매초 {{ Item_Melee_Ranged_Split }}의 <magicDamage>최대 체력에 비례한 마법 피해</magicDamage>를 입힙니다. <li><passive>어둠의 계약:</passive> <scaleHealth>추가 체력</scaleHealth>의 2%만큼 <scaleAP>주문력</scaleAP>을 얻습니다. <br><br><rules><passive>아자카나의 응시</passive> 몬스터를 상대로는 최대 40의 피해를 입힙니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -20350,8 +19935,8 @@ export const item = {
                 "full": "4637.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 432,
-                "y": 336,
+                "x": 240,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -20370,7 +19955,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 350,
@@ -20392,8 +19978,8 @@ export const item = {
                 "full": "4638.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 0,
-                "y": 384,
+                "x": 288,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -20417,7 +20003,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 15,
@@ -20437,8 +20024,8 @@ export const item = {
                 "full": "4641.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 48,
-                "y": 384,
+                "x": 336,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -20463,7 +20050,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 80
@@ -20471,7 +20059,7 @@ export const item = {
         },
         "4642": {
             "name": "밴들유리 거울",
-            "description": "<mainText><stats>주문력 <attention>20</attention><br>기본 마나 재생 <attention>75%</attention><br>스킬 가속 <attention>10</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>주문력 <attention>20</attention><br>기본 마나 재생 <attention>100%</attention><br>스킬 가속 <attention>10</attention></stats><br><br></mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -20489,16 +20077,16 @@ export const item = {
                 "full": "4642.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 96,
-                "y": 384,
+                "x": 384,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 100,
+                "base": 50,
                 "purchasable": true,
-                "total": 1000,
-                "sell": 700
+                "total": 900,
+                "sell": 630
             },
             "tags": [
                 "SpellDamage",
@@ -20511,7 +20099,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 20
@@ -20531,8 +20120,8 @@ export const item = {
                 "full": "4643.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 144,
-                "y": 384,
+                "x": 432,
+                "y": 288,
                 "w": 48,
                 "h": 48
             },
@@ -20556,7 +20145,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 30,
@@ -20567,7 +20157,7 @@ export const item = {
         },
         "4644": {
             "name": "부서진 여왕의 왕관",
-            "description": "<mainText><stats>주문력 <attention>85</attention><br>체력 <attention>250</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>20</attention></stats><br><br><br><li><passive>보호:</passive> <keywordMajor>보호</keywordMajor>를 받아 챔피언으로부터 받는 피해가 감소합니다. <keywordMajor>보호</keywordMajor> 효과는 챔피언에게 피해를 받은 후 2.5초 동안 지속됩니다. <br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 이동 속도 및 주문력</mainText>",
+            "description": "<mainText><stats>주문력 <attention>85</attention><br>체력 <attention>250</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>20</attention></stats><br><br><br><li><passive>보호:</passive> <keywordMajor>보호</keywordMajor>를 받아 챔피언으로부터 받는 피해가 40% 감소합니다. <keywordMajor>보호</keywordMajor> 효과는 챔피언에게 피해를 받은 후 2.5초 동안 지속됩니다. (40(0초)) <br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 이동 속도가 <attention>1%</attention>, 주문력이 8 증가합니다.<br><br><rules>챔피언에게 피해를 입으면 아이템 재사용 대기시간이 초기화됩니다.</rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -20576,15 +20166,12 @@ export const item = {
                 "1052"
             ],
             "inStore": false,
-            "into": [
-                "7024"
-            ],
             "image": {
                 "full": "4644.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 192,
-                "y": 384,
+                "x": 0,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -20606,7 +20193,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 600,
@@ -20617,7 +20205,7 @@ export const item = {
         },
         "4645": {
             "name": "그림자불꽃",
-            "description": "<mainText><stats>주문력 <attention>120</attention><br>마법 관통력 <attention>12</attention></stats><br><br><passive>잿덩이꽃</passive><br>체력이 낮은 적에게 <magicDamage>마법 피해</magicDamage>와 <trueDamage>고정 피해</trueDamage>가 치명타로 적용됩니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>110</attention><br>마법 관통력 <attention>15</attention></stats><br><br><passive>잿덩이꽃</passive><br>체력이 40% 이하인 적에게 <magicDamage>마법</magicDamage>과 <trueDamage>고정 피해</trueDamage>가 <attention>치명타</attention>로 적용되어 20%의 추가 피해를 입힙니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -20628,13 +20216,13 @@ export const item = {
                 "full": "4645.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 240,
-                "y": 384,
+                "x": 48,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 850,
+                "base": 900,
                 "purchasable": true,
                 "total": 3200,
                 "sell": 2240
@@ -20648,16 +20236,17 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 120
+                "FlatMagicDamageMod": 110
             },
             "depth": 3
         },
         "4646": {
             "name": "폭풍 쇄도",
-            "description": "<mainText><stats>주문력 <attention>95</attention><br>마법 관통력 <attention>10</attention><br>이동 속도 <attention>8%</attention></stats><br><br><passive>폭풍 약탈자</passive><br>짧은 지속시간 내로 챔피언 최대 체력의 35%에 해당하는 피해를 입히면 <passive>질풍</passive>을 적용하고 이동 속도가 증가합니다.<br><br><passive>질풍</passive><br>몇 초 후에 대상을 가격하여 마법 피해를 입힙니다. 가격 전에 대상이 사망할 경우 즉시 폭발해 넓은 범위에 피해를 입히고 추가 골드를 획득합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>95</attention><br>마법 관통력 <attention>15</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>폭풍 약탈자</passive> (0초)<br>2.5초 내로 챔피언 최대 체력의 25%에 해당하는 피해를 입히면 <passive>질풍</passive>을 적용하고 1.5초 동안 <speed>이동 속도가 25%</speed> 증가합니다.<br><br><passive>질풍</passive><br>2초 후에 <magicDamage>마법 피해</magicDamage>를 입힙니다. <passive>질풍</passive>이 발동하기 전에 대상이 사망할 경우 주변 적에게 피해를 입히고 <gold>30골드</gold>를 획득합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -20668,13 +20257,13 @@ export const item = {
                 "full": "4646.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 288,
-                "y": 384,
+                "x": 96,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 950,
+                "base": 900,
                 "purchasable": true,
                 "total": 2900,
                 "sell": 2030
@@ -20690,11 +20279,12 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMagicDamageMod": 95,
-                "PercentMovementSpeedMod": 0.08
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 3
         },
@@ -20714,8 +20304,8 @@ export const item = {
                 "full": "6029.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 336,
-                "y": 384,
+                "x": 144,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -20734,7 +20324,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 30
@@ -20756,8 +20347,8 @@ export const item = {
                 "full": "6035.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 384,
-                "y": 384,
+                "x": 192,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
@@ -20779,7 +20370,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 40,
@@ -20795,7 +20387,7 @@ export const item = {
         },
         "6333": {
             "name": "죽음의 무도",
-            "description": "<mainText><stats>공격력 <attention>60</attention><br>스킬 가속 <attention>15</attention><br>방어력 <attention>40</attention></stats><br><br><passive>고통 무시</passive><br>자신이 받은 피해의 일부를 일정 시간에 걸쳐서 입습니다.<br><br><passive>반항</passive><br>자신이 피해를 입힌 챔피언이 죽으면 <passive>고통 무시</passive>의 지속 피해 효과가 사라지고 일정 시간 동안 체력을 회복합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>60</attention><br>스킬 가속 <attention>15</attention><br>방어력 <attention>50</attention></stats><br><br><passive>고통 무시</passive><br>자신이 받은 피해의 일정 비율만큼을 3초에 걸쳐서 입습니다.<br><br><passive>반항</passive><br>자신이 피해를 입힌 챔피언이 3초 안에 죽으면 <passive>고통 무시</passive>의 지속 피해 효과가 사라지고 2초에 걸쳐 <healing>체력</healing>을 회복합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "stacks": 0,
@@ -20808,16 +20400,16 @@ export const item = {
                 "full": "6333.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 432,
-                "y": 384,
+                "x": 240,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 125,
+                "base": 275,
                 "purchasable": true,
-                "total": 3200,
-                "sell": 2240
+                "total": 3300,
+                "sell": 2310
             },
             "tags": [
                 "Armor",
@@ -20829,81 +20421,36 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatArmorMod": 40,
+                "FlatArmorMod": 50,
                 "FlatPhysicalDamageMod": 60
             },
             "depth": 3
         },
         "6609": {
             "name": "화공 펑크 사슬검",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>체력 <attention>250</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>광란의 뿔</passive><br>적 챔피언에게 물리 피해를 입히면 3초 동안 40%의 <keyword>고통스러운 상처</keyword>를 남깁니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>45</attention><br>체력 <attention>450</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>광란의 뿔</passive><br>적 챔피언에게 물리 피해를 입히면 3초 동안 40%의 <keyword>상처</keyword>를 남깁니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
                 "3123",
-                "1028",
+                "1011",
                 "3133"
             ],
             "image": {
                 "full": "6609.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 0,
-                "y": 432,
+                "x": 288,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 500,
-                "purchasable": true,
-                "total": 2800,
-                "sell": 1960
-            },
-            "tags": [
-                "Health",
-                "Damage",
-                "CooldownReduction",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 250,
-                "FlatPhysicalDamageMod": 55
-            },
-            "depth": 3
-        },
-        "6610": {
-            "name": "갈라진 하늘",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>체력 <attention>450</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>라이트실드 타격</passive><br>챔피언에게 처음 기본 공격을 가할 때 치명타로 적용되고 체력을 회복합니다. <br><br><rules>초과된 회복량은 잠시 동안 추가 체력으로 전환됩니다.</rules></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "2021",
-                "3133"
-            ],
-            "into": [
-                "7039"
-            ],
-            "image": {
-                "full": "6610.png",
-                "sprite": "item4.png",
-                "group": "item",
-                "x": 48,
-                "y": 432,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 850,
+                "base": 350,
                 "purchasable": true,
                 "total": 3100,
                 "sell": 2170
@@ -20919,7 +20466,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 450,
@@ -20927,9 +20475,54 @@ export const item = {
             },
             "depth": 3
         },
+        "6610": {
+            "name": "갈라진 하늘",
+            "description": "<mainText><stats>공격력 <attention>40</attention><br>체력 <attention>400</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>라이트실드 타격</passive> 대상 하나당 (0초)<br>챔피언에게 처음 기본 공격을 가할 때 <attention>치명타</attention>로 적용되고 <healing>체력을 회복</healing>합니다.</mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "from": [
+                "2021",
+                "3133",
+                "1028"
+            ],
+            "image": {
+                "full": "6610.png",
+                "sprite": "item4.png",
+                "group": "item",
+                "x": 336,
+                "y": 336,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 500,
+                "purchasable": true,
+                "total": 3100,
+                "sell": 2170
+            },
+            "tags": [
+                "Health",
+                "Damage",
+                "CooldownReduction",
+                "AbilityHaste"
+            ],
+            "maps": {
+                "11": true,
+                "12": true,
+                "21": true,
+                "22": false,
+                "30": false,
+                "33": false
+            },
+            "stats": {
+                "FlatHPPoolMod": 400,
+                "FlatPhysicalDamageMod": 40
+            },
+            "depth": 3
+        },
         "6616": {
             "name": "흐르는 물의 지팡이",
-            "description": "<mainText><stats>주문력 <attention>40</attention><br>체력 회복 및 보호막 <attention>8%</attention><br>기본 마나 재생 <attention>125%</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>급류</passive><br>아군의 체력을 회복시키거나 보호막을 씌우면 4초 동안 자신과 대상의 <magicDamage>주문력이 30</magicDamage>, <speed>이동 속도가 10%</speed> 증가합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>35</attention><br>체력 회복 및 보호막 <attention>10%</attention><br>기본 마나 재생 <attention>125%</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>급류</passive><br>다른 아군의 체력을 회복시키거나 보호막을 씌우면 4초 동안 <magicDamage>주문력이 45</magicDamage> 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "체력 회복 및 보호막 스킬이 군중 제어 효과의 지속시간을 줄이고 이동 속도를 상승시킵니다.",
             "from": [
@@ -20940,16 +20533,16 @@ export const item = {
                 "full": "6616.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 96,
-                "y": 432,
+                "x": 384,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 600,
+                "base": 800,
                 "purchasable": true,
-                "total": 2300,
-                "sell": 1610
+                "total": 2250,
+                "sell": 1575
             },
             "tags": [
                 "SpellDamage",
@@ -20962,36 +20555,34 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 40
+                "FlatMagicDamageMod": 35
             },
             "depth": 3
         },
         "6617": {
             "name": "월석 재생기",
-            "description": "<mainText><stats>주문력 <attention>30</attention><br>체력 <attention>250</attention><br>스킬 가속 <attention>20</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><passive>별빛 은총</passive><br>아군을 상대로 체력을 회복시키거나 보호막을 씌우면 가장 가까이 있는 아군을 기존 수치에 비례하여 체력을 회복시키거나 피해를 흡수하는 보호막을 부여합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>25</attention><br>체력 <attention>200</attention><br>스킬 가속 <attention>20</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><passive>별빛 은총</passive><br>아군을 상대로 체력을 회복시키거나 보호막을 씌우면 (자신을 제외하고) 다른 아군에게 연쇄 효과가 적용되며 기존 수치의 <healing>30%만큼 체력을 회복</healing>시키거나 <shield>35%만큼 피해를 흡수하는 보호막</shield>을 부여합니다.</mainText>",
             "colloq": "",
             "plaintext": "체력 회복 및 보호막 스킬의 재사용 대기시간이 감소하고 체력이 낮은 아군에게 더 큰 효과를 냅니다.",
             "from": [
                 "3067",
                 "4642"
             ],
-            "into": [
-                "7021"
-            ],
             "image": {
                 "full": "6617.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 144,
-                "y": 432,
+                "x": 432,
+                "y": 336,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 400,
+                "base": 500,
                 "purchasable": true,
                 "total": 2200,
                 "sell": 1540
@@ -21008,37 +20599,35 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 250,
-                "FlatMagicDamageMod": 30
+                "FlatHPPoolMod": 200,
+                "FlatMagicDamageMod": 25
             },
             "depth": 3
         },
         "6620": {
             "name": "헬리아의 메아리",
-            "description": "<mainText><stats>주문력 <attention>40</attention><br>체력 <attention>200</attention><br>스킬 가속 <attention>20</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><passive>영혼 흡수</passive><br>챔피언에게 피해를 입히면 <passive>영혼 파편</passive>을 얻습니다. 아군을 상대로 체력을 회복시키거나 보호막을 씌우면 모든 <passive>영혼 파편</passive>을 소모하여 아군의 체력을 회복시키고 가장 가까운 적 챔피언에게 파편 하나당 마법 피해를 입힙니다.<br><br></mainText>",
+            "description": "<mainText><stats>주문력 <attention>35</attention><br>체력 <attention>200</attention><br>스킬 가속 <attention>20</attention><br>기본 마나 재생 <attention>125%</attention></stats><br><br><passive>영혼 흡수</passive><br>챔피언에게 피해를 입히면 <passive>영혼 파편</passive>을 최대 2개까지 얻습니다. <br>아군을 상대로 체력을 회복시키거나 보호막을 씌우면 모든 <passive>영혼 파편</passive>을 소모하여 <healing>체력</healing>을 회복하고 가장 가까운 적 챔피언에게 파편 하나당 <magicDamage>마법 피해</magicDamage>를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "체력이 낮은 적에게 피해를 입히면 저주를 내려 폭발을 일으킵니다. 폭발에 닿은 주변 적들은 피해를 입고 둔화됩니다.",
             "from": [
                 "3067",
                 "4642"
             ],
-            "into": [
-                "7033"
-            ],
             "image": {
                 "full": "6620.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 192,
-                "y": 432,
+                "x": 0,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 400,
+                "base": 500,
                 "purchasable": true,
                 "total": 2200,
                 "sell": 1540
@@ -21055,17 +20644,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 200,
-                "FlatMagicDamageMod": 40
+                "FlatMagicDamageMod": 35
             },
             "depth": 3
         },
         "6621": {
             "name": "새벽심장",
-            "description": "<mainText><stats>주문력 <attention>60</attention><br>체력 회복 및 보호막 <attention>16%</attention><br>기본 마나 재생 <attention>100%</attention></stats><br><br><passive>태초의 빛</passive><br>기본 마나 재생 100%당 <healing>체력 회복 및 보호막 효과가 2%</healing>, <scaleAP>주문력이 10</scaleAP> 증가합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>45</attention><br>체력 회복 및 보호막 <attention>16%</attention><br>기본 마나 재생 <attention>100%</attention></stats><br><br><passive>태초의 빛</passive><br>기본 마나 재생 100%당 <healing>체력 회복 및 보호막 효과가 2%</healing>, <scaleAP>주문력이 10</scaleAP> 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -21073,23 +20663,20 @@ export const item = {
                 "3114",
                 "3114"
             ],
-            "into": [
-                "7035"
-            ],
             "image": {
                 "full": "6621.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 240,
-                "y": 432,
+                "x": 48,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 250,
+                "base": 450,
                 "purchasable": true,
-                "total": 2700,
-                "sell": 1890
+                "total": 2500,
+                "sell": 1750
             },
             "tags": [
                 "SpellDamage",
@@ -21100,16 +20687,17 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatMagicDamageMod": 60
+                "FlatMagicDamageMod": 45
             },
             "depth": 3
         },
         "6630": {
             "name": "선혈포식자",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>체력 <attention>400</attention><br>스킬 가속 <attention>20</attention><br>모든 피해 흡혈 <attention>8%</attention></stats><br><br><br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 체력 및 스킬 가속<br><br><active>사용 시 -</active> <active>갈망의 가르기:</active> 주변 적에게 피해를 입힙니다. 챔피언을 맞힐 때마다 체력을 회복합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>55</attention><br>체력 <attention>400</attention><br>스킬 가속 <attention>20</attention><br>모든 피해 흡혈 <attention>8%</attention></stats><br><br><br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 <attention>체력 75</attention> 및 <attention>스킬 가속 3</attention><br><br><active>사용 시 -</active> <active>갈망의 가르기:</active> 주변 적에게 피해를 입힙니다. 챔피언을 맞힐 때마다 체력을 회복합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -21118,15 +20706,12 @@ export const item = {
                 "3067"
             ],
             "inStore": false,
-            "into": [
-                "7015"
-            ],
             "image": {
                 "full": "6630.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 288,
-                "y": 432,
+                "x": 96,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -21150,7 +20735,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 400,
@@ -21160,7 +20746,7 @@ export const item = {
         },
         "6631": {
             "name": "발걸음 분쇄기",
-            "description": "<mainText><stats>공격력 <attention>50</attention><br>공격 속도 <attention>30%</attention><br>체력 <attention>450</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 주변 적들에게 물리 피해를 입힙니다.<br><br><passive>담금질</passive><br><physicalDamage>물리 피해</physicalDamage>를 입히면 이동 속도가 상승합니다.<br><br><active>활성화</active><br><active>파괴의 충격파</active><br>물리 피해를 입히며 주변 적을 <status>둔화</status>시키고 챔피언 하나당 이동 속도를 얻습니다. 스킬을 시전하는 동안 이동할 수 있습니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>40</attention><br>공격 속도 <attention>25%</attention><br>체력 <attention>450</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 주변 적들에게 <physicalDamage>물리 피해</physicalDamage>를 입힙니다.<active>파괴의 충격파</active> (0초)<br><physicalDamage>물리 피해</physicalDamage>를 입히고 주변 적을 35% <status>둔화</status>시킵니다.<br>적중한 챔피언 하나당 3초 동안 <speed>이동 속도가 35% 증가했다가 점차 감소</speed>합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -21168,20 +20754,17 @@ export const item = {
                 "3044",
                 "1042"
             ],
-            "into": [
-                "7016"
-            ],
             "image": {
                 "full": "6631.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 336,
-                "y": 432,
+                "x": 144,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 700,
+                "base": 750,
                 "purchasable": true,
                 "total": 3300,
                 "sell": 2310
@@ -21198,18 +20781,19 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 450,
-                "FlatPhysicalDamageMod": 50,
-                "PercentAttackSpeedMod": 0.3
+                "FlatPhysicalDamageMod": 40,
+                "PercentAttackSpeedMod": 0.25
             },
             "depth": 3
         },
         "6632": {
             "name": "신성한 파괴자",
-            "description": "<mainText><stats>공격력 <attention>40</attention><br>체력 <attention>300</attention><br>스킬 가속 <attention>20</attention></stats><br><br><li><passive>주문 검:</passive> 스킬을 사용하고 나면 다음 기본 공격 시 추가 피해(<OnHit>적중 시</OnHit> )를 입힙니다. 대상이 챔피언일 경우 체력을 회복합니다.<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 방어구 관통력 및 마법 관통력.<br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>40</attention><br>체력 <attention>300</attention><br>스킬 가속 <attention>20</attention></stats><br><br><br><li><passive>주문 검:</passive> 스킬을 사용하고 나면 다음 기본 공격 시 <physicalDamage>대상 최대 체력의 0+{{ Item_Melee_Ranged_Split_B }}에 해당하는 물리 피해</physicalDamage>를 추가로 입힙니다. {{ Item_Cooldown }} 대상이 챔피언일 경우 <healing>감소 전 피해량의 55%</healing>만큼 체력을 회복합니다.<br><br>{{ Item_Mythic_Passive }} 방어구 관통력 <attention>3%</attention> 및 마법 관통력 <attention>3%</attention><br><br><rules><passive>주문 검</passive>은 유닛에게 최소 0의 피해를 입히고 몬스터에게는 최대 0의 피해를 입힙니다. {{ Item_Melee_Ranged_Rules }}</rules></mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -21218,23 +20802,20 @@ export const item = {
                 "3067"
             ],
             "inStore": false,
-            "into": [
-                "7017"
-            ],
             "image": {
                 "full": "6632.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 384,
-                "y": 432,
+                "x": 192,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 700,
                 "purchasable": false,
-                "total": 3500,
-                "sell": 2450
+                "total": 3450,
+                "sell": 2415
             },
             "tags": [
                 "Health",
@@ -21250,7 +20831,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300,
@@ -21260,22 +20842,19 @@ export const item = {
         },
         "6653": {
             "name": "리안드리의 고통",
-            "description": "<mainText><stats>주문력 <attention>90</attention><br>체력 <attention>300</attention></stats><br><br><passive>고통</passive><br>스킬로 피해를 입히면 적을 불태웁니다.<br><br><passive>고난</passive><br>적 챔피언과 전투 중 매초 추가 피해를 입힙니다. </mainText>",
+            "description": "<mainText><stats>주문력 <attention>70</attention><br>체력 <attention>300</attention></stats><br><br><passive>고통</passive><br>스킬 공격이 적을 불태워 3초 동안 매초 <magicDamage>최대 체력의 2%에 해당하는 마법 피해</magicDamage>를 입힙니다.<br><br><passive>고난</passive><br>적 챔피언과 전투 중 매초 2%의 추가 피해를 입힙니다. (최대 6%)</mainText>",
             "colloq": "",
             "plaintext": "전투 중 충전하여 큰 지속 피해를 입힙니다. 유지력이 강한 적에게 효과적입니다.",
             "from": [
                 "3147",
                 "2508"
             ],
-            "into": [
-                "7012"
-            ],
             "image": {
                 "full": "6653.png",
                 "sprite": "item4.png",
                 "group": "item",
-                "x": 432,
-                "y": 432,
+                "x": 240,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -21294,40 +20873,38 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300,
-                "FlatMagicDamageMod": 90
+                "FlatMagicDamageMod": 70
             },
             "depth": 3
         },
         "6655": {
             "name": "루덴의 동반자",
-            "description": "<mainText><stats>주문력 <attention>95</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>발사</passive><br>스킬로 적에게 피해를 입히면 모든 충전 중첩을 소모하여, 소모한 충전 하나당 대상과 주변 다른 대상 한 명에게 추가 마법 피해를 입힙니다. 사거리 안에 다른 대상이 없을 경우 첫 번째 대상에게 남은 사격 충전 중첩만큼 피해를 반복해서 입힙니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>100</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>발사</passive> (0초)<br>스킬로 적에게 피해를 입히면 총알을 6발 발사하여 대상과 주변 적에게 <magicDamage>추가 마법 피해</magicDamage>를 입힙니다. 첫 번째 대상에게 남은 발을 발사하여 50%의 피해를 입힙니다.<br></mainText>",
             "colloq": "",
             "plaintext": "폭발적인 피해를 입힙니다. 유지력이 약한 적에게 효과적입니다.",
             "from": [
                 "3802",
                 "3145"
             ],
-            "into": [
-                "7013"
-            ],
             "image": {
                 "full": "6655.png",
-                "sprite": "item5.png",
+                "sprite": "item4.png",
                 "group": "item",
-                "x": 0,
-                "y": 0,
+                "x": 288,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 600,
+                "base": 550,
                 "purchasable": true,
-                "total": 2900,
-                "sell": 2030
+                "total": 2850,
+                "sell": 1995
             },
             "tags": [
                 "SpellDamage",
@@ -21340,17 +20917,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 600,
-                "FlatMagicDamageMod": 95
+                "FlatMagicDamageMod": 100
             },
             "depth": 3
         },
         "6656": {
             "name": "만년서리",
-            "description": "<mainText><stats>주문력 <attention>70</attention><br>체력 <attention>250</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>20</attention></stats><br><br><br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 주문력. <br><br><br><active>사용 시 -</active> <active>빙결:</active> 원뿔 범위 내의 적들에게 피해를 입히고 맞은 적들을 <status>둔화</status>시킵니다. 범위 중앙의 적들은 <status>속박</status>됩니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>70</attention><br>체력 <attention>250</attention><br>마나 <attention>600</attention><br>스킬 가속 <attention>20</attention></stats><br><br><br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 주문력 <attention>10</attention> <br><br><br><active>사용 시 -</active> <active>빙결:</active> 원뿔 범위 내의 적들에게 피해를 입히고 맞은 적들을 <status>둔화</status>시킵니다. 범위 중앙의 적들은 <status>속박</status>됩니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -21359,15 +20937,12 @@ export const item = {
                 "1052"
             ],
             "inStore": false,
-            "into": [
-                "7014"
-            ],
             "image": {
                 "full": "6656.png",
-                "sprite": "item5.png",
+                "sprite": "item4.png",
                 "group": "item",
-                "x": 48,
-                "y": 0,
+                "x": 336,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -21391,7 +20966,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 600,
@@ -21402,22 +20978,19 @@ export const item = {
         },
         "6657": {
             "name": "영겁의 지팡이",
-            "description": "<mainText><stats>주문력 <attention>50</attention><br>체력 <attention>400</attention><br>마나 <attention>400</attention></stats><br><br><passive>불멸의 시간</passive><br>60초마다 체력, 마나, 주문력이 상승합니다. 최대 중첩에 도달하면 레벨이 오릅니다.<br><br><passive>영원</passive><br>챔피언에게 피해를 입으면 마나를 회복합니다. 스킬 사용 시 사용한 마나의 일부에 해당하는 체력을 회복합니다.</mainText>",
+            "description": "<mainText><stats>주문력 <attention>50</attention><br>체력 <attention>400</attention><br>마나 <attention>400</attention></stats><br><br><passive>불멸의 시간</passive><br>60초마다 <scaleHealth>체력 10</scaleHealth>, <scaleMana>마나 20</scaleMana>, <scaleAP>주문력 3</scaleAP>씩 상승합니다. 최대 10회까지 중첩됩니다. 최대 중첩에 도달하면 레벨이 오릅니다.<br><br><passive>영원</passive><br>챔피언에게 피해를 입으면 피해량의 <scaleMana>7%</scaleMana>를 <scaleMana>마나</scaleMana>로 회복합니다. <br>스킬 사용 시 사용한 마나의 <healing>25%만큼 체력을 회복</healing>합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
                 "1026",
                 "3803"
             ],
-            "into": [
-                "7028"
-            ],
             "image": {
                 "full": "6657.png",
-                "sprite": "item5.png",
+                "sprite": "item4.png",
                 "group": "item",
-                "x": 96,
-                "y": 0,
+                "x": 384,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -21439,7 +21012,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatMPPoolMod": 400,
@@ -21450,7 +21024,7 @@ export const item = {
         },
         "6660": {
             "name": "바미의 불씨",
-            "description": "<mainText><stats>체력 <attention>200</attention><br>스킬 가속 <attention>5</attention></stats><br><br><passive>불사르기</passive><br>피해를 받거나 입히면 주변 적들에게 매초 마법 피해를 입힙니다. (미니언 및 정글 몬스터 대상 증가)</mainText>",
+            "description": "<mainText><stats>체력 <attention>150</attention><br>스킬 가속 <attention>5</attention></stats><br><br><passive>불사르기</passive><br>피해를 받거나 입으면 주변 적들에게 3초 동안 <magicDamage>마법 피해</magicDamage>를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -21463,10 +21037,10 @@ export const item = {
             ],
             "image": {
                 "full": "6660.png",
-                "sprite": "item5.png",
+                "sprite": "item4.png",
                 "group": "item",
-                "x": 144,
-                "y": 0,
+                "x": 432,
+                "y": 384,
                 "w": 48,
                 "h": 48
             },
@@ -21485,16 +21059,17 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatHPPoolMod": 200
+                "FlatHPPoolMod": 150
             },
             "depth": 2
         },
         "6662": {
             "name": "얼어붙은 건틀릿",
-            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>50</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>주문 검</passive><br>스킬을 사용하고 나면 다음 기본 공격 시 추가 피해를 입히고 2초 동안 서리 영역을 생성합니다. 서리 영역을 지나는 적들은 <status>둔화</status>됩니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>50</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>주문 검</passive> (0초)<br>스킬을 사용하고 나면 다음 기본 공격 시 <physicalDamage>추가 물리 피해</physicalDamage>(<OnHit>적중 시</OnHit> )를 입히고 <status>둔화</status>시키는 서리 영역을 2초 동안 생성합니다.</mainText>",
             "colloq": "",
             "plaintext": "마법 저항력이 크게 증가하며, 기본 지속 효과로 주변 적들을 둔화시킵니다. 주변에서 스킬이 사용되면 에너지 파동을 발산해 적들에게 피해를 입히고 둔화시킵니다.",
             "from": [
@@ -21502,23 +21077,20 @@ export const item = {
                 "1028",
                 "1031"
             ],
-            "into": [
-                "7005"
-            ],
             "image": {
                 "full": "6662.png",
-                "sprite": "item5.png",
+                "sprite": "item4.png",
                 "group": "item",
-                "x": 192,
-                "y": 0,
+                "x": 0,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 500,
+                "base": 800,
                 "purchasable": true,
-                "total": 2600,
-                "sell": 1820
+                "total": 2900,
+                "sell": 2030
             },
             "tags": [
                 "Health",
@@ -21533,7 +21105,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 300,
@@ -21543,7 +21116,7 @@ export const item = {
         },
         "6664": {
             "name": "공허한 광휘",
-            "description": "<mainText><stats>체력 <attention>450</attention><br>마법 저항력 <attention>40</attention><br>스킬 가속 <attention>10</attention><br>기본 체력 재생 <attention>100%</attention></stats><br><br><passive>불사르기</passive><br>피해를 받거나 입히면 주변 적들에게 마법 피해를 입힙니다.<br><br><passive>황폐</passive><br>적을 처치하면 주변에 마법 피해를 입힙니다.<br><br></mainText>",
+            "description": "<mainText><stats>체력 <attention>400</attention><br>마법 저항력 <attention>40</attention><br>스킬 가속 <attention>10</attention><br>기본 체력 재생 <attention>100%</attention></stats><br><br><passive>불사르기</passive><br>피해를 받거나 입히면 주변 적들에게 3초 동안 매초 <magicDamage>마법 피해</magicDamage>를 입힙니다. <br><br><passive>황폐</passive><br>적을 처치하면 주변에 <magicDamage>마법 피해</magicDamage>를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "적을 이동 불가 상태로 만들면 보호막을 얻습니다. 사용 시 적에게 접근할 때 이동 속도가 상승합니다.",
             "from": [
@@ -21552,10 +21125,10 @@ export const item = {
             ],
             "image": {
                 "full": "6664.png",
-                "sprite": "item5.png",
+                "sprite": "item4.png",
                 "group": "item",
-                "x": 240,
-                "y": 0,
+                "x": 48,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -21578,38 +21151,36 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 40,
-                "FlatHPPoolMod": 450
+                "FlatHPPoolMod": 400
             },
             "depth": 3
         },
         "6665": {
             "name": "해신 작쇼",
-            "description": "<mainText><stats>체력 <attention>300</attention><br>방어력 <attention>50</attention><br>마법 저항력 <attention>50</attention></stats><br><br><passive>공허 태생의 저항력</passive><br>챔피언과 전투를 벌이는 동안 강화되어 전투가 끝날 때까지 추가 <scaleArmor>방어력</scaleArmor> 및 <scaleMR>마법 저항력</scaleMR>이 증가합니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>350</attention><br>방어력 <attention>45</attention><br>마법 저항력 <attention>45</attention></stats><br><br><passive>공허 태생의 저항력</passive><br>챔피언과 5초 이상 전투를 벌이면 전투가 끝날 때까지 추가 <scaleArmor>방어력</scaleArmor> 및 <scaleMR>마법 저항력</scaleMR>이 30% 증가합니다.<br><br></mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
+                "1011",
                 "1031",
-                "1057",
-                "1028"
-            ],
-            "into": [
-                "7026"
+                "1057"
             ],
             "image": {
                 "full": "6665.png",
-                "sprite": "item5.png",
+                "sprite": "item4.png",
                 "group": "item",
-                "x": 288,
-                "y": 0,
+                "x": 96,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 1100,
+                "base": 650,
                 "purchasable": true,
                 "total": 3200,
                 "sell": 2240
@@ -21625,18 +21196,19 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatSpellBlockMod": 50,
-                "FlatHPPoolMod": 300,
-                "FlatArmorMod": 50
+                "FlatSpellBlockMod": 45,
+                "FlatHPPoolMod": 350,
+                "FlatArmorMod": 45
             },
             "depth": 3
         },
         "6667": {
             "name": "광휘의 미덕",
-            "description": "<mainText><stats>체력 <attention>350</attention><br>방어력 <attention>30</attention><br>마법 저항력 <attention>30</attention><br>스킬 가속 <attention>10</attention></stats><br><br><br><li><passive>인도하는 빛:</passive> 궁극기를 사용하면 초월하여 최대 체력이 증가합니다. 초월 상태에서 자신과 아군이 서서히 체력을 회복합니다.<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 체력</mainText>",
+            "description": "<mainText><stats>체력 <attention>350</attention><br>방어력 <attention>30</attention><br>마법 저항력 <attention>30</attention><br>스킬 가속 <attention>10</attention></stats><br><br><br><li><passive>인도하는 빛:</passive> 궁극기를 사용하면 초월하여 9초 동안 최대 체력이 12.5% 증가합니다. 초월 상태에서 1200의 사거리 내의 자신과 아군이 지속시간 동안 최대 체력의 10%만큼 회복합니다. (90(0초))<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 체력 <attention>75</attention>.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -21644,15 +21216,12 @@ export const item = {
                 "1011"
             ],
             "inStore": false,
-            "into": [
-                "7027"
-            ],
             "image": {
                 "full": "6667.png",
-                "sprite": "item5.png",
+                "sprite": "item4.png",
                 "group": "item",
-                "x": 336,
-                "y": 0,
+                "x": 144,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
@@ -21675,7 +21244,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatSpellBlockMod": 30,
@@ -21686,7 +21256,7 @@ export const item = {
         },
         "6670": {
             "name": "절정의 화살",
-            "description": "<mainText><stats>공격력 <attention>25</attention><br>치명타 확률 <attention>20%</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>15</attention><br>치명타 확률 <attention>20%</attention></stats><br><br></mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -21695,23 +21265,24 @@ export const item = {
             ],
             "into": [
                 "3032",
+                "3036",
                 "3095",
                 "6673"
             ],
             "image": {
                 "full": "6670.png",
-                "sprite": "item5.png",
+                "sprite": "item4.png",
                 "group": "item",
-                "x": 384,
-                "y": 0,
+                "x": 192,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 450,
+                "base": 350,
                 "purchasable": true,
-                "total": 1400,
-                "sell": 980
+                "total": 1300,
+                "sell": 910
             },
             "tags": [
                 "Damage",
@@ -21722,11 +21293,12 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.2,
-                "FlatPhysicalDamageMod": 25
+                "FlatPhysicalDamageMod": 15
             },
             "depth": 2
         },
@@ -21741,23 +21313,20 @@ export const item = {
                 "1036"
             ],
             "inStore": false,
-            "into": [
-                "7006"
-            ],
             "image": {
                 "full": "6671.png",
-                "sprite": "item5.png",
+                "sprite": "item4.png",
                 "group": "item",
-                "x": 432,
-                "y": 0,
+                "x": 240,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 650,
                 "purchasable": false,
-                "total": 3400,
-                "sell": 2380
+                "total": 3500,
+                "sell": 2450
             },
             "tags": [
                 "Damage",
@@ -21771,7 +21340,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.2,
@@ -21783,7 +21353,7 @@ export const item = {
         },
         "6672": {
             "name": "크라켄 학살자",
-            "description": "<mainText><stats>공격력 <attention>50</attention><br>공격 속도 <attention>40%</attention><br>이동 속도 <attention>7%</attention></stats><br><br><passive>벼락</passive><br>세 번째 기본 공격을 가할 때마다 적중 시 추가 물리 피해를 입힙니다. 같은 대상에게 반복해서 적중하면 입히는 피해량이 증가합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>45</attention><br>공격 속도 <attention>40%</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>벼락</passive><br>세 번째 기본 공격마다 <physicalDamage>추가 물리 피해</physicalDamage>(<OnHit>적중 시</OnHit> )를 입힙니다. 잃은 체력에 따라 피해량이 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -21791,20 +21361,17 @@ export const item = {
                 "3051",
                 "1043"
             ],
-            "into": [
-                "7041"
-            ],
             "image": {
                 "full": "6672.png",
-                "sprite": "item5.png",
+                "sprite": "item4.png",
                 "group": "item",
-                "x": 0,
-                "y": 48,
+                "x": 288,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 200,
+                "base": 425,
                 "purchasable": true,
                 "total": 3100,
                 "sell": 2170
@@ -21820,18 +21387,19 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatPhysicalDamageMod": 50,
+                "FlatPhysicalDamageMod": 45,
                 "PercentAttackSpeedMod": 0.4,
-                "PercentMovementSpeedMod": 0.07
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 3
         },
         "6673": {
             "name": "불멸의 철갑궁",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>생명선</passive><br>피해를 받아 체력이 일정량 아래가 될 경우 피해를 흡수하는 보호막을 얻습니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>55</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>생명선</passive> (0초)<br>체력이 30% 밑으로 떨어질 만큼 피해를 입으면 3초 동안 <shield>일정 피해를 흡수하는 보호막</shield>을 얻습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -21840,15 +21408,15 @@ export const item = {
             ],
             "image": {
                 "full": "6673.png",
-                "sprite": "item5.png",
+                "sprite": "item4.png",
                 "group": "item",
-                "x": 48,
-                "y": 48,
+                "x": 336,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 725,
+                "base": 825,
                 "purchasable": true,
                 "total": 3000,
                 "sell": 2100
@@ -21862,7 +21430,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
@@ -21872,7 +21441,7 @@ export const item = {
         },
         "6675": {
             "name": "나보리 명멸검",
-            "description": "<mainText><stats>공격 속도 <attention>40%</attention><br>치명타 확률 <attention>25%</attention><br>이동 속도 <attention>7%</attention></stats><br><br><passive>깨달음</passive><br>기본 공격 시 기본 스킬의 재사용 대기시간이 감소합니다.<br><br><passive>비영구</passive><br>스킬이 치명타 확률에 비례해 증가한 피해를 입힙니다. </mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>40%</attention><br>치명타 확률 <attention>25%</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>깨달음</passive><br>기본 공격 시 기본 스킬의 남은 재사용 대기시간이 <attention>15%</attention> 감소합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -21880,23 +21449,20 @@ export const item = {
                 "3086",
                 "1042"
             ],
-            "into": [
-                "7032"
-            ],
             "image": {
                 "full": "6675.png",
-                "sprite": "item5.png",
+                "sprite": "item4.png",
                 "group": "item",
-                "x": 96,
-                "y": 48,
+                "x": 384,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 900,
+                "base": 950,
                 "purchasable": true,
-                "total": 2600,
-                "sell": 1820
+                "total": 2650,
+                "sell": 1855
             },
             "tags": [
                 "CriticalStrike",
@@ -21908,12 +21474,13 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
                 "PercentAttackSpeedMod": 0.4,
-                "PercentMovementSpeedMod": 0.07
+                "PercentMovementSpeedMod": 0.04
             },
             "effect": {
                 "Effect1Amount": "0.5",
@@ -21924,7 +21491,7 @@ export const item = {
         },
         "6676": {
             "name": "징수의 총",
-            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <attention>15</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>죽음</passive><br>체력이 5% 미만인 챔피언에게 피해를 입힐 경우 처형합니다.<br><br><passive>세금</passive><br>챔피언 처치 시 추가로 <gold>25골드</gold>를 얻습니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <attention>10</attention><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>죽음</passive><br>체력이 5% 미만인 챔피언에게 피해를 입힐 경우 처형합니다.<br><br><passive>세금</passive><br>챔피언 처치 시 <gold>추가로 25골드</gold>를 획득합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -21934,18 +21501,18 @@ export const item = {
             ],
             "image": {
                 "full": "6676.png",
-                "sprite": "item5.png",
+                "sprite": "item4.png",
                 "group": "item",
-                "x": 144,
-                "y": 48,
+                "x": 432,
+                "y": 432,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 300,
+                "base": 500,
                 "purchasable": true,
-                "total": 3200,
-                "sell": 2240
+                "total": 3400,
+                "sell": 2380
             },
             "tags": [
                 "Damage",
@@ -21957,7 +21524,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatCritChanceMod": 0.25,
@@ -21967,7 +21535,7 @@ export const item = {
         },
         "6677": {
             "name": "분노의 칼",
-            "description": "<mainText><stats>공격 속도 <attention>25%</attention></stats><br><br><br><li><passive>분노:</passive> 기본 공격 시 <magicDamage>20의 마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.<li><passive>들끓는 일격:</passive> 기본 공격 시 <attackSpeed>공격 속도가 5%</attackSpeed> 증가합니다. 해당 효과는 3번까지 중첩됩니다.</mainText>",
+            "description": "<mainText><stats>공격 속도 <attention>25%</attention></stats><br><br><br><li><passive>분노:</passive> 기본 공격 시 <magicDamage>20의 마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.<li><passive>들끓는 일격:</passive> 기본 공격 시 <attackSpeed>공격 속도가 5%</attackSpeed> 증가합니다. 해당 효과는 3번까지 중첩되어 최대 <attackSpeed>공격 속도가 0</attackSpeed>까지 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -21979,16 +21547,16 @@ export const item = {
                 "full": "6677.png",
                 "sprite": "item5.png",
                 "group": "item",
-                "x": 192,
-                "y": 48,
+                "x": 0,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 600,
                 "purchasable": false,
-                "total": 1200,
-                "sell": 840
+                "total": 1100,
+                "sell": 770
             },
             "tags": [
                 "AttackSpeed",
@@ -21999,7 +21567,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "PercentAttackSpeedMod": 0.25
@@ -22008,7 +21577,7 @@ export const item = {
         },
         "6690": {
             "name": "꽁지깃",
-            "description": "<mainText><stats>공격력 <attention>20</attention><br>이동 속도 <attention>4%</attention></stats><br><br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>15</attention><br>이동 속도 <attention>4%</attention></stats><br><br></mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -22019,22 +21588,22 @@ export const item = {
                 "6700",
                 "6672",
                 "3142",
-                "3181"
+                "3087"
             ],
             "image": {
                 "full": "6690.png",
                 "sprite": "item5.png",
                 "group": "item",
-                "x": 240,
-                "y": 48,
+                "x": 48,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 550,
+                "base": 425,
                 "purchasable": true,
-                "total": 900,
-                "sell": 630
+                "total": 775,
+                "sell": 543
             },
             "tags": [
                 "Damage",
@@ -22045,17 +21614,18 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatPhysicalDamageMod": 20,
+                "FlatPhysicalDamageMod": 15,
                 "PercentMovementSpeedMod": 0.04
             },
             "depth": 2
         },
         "6691": {
             "name": "드락사르의 황혼검",
-            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>15</attention></stats><br><br><br><li><passive>밤의 추적자:</passive> 대상이 잃은 체력에 비례해 스킬 피해량이 최대 일정 비율까지 증가합니다. 자신이 피해를 입힌 챔피언이 3초 안에 죽으면 1.5초 동안 구조물이 아닌 대상으로부터 <keywordStealth>대상으로 지정할 수 없는 상태</keywordStealth>가 됩니다. (30(0초))<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 스킬 가속 및 이동 속도.<br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>15</attention></stats><br><br><br><li><passive>밤의 추적자:</passive> 대상이 잃은 체력에 비례해 스킬 피해량이 최대 16%까지 증가합니다. 자신이 피해를 입힌 챔피언이 3초 안에 죽으면 1.5초 동안 구조물이 아닌 대상으로부터 <keywordStealth>대상으로 지정할 수 없는 상태</keywordStealth>가 됩니다. 이 효과는 자신의 다음 행동까지 유지됩니다. (30(0초))<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 스킬 가속 <attention>5</attention> 및 이동 속도 <attention>5</attention><br></mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -22063,23 +21633,20 @@ export const item = {
                 "3133"
             ],
             "inStore": false,
-            "into": [
-                "7002"
-            ],
             "image": {
                 "full": "6691.png",
                 "sprite": "item5.png",
                 "group": "item",
-                "x": 288,
-                "y": 48,
+                "x": 96,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 900,
                 "purchasable": false,
-                "total": 3000,
-                "sell": 2100
+                "total": 2950,
+                "sell": 2065
             },
             "tags": [
                 "Damage",
@@ -22095,7 +21662,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 60
@@ -22104,7 +21672,7 @@ export const item = {
         },
         "6692": {
             "name": "월식",
-            "description": "<mainText><stats>공격력 <attention>70</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>늘 떠오르는 달</passive> <br>2초 내에 한 챔피언에게 별개의 기본 공격이나 스킬로 3회 공격하면 피해를 추가로 입히고 일정 피해를 흡수하는 보호막을 얻습니다.<br><br></mainText>",
+            "description": "<mainText><stats>공격력 <attention>60</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>늘 떠오르는 달</passive> (0초)<br>2초 내에 한 챔피언에게 별개의 기본 공격이나 스킬로 2회 공격하면 2초 동안 <shield>일정 피해를 흡수하는 보호막</shield>을 얻습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -22112,23 +21680,20 @@ export const item = {
                 "1037",
                 "1036"
             ],
-            "into": [
-                "7001"
-            ],
             "image": {
                 "full": "6692.png",
                 "sprite": "item5.png",
                 "group": "item",
-                "x": 336,
-                "y": 48,
+                "x": 144,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 475,
+                "base": 625,
                 "purchasable": true,
-                "total": 2800,
-                "sell": 1960
+                "total": 2900,
+                "sell": 2030
             },
             "tags": [
                 "Damage",
@@ -22140,16 +21705,17 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatPhysicalDamageMod": 70
+                "FlatPhysicalDamageMod": 60
             },
             "depth": 3
         },
         "6693": {
             "name": "자객의 발톱",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>물리 관통력 <attention>22</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>명성</passive><br>자신이 피해를 입힌 챔피언이 죽으면 공격력을 얻습니다.<br><br><passive>자존심</passive><br>챔피언 처치 시 자신을 본뜬 조각상을 생성합니다. 이미 조각상이 있으면 조각상을 업그레이드합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>55</attention><br>물리 관통력 <attention>22</attention><br>스킬 가속 <attention>15</attention></stats><br><br><br><li><passive>매복 포식자:</passive> 수풀에 진입한 후 적 챔피언에게 다음 기본 공격이나 스킬 사용 시 4초에 걸쳐 <physicalDamage>현재 대상 체력의 10%</physicalDamage>에 해당하는 피해를 입히고 위치를 드러냅니다. 또한 지속시간 동안 대상의 시야 반경이 줄어듭니다. (5(0초))</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -22157,23 +21723,20 @@ export const item = {
                 "3133"
             ],
             "inStore": false,
-            "into": [
-                "7000"
-            ],
             "image": {
                 "full": "6693.png",
                 "sprite": "item5.png",
                 "group": "item",
-                "x": 384,
-                "y": 48,
+                "x": 192,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 800,
                 "purchasable": false,
-                "total": 2900,
-                "sell": 2030
+                "total": 2850,
+                "sell": 1995
             },
             "tags": [
                 "Damage",
@@ -22186,7 +21749,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 55
@@ -22195,27 +21759,27 @@ export const item = {
         },
         "6694": {
             "name": "세릴다의 원한",
-            "description": "<mainText><stats>공격력 <attention>45</attention><br>물리 관통력 <attention>15</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>적개심</passive><br>0의 방어구 관통력을 얻습니다.<br><br><passive>매서운 추위</passive><br>스킬로 체력이 50% 이하인 적에게 피해를 입히면 1초 동안 30% <status>둔화</status>시킵니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>45</attention><br>방어구 관통력 <attention>30%</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>매서운 추위</passive><br>스킬로 체력이 50% 아래인 적에게 피해를 입히면 1초 동안 30% <status>둔화</status>시킵니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
-                "2020",
+                "3133",
                 "3035"
             ],
             "image": {
                 "full": "6694.png",
                 "sprite": "item5.png",
                 "group": "item",
-                "x": 432,
-                "y": 48,
+                "x": 240,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 413,
+                "base": 500,
                 "purchasable": true,
-                "total": 3200,
-                "sell": 2240
+                "total": 3000,
+                "sell": 2100
             },
             "tags": [
                 "Damage",
@@ -22228,7 +21792,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 45
@@ -22237,7 +21802,7 @@ export const item = {
         },
         "6695": {
             "name": "독사의 송곳니",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>물리 관통력 <attention>15</attention></stats><br><br><passive>보호막 파괴자</passive><br>적 챔피언에게 피해를 입히면 받는 보호막의 효과를 감소시킵니다. 보호막 파괴자에 영향을 받지 않은 적에게 피해를 입히면 보호막을 모두 감소시킵니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>55</attention><br>물리 관통력 <attention>15</attention></stats><br><br><passive>보호막 파괴자</passive><br>적 챔피언에게 피해를 입히면 3초 동안 대상이 받는 보호막의 효과를 0% 감소시킵니다. <br><passive>보호막 파괴자</passive>에 영향을 받지 않은 대상에게 피해를 입히면 보호막의 효과를 0% 감소시킵니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -22248,8 +21813,8 @@ export const item = {
                 "full": "6695.png",
                 "sprite": "item5.png",
                 "group": "item",
-                "x": 0,
-                "y": 96,
+                "x": 288,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
@@ -22268,7 +21833,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 55
@@ -22277,7 +21843,7 @@ export const item = {
         },
         "6696": {
             "name": "원칙의 원형낫",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>25</attention></stats><br><br><passive>흐름</passive><br>피해를 입힌 챔피언이 3초 내에 처치되면 궁극기 총 재사용 대기시간의 일부를 돌려받습니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>55</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>전이 표식</passive><br>자신이 피해를 입힌 챔피언이 3초 안에 죽으면 궁극기 총 재사용 대기시간의 일부를 돌려받습니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -22288,13 +21854,13 @@ export const item = {
                 "full": "6696.png",
                 "sprite": "item5.png",
                 "group": "item",
-                "x": 48,
-                "y": 96,
+                "x": 336,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 563,
+                "base": 613,
                 "purchasable": true,
                 "total": 3000,
                 "sell": 2100
@@ -22309,7 +21875,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 55
@@ -22318,27 +21885,24 @@ export const item = {
         },
         "6697": {
             "name": "오만",
-            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>명성</passive><br>처치 시 챔피언 처치에 비례해 일시 공격력을 얻습니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>명성</passive><br>자신이 피해를 입힌 챔피언이 3초 안에 죽으면 90초 동안 <physicalDamage>15+처치한 챔피언 하나당 2의 공격력</physicalDamage>이 증가합니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
                 "3134",
                 "3133"
             ],
-            "into": [
-                "7008"
-            ],
             "image": {
                 "full": "6697.png",
                 "sprite": "item5.png",
                 "group": "item",
-                "x": 96,
-                "y": 96,
+                "x": 384,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 900,
+                "base": 950,
                 "purchasable": true,
                 "total": 3000,
                 "sell": 2100
@@ -22355,7 +21919,8 @@ export const item = {
                 "12": false,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 60
@@ -22364,7 +21929,7 @@ export const item = {
         },
         "6698": {
             "name": "불경한 히드라",
-            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>20</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 추가 피해(<OnHit>적중 시</OnHit> )를 입히고, 충격파를 발산해 대상 뒤의 적들에게 피해를 입힙니다.<br><br><active>활성화</active><br><active>이단의 가르기</active><br>주변 적들에게 물리 피해를 입힙니다. 체력이 낮은 적에게는 피해량이 증가합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>60</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 주변 적들에게 <physicalDamage>물리 피해</physicalDamage>를 입힙니다.<active>이단의 가르기</active> (0초)<br>주변에 <physicalDamage>물리 피해</physicalDamage>를 입힙니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -22375,16 +21940,16 @@ export const item = {
                 "full": "6698.png",
                 "sprite": "item5.png",
                 "group": "item",
-                "x": 144,
-                "y": 96,
+                "x": 432,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 763,
+                "base": 663,
                 "purchasable": true,
-                "total": 3300,
-                "sell": 2310
+                "total": 3200,
+                "sell": 2240
             },
             "tags": [
                 "Damage",
@@ -22398,7 +21963,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 60
@@ -22407,7 +21973,7 @@ export const item = {
         },
         "6699": {
             "name": "벼락폭풍검",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>전류 자극</passive><br>돌진 및 은신이 충전 상태 중첩을 더 빨리 쌓이게 합니다.<br><br><passive>창공</passive><br>충전 상태로 공격 시 적에게 추가 물리 피해를 입히고 둔화시킵니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>55</attention><br>물리 관통력 <attention>18</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>전류 자극</passive><br>돌진 및 은신이 <keyword>충전 상태</keyword> 중첩을 75% 더 빨리 쌓이게 합니다.<br><br><passive>창공</passive><br><keyword>충전 상태로 공격</keyword> 시 적에게 <physicalDamage>추가 물리 피해</physicalDamage>를 입히고 0.75초 동안 <keyword>둔화</keyword>시킵니다.</mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -22415,23 +21981,20 @@ export const item = {
                 "1036",
                 "1036"
             ],
-            "into": [
-                "7007"
-            ],
             "image": {
                 "full": "6699.png",
                 "sprite": "item5.png",
                 "group": "item",
-                "x": 192,
-                "y": 96,
+                "x": 0,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 863,
+                "base": 963,
                 "purchasable": true,
-                "total": 2900,
-                "sell": 2030
+                "total": 3000,
+                "sell": 2100
             },
             "tags": [
                 "Damage",
@@ -22445,7 +22008,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatPhysicalDamageMod": 55
@@ -22466,16 +22030,16 @@ export const item = {
                 "full": "6700.png",
                 "sprite": "item5.png",
                 "group": "item",
-                "x": 240,
-                "y": 96,
+                "x": 48,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
             "gold": {
                 "base": 800,
                 "purchasable": false,
-                "total": 2800,
-                "sell": 1960
+                "total": 2675,
+                "sell": 1873
             },
             "tags": [
                 "Armor",
@@ -22490,7 +22054,8 @@ export const item = {
                 "12": false,
                 "21": false,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatArmorMod": 30,
@@ -22501,27 +22066,24 @@ export const item = {
         },
         "6701": {
             "name": "기회",
-            "description": "<mainText><stats>공격력 <attention>55</attention><br>물리 관통력 <attention>18</attention><br>이동 속도 <attention>5%</attention></stats><br><br><passive>명성</passive><br>자신이 피해를 입힌 챔피언이 죽으면 공격력을 얻습니다.<br><br><passive>자존심</passive><br>챔피언 처치 시 자신을 본뜬 조각상을 생성합니다. 이미 조각상이 있으면 조각상을 업그레이드합니다.</mainText>",
+            "description": "<mainText><stats>공격력 <attention>50</attention><br>물리 관통력 <attention>15</attention><br>이동 속도 <attention>4%</attention></stats><br><br><passive>준비</passive><br>8초 동안 챔피언과 전투를 벌이지 않으면 <scaleLethality>물리 관통력</scaleLethality>이 증가합니다. 이 물리 관통력 증가 효과는 챔피언에게 피해를 입힐 경우 3초 후에 사라집니다.<br><br><passive>탈출</passive><br>자신이 피해를 입힌 챔피언이 3초 안에 죽으면 1.5초 동안 <speed>이동 속도가 200 증가했다가 점차 감소</speed>합니다.<br></mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
                 "3134",
                 "6690"
             ],
-            "into": [
-                "7022"
-            ],
             "image": {
                 "full": "6701.png",
                 "sprite": "item5.png",
                 "group": "item",
-                "x": 288,
-                "y": 96,
+                "x": 96,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 800,
+                "base": 925,
                 "purchasable": true,
                 "total": 2700,
                 "sell": 1890
@@ -22537,1953 +22099,14 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatPhysicalDamageMod": 55,
-                "PercentMovementSpeedMod": 0.05
+                "FlatPhysicalDamageMod": 50,
+                "PercentMovementSpeedMod": 0.04
             },
             "depth": 3
-        },
-        "7000": {
-            "name": "암살자의 발톱",
-            "description": "<mainText><stats>공격력 <ornnBonus>75</ornnBonus><br>물리 관통력 <ornnBonus>26</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><passive>명성</passive><br>자신이 피해를 입힌 챔피언이 죽으면 공격력을 얻습니다.<br><br><passive>자존심</passive><br>챔피언 처치 시 자신을 본뜬 조각상을 생성합니다. 이미 조각상이 있으면 조각상을 업그레이드합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6693"
-            ],
-            "inStore": false,
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7000.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 336,
-                "y": 96,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2900,
-                "sell": 2030
-            },
-            "tags": [
-                "Damage",
-                "CooldownReduction",
-                "ArmorPenetration",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatPhysicalDamageMod": 75
-            },
-            "depth": 4
-        },
-        "7001": {
-            "name": "천체 정렬",
-            "description": "",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6692"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7001.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 384,
-                "y": 96,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 2800,
-                "sell": 1960
-            },
-            "tags": [
-                "Damage",
-                "CooldownReduction",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatPhysicalDamageMod": 90
-            },
-            "depth": 4
-        },
-        "7002": {
-            "name": "드락사르의 암흑검",
-            "description": "<mainText><stats>공격력 <ornnBonus>75</ornnBonus><br>물리 관통력 <ornnBonus>26</ornnBonus><br>스킬 가속 <ornnBonus>20</ornnBonus></stats><br><br><br><li><passive>밤의 추적자:</passive> 대상이 잃은 체력에 비례해 스킬 피해량이 최대 일정 비율까지 증가합니다. 자신이 피해를 입힌 챔피언이 3초 안에 죽으면 1.5초 동안 구조물이 아닌 대상으로부터 <keywordStealth>대상으로 지정할 수 없는 상태</keywordStealth>가 됩니다. (30(0초))<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 스킬 가속 및 이동 속도.<br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6691"
-            ],
-            "inStore": false,
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7002.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 432,
-                "y": 96,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "Damage",
-                "Stealth",
-                "CooldownReduction",
-                "Slow",
-                "NonbootsMovement",
-                "ArmorPenetration",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatPhysicalDamageMod": 75
-            },
-            "depth": 4
-        },
-        "7003": {
-            "name": "라바돈의 죽음왕관",
-            "description": "<mainText><stats>주문력 <ornnBonus>190</ornnBonus></stats><br><br><passive>신비한 작품</passive><br>총 <scaleAP>주문력이 35%</scaleAP> 증가합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "3089"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7003.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 0,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3600,
-                "sell": 2520
-            },
-            "tags": [
-                "SpellDamage"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMagicDamageMod": 190
-            },
-            "depth": 3
-        },
-        "7004": {
-            "name": "다수의 원한",
-            "description": "<mainText><stats>주문력 <ornnBonus>110</ornnBonus><br>마나 <ornnBonus>800</ornnBonus><br>스킬 가속 <ornnBonus>35</ornnBonus></stats><br><br><passive>경멸</passive><br>궁극기의 스킬 가속이 증가합니다.<br><br><passive>증오안개</passive><br>궁극기로 챔피언에게 피해를 입히면 대상 발밑의 지면을 불태워 피해를 입히고 마법 저항력을 감소시킵니다. <br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "3118"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7004.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 48,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 2700,
-                "sell": 1890
-            },
-            "tags": [
-                "SpellDamage",
-                "Mana",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMPPoolMod": 800,
-                "FlatMagicDamageMod": 110
-            },
-            "depth": 4
-        },
-        "7005": {
-            "name": "얼어붙은 주먹",
-            "description": "<mainText><stats>체력 <ornnBonus>400</ornnBonus><br>방어력 <ornnBonus>60</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><passive>주문 검</passive><br>스킬을 사용하고 나면 다음 기본 공격 시 추가 피해를 입히고 2초 동안 서리 영역을 생성합니다. 서리 영역을 지나는 적들은 <status>둔화</status>됩니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6662"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7005.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 96,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 2600,
-                "sell": 1820
-            },
-            "tags": [
-                "Health",
-                "Armor",
-                "CooldownReduction",
-                "Slow",
-                "OnHit",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 400,
-                "FlatArmorMod": 60
-            },
-            "depth": 4
-        },
-        "7006": {
-            "name": "태풍",
-            "description": "<mainText><stats>공격력 <ornnBonus>65</ornnBonus><br>공격 속도 <ornnBonus>30%</ornnBonus><br>치명타 확률 <attention>20%</attention><br>이동 속도 <ornnBonus>10%</ornnBonus></stats><br><br><br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 공격력 <attention>5</attention>.<br><br><rules>미사일의 최대 피해는 체력이 25% 이하인 적에게 적용됩니다.<br>폭우 돌진으로 지형은 통과할 수 없습니다.</rules><br><br><active>사용 시 -</active> <active>폭우:</active> 지정 방향으로 돌진하며 착지 지점 주변 체력이 가장 낮은 적에게 발사체 3개를 날려 물리 피해를 입힙니다. 체력이 낮을수록 피해량이 증가합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6671"
-            ],
-            "inStore": false,
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7006.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 144,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 3400,
-                "sell": 2380
-            },
-            "tags": [
-                "Damage",
-                "CriticalStrike",
-                "AttackSpeed",
-                "Active",
-                "NonbootsMovement"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatCritChanceMod": 0.2,
-                "FlatPhysicalDamageMod": 65,
-                "PercentAttackSpeedMod": 0.3,
-                "PercentMovementSpeedMod": 0.1
-            },
-            "depth": 4
-        },
-        "7007": {
-            "name": "선풍검",
-            "description": "<mainText><stats>공격력 <ornnBonus>70</ornnBonus><br>물리 관통력 <ornnBonus>27</ornnBonus><br>스킬 가속 <ornnBonus>20</ornnBonus></stats><br><br><passive>전류 자극</passive><br>돌진 및 은신이 충전 상태 중첩을 더 빨리 쌓이게 합니다.<br><br><passive>창공</passive><br>충전 상태로 공격 시 적에게 추가 물리 피해를 입히고 둔화시킵니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6699"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7007.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 192,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 2900,
-                "sell": 2030
-            },
-            "tags": [
-                "Damage",
-                "Active",
-                "CooldownReduction",
-                "ArmorPenetration",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatPhysicalDamageMod": 70
-            },
-            "depth": 4
-        },
-        "7008": {
-            "name": "영혼의 평정",
-            "description": "<mainText><stats>공격력 <ornnBonus>75</ornnBonus><br>물리 관통력 <ornnBonus>27</ornnBonus><br>스킬 가속 <ornnBonus>20</ornnBonus></stats><br><br><passive>명성</passive><br>자신이 피해를 입힌 챔피언이 죽으면 공격력을 얻습니다.<br><br><passive>자존심</passive><br>챔피언 처치 시 자신을 본뜬 조각상을 생성합니다. 이미 조각상이 있으면 조각상을 업그레이드합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6697"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7008.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 240,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "Damage",
-                "Active",
-                "CooldownReduction",
-                "ArmorPenetration",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatPhysicalDamageMod": 75
-            },
-            "depth": 4
-        },
-        "7009": {
-            "name": "이케시아의 저주",
-            "description": "<mainText><stats>주문력 <ornnBonus>90</ornnBonus><br>체력 <ornnBonus>450</ornnBonus><br>스킬 가속 <ornnBonus>20</ornnBonus></stats><br><br><passive>공허의 부패</passive><br>적 챔피언과 전투 중 매초 추가 피해를 입힙니다. 피해량이 최대가 되면 모든 피해 흡혈을 얻습니다.<br><br><passive>공허의 마력</passive><br>추가 체력의 일정 비율만큼 주문력이 상승합니다. </mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "4633"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7009.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 288,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3100,
-                "sell": 2170
-            },
-            "tags": [
-                "Health",
-                "SpellDamage",
-                "CooldownReduction",
-                "SpellVamp"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 450,
-                "FlatMagicDamageMod": 90
-            },
-            "depth": 4
-        },
-        "7010": {
-            "name": "어스름의 기원",
-            "description": "<mainText><stats>주문력 <ornnBonus>120</ornnBonus><br>체력 <ornnBonus>400</ornnBonus><br>스킬 가속 <ornnBonus>30</ornnBonus></stats><br><br><br><li><passive>영혼 찢기:</passive> 챔피언에게 기본 공격이나 스킬로 피해를 입히면 추가 마법 피해를 입히고 이동 속도가 상승합니다.<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 스킬 가속.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "4636"
-            ],
-            "inStore": false,
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7010.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 336,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2815,
-                "sell": 1971
-            },
-            "tags": [
-                "Health",
-                "SpellDamage",
-                "CooldownReduction",
-                "NonbootsMovement",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 400,
-                "FlatMagicDamageMod": 120
-            },
-            "depth": 4
-        },
-        "7011": {
-            "name": "업그레이드 비행팩",
-            "description": "<mainText><stats>주문력 <ornnBonus>95</ornnBonus><br>체력 <ornnBonus>450</ornnBonus><br>스킬 가속 <ornnBonus>20</ornnBonus></stats><br><br><active>활성화</active><br><active>초음속</active><br>지정 방향으로 돌진하며 부채꼴 모양으로 마법 피해를 입히는 마법 탄환을 발사합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "3152"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7011.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 384,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 2600,
-                "sell": 1820
-            },
-            "tags": [
-                "Health",
-                "SpellDamage",
-                "Active",
-                "CooldownReduction",
-                "NonbootsMovement",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 450,
-                "FlatMagicDamageMod": 95
-            },
-            "depth": 4
-        },
-        "7012": {
-            "name": "리안드리의 슬픔",
-            "description": "<mainText><stats>주문력 <ornnBonus>110</ornnBonus><br>체력 <ornnBonus>550</ornnBonus></stats><br><br><passive>고통</passive><br>스킬로 피해를 입히면 적을 불태웁니다.<br><br><passive>고난</passive><br>적 챔피언과 전투 중 매초 추가 피해를 입힙니다. </mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6653"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7012.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 432,
-                "y": 144,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "Health",
-                "SpellDamage"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 550,
-                "FlatMagicDamageMod": 110
-            },
-            "depth": 4
-        },
-        "7013": {
-            "name": "무기의 위력",
-            "description": "<mainText><stats>주문력 <ornnBonus>120</ornnBonus><br>마나 <ornnBonus>950</ornnBonus><br>스킬 가속 <ornnBonus>35</ornnBonus></stats><br><br><passive>발사</passive><br>스킬로 적에게 피해를 입히면 모든 충전 중첩을 소모하여, 소모한 충전 하나당 대상과 주변 다른 대상 한 명에게 추가 마법 피해를 입힙니다. 사거리 안에 다른 대상이 없을 경우 첫 번째 대상에게 남은 사격 충전 중첩만큼 피해를 반복해서 입힙니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6655"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7013.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 0,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 2900,
-                "sell": 2030
-            },
-            "tags": [
-                "SpellDamage",
-                "Mana",
-                "CooldownReduction",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMPPoolMod": 950,
-                "FlatMagicDamageMod": 120
-            },
-            "depth": 4
-        },
-        "7014": {
-            "name": "영원한 겨울",
-            "description": "<mainText><stats>주문력 <ornnBonus>90</ornnBonus><br>체력 <ornnBonus>350</ornnBonus><br>마나 <ornnBonus>800</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 주문력. <br><br><br><active>사용 시 -</active> <active>빙결:</active> 원뿔 범위 내의 적들에게 피해를 입히고 맞은 적들을 <status>둔화</status>시킵니다. 범위 중앙의 적들은 <status>속박</status>됩니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6656"
-            ],
-            "inStore": false,
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7014.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 48,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2865,
-                "sell": 2006
-            },
-            "tags": [
-                "Health",
-                "SpellDamage",
-                "Mana",
-                "Active",
-                "CooldownReduction",
-                "Slow",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMPPoolMod": 800,
-                "FlatHPPoolMod": 350,
-                "FlatMagicDamageMod": 90
-            },
-            "depth": 4
-        },
-        "7015": {
-            "name": "무한한 허기",
-            "description": "<mainText><stats>공격력 <ornnBonus>70</ornnBonus><br>체력 <ornnBonus>550</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus><br>모든 피해 흡혈 <ornnBonus>12%</ornnBonus></stats><br><br><br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 체력 및 스킬 가속<br><br><active>사용 시 -</active> <active>갈망의 가르기:</active> 주변 적에게 피해를 입힙니다. 챔피언을 맞힐 때마다 체력을 회복합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6630"
-            ],
-            "inStore": false,
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7015.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 96,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 3200,
-                "sell": 2240
-            },
-            "tags": [
-                "Health",
-                "Damage",
-                "LifeSteal",
-                "Active",
-                "CooldownReduction",
-                "SpellVamp",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 550,
-                "FlatPhysicalDamageMod": 70
-            },
-            "depth": 4
-        },
-        "7016": {
-            "name": "몽상파쇄자",
-            "description": "<mainText><stats>공격력 <ornnBonus>60</ornnBonus><br>공격 속도 <ornnBonus>40%</ornnBonus><br>체력 <ornnBonus>600</ornnBonus></stats><br><br><passive>쪼개기</passive><br>기본 공격 시 주변 적들에게 물리 피해를 입힙니다.<br><br><passive>담금질</passive><br><physicalDamage>물리 피해</physicalDamage>를 입히면 이동 속도가 상승합니다.<br><br><active>활성화</active><br><active>파괴의 충격파</active><br>물리 피해를 입히며 주변 적을 <status>둔화</status>시키고 챔피언 하나당 이동 속도를 얻습니다. 스킬을 시전하는 동안 이동할 수 있습니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6631"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7016.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 144,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3300,
-                "sell": 2310
-            },
-            "tags": [
-                "Health",
-                "Damage",
-                "AttackSpeed",
-                "Slow",
-                "NonbootsMovement"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 600,
-                "FlatPhysicalDamageMod": 60,
-                "PercentAttackSpeedMod": 0.4
-            },
-            "depth": 4
-        },
-        "7017": {
-            "name": "신성시해자",
-            "description": "<mainText><stats>공격력 <ornnBonus>60</ornnBonus><br>체력 <ornnBonus>450</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><li><passive>주문 검:</passive> 스킬을 사용하고 나면 다음 기본 공격 시 추가 피해(<OnHit>적중 시</OnHit> )를 입힙니다. 대상이 챔피언일 경우 체력을 회복합니다.<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 방어구 관통력 및 마법 관통력.<br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6632"
-            ],
-            "inStore": false,
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7017.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 192,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 3500,
-                "sell": 2450
-            },
-            "tags": [
-                "Health",
-                "Damage",
-                "CooldownReduction",
-                "OnHit",
-                "MagicPenetration",
-                "ArmorPenetration",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 450,
-                "FlatPhysicalDamageMod": 60
-            },
-            "depth": 4
-        },
-        "7018": {
-            "name": "무한한 삼위일체",
-            "description": "<mainText><stats>공격력 <ornnBonus>55</ornnBonus><br>공격 속도 <ornnBonus>43%</ornnBonus><br>체력 <ornnBonus>400</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><passive>주문 검</passive><br>스킬을 사용하고 나면 다음 기본 공격 시 추가 물리 피해를 입힙니다.<br><br><passive>가속</passive><br>기본 공격 시 이동 속도를 얻습니다.<br><br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "3078"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7018.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 240,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3333,
-                "sell": 2333
-            },
-            "tags": [
-                "Health",
-                "Damage",
-                "AttackSpeed",
-                "CooldownReduction",
-                "OnHit",
-                "NonbootsMovement",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 400,
-                "FlatPhysicalDamageMod": 55,
-                "PercentAttackSpeedMod": 0.43
-            },
-            "effect": {
-                "Effect1Amount": "25",
-                "Effect2Amount": "60",
-                "Effect3Amount": "2",
-                "Effect4Amount": "1.5",
-                "Effect5Amount": "1.5"
-            },
-            "depth": 4
-        },
-        "7019": {
-            "name": "황금 새벽의 유물함",
-            "description": "<mainText><stats>체력 <ornnBonus>350</ornnBonus><br>방어력 <ornnBonus>40</ornnBonus><br>마법 저항력 <ornnBonus>40</ornnBonus><br>스킬 가속 <ornnBonus>20</ornnBonus></stats><br><br><active>사용 시 -</active><active>헌신</active><br>주변 아군에게 <shield>보호막</shield>을 부여합니다. 보호막은 서서히 사라집니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "3190"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7019.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 288,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 2200,
-                "sell": 1540
-            },
-            "tags": [
-                "Health",
-                "SpellBlock",
-                "HealthRegen",
-                "Armor",
-                "Aura",
-                "Active"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatSpellBlockMod": 40,
-                "FlatHPPoolMod": 350,
-                "FlatArmorMod": 40
-            },
-            "depth": 4
-        },
-        "7020": {
-            "name": "슈렐리아의 진혼곡",
-            "description": "<mainText><stats>주문력 <ornnBonus>65</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus><br>이동 속도 <ornnBonus>7%</ornnBonus><br>기본 마나 재생 <ornnBonus>200%</ornnBonus></stats><br><br><br><br><active>활성화</active> (0초)<br><active>고무적인 연설</active><br>주변 아군들의 이동 속도가 상승합니다.<br><br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "2065"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7020.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 336,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 2200,
-                "sell": 1540
-            },
-            "tags": [
-                "SpellDamage",
-                "ManaRegen",
-                "Active",
-                "CooldownReduction",
-                "NonbootsMovement",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMagicDamageMod": 65,
-                "PercentMovementSpeedMod": 0.07
-            },
-            "depth": 4
-        },
-        "7021": {
-            "name": "성운 투척기",
-            "description": "<mainText><stats>주문력 <ornnBonus>50</ornnBonus><br>체력 <ornnBonus>300</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus><br>기본 마나 재생 <ornnBonus>200%</ornnBonus></stats><br><br><passive>별빛 은총</passive><br>아군을 상대로 체력을 회복시키거나 보호막을 씌우면 가장 가까이 있는 아군을 기존 수치에 비례하여 체력을 회복시키거나 피해를 흡수하는 보호막을 부여합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6617"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7021.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 384,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 2200,
-                "sell": 1540
-            },
-            "tags": [
-                "Health",
-                "SpellDamage",
-                "ManaRegen",
-                "CooldownReduction",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 300,
-                "FlatMagicDamageMod": 50
-            },
-            "depth": 4
-        },
-        "7022": {
-            "name": "확실성",
-            "description": "<mainText><stats>공격력 <ornnBonus>70</ornnBonus><br>물리 관통력 <ornnBonus>27</ornnBonus><br>이동 속도 <ornnBonus>8%</ornnBonus></stats><br><br><passive>명성</passive><br>자신이 피해를 입힌 챔피언이 죽으면 공격력을 얻습니다.<br><br><passive>자존심</passive><br>챔피언 처치 시 자신을 본뜬 조각상을 생성합니다. 이미 조각상이 있으면 조각상을 업그레이드합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6701"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7022.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 432,
-                "y": 192,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 2700,
-                "sell": 1890
-            },
-            "tags": [
-                "Damage",
-                "Active",
-                "CooldownReduction",
-                "ArmorPenetration",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatPhysicalDamageMod": 70,
-                "PercentMovementSpeedMod": 0.08
-            },
-            "depth": 4
-        },
-        "7023": {
-            "name": "별의 균형",
-            "description": "<mainText><stats>체력 <ornnBonus>400</ornnBonus><br>방어력 <ornnBonus>40</ornnBonus><br>마법 저항력 <ornnBonus>40</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><br><li><passive>광휘:</passive> 챔피언을 <status>이동 불가</status> 상태로 만들거나 자신이 <status>이동 불가</status> 상태가 되면 대상과 주변 적 챔피언들이 받는 피해가 증가합니다.<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 <attention> 방어력 및 마법 저항력</attention></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "3001"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "7023.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 0,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2300,
-                "sell": 1610
-            },
-            "tags": [
-                "Health",
-                "SpellBlock",
-                "Armor",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatSpellBlockMod": 40,
-                "FlatHPPoolMod": 400,
-                "FlatArmorMod": 40
-            },
-            "depth": 4
-        },
-        "7024": {
-            "name": "중단",
-            "description": "<mainText><stats>주문력 <ornnBonus>105</ornnBonus><br>체력 <ornnBonus>350</ornnBonus><br>마나 <ornnBonus>800</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><br><li><passive>보호:</passive> <keywordMajor>보호</keywordMajor>를 받아 챔피언으로부터 받는 피해가 감소합니다. <keywordMajor>보호</keywordMajor> 효과는 챔피언에게 피해를 받은 후 2.5초 동안 지속됩니다. <br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 이동 속도 및 주문력</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "4644"
-            ],
-            "inStore": false,
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7024.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 48,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2865,
-                "sell": 2006
-            },
-            "tags": [
-                "Health",
-                "SpellDamage",
-                "Mana",
-                "NonbootsMovement",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMPPoolMod": 800,
-                "FlatHPPoolMod": 350,
-                "FlatMagicDamageMod": 105
-            },
-            "depth": 4
-        },
-        "7025": {
-            "name": "레비아탄",
-            "description": "<mainText><stats>체력 <ornnBonus>1150</ornnBonus><br>기본 체력 재생 <ornnBonus>300%</ornnBonus></stats><br><br><passive>거인의 흡수</passive> 대상별: (0초)<br>주변에 있는 챔피언을 상대로 일정 시간 동안 강력한 공격을 충전합니다. 충전된 공격은 대상에 추가 물리 피해를 입히고 영구적으로 최대 체력을 부여합니다.<br><br><passive>거인</passive><br>최대 체력에 따라 크기가 증가합니다. </mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "3084"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7025.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 96,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "Health",
-                "HealthRegen"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 1150
-            },
-            "depth": 4
-        },
-        "7026": {
-            "name": "무언의 기생갑",
-            "description": "<mainText><stats>체력 <ornnBonus>550</ornnBonus><br>방어력 <ornnBonus>60</ornnBonus><br>마법 저항력 <ornnBonus>60</ornnBonus></stats><br><br><passive>공허 태생의 저항력</passive><br>챔피언과 전투를 벌이는 동안 강화되어 전투가 끝날 때까지 추가 <scaleArmor>방어력</scaleArmor> 및 <scaleMR>마법 저항력</scaleMR>이 증가합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6665"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7026.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 144,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3200,
-                "sell": 2240
-            },
-            "tags": [
-                "Health",
-                "SpellBlock",
-                "Armor",
-                "MagicResist"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatSpellBlockMod": 60,
-                "FlatHPPoolMod": 550,
-                "FlatArmorMod": 60
-            },
-            "depth": 4
-        },
-        "7027": {
-            "name": "태고의 새벽",
-            "description": "<mainText><stats>체력 <ornnBonus>500</ornnBonus><br>방어력 <ornnBonus>40</ornnBonus><br>마법 저항력 <ornnBonus>40</ornnBonus><br>스킬 가속 <ornnBonus>15</ornnBonus></stats><br><br><br><li><passive>인도하는 빛:</passive> 궁극기를 사용하면 초월하여 최대 체력이 증가합니다. 초월 상태에서 자신과 아군이 서서히 체력을 회복합니다.<br><br><rarityMythic>신화급 기본 지속 효과:</rarityMythic> 다른 모든 <rarityLegendary>전설급</rarityLegendary> 아이템에 체력</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6667"
-            ],
-            "inStore": false,
-            "image": {
-                "full": "7027.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 192,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2700,
-                "sell": 1890
-            },
-            "tags": [
-                "Health",
-                "SpellBlock",
-                "Armor",
-                "Aura",
-                "CooldownReduction",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": false,
-                "12": false,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatSpellBlockMod": 40,
-                "FlatHPPoolMod": 500,
-                "FlatArmorMod": 40
-            },
-            "depth": 4
-        },
-        "7028": {
-            "name": "무한 융합",
-            "description": "<mainText><stats>주문력 <ornnBonus>70</ornnBonus><br>체력 <ornnBonus>550</ornnBonus><br>마나 <ornnBonus>650</ornnBonus></stats><br><br><passive>불멸의 시간</passive><br>60초마다 체력, 마나, 주문력이 상승합니다. 최대 중첩에 도달하면 레벨이 오릅니다.<br><br><passive>영원</passive><br>챔피언에게 피해를 입으면 마나를 회복합니다. 스킬 사용 시 사용한 마나의 일부에 해당하는 체력을 회복합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6657"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7028.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 240,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 2600,
-                "sell": 1820
-            },
-            "tags": [
-                "Health",
-                "HealthRegen",
-                "SpellDamage",
-                "Mana",
-                "ManaRegen"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMPPoolMod": 650,
-                "FlatHPPoolMod": 550,
-                "FlatMagicDamageMod": 70
-            },
-            "depth": 4
-        },
-        "7029": {
-            "name": "요우무의 각성",
-            "description": "<mainText><stats>공격력 <ornnBonus>75</ornnBonus><br>물리 관통력 <ornnBonus>26</ornnBonus></stats><br><br><passive>출몰</passive> <br>전투에서 벗어나 있을 때 <speed>이동 속도</speed>가 상승합니다.<br><br><br><active>활성화</active> (0초)<br><active>망령의 발걸음</active><br><speed>이동 속도</speed>가 상승하고 <keyword>유체화</keyword> 상태가 됩니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "3142"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7029.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 288,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 2700,
-                "sell": 1890
-            },
-            "tags": [
-                "Damage",
-                "Active",
-                "NonbootsMovement",
-                "ArmorPenetration"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatPhysicalDamageMod": 75
-            },
-            "effect": {
-                "Effect1Amount": "45",
-                "Effect2Amount": "0",
-                "Effect3Amount": "0",
-                "Effect4Amount": "0",
-                "Effect5Amount": "6",
-                "Effect6Amount": "40"
-            },
-            "depth": 4
-        },
-        "7030": {
-            "name": "들끓는 슬픔",
-            "description": "<mainText><stats>공격력 <ornnBonus>45</ornnBonus><br>주문력 <ornnBonus>55</ornnBonus><br>공격 속도 <ornnBonus>35%</ornnBonus></stats><br><br><passive>분노</passive><br>기본 공격 시 <magicDamage>30의 마법 피해(<OnHit>적중 시</OnHit> )</magicDamage>를 입힙니다.<br><br><passive>들끓는 일격</passive><br>기본 공격 시 <attackSpeed>공격 속도가 8%</attackSpeed> 증가합니다. 해당 효과는 4번까지 중첩되어 최대 <attackSpeed>공격 속도가 0</attackSpeed>까지 증가합니다. 최대 중첩 시 세 번째 기본 공격을 가할 때마다 <OnHit>적중 시</OnHit> 효과를 두 번씩 적용합니다.<br><br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "3124"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7030.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 336,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "Damage",
-                "AttackSpeed",
-                "SpellDamage",
-                "OnHit"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMagicDamageMod": 55,
-                "FlatPhysicalDamageMod": 45,
-                "PercentAttackSpeedMod": 0.35
-            },
-            "effect": {
-                "Effect1Amount": "0.08",
-                "Effect2Amount": "2.5",
-                "Effect3Amount": "2.5",
-                "Effect4Amount": "3",
-                "Effect5Amount": "4",
-                "Effect6Amount": "0.1",
-                "Effect7Amount": "0.1",
-                "Effect8Amount": "15",
-                "Effect9Amount": "1",
-                "Effect10Amount": "3",
-                "Effect11Amount": "0",
-                "Effect12Amount": "0",
-                "Effect13Amount": "3"
-            },
-            "depth": 4
-        },
-        "7031": {
-            "name": "궁극의 검",
-            "description": "<mainText><stats>공격력 <ornnBonus>95</ornnBonus><br>치명타 확률 <attention>25%</attention><br>치명타 피해량 <attention>50%</attention></stats><br><br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "3031"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7031.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 384,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3400,
-                "sell": 2380
-            },
-            "tags": [
-                "CriticalStrike",
-                "Damage"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatCritChanceMod": 0.25,
-                "FlatPhysicalDamageMod": 95
-            },
-            "depth": 3
-        },
-        "7032": {
-            "name": "명멸",
-            "description": "<mainText><stats>공격력 <ornnBonus>85</ornnBonus><br>치명타 확률 <attention>25%</attention><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><passive>깨달음</passive><br>기본 공격 시 기본 스킬의 재사용 대기시간이 감소합니다.<br><br><passive>비영구</passive><br>스킬이 치명타 확률에 비례해 증가한 피해를 입힙니다. </mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6675"
-            ],
-            "inStore": false,
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7032.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 432,
-                "y": 240,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 2600,
-                "sell": 1820
-            },
-            "tags": [
-                "CriticalStrike",
-                "AttackSpeed",
-                "NonbootsMovement"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatCritChanceMod": 0.25,
-                "FlatPhysicalDamageMod": 85,
-                "PercentAttackSpeedMod": 0.4,
-                "PercentMovementSpeedMod": 0.07
-            },
-            "effect": {
-                "Effect1Amount": "0.5",
-                "Effect2Amount": "1",
-                "Effect3Amount": "90"
-            },
-            "depth": 4
-        },
-        "7033": {
-            "name": "비명을 지르는 도시의 외침",
-            "description": "<mainText><stats>주문력 <ornnBonus>60</ornnBonus><br>체력 <ornnBonus>300</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus><br>기본 마나 재생 <ornnBonus>175%</ornnBonus></stats><br><br><passive>영혼 흡수</passive><br>챔피언에게 피해를 입히면 <passive>영혼 파편</passive>을 얻습니다. 아군을 상대로 체력을 회복시키거나 보호막을 씌우면 모든 <passive>영혼 파편</passive>을 소모하여 아군의 체력을 회복시키고 가장 가까운 적 챔피언에게 파편 하나당 마법 피해를 입힙니다.<br><br></mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6620"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7033.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 0,
-                "y": 288,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 2200,
-                "sell": 1540
-            },
-            "tags": [
-                "Health",
-                "SpellDamage",
-                "ManaRegen",
-                "CooldownReduction",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 300,
-                "FlatMagicDamageMod": 60
-            },
-            "depth": 4
-        },
-        "7034": {
-            "name": "떠도는 희망",
-            "description": "<mainText><stats>체력 <ornnBonus>600</ornnBonus><br>방어력 <ornnBonus>65</ornnBonus><br>스킬 가속 <ornnBonus>20</ornnBonus></stats><br><br><passive>고뇌</passive><br>챔피언과 전투 중일 때 몇 초마다 주변 적 챔피언에게 마법 피해를 입히고 피해량에 따라 체력을 회복합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "2502"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7034.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 48,
-                "y": 288,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 2800,
-                "sell": 1960
-            },
-            "tags": [
-                "Health",
-                "Armor",
-                "CooldownReduction",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 600,
-                "FlatArmorMod": 65
-            },
-            "depth": 4
-        },
-        "7035": {
-            "name": "해오름",
-            "description": "<mainText><stats>주문력 <ornnBonus>70</ornnBonus><br>체력 회복 및 보호막 <attention>16%</attention><br>기본 마나 재생 <ornnBonus>250%</ornnBonus></stats><br><br><passive>태초의 빛</passive><br>기본 마나 재생 100%당 <healing>체력 회복 및 보호막 효과가 2%</healing>, <scaleAP>주문력이 10</scaleAP> 증가합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6621"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7035.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 96,
-                "y": 288,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 2700,
-                "sell": 1890
-            },
-            "tags": [
-                "SpellDamage",
-                "ManaRegen"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMagicDamageMod": 70
-            },
-            "depth": 4
-        },
-        "7036": {
-            "name": "터.보.추.진.기",
-            "description": "",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "3073"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7036.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 144,
-                "y": 288,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "Health",
-                "Damage",
-                "CooldownReduction",
-                "OnHit",
-                "NonbootsMovement",
-                "ArmorPenetration",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 450,
-                "FlatPhysicalDamageMod": 65,
-                "PercentAttackSpeedMod": 0.3
-            },
-            "depth": 4
-        },
-        "7037": {
-            "name": "흑요석 양날 도끼",
-            "description": "<mainText><stats>공격력 <ornnBonus>65</ornnBonus><br>체력 <ornnBonus>600</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><passive>깎아내기</passive><br>챔피언에게 물리 피해를 입히면 방어력을 감소시키는 중첩을 1회 적용합니다.<br><br><passive>열정</passive><br>물리 피해를 입히면 이동 속도가 상승합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "3071"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7037.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 192,
-                "y": 288,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "Health",
-                "Damage",
-                "CooldownReduction",
-                "OnHit",
-                "NonbootsMovement",
-                "ArmorPenetration",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 600,
-                "FlatPhysicalDamageMod": 65
-            },
-            "effect": {
-                "Effect1Amount": "0",
-                "Effect2Amount": "0.06",
-                "Effect3Amount": "6",
-                "Effect4Amount": "5",
-                "Effect5Amount": "0.3",
-                "Effect6Amount": "0",
-                "Effect7Amount": "0",
-                "Effect8Amount": "0",
-                "Effect9Amount": "0",
-                "Effect10Amount": "0.01"
-            },
-            "depth": 4
-        },
-        "7038": {
-            "name": "쇼진의 결의",
-            "description": "<mainText><stats>공격력 <ornnBonus>65</ornnBonus><br>체력 <ornnBonus>500</ornnBonus><br>스킬 가속 <ornnBonus>25</ornnBonus></stats><br><br><passive>드래곤의 힘</passive> <br>일반 스킬의 스킬 가속이 증가합니다.<br><br><passive>집중된 의지</passive> <br>스킬 적중 시 중첩을 얻습니다. 중첩당 스킬 피해량이 증가합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "3161"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7038.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 240,
-                "y": 288,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3100,
-                "sell": 2170
-            },
-            "tags": [
-                "Health",
-                "Damage",
-                "NonbootsMovement",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 500,
-                "FlatPhysicalDamageMod": 65
-            },
-            "depth": 4
-        },
-        "7039": {
-            "name": "천상의 몰락",
-            "description": "<mainText><stats>공격력 <ornnBonus>60</ornnBonus><br>체력 <ornnBonus>600</ornnBonus><br>스킬 가속 <ornnBonus>20</ornnBonus></stats><br><br><passive>라이트실드 타격</passive> <br>챔피언에게 처음 기본 공격을 가할 때 치명타로 적용되고 체력을 회복합니다. 초과된 회복량은 잠시 동안 추가 체력으로 전환됩니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6610"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7039.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 288,
-                "y": 288,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3100,
-                "sell": 2170
-            },
-            "tags": [
-                "Health",
-                "Damage",
-                "CooldownReduction",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatHPPoolMod": 600,
-                "FlatPhysicalDamageMod": 60
-            },
-            "depth": 4
-        },
-        "7040": {
-            "name": "폭풍의 눈",
-            "description": "<mainText><stats>공격력 <ornnBonus>80</ornnBonus><br>공격 속도 <ornnBonus>25%</ornnBonus><br>치명타 확률 <attention>25%</attention></stats><br><br><passive>번개</passive><br>충전 상태로 공격 시 추가 마법 피해를 입히고 이동 속도가 증가합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "3095"
-            ],
-            "inStore": false,
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7040.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 336,
-                "y": 288,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": false,
-                "total": 3200,
-                "sell": 2240
-            },
-            "tags": [
-                "Damage",
-                "CriticalStrike",
-                "AttackSpeed",
-                "NonbootsMovement"
-            ],
-            "maps": {
-                "11": false,
-                "12": true,
-                "21": false,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatCritChanceMod": 0.25,
-                "FlatPhysicalDamageMod": 80,
-                "PercentAttackSpeedMod": 0.25
-            },
-            "depth": 4
-        },
-        "7041": {
-            "name": "쓰러진 용의 제물",
-            "description": "<mainText><stats>공격력 <ornnBonus>60</ornnBonus><br>공격 속도 <ornnBonus>55%</ornnBonus><br>이동 속도 <attention>7%</attention></stats><br><br><passive>벼락</passive><br>세 번째 기본 공격을 가할 때마다 적중 시 추가 물리 피해를 입힙니다. 같은 대상에게 반복해서 적중하면 입히는 피해량이 증가합니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "6672"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7041.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 384,
-                "y": 288,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3100,
-                "sell": 2170
-            },
-            "tags": [
-                "Damage",
-                "CriticalStrike",
-                "AttackSpeed"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatPhysicalDamageMod": 60,
-                "PercentAttackSpeedMod": 0.55,
-                "PercentMovementSpeedMod": 0.07
-            },
-            "depth": 4
-        },
-        "7042": {
-            "name": "남작의 선물",
-            "description": "<mainText><stats>주문력 <ornnBonus>120</ornnBonus><br>공격 속도 <ornnBonus>60%</ornnBonus><br>스킬 가속 <ornnBonus>20</ornnBonus></stats><br><br><passive>이케시아의 이빨</passive><br>기본 공격 시 <magicDamage>마법 피해</magicDamage>(<OnHit>적중 시</OnHit> )를 입힙니다.</mainText>",
-            "colloq": "",
-            "plaintext": "",
-            "from": [
-                "3115"
-            ],
-            "requiredAlly": "Ornn",
-            "image": {
-                "full": "7042.png",
-                "sprite": "item5.png",
-                "group": "item",
-                "x": 432,
-                "y": 288,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 0,
-                "purchasable": true,
-                "total": 3000,
-                "sell": 2100
-            },
-            "tags": [
-                "AttackSpeed",
-                "SpellDamage",
-                "OnHit",
-                "AbilityHaste"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMagicDamageMod": 120,
-                "PercentAttackSpeedMod": 0.6
-            },
-            "depth": 4
         },
         "7050": {
             "name": "갱플랭크 Placeholder",
@@ -24500,8 +22123,8 @@ export const item = {
                 "full": "7050.png",
                 "sprite": "item5.png",
                 "group": "item",
-                "x": 0,
-                "y": 336,
+                "x": 144,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -24517,7 +22140,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": true
+                "30": true,
+                "33": false
             },
             "stats": {}
         },
@@ -24535,8 +22159,8 @@ export const item = {
                 "full": "8001.png",
                 "sprite": "item5.png",
                 "group": "item",
-                "x": 48,
-                "y": 336,
+                "x": 192,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -24557,7 +22181,8 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
                 "FlatHPPoolMod": 650
@@ -24566,7 +22191,7 @@ export const item = {
         },
         "8020": {
             "name": "심연의 가면",
-            "description": "<mainText><stats>체력 <attention>300</attention><br>마법 저항력 <attention>50</attention><br>스킬 가속 <attention>10</attention></stats><br><br><passive>파괴</passive><br>주변 적 챔피언들의 마법 저항력을 감소시킵니다. 영향을 받는 적 하나당 마법 저항력을 얻습니다.</mainText>",
+            "description": "<mainText><stats>체력 <attention>300</attention><br>마법 저항력 <attention>45</attention><br>스킬 가속 <attention>15</attention></stats><br><br><passive>파괴</passive><br>주변 적 챔피언들의 <scaleMR>마법 저항력을 30%</scaleMR> 감소시킵니다. </mainText>",
             "colloq": "",
             "plaintext": "",
             "from": [
@@ -24577,16 +22202,16 @@ export const item = {
                 "full": "8020.png",
                 "sprite": "item5.png",
                 "group": "item",
-                "x": 96,
-                "y": 336,
+                "x": 240,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
             "gold": {
-                "base": 600,
+                "base": 1000,
                 "purchasable": true,
-                "total": 2300,
-                "sell": 1610
+                "total": 2650,
+                "sell": 1855
             },
             "tags": [
                 "Health",
@@ -24601,13 +22226,1872 @@ export const item = {
                 "12": true,
                 "21": true,
                 "22": false,
-                "30": false
+                "30": false,
+                "33": false
             },
             "stats": {
-                "FlatSpellBlockMod": 50,
+                "FlatSpellBlockMod": 45,
                 "FlatHPPoolMod": 300
             },
             "depth": 3
+        },
+        "9168": {
+            "name": "잠긴 무기 슬롯",
+            "description": "<mainText><stats></stats><br><br>실력을 증명하면 미스 포츈이 가방 업그레이드를 제공할 것입니다.<br><br>[성취 달성 시 잠금 해제]</mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9168.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 288,
+                "y": 48,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9171": {
+            "name": "회오리 칼날",
+            "description": "<mainText><stats></stats><br><br>주위를 도는 투사체가 적에게 피해를 입히고 뒤로 밀어냅니다.<br><br><status>진화:</status> 체력 재생<br><br><rules>피해량, 스킬 가속, 범위 크기, 투사체 개수, 지속시간</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9171.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 336,
+                "y": 48,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9172": {
+            "name": "유미봇",
+            "description": "<mainText><stats></stats><br><br>유미.AI 드론을 소환합니다. 유미.AI는 적에게 피해를 입히고 공중으로 띄워 올리며, 경험치를 수집합니다.<br><br><status>진화:</status> 획득 반경<br><br><rules>피해량, 스킬 가속, 범위 크기, 지속시간, 획득 반경</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9172.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 384,
+                "y": 48,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9173": {
+            "name": "광휘 역장",
+            "description": "<mainText><stats></stats><br><br>최대 체력에 비례해 주변 적에게 피해를 입힙니다.<br><br><status>진화:</status> 최대 체력<br><br><rules>피해량, 범위 크기, 최대 체력</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9173.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 432,
+                "y": 48,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9174": {
+            "name": "스태틱의 검",
+            "description": "<mainText><stats></stats><br><br>체력이 가장 높은 적 사이를 튕기는 번개를 발사합니다.<br><br><status>진화:</status> 최대 체력<br><br><rules>피해량, 스킬 가속, 범위 크기, 치명타 확률, 지속시간 </rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9174.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 0,
+                "y": 96,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9175": {
+            "name": "사자의 비가",
+            "description": "<mainText><stats></stats><br><br>캐릭터 왼쪽과 오른쪽으로 초승달 모양 투사체를 발사합니다.<br><br><status>진화:</status> 스킬 가속<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9175.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 48,
+                "y": 96,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9176": {
+            "name": "개틀링 토끼 건",
+            "description": "<mainText><stats></stats><br><br>원뿔 범위에 광역 지속 피해를 입힙니다.<br><br><status>진화:</status> 지속시간<br><br><rules>피해량, 스킬 가속, 지속시간, 범위 크기</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9176.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 96,
+                "y": 96,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9177": {
+            "name": "타오르는 단궁",
+            "description": "<mainText><stats></stats><br><br>불타는 영역을 남기는 투사체를 발사합니다.<br><br><status>진화:</status> 범위 크기<br><br><rules>피해량, 스킬 가속, 범위 크기, 투사체 개수, 지속시간</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9177.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 144,
+                "y": 96,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9178": {
+            "name": "절멸자",
+            "description": "<mainText><stats></stats><br><br>거대한 폭발을 일으켜 모든 일반 적을 처치하고 정예에게 막대한 피해를 입힙니다. 재사용 대기시간이 깁니다.<br><br><status>진화:</status> 경험치<br><br><rules>피해량, 스킬 가속, 범위 크기</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9178.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 192,
+                "y": 96,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9179": {
+            "name": "전투 토끼 석궁",
+            "description": "<mainText><stats></stats><br><br>무작위 방향 원뿔 범위에 추가 치명타 확률이 적용된 투사체를 발사합니다. 투사체는 치명타로 적중 시 대상을 관통합니다.<br><br><status>진화:</status> 치명타 확률<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9179.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 240,
+                "y": 96,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9180": {
+            "name": "귀여운 발사기",
+            "description": "<mainText><stats></stats><br><br>가장 가까운 적에게 투사체를 빠르게 발사하여 처음 적중하는 대상에게 피해를 입힙니다.<br><br><status>진화:</status> 스킬 가속<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9180.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 288,
+                "y": 96,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9181": {
+            "name": "소용돌이 장갑",
+            "description": "<mainText><stats></stats><br><br>회전하는 투사체의 줄기를 방출합니다.<br><br><status>진화:</status> 체력 재생<br><br><rules>피해량, 치명타 확률, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9181.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 336,
+                "y": 96,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9183": {
+            "name": "칼날 부메랑",
+            "description": "<mainText><stats></stats><br><br>가장 가까운 적에게 되돌아오는 투사체를 발사합니다.<br><br><status>진화:</status> 이동 속도<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9183.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 384,
+                "y": 96,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9184": {
+            "name": "토끼 초강력 폭발",
+            "description": "<mainText><stats></stats><br><br>무작위 적에게 추가 치명타 확률이 적용된 궤도 폭격을 발사해 작은 영역에 막대한 피해를 입힙니다.<br><br><status>진화:</status> 치명타 확률<br><br><rules>피해량, 스킬 가속, 범위 크기, 치명타 확률</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9184.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 432,
+                "y": 96,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9185": {
+            "name": "상어잡이 해양 기뢰",
+            "description": "<mainText><stats></stats><br><br>적 사이를 튕기는 폭발물을 발사합니다. <br><br><status>진화:</status> 피해량<br><br><rules>피해량, 스킬 가속, 범위 크기</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9185.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 0,
+                "y": 144,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9187": {
+            "name": "티.버",
+            "description": "<mainText><stats></stats><br><br>로봇 티버를 소환합니다. 로봇 티버는 할퀴기 공격으로 광역 피해를 입힙니다. 로봇 티버는 체력이 가장 높은 적에게 집중합니다.<br><br><status>진화:</status> 지속시간<br><br><rules>피해량, 스킬 가속, 범위 크기, 지속시간, 이동 속도</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9187.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 48,
+                "y": 144,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9188": {
+            "name": "동물 지뢰",
+            "description": "<mainText><stats></stats><br><br>주위로 시간제한 폭발성 투사체를 떨어뜨립니다. 폭발 시 큰 광역 피해를 입힙니다.<br><br><status>진화:</status> 범위 크기<br><br><rules>피해량, 스킬 가속, 범위 크기, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9188.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 96,
+                "y": 144,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9189": {
+            "name": "최후의 도시 대중교통",
+            "description": "<mainText><stats></stats><br><br>회전하는 투사체의 줄기를 방출합니다.<br><br><status>진화:</status> 체력 재생<br><br><rules>피해량, 치명타 확률, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9189.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 144,
+                "y": 144,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9190": {
+            "name": "메아리치는 박쥐칼날",
+            "description": "<mainText><stats></stats><br><br>벽에 튕기는 관통 투사체를 발사합니다.<br><br><status>진화:</status> 투사체 개수<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9190.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 192,
+                "y": 144,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9192": {
+            "name": "발자국 중독 장치",
+            "description": "",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9192.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 240,
+                "y": 144,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9193": {
+            "name": "얼음작렬 갑옷",
+            "description": "<mainText><stats></stats><br><br>피해를 막으면 적을 얼어붙게 만듭니다. 피해량이 방어력과 최대 체력에 비례합니다.<br><br><status>진화:</status> 방어력<br><br><rules>피해량, 스킬 가속, 범위 크기, 지속시간, 방어력</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9193.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 288,
+                "y": 144,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9271": {
+            "name": "그치지 않는 폭풍",
+            "description": "<mainText><stats></stats><br><br>영구적으로 주위를 도는 투사체가 적에게 피해를 입히고 뒤로 밀어냅니다.<br><br><rules>피해량, 스킬 가속, 투사체 개수, 범위 크기, 지속시간</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9271.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 336,
+                "y": 144,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9272": {
+            "name": "유미봇_최종_최종",
+            "description": "<mainText><stats></stats><br><br>유미.AI 드론을 소환합니다. 유미.AI는 적에게 피해를 입히고 공중으로 띄워 올리며, 경험치를 수집합니다. 일정량의 피해를 입히면 체력 아이템을 떨어뜨립니다.<br><br><rules>피해량, 스킬 가속, 범위 크기, 지속시간, 획득 반경</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9272.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 384,
+                "y": 144,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9273": {
+            "name": "폭발의 포옹",
+            "description": "<mainText><stats></stats><br><br>최대 체력에 비례하여 주변 적에게 피해를 입힙니다. 불타는 영역 안에서 사망한 적은 폭발을 일으킵니다.<br><br><rules>피해량, 범위 크기, 최대 체력</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9273.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 432,
+                "y": 144,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9274": {
+            "name": "프룸비스의 전기도축칼",
+            "description": "<mainText><stats></stats><br><br>대상 적 주위로 폭풍을 일으켜 일정 시간 동안 피해를 입힙니다.<br><br><rules>피해량, 스킬 가속, 범위 크기, 치명타 확률, 지속시간 </rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9274.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 0,
+                "y": 192,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9275": {
+            "name": "휘감는 빛",
+            "description": "<mainText><stats></stats><br><br>화면을 가로지르는 빛의 광선을 발사합니다.<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9275.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 48,
+                "y": 192,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9276": {
+            "name": "이중 깡충깡충 포화",
+            "description": "<mainText><stats></stats><br><br>원뿔 범위에 광역 지속 피해를 입힙니다. 피해를 받은 적은 둔화되며 결국에는 기절합니다. 기절한 적은 추가 피해를 입습니다.<br><br><rules>피해량, 스킬 가속, 지속시간, 범위 크기</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9276.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 96,
+                "y": 192,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9277": {
+            "name": "진화한 불꽃 사격",
+            "description": "<mainText><stats></stats><br><br>불타는 영역을 남기는 투사체를 발사합니다. 불타는 영역은 점점 커지며 추가 지속 피해를 입힙니다.<br><br><rules>피해량, 스킬 가속, 범위 크기, 투사체, 지속시간</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9277.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 144,
+                "y": 192,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9278": {
+            "name": "동물의 종말",
+            "description": "<mainText><stats></stats><br><br>거대한 폭발을 일으켜 모든 일반 적을 처치하고 정예에게 막대한 피해를 입힙니다. 적 처치 시 추가 경험치를 제공하고 일정 확률로 골드를 떨어뜨립니다. 재사용 대기시간이 깁니다.<br><br><rules>피해량, 스킬 가속, 범위 크기</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9278.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 192,
+                "y": 192,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9279": {
+            "name": "토끼 프라임 거대 석궁",
+            "description": "<mainText><stats></stats><br><br>무작위 방향 원뿔 범위에 추가 치명타 확률이 적용된 투사체를 발사합니다. 투사체는 치명타로 적중 시 대상을 관통합니다.<br><br><status>진화:</status> 치명타 확률<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9279.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 240,
+                "y": 192,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9280": {
+            "name": "왕 귀여운 발사기",
+            "description": "<mainText><stats></stats><br><br>가장 가까운 적에게 투사체를 극도로 빠르게 발사하여 처음 적중하는 대상에게 피해를 입힙니다.<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9280.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 288,
+                "y": 192,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9281": {
+            "name": "폭풍의 건틀릿",
+            "description": "<mainText><stats></stats><br><br>주위에 지속적으로 두 줄기의 투사체를 방출합니다. 투사체는 서로 반대 방향으로 회전합니다.<br><br><rules>피해량, 치명타 확률, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9281.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 336,
+                "y": 192,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9283": {
+            "name": "사중 부메랑",
+            "description": "<mainText><stats></stats><br><br>돌아오는 투사체를 발사합니다. 투사체는 작은 투사체로 폭발해 가장 가까운 적을 공격합니다.<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9283.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 384,
+                "y": 192,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9284": {
+            "name": "고속 토끼 속사포",
+            "description": "<mainText><stats></stats><br><br>무작위 적에게 궤도 폭격을 발사해 강력한 타격으로 마무리합니다.<br><br><rules>피해량, 스킬 가속, 범위 크기, 치명타 확률</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9284.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 432,
+                "y": 192,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9285": {
+            "name": "무한의 괴물 퇴치기",
+            "description": "<mainText><stats></stats><br><br>대상이 존재하는 한 계속해서 적 사이를 튕기는 폭발물을 발사합니다. <br><br><rules>피해량, 스킬 가속, 범위 크기</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9285.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 0,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9287": {
+            "name": "티.버 (특.대.형 에디션)",
+            "description": "<mainText><stats></stats><br><br>분노한 로봇 티버를 소환합니다. 로봇 티버는 할퀴기 공격으로 광역 피해를 입힙니다. 분노한 로봇 티버는 체력이 가장 높은 적에게 집중하며, 크기가 점점 커지고 빨라져 지속시간 동안 피해량이 증가합니다.<br><br><rules>피해량, 스킬 가속, 범위 크기, 지속시간, 이동 속도</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9287.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 48,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9288": {
+            "name": "징크스의 삼중 다이너마이트",
+            "description": "<mainText><stats></stats><br><br>주위로 시간제한 폭발성 투사체를 떨어뜨립니다. 폭발 시 추가로 연쇄 폭발을 일으켜 막대한 광역 피해를 입힙니다.<br><br><rules>피해량, 스킬 가속, 범위 크기, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9288.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 96,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9289": {
+            "name": "FC 급행열차",
+            "description": "<mainText><stats></stats><br><br>열차가 무작위로 적을 들이받고 지나갑니다. 열차는 지나간 자리에 폭발을 일으켜 적을 공중으로 띄워 올립니다. 적 처치 시 일정 확률로 골드를 떨어뜨립니다.<br><br><rules>피해량, 스킬 가속, 치명타 확률, 방어력</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9289.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 144,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9290": {
+            "name": "베인의 크로마칼날",
+            "description": "<mainText><stats></stats><br><br>벽에 튕기며 관통하는 모든 적에게 피해를 입히는 투사체를 발사합니다. 튕길 때마다 피해량이 증가합니다.<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9290.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 192,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9292": {
+            "name": "맨발 화학 물질 분사기",
+            "description": "",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9292.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 240,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9293": {
+            "name": "완전 빙결",
+            "description": "<mainText><stats></stats><br><br>피해를 막으면 적을 얼어붙게 만들며 보호막을 얻습니다. 피해량은 방어력에 비례하며 보호막은 최대 체력에 비례합니다. 보호막이 사라지면 다시 한번 주변 모든 적을 얼립니다.<br><br><rules>피해량, 스킬 가속, 범위 크기, 지속시간, 최대 체력, 방어력</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9293.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 288,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9300": {
+            "name": "야옹 야옹",
+            "description": "<mainText><stats></stats><br><br>징크스가 지정 방향으로 총알 세례를 퍼붓습니다.<br><br><status>진화:</status> 스킬 가속<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9300.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 336,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9301": {
+            "name": "방패 타격",
+            "description": "<mainText><stats></stats><br><br>레오나가 방패로 후려쳐, 원뿔 범위에 자신의 방어력에 비례하는 피해를 입힙니다.<br><br><status>진화:</status> 방어력<br><br><rules>피해량, 스킬 가속, 범위 크기, 치명타 확률, 방어력</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9301.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 384,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9302": {
+            "name": "음향의 물결",
+            "description": "<mainText><stats></stats><br><br>세라핀이 음향의 물결을 내보내 적중하는 적에게 피해를 입히고 둔화시킵니다.<br><br><status>진화:</status> 투사체 개수<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수, 지속시간 </rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9302.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 432,
+                "y": 240,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9303": {
+            "name": "족쇄 할퀴기",
+            "description": "<mainText><stats></stats><br><br>브라이어가 전방을 휩쓸어 자신의 최대 체력에 비례하는 피해를 입힙니다.<br><br><status>진화:</status> 최대 체력<br><br><rules>피해량, 스킬 가속, 범위 크기, 치명타 확률, 최대 체력 </rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9303.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 0,
+                "y": 288,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9304": {
+            "name": "강철 폭풍",
+            "description": "<mainText><stats></stats><br><br>야스오가 1초마다 25의 기류를 얻습니다. 또한 이동하거나 돌진할 때 추가 기류를 얻습니다.<br><br>기류가 100에 도달하면 소용돌이를 내보내 일직선상의 모든 적에게 피해를 입힙니다.<br><br><status>진화:</status> 치명타 확률<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수 </rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9304.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 48,
+                "y": 288,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9305": {
+            "name": "촉수 후려치기",
+            "description": "<mainText><stats></stats><br><br>일라오이가 성상으로 지면을 내려찍어 대상 지역에 피해를 입히고 주변의 적을 공격하는 촉수를 소환합니다.<br><br><status>진화:</status> 지속시간<br><br><rules>피해량, 스킬 가속, 범위 크기, 지속시간</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9305.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 96,
+                "y": 288,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9306": {
+            "name": "날개 달린 단검",
+            "description": "<mainText><stats></stats><br><br>자야가 전방으로 적을 관통하는 단검을 던집니다. 단검은 한 번 관통할 때마다 피해량이 감소하며 지면에 단검을 남깁니다.<br><br><status>진화: </status> 획득 반경<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수, 지속시간</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9306.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 144,
+                "y": 288,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9307": {
+            "name": "인도의 저주",
+            "description": "<mainText><stats></stats><br><br>오로라가 허공으로 저주를 쏘아 보내 날아가는 방향을 조종합니다. 적중당한 적은 피해를 입고 <keywordMajor>저주</keywordMajor>에 걸립니다. 3번째 시전마다 대상의 <keywordMajor>저주</keywordMajor>를 정화하여 추가 피해를 입힙니다.<br><br><status>진화:</status> 경험치 획득량<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체, 경험치</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9307.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 192,
+                "y": 288,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9308": {
+            "name": "토끼뜀",
+            "description": "<mainText><stats></stats><br><br>리븐의 이동 속도가 점점 증가하며 이동 시 충전을 얻습니다. 충전이 최대치에 도달하면 전방으로 도약해 대상 지역에 피해를 입힙니다. 2번째 시전마다 적을 공중으로 띄워 올립니다.<br><br><status>진화:</status> 이동 속도<br><br><rules>피해량, 범위 크기, 치명타 확률, 이동 속도 </rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "image": {
+                "full": "9308.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 240,
+                "y": 288,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9400": {
+            "name": "전투 고양이 총알 세례",
+            "description": "<mainText><stats></stats><br><br>징크스가 지정 방향으로 총알 세례를 퍼붓습니다. 총알이 대상을 관통하며 처음 적중한 이후에는 피해량이 감소합니다. 재사용 대기시간이 크게 감소합니다.<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9400.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 288,
+                "y": 288,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9401": {
+            "name": "사자의 광명",
+            "description": "<mainText><stats></stats><br><br>넓은 지역을 공격해 적에게 햇빛을 적용합니다. 햇빛은 아군이나 다른 무기로 폭발시켜 추가 피해를 입힐 수 있습니다.<br><br><rules>피해량, 스킬 가속, 범위 크기, 치명타 확률, 방어력</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9401.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 336,
+                "y": 288,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9402": {
+            "name": "동물 메아리",
+            "description": "<mainText><stats></stats><br><br>파동이 목표 지점에 도달한 후 되돌아오면서 피해를 입히며 세라핀을 통과하고 지나갑니다.<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수, 지속시간 </rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9402.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 384,
+                "y": 288,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9403": {
+            "name": "포악한 베기",
+            "description": "<mainText><stats></stats><br><br>브라이어가 전방을 휩쓸어 중첩되는 출혈 효과를 적용합니다. 또한 최대 체력에 비례하는 피해를 입힙니다.<br><br><rules>피해량, 스킬 가속, 범위 크기, 치명타 확률, 최대 체력 </rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9403.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 432,
+                "y": 288,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9404": {
+            "name": "떠도는 폭풍",
+            "description": "<mainText><stats></stats><br><br>야스오가 기력을 연마해 수는 적지만 훨씬 큰 소용돌이를 방출합니다. 소용돌이는 포물선을 그리며 날아가며 목표 지점에 피해를 입히는 폭풍을 남깁니다.<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수, 범위 크기, 지속시간</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9404.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 0,
+                "y": 336,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9405": {
+            "name": "곰의 강타",
+            "description": "<mainText><stats></stats><br><br>일라오이가 성상으로 지면을 내려찍어 대상 지역에 피해를 입히고 주변의 적을 공격하는 촉수를 소환합니다. 일정 확률로 더 큰 피해를 입히는 거대 촉수를 소환합니다.<br><br><rules>피해량, 스킬 가속, 범위 크기, 지속시간</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9405.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 48,
+                "y": 336,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9406": {
+            "name": "연인의 도탄",
+            "description": "<mainText><stats></stats><br><br>자야가 뒤로 익숙한 단검을 추가로 던집니다. 이 특별한 단검은 적 사이를 튕기면서 피해를 입히며, 이후 자야에게 돌아와 소량의 보호막을 부여합니다.<br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체 개수, 지속시간</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9406.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 96,
+                "y": 336,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9407": {
+            "name": "고양된 저주",
+            "description": "<mainText><stats></stats><br><br>오로라가 더 많은 저주를 발사합니다. 또한 저주를 정화할 때 <keywordMajor>저주</keywordMajor>에 걸린 대상 주위에도 피해를 입힙니다. <br><br><rules>피해량, 스킬 가속, 치명타 확률, 투사체, 지속시간, 경험치</rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9407.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 144,
+                "y": 336,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
+        },
+        "9408": {
+            "name": "당근 격돌",
+            "description": "<mainText><stats></stats><br><br>리븐의 이동 속도가 점점 증가하며 이동 시 충전을 얻습니다. 충전이 최대치에 도달하면 전방으로 도약해 대상 지역에 피해를 입힙니다. 2번째 시전마다 적을 공중으로 띄워 올립니다. 또한 대상 지역을 파열시켜 2차 폭발을 유도해 다시 한번 적에게 피해를 입히고 공중으로 띄워 올립니다.<br><br><rules>피해량, 범위 크기, 치명타 확률, 이동 속도 </rules></mainText>",
+            "colloq": "",
+            "plaintext": "",
+            "consumed": true,
+            "image": {
+                "full": "9408.png",
+                "sprite": "item5.png",
+                "group": "item",
+                "x": 192,
+                "y": 336,
+                "w": 48,
+                "h": 48
+            },
+            "gold": {
+                "base": 0,
+                "purchasable": true,
+                "total": 0,
+                "sell": 0
+            },
+            "tags": [],
+            "maps": {
+                "11": false,
+                "12": false,
+                "21": false,
+                "22": false,
+                "30": false,
+                "33": true
+            },
+            "stats": {}
         }
     },
     "groups": [
@@ -24626,6 +24110,10 @@ export const item = {
         {
             "id": "APMultiplier",
             "MaxGroupOwnable": "1"
+        },
+        {
+            "id": "ArenaAllItemLockOutGroup",
+            "MaxGroupOwnable": "99"
         },
         {
             "id": "BaseJungleItems",
@@ -24877,6 +24365,10 @@ export const item = {
         },
         {
             "id": "StopwatchGroup",
+            "MaxGroupOwnable": "1"
+        },
+        {
+            "id": "StrawberryEvolveItems",
             "MaxGroupOwnable": "1"
         },
         {
@@ -25201,6 +24693,10 @@ export const item = {
         },
         {
             "id": "3131",
+            "MaxGroupOwnable": "1"
+        },
+        {
+            "id": "3134",
             "MaxGroupOwnable": "1"
         },
         {

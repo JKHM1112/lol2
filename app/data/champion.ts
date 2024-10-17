@@ -2,10 +2,10 @@
 export const champion = {
     "type": "champion",
     "format": "standAloneComplex",
-    "version": "14.7.1",
+    "version": "14.19.1",
     "data": {
         "Aatrox": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Aatrox",
             "key": "266",
             "name": "아트록스",
@@ -27,8 +27,7 @@ export const champion = {
                 "h": 48
             },
             "tags": [
-                "Fighter",
-                "Tank"
+                "Fighter"
             ],
             "partype": "피의 샘",
             "stats": {
@@ -38,12 +37,12 @@ export const champion = {
                 "mpperlevel": 0,
                 "movespeed": 345,
                 "armor": 38,
-                "armorperlevel": 4.45,
+                "armorperlevel": 4.8,
                 "spellblock": 32,
                 "spellblockperlevel": 2.05,
                 "attackrange": 175,
                 "hpregen": 3,
-                "hpregenperlevel": 1,
+                "hpregenperlevel": 0.5,
                 "mpregen": 0,
                 "mpregenperlevel": 0,
                 "crit": 0,
@@ -55,7 +54,7 @@ export const champion = {
             }
         },
         "Ahri": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Ahri",
             "key": "103",
             "name": "아리",
@@ -105,7 +104,7 @@ export const champion = {
             }
         },
         "Akali": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Akali",
             "key": "84",
             "name": "아칼리",
@@ -131,7 +130,7 @@ export const champion = {
             ],
             "partype": "기력",
             "stats": {
-                "hp": 570,
+                "hp": 600,
                 "hpperlevel": 119,
                 "mp": 200,
                 "mpperlevel": 0,
@@ -154,7 +153,7 @@ export const champion = {
             }
         },
         "Akshan": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Akshan",
             "key": "166",
             "name": "아크샨",
@@ -204,7 +203,7 @@ export const champion = {
             }
         },
         "Alistar": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Alistar",
             "key": "12",
             "name": "알리스타",
@@ -254,7 +253,7 @@ export const champion = {
             }
         },
         "Amumu": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Amumu",
             "key": "32",
             "name": "아무무",
@@ -277,7 +276,7 @@ export const champion = {
             },
             "tags": [
                 "Tank",
-                "Mage"
+                "Support"
             ],
             "partype": "마나",
             "stats": {
@@ -286,7 +285,7 @@ export const champion = {
                 "mp": 285,
                 "mpperlevel": 40,
                 "movespeed": 335,
-                "armor": 30,
+                "armor": 33,
                 "armorperlevel": 4,
                 "spellblock": 32,
                 "spellblockperlevel": 2.05,
@@ -297,14 +296,14 @@ export const champion = {
                 "mpregenperlevel": 0.55,
                 "crit": 0,
                 "critperlevel": 0,
-                "attackdamage": 53,
+                "attackdamage": 57,
                 "attackdamageperlevel": 3.8,
                 "attackspeedperlevel": 2.18,
                 "attackspeed": 0.736
             }
         },
         "Anivia": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Anivia",
             "key": "34",
             "name": "애니비아",
@@ -326,8 +325,7 @@ export const champion = {
                 "h": 48
             },
             "tags": [
-                "Mage",
-                "Support"
+                "Mage"
             ],
             "partype": "마나",
             "stats": {
@@ -354,7 +352,7 @@ export const champion = {
             }
         },
         "Annie": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Annie",
             "key": "1",
             "name": "애니",
@@ -376,7 +374,8 @@ export const champion = {
                 "h": 48
             },
             "tags": [
-                "Mage"
+                "Mage",
+                "Support"
             ],
             "partype": "마나",
             "stats": {
@@ -403,7 +402,7 @@ export const champion = {
             }
         },
         "Aphelios": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Aphelios",
             "key": "523",
             "name": "아펠리오스",
@@ -452,7 +451,7 @@ export const champion = {
             }
         },
         "Ashe": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Ashe",
             "key": "22",
             "name": "애쉬",
@@ -479,7 +478,7 @@ export const champion = {
             ],
             "partype": "마나",
             "stats": {
-                "hp": 640,
+                "hp": 610,
                 "hpperlevel": 101,
                 "mp": 280,
                 "mpperlevel": 35,
@@ -502,7 +501,7 @@ export const champion = {
             }
         },
         "AurelionSol": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "AurelionSol",
             "key": "136",
             "name": "아우렐리온 솔",
@@ -544,14 +543,64 @@ export const champion = {
                 "mpregenperlevel": 0.75,
                 "crit": 0,
                 "critperlevel": 0,
-                "attackdamage": 55,
+                "attackdamage": 58,
                 "attackdamageperlevel": 3.2,
                 "attackspeedperlevel": 1.5,
                 "attackspeed": 0.625
             }
         },
+        "Aurora": {
+            "version": "14.19.1",
+            "id": "Aurora",
+            "key": "893",
+            "name": "오로라",
+            "title": "세계의 경계에 선 마녀",
+            "blurb": "태어난 순간부터 오로라는 영혼 세계와 물질 세계를 넘나드는 특별한 능력으로 삶의 길을 찾았다. 영혼 세계의 주민들에 대해 더 알고 싶었던 오로라는 자신의 고향을 떠났고, 시간 속에 뒤틀리고 길을 잃어 방황하는 반신을 만났다. 그의 절박함을 목격한 오로라는 자신의 거친 친구가 잊어버린 자아를 되찾도록 도와줄 방법을 찾기로 결심했고 프렐요드의 가장 먼 곳으로 여정을 떠났다.",
+            "info": {
+                "attack": 3,
+                "defense": 4,
+                "magic": 8,
+                "difficulty": 5
+            },
+            "image": {
+                "full": "Aurora.png",
+                "sprite": "champion0.png",
+                "group": "champion",
+                "x": 48,
+                "y": 48,
+                "w": 48,
+                "h": 48
+            },
+            "tags": [
+                "Mage",
+                "Assassin"
+            ],
+            "partype": "마나",
+            "stats": {
+                "hp": 607,
+                "hpperlevel": 110,
+                "mp": 475,
+                "mpperlevel": 30,
+                "movespeed": 335,
+                "armor": 23,
+                "armorperlevel": 4.5,
+                "spellblock": 30,
+                "spellblockperlevel": 1.3,
+                "attackrange": 550,
+                "hpregen": 6,
+                "hpregenperlevel": 0.55,
+                "mpregen": 8,
+                "mpregenperlevel": 0.8,
+                "crit": 0,
+                "critperlevel": 0,
+                "attackdamage": 53,
+                "attackdamageperlevel": 3,
+                "attackspeedperlevel": 2,
+                "attackspeed": 0.668
+            }
+        },
         "Azir": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Azir",
             "key": "268",
             "name": "아지르",
@@ -567,7 +616,7 @@ export const champion = {
                 "full": "Azir.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 48,
+                "x": 96,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -583,7 +632,7 @@ export const champion = {
                 "mp": 320,
                 "mpperlevel": 40,
                 "movespeed": 335,
-                "armor": 22,
+                "armor": 25,
                 "armorperlevel": 5,
                 "spellblock": 30,
                 "spellblockperlevel": 1.3,
@@ -601,7 +650,7 @@ export const champion = {
             }
         },
         "Bard": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Bard",
             "key": "432",
             "name": "바드",
@@ -617,7 +666,7 @@ export const champion = {
                 "full": "Bard.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 96,
+                "x": 144,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -651,7 +700,7 @@ export const champion = {
             }
         },
         "Belveth": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Belveth",
             "key": "200",
             "name": "벨베스",
@@ -667,7 +716,7 @@ export const champion = {
                 "full": "Belveth.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 144,
+                "x": 192,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -686,7 +735,7 @@ export const champion = {
                 "armorperlevel": 4.7,
                 "spellblock": 32,
                 "spellblockperlevel": 2.05,
-                "attackrange": 175,
+                "attackrange": 150,
                 "hpregen": 6,
                 "hpregenperlevel": 0.6,
                 "mpregen": 0,
@@ -700,7 +749,7 @@ export const champion = {
             }
         },
         "Blitzcrank": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Blitzcrank",
             "key": "53",
             "name": "블리츠크랭크",
@@ -716,18 +765,18 @@ export const champion = {
                 "full": "Blitzcrank.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 192,
+                "x": 240,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
                 "Tank",
-                "Fighter"
+                "Support"
             ],
             "partype": "마나",
             "stats": {
-                "hp": 650,
+                "hp": 600,
                 "hpperlevel": 109,
                 "mp": 267,
                 "mpperlevel": 40,
@@ -750,7 +799,7 @@ export const champion = {
             }
         },
         "Brand": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Brand",
             "key": "63",
             "name": "브랜드",
@@ -766,13 +815,14 @@ export const champion = {
                 "full": "Brand.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 240,
+                "x": 288,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Mage"
+                "Mage",
+                "Support"
             ],
             "partype": "마나",
             "stats": {
@@ -799,7 +849,7 @@ export const champion = {
             }
         },
         "Braum": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Braum",
             "key": "201",
             "name": "브라움",
@@ -815,14 +865,14 @@ export const champion = {
                 "full": "Braum.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 288,
+                "x": 336,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Support",
-                "Tank"
+                "Tank",
+                "Support"
             ],
             "partype": "마나",
             "stats": {
@@ -849,7 +899,7 @@ export const champion = {
             }
         },
         "Briar": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Briar",
             "key": "233",
             "name": "브라이어",
@@ -865,7 +915,7 @@ export const champion = {
                 "full": "Briar.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 336,
+                "x": 384,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -877,7 +927,7 @@ export const champion = {
             "partype": "분노",
             "stats": {
                 "hp": 590,
-                "hpperlevel": 100,
+                "hpperlevel": 95,
                 "mp": 0,
                 "mpperlevel": 0,
                 "movespeed": 340,
@@ -899,7 +949,7 @@ export const champion = {
             }
         },
         "Caitlyn": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Caitlyn",
             "key": "51",
             "name": "케이틀린",
@@ -915,7 +965,7 @@ export const champion = {
                 "full": "Caitlyn.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 384,
+                "x": 432,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -948,7 +998,7 @@ export const champion = {
             }
         },
         "Camille": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Camille",
             "key": "164",
             "name": "카밀",
@@ -964,14 +1014,14 @@ export const champion = {
                 "full": "Camille.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 432,
-                "y": 48,
+                "x": 0,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
                 "Fighter",
-                "Tank"
+                "Assassin"
             ],
             "partype": "마나",
             "stats": {
@@ -998,7 +1048,7 @@ export const champion = {
             }
         },
         "Cassiopeia": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Cassiopeia",
             "key": "69",
             "name": "카시오페아",
@@ -1014,7 +1064,7 @@ export const champion = {
                 "full": "Cassiopeia.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 0,
+                "x": 48,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -1026,8 +1076,8 @@ export const champion = {
             "stats": {
                 "hp": 630,
                 "hpperlevel": 104,
-                "mp": 350,
-                "mpperlevel": 60,
+                "mp": 400,
+                "mpperlevel": 40,
                 "movespeed": 328,
                 "armor": 18,
                 "armorperlevel": 4.7,
@@ -1047,7 +1097,7 @@ export const champion = {
             }
         },
         "Chogath": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Chogath",
             "key": "31",
             "name": "초가스",
@@ -1063,7 +1113,7 @@ export const champion = {
                 "full": "Chogath.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 48,
+                "x": 96,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -1097,7 +1147,7 @@ export const champion = {
             }
         },
         "Corki": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Corki",
             "key": "42",
             "name": "코르키",
@@ -1113,40 +1163,41 @@ export const champion = {
                 "full": "Corki.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 96,
+                "x": 144,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Marksman"
+                "Marksman",
+                "Mage"
             ],
             "partype": "마나",
             "stats": {
                 "hp": 610,
-                "hpperlevel": 103,
+                "hpperlevel": 100,
                 "mp": 350,
                 "mpperlevel": 54,
                 "movespeed": 325,
-                "armor": 28,
-                "armorperlevel": 4.7,
+                "armor": 30,
+                "armorperlevel": 4.5,
                 "spellblock": 30,
                 "spellblockperlevel": 1.3,
                 "attackrange": 550,
                 "hpregen": 5.5,
                 "hpregenperlevel": 0.55,
                 "mpregen": 7.4,
-                "mpregenperlevel": 0.55,
+                "mpregenperlevel": 0.7,
                 "crit": 0,
                 "critperlevel": 0,
-                "attackdamage": 61,
+                "attackdamage": 52,
                 "attackdamageperlevel": 2.5,
-                "attackspeedperlevel": 2.3,
-                "attackspeed": 0.638
+                "attackspeedperlevel": 2.8,
+                "attackspeed": 0.644
             }
         },
         "Darius": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Darius",
             "key": "122",
             "name": "다리우스",
@@ -1162,7 +1213,7 @@ export const champion = {
                 "full": "Darius.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 144,
+                "x": 192,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -1196,7 +1247,7 @@ export const champion = {
             }
         },
         "Diana": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Diana",
             "key": "131",
             "name": "다이애나",
@@ -1212,14 +1263,14 @@ export const champion = {
                 "full": "Diana.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 192,
+                "x": 240,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
                 "Fighter",
-                "Mage"
+                "Assassin"
             ],
             "partype": "마나",
             "stats": {
@@ -1246,7 +1297,7 @@ export const champion = {
             }
         },
         "Draven": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Draven",
             "key": "119",
             "name": "드레이븐",
@@ -1262,7 +1313,7 @@ export const champion = {
                 "full": "Draven.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 240,
+                "x": 288,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -1295,7 +1346,7 @@ export const champion = {
             }
         },
         "DrMundo": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "DrMundo",
             "key": "36",
             "name": "문도 박사",
@@ -1311,14 +1362,14 @@ export const champion = {
                 "full": "DrMundo.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 288,
+                "x": 336,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Fighter",
-                "Tank"
+                "Tank",
+                "Fighter"
             ],
             "partype": "없음",
             "stats": {
@@ -1345,7 +1396,7 @@ export const champion = {
             }
         },
         "Ekko": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Ekko",
             "key": "245",
             "name": "에코",
@@ -1361,14 +1412,14 @@ export const champion = {
                 "full": "Ekko.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 336,
+                "x": 384,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
                 "Assassin",
-                "Fighter"
+                "Mage"
             ],
             "partype": "마나",
             "stats": {
@@ -1395,7 +1446,7 @@ export const champion = {
             }
         },
         "Elise": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Elise",
             "key": "60",
             "name": "엘리스",
@@ -1411,14 +1462,14 @@ export const champion = {
                 "full": "Elise.png",
                 "sprite": "champion0.png",
                 "group": "champion",
-                "x": 384,
+                "x": 432,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Mage",
-                "Fighter"
+                "Assassin",
+                "Mage"
             ],
             "partype": "마나",
             "stats": {
@@ -1445,7 +1496,7 @@ export const champion = {
             }
         },
         "Evelynn": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Evelynn",
             "key": "28",
             "name": "이블린",
@@ -1459,10 +1510,10 @@ export const champion = {
             },
             "image": {
                 "full": "Evelynn.png",
-                "sprite": "champion0.png",
+                "sprite": "champion1.png",
                 "group": "champion",
-                "x": 432,
-                "y": 96,
+                "x": 0,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
@@ -1495,7 +1546,7 @@ export const champion = {
             }
         },
         "Ezreal": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Ezreal",
             "key": "81",
             "name": "이즈리얼",
@@ -1511,7 +1562,7 @@ export const champion = {
                 "full": "Ezreal.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 0,
+                "x": 48,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -1538,14 +1589,14 @@ export const champion = {
                 "mpregenperlevel": 1,
                 "crit": 0,
                 "critperlevel": 0,
-                "attackdamage": 62,
-                "attackdamageperlevel": 2.5,
+                "attackdamage": 60,
+                "attackdamageperlevel": 2.75,
                 "attackspeedperlevel": 2.5,
                 "attackspeed": 0.625
             }
         },
         "Fiddlesticks": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Fiddlesticks",
             "key": "9",
             "name": "피들스틱",
@@ -1561,7 +1612,7 @@ export const champion = {
                 "full": "Fiddlesticks.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 48,
+                "x": 96,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -1595,7 +1646,7 @@ export const champion = {
             }
         },
         "Fiora": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Fiora",
             "key": "114",
             "name": "피오라",
@@ -1611,7 +1662,7 @@ export const champion = {
                 "full": "Fiora.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 96,
+                "x": 144,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -1645,7 +1696,7 @@ export const champion = {
             }
         },
         "Fizz": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Fizz",
             "key": "105",
             "name": "피즈",
@@ -1661,7 +1712,7 @@ export const champion = {
                 "full": "Fizz.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 144,
+                "x": 192,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -1695,7 +1746,7 @@ export const champion = {
             }
         },
         "Galio": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Galio",
             "key": "3",
             "name": "갈리오",
@@ -1711,7 +1762,7 @@ export const champion = {
                 "full": "Galio.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 192,
+                "x": 240,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -1726,7 +1777,7 @@ export const champion = {
                 "hpperlevel": 126,
                 "mp": 500,
                 "mpperlevel": 40,
-                "movespeed": 335,
+                "movespeed": 340,
                 "armor": 24,
                 "armorperlevel": 4.7,
                 "spellblock": 32,
@@ -1745,7 +1796,7 @@ export const champion = {
             }
         },
         "Gangplank": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Gangplank",
             "key": "41",
             "name": "갱플랭크",
@@ -1761,7 +1812,7 @@ export const champion = {
                 "full": "Gangplank.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 240,
+                "x": 288,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -1771,13 +1822,13 @@ export const champion = {
             ],
             "partype": "마나",
             "stats": {
-                "hp": 600,
+                "hp": 630,
                 "hpperlevel": 114,
                 "mp": 280,
                 "mpperlevel": 60,
                 "movespeed": 345,
                 "armor": 31,
-                "armorperlevel": 4.2,
+                "armorperlevel": 4.7,
                 "spellblock": 32,
                 "spellblockperlevel": 2.05,
                 "attackrange": 125,
@@ -1794,7 +1845,7 @@ export const champion = {
             }
         },
         "Garen": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Garen",
             "key": "86",
             "name": "가렌",
@@ -1810,7 +1861,7 @@ export const champion = {
                 "full": "Garen.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 288,
+                "x": 336,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -1844,7 +1895,7 @@ export const champion = {
             }
         },
         "Gnar": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Gnar",
             "key": "150",
             "name": "나르",
@@ -1860,7 +1911,7 @@ export const champion = {
                 "full": "Gnar.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 336,
+                "x": 384,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -1887,14 +1938,14 @@ export const champion = {
                 "mpregenperlevel": 0,
                 "crit": 0,
                 "critperlevel": 0,
-                "attackdamage": 57,
-                "attackdamageperlevel": 3,
+                "attackdamage": 60,
+                "attackdamageperlevel": 3.2,
                 "attackspeedperlevel": 6,
                 "attackspeed": 0.625
             }
         },
         "Gragas": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Gragas",
             "key": "79",
             "name": "그라가스",
@@ -1910,7 +1961,7 @@ export const champion = {
                 "full": "Gragas.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 384,
+                "x": 432,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -1944,7 +1995,7 @@ export const champion = {
             }
         },
         "Graves": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Graves",
             "key": "104",
             "name": "그레이브즈",
@@ -1960,8 +2011,8 @@ export const champion = {
                 "full": "Graves.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 432,
-                "y": 0,
+                "x": 0,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -1988,12 +2039,12 @@ export const champion = {
                 "critperlevel": 0,
                 "attackdamage": 68,
                 "attackdamageperlevel": 4,
-                "attackspeedperlevel": 2.6,
+                "attackspeedperlevel": 3,
                 "attackspeed": 0.475
             }
         },
         "Gwen": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Gwen",
             "key": "887",
             "name": "그웬",
@@ -2009,14 +2060,13 @@ export const champion = {
                 "full": "Gwen.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 0,
+                "x": 48,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Fighter",
-                "Assassin"
+                "Fighter"
             ],
             "partype": "마나",
             "stats": {
@@ -2043,7 +2093,7 @@ export const champion = {
             }
         },
         "Hecarim": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Hecarim",
             "key": "120",
             "name": "헤카림",
@@ -2059,7 +2109,7 @@ export const champion = {
                 "full": "Hecarim.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 48,
+                "x": 96,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -2071,7 +2121,7 @@ export const champion = {
             "partype": "마나",
             "stats": {
                 "hp": 625,
-                "hpperlevel": 99,
+                "hpperlevel": 106,
                 "mp": 280,
                 "mpperlevel": 40,
                 "movespeed": 345,
@@ -2093,7 +2143,7 @@ export const champion = {
             }
         },
         "Heimerdinger": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Heimerdinger",
             "key": "74",
             "name": "하이머딩거",
@@ -2109,7 +2159,7 @@ export const champion = {
                 "full": "Heimerdinger.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 96,
+                "x": 144,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -2143,7 +2193,7 @@ export const champion = {
             }
         },
         "Hwei": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Hwei",
             "key": "910",
             "name": "흐웨이",
@@ -2159,13 +2209,14 @@ export const champion = {
                 "full": "Hwei.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 144,
+                "x": 192,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Mage"
+                "Mage",
+                "Support"
             ],
             "partype": "마나",
             "stats": {
@@ -2192,7 +2243,7 @@ export const champion = {
             }
         },
         "Illaoi": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Illaoi",
             "key": "420",
             "name": "일라오이",
@@ -2208,7 +2259,7 @@ export const champion = {
                 "full": "Illaoi.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 192,
+                "x": 240,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -2242,7 +2293,7 @@ export const champion = {
             }
         },
         "Irelia": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Irelia",
             "key": "39",
             "name": "이렐리아",
@@ -2258,7 +2309,7 @@ export const champion = {
                 "full": "Irelia.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 240,
+                "x": 288,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -2269,8 +2320,8 @@ export const champion = {
             ],
             "partype": "마나",
             "stats": {
-                "hp": 590,
-                "hpperlevel": 124,
+                "hp": 630,
+                "hpperlevel": 115,
                 "mp": 350,
                 "mpperlevel": 50,
                 "movespeed": 335,
@@ -2279,20 +2330,20 @@ export const champion = {
                 "spellblock": 30,
                 "spellblockperlevel": 2.05,
                 "attackrange": 200,
-                "hpregen": 8.5,
+                "hpregen": 6,
                 "hpregenperlevel": 0.85,
                 "mpregen": 8,
                 "mpregenperlevel": 0.8,
                 "crit": 0,
                 "critperlevel": 0,
                 "attackdamage": 65,
-                "attackdamageperlevel": 4,
+                "attackdamageperlevel": 3.5,
                 "attackspeedperlevel": 2.5,
                 "attackspeed": 0.656
             }
         },
         "Ivern": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Ivern",
             "key": "427",
             "name": "아이번",
@@ -2308,7 +2359,7 @@ export const champion = {
                 "full": "Ivern.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 288,
+                "x": 336,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -2342,7 +2393,7 @@ export const champion = {
             }
         },
         "Janna": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Janna",
             "key": "40",
             "name": "잔나",
@@ -2358,7 +2409,7 @@ export const champion = {
                 "full": "Janna.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 336,
+                "x": 384,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -2392,7 +2443,7 @@ export const champion = {
             }
         },
         "JarvanIV": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "JarvanIV",
             "key": "59",
             "name": "자르반 4세",
@@ -2408,14 +2459,14 @@ export const champion = {
                 "full": "JarvanIV.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 384,
+                "x": 432,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Tank",
-                "Fighter"
+                "Fighter",
+                "Tank"
             ],
             "partype": "마나",
             "stats": {
@@ -2442,7 +2493,7 @@ export const champion = {
             }
         },
         "Jax": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Jax",
             "key": "24",
             "name": "잭스",
@@ -2458,14 +2509,13 @@ export const champion = {
                 "full": "Jax.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 432,
-                "y": 48,
+                "x": 0,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Fighter",
-                "Assassin"
+                "Fighter"
             ],
             "partype": "마나",
             "stats": {
@@ -2492,7 +2542,7 @@ export const champion = {
             }
         },
         "Jayce": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Jayce",
             "key": "126",
             "name": "제이스",
@@ -2508,14 +2558,14 @@ export const champion = {
                 "full": "Jayce.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 0,
+                "x": 48,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Fighter",
-                "Marksman"
+                "Marksman",
+                "Fighter"
             ],
             "partype": "마나",
             "stats": {
@@ -2542,7 +2592,7 @@ export const champion = {
             }
         },
         "Jhin": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Jhin",
             "key": "202",
             "name": "진",
@@ -2558,7 +2608,7 @@ export const champion = {
                 "full": "Jhin.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 48,
+                "x": 96,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -2592,7 +2642,7 @@ export const champion = {
             }
         },
         "Jinx": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Jinx",
             "key": "222",
             "name": "징크스",
@@ -2608,7 +2658,7 @@ export const champion = {
                 "full": "Jinx.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 96,
+                "x": 144,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -2635,13 +2685,13 @@ export const champion = {
                 "crit": 0,
                 "critperlevel": 0,
                 "attackdamage": 59,
-                "attackdamageperlevel": 3.15,
-                "attackspeedperlevel": 1,
+                "attackdamageperlevel": 2.9,
+                "attackspeedperlevel": 1.4,
                 "attackspeed": 0.625
             }
         },
         "Kaisa": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Kaisa",
             "key": "145",
             "name": "카이사",
@@ -2657,13 +2707,14 @@ export const champion = {
                 "full": "Kaisa.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 144,
+                "x": 192,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Marksman"
+                "Marksman",
+                "Mage"
             ],
             "partype": "마나",
             "stats": {
@@ -2690,7 +2741,7 @@ export const champion = {
             }
         },
         "Kalista": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Kalista",
             "key": "429",
             "name": "칼리스타",
@@ -2706,7 +2757,7 @@ export const champion = {
                 "full": "Kalista.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 192,
+                "x": 240,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -2732,14 +2783,14 @@ export const champion = {
                 "mpregenperlevel": 0.4,
                 "crit": 0,
                 "critperlevel": 0,
-                "attackdamage": 61,
+                "attackdamage": 59,
                 "attackdamageperlevel": 3.25,
                 "attackspeedperlevel": 4.5,
                 "attackspeed": 0.694
             }
         },
         "Karma": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Karma",
             "key": "43",
             "name": "카르마",
@@ -2755,7 +2806,7 @@ export const champion = {
                 "full": "Karma.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 240,
+                "x": 288,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -2789,7 +2840,7 @@ export const champion = {
             }
         },
         "Karthus": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Karthus",
             "key": "30",
             "name": "카서스",
@@ -2805,7 +2856,7 @@ export const champion = {
                 "full": "Karthus.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 288,
+                "x": 336,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -2838,7 +2889,7 @@ export const champion = {
             }
         },
         "Kassadin": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Kassadin",
             "key": "38",
             "name": "카사딘",
@@ -2854,7 +2905,7 @@ export const champion = {
                 "full": "Kassadin.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 336,
+                "x": 384,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -2888,7 +2939,7 @@ export const champion = {
             }
         },
         "Katarina": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Katarina",
             "key": "55",
             "name": "카타리나",
@@ -2904,7 +2955,7 @@ export const champion = {
                 "full": "Katarina.png",
                 "sprite": "champion1.png",
                 "group": "champion",
-                "x": 384,
+                "x": 432,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -2938,7 +2989,7 @@ export const champion = {
             }
         },
         "Kayle": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Kayle",
             "key": "10",
             "name": "케일",
@@ -2952,16 +3003,16 @@ export const champion = {
             },
             "image": {
                 "full": "Kayle.png",
-                "sprite": "champion1.png",
+                "sprite": "champion2.png",
                 "group": "champion",
-                "x": 432,
-                "y": 96,
+                "x": 0,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Fighter",
-                "Support"
+                "Mage",
+                "Marksman"
             ],
             "partype": "마나",
             "stats": {
@@ -2988,7 +3039,7 @@ export const champion = {
             }
         },
         "Kayn": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Kayn",
             "key": "141",
             "name": "케인",
@@ -3004,7 +3055,7 @@ export const champion = {
                 "full": "Kayn.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 0,
+                "x": 48,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -3038,7 +3089,7 @@ export const champion = {
             }
         },
         "Kennen": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Kennen",
             "key": "85",
             "name": "케넨",
@@ -3054,18 +3105,17 @@ export const champion = {
                 "full": "Kennen.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 48,
+                "x": 96,
                 "y": 0,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Mage",
-                "Marksman"
+                "Mage"
             ],
             "partype": "기력",
             "stats": {
-                "hp": 611,
+                "hp": 580,
                 "hpperlevel": 98,
                 "mp": 200,
                 "mpperlevel": 0,
@@ -3088,7 +3138,7 @@ export const champion = {
             }
         },
         "Khazix": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Khazix",
             "key": "121",
             "name": "카직스",
@@ -3104,7 +3154,7 @@ export const champion = {
                 "full": "Khazix.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 96,
+                "x": 144,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -3137,7 +3187,7 @@ export const champion = {
             }
         },
         "Kindred": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Kindred",
             "key": "203",
             "name": "킨드레드",
@@ -3153,7 +3203,7 @@ export const champion = {
                 "full": "Kindred.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 144,
+                "x": 192,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -3163,7 +3213,7 @@ export const champion = {
             ],
             "partype": "마나",
             "stats": {
-                "hp": 610,
+                "hp": 595,
                 "hpperlevel": 104,
                 "mp": 300,
                 "mpperlevel": 35,
@@ -3186,7 +3236,7 @@ export const champion = {
             }
         },
         "Kled": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Kled",
             "key": "240",
             "name": "클레드",
@@ -3202,14 +3252,13 @@ export const champion = {
                 "full": "Kled.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 192,
+                "x": 240,
                 "y": 0,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Fighter",
-                "Tank"
+                "Fighter"
             ],
             "partype": "용기",
             "stats": {
@@ -3236,7 +3285,7 @@ export const champion = {
             }
         },
         "KogMaw": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "KogMaw",
             "key": "96",
             "name": "코그모",
@@ -3252,7 +3301,7 @@ export const champion = {
                 "full": "KogMaw.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 240,
+                "x": 288,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -3286,7 +3335,7 @@ export const champion = {
             }
         },
         "KSante": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "KSante",
             "key": "897",
             "name": "크산테",
@@ -3302,7 +3351,7 @@ export const champion = {
                 "full": "KSante.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 288,
+                "x": 336,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -3314,7 +3363,7 @@ export const champion = {
             "partype": "마나",
             "stats": {
                 "hp": 625,
-                "hpperlevel": 115,
+                "hpperlevel": 120,
                 "mp": 320,
                 "mpperlevel": 60,
                 "movespeed": 330,
@@ -3322,9 +3371,9 @@ export const champion = {
                 "armorperlevel": 5.2,
                 "spellblock": 30,
                 "spellblockperlevel": 2.1,
-                "attackrange": 175,
+                "attackrange": 150,
                 "hpregen": 9.5,
-                "hpregenperlevel": 0.85,
+                "hpregenperlevel": 1,
                 "mpregen": 7,
                 "mpregenperlevel": 1,
                 "crit": 0,
@@ -3336,7 +3385,7 @@ export const champion = {
             }
         },
         "Leblanc": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Leblanc",
             "key": "7",
             "name": "르블랑",
@@ -3352,7 +3401,7 @@ export const champion = {
                 "full": "Leblanc.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 336,
+                "x": 384,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -3386,7 +3435,7 @@ export const champion = {
             }
         },
         "LeeSin": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "LeeSin",
             "key": "64",
             "name": "리 신",
@@ -3402,7 +3451,7 @@ export const champion = {
                 "full": "LeeSin.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 384,
+                "x": 432,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -3414,7 +3463,7 @@ export const champion = {
             "partype": "기력",
             "stats": {
                 "hp": 645,
-                "hpperlevel": 105,
+                "hpperlevel": 108,
                 "mp": 200,
                 "mpperlevel": 0,
                 "movespeed": 345,
@@ -3436,7 +3485,7 @@ export const champion = {
             }
         },
         "Leona": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Leona",
             "key": "89",
             "name": "레오나",
@@ -3452,8 +3501,8 @@ export const champion = {
                 "full": "Leona.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 432,
-                "y": 0,
+                "x": 0,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -3468,7 +3517,7 @@ export const champion = {
                 "mp": 302,
                 "mpperlevel": 40,
                 "movespeed": 335,
-                "armor": 47,
+                "armor": 43,
                 "armorperlevel": 4.8,
                 "spellblock": 32,
                 "spellblockperlevel": 2.05,
@@ -3486,7 +3535,7 @@ export const champion = {
             }
         },
         "Lillia": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Lillia",
             "key": "876",
             "name": "릴리아",
@@ -3502,7 +3551,7 @@ export const champion = {
                 "full": "Lillia.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 0,
+                "x": 48,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -3536,7 +3585,7 @@ export const champion = {
             }
         },
         "Lissandra": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Lissandra",
             "key": "127",
             "name": "리산드라",
@@ -3552,7 +3601,7 @@ export const champion = {
                 "full": "Lissandra.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 48,
+                "x": 96,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -3585,7 +3634,7 @@ export const champion = {
             }
         },
         "Lucian": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Lucian",
             "key": "236",
             "name": "루시안",
@@ -3601,13 +3650,14 @@ export const champion = {
                 "full": "Lucian.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 96,
+                "x": 144,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Marksman"
+                "Marksman",
+                "Assassin"
             ],
             "partype": "마나",
             "stats": {
@@ -3634,7 +3684,7 @@ export const champion = {
             }
         },
         "Lulu": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Lulu",
             "key": "117",
             "name": "룰루",
@@ -3650,7 +3700,7 @@ export const champion = {
                 "full": "Lulu.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 144,
+                "x": 192,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -3684,7 +3734,7 @@ export const champion = {
             }
         },
         "Lux": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Lux",
             "key": "99",
             "name": "럭스",
@@ -3700,7 +3750,7 @@ export const champion = {
                 "full": "Lux.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 192,
+                "x": 240,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -3734,7 +3784,7 @@ export const champion = {
             }
         },
         "Malphite": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Malphite",
             "key": "54",
             "name": "말파이트",
@@ -3750,14 +3800,14 @@ export const champion = {
                 "full": "Malphite.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 240,
+                "x": 288,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
                 "Tank",
-                "Fighter"
+                "Mage"
             ],
             "partype": "마나",
             "stats": {
@@ -3784,7 +3834,7 @@ export const champion = {
             }
         },
         "Malzahar": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Malzahar",
             "key": "90",
             "name": "말자하",
@@ -3800,14 +3850,13 @@ export const champion = {
                 "full": "Malzahar.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 288,
+                "x": 336,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Mage",
-                "Assassin"
+                "Mage"
             ],
             "partype": "마나",
             "stats": {
@@ -3834,7 +3883,7 @@ export const champion = {
             }
         },
         "Maokai": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Maokai",
             "key": "57",
             "name": "마오카이",
@@ -3850,14 +3899,14 @@ export const champion = {
                 "full": "Maokai.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 336,
+                "x": 384,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
                 "Tank",
-                "Mage"
+                "Support"
             ],
             "partype": "마나",
             "stats": {
@@ -3884,7 +3933,7 @@ export const champion = {
             }
         },
         "MasterYi": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "MasterYi",
             "key": "11",
             "name": "마스터 이",
@@ -3900,7 +3949,7 @@ export const champion = {
                 "full": "MasterYi.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 384,
+                "x": 432,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -3912,12 +3961,12 @@ export const champion = {
             "partype": "마나",
             "stats": {
                 "hp": 669,
-                "hpperlevel": 100,
+                "hpperlevel": 105,
                 "mp": 251,
                 "mpperlevel": 42,
                 "movespeed": 355,
                 "armor": 33,
-                "armorperlevel": 4.2,
+                "armorperlevel": 4.7,
                 "spellblock": 32,
                 "spellblockperlevel": 2.05,
                 "attackrange": 175,
@@ -3928,13 +3977,13 @@ export const champion = {
                 "crit": 0,
                 "critperlevel": 0,
                 "attackdamage": 65,
-                "attackdamageperlevel": 2.2,
-                "attackspeedperlevel": 2,
+                "attackdamageperlevel": 2.5,
+                "attackspeedperlevel": 2.5,
                 "attackspeed": 0.679
             }
         },
         "Milio": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Milio",
             "key": "902",
             "name": "밀리오",
@@ -3950,13 +3999,14 @@ export const champion = {
                 "full": "Milio.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 432,
-                "y": 48,
+                "x": 0,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Support"
+                "Support",
+                "Mage"
             ],
             "partype": "마나",
             "stats": {
@@ -3983,7 +4033,7 @@ export const champion = {
             }
         },
         "MissFortune": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "MissFortune",
             "key": "21",
             "name": "미스 포츈",
@@ -3999,13 +4049,14 @@ export const champion = {
                 "full": "MissFortune.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 0,
+                "x": 48,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Marksman"
+                "Marksman",
+                "Mage"
             ],
             "partype": "마나",
             "stats": {
@@ -4025,14 +4076,14 @@ export const champion = {
                 "mpregenperlevel": 0.8,
                 "crit": 0,
                 "critperlevel": 0,
-                "attackdamage": 52,
+                "attackdamage": 53,
                 "attackdamageperlevel": 2.4,
                 "attackspeedperlevel": 3,
                 "attackspeed": 0.656
             }
         },
         "MonkeyKing": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "MonkeyKing",
             "key": "62",
             "name": "오공",
@@ -4048,7 +4099,7 @@ export const champion = {
                 "full": "MonkeyKing.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 48,
+                "x": 96,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -4082,7 +4133,7 @@ export const champion = {
             }
         },
         "Mordekaiser": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Mordekaiser",
             "key": "82",
             "name": "모데카이저",
@@ -4098,13 +4149,14 @@ export const champion = {
                 "full": "Mordekaiser.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 96,
+                "x": 144,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Fighter"
+                "Fighter",
+                "Mage"
             ],
             "partype": "보호막 ",
             "stats": {
@@ -4131,7 +4183,7 @@ export const champion = {
             }
         },
         "Morgana": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Morgana",
             "key": "25",
             "name": "모르가나",
@@ -4147,7 +4199,7 @@ export const champion = {
                 "full": "Morgana.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 144,
+                "x": 192,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -4181,7 +4233,7 @@ export const champion = {
             }
         },
         "Naafiri": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Naafiri",
             "key": "950",
             "name": "나피리",
@@ -4197,13 +4249,14 @@ export const champion = {
                 "full": "Naafiri.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 192,
+                "x": 240,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Assassin"
+                "Assassin",
+                "Fighter"
             ],
             "partype": "마나",
             "stats": {
@@ -4230,7 +4283,7 @@ export const champion = {
             }
         },
         "Nami": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Nami",
             "key": "267",
             "name": "나미",
@@ -4246,7 +4299,7 @@ export const champion = {
                 "full": "Nami.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 240,
+                "x": 288,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -4273,14 +4326,14 @@ export const champion = {
                 "mpregenperlevel": 0.4,
                 "crit": 0,
                 "critperlevel": 0,
-                "attackdamage": 51,
+                "attackdamage": 54,
                 "attackdamageperlevel": 3.1,
                 "attackspeedperlevel": 2.61,
                 "attackspeed": 0.644
             }
         },
         "Nasus": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Nasus",
             "key": "75",
             "name": "나서스",
@@ -4296,7 +4349,7 @@ export const champion = {
                 "full": "Nasus.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 288,
+                "x": 336,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -4324,13 +4377,13 @@ export const champion = {
                 "crit": 0,
                 "critperlevel": 0,
                 "attackdamage": 67,
-                "attackdamageperlevel": 3.5,
+                "attackdamageperlevel": 4,
                 "attackspeedperlevel": 3.48,
                 "attackspeed": 0.638
             }
         },
         "Nautilus": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Nautilus",
             "key": "111",
             "name": "노틸러스",
@@ -4346,7 +4399,7 @@ export const champion = {
                 "full": "Nautilus.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 336,
+                "x": 384,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -4380,7 +4433,7 @@ export const champion = {
             }
         },
         "Neeko": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Neeko",
             "key": "518",
             "name": "니코",
@@ -4396,7 +4449,7 @@ export const champion = {
                 "full": "Neeko.png",
                 "sprite": "champion2.png",
                 "group": "champion",
-                "x": 384,
+                "x": 432,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -4430,7 +4483,7 @@ export const champion = {
             }
         },
         "Nidalee": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Nidalee",
             "key": "76",
             "name": "니달리",
@@ -4444,10 +4497,10 @@ export const champion = {
             },
             "image": {
                 "full": "Nidalee.png",
-                "sprite": "champion2.png",
+                "sprite": "champion3.png",
                 "group": "champion",
-                "x": 432,
-                "y": 96,
+                "x": 0,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
@@ -4480,7 +4533,7 @@ export const champion = {
             }
         },
         "Nilah": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Nilah",
             "key": "895",
             "name": "닐라",
@@ -4496,7 +4549,7 @@ export const champion = {
                 "full": "Nilah.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 0,
+                "x": 48,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -4513,11 +4566,11 @@ export const champion = {
                 "mpperlevel": 35,
                 "movespeed": 340,
                 "armor": 27,
-                "armorperlevel": 4.2,
+                "armorperlevel": 4.5,
                 "spellblock": 32,
                 "spellblockperlevel": 2.05,
                 "attackrange": 225,
-                "hpregen": 4,
+                "hpregen": 6,
                 "hpregenperlevel": 0.9,
                 "mpregen": 8.2,
                 "mpregenperlevel": 0.7,
@@ -4530,7 +4583,7 @@ export const champion = {
             }
         },
         "Nocturne": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Nocturne",
             "key": "56",
             "name": "녹턴",
@@ -4546,14 +4599,14 @@ export const champion = {
                 "full": "Nocturne.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 48,
+                "x": 96,
                 "y": 0,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Assassin",
-                "Fighter"
+                "Fighter",
+                "Assassin"
             ],
             "partype": "마나",
             "stats": {
@@ -4580,7 +4633,7 @@ export const champion = {
             }
         },
         "Nunu": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Nunu",
             "key": "20",
             "name": "누누와 윌럼프",
@@ -4596,14 +4649,14 @@ export const champion = {
                 "full": "Nunu.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 96,
+                "x": 144,
                 "y": 0,
                 "w": 48,
                 "h": 48
             },
             "tags": [
                 "Tank",
-                "Fighter"
+                "Mage"
             ],
             "partype": "마나",
             "stats": {
@@ -4630,7 +4683,7 @@ export const champion = {
             }
         },
         "Olaf": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Olaf",
             "key": "2",
             "name": "올라프",
@@ -4646,7 +4699,7 @@ export const champion = {
                 "full": "Olaf.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 144,
+                "x": 192,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -4680,7 +4733,7 @@ export const champion = {
             }
         },
         "Orianna": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Orianna",
             "key": "61",
             "name": "오리아나",
@@ -4696,7 +4749,7 @@ export const champion = {
                 "full": "Orianna.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 192,
+                "x": 240,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -4723,14 +4776,14 @@ export const champion = {
                 "mpregenperlevel": 0.8,
                 "crit": 0,
                 "critperlevel": 0,
-                "attackdamage": 40,
+                "attackdamage": 44,
                 "attackdamageperlevel": 2.6,
                 "attackspeedperlevel": 3.5,
                 "attackspeed": 0.658
             }
         },
         "Ornn": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Ornn",
             "key": "516",
             "name": "오른",
@@ -4746,14 +4799,13 @@ export const champion = {
                 "full": "Ornn.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 240,
+                "x": 288,
                 "y": 0,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Tank",
-                "Fighter"
+                "Tank"
             ],
             "partype": "마나",
             "stats": {
@@ -4780,7 +4832,7 @@ export const champion = {
             }
         },
         "Pantheon": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Pantheon",
             "key": "80",
             "name": "판테온",
@@ -4796,7 +4848,7 @@ export const champion = {
                 "full": "Pantheon.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 288,
+                "x": 336,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -4830,7 +4882,7 @@ export const champion = {
             }
         },
         "Poppy": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Poppy",
             "key": "78",
             "name": "뽀삐",
@@ -4846,7 +4898,7 @@ export const champion = {
                 "full": "Poppy.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 336,
+                "x": 384,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -4880,7 +4932,7 @@ export const champion = {
             }
         },
         "Pyke": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Pyke",
             "key": "555",
             "name": "파이크",
@@ -4896,7 +4948,7 @@ export const champion = {
                 "full": "Pyke.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 384,
+                "x": 432,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -4912,7 +4964,7 @@ export const champion = {
                 "mp": 415,
                 "mpperlevel": 50,
                 "movespeed": 330,
-                "armor": 47,
+                "armor": 43,
                 "armorperlevel": 4.7,
                 "spellblock": 32,
                 "spellblockperlevel": 2.05,
@@ -4930,7 +4982,7 @@ export const champion = {
             }
         },
         "Qiyana": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Qiyana",
             "key": "246",
             "name": "키아나",
@@ -4946,14 +4998,13 @@ export const champion = {
                 "full": "Qiyana.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 432,
-                "y": 0,
+                "x": 0,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Assassin",
-                "Fighter"
+                "Assassin"
             ],
             "partype": "마나",
             "stats": {
@@ -4962,7 +5013,7 @@ export const champion = {
                 "mp": 375,
                 "mpperlevel": 60,
                 "movespeed": 335,
-                "armor": 28,
+                "armor": 31,
                 "armorperlevel": 4.7,
                 "spellblock": 32,
                 "spellblockperlevel": 2.05,
@@ -4980,7 +5031,7 @@ export const champion = {
             }
         },
         "Quinn": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Quinn",
             "key": "133",
             "name": "퀸",
@@ -4996,7 +5047,7 @@ export const champion = {
                 "full": "Quinn.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 0,
+                "x": 48,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -5030,7 +5081,7 @@ export const champion = {
             }
         },
         "Rakan": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Rakan",
             "key": "497",
             "name": "라칸",
@@ -5046,7 +5097,7 @@ export const champion = {
                 "full": "Rakan.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 48,
+                "x": 96,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -5079,7 +5130,7 @@ export const champion = {
             }
         },
         "Rammus": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Rammus",
             "key": "33",
             "name": "람머스",
@@ -5095,14 +5146,13 @@ export const champion = {
                 "full": "Rammus.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 96,
+                "x": 144,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Tank",
-                "Fighter"
+                "Tank"
             ],
             "partype": "마나",
             "stats": {
@@ -5129,7 +5179,7 @@ export const champion = {
             }
         },
         "RekSai": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "RekSai",
             "key": "421",
             "name": "렉사이",
@@ -5145,13 +5195,14 @@ export const champion = {
                 "full": "RekSai.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 144,
+                "x": 192,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Fighter"
+                "Fighter",
+                "Tank"
             ],
             "partype": "분노",
             "stats": {
@@ -5178,7 +5229,7 @@ export const champion = {
             }
         },
         "Rell": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Rell",
             "key": "526",
             "name": "렐",
@@ -5194,7 +5245,7 @@ export const champion = {
                 "full": "Rell.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 192,
+                "x": 240,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -5228,7 +5279,7 @@ export const champion = {
             }
         },
         "Renata": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Renata",
             "key": "888",
             "name": "레나타 글라스크",
@@ -5244,7 +5295,7 @@ export const champion = {
                 "full": "Renata.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 240,
+                "x": 288,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -5278,7 +5329,7 @@ export const champion = {
             }
         },
         "Renekton": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Renekton",
             "key": "58",
             "name": "레넥톤",
@@ -5294,7 +5345,7 @@ export const champion = {
                 "full": "Renekton.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 288,
+                "x": 336,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -5328,7 +5379,7 @@ export const champion = {
             }
         },
         "Rengar": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Rengar",
             "key": "107",
             "name": "렝가",
@@ -5344,7 +5395,7 @@ export const champion = {
                 "full": "Rengar.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 336,
+                "x": 384,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -5378,7 +5429,7 @@ export const champion = {
             }
         },
         "Riven": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Riven",
             "key": "92",
             "name": "리븐",
@@ -5394,7 +5445,7 @@ export const champion = {
                 "full": "Riven.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 384,
+                "x": 432,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -5428,7 +5479,7 @@ export const champion = {
             }
         },
         "Rumble": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Rumble",
             "key": "68",
             "name": "럼블",
@@ -5444,8 +5495,8 @@ export const champion = {
                 "full": "Rumble.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 432,
-                "y": 48,
+                "x": 0,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
@@ -5478,7 +5529,7 @@ export const champion = {
             }
         },
         "Ryze": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Ryze",
             "key": "13",
             "name": "라이즈",
@@ -5494,14 +5545,13 @@ export const champion = {
                 "full": "Ryze.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 0,
+                "x": 48,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Mage",
-                "Fighter"
+                "Mage"
             ],
             "partype": "마나",
             "stats": {
@@ -5528,7 +5578,7 @@ export const champion = {
             }
         },
         "Samira": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Samira",
             "key": "360",
             "name": "사미라",
@@ -5544,13 +5594,14 @@ export const champion = {
                 "full": "Samira.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 48,
+                "x": 96,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Marksman"
+                "Marksman",
+                "Assassin"
             ],
             "partype": "마나",
             "stats": {
@@ -5571,13 +5622,13 @@ export const champion = {
                 "crit": 0,
                 "critperlevel": 0,
                 "attackdamage": 57,
-                "attackdamageperlevel": 3.3,
+                "attackdamageperlevel": 3,
                 "attackspeedperlevel": 3.3,
                 "attackspeed": 0.658
             }
         },
         "Sejuani": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Sejuani",
             "key": "113",
             "name": "세주아니",
@@ -5593,14 +5644,13 @@ export const champion = {
                 "full": "Sejuani.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 96,
+                "x": 144,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Tank",
-                "Fighter"
+                "Tank"
             ],
             "partype": "마나",
             "stats": {
@@ -5627,7 +5677,7 @@ export const champion = {
             }
         },
         "Senna": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Senna",
             "key": "235",
             "name": "세나",
@@ -5643,14 +5693,14 @@ export const champion = {
                 "full": "Senna.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 144,
+                "x": 192,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Marksman",
-                "Support"
+                "Support",
+                "Marksman"
             ],
             "partype": "마나",
             "stats": {
@@ -5672,12 +5722,12 @@ export const champion = {
                 "critperlevel": 0,
                 "attackdamage": 50,
                 "attackdamageperlevel": 0,
-                "attackspeedperlevel": 4,
+                "attackspeedperlevel": 2,
                 "attackspeed": 0.625
             }
         },
         "Seraphine": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Seraphine",
             "key": "147",
             "name": "세라핀",
@@ -5693,14 +5743,14 @@ export const champion = {
                 "full": "Seraphine.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 192,
+                "x": 240,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Mage",
-                "Support"
+                "Support",
+                "Mage"
             ],
             "partype": "마나",
             "stats": {
@@ -5727,7 +5777,7 @@ export const champion = {
             }
         },
         "Sett": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Sett",
             "key": "875",
             "name": "세트",
@@ -5743,7 +5793,7 @@ export const champion = {
                 "full": "Sett.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 240,
+                "x": 288,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -5777,7 +5827,7 @@ export const champion = {
             }
         },
         "Shaco": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Shaco",
             "key": "35",
             "name": "샤코",
@@ -5793,7 +5843,7 @@ export const champion = {
                 "full": "Shaco.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 288,
+                "x": 336,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -5826,7 +5876,7 @@ export const champion = {
             }
         },
         "Shen": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Shen",
             "key": "98",
             "name": "쉔",
@@ -5842,7 +5892,7 @@ export const champion = {
                 "full": "Shen.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 336,
+                "x": 384,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -5875,7 +5925,7 @@ export const champion = {
             }
         },
         "Shyvana": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Shyvana",
             "key": "102",
             "name": "쉬바나",
@@ -5891,14 +5941,14 @@ export const champion = {
                 "full": "Shyvana.png",
                 "sprite": "champion3.png",
                 "group": "champion",
-                "x": 384,
+                "x": 432,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
                 "Fighter",
-                "Tank"
+                "Mage"
             ],
             "partype": "분노",
             "stats": {
@@ -5925,7 +5975,7 @@ export const champion = {
             }
         },
         "Singed": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Singed",
             "key": "27",
             "name": "신지드",
@@ -5939,16 +5989,16 @@ export const champion = {
             },
             "image": {
                 "full": "Singed.png",
-                "sprite": "champion3.png",
+                "sprite": "champion4.png",
                 "group": "champion",
-                "x": 432,
-                "y": 96,
+                "x": 0,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
             "tags": [
                 "Tank",
-                "Fighter"
+                "Mage"
             ],
             "partype": "마나",
             "stats": {
@@ -5975,7 +6025,7 @@ export const champion = {
             }
         },
         "Sion": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Sion",
             "key": "14",
             "name": "사이온",
@@ -5991,7 +6041,7 @@ export const champion = {
                 "full": "Sion.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 0,
+                "x": 48,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -6025,7 +6075,7 @@ export const champion = {
             }
         },
         "Sivir": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Sivir",
             "key": "15",
             "name": "시비르",
@@ -6041,7 +6091,7 @@ export const champion = {
                 "full": "Sivir.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 48,
+                "x": 96,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -6074,7 +6124,7 @@ export const champion = {
             }
         },
         "Skarner": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Skarner",
             "key": "72",
             "name": "스카너",
@@ -6090,21 +6140,21 @@ export const champion = {
                 "full": "Skarner.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 96,
+                "x": 144,
                 "y": 0,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Fighter",
-                "Tank"
+                "Tank",
+                "Fighter"
             ],
             "partype": "마나",
             "stats": {
-                "hp": 650,
-                "hpperlevel": 102,
+                "hp": 630,
+                "hpperlevel": 110,
                 "mp": 320,
-                "mpperlevel": 60,
+                "mpperlevel": 40,
                 "movespeed": 335,
                 "armor": 33,
                 "armorperlevel": 4.8,
@@ -6114,17 +6164,17 @@ export const champion = {
                 "hpregen": 7.5,
                 "hpregenperlevel": 0.75,
                 "mpregen": 7.2,
-                "mpregenperlevel": 0.45,
+                "mpregenperlevel": 0.75,
                 "crit": 0,
                 "critperlevel": 0,
-                "attackdamage": 60,
+                "attackdamage": 63,
                 "attackdamageperlevel": 3,
                 "attackspeedperlevel": 2,
                 "attackspeed": 0.625
             }
         },
         "Smolder": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Smolder",
             "key": "901",
             "name": "스몰더",
@@ -6140,13 +6190,14 @@ export const champion = {
                 "full": "Smolder.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 144,
+                "x": 192,
                 "y": 0,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Marksman"
+                "Marksman",
+                "Mage"
             ],
             "partype": "마나",
             "stats": {
@@ -6160,20 +6211,20 @@ export const champion = {
                 "spellblock": 30,
                 "spellblockperlevel": 1.3,
                 "attackrange": 550,
-                "hpregen": 3,
+                "hpregen": 4.5,
                 "hpregenperlevel": 0.6,
                 "mpregen": 8.5,
                 "mpregenperlevel": 0.7,
                 "crit": 0,
                 "critperlevel": 0,
-                "attackdamage": 55,
+                "attackdamage": 60,
                 "attackdamageperlevel": 2.3,
                 "attackspeedperlevel": 4,
                 "attackspeed": 0.638
             }
         },
         "Sona": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Sona",
             "key": "37",
             "name": "소나",
@@ -6189,7 +6240,7 @@ export const champion = {
                 "full": "Sona.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 192,
+                "x": 240,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -6223,7 +6274,7 @@ export const champion = {
             }
         },
         "Soraka": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Soraka",
             "key": "16",
             "name": "소라카",
@@ -6239,7 +6290,7 @@ export const champion = {
                 "full": "Soraka.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 240,
+                "x": 288,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -6273,7 +6324,7 @@ export const champion = {
             }
         },
         "Swain": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Swain",
             "key": "50",
             "name": "스웨인",
@@ -6289,14 +6340,14 @@ export const champion = {
                 "full": "Swain.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 288,
+                "x": 336,
                 "y": 0,
                 "w": 48,
                 "h": 48
             },
             "tags": [
                 "Mage",
-                "Fighter"
+                "Support"
             ],
             "partype": "마나",
             "stats": {
@@ -6323,7 +6374,7 @@ export const champion = {
             }
         },
         "Sylas": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Sylas",
             "key": "517",
             "name": "사일러스",
@@ -6339,7 +6390,7 @@ export const champion = {
                 "full": "Sylas.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 336,
+                "x": 384,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -6350,12 +6401,12 @@ export const champion = {
             ],
             "partype": "마나",
             "stats": {
-                "hp": 575,
+                "hp": 600,
                 "hpperlevel": 129,
                 "mp": 400,
                 "mpperlevel": 70,
                 "movespeed": 340,
-                "armor": 27,
+                "armor": 29,
                 "armorperlevel": 5.2,
                 "spellblock": 32,
                 "spellblockperlevel": 2.55,
@@ -6373,7 +6424,7 @@ export const champion = {
             }
         },
         "Syndra": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Syndra",
             "key": "134",
             "name": "신드라",
@@ -6389,7 +6440,7 @@ export const champion = {
                 "full": "Syndra.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 384,
+                "x": 432,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -6422,7 +6473,7 @@ export const champion = {
             }
         },
         "TahmKench": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "TahmKench",
             "key": "223",
             "name": "탐 켄치",
@@ -6438,14 +6489,14 @@ export const champion = {
                 "full": "TahmKench.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 432,
-                "y": 0,
+                "x": 0,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Support",
-                "Tank"
+                "Tank",
+                "Support"
             ],
             "partype": "마나",
             "stats": {
@@ -6472,7 +6523,7 @@ export const champion = {
             }
         },
         "Taliyah": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Taliyah",
             "key": "163",
             "name": "탈리야",
@@ -6488,7 +6539,7 @@ export const champion = {
                 "full": "Taliyah.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 0,
+                "x": 48,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -6522,7 +6573,7 @@ export const champion = {
             }
         },
         "Talon": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Talon",
             "key": "91",
             "name": "탈론",
@@ -6538,7 +6589,7 @@ export const champion = {
                 "full": "Talon.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 48,
+                "x": 96,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -6571,7 +6622,7 @@ export const champion = {
             }
         },
         "Taric": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Taric",
             "key": "44",
             "name": "타릭",
@@ -6587,14 +6638,14 @@ export const champion = {
                 "full": "Taric.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 96,
+                "x": 144,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
                 "Support",
-                "Fighter"
+                "Tank"
             ],
             "partype": "마나",
             "stats": {
@@ -6621,7 +6672,7 @@ export const champion = {
             }
         },
         "Teemo": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Teemo",
             "key": "17",
             "name": "티모",
@@ -6637,14 +6688,14 @@ export const champion = {
                 "full": "Teemo.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 144,
+                "x": 192,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
                 "Marksman",
-                "Assassin"
+                "Mage"
             ],
             "partype": "마나",
             "stats": {
@@ -6671,7 +6722,7 @@ export const champion = {
             }
         },
         "Thresh": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Thresh",
             "key": "412",
             "name": "쓰레쉬",
@@ -6687,14 +6738,14 @@ export const champion = {
                 "full": "Thresh.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 192,
+                "x": 240,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
                 "Support",
-                "Fighter"
+                "Tank"
             ],
             "partype": "마나",
             "stats": {
@@ -6703,10 +6754,10 @@ export const champion = {
                 "mp": 274,
                 "mpperlevel": 44,
                 "movespeed": 330,
-                "armor": 31,
+                "armor": 33,
                 "armorperlevel": 0,
                 "spellblock": 30,
-                "spellblockperlevel": 1.3,
+                "spellblockperlevel": 1.55,
                 "attackrange": 450,
                 "hpregen": 7,
                 "hpregenperlevel": 0.55,
@@ -6721,7 +6772,7 @@ export const champion = {
             }
         },
         "Tristana": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Tristana",
             "key": "18",
             "name": "트리스타나",
@@ -6737,7 +6788,7 @@ export const champion = {
                 "full": "Tristana.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 240,
+                "x": 288,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -6750,28 +6801,28 @@ export const champion = {
             "stats": {
                 "hp": 640,
                 "hpperlevel": 102,
-                "mp": 250,
+                "mp": 300,
                 "mpperlevel": 32,
                 "movespeed": 325,
                 "armor": 30,
-                "armorperlevel": 4.5,
+                "armorperlevel": 4,
                 "spellblock": 28,
                 "spellblockperlevel": 1.3,
-                "attackrange": 525,
+                "attackrange": 550,
                 "hpregen": 4,
-                "hpregenperlevel": 0.65,
+                "hpregenperlevel": 0.5,
                 "mpregen": 7.2,
                 "mpregenperlevel": 0.45,
                 "crit": 0,
                 "critperlevel": 0,
-                "attackdamage": 59,
-                "attackdamageperlevel": 3.7,
+                "attackdamage": 60,
+                "attackdamageperlevel": 2.5,
                 "attackspeedperlevel": 1.5,
                 "attackspeed": 0.656
             }
         },
         "Trundle": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Trundle",
             "key": "48",
             "name": "트런들",
@@ -6787,7 +6838,7 @@ export const champion = {
                 "full": "Trundle.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 288,
+                "x": 336,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -6821,7 +6872,7 @@ export const champion = {
             }
         },
         "Tryndamere": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Tryndamere",
             "key": "23",
             "name": "트린다미어",
@@ -6837,7 +6888,7 @@ export const champion = {
                 "full": "Tryndamere.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 336,
+                "x": 384,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -6871,7 +6922,7 @@ export const champion = {
             }
         },
         "TwistedFate": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "TwistedFate",
             "key": "4",
             "name": "트위스티드 페이트",
@@ -6887,13 +6938,14 @@ export const champion = {
                 "full": "TwistedFate.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 384,
+                "x": 432,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Mage"
+                "Mage",
+                "Marksman"
             ],
             "partype": "마나",
             "stats": {
@@ -6914,13 +6966,13 @@ export const champion = {
                 "crit": 0,
                 "critperlevel": 0,
                 "attackdamage": 52,
-                "attackdamageperlevel": 3.3,
+                "attackdamageperlevel": 2.5,
                 "attackspeedperlevel": 2.5,
                 "attackspeed": 0.625
             }
         },
         "Twitch": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Twitch",
             "key": "29",
             "name": "트위치",
@@ -6936,8 +6988,8 @@ export const champion = {
                 "full": "Twitch.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 432,
-                "y": 48,
+                "x": 0,
+                "y": 96,
                 "w": 48,
                 "h": 48
             },
@@ -6947,8 +6999,8 @@ export const champion = {
             ],
             "partype": "마나",
             "stats": {
-                "hp": 682,
-                "hpperlevel": 100,
+                "hp": 630,
+                "hpperlevel": 104,
                 "mp": 300,
                 "mpperlevel": 40,
                 "movespeed": 330,
@@ -6970,7 +7022,7 @@ export const champion = {
             }
         },
         "Udyr": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Udyr",
             "key": "77",
             "name": "우디르",
@@ -6986,7 +7038,7 @@ export const champion = {
                 "full": "Udyr.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 0,
+                "x": 48,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -7020,7 +7072,7 @@ export const champion = {
             }
         },
         "Urgot": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Urgot",
             "key": "6",
             "name": "우르곳",
@@ -7036,7 +7088,7 @@ export const champion = {
                 "full": "Urgot.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 48,
+                "x": 96,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -7053,7 +7105,7 @@ export const champion = {
                 "mpperlevel": 45,
                 "movespeed": 330,
                 "armor": 36,
-                "armorperlevel": 5.45,
+                "armorperlevel": 5,
                 "spellblock": 32,
                 "spellblockperlevel": 2.05,
                 "attackrange": 350,
@@ -7070,7 +7122,7 @@ export const champion = {
             }
         },
         "Varus": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Varus",
             "key": "110",
             "name": "바루스",
@@ -7086,7 +7138,7 @@ export const champion = {
                 "full": "Varus.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 96,
+                "x": 144,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -7113,14 +7165,14 @@ export const champion = {
                 "mpregenperlevel": 0.8,
                 "crit": 0,
                 "critperlevel": 0,
-                "attackdamage": 60,
+                "attackdamage": 59,
                 "attackdamageperlevel": 3.4,
-                "attackspeedperlevel": 4,
+                "attackspeedperlevel": 3.5,
                 "attackspeed": 0.658
             }
         },
         "Vayne": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Vayne",
             "key": "67",
             "name": "베인",
@@ -7136,7 +7188,7 @@ export const champion = {
                 "full": "Vayne.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 144,
+                "x": 192,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -7170,7 +7222,7 @@ export const champion = {
             }
         },
         "Veigar": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Veigar",
             "key": "45",
             "name": "베이가",
@@ -7186,7 +7238,7 @@ export const champion = {
                 "full": "Veigar.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 192,
+                "x": 240,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -7219,7 +7271,7 @@ export const champion = {
             }
         },
         "Velkoz": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Velkoz",
             "key": "161",
             "name": "벨코즈",
@@ -7235,13 +7287,14 @@ export const champion = {
                 "full": "Velkoz.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 240,
+                "x": 288,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Mage"
+                "Mage",
+                "Support"
             ],
             "partype": "마나",
             "stats": {
@@ -7268,7 +7321,7 @@ export const champion = {
             }
         },
         "Vex": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Vex",
             "key": "711",
             "name": "벡스",
@@ -7284,7 +7337,7 @@ export const champion = {
                 "full": "Vex.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 288,
+                "x": 336,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -7317,7 +7370,7 @@ export const champion = {
             }
         },
         "Vi": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Vi",
             "key": "254",
             "name": "바이",
@@ -7333,7 +7386,7 @@ export const champion = {
                 "full": "Vi.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 336,
+                "x": 384,
                 "y": 96,
                 "w": 48,
                 "h": 48
@@ -7367,7 +7420,7 @@ export const champion = {
             }
         },
         "Viego": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Viego",
             "key": "234",
             "name": "비에고",
@@ -7383,14 +7436,14 @@ export const champion = {
                 "full": "Viego.png",
                 "sprite": "champion4.png",
                 "group": "champion",
-                "x": 384,
+                "x": 432,
                 "y": 96,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Assassin",
-                "Fighter"
+                "Fighter",
+                "Assassin"
             ],
             "partype": "없음",
             "stats": {
@@ -7410,14 +7463,14 @@ export const champion = {
                 "mpregenperlevel": 0,
                 "crit": 0,
                 "critperlevel": 0,
-                "attackdamage": 57,
+                "attackdamage": 60,
                 "attackdamageperlevel": 3.5,
                 "attackspeedperlevel": 2.5,
                 "attackspeed": 0.658
             }
         },
         "Viktor": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Viktor",
             "key": "112",
             "name": "빅토르",
@@ -7431,10 +7484,10 @@ export const champion = {
             },
             "image": {
                 "full": "Viktor.png",
-                "sprite": "champion4.png",
+                "sprite": "champion5.png",
                 "group": "champion",
-                "x": 432,
-                "y": 96,
+                "x": 0,
+                "y": 0,
                 "w": 48,
                 "h": 48
             },
@@ -7466,7 +7519,7 @@ export const champion = {
             }
         },
         "Vladimir": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Vladimir",
             "key": "8",
             "name": "블라디미르",
@@ -7482,13 +7535,14 @@ export const champion = {
                 "full": "Vladimir.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 0,
+                "x": 48,
                 "y": 0,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Mage"
+                "Mage",
+                "Fighter"
             ],
             "partype": "핏빛 격노",
             "stats": {
@@ -7515,7 +7569,7 @@ export const champion = {
             }
         },
         "Volibear": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Volibear",
             "key": "106",
             "name": "볼리베어",
@@ -7531,7 +7585,7 @@ export const champion = {
                 "full": "Volibear.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 48,
+                "x": 96,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -7565,7 +7619,7 @@ export const champion = {
             }
         },
         "Warwick": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Warwick",
             "key": "19",
             "name": "워윅",
@@ -7581,7 +7635,7 @@ export const champion = {
                 "full": "Warwick.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 96,
+                "x": 144,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -7615,7 +7669,7 @@ export const champion = {
             }
         },
         "Xayah": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Xayah",
             "key": "498",
             "name": "자야",
@@ -7631,7 +7685,7 @@ export const champion = {
                 "full": "Xayah.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 144,
+                "x": 192,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -7664,7 +7718,7 @@ export const champion = {
             }
         },
         "Xerath": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Xerath",
             "key": "101",
             "name": "제라스",
@@ -7680,13 +7734,14 @@ export const champion = {
                 "full": "Xerath.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 192,
+                "x": 240,
                 "y": 0,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Mage"
+                "Mage",
+                "Support"
             ],
             "partype": "마나",
             "stats": {
@@ -7713,7 +7768,7 @@ export const champion = {
             }
         },
         "XinZhao": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "XinZhao",
             "key": "5",
             "name": "신 짜오",
@@ -7729,14 +7784,14 @@ export const champion = {
                 "full": "XinZhao.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 240,
+                "x": 288,
                 "y": 0,
                 "w": 48,
                 "h": 48
             },
             "tags": [
                 "Fighter",
-                "Assassin"
+                "Tank"
             ],
             "partype": "마나",
             "stats": {
@@ -7746,7 +7801,7 @@ export const champion = {
                 "mpperlevel": 55,
                 "movespeed": 345,
                 "armor": 35,
-                "armorperlevel": 4.7,
+                "armorperlevel": 5,
                 "spellblock": 32,
                 "spellblockperlevel": 2.05,
                 "attackrange": 175,
@@ -7763,7 +7818,7 @@ export const champion = {
             }
         },
         "Yasuo": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Yasuo",
             "key": "157",
             "name": "야스오",
@@ -7779,7 +7834,7 @@ export const champion = {
                 "full": "Yasuo.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 288,
+                "x": 336,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -7795,7 +7850,7 @@ export const champion = {
                 "mp": 100,
                 "mpperlevel": 0,
                 "movespeed": 345,
-                "armor": 30,
+                "armor": 32,
                 "armorperlevel": 4.6,
                 "spellblock": 32,
                 "spellblockperlevel": 2.05,
@@ -7813,7 +7868,7 @@ export const champion = {
             }
         },
         "Yone": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Yone",
             "key": "777",
             "name": "요네",
@@ -7829,14 +7884,14 @@ export const champion = {
                 "full": "Yone.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 336,
+                "x": 384,
                 "y": 0,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Assassin",
-                "Fighter"
+                "Fighter",
+                "Assassin"
             ],
             "partype": "기류",
             "stats": {
@@ -7845,7 +7900,7 @@ export const champion = {
                 "mp": 500,
                 "mpperlevel": 0,
                 "movespeed": 345,
-                "armor": 30,
+                "armor": 33,
                 "armorperlevel": 4.6,
                 "spellblock": 32,
                 "spellblockperlevel": 2.05,
@@ -7863,7 +7918,7 @@ export const champion = {
             }
         },
         "Yorick": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Yorick",
             "key": "83",
             "name": "요릭",
@@ -7879,7 +7934,7 @@ export const champion = {
                 "full": "Yorick.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 384,
+                "x": 432,
                 "y": 0,
                 "w": 48,
                 "h": 48
@@ -7913,7 +7968,7 @@ export const champion = {
             }
         },
         "Yuumi": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Yuumi",
             "key": "350",
             "name": "유미",
@@ -7929,8 +7984,8 @@ export const champion = {
                 "full": "Yuumi.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 432,
-                "y": 0,
+                "x": 0,
+                "y": 48,
                 "w": 48,
                 "h": 48
             },
@@ -7963,7 +8018,7 @@ export const champion = {
             }
         },
         "Zac": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Zac",
             "key": "154",
             "name": "자크",
@@ -7979,7 +8034,7 @@ export const champion = {
                 "full": "Zac.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 0,
+                "x": 48,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -8000,7 +8055,7 @@ export const champion = {
                 "spellblock": 32,
                 "spellblockperlevel": 2.05,
                 "attackrange": 175,
-                "hpregen": 8,
+                "hpregen": 5,
                 "hpregenperlevel": 0.5,
                 "mpregen": 0,
                 "mpregenperlevel": 0,
@@ -8013,7 +8068,7 @@ export const champion = {
             }
         },
         "Zed": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Zed",
             "key": "238",
             "name": "제드",
@@ -8029,7 +8084,7 @@ export const champion = {
                 "full": "Zed.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 48,
+                "x": 96,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -8062,7 +8117,7 @@ export const champion = {
             }
         },
         "Zeri": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Zeri",
             "key": "221",
             "name": "제리",
@@ -8078,7 +8133,7 @@ export const champion = {
                 "full": "Zeri.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 96,
+                "x": 144,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -8088,7 +8143,7 @@ export const champion = {
             ],
             "partype": "마나",
             "stats": {
-                "hp": 630,
+                "hp": 600,
                 "hpperlevel": 110,
                 "mp": 250,
                 "mpperlevel": 45,
@@ -8111,7 +8166,7 @@ export const champion = {
             }
         },
         "Ziggs": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Ziggs",
             "key": "115",
             "name": "직스",
@@ -8127,7 +8182,7 @@ export const champion = {
                 "full": "Ziggs.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 144,
+                "x": 192,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -8160,7 +8215,7 @@ export const champion = {
             }
         },
         "Zilean": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Zilean",
             "key": "26",
             "name": "질리언",
@@ -8176,7 +8231,7 @@ export const champion = {
                 "full": "Zilean.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 192,
+                "x": 240,
                 "y": 48,
                 "w": 48,
                 "h": 48
@@ -8210,7 +8265,7 @@ export const champion = {
             }
         },
         "Zoe": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Zoe",
             "key": "142",
             "name": "조이",
@@ -8226,14 +8281,13 @@ export const champion = {
                 "full": "Zoe.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 240,
+                "x": 288,
                 "y": 48,
                 "w": 48,
                 "h": 48
             },
             "tags": [
-                "Mage",
-                "Support"
+                "Mage"
             ],
             "partype": "마나",
             "stats": {
@@ -8260,7 +8314,7 @@ export const champion = {
             }
         },
         "Zyra": {
-            "version": "14.7.1",
+            "version": "14.19.1",
             "id": "Zyra",
             "key": "143",
             "name": "자이라",
@@ -8276,7 +8330,7 @@ export const champion = {
                 "full": "Zyra.png",
                 "sprite": "champion5.png",
                 "group": "champion",
-                "x": 288,
+                "x": 336,
                 "y": 48,
                 "w": 48,
                 "h": 48

@@ -193,7 +193,7 @@ export default function SelectedChampions({ versusCollection }: { versusCollecti
 
     return (
         <div className="flex justify-center min-w-[1200px] ">
-            <div className="min-w-[1000px] bg-gray-100 rounded-lg shadow-md mt-4 p-4">
+            <div className="min-w-[1000px] min-h-[800px] bg-gray-100 rounded-lg shadow-md mt-4 p-4">
                 {/*첫째줄*/}
                 <div className="flex justify-center items-center gap-4">
                     <Button className="" onClick={handleReset} variant="outline">리셋</Button>
